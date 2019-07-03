@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29EDBC6A-F23E-4D67-BB36-2994342F2AB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PMS_POS</RootNamespace>
+    <AssemblyName>PMS_POS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\ControllerHabitacion.cs" />
+    <Compile Include="Controller\DocumentoC.cs" />
+    <Compile Include="Controller\RubroC.cs" />
+    <Compile Include="Controller\TipoHabitacion.cs" />
+    <Compile Include="Model\BDGeneral.cs" />
+    <Compile Include="Model\Documento.cs" />
+    <Compile Include="Model\Habitacion.cs" />
+    <Compile Include="Model\Huesped.cs" />
+    <Compile Include="Controller\HuespedD.cs" />
+    <Compile Include="Model\Producto.cs" />
+    <Compile Include="Model\Reservacion.cs" />
+    <Compile Include="Model\Rubro.cs" />
+    <Compile Include="Model\TipoHabitacion.cs" />
+    <Compile Include="Model\validar.cs" />
+    <Compile Include="View\AjustarStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\AjustarStock.Designer.cs">
+      <DependentUpon>AjustarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurarCategoriaProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurarCategoriaProducto.designer.cs">
+      <DependentUpon>ConfigurarCategoriaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurarRubroProveedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurarRubroProveedor.designer.cs">
+      <DependentUpon>ConfigurarRubroProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurarTipoDocumento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurarTipoDocumento.designer.cs">
+      <DependentUpon>ConfigurarTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurarTipoHabitacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurarTipoHabitacion.designer.cs">
+      <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistorialCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\HistorialCompras.Designer.cs">
+      <DependentUpon>HistorialCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InformacionEstablecimiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\InformacionEstablecimiento.Designer.cs">
+      <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListaClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ListaClientes.designer.cs">
+      <DependentUpon>ListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListadoEmpleados.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ListadoEmpleados.Designer.cs">
+      <DependentUpon>ListadoEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListadoFacturas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ListadoFacturas.Designer.cs">
+      <DependentUpon>ListadoFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListadoProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ListadoProducto.Designer.cs">
+      <DependentUpon>ListadoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListadoProveedores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ListadoProveedores.Designer.cs">
+      <DependentUpon>ListadoProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListadoReservaciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ListadoReservaciones.Designer.cs">
+      <DependentUpon>ListadoReservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\NuevaReservacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NuevaReservacion.Designer.cs">
+      <DependentUpon>NuevaReservacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NuevoHuesped.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NuevoHuesped.designer.cs">
+      <DependentUpon>NuevoHuesped.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PuntoDeVenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PuntoDeVenta.Designer.cs">
+      <DependentUpon>PuntoDeVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecetaProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RecetaProducto.Designer.cs">
+      <DependentUpon>RecetaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegistrarNuevaCompra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegistrarNuevaCompra.Designer.cs">
+      <DependentUpon>RegistrarNuevaCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegistrarNuevoEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegistrarNuevoEmpleado.Designer.cs">
+      <DependentUpon>RegistrarNuevoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegistroNuevoProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegistroNuevoProducto.designer.cs">
+      <DependentUpon>RegistroNuevoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegistroProveedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegistroProveedor.Designer.cs">
+      <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlHabitaciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlHabitaciones.designer.cs">
+      <DependentUpon>UserControlHabitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlInicio.Designer.cs">
+      <DependentUpon>UserControlInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VentaPorCategoria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\VentaPorCategoria.Designer.cs">
+      <DependentUpon>VentaPorCategoria.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\AjustarStock.resx">
+      <DependentUpon>AjustarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurarCategoriaProducto.resx">
+      <DependentUpon>ConfigurarCategoriaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurarRubroProveedor.resx">
+      <DependentUpon>ConfigurarRubroProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurarTipoDocumento.resx">
+      <DependentUpon>ConfigurarTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurarTipoHabitacion.resx">
+      <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\HistorialCompras.resx">
+      <DependentUpon>HistorialCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InformacionEstablecimiento.resx">
+      <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListaClientes.resx">
+      <DependentUpon>ListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListadoEmpleados.resx">
+      <DependentUpon>ListadoEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListadoFacturas.resx">
+      <DependentUpon>ListadoFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListadoProducto.resx">
+      <DependentUpon>ListadoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListadoProveedores.resx">
+      <DependentUpon>ListadoProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListadoReservaciones.resx">
+      <DependentUpon>ListadoReservaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NuevaReservacion.resx">
+      <DependentUpon>NuevaReservacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NuevoHuesped.resx">
+      <DependentUpon>NuevoHuesped.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RecetaProducto.resx">
+      <DependentUpon>RecetaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegistrarNuevaCompra.resx">
+      <DependentUpon>RegistrarNuevaCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegistrarNuevoEmpleado.resx">
+      <DependentUpon>RegistrarNuevoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegistroNuevoProducto.resx">
+      <DependentUpon>RegistroNuevoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegistroProveedor.resx">
+      <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlHabitaciones.resx">
+      <DependentUpon>UserControlHabitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlInicio.resx">
+      <DependentUpon>UserControlInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VentaPorCategoria.resx">
+      <DependentUpon>VentaPorCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="img\arrows.png" />
+    <None Include="Resources\target.png" />
+    <None Include="Resources\sleep.png" />
+    <None Include="Resources\settings %281%29.png" />
+    <None Include="Resources\room-key.png" />
+    <None Include="Resources\recipe-book.png" />
+    <None Include="Resources\peak.png" />
+    <None Include="Resources\overflow.png" />
+    <None Include="Resources\list %282%29.png" />
+    <None Include="Resources\line2.png" />
+    <None Include="Resources\line.png" />
+    <None Include="Resources\hotel %281%29.png" />
+    <None Include="Resources\end.png" />
+    <None Include="Resources\bag.png" />
+    <None Include="Resources\arrows %283%29.png" />
+    <None Include="Resources\arrows %282%29.png" />
+    <None Include="Resources\arrows.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
