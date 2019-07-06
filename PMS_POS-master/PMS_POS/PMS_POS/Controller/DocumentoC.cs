@@ -16,7 +16,7 @@ namespace PMS_POS.Controller
         public static int Agregar(Documento pNombreDocumento)
         {
 
-            int retorno = 0;
+            int retorno = 0;//Prueba 2
 
             MySqlCommand comando = new MySqlCommand(string.Format("Insert into documento (NombreDocumento) values ('{0}')",
                 pNombreDocumento.NombreDocumento), BDGeneral.ObtenerConexion());
