@@ -334,6 +334,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="img\arrows.png" />
+    <Content Include="Resources\habitacion.png" />
     <None Include="Resources\target.png" />
     <None Include="Resources\sleep.png" />
     <None Include="Resources\settings %281%29.png" />

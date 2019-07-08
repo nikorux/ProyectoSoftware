@@ -117,17 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAARZJREFUSEu1
-        letpBEEMg7eBlJOm0kp6SE2p4v6mgjz8mRMIR7Mbwo1Bgyzb8jLcMcc9ngqvhVvh647vwF2buTgeeOHZ
-        AXkvrAacuzbzyfHsJWxD2AG8L6/FuWszTxzvyybnrs18xTvZiT7SZvhH4W1o4oAaPbPmfFlg8LlAvBQ+
-        C6rD0Qh66D1dkMDXeWCoIZkr6E0eoA8NOk9G5Embs86XBbhfRQpq9KRZ8dMF4mmJvjz1/1pwBprOFqQZ
-        Rx/aNvnDriiB4jQnT5pME/rQNuf/+Zmq7nxZ2P5HAwzydRpyoFGT+Qp9aNsVd23mK/6nJnHXZr7i/Sgg
-        7EA/ODxraXPirs088X4ytz/6BIRtj7guPPAqz+P4ATc358qDYGXpAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>104, 17</value>
   </metadata>
@@ -149,7 +138,10 @@
   <metadata name="timer7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>626, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>54</value>
+    <value>25</value>
   </metadata>
 </root>

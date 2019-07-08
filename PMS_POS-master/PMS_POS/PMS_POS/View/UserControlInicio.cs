@@ -16,5 +16,10 @@ namespace PMS_POS.View
         {
             InitializeComponent();
         }
+
+        private void btnVerDetallesReservadas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
