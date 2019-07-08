@@ -25,7 +25,9 @@ namespace PMS_POS.Model
                 tecla.Handled = true;
             }
         }
-
+        //commit
+        //commit 2
+        //commit 3
         public static void soloLetras(KeyPressEventArgs tecla, TextBox text)
         {
             if (char.IsLetter(tecla.KeyChar))

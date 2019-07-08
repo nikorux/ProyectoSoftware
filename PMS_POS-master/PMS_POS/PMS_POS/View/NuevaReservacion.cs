@@ -8,14 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PMS_POS.Model;
-using MySql.Data.MySqlClient;
-using System.Configuration;
+using System.Globalization;
 
 namespace PMS_POS.View
 {
     public partial class NuevaReservacion : UserControl
     {
-
         private static NuevaReservacion _instance;
         public static NuevaReservacion Instance
         {
@@ -26,228 +24,140 @@ namespace PMS_POS.View
                 return _instance;
             }
         }
-
-
-        Huesped obj = new Huesped();
+        Reservacion r = new Reservacion();
+        Habitacion hab = new Habitacion();
+        public void FillHab( string idHab, string numHab, string tipoHab, string precioHab)
+        {
+            hab.IdHabitacion = Convert.ToInt32(idHab);
+            txtBoxNumeroHabitacion.Text = numHab;
+            txtBoxTipoHabitacion.Text = tipoHab;
+            txtBoxPrecio.Text = precioHab;
+        }
+        public void FillCliente(string idHuesped, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string documento)
+        {
+            r.IdHuesped = Convert.ToInt32(idHuesped);
+            txtBoxNombre.Text = primerNombre +" "+ segundoNombre + " " + primerApellido + " " + segundoApellido;
+            txtBoxDocumento.Text = documento;
+        }
 
 
         public NuevaReservacion()
         {
             InitializeComponent();
-
-            dgvHuesped.DataSource = obj.VistaTabla();
-            dgvHuesped.Columns[0].Visible = false;
-            dgvHuesped.Columns[16].Visible = false;
-            dgvHuesped.Columns[17].Visible = false;
-
-            dgvHabitaciones.DataSource = habitacion.Select();
-            dgvHabitaciones.Columns[0].Visible = false;
-            dgvHabitaciones.Columns[10].Visible = false;
-            dgvHabitaciones.Columns[11].Visible = false;
-
-            if (txtPrecioPorNoche.Text != "0" && txtTotalNoche.Text == "0")
-            {
-                MessageBox.Show("Por favor, seleccione las fechas de estadía.");
-            }
+            dateTimePickerLlegada.MinDate = DateTime.Now;
+   
 
         }
-
-        Reservacion nuevaReservacion = new Reservacion();
-        Habitacion habitacion = new Habitacion();
-
-
-
-
-        private void BtnGuardar_Click(object sender, EventArgs e)
+        
+        private void BtnBuscarHabitacion_Click(object sender, EventArgs e)
         {
-            //Get values from input fields
-            try
-            {
+            BuscarHabitacion buscarhab = new BuscarHabitacion();
+            buscarhab.Show();
+        }
 
-                if (this.txtCantidadNoches.Text == "0" || this.txtNombreHuesped.Text == string.Empty || this.txtNumeroHabitacion.Text == string.Empty || this.txtPrecioPorNoche.Text == "0" || this.txtCanal.Text == string.Empty || txtComentario.Text == string.Empty || txtTotalNoche.Text == "0" || nudCantidadAdultos.Value == 0)
+        private void BtnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            BuscarCliente buscarCliente = new BuscarCliente();
+            buscarCliente.Show();
+        }
+
+        private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            if (txtBoxPrecio.Text == string.Empty)
+            {
+                MessageBox.Show("Por favor, ingrese una habitación.");
+            }
+            else
+            {
+                calcular();
+            }
+        }
+
+        private void DateTimePickerLlegada_ValueChanged(object sender, EventArgs e)
+        {
+            if(txtBoxPrecio.Text != string.Empty)
+            {
+                calcular();
+            }
+           
+            
+           
+        }
+        public void calcular()
+        {
+            DateTime llegada = dateTimePickerLlegada.Value;
+            DateTime salida = dateTimePickerSalida.Value;
+            TimeSpan difference = salida.Date - llegada.Date;
+
+            int resta = (int)difference.TotalDays;
+
+            if (resta <= 0)
+            {
+                txtBoxNoches.Text = "";
+                txtBoxTotal.Text = "";
+                MessageBox.Show("Por favor, elegir una fecha correcta.");
+
+            }
+            else
+            {
+                r.FechaLlegada = llegada;
+                r.FechaSalida = salida;
+                txtBoxNoches.Text = resta.ToString();
+                r.CantidadNoches = resta;
+                int precio = (resta * int.Parse(txtBoxPrecio.Text));
+                txtBoxTotal.Text = Convert.ToString(precio);
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+
+            if (this.txtBoxNombre.Text == string.Empty || this.txtBoxTipoHabitacion.Text == string.Empty || this.txtBoxNoches.Text == string.Empty || this.txtBoxTotal.Text == string.Empty)
+            {
+                MessageBox.Show("Falta ingresar algunos datos.");
+            }
+            else
+            {
+                r.CantidadAdultos = Convert.ToInt32(numAdultos.Value);
+                r.CantidadInfantes = Convert.ToInt32(numInfantes.Value);
+                r.Canal = txtBoxCanal.Text;
+                r.Comentario = txtBoxComentarios.Text;
+                r.PrecioPorNoche = float.Parse(txtBoxPrecio.Text, CultureInfo.InvariantCulture.NumberFormat);
+                r.TotalPorEstadia = float.Parse(txtBoxTotal.Text, CultureInfo.InvariantCulture.NumberFormat);
+
+
+                if (r.Insert(r) == true)
                 {
-                    MessageBox.Show("Falta ingresar algunos datos");
+                    if (r.Insert_reservacion_habitacion(r.SelectIdReservacion(), hab) == true)
+                    {
+                        Clear();
+                        MessageBox.Show("La reservación ha sido creada.");
+
+                    }
                 }
                 else
                 {
-                    nuevaReservacion.IdHuesped = Convert.ToInt32(dgvHuesped.CurrentRow.Cells[0].Value.ToString());
-                    nuevaReservacion.FechaLlegada = dtpFechaLlegada.Value;
-                    nuevaReservacion.FechaSalida = dtpFechaSalida.Value;
-                    nuevaReservacion.PrecioPorNoche = float.Parse(txtPrecioPorNoche.Text);
-                    nuevaReservacion.CantidadNoches = Convert.ToInt32(txtCantidadNoches.Text);
-                    nuevaReservacion.CantidadAdultos = Convert.ToInt32(nudCantidadNinos.Value);
-                    nuevaReservacion.CantidadInfantes = Convert.ToInt32(nudCantidadNinos.Value);
-                    nuevaReservacion.Canal = txtCanal.Text;
-                    nuevaReservacion.Comentario = txtComentario.Text;
-                    nuevaReservacion.TotalPorEstadia = float.Parse(txtTotalNoche.Text);
-                    int idHabitacion = Convert.ToInt32(dgvHabitaciones.CurrentRow.Cells[0].Value.ToString());
-                    int rev = nuevaReservacion.SelectIdReservacion();
-                    MessageBox.Show("ID DE RESERVACION:" + rev);
-                    if (nuevaReservacion.Insert(nuevaReservacion) == true)
-                    {
-                        try
-                        {
-                            if (nuevaReservacion.Insert_reservacion_habitacion(idHabitacion, rev))
-                            {
-                                MessageBox.Show("Se ha insertado correctamente.");
-                            }
-                            else
-                            {
-
-                            }
-
-                            //Insert a reservacion_hab
-                            //nuevaReservacion.Insert_reservacion_habitacion(idHabitacion, Convert.ToInt32(nuevaReservacion.SelectIdReservacion()));
-                        }
-                        catch (Exception)
-                        {
-
-                        }
-
-                        txtCantidadNoches.Clear();
-                        dtpFechaLlegada.Value = DateTime.Now;
-                        dtpFechaSalida.Value = DateTime.Now;
-                        txtPrecioPorNoche.Clear();
-                        nudCantidadAdultos.Value = 0;
-                        nudCantidadNinos.Value = 0;
-                        txtCanal.Clear();
-                        txtComentario.Clear();
-                        txtTotalNoche.Clear();
-                        dgvHabitaciones.DataSource = habitacion.Select();
-                        dgvHuesped.DataSource = obj.VistaTabla();
-                        btnGuardar.Enabled = true;
-
-                        MessageBox.Show("La reservación ha sido registrada.");
-                    }
-                    else
-                    {
-
-                        MessageBox.Show("Error al registrar reservación.");
-                    }
-
+                    MessageBox.Show("Hubo un error al crear la reservación.");
                 }
             }
-            catch (Exception)
-            {
-
+               
             }
-        }
-
-        private void NuevaReservacion_Load(object sender, EventArgs e)
+        public void Clear()
         {
-
-        }
-
-        private void TxtBuscarHabitacion_TextChanged(object sender, EventArgs e)
-        {
-            dgvHabitaciones.AllowUserToAddRows = false;
-
-            if (txtBuscarHabitacion.Text != "")
-            {
-
-                dgvHabitaciones.CurrentCell = null;
-                foreach (DataGridViewRow n in dgvHabitaciones.Rows)
-                {
-                    n.Visible = false;
-                }
-                foreach (DataGridViewRow n in dgvHabitaciones.Rows)
-                {
-                    foreach (DataGridViewCell m in n.Cells)
-                    {
-                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarHabitacion.Text.ToUpper()) == 0))
-                        {
-                            n.Visible = true;
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                dgvHabitaciones.DataSource = habitacion.Select();
-            }
-        }
-
-        private void DgvHuesped_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void DgvHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void DgvHuesped_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtNombreHuesped.Text = dgvHuesped.CurrentRow.Cells[1].Value.ToString() + " " + dgvHuesped.CurrentRow.Cells[2].Value.ToString();
-        }
-
-        private void DgvHuesped_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
-        private void DgvHabitaciones_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtNumeroHabitacion.Text = dgvHabitaciones.CurrentRow.Cells[1].Value.ToString();
-            int DiasEntreFechas = ((TimeSpan)(dtpFechaSalida.Value - dtpFechaLlegada.Value)).Days;
-            string precioPorNoche = dgvHabitaciones.CurrentRow.Cells[9].Value.ToString();
-            txtCantidadNoches.Text = Convert.ToString(DiasEntreFechas);
-            txtPrecioPorNoche.Text = precioPorNoche;
-            txtTotalNoche.Text = nuevaReservacion.calcularTotalNoches(DiasEntreFechas, float.Parse(precioPorNoche)).ToString();
-
-        }
-
-        private void DtpFechaLlegada_ValueChanged(object sender, EventArgs e)
-        {
-            txtNombreHuesped.Text = "";
-            txtNumeroHabitacion.Text = "";
-        }
-
-        private void DtpFechaSalida_ValueChanged(object sender, EventArgs e)
-        {
-            txtNombreHuesped.Text = "";
-            txtNumeroHabitacion.Text = "";
-        }
-
-        private void TxtBuscarCoincidencias_TextChanged(object sender, EventArgs e)
-        {
-            dgvHuesped.AllowUserToAddRows = false;
-
-            if (txtBuscarCoincidencias.Text != "")
-            {
-                dgvHuesped.CurrentCell = null;
-                foreach (DataGridViewRow n in dgvHuesped.Rows)
-                {
-                    n.Visible = false;
-                }
-                foreach (DataGridViewRow n in dgvHuesped.Rows)
-                {
-                    foreach (DataGridViewCell m in n.Cells)
-                    {
-                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarCoincidencias.Text.ToUpper()) == 0))
-                        {
-                            n.Visible = true;
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                dgvHuesped.DataSource = obj.VistaTabla();
-            }
-        }
-
-        private void TxtBuscarHabitacion_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtBuscarHabitacion.Text = "";
-        }
-
-        private void TxtBuscarCoincidencias_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtBuscarCoincidencias.Text = "";
+            txtBoxNumeroHabitacion.Clear();
+            txtBoxTipoHabitacion.Clear();
+            txtBoxPrecio.Clear();
+            txtBoxNombre.Clear();
+            txtBoxDocumento.Clear();
+            numAdultos.Value = 1;
+            numInfantes.Value = 1;
+            txtBoxNombre.Clear();
+            txtBoxTotal.Clear();
+            txtBoxCanal.Clear();
+            txtBoxComentarios.Clear();
         }
     }
+
+
 }

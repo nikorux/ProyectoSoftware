@@ -163,5 +163,31 @@ namespace PMS_POS.Model
                 }
             }               
         }
+        public DataTable Search(string s)
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT * FROM habitacion WHERE IsDeleted=0 AND NumHab like '%" + s + "%' OR TipoHab like '%" + s + "%'";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
     }
 }
