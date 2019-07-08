@@ -153,7 +153,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(154, 736);
+            this.panel1.Size = new System.Drawing.Size(154, 711);
             this.panel1.TabIndex = 0;
             // 
             // ReservacionesDropDown
@@ -1205,10 +1205,10 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel4.Location = new System.Drawing.Point(154, 38);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1077, 57);
+            this.panel4.Size = new System.Drawing.Size(1216, 57);
             this.panel4.TabIndex = 2;
             // 
             // timer1
@@ -1256,7 +1256,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1231, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 38);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1404,7 +1404,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(1176, 5);
+            this.btnCerrar.Location = new System.Drawing.Point(1305, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(50, 30);
             this.btnCerrar.TabIndex = 43;
@@ -1422,7 +1422,7 @@
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizar.Location = new System.Drawing.Point(1120, 5);
+            this.btnMinimizar.Location = new System.Drawing.Point(1247, 4);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(50, 30);
             this.btnMinimizar.TabIndex = 27;
@@ -1437,7 +1437,7 @@
             this.userControlInicio1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.userControlInicio1.Location = new System.Drawing.Point(154, 95);
             this.userControlInicio1.Name = "userControlInicio1";
-            this.userControlInicio1.Size = new System.Drawing.Size(1287, 677);
+            this.userControlInicio1.Size = new System.Drawing.Size(1287, 706);
             this.userControlInicio1.TabIndex = 44;
             // 
             // Form1
@@ -1445,7 +1445,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1231, 774);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.userControlInicio1);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
