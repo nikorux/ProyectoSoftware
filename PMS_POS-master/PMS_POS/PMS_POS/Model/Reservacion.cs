@@ -157,11 +157,9 @@ namespace PMS_POS.Model
             }
         }
 
-        public bool Insert_reservacion_habitacion(int idHab, int idReser)
+        public bool Insert_reservacion_habitacion(int idReserv, Habitacion hab)
         {
-            //bool success = false;
-
-
+            //bool success = false
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
                 string sql = "INSERT INTO reservacion_hab (IdReservacion,IdHabitacion) VALUES(@IdReservacion,@IdHabitacion)";
@@ -169,8 +167,8 @@ namespace PMS_POS.Model
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdReservacion", idReser);
-                cmd.Parameters.AddWithValue("@IdHabitacion", idHab);
+                cmd.Parameters.AddWithValue("@IdReservacion", idReserv);
+                cmd.Parameters.AddWithValue("@IdHabitacion", hab.IdHabitacion);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)

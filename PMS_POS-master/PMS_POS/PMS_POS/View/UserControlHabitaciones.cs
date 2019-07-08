@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PMS_POS.Controller;
 using PMS_POS.Model;
+using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace PMS_POS.View
 {
@@ -32,11 +34,24 @@ namespace PMS_POS.View
         }
 
         Habitacion habitacion = new Habitacion();
-
+        static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
         private void UserControlHabitaciones_Load(object sender, EventArgs e)
         {
-            dgvHab.DataSource = habitacion.Select();
-            dgvHab.Columns[0].Visible = false;
+            // BUSCAR LOS TIPOS DE HABITACION Y LLENAR EL COMBO BOX
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+               string sql = "SELECT * FROM tipo_habitacion";
+                mySqlConn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    cmbTipoHab.Items.Add(reader.GetString("NombreTipoHab"));
+                }
+                mySqlConn.Close();
+            }
+                dgvHab.DataSource = habitacion.Select();
+                dgvHab.Columns[0].Visible = false;
         }       
 
         private void btnGuardar_Click(object sender, EventArgs e)
