@@ -20,14 +20,14 @@ namespace PMS_POS
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private bool isCollapsedReservaciones;
+        private bool isCollapsedReservaciones = true;
         //private bool isCollapsedHuesped;
-        private bool isCollapsedProveedores;
-        private bool isCollapsedProductos;
-        private bool isCollapsedReportesFinancieros;
-        private bool isCollapsedControlUsuarios;
-        private bool isCollapsedConfiguracion;
-        private bool isCollapsedClientes;
+        private bool isCollapsedProveedores = true;
+        private bool isCollapsedProductos = true;
+        private bool isCollapsedReportesFinancieros = true;
+        private bool isCollapsedControlUsuarios = true;
+        private bool isCollapsedConfiguracion = true;
+        private bool isCollapsedClientes = true;
 
         UserControlHabitaciones UserControlHabitaciones = new UserControlHabitaciones();
 
