@@ -85,6 +85,17 @@ namespace PMS_POS
             SidePanel.Height = button6.Height;
             SidePanel.Top = panelProveedores.Top;
             timer7.Start();
+
+            if (!userControlInicio1.Controls.Contains(RegistroProveedor.Instance))
+            {
+                userControlInicio1.Controls.Add(RegistroProveedor.Instance);
+                RegistroProveedor.Instance.Dock = DockStyle.Fill;
+                RegistroProveedor.Instance.BringToFront();
+            }
+            else
+            {
+                RegistroProveedor.Instance.BringToFront();
+            }
         }
 
         private void Button7_Click(object sender, EventArgs e)
