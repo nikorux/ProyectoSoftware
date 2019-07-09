@@ -32,8 +32,9 @@ namespace PMS_POS.Model
 
         private void TxtBoxBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-            if ((e.KeyChar == (char)13) && txtBoxBuscar.Text != string.Empty)
+
+
+            if (char.IsLetter(e.KeyChar) && txtBoxBuscar.Text != string.Empty || char.IsDigit(e.KeyChar) && txtBoxBuscar.Text != string.Empty)
             {
                 dgv.DataSource = habitacion.Search(txtBoxBuscar.Text);
 

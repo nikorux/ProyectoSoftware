@@ -72,7 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 101);
+            this.label1.Location = new System.Drawing.Point(24, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 1;
@@ -81,7 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 75);
+            this.label2.Location = new System.Drawing.Point(24, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 2;
@@ -90,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 126);
+            this.label3.Location = new System.Drawing.Point(24, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 3;
@@ -98,14 +98,14 @@
             // 
             // txtBoxNumeroHabitacion
             // 
-            this.txtBoxNumeroHabitacion.Location = new System.Drawing.Point(129, 72);
+            this.txtBoxNumeroHabitacion.Location = new System.Drawing.Point(135, 30);
             this.txtBoxNumeroHabitacion.Name = "txtBoxNumeroHabitacion";
             this.txtBoxNumeroHabitacion.Size = new System.Drawing.Size(133, 20);
             this.txtBoxNumeroHabitacion.TabIndex = 4;
             // 
             // txtBoxTipoHabitacion
             // 
-            this.txtBoxTipoHabitacion.Location = new System.Drawing.Point(129, 98);
+            this.txtBoxTipoHabitacion.Location = new System.Drawing.Point(135, 56);
             this.txtBoxTipoHabitacion.Name = "txtBoxTipoHabitacion";
             this.txtBoxTipoHabitacion.Size = new System.Drawing.Size(133, 20);
             this.txtBoxTipoHabitacion.TabIndex = 5;
@@ -117,7 +117,7 @@
             // 
             // txtBoxPrecio
             // 
-            this.txtBoxPrecio.Location = new System.Drawing.Point(129, 123);
+            this.txtBoxPrecio.Location = new System.Drawing.Point(135, 81);
             this.txtBoxPrecio.Name = "txtBoxPrecio";
             this.txtBoxPrecio.Size = new System.Drawing.Size(133, 20);
             this.txtBoxPrecio.TabIndex = 7;
@@ -125,7 +125,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnBuscarHabitacion);
-            this.groupBox1.Location = new System.Drawing.Point(3, 42);
+            this.groupBox1.Controls.Add(this.txtBoxPrecio);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtBoxTipoHabitacion);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtBoxNumeroHabitacion);
+            this.groupBox1.Location = new System.Drawing.Point(182, 136);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(400, 129);
             this.groupBox1.TabIndex = 0;
@@ -134,12 +140,14 @@
             // 
             // btnBuscarHabitacion
             // 
+            this.btnBuscarHabitacion.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnBuscarHabitacion.ForeColor = System.Drawing.SystemColors.Control;
             this.btnBuscarHabitacion.Location = new System.Drawing.Point(295, 30);
             this.btnBuscarHabitacion.Name = "btnBuscarHabitacion";
             this.btnBuscarHabitacion.Size = new System.Drawing.Size(74, 71);
             this.btnBuscarHabitacion.TabIndex = 11;
             this.btnBuscarHabitacion.Text = "Buscar Habitación";
-            this.btnBuscarHabitacion.UseVisualStyleBackColor = true;
+            this.btnBuscarHabitacion.UseVisualStyleBackColor = false;
             this.btnBuscarHabitacion.Click += new System.EventHandler(this.BtnBuscarHabitacion_Click);
             // 
             // groupBox2
@@ -149,7 +157,7 @@
             this.groupBox2.Controls.Add(this.txtBoxNombre);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(436, 42);
+            this.groupBox2.Location = new System.Drawing.Point(615, 136);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(368, 129);
             this.groupBox2.TabIndex = 1;
@@ -158,12 +166,14 @@
             // 
             // btnBuscarCliente
             // 
+            this.btnBuscarCliente.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnBuscarCliente.ForeColor = System.Drawing.SystemColors.Control;
             this.btnBuscarCliente.Location = new System.Drawing.Point(272, 30);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(74, 71);
             this.btnBuscarCliente.TabIndex = 12;
             this.btnBuscarCliente.Text = "Buscar Cliente";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
             this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
             // txtBoxDocumento
@@ -217,21 +227,23 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(3, 190);
+            this.groupBox3.Location = new System.Drawing.Point(182, 290);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(801, 152);
+            this.groupBox3.Size = new System.Drawing.Size(801, 156);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Reservación";
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Location = new System.Drawing.Point(704, 43);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 81);
             this.button1.TabIndex = 25;
             this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // txtBoxCanal
@@ -386,16 +398,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.txtBoxPrecio);
-            this.Controls.Add(this.txtBoxTipoHabitacion);
-            this.Controls.Add(this.txtBoxNumeroHabitacion);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "NuevaReservacion";
-            this.Size = new System.Drawing.Size(827, 367);
+            this.Size = new System.Drawing.Size(1287, 677);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -403,7 +410,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numAdultos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInfantes)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

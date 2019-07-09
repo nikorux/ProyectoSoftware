@@ -77,17 +77,17 @@
             this.panel4.Controls.Add(this.panelHabMantenimiento);
             this.panel4.Controls.Add(this.panelHabLibres);
             this.panel4.Controls.Add(this.panelHabOcupadas);
-            this.panel4.Location = new System.Drawing.Point(13, 18);
+            this.panel4.Location = new System.Drawing.Point(25, 61);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(580, 281);
+            this.panel4.Size = new System.Drawing.Size(559, 250);
             this.panel4.TabIndex = 42;
             // 
             // dgvEstadoActualHabitaciones
             // 
             this.dgvEstadoActualHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstadoActualHabitaciones.Location = new System.Drawing.Point(23, 109);
+            this.dgvEstadoActualHabitaciones.Location = new System.Drawing.Point(17, 108);
             this.dgvEstadoActualHabitaciones.Name = "dgvEstadoActualHabitaciones";
-            this.dgvEstadoActualHabitaciones.Size = new System.Drawing.Size(532, 150);
+            this.dgvEstadoActualHabitaciones.Size = new System.Drawing.Size(519, 114);
             this.dgvEstadoActualHabitaciones.TabIndex = 27;
             // 
             // label1
@@ -95,7 +95,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(25, 19);
+            this.label1.Location = new System.Drawing.Point(13, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(266, 21);
             this.label1.TabIndex = 23;
@@ -107,9 +107,9 @@
             this.panelHabMantenimiento.Controls.Add(this.pictureBox7);
             this.panelHabMantenimiento.Controls.Add(this.label17);
             this.panelHabMantenimiento.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelHabMantenimiento.Location = new System.Drawing.Point(355, 49);
+            this.panelHabMantenimiento.Location = new System.Drawing.Point(360, 49);
             this.panelHabMantenimiento.Name = "panelHabMantenimiento";
-            this.panelHabMantenimiento.Size = new System.Drawing.Size(200, 39);
+            this.panelHabMantenimiento.Size = new System.Drawing.Size(176, 39);
             this.panelHabMantenimiento.TabIndex = 4;
             // 
             // pictureBox7
@@ -138,9 +138,9 @@
             this.panelHabLibres.Controls.Add(this.pictureBox3);
             this.panelHabLibres.Controls.Add(this.label9);
             this.panelHabLibres.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelHabLibres.Location = new System.Drawing.Point(199, 50);
+            this.panelHabLibres.Location = new System.Drawing.Point(187, 49);
             this.panelHabLibres.Name = "panelHabLibres";
-            this.panelHabLibres.Size = new System.Drawing.Size(150, 39);
+            this.panelHabLibres.Size = new System.Drawing.Size(162, 39);
             this.panelHabLibres.TabIndex = 22;
             // 
             // pictureBox3
@@ -169,9 +169,9 @@
             this.panelHabOcupadas.Controls.Add(this.pictureBox4);
             this.panelHabOcupadas.Controls.Add(this.label12);
             this.panelHabOcupadas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelHabOcupadas.Location = new System.Drawing.Point(23, 49);
+            this.panelHabOcupadas.Location = new System.Drawing.Point(17, 49);
             this.panelHabOcupadas.Name = "panelHabOcupadas";
-            this.panelHabOcupadas.Size = new System.Drawing.Size(170, 39);
+            this.panelHabOcupadas.Size = new System.Drawing.Size(159, 39);
             this.panelHabOcupadas.TabIndex = 21;
             // 
             // pictureBox4
@@ -204,9 +204,9 @@
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.dateTimePicker2);
-            this.panel7.Location = new System.Drawing.Point(606, 333);
+            this.panel7.Location = new System.Drawing.Point(614, 333);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(580, 280);
+            this.panel7.Size = new System.Drawing.Size(580, 253);
             this.panel7.TabIndex = 44;
             // 
             // dgvHabitacionesProximas
@@ -214,7 +214,7 @@
             this.dgvHabitacionesProximas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHabitacionesProximas.Location = new System.Drawing.Point(23, 95);
             this.dgvHabitacionesProximas.Name = "dgvHabitacionesProximas";
-            this.dgvHabitacionesProximas.Size = new System.Drawing.Size(532, 113);
+            this.dgvHabitacionesProximas.Size = new System.Drawing.Size(532, 106);
             this.dgvHabitacionesProximas.TabIndex = 45;
             // 
             // btnVerDetallesProximas
@@ -226,7 +226,7 @@
             this.btnVerDetallesProximas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerDetallesProximas.ForeColor = System.Drawing.Color.White;
             this.btnVerDetallesProximas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerDetallesProximas.Location = new System.Drawing.Point(150, 225);
+            this.btnVerDetallesProximas.Location = new System.Drawing.Point(150, 212);
             this.btnVerDetallesProximas.Name = "btnVerDetallesProximas";
             this.btnVerDetallesProximas.Size = new System.Drawing.Size(139, 27);
             this.btnVerDetallesProximas.TabIndex = 48;
@@ -244,7 +244,7 @@
             this.btnRegistrarCheckOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarCheckOut.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarCheckOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarCheckOut.Location = new System.Drawing.Point(295, 225);
+            this.btnRegistrarCheckOut.Location = new System.Drawing.Point(295, 212);
             this.btnRegistrarCheckOut.Name = "btnRegistrarCheckOut";
             this.btnRegistrarCheckOut.Size = new System.Drawing.Size(139, 27);
             this.btnRegistrarCheckOut.TabIndex = 47;
@@ -268,7 +268,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 63);
+            this.label5.Location = new System.Drawing.Point(20, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 17);
             this.label5.TabIndex = 43;
@@ -277,7 +277,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(133, 57);
+            this.dateTimePicker2.Location = new System.Drawing.Point(124, 52);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(268, 25);
             this.dateTimePicker2.TabIndex = 42;
@@ -292,17 +292,17 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.dateTimePicker1);
-            this.panel6.Location = new System.Drawing.Point(13, 333);
+            this.panel6.Location = new System.Drawing.Point(26, 333);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(580, 280);
+            this.panel6.Size = new System.Drawing.Size(559, 253);
             this.panel6.TabIndex = 45;
             // 
             // dgvHabitacionesReservadas
             // 
             this.dgvHabitacionesReservadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHabitacionesReservadas.Location = new System.Drawing.Point(23, 94);
+            this.dgvHabitacionesReservadas.Location = new System.Drawing.Point(29, 87);
             this.dgvHabitacionesReservadas.Name = "dgvHabitacionesReservadas";
-            this.dgvHabitacionesReservadas.Size = new System.Drawing.Size(532, 114);
+            this.dgvHabitacionesReservadas.Size = new System.Drawing.Size(501, 114);
             this.dgvHabitacionesReservadas.TabIndex = 45;
             // 
             // btnVerDetallesReservadas
@@ -314,7 +314,7 @@
             this.btnVerDetallesReservadas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerDetallesReservadas.ForeColor = System.Drawing.Color.White;
             this.btnVerDetallesReservadas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerDetallesReservadas.Location = new System.Drawing.Point(156, 225);
+            this.btnVerDetallesReservadas.Location = new System.Drawing.Point(147, 212);
             this.btnVerDetallesReservadas.Name = "btnVerDetallesReservadas";
             this.btnVerDetallesReservadas.Size = new System.Drawing.Size(139, 27);
             this.btnVerDetallesReservadas.TabIndex = 46;
@@ -332,7 +332,7 @@
             this.btnRegistrarCheckIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarCheckIn.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarCheckIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarCheckIn.Location = new System.Drawing.Point(301, 225);
+            this.btnRegistrarCheckIn.Location = new System.Drawing.Point(297, 212);
             this.btnRegistrarCheckIn.Name = "btnRegistrarCheckIn";
             this.btnRegistrarCheckIn.Size = new System.Drawing.Size(139, 27);
             this.btnRegistrarCheckIn.TabIndex = 45;
@@ -356,7 +356,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 63);
+            this.label6.Location = new System.Drawing.Point(26, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 17);
             this.label6.TabIndex = 43;
@@ -365,7 +365,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(153, 59);
+            this.dateTimePicker1.Location = new System.Drawing.Point(141, 52);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(268, 25);
             this.dateTimePicker1.TabIndex = 42;
@@ -374,7 +374,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel4);

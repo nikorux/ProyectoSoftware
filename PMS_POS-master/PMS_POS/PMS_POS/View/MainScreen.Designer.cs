@@ -1434,10 +1434,10 @@
             // 
             // userControlInicio1
             // 
-            this.userControlInicio1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.userControlInicio1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.userControlInicio1.Location = new System.Drawing.Point(154, 95);
             this.userControlInicio1.Name = "userControlInicio1";
-            this.userControlInicio1.Size = new System.Drawing.Size(1287, 706);
+            this.userControlInicio1.Size = new System.Drawing.Size(1287, 677);
             this.userControlInicio1.TabIndex = 44;
             // 
             // Form1

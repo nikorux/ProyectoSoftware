@@ -42,11 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnEditar = new System.Windows.Forms.Label();
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNumeroHabitacion = new System.Windows.Forms.TextBox();
@@ -125,7 +123,7 @@
             // 
             this.groupBox3.Controls.Add(this.dgvInfoHuesped);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(504, 109);
+            this.groupBox3.Location = new System.Drawing.Point(627, 221);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(317, 259);
             this.groupBox3.TabIndex = 191;
@@ -135,7 +133,7 @@
             // dgvInfoHuesped
             // 
             this.dgvInfoHuesped.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInfoHuesped.Location = new System.Drawing.Point(6, 20);
+            this.dgvInfoHuesped.Location = new System.Drawing.Point(6, 23);
             this.dgvInfoHuesped.Name = "dgvInfoHuesped";
             this.dgvInfoHuesped.Size = new System.Drawing.Size(299, 233);
             this.dgvInfoHuesped.TabIndex = 1;
@@ -144,7 +142,7 @@
             // 
             this.groupBox2.Controls.Add(this.dgvReservaciones);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(22, 109);
+            this.groupBox2.Location = new System.Drawing.Point(145, 221);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(476, 259);
             this.groupBox2.TabIndex = 190;
@@ -154,7 +152,7 @@
             // dgvReservaciones
             // 
             this.dgvReservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReservaciones.Location = new System.Drawing.Point(7, 21);
+            this.dgvReservaciones.Location = new System.Drawing.Point(6, 20);
             this.dgvReservaciones.Name = "dgvReservaciones";
             this.dgvReservaciones.Size = new System.Drawing.Size(463, 232);
             this.dgvReservaciones.TabIndex = 0;
@@ -163,7 +161,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.nupCantidadNinos);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.nupCantidadAdultos);
@@ -174,7 +171,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 40);
+            this.groupBox1.Location = new System.Drawing.Point(145, 152);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(799, 63);
             this.groupBox1.TabIndex = 189;
@@ -255,29 +252,13 @@
             this.label8.TabIndex = 60;
             this.label8.Text = "Salida:";
             // 
-            // btnEditar
-            // 
-            this.btnEditar.AutoSize = true;
-            this.btnEditar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEditar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEditar.Location = new System.Drawing.Point(572, 24);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEditar.Size = new System.Drawing.Size(48, 20);
-            this.btnEditar.TabIndex = 193;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
-            // 
             // txtSegundoNombre
             // 
             this.txtSegundoNombre.BackColor = System.Drawing.SystemColors.Control;
             this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtSegundoNombre.Location = new System.Drawing.Point(217, 83);
+            this.txtSegundoNombre.Location = new System.Drawing.Point(340, 195);
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(175, 20);
             this.txtSegundoNombre.TabIndex = 188;
@@ -286,8 +267,8 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(40, 5);
+            this.label17.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label17.Location = new System.Drawing.Point(146, 117);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(204, 32);
             this.label17.TabIndex = 186;
@@ -295,12 +276,11 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(3, 13);
+            this.splitContainer1.Location = new System.Drawing.Point(60, 34);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitter1);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel1.Controls.Add(this.label17);
@@ -311,17 +291,9 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Panel2Collapsed = true;
-            this.splitContainer1.Size = new System.Drawing.Size(975, 657);
+            this.splitContainer1.Size = new System.Drawing.Size(1166, 657);
             this.splitContainer1.SplitterDistance = 946;
             this.splitContainer1.TabIndex = 1;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 657);
-            this.splitter1.TabIndex = 192;
-            this.splitter1.TabStop = false;
             // 
             // panel2
             // 
@@ -739,7 +711,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
             this.Name = "ListadoReservaciones";
-            this.Size = new System.Drawing.Size(954, 789);
+            this.Size = new System.Drawing.Size(1287, 677);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoHuesped)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -789,9 +761,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.DataGridView dgvInfoHuesped;
         private System.Windows.Forms.DataGridView dgvReservaciones;
-        private System.Windows.Forms.Label btnEditar;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNumeroHabitacion;

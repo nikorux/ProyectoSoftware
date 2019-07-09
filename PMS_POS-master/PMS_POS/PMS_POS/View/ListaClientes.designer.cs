@@ -112,7 +112,7 @@
             // 
             this.groupBox2.Controls.Add(this.dgvHuespedess);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(22, 345);
+            this.groupBox2.Location = new System.Drawing.Point(128, 405);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(799, 161);
             this.groupBox2.TabIndex = 195;
@@ -135,7 +135,7 @@
             // 
             this.groupBox1.Controls.Add(this.pictureBox15);
             this.groupBox1.Controls.Add(this.txtFiltroo);
-            this.groupBox1.Location = new System.Drawing.Point(22, 294);
+            this.groupBox1.Location = new System.Drawing.Point(128, 342);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(799, 45);
             this.groupBox1.TabIndex = 194;
@@ -169,7 +169,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(110, 9);
+            this.label17.Location = new System.Drawing.Point(166, 38);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(77, 24);
             this.label17.TabIndex = 192;
@@ -224,7 +224,7 @@
             this.panel1.Controls.Add(this.txtPrimerApellido);
             this.panel1.Controls.Add(this.txtPrimerNombre);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(22, 34);
+            this.panel1.Location = new System.Drawing.Point(128, 82);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 254);
             this.panel1.TabIndex = 197;
@@ -713,7 +713,7 @@
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.BackColor = System.Drawing.Color.Tomato;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(422, 511);
+            this.btnEliminar.Location = new System.Drawing.Point(826, 572);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(95, 30);
             this.btnEliminar.TabIndex = 198;
@@ -726,9 +726,9 @@
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Location = new System.Drawing.Point(296, 512);
+            this.btnModificar.Location = new System.Drawing.Point(711, 572);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(98, 28);
+            this.btnModificar.Size = new System.Drawing.Size(98, 30);
             this.btnModificar.TabIndex = 196;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -737,7 +737,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PMS_POS.Properties.Resources.target;
-            this.pictureBox1.Location = new System.Drawing.Point(72, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(128, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -748,7 +748,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.pictureBox1);
@@ -757,7 +757,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label17);
             this.Name = "ListaClientes";
-            this.Size = new System.Drawing.Size(842, 547);
+            this.Size = new System.Drawing.Size(1287, 677);
             this.Load += new System.EventHandler(this.ListaClientes_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHuespedess)).EndInit();

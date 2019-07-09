@@ -242,7 +242,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label17.Location = new System.Drawing.Point(111, 24);
+            this.label17.Location = new System.Drawing.Point(236, 58);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(133, 19);
             this.label17.TabIndex = 156;
@@ -456,7 +456,7 @@
             this.groupBox1.Controls.Add(this.txtSegundoNombre);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(45, 51);
+            this.groupBox1.Location = new System.Drawing.Point(172, 91);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(749, 399);
             this.groupBox1.TabIndex = 179;
@@ -641,7 +641,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(363, 466);
+            this.btnGuardar.Location = new System.Drawing.Point(424, 496);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(94, 24);
             this.btnGuardar.TabIndex = 184;
@@ -664,7 +664,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PMS_POS.Properties.Resources.sleep;
-            this.pictureBox1.Location = new System.Drawing.Point(66, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(171, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -65,5 +65,7 @@ namespace PMS_POS.View
                 MessageBox.Show("Seleccione una fila.");
             }
         }
+
+      
     }
 }
