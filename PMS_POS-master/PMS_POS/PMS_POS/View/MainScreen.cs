@@ -344,29 +344,29 @@ namespace PMS_POS
 
         private void BtnRegistroProducto_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(RegistroNuevoProducto.Instance))
+            if (!userControlInicio1.Controls.Contains(ListadoProducto.InstanceRP))
             {
-                userControlInicio1.Controls.Add(RegistroNuevoProducto.Instance);
-                RegistroNuevoProducto.Instance.Dock = DockStyle.Fill;
-                RegistroNuevoProducto.Instance.BringToFront();
+                userControlInicio1.Controls.Add(ListadoProducto.InstanceRP);
+                ListadoProducto.InstanceRP.Dock = DockStyle.Fill;
+                ListadoProducto.InstanceRP.BringToFront();
             }
             else
             {
-                RegistroNuevoProducto.Instance.BringToFront();
+                ListadoProducto.InstanceRP.BringToFront();
             }
         }
 
         private void BtnListaProductos_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoProducto.Instance))
+            if (!userControlInicio1.Controls.Contains(ListadoProducto.InstanceLP))
             {
-                userControlInicio1.Controls.Add(ListadoProducto.Instance);
-                ListadoProducto.Instance.Dock = DockStyle.Fill;
-                ListadoProducto.Instance.BringToFront();
+                userControlInicio1.Controls.Add(ListadoProducto.InstanceLP);
+                ListadoProducto.InstanceLP.Dock = DockStyle.Fill;
+                ListadoProducto.InstanceLP.BringToFront();
             }
             else
             {
-                ListadoProducto.Instance.BringToFront();
+                ListadoProducto.InstanceLP.BringToFront();
             }
         }
 
@@ -553,7 +553,7 @@ namespace PMS_POS
 
         private void BtnListadoProveedores_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoProveedores.Instance))
+            /*if (!userControlInicio1.Controls.Contains(ListadoProveedores.Instance))
             {
                 userControlInicio1.Controls.Add(ListadoProveedores.Instance);
                 ListadoProveedores.Instance.Dock = DockStyle.Fill;
@@ -562,7 +562,7 @@ namespace PMS_POS
             else
             {
                 ListadoProveedores.Instance.BringToFront();
-            }
+            }*/
         }
 
         private void BtnPuntoDeVenta_Click(object sender, EventArgs e)

@@ -19,7 +19,7 @@ namespace PMS_POS.View
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -33,6 +33,11 @@ namespace PMS_POS.View
         }
 
         private void CbxAccionAjuste_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AjustarStock_Load(object sender, EventArgs e)
         {
 
         }
