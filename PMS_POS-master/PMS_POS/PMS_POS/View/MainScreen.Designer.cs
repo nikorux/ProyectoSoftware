@@ -1198,10 +1198,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(939, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(1049, 7);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 16);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1212,9 +1213,10 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel4.Location = new System.Drawing.Point(154, 25);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(154, 29);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(962, 58);
+            this.panel4.Size = new System.Drawing.Size(1077, 58);
             this.panel4.TabIndex = 2;
             // 
             // timer1
@@ -1254,8 +1256,8 @@
             // 
             // userControlInicio1
             // 
-            this.userControlInicio1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.userControlInicio1.Location = new System.Drawing.Point(152, 82);
+            this.userControlInicio1.BackColor = System.Drawing.SystemColors.Menu;
+            this.userControlInicio1.Location = new System.Drawing.Point(279, 91);
             this.userControlInicio1.Name = "userControlInicio1";
             this.userControlInicio1.Size = new System.Drawing.Size(1062, 692);
             this.userControlInicio1.TabIndex = 1;
@@ -1265,7 +1267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1231, 774);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);

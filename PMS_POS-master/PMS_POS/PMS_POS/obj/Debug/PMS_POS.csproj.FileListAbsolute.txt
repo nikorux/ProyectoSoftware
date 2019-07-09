@@ -163,3 +163,43 @@ C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\PMS_POS\PMS_POS\
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Google.Protobuf.dll
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\MySql.Data.xml
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.CopyComplete
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\PMS_POS.exe.config
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\PMS_POS.exe
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\PMS_POS.pdb
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\MySql.Data.dll
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Google.Protobuf.dll
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\MySql.Data.xml
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csprojAssemblyReference.cache
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.Properties.Resources.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.AjustarStock.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarCategoriaProducto.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarRubroProveedor.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarTipoDocumento.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarTipoHabitacion.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.HistorialCompras.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.InformacionEstablecimiento.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ListaClientes.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ListadoEmpleados.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ListadoFacturas.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ListadoProducto.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ListadoProveedores.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ListadoReservaciones.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.Form1.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.NuevaReservacion.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.NuevoHuesped.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RecetaProducto.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistrarNuevaCompra.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistrarNuevoEmpleado.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistroNuevoProducto.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistroProveedor.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlHabitaciones.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlInicio.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.VentaPorCategoria.resources
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.GenerateResource.cache
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.CoreCompileInputs.cache
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.CopyComplete
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.exe
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.pdb
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\MetroFramework.dll
+C:\Users\CristianGuillen\Source\Repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\MetroFramework.Fonts.dll
