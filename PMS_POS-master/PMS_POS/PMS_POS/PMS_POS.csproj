@@ -52,11 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CategoriaP.cs" />
     <Compile Include="Controller\ControllerHabitacion.cs" />
     <Compile Include="Controller\DocumentoC.cs" />
     <Compile Include="Controller\RubroC.cs" />
     <Compile Include="Controller\TipoHabitacion.cs" />
     <Compile Include="Model\BDGeneral.cs" />
+    <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Documento.cs" />
     <Compile Include="Model\Habitacion.cs" />
     <Compile Include="Model\Huesped.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="Model\Reservacion.cs" />
     <Compile Include="Model\Rubro.cs" />
     <Compile Include="Model\TipoHabitacion.cs" />
+    <Compile Include="Model\UnidadMedida.cs" />
     <Compile Include="Model\validar.cs" />
     <Compile Include="View\AjustarStock.cs">
       <SubType>UserControl</SubType>
