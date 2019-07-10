@@ -3,6 +3,19 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+PMS_POS-master/PMS_POS/PMS_POS/View/MainScreen.Designer.cs
+PMS_POS-master/PMS_POS/PMS_POS/bin/Debug/PMS_POS.exe
+PMS_POS-master/PMS_POS/PMS_POS/bin/Debug/PMS_POS.pdb
+PMS_POS-master/PMS_POS/PMS_POS/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+PMS_POS-master/PMS_POS/PMS_POS/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+PMS_POS-master/PMS_POS/PMS_POS/obj/Debug/PMS_POS.csproj.CoreCompileInputs.cache
+PMS_POS-master/PMS_POS/PMS_POS/obj/Debug/PMS_POS.csproj.FileListAbsolute.txt
+PMS_POS-master/PMS_POS/PMS_POS/obj/Debug/PMS_POS.csproj.GenerateResource.cache
+PMS_POS-master/PMS_POS/PMS_POS/obj/Debug/PMS_POS.csprojAssemblyReference.cache
+PMS_POS-master/PMS_POS/PMS_POS/obj/Debug/PMS_POS.exe
+PMS_POS-master/PMS_POS/PMS_POS/obj/Debug/PMS_POS.pdb
+PMS_POS-master/PMS_POS/PMS_POS/obj/Release/PMS_POS.csproj.CoreCompileInputs.cache
+
 # User-specific files
 *.rsuser
 *.suo
