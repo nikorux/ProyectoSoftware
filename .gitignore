@@ -1,7 +1,9 @@
-.pdb
-.txt
-.bin
+.bin/
 .vs/
+.txt
+.cache
+.pdb
+.exe
 PMS_POS-master/PMS_POS/.vs/
 PMS_POS-master/PMS_POS/PMS_POS/obj/Debug/PMS_POS.csproj.CopyComplete
 PMS_POS-master/PMS_POS/PMS_POS/obj/Release/PMS_POS.csprojAssemblyReference.cache
