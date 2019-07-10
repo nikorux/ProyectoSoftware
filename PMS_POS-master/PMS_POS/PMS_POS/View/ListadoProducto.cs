@@ -445,6 +445,7 @@ namespace PMS_POS.View
                     float CantidadCalculada = 0;
                     if (cbxAccionAjuste.Text == "Aumentar")
                     {
+                        //formula unidad de medida fix
                         CantidadCalculada = float.Parse(dgvProductos.CurrentRow.Cells[9].Value.ToString()) + unidadMedida.Conversion(lblUnidadMedidaActual.Text, CantidadAjuste);
                         MessageBox.Show("sumar: " + float.Parse(dgvProductos.CurrentRow.Cells[9].Value.ToString()));
                     }

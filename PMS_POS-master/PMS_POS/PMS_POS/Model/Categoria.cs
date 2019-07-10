@@ -25,6 +25,7 @@ namespace PMS_POS.Model
 
         public DataTable VistaTabla()
         {
+            //
             instruccion = "Select NombreCategoria from categoria";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();

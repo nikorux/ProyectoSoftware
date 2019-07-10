@@ -344,6 +344,7 @@ namespace PMS_POS
 
         private void BtnRegistroProducto_Click(object sender, EventArgs e)
         {
+            //llama la instancia para el registro de productos
             if (!userControlInicio1.Controls.Contains(ListadoProducto.InstanceRP))
             {
                 userControlInicio1.Controls.Add(ListadoProducto.InstanceRP);
@@ -358,6 +359,7 @@ namespace PMS_POS
 
         private void BtnListaProductos_Click(object sender, EventArgs e)
         {
+            //llama la instancia para el listado de productos
             if (!userControlInicio1.Controls.Contains(ListadoProducto.InstanceLP))
             {
                 userControlInicio1.Controls.Add(ListadoProducto.InstanceLP);

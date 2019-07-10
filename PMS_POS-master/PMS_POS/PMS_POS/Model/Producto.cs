@@ -233,6 +233,7 @@ namespace PMS_POS.Model
             }
         }
 
+        //actualiza el stock luego de que se calcule la conversion de unidades de medida
         public bool UpdateAjusteStock(int IdInsumo, float CantidadAjuste)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))

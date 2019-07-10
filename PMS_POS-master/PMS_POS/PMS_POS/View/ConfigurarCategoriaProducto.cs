@@ -34,6 +34,7 @@ namespace PMS_POS.View
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            //
             Categoria categoria = new Categoria();
             categoria.NombreCategoria = txtCategoriaProducto.Text.Trim();
 

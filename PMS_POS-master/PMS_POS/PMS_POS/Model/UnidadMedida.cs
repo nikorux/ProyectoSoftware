@@ -12,13 +12,6 @@ namespace PMS_POS.Model
         public string Nombre { get; set; }
         public string Abreviatura { get; set; }
 
-        /*public UnidadMedida(string categoria, string nombre, string abreviatura)
-        {
-            this.Categoria = categoria;
-            this.Nombre = nombre;
-            this.Abreviatura = abreviatura;
-        }*/
-
         public float Conversion(String comparador, float valorTransformar)
         {
 
