@@ -1198,13 +1198,13 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1058, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1049, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(19, 29);
+            this.pictureBox1.Size = new System.Drawing.Size(19, 16);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -1212,10 +1212,9 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel4.Location = new System.Drawing.Point(154, 25);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(154, 29);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1077, 58);
             this.panel4.TabIndex = 2;
@@ -1257,14 +1256,10 @@
             // 
             // userControlInicio1
             // 
-            this.userControlInicio1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.userControlInicio1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.userControlInicio1.Location = new System.Drawing.Point(152, 82);
-            this.userControlInicio1.Margin = new System.Windows.Forms.Padding(0);
+            this.userControlInicio1.BackColor = System.Drawing.SystemColors.Menu;
+            this.userControlInicio1.Location = new System.Drawing.Point(279, 91);
             this.userControlInicio1.Name = "userControlInicio1";
-            this.userControlInicio1.Size = new System.Drawing.Size(1079, 692);
+            this.userControlInicio1.Size = new System.Drawing.Size(1062, 692);
             this.userControlInicio1.TabIndex = 1;
             this.userControlInicio1.Load += new System.EventHandler(this.UserControlInicio1_Load);
             // 
@@ -1272,7 +1267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1231, 774);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
