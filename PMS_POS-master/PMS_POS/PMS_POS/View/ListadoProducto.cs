@@ -17,6 +17,7 @@ namespace PMS_POS.View
 {
     public partial class ListadoProducto : UserControl
     {
+        //instancia que llama al user control ListadoProducto
         private static ListadoProducto _instanceLP;
         public static ListadoProducto InstanceLP
         {
@@ -28,6 +29,7 @@ namespace PMS_POS.View
             }
         }
 
+        //instancia que llama al user control RegistroProducto
         private static ListadoProducto _instanceRP;
         public static ListadoProducto InstanceRP
         {
@@ -42,6 +44,7 @@ namespace PMS_POS.View
         Producto producto = new Producto();
         UnidadMedida unidadMedida = new UnidadMedida();
 
+        //Cuando el MainScreen llama a Listado producto, manda una variable string (showUC) con el nombre del UserControl a mostrar
         public ListadoProducto(string showUC)
         {
             InitializeComponent();

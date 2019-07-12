@@ -14,6 +14,7 @@ namespace PMS_POS.Model
 
         public float Conversion(String comparador, float valorTransformar)
         {
+            //-----------------Masa----------------------------
 
             float transformado = 0;
 
@@ -25,19 +26,19 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Onza":
-                        transformado = valorTransformar * 437.5f;
+                        transformado = valorTransformar * 0.0023f;
                         break;
                     case "Libra":
-                        transformado = valorTransformar * 7000f;
+                        transformado = valorTransformar * 0.0014f;
                         break;
                     case "Miligramo":
-                        transformado = valorTransformar * 0.015f;
+                        transformado = valorTransformar * 64.7989f;
                         break;
                     case "Gramo":
-                        transformado = valorTransformar * 15.43f;
+                        transformado = valorTransformar * 0.065f;
                         break;
                     case "Kilogramo":
-                        transformado = valorTransformar * 15432.36f;
+                        transformado = valorTransformar * 0.000065f;
                         break;
                 }
             }
@@ -50,19 +51,19 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Grano":
-                        transformado = valorTransformar * 0.0023f;
+                        transformado = valorTransformar * 437.5f;
                         break;
                     case "Libra":
-                        transformado = valorTransformar * 16f;
+                        transformado = valorTransformar * 0.0625f;
                         break;
                     case "Miligramo":
-                        transformado = valorTransformar * 0.000035f;
+                        transformado = valorTransformar * 28349.5f;
                         break;
                     case "Gramo":
-                        transformado = valorTransformar * 0.035f;
+                        transformado = valorTransformar * 28.3f;
                         break;
                     case "Kilogramo":
-                        transformado = valorTransformar * 35.27f;
+                        transformado = valorTransformar * 0.028f;
                         break;
                 }
             }
@@ -75,19 +76,19 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Grano":
-                        transformado = valorTransformar * 0.00014f;
+                        transformado = valorTransformar * 7000f;
                         break;
                     case "Onza":
-                        transformado = valorTransformar * 0.0625f;
+                        transformado = valorTransformar * 16f;
                         break;
                     case "Miligramo":
-                        transformado = valorTransformar * 0.0000022f;
+                        transformado = valorTransformar * 453592f;
                         break;
                     case "Gramo":
-                        transformado = valorTransformar * 0.0022f;
+                        transformado = valorTransformar * 453.592f;
                         break;
                     case "Kilogramo":
-                        transformado = valorTransformar * 2.20f;
+                        transformado = valorTransformar * 0.45f;
                         break;
                 }
             }
@@ -100,19 +101,19 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Grano":
-                        transformado = valorTransformar * 64.80f;
+                        transformado = valorTransformar * 0.015f;
                         break;
                     case "Onza":
-                        transformado = valorTransformar * 28349.52f;
+                        transformado = valorTransformar * 0.000035f;
                         break;
                     case "Libra":
-                        transformado = valorTransformar * 453592.37f;
+                        transformado = valorTransformar * 0.0000022f;
                         break;
                     case "Gramo":
-                        transformado = valorTransformar * 1000f;
+                        transformado = valorTransformar * 0.001f;
                         break;
                     case "Kilogramo":
-                        transformado = valorTransformar * 1000000f;
+                        transformado = valorTransformar * 0.000001f;
                         break;
                 }
             }
@@ -125,19 +126,19 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Grano":
-                        transformado = valorTransformar * 0.065f;
+                        transformado = valorTransformar * 15.43f;
                         break;
                     case "Onza":
-                        transformado = valorTransformar * 28.35f;
+                        transformado = valorTransformar * 0.035f;
                         break;
                     case "Libra":
-                        transformado = valorTransformar * 453.59f;
+                        transformado = valorTransformar * 0.0022f;
                         break;
                     case "Miligramo":
-                        transformado = valorTransformar * 0.001f;
+                        transformado = valorTransformar * 1000f;
                         break;
                     case "Kilogramo":
-                        transformado = valorTransformar * 1000f;
+                        transformado = valorTransformar * 0.001f;
                         break;
                 }
             }
@@ -150,22 +151,24 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Grano":
-                        transformado = valorTransformar * 0.000065f;
+                        transformado = valorTransformar * 15432.36f;
                         break;
                     case "Onza":
-                        transformado = valorTransformar * 0.028f;
+                        transformado = valorTransformar * 35.3f;
                         break;
                     case "Libra":
-                        transformado = valorTransformar * 0.45f;
+                        transformado = valorTransformar * 2.20f;
                         break;
                     case "Miligramo":
-                        transformado = valorTransformar * 0.000001f;
+                        transformado = valorTransformar * 100000f;
                         break;
                     case "Gramo":
-                        transformado = valorTransformar * 0.001f;
+                        transformado = valorTransformar * 1000f;
                         break;
                 }
             }
+
+            //-----------------Volumen----------------------------
 
             if (this.Nombre.Equals("Cuchara de té"))
             {
@@ -175,34 +178,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de madera":
-                        transformado = valorTransformar * 3f;
+                        transformado = valorTransformar * 0.333333f;
                         break;
                     case "Onza fluida":
-                        transformado = valorTransformar * 6f;
+                        transformado = valorTransformar * 0.166667f;
                         break;
                     case "Taza":
-                        transformado = valorTransformar * 48f;
+                        transformado = valorTransformar / 0.2083f;
                         break;
                     case "Medio litro":
-                        transformado = valorTransformar * 96f;
+                        transformado = valorTransformar * 0.0104f;
                         break;
                     case "Cuarto de galón":
-                        transformado = valorTransformar * 192f;
+                        transformado = valorTransformar * 0.0052f;
                         break;
                     case "Galón":
-                        transformado = valorTransformar * 768f;
+                        transformado = valorTransformar * 0.0013f;
                         break;
                     case "Barril":
-                        transformado = valorTransformar * 32256f;
-                        break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.000202884f;
+                        transformado = valorTransformar * 3.1002f;
                         break;
                     case "Mililitros":
-                        transformado = valorTransformar * 0.202884136f;
+                        transformado = valorTransformar * 4.9289f;
                         break;
                     case "Litros":
-                        transformado = valorTransformar * 202.8841362f;
+                        transformado = valorTransformar * 0.0049f;
                         break;
                 }
             }
@@ -215,34 +215,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de té":
-                        transformado = valorTransformar * 0.333333333f;
+                        transformado = valorTransformar * 3f;
                         break;
                     case "Onza fluida":
-                        transformado = valorTransformar * 2f;
+                        transformado = valorTransformar * 0.5f;
                         break;
                     case "Taza":
-                        transformado = valorTransformar * 16f;
+                        transformado = valorTransformar * 0.0625f;
                         break;
                     case "Medio litro":
-                        transformado = valorTransformar * 32f;
+                        transformado = valorTransformar * 0.03125f;
                         break;
                     case "Cuarto de galón":
-                        transformado = valorTransformar * 64f;
+                        transformado = valorTransformar * 0.0156f;
                         break;
                     case "Galón":
-                        transformado = valorTransformar * 256f;
+                        transformado = valorTransformar * 0.0039f;
                         break;
                     case "Barril":
-                        transformado = valorTransformar * 10752f;
-                        break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.000068f;
+                        transformado = valorTransformar * 9.3006f;
                         break;
                     case "Mililitros":
-                        transformado = valorTransformar * 0.067628045f;
+                        transformado = valorTransformar * 14.7867f;
                         break;
                     case "Litros":
-                        transformado = valorTransformar * 67.6280454f;
+                        transformado = valorTransformar * 0.0148f;
                         break;
                 }
             }
@@ -255,34 +252,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de té":
-                        transformado = valorTransformar * 0.166666667f;
+                        transformado = valorTransformar * 6f;
                         break;
                     case "Cuchara de madera":
-                        transformado = valorTransformar * 0.5f;
+                        transformado = valorTransformar * 2f;
                         break;
                     case "Taza":
-                        transformado = valorTransformar * 8f;
+                        transformado = valorTransformar * 0.125f;
                         break;
                     case "Medio litro":
-                        transformado = valorTransformar * 16f;
+                        transformado = valorTransformar * 0.0625f;
                         break;
                     case "Cuarto de galón":
-                        transformado = valorTransformar * 32f;
+                        transformado = valorTransformar * 0.03125f;
                         break;
                     case "Galón":
-                        transformado = valorTransformar * 128f;
+                        transformado = valorTransformar * 0.0078f;
                         break;
                     case "Barril":
-                        transformado = valorTransformar * 5376f;
-                        break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.000034f;
+                        transformado = valorTransformar * 0.000186f;
                         break;
                     case "Mililitros":
-                        transformado = valorTransformar * 0.033814023f;
+                        transformado = valorTransformar * 29.5735f;
                         break;
                     case "Litros":
-                        transformado = valorTransformar * 33.8140227f;
+                        transformado = valorTransformar * 0.0296f;
                         break;
                 }
             }
@@ -295,34 +289,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de té":
-                        transformado = valorTransformar * 0.020833333f;
+                        transformado = valorTransformar * 48f;
                         break;
                     case "Cuchara de madera":
-                        transformado = valorTransformar * 0.0625f;
-                        break;
-                    case "Onza fluida":
-                        transformado = valorTransformar * 0.125f;
-                        break;
-                    case "Medio litro":
-                        transformado = valorTransformar * 2f;
-                        break;
-                    case "Cuarto de galón":
-                        transformado = valorTransformar * 4f;
-                        break;
-                    case "Galón":
                         transformado = valorTransformar * 16f;
                         break;
-                    case "Barril":
-                        transformado = valorTransformar * 672f;
+                    case "Onza fluida":
+                        transformado = valorTransformar * 8f;
                         break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.0000042f;
+                    case "Medio litro":
+                        transformado = valorTransformar * 0.5f;
+                        break;
+                    case "Cuarto de galón":
+                        transformado = valorTransformar * 0.25f;
+                        break;
+                    case "Galón":
+                        transformado = valorTransformar * 0.0625f;
+                        break;
+                    case "Barril":
+                        transformado = valorTransformar * 0.0015f;
                         break;
                     case "Mililitros":
-                        transformado = valorTransformar * 0.004226753f;
+                        transformado = valorTransformar * 236.59f;
                         break;
                     case "Litros":
-                        transformado = valorTransformar * 4.226752838f;
+                        transformado = valorTransformar * 0.2366f;
                         break;
                 }
             }
@@ -335,34 +326,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de té":
-                        transformado = valorTransformar * 0.010416667f;
+                        transformado = valorTransformar * 96f;
                         break;
                     case "Cuchara de madera":
-                        transformado = valorTransformar * 0.03125f;
+                        transformado = valorTransformar * 32f;
                         break;
                     case "Onza fluida":
-                        transformado = valorTransformar * 0.0625f;
+                        transformado = valorTransformar * 16f;
                         break;
                     case "Taza":
-                        transformado = valorTransformar * 0.5f;
-                        break;
-                    case "Cuarto de galón":
                         transformado = valorTransformar * 2f;
                         break;
+                    case "Cuarto de galón":
+                        transformado = valorTransformar * 0.5f;
+                        break;
                     case "Galón":
-                        transformado = valorTransformar * 8f;
+                        transformado = valorTransformar * 0.125f;
                         break;
                     case "Barril":
-                        transformado = valorTransformar * 336f;
-                        break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.0000021f;
+                        transformado = valorTransformar * 0.002976f;
                         break;
                     case "Mililitros":
-                        transformado = valorTransformar * 0.002113376f;
+                        transformado = valorTransformar * 473.1765f;
                         break;
                     case "Litros":
-                        transformado = valorTransformar * 2.113376419f;
+                        transformado = valorTransformar * 0.4732f;
                         break;
                 }
             }
@@ -375,34 +363,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de té":
-                        transformado = valorTransformar * 0.005208333f;
+                        transformado = valorTransformar * 192f;
                         break;
                     case "Cuchara de madera":
-                        transformado = valorTransformar * 0.015625f;
+                        transformado = valorTransformar * 64f;
                         break;
                     case "Onza fluida":
-                        transformado = valorTransformar * 0.03125f;
+                        transformado = valorTransformar * 32f;
                         break;
                     case "Taza":
-                        transformado = valorTransformar * 0.25f;
-                        break;
-                    case "Medio litro":
-                        transformado = valorTransformar * 0.5f;
-                        break;
-                    case "Galón":
                         transformado = valorTransformar * 4f;
                         break;
-                    case "Barril":
-                        transformado = valorTransformar * 168f;
+                    case "Medio litro":
+                        transformado = valorTransformar * 2f;
                         break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.0000011f;
+                    case "Galón":
+                        transformado = valorTransformar * 0.25f;
+                        break;
+                    case "Barril":
+                        transformado = valorTransformar * 0.00952f;
                         break;
                     case "Mililitros":
-                        transformado = valorTransformar * 0.001056688f;
+                        transformado = valorTransformar * 946.3529f;
                         break;
                     case "Litros":
-                        transformado = valorTransformar * 1.056688209f;
+                        transformado = valorTransformar * 0.9464f;
                         break;
                 }
             }
@@ -415,34 +400,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de té":
-                        transformado = valorTransformar * 0.001302083f;
+                        transformado = valorTransformar * 768f;
                         break;
                     case "Cuchara de madera":
-                        transformado = valorTransformar * 0.00390625f;
+                        transformado = valorTransformar * 256f;
                         break;
                     case "Onza fluida":
-                        transformado = valorTransformar * 0.0078125f;
+                        transformado = valorTransformar * 128f;
                         break;
                     case "Taza":
-                        transformado = valorTransformar * 0.0625f;
+                        transformado = valorTransformar * 16f;
                         break;
                     case "Medio litro":
-                        transformado = valorTransformar * 0.125f;
+                        transformado = valorTransformar * 8f;
                         break;
                     case "Cuarto de galón":
-                        transformado = valorTransformar * 0.25f;
+                        transformado = valorTransformar * 4f;
                         break;
                     case "Barril":
-                        transformado = valorTransformar * 42f;
-                        break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.00000026f;
+                        transformado = valorTransformar * 0.0238f;
                         break;
                     case "Mililitros":
-                        transformado = valorTransformar * 0.000264172f;
+                        transformado = valorTransformar * 3785.4118f;
                         break;
                     case "Litros":
-                        transformado = valorTransformar * 0.264172052f;
+                        transformado = valorTransformar * 3.7854f;
                         break;
                 }
             }
@@ -455,74 +437,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de té":
-                        transformado = valorTransformar * 0.000031f;
+                        transformado = valorTransformar * 32256f;
                         break;
                     case "Cuchara de madera":
-                        transformado = valorTransformar * 0.000093f;
+                        transformado = valorTransformar * 10752f;
                         break;
                     case "Onza fluida":
-                        transformado = valorTransformar * 0.000186012f;
+                        transformado = valorTransformar * 5376f;
                         break;
                     case "Taza":
-                        transformado = valorTransformar * 0.001488095f;
+                        transformado = valorTransformar * 672f;
                         break;
                     case "Medio litro":
-                        transformado = valorTransformar * 0.00297619f;
+                        transformado = valorTransformar * 336f;
                         break;
                     case "Cuarto de galón":
-                        transformado = valorTransformar * 0.005952381f;
+                        transformado = valorTransformar * 168f;
                         break;
                     case "Galón":
-                        transformado = valorTransformar * 0.023809524f;
-                        break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.0000000063f;
+                        transformado = valorTransformar * 42f;
                         break;
                     case "Mililitros":
-                        transformado = valorTransformar * 0.0000063f;
+                        transformado = valorTransformar * 158987.2949f;
                         break;
                     case "Litros":
-                        transformado = valorTransformar * 0.006289811f;
-                        break;
-                }
-            }
-
-            if (this.Nombre.Equals("Milímetros cb"))
-            {
-                switch (comparador)
-                {
-                    case "Milímetros cb":
-                        transformado = valorTransformar;
-                        break;
-                    case "Cuchara de té":
-                        transformado = valorTransformar * 4928.921594f;
-                        break;
-                    case "Cuchara de madera":
-                        transformado = valorTransformar * 14786.76478f;
-                        break;
-                    case "Onza fluida":
-                        transformado = valorTransformar * 29573.52956f;
-                        break;
-                    case "Taza":
-                        transformado = valorTransformar * 236588.2365f;
-                        break;
-                    case "Medio litro":
-                        transformado = valorTransformar * 473176.473f;
-                        break;
-                    case "Cuarto de galón":
-                        transformado = valorTransformar * 946352.946f;
-                        break;
-                    case "Galón":
-                        transformado = valorTransformar * 3785411.784f;
-                        break;
-                    case "Barril":
-                        transformado = valorTransformar * 158987294.9f;
-                        break;
-                    case "Mililitros":
-                        transformado = valorTransformar * 1000f;
-                        break;
-                    case "Litros":
-                        transformado = valorTransformar * 1000000f;
+                        transformado = valorTransformar * 158.9873f;
                         break;
                 }
             }
@@ -535,34 +474,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de té":
-                        transformado = valorTransformar * 4.928921594f;
+                        transformado = valorTransformar * 0.2029f;
                         break;
                     case "Cuchara de madera":
-                        transformado = valorTransformar * 14.78676478f;
+                        transformado = valorTransformar * 0.06763f;
                         break;
                     case "Onza fluida":
-                        transformado = valorTransformar * 29.57352956f;
+                        transformado = valorTransformar * 0.0338f;
                         break;
                     case "Taza":
-                        transformado = valorTransformar * 236.5882365f;
+                        transformado = valorTransformar * 0.0042267f;
                         break;
                     case "Medio litro":
-                        transformado = valorTransformar * 473.176473f;
+                        transformado = valorTransformar * 0.0021134f;
                         break;
                     case "Cuarto de galón":
-                        transformado = valorTransformar * 946.352946f;
+                        transformado = valorTransformar * 0.0010567f;
                         break;
                     case "Galón":
-                        transformado = valorTransformar * 3785.411784f;
+                        transformado = valorTransformar * 0.00026417f;
                         break;
                     case "Barril":
-                        transformado = valorTransformar * 158987.2949f;
-                        break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.001f;
+                        transformado = valorTransformar * 6.2898f;
                         break;
                     case "Litros":
-                        transformado = valorTransformar * 1000f;
+                        transformado = valorTransformar * 0.001f;
                         break;
                 }
             }
@@ -575,34 +511,31 @@ namespace PMS_POS.Model
                         transformado = valorTransformar;
                         break;
                     case "Cuchara de té":
-                        transformado = valorTransformar * 0.004928922f;
+                        transformado = valorTransformar * 202.8841f;
                         break;
                     case "Cuchara de madera":
-                        transformado = valorTransformar * 0.014786765f;
+                        transformado = valorTransformar * 67.6280f;
                         break;
                     case "Onza fluida":
-                        transformado = valorTransformar * 0.02957353f;
+                        transformado = valorTransformar * 33.8140f;
                         break;
                     case "Taza":
-                        transformado = valorTransformar * 0.236588237f;
+                        transformado = valorTransformar * 4.22675f;
                         break;
                     case "Medio litro":
-                        transformado = valorTransformar * 0.473176473f;
+                        transformado = valorTransformar * 2.1134f;
                         break;
                     case "Cuarto de galón":
-                        transformado = valorTransformar * 0.946352946f;
+                        transformado = valorTransformar * 1.05669f;
                         break;
                     case "Galón":
-                        transformado = valorTransformar * 3.785411784f;
+                        transformado = valorTransformar * 0.26417f;
                         break;
                     case "Barril":
-                        transformado = valorTransformar * 158.9872949f;
-                        break;
-                    case "Milímetros cb":
-                        transformado = valorTransformar * 0.000001f;
+                        transformado = valorTransformar * 0.0062898f;
                         break;
                     case "Mililitros":
-                        transformado = valorTransformar * 0.001f;
+                        transformado = valorTransformar * 1000f;
                         break;
                 }
             }
