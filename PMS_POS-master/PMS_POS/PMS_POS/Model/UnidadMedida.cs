@@ -16,6 +16,8 @@ namespace PMS_POS.Model
         {
             //---------------Masa-----------------
 
+            //-----------------Masa------------------
+
             float transformado = 0;
 
             if (this.Nombre.Equals("Grano"))
