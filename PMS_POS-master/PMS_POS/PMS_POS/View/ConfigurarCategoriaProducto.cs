@@ -13,7 +13,7 @@ using PMS_POS.Model;
 namespace PMS_POS.View
 {
     public partial class ConfigurarCategoriaProducto : UserControl
-    {
+    {//
         Categoria obj = new Categoria();
 
         private static ConfigurarCategoriaProducto _instance;
@@ -34,7 +34,6 @@ namespace PMS_POS.View
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            //
             Categoria categoria = new Categoria();
             categoria.NombreCategoria = txtCategoriaProducto.Text.Trim();
 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace PMS_POS.Model
 {
     class Producto
-    {
+    {//
         public int IdInsumo { get; set; }
         public string NombreInsumo { get; set; }
         public int IdCategoria { get; set; }
@@ -30,12 +30,10 @@ namespace PMS_POS.Model
         public string SelectNombreCategoriaFROMIdCategoria(int IdCategoria)
         {
             string NombreCategoriaP = null;
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
 
             try
             {
-                //Select query
                 string sql = "SELECT NombreCategoria FROM categoria WHERE IdCategoria=@idCategoria";// creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
