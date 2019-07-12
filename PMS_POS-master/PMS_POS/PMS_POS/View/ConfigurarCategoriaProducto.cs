@@ -13,7 +13,7 @@ using PMS_POS.Model;
 namespace PMS_POS.View
 {
     public partial class ConfigurarCategoriaProducto : UserControl
-    {
+    {//
         Categoria obj = new Categoria();
 
         private static ConfigurarCategoriaProducto _instance;

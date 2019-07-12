@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace PMS_POS.Model
 {
     class Producto
-    {
+    {//
         public int IdInsumo { get; set; }
         public string NombreInsumo { get; set; }
         public int IdCategoria { get; set; }
