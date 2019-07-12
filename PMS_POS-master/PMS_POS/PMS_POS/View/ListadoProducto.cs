@@ -14,7 +14,7 @@ using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 
 namespace PMS_POS.View
-{//
+{
     public partial class ListadoProducto : UserControl
     {
         //instancia que llama al user control ListadoProducto
