@@ -30,7 +30,6 @@ namespace PMS_POS.Model
         public string SelectNombreCategoriaFROMIdCategoria(int IdCategoria)
         {
             string NombreCategoriaP = null;
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
 
             try
