@@ -13,6 +13,7 @@ namespace PMS_POS.Model
 {
     public partial class BuscarHabitacion : Form
     {
+
         public BuscarHabitacion()
         {
             InitializeComponent();

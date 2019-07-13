@@ -43,20 +43,18 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtNombreCompania = new System.Windows.Forms.TextBox();
-            this.rbtnNoCompania = new System.Windows.Forms.RadioButton();
-            this.rbtnEsCompania = new System.Windows.Forms.RadioButton();
-            this.rbtnSexoFemenino = new System.Windows.Forms.RadioButton();
-            this.rbtnSexoMasculino = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
             this.txtPrimerNombre = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxCompania = new System.Windows.Forms.ComboBox();
+            this.cbxSexo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -247,6 +245,7 @@
             this.label17.Size = new System.Drawing.Size(133, 19);
             this.label17.TabIndex = 156;
             this.label17.Text = "Nuevo Huésped";
+            this.label17.Click += new System.EventHandler(this.Label17_Click);
             // 
             // txtNombreCompania
             // 
@@ -258,58 +257,6 @@
             this.txtNombreCompania.Name = "txtNombreCompania";
             this.txtNombreCompania.Size = new System.Drawing.Size(89, 14);
             this.txtNombreCompania.TabIndex = 154;
-            // 
-            // rbtnNoCompania
-            // 
-            this.rbtnNoCompania.AutoSize = true;
-            this.rbtnNoCompania.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnNoCompania.Location = new System.Drawing.Point(78, 300);
-            this.rbtnNoCompania.Name = "rbtnNoCompania";
-            this.rbtnNoCompania.Size = new System.Drawing.Size(49, 23);
-            this.rbtnNoCompania.TabIndex = 153;
-            this.rbtnNoCompania.TabStop = true;
-            this.rbtnNoCompania.Text = "No";
-            this.rbtnNoCompania.UseVisualStyleBackColor = true;
-            this.rbtnNoCompania.CheckedChanged += new System.EventHandler(this.rbtnNoCompania_CheckedChanged);
-            // 
-            // rbtnEsCompania
-            // 
-            this.rbtnEsCompania.AutoSize = true;
-            this.rbtnEsCompania.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnEsCompania.Location = new System.Drawing.Point(28, 300);
-            this.rbtnEsCompania.Name = "rbtnEsCompania";
-            this.rbtnEsCompania.Size = new System.Drawing.Size(39, 23);
-            this.rbtnEsCompania.TabIndex = 152;
-            this.rbtnEsCompania.TabStop = true;
-            this.rbtnEsCompania.Text = "Sí";
-            this.rbtnEsCompania.UseVisualStyleBackColor = true;
-            this.rbtnEsCompania.CheckedChanged += new System.EventHandler(this.rbtnEsCompania_CheckedChanged);
-            // 
-            // rbtnSexoFemenino
-            // 
-            this.rbtnSexoFemenino.AutoSize = true;
-            this.rbtnSexoFemenino.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnSexoFemenino.Location = new System.Drawing.Point(28, 248);
-            this.rbtnSexoFemenino.Name = "rbtnSexoFemenino";
-            this.rbtnSexoFemenino.Size = new System.Drawing.Size(35, 23);
-            this.rbtnSexoFemenino.TabIndex = 151;
-            this.rbtnSexoFemenino.TabStop = true;
-            this.rbtnSexoFemenino.Text = "F";
-            this.rbtnSexoFemenino.UseVisualStyleBackColor = true;
-            this.rbtnSexoFemenino.CheckedChanged += new System.EventHandler(this.rbtnSexoFemenino_CheckedChanged);
-            // 
-            // rbtnSexoMasculino
-            // 
-            this.rbtnSexoMasculino.AutoSize = true;
-            this.rbtnSexoMasculino.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnSexoMasculino.Location = new System.Drawing.Point(84, 248);
-            this.rbtnSexoMasculino.Name = "rbtnSexoMasculino";
-            this.rbtnSexoMasculino.Size = new System.Drawing.Size(41, 23);
-            this.rbtnSexoMasculino.TabIndex = 150;
-            this.rbtnSexoMasculino.TabStop = true;
-            this.rbtnSexoMasculino.Text = "M";
-            this.rbtnSexoMasculino.UseVisualStyleBackColor = true;
-            this.rbtnSexoMasculino.CheckedChanged += new System.EventHandler(this.rbtnSexoMasculino_CheckedChanged);
             // 
             // label1
             // 
@@ -377,17 +324,6 @@
             this.label7.TabIndex = 140;
             this.label7.Text = "Nombre:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(28, 285);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 16);
-            this.label6.TabIndex = 139;
-            this.label6.Text = "Acompañante:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -412,6 +348,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbxCompania);
+            this.groupBox1.Controls.Add(this.cbxSexo);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.pictureBox12);
             this.groupBox1.Controls.Add(this.pictureBox11);
             this.groupBox1.Controls.Add(this.pictureBox10);
@@ -437,22 +376,17 @@
             this.groupBox1.Controls.Add(this.txtProvincia);
             this.groupBox1.Controls.Add(this.txtPrimerApellido);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.rbtnNoCompania);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.rbtnEsCompania);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtPaisNatal);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lbl);
             this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtPrimerNombre);
             this.groupBox1.Controls.Add(this.txtSegundoApellido);
             this.groupBox1.Controls.Add(this.txtNombreCompania);
-            this.groupBox1.Controls.Add(this.rbtnSexoFemenino);
             this.groupBox1.Controls.Add(this.txtDireccion);
-            this.groupBox1.Controls.Add(this.rbtnSexoMasculino);
             this.groupBox1.Controls.Add(this.txtSegundoNombre);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -461,6 +395,40 @@
             this.groupBox1.Size = new System.Drawing.Size(749, 399);
             this.groupBox1.TabIndex = 179;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
+            // 
+            // cbxCompania
+            // 
+            this.cbxCompania.FormattingEnabled = true;
+            this.cbxCompania.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.cbxCompania.Location = new System.Drawing.Point(27, 304);
+            this.cbxCompania.Name = "cbxCompania";
+            this.cbxCompania.Size = new System.Drawing.Size(91, 21);
+            this.cbxCompania.TabIndex = 201;
+            // 
+            // cbxSexo
+            // 
+            this.cbxSexo.FormattingEnabled = true;
+            this.cbxSexo.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
+            this.cbxSexo.Location = new System.Drawing.Point(27, 249);
+            this.cbxSexo.Name = "cbxSexo";
+            this.cbxSexo.Size = new System.Drawing.Size(196, 21);
+            this.cbxSexo.TabIndex = 200;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(28, 288);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.TabIndex = 186;
+            this.label2.Text = "Compañía:";
             // 
             // pictureBox12
             // 
@@ -670,6 +638,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 185;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // NuevoHuesped
             // 
@@ -682,7 +651,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "NuevoHuesped";
-            this.Size = new System.Drawing.Size(977, 687);
+            this.Size = new System.Drawing.Size(1114, 567);
             this.Load += new System.EventHandler(this.NuevoHuesped_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -721,17 +690,12 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtNombreCompania;
-        private System.Windows.Forms.RadioButton rbtnNoCompania;
-        private System.Windows.Forms.RadioButton rbtnEsCompania;
-        private System.Windows.Forms.RadioButton rbtnSexoFemenino;
-        private System.Windows.Forms.RadioButton rbtnSexoMasculino;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.TextBox txtPrimerNombre;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -755,5 +719,8 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.DataGridView dgvHuespedes;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxSexo;
+        private System.Windows.Forms.ComboBox cbxCompania;
     }
 }

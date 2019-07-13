@@ -400,7 +400,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "NuevaReservacion";
-            this.Size = new System.Drawing.Size(1287, 677);
+            this.Size = new System.Drawing.Size(1114, 567);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

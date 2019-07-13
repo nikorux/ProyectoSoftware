@@ -428,15 +428,15 @@ namespace PMS_POS
 
         private void BtnConfigurarTipoCategoria_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ConfigurarCategoriaProducto.Instance))
+            if (!userControlInicio1.Controls.Contains(UserControlClientes.Instance))
             {
-                userControlInicio1.Controls.Add(ConfigurarCategoriaProducto.Instance);
-                ConfigurarCategoriaProducto.Instance.Dock = DockStyle.Fill;
-                ConfigurarCategoriaProducto.Instance.BringToFront();
+                userControlInicio1.Controls.Add(UserControlClientes.Instance);
+                UserControlClientes.Instance.Dock = DockStyle.Fill;
+                UserControlClientes.Instance.BringToFront();
             }
             else
             {
-                ConfigurarCategoriaProducto.Instance.BringToFront();
+                UserControlClientes.Instance.BringToFront();
             }
         }
 
