@@ -1,4 +1,4 @@
-﻿namespace PMS_POS
+namespace PMS_POS
 {
     partial class Form1
     {
@@ -101,6 +101,7 @@
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.timer7 = new System.Windows.Forms.Timer(this.components);
+            this.userControlInicio1 = new PMS_POS.View.UserControlInicio();
             this.panel1.SuspendLayout();
             this.ReservacionesDropDown.SuspendLayout();
             this.DropDownProductos.SuspendLayout();
@@ -1271,6 +1272,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.userControlInicio1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1368,4 +1370,3 @@
         private System.Windows.Forms.Timer timer7;
     }
 }
-
