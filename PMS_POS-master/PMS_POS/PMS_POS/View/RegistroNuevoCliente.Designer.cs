@@ -31,6 +31,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxCompania = new System.Windows.Forms.ComboBox();
+            this.cbxSexo = new System.Windows.Forms.ComboBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -71,8 +73,6 @@
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbxSexo = new System.Windows.Forms.ComboBox();
-            this.cbxCompania = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -161,6 +161,28 @@
             this.groupBox1.Size = new System.Drawing.Size(749, 399);
             this.groupBox1.TabIndex = 187;
             this.groupBox1.TabStop = false;
+            // 
+            // cbxCompania
+            // 
+            this.cbxCompania.FormattingEnabled = true;
+            this.cbxCompania.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.cbxCompania.Location = new System.Drawing.Point(31, 302);
+            this.cbxCompania.Name = "cbxCompania";
+            this.cbxCompania.Size = new System.Drawing.Size(95, 21);
+            this.cbxCompania.TabIndex = 197;
+            // 
+            // cbxSexo
+            // 
+            this.cbxSexo.FormattingEnabled = true;
+            this.cbxSexo.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
+            this.cbxSexo.Location = new System.Drawing.Point(31, 249);
+            this.cbxSexo.Name = "cbxSexo";
+            this.cbxSexo.Size = new System.Drawing.Size(125, 21);
+            this.cbxSexo.TabIndex = 196;
             // 
             // pictureBox12
             // 
@@ -592,28 +614,6 @@
             this.pictureBox1.TabIndex = 190;
             this.pictureBox1.TabStop = false;
             // 
-            // cbxSexo
-            // 
-            this.cbxSexo.FormattingEnabled = true;
-            this.cbxSexo.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino"});
-            this.cbxSexo.Location = new System.Drawing.Point(31, 249);
-            this.cbxSexo.Name = "cbxSexo";
-            this.cbxSexo.Size = new System.Drawing.Size(125, 21);
-            this.cbxSexo.TabIndex = 196;
-            // 
-            // cbxCompania
-            // 
-            this.cbxCompania.FormattingEnabled = true;
-            this.cbxCompania.Items.AddRange(new object[] {
-            "Sí",
-            "No"});
-            this.cbxCompania.Location = new System.Drawing.Point(31, 302);
-            this.cbxCompania.Name = "cbxCompania";
-            this.cbxCompania.Size = new System.Drawing.Size(95, 21);
-            this.cbxCompania.TabIndex = 197;
-            // 
             // RegistroNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -625,6 +625,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "RegistroNuevoCliente";
             this.Text = "RegistroNuevoCliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistroNuevoCliente_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroNuevoCliente_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();

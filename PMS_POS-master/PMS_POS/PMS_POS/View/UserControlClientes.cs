@@ -19,6 +19,7 @@ namespace PMS_POS.View
         MySqlConnection conex;
         string cadenaconex;
         Huesped obj = new Huesped();
+        RegistroNuevoCliente form2 = new RegistroNuevoCliente();
 
         private static UserControlClientes _instance;
         public static UserControlClientes Instance
@@ -31,6 +32,7 @@ namespace PMS_POS.View
             }
         }
 
+
         public UserControlClientes()
         {
             InitializeComponent();
@@ -38,8 +40,19 @@ namespace PMS_POS.View
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
-            Form formulario = new RegistroNuevoCliente();
-            formulario.Show();
+            /*Form formulario = new RegistroNuevoCliente();
+            formulario.Show();*/
+
+            RegistroNuevoCliente form2 = new RegistroNuevoCliente();
+            form2.FormClosed += new FormClosedEventHandler(RegistroNuevoCliente_FormClosed);
+            form2.ShowDialog();
+
+        }
+
+        public void RefreshGrid()
+        {
+            dgvClientes.DataSource = null;
+            dgvClientes.DataSource = obj.VistaTabla();
         }
 
         private void UserControlClientes_Load(object sender, EventArgs e)
@@ -97,6 +110,20 @@ namespace PMS_POS.View
 
             }
 
+        }
+
+        private void RegistroNuevoCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void RegistroNuevoCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            RefreshGrid();
         }
     }
 }

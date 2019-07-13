@@ -15,11 +15,12 @@ namespace PMS_POS.View
 {
     public partial class RegistroNuevoCliente : Form
     {
+
         public RegistroNuevoCliente()
         {
             InitializeComponent();
         }
-
+        
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             {
@@ -50,6 +51,8 @@ namespace PMS_POS.View
                     limpiar.BorrarCampos(this, groupBox1);
                     //cbxTipoIdentificacion.Items.Clear();
                     //cbxTipoIdentificacion.SelectedIndex = 0;
+                   
+
                 }
                 else
                 {
@@ -57,5 +60,14 @@ namespace PMS_POS.View
                 }
             }
         }
+
+        private void RegistroNuevoCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+
+        private void RegistroNuevoCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }
+
