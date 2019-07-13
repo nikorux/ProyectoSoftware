@@ -35,32 +35,8 @@ namespace PMS_POS.View
         }
 
 
-
-        String Sexo;
-        String Compania;
-
         private void NuevoHuesped_Load(object sender, EventArgs e)
         {
-        }
-
-        private void rbtnSexoFemenino_CheckedChanged(object sender, EventArgs e)
-        {
-            Sexo = "F";
-        }
-
-        private void rbtnSexoMasculino_CheckedChanged(object sender, EventArgs e)
-        {
-            Sexo = "M";
-        }
-
-        private void rbtnEsCompania_CheckedChanged(object sender, EventArgs e)
-        {
-            Compania = "Sí";
-        }
-
-        private void rbtnNoCompania_CheckedChanged(object sender, EventArgs e)
-        {
-            Compania = "No";
         }
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
@@ -70,11 +46,11 @@ namespace PMS_POS.View
             pHuesped.SegundoNombre = txtSegundoNombre.Text.Trim();
             pHuesped.PrimerApellido = txtPrimerApellido.Text.Trim();
             pHuesped.SegundoApellido = txtSegundoApellido.Text.Trim();
-            pHuesped.Compania = Compania.Trim();
+            pHuesped.Compania = cbxCompania.Text.Trim();
             pHuesped.NombreCompania = txtNombreCompania.Text.Trim();
             pHuesped.TipoDocumento = cbxTipoIdentificacion.Text.Trim();
             pHuesped.NumDocumento = txtIdentificacion.Text.Trim();
-            pHuesped.Sexo = Sexo.Trim();
+            pHuesped.Sexo = cbxSexo.Text.Trim();
             pHuesped.Telefono = txtTelefono.Text.Trim();
             pHuesped.Direccion = txtDireccion.Text.Trim();
             pHuesped.Ciudad = txtCiudad.Text.Trim();
@@ -92,10 +68,6 @@ namespace PMS_POS.View
                 limpiar.BorrarCampos(this, groupBox1);
                 //cbxTipoIdentificacion.Items.Clear();
                 //cbxTipoIdentificacion.SelectedIndex = 0;
-                rbtnSexoFemenino.Checked = false;
-                rbtnSexoMasculino.Checked = false;
-                rbtnEsCompania.Checked = false;
-                rbtnNoCompania.Checked = false;
 
 
             }
@@ -224,6 +196,21 @@ namespace PMS_POS.View
         }
 
         private void DgvHuespedes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
+using System.Drawing;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PMS_POS.View
 {
-    public partial class UserControl2 : UserControl
+    public partial class NuevoCliente : PMS_POS.Form1
     {
-        public UserControl2()
+        public NuevoCliente()
         {
             InitializeComponent();
         }
