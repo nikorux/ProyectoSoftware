@@ -31,26 +31,11 @@ namespace PMS_POS.Model
         }
         Habitacion habitacion = new Habitacion();
 
-        private void TxtBoxBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-
-            if (char.IsLetter(e.KeyChar) && txtBoxBuscar.Text != string.Empty || char.IsDigit(e.KeyChar) && txtBoxBuscar.Text != string.Empty)
-            {
-                dgv.DataSource = habitacion.Search(txtBoxBuscar.Text);
-
-            }
-            else
-            {
-                dgv.DataSource = habitacion.Select();
-                dgv.Columns[0].Visible = false;
-            }
-        }
+        
 
         private void BuscarHabitacion_Load(object sender, EventArgs e)
         {
-            dgv.DataSource = habitacion.Select();
-            dgv.Columns[0].Visible = false;
+            cargar();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -59,7 +44,7 @@ namespace PMS_POS.Model
         }
 
         private void BtnAceptar_Click(object sender, EventArgs e)
-        {
+        { 
             string idHab,numHab, tipoHab, precioHab;
             if (dgv.SelectedRows.Count > 0)
             {
@@ -76,6 +61,41 @@ namespace PMS_POS.Model
             else
             {
                 MessageBox.Show("Seleccione una fila.");
+            }
+        }
+        void cargar()
+        {
+            dgv.DataSource = habitacion.Select();
+            dgv.Columns[0].Visible = false;
+            dgv.Columns[10].Visible = false;
+            dgv.Columns[11].Visible = false;
+        }
+
+        private void TxtBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxBuscar.Text != "")
+            {
+
+               dgv.CurrentCell = null;
+                foreach (DataGridViewRow n in dgv.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgv.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBoxBuscar.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                cargar();
             }
         }
     }

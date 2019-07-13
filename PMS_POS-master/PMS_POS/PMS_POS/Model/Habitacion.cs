@@ -171,7 +171,7 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT * FROM habitacion WHERE IsDeleted=0 AND NumHab like '%" + s + "%' OR TipoHab like '%" + s + "%'";
+                string sql = "SELECT * FROM habitacion WHERE IsDeleted=0 AND (NumHab like '%" + s + "%' OR TipoHab like '%" + s + "%')";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //Creating data adapter
@@ -189,5 +189,34 @@ namespace PMS_POS.Model
             }
             return dt;
         }
+        public bool CambiarEstado(Habitacion h)
+        {
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+                
+                string sql = "UPDATE habitacion SET Estado=@Estado WHERE IdHabitacion=@IdHabitacion";
+
+                //Creating SQL Command
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdHabitacion", h.IdHabitacion);
+                cmd.Parameters.AddWithValue("@Estado", "Ocupada");
+                //Open Connection
+                mySqlConn.Open();
+                int row = cmd.ExecuteNonQuery();
+                mySqlConn.Close();
+                if (row > 0)
+                {
+
+                    return true;
+                }
+                else
+                {
+
+                    return false;
+                }
+            }
+        }
     }
+    
 }
