@@ -61,6 +61,7 @@ namespace PMS_POS.View
 
                         if (habitacion.Insert(habitacion) == true)
                         {
+                            Refresh();
                             Clear();
                             MessageBox.Show("La habitación ha sido creada.");
                            
@@ -98,6 +99,7 @@ namespace PMS_POS.View
 
                     if (habitacion.Update(habitacion) == true)
                     {
+                        Refresh();
                         MessageBox.Show("La habitación ha sido actualizada.");
                         Clear();
                         editar = false;

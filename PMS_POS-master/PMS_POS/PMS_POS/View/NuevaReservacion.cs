@@ -131,8 +131,12 @@ namespace PMS_POS.View
                 {
                     if (r.Insert_reservacion_habitacion(r.SelectIdReservacion(), hab) == true)
                     {
-                        Clear();
-                        MessageBox.Show("La reservación ha sido creada.");
+                        if(hab.CambiarEstado(hab) == true)
+                        {
+                            Clear();
+                            MessageBox.Show("La reservación ha sido creada.");
+
+                        }
 
                     }
                 }

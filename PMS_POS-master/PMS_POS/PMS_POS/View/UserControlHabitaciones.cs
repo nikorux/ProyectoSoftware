@@ -49,17 +49,25 @@ namespace PMS_POS.View
         {
             try
             {
-                habitacion.IdHabitacion = Convert.ToInt32(dgvHab.CurrentRow.Cells[0].Value);
-                if (habitacion.Delete(habitacion) == true)
+                if (dgvHab.SelectedRows.Count > 0)
                 {
-                    MessageBox.Show("La habitación ha sido eliminada.");
-                    
+                    habitacion.IdHabitacion = Convert.ToInt32(dgvHab.CurrentRow.Cells[0].Value);
+                    if (habitacion.Delete(habitacion) == true)
+                    {
+                        MessageBox.Show("La habitación ha sido eliminada.");
+                        RefreshDgv();
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar los datos.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al editar los datos.)");
+                    MessageBox.Show("Seleccione una fila.");
                 }
+                   
             }
             catch(Exception ex)
             {
@@ -69,37 +77,23 @@ namespace PMS_POS.View
 
         private void BtnEditar_Click_1(object sender, EventArgs e)
         {
-           
-            string message = "Quiere editar una habitación?";
-            string title = "";
-            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-            
-            DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.OK)
+
+
+            if (dgvHab.SelectedRows.Count > 0)
             {
+                RegistrarHab regHab = new RegistrarHab();
+                //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
+                regHab.RecibirDatos(dgvHab.CurrentRow.Cells[0].Value.ToString(), dgvHab.CurrentRow.Cells[1].Value.ToString(), dgvHab.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dgvHab.CurrentRow.Cells[3].Value), Convert.ToInt32(dgvHab.CurrentRow.Cells[4].Value), Convert.ToInt32(dgvHab.CurrentRow.Cells[5].Value), dgvHab.CurrentRow.Cells[6].Value.ToString(), dgvHab.CurrentRow.Cells[7].Value.ToString(), dgvHab.CurrentRow.Cells[9].Value.ToString());
+                regHab.Show();
 
-                if (dgvHab.SelectedRows.Count > 0)
-                {
-                    RegistrarHab regHab = new RegistrarHab();
-                    //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
-                    regHab.RecibirDatos(dgvHab.CurrentRow.Cells[0].Value.ToString(), dgvHab.CurrentRow.Cells[1].Value.ToString(), dgvHab.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dgvHab.CurrentRow.Cells[3].Value), Convert.ToInt32(dgvHab.CurrentRow.Cells[4].Value), Convert.ToInt32(dgvHab.CurrentRow.Cells[5].Value), dgvHab.CurrentRow.Cells[6].Value.ToString(), dgvHab.CurrentRow.Cells[7].Value.ToString(), dgvHab.CurrentRow.Cells[9].Value.ToString());
-                    regHab.Show();
-                   
-                    
-                   
 
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione una fila.");
-                }
+
+
             }
             else
             {
-                
+                MessageBox.Show("Seleccione una fila.");
             }
-
-
         }
       
     
@@ -116,5 +110,19 @@ namespace PMS_POS.View
             dgvHab.DataSource = habitacion.Select();
         }
 
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (char.IsLetter(e.KeyChar) && txtBoxBuscar.Text != string.Empty || char.IsDigit(e.KeyChar) && txtBoxBuscar.Text != string.Empty)
+            {
+                dgvHab.DataSource = habitacion.Search(txtBoxBuscar.Text);
+
+            }
+            else
+            {
+                dgvHab.DataSource = habitacion.Select();
+                dgvHab.Columns[0].Visible = false;
+            }
+        }
     }
 }
