@@ -290,6 +290,9 @@
     <EmbeddedResource Include="View\NuevoHuesped.resx">
       <DependentUpon>NuevoHuesped.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PuntoDeVenta.resx">
+      <DependentUpon>PuntoDeVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\RecetaProducto.resx">
       <DependentUpon>RecetaProducto.cs</DependentUpon>
     </EmbeddedResource>

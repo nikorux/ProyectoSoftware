@@ -327,7 +327,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(393, 627);
+           /* this.metroButton1.Location = new System.Drawing.Point(393, 627);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 23);
             this.metroButton1.TabIndex = 278;
@@ -342,7 +342,7 @@
             this.metroButton2.TabIndex = 279;
             this.metroButton2.Text = "Guardar";
             this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);*/
             // 
             // txtPrimerNombre
             // 
@@ -470,8 +470,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtPrimerNombre);
-            this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroButton1);
+            /*this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.metroButton1);*/
             this.Controls.Add(this.txtNumDoc);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSegundoApellido);
@@ -540,8 +540,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNumDoc;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        //private MetroFramework.Controls.MetroButton metroButton1;
+        //private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.TextBox txtPrimerNombre;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;

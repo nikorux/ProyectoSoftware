@@ -1253,6 +1253,15 @@
             this.timer7.Interval = 15;
             this.timer7.Tick += new System.EventHandler(this.Timer7_Tick);
             // 
+            // userControlInicio1
+            // 
+            this.userControlInicio1.BackColor = System.Drawing.SystemColors.Menu;
+            this.userControlInicio1.Location = new System.Drawing.Point(163, 91);
+            this.userControlInicio1.Name = "userControlInicio1";
+            this.userControlInicio1.Size = new System.Drawing.Size(1178, 692);
+            this.userControlInicio1.TabIndex = 1;
+            this.userControlInicio1.Load += new System.EventHandler(this.UserControlInicio1_Load);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
