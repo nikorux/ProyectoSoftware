@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button button1;
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dgvHab = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.numCantCamas = new System.Windows.Forms.NumericUpDown();
             this.cmbTipoHab = new System.Windows.Forms.ComboBox();
@@ -53,25 +53,37 @@
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.grpBoxBuscarHab = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numMaxPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPiso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCantCamas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.grpBoxBuscarHab.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.BackColor = System.Drawing.Color.RoyalBlue;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.ForeColor = System.Drawing.Color.White;
+            button1.Location = new System.Drawing.Point(458, 12);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(158, 28);
+            button1.TabIndex = 36;
+            button1.Text = "Registrar nueva habitación";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
@@ -80,9 +92,9 @@
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(90, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.Size = new System.Drawing.Size(200, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nueva Habitación";
+            this.label1.Text = "Listado de habitaciones";
             // 
             // label2
             // 
@@ -226,8 +238,7 @@
             0,
             0,
             0});
-            this.numPiso.ValueChanged += new System.EventHandler(this.numPiso_ValueChanged);
-            // 
+      
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.RoyalBlue;
@@ -239,14 +250,15 @@
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+        
             // 
             // btnBorrar
             // 
-            this.btnBorrar.BackColor = System.Drawing.Color.Tomato;
+            this.btnBorrar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.Location = new System.Drawing.Point(766, 615);
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.Location = new System.Drawing.Point(709, 12);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(81, 27);
             this.btnBorrar.TabIndex = 18;
@@ -263,20 +275,8 @@
             this.dgvHab.Location = new System.Drawing.Point(15, 19);
             this.dgvHab.Name = "dgvHab";
             this.dgvHab.ReadOnly = true;
-            this.dgvHab.Size = new System.Drawing.Size(771, 138);
+            this.dgvHab.Size = new System.Drawing.Size(771, 291);
             this.dgvHab.TabIndex = 19;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox4.Location = new System.Drawing.Point(19, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(232, 13);
-            this.textBox4.TabIndex = 21;
             // 
             // maskedTextBox2
             // 
@@ -349,10 +349,11 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.SystemColors.GrayText;
+            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(637, 615);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(622, 12);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(81, 27);
             this.btnEditar.TabIndex = 31;
@@ -369,46 +370,6 @@
             this.label11.Size = new System.Drawing.Size(101, 13);
             this.label11.TabIndex = 24;
             this.label11.Text = "Cantidad de camas:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PMS_POS.Properties.Resources.room_key;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PMS_POS.Properties.Resources.line2;
-            this.pictureBox2.Location = new System.Drawing.Point(327, 60);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(128, 10);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 33;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::PMS_POS.Properties.Resources.line2;
-            this.pictureBox3.Location = new System.Drawing.Point(534, 60);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(128, 10);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 34;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::PMS_POS.Properties.Resources.line2;
-            this.pictureBox4.Location = new System.Drawing.Point(19, 33);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(164, 10);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 35;
-            this.pictureBox4.TabStop = false;
             // 
             // panel1
             // 
@@ -433,18 +394,39 @@
             this.panel1.Controls.Add(this.numMaxPersonas);
             this.panel1.Controls.Add(this.maskedTextBox2);
             this.panel1.Controls.Add(this.numPiso);
-            this.panel1.Location = new System.Drawing.Point(56, 55);
+            this.panel1.Location = new System.Drawing.Point(29, 505);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(808, 302);
+            this.panel1.Size = new System.Drawing.Size(852, 85);
             this.panel1.TabIndex = 37;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PMS_POS.Properties.Resources.line2;
+            this.pictureBox3.Location = new System.Drawing.Point(534, 60);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(128, 10);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 34;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PMS_POS.Properties.Resources.line2;
+            this.pictureBox2.Location = new System.Drawing.Point(327, 60);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(128, 10);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 33;
+            this.pictureBox2.TabStop = false;
             // 
             // grpBoxBuscarHab
             // 
-            this.grpBoxBuscarHab.Controls.Add(this.textBox4);
-            this.grpBoxBuscarHab.Controls.Add(this.pictureBox4);
-            this.grpBoxBuscarHab.Location = new System.Drawing.Point(78, 374);
+            this.grpBoxBuscarHab.Controls.Add(button1);
+            this.grpBoxBuscarHab.Controls.Add(this.btnEditar);
+            this.grpBoxBuscarHab.Controls.Add(this.btnBorrar);
+            this.grpBoxBuscarHab.Location = new System.Drawing.Point(56, 59);
             this.grpBoxBuscarHab.Name = "grpBoxBuscarHab";
-            this.grpBoxBuscarHab.Size = new System.Drawing.Size(786, 46);
+            this.grpBoxBuscarHab.Size = new System.Drawing.Size(796, 46);
             this.grpBoxBuscarHab.TabIndex = 38;
             this.grpBoxBuscarHab.TabStop = false;
             this.grpBoxBuscarHab.Text = "Filtrar Habitación";
@@ -452,40 +434,47 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvHab);
-            this.groupBox1.Location = new System.Drawing.Point(78, 435);
+            this.groupBox1.Location = new System.Drawing.Point(56, 111);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(796, 174);
+            this.groupBox1.Size = new System.Drawing.Size(796, 316);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Habitaciones creadas";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PMS_POS.Properties.Resources.room_key;
+            this.pictureBox1.Location = new System.Drawing.Point(56, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
             // 
             // UserControlHabitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.grpBoxBuscarHab);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.grpBoxBuscarHab);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.label1);
             this.Name = "UserControlHabitaciones";
             this.Size = new System.Drawing.Size(1143, 655);
             this.Load += new System.EventHandler(this.UserControlHabitaciones_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.numMaxPersonas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPiso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCantCamas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.grpBoxBuscarHab.ResumeLayout(false);
-            this.grpBoxBuscarHab.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,7 +499,6 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.DataGridView dgvHab;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.NumericUpDown numCantCamas;
         private System.Windows.Forms.ComboBox cmbTipoHab;
@@ -521,7 +509,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grpBoxBuscarHab;
         private System.Windows.Forms.GroupBox groupBox1;

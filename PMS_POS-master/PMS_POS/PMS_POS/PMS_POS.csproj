@@ -188,6 +188,12 @@
     <Compile Include="View\RecetaProducto.Designer.cs">
       <DependentUpon>RecetaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RegistrarHab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RegistrarHab.Designer.cs">
+      <DependentUpon>RegistrarHab.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\RegistrarNuevaCompra.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -314,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RecetaProducto.resx">
       <DependentUpon>RecetaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegistrarHab.resx">
+      <DependentUpon>RegistrarHab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegistrarNuevaCompra.resx">
       <DependentUpon>RegistrarNuevaCompra.cs</DependentUpon>
