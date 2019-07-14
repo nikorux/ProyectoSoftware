@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button button1;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dgvHab = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnEditar = new System.Windows.Forms.Button();
             this.grpBoxBuscarHab = new System.Windows.Forms.GroupBox();
+            this.txtBoxBuscar = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtBoxBuscar = new System.Windows.Forms.TextBox();
             button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHab)).BeginInit();
             this.grpBoxBuscarHab.SuspendLayout();
@@ -87,8 +89,27 @@
             // 
             this.dgvHab.AllowUserToAddRows = false;
             this.dgvHab.AllowUserToDeleteRows = false;
+            this.dgvHab.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvHab.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvHab.BackgroundColor = System.Drawing.Color.White;
+            this.dgvHab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHab.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHab.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHab.Location = new System.Drawing.Point(15, 19);
             this.dgvHab.Name = "dgvHab";
             this.dgvHab.ReadOnly = true;
@@ -122,6 +143,14 @@
             this.grpBoxBuscarHab.TabStop = false;
             this.grpBoxBuscarHab.Text = "Filtrar Habitación";
             // 
+            // txtBoxBuscar
+            // 
+            this.txtBoxBuscar.Location = new System.Drawing.Point(15, 16);
+            this.txtBoxBuscar.Name = "txtBoxBuscar";
+            this.txtBoxBuscar.Size = new System.Drawing.Size(356, 20);
+            this.txtBoxBuscar.TabIndex = 37;
+            this.txtBoxBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvHab);
@@ -141,14 +170,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtBoxBuscar
-            // 
-            this.txtBoxBuscar.Location = new System.Drawing.Point(15, 16);
-            this.txtBoxBuscar.Name = "txtBoxBuscar";
-            this.txtBoxBuscar.Size = new System.Drawing.Size(356, 20);
-            this.txtBoxBuscar.TabIndex = 37;
-            this.txtBoxBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
             // 
             // UserControlHabitaciones
             // 
