@@ -107,7 +107,7 @@ namespace PMS_POS.View
         }
         public void RefreshDgv()
         {
-            dgvHab.DataSource = habitacion.Select();
+            cargar();
         }
 
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -120,8 +120,43 @@ namespace PMS_POS.View
             }
             else
             {
-                dgvHab.DataSource = habitacion.Select();
-                dgvHab.Columns[0].Visible = false;
+
+                cargar();
+            }
+        }
+        void cargar()
+        {
+            dgvHab.DataSource = habitacion.Select();
+            dgvHab.Columns[0].Visible = false;
+            dgvHab.Columns[10].Visible = false;
+            dgvHab.Columns[11].Visible = false;
+        }
+
+        private void TxtBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxBuscar.Text != "")
+            {
+
+                dgvHab.CurrentCell = null;
+                foreach (DataGridViewRow n in dgvHab.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgvHab.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBoxBuscar.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                cargar();
             }
         }
     }

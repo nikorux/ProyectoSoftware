@@ -52,7 +52,6 @@
             this.txtBoxBuscar.Size = new System.Drawing.Size(312, 20);
             this.txtBoxBuscar.TabIndex = 1;
             this.txtBoxBuscar.TextChanged += new System.EventHandler(this.TxtBoxBuscar_TextChanged);
-        
             // 
             // dgv
             // 
