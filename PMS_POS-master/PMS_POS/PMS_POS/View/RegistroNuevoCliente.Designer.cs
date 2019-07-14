@@ -31,6 +31,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxCompania = new System.Windows.Forms.ComboBox();
+            this.cbxSexo = new System.Windows.Forms.ComboBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -71,8 +73,7 @@
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbxSexo = new System.Windows.Forms.ComboBox();
-            this.cbxCompania = new System.Windows.Forms.ComboBox();
+            this.txtIdHuesped = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -114,6 +115,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtIdHuesped);
             this.groupBox1.Controls.Add(this.cbxCompania);
             this.groupBox1.Controls.Add(this.cbxSexo);
             this.groupBox1.Controls.Add(this.pictureBox12);
@@ -161,6 +163,28 @@
             this.groupBox1.Size = new System.Drawing.Size(749, 399);
             this.groupBox1.TabIndex = 187;
             this.groupBox1.TabStop = false;
+            // 
+            // cbxCompania
+            // 
+            this.cbxCompania.FormattingEnabled = true;
+            this.cbxCompania.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.cbxCompania.Location = new System.Drawing.Point(31, 302);
+            this.cbxCompania.Name = "cbxCompania";
+            this.cbxCompania.Size = new System.Drawing.Size(95, 21);
+            this.cbxCompania.TabIndex = 197;
+            // 
+            // cbxSexo
+            // 
+            this.cbxSexo.FormattingEnabled = true;
+            this.cbxSexo.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
+            this.cbxSexo.Location = new System.Drawing.Point(31, 249);
+            this.cbxSexo.Name = "cbxSexo";
+            this.cbxSexo.Size = new System.Drawing.Size(125, 21);
+            this.cbxSexo.TabIndex = 196;
             // 
             // pictureBox12
             // 
@@ -265,7 +289,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PMS_POS.Properties.Resources.line2;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 54);
+            this.pictureBox2.Location = new System.Drawing.Point(31, 54);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(198, 10);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -592,27 +616,17 @@
             this.pictureBox1.TabIndex = 190;
             this.pictureBox1.TabStop = false;
             // 
-            // cbxSexo
+            // txtIdHuesped
             // 
-            this.cbxSexo.FormattingEnabled = true;
-            this.cbxSexo.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino"});
-            this.cbxSexo.Location = new System.Drawing.Point(31, 249);
-            this.cbxSexo.Name = "cbxSexo";
-            this.cbxSexo.Size = new System.Drawing.Size(125, 21);
-            this.cbxSexo.TabIndex = 196;
-            // 
-            // cbxCompania
-            // 
-            this.cbxCompania.FormattingEnabled = true;
-            this.cbxCompania.Items.AddRange(new object[] {
-            "Sí",
-            "No"});
-            this.cbxCompania.Location = new System.Drawing.Point(31, 302);
-            this.cbxCompania.Name = "cbxCompania";
-            this.cbxCompania.Size = new System.Drawing.Size(95, 21);
-            this.cbxCompania.TabIndex = 197;
+            this.txtIdHuesped.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdHuesped.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdHuesped.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtIdHuesped.Location = new System.Drawing.Point(171, 19);
+            this.txtIdHuesped.Name = "txtIdHuesped";
+            this.txtIdHuesped.ReadOnly = true;
+            this.txtIdHuesped.RejectInputOnFirstFailure = true;
+            this.txtIdHuesped.Size = new System.Drawing.Size(128, 13);
+            this.txtIdHuesped.TabIndex = 198;
             // 
             // RegistroNuevoCliente
             // 
@@ -625,6 +639,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "RegistroNuevoCliente";
             this.Text = "RegistroNuevoCliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistroNuevoCliente_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroNuevoCliente_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
@@ -691,5 +707,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbxCompania;
         private System.Windows.Forms.ComboBox cbxSexo;
+        private System.Windows.Forms.MaskedTextBox txtIdHuesped;
     }
 }

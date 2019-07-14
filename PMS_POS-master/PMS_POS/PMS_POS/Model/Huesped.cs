@@ -63,7 +63,7 @@ namespace PMS_POS.Model
 
         public DataTable VistaTabla()
         {
-            instruccion = "Select * from huesped";
+            instruccion = "Select IdHuesped, PrimerNombre, SegundoNombre, PrimerApellido, NombreCompañia, TipoDocumento, NumDocumento, Sexo, Telefono, Direccion, Pais, Correo FROM huesped WHERE IsDeleted = 0";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
@@ -121,6 +121,36 @@ namespace PMS_POS.Model
                 conn.Close();
             }
             return dt;
+        }
+
+        public bool Delete(Huesped p)
+        {
+            //Create Sql Connection
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+                //Sql to delete
+                string sql = "UPDATE huesped SET IsDeleted=@IsDeleted WHERE IdHuesped=@IdHuesped";
+
+                //Creating SQL Command
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdHuesped", p.IdHuesped);
+                cmd.Parameters.AddWithValue("@IsDeleted", 1);
+                //Open Connection
+                mySqlConn.Open();
+                int row = cmd.ExecuteNonQuery();
+                mySqlConn.Close();
+                if (row > 0)
+                {
+
+                    return true;
+                }
+                else
+                {
+
+                    return false;
+                }
+            }
         }
     }
 }

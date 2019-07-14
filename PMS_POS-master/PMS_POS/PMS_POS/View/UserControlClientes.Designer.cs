@@ -48,7 +48,7 @@
             this.btnEliminarClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarClientes.ForeColor = System.Drawing.Color.White;
             this.btnEliminarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarClientes.Location = new System.Drawing.Point(968, 78);
+            this.btnEliminarClientes.Location = new System.Drawing.Point(788, 79);
             this.btnEliminarClientes.Name = "btnEliminarClientes";
             this.btnEliminarClientes.Size = new System.Drawing.Size(120, 27);
             this.btnEliminarClientes.TabIndex = 74;
@@ -56,6 +56,7 @@
             this.btnEliminarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminarClientes.UseCompatibleTextRendering = true;
             this.btnEliminarClientes.UseVisualStyleBackColor = false;
+            this.btnEliminarClientes.Click += new System.EventHandler(this.btnEliminarClientes_Click);
             // 
             // btnEditarClientes
             // 
@@ -67,7 +68,7 @@
             this.btnEditarClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarClientes.ForeColor = System.Drawing.Color.White;
             this.btnEditarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarClientes.Location = new System.Drawing.Point(842, 78);
+            this.btnEditarClientes.Location = new System.Drawing.Point(662, 79);
             this.btnEditarClientes.Name = "btnEditarClientes";
             this.btnEditarClientes.Size = new System.Drawing.Size(120, 27);
             this.btnEditarClientes.TabIndex = 73;
@@ -75,6 +76,7 @@
             this.btnEditarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditarClientes.UseCompatibleTextRendering = true;
             this.btnEditarClientes.UseVisualStyleBackColor = false;
+            this.btnEditarClientes.Click += new System.EventHandler(this.btnEditarClientes_Click);
             // 
             // btnNuevoCliente
             // 
@@ -86,7 +88,7 @@
             this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
             this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(653, 78);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(473, 79);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(183, 27);
             this.btnNuevoCliente.TabIndex = 72;
@@ -109,11 +111,17 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(31, 130);
+            this.dgvClientes.Location = new System.Drawing.Point(56, 130);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(1057, 314);
+            this.dgvClientes.Size = new System.Drawing.Size(852, 314);
             this.dgvClientes.TabIndex = 78;
             // 
             // label1
