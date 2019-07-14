@@ -73,6 +73,7 @@
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtIdHuesped = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -114,6 +115,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtIdHuesped);
             this.groupBox1.Controls.Add(this.cbxCompania);
             this.groupBox1.Controls.Add(this.cbxSexo);
             this.groupBox1.Controls.Add(this.pictureBox12);
@@ -287,7 +289,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PMS_POS.Properties.Resources.line2;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 54);
+            this.pictureBox2.Location = new System.Drawing.Point(31, 54);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(198, 10);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -614,6 +616,18 @@
             this.pictureBox1.TabIndex = 190;
             this.pictureBox1.TabStop = false;
             // 
+            // txtIdHuesped
+            // 
+            this.txtIdHuesped.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdHuesped.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdHuesped.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtIdHuesped.Location = new System.Drawing.Point(171, 19);
+            this.txtIdHuesped.Name = "txtIdHuesped";
+            this.txtIdHuesped.ReadOnly = true;
+            this.txtIdHuesped.RejectInputOnFirstFailure = true;
+            this.txtIdHuesped.Size = new System.Drawing.Size(128, 13);
+            this.txtIdHuesped.TabIndex = 198;
+            // 
             // RegistroNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -693,5 +707,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbxCompania;
         private System.Windows.Forms.ComboBox cbxSexo;
+        private System.Windows.Forms.MaskedTextBox txtIdHuesped;
     }
 }

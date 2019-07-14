@@ -35,7 +35,6 @@
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiltroo = new System.Windows.Forms.TextBox();
-            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +48,7 @@
             this.btnEliminarClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarClientes.ForeColor = System.Drawing.Color.White;
             this.btnEliminarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarClientes.Location = new System.Drawing.Point(968, 78);
+            this.btnEliminarClientes.Location = new System.Drawing.Point(788, 79);
             this.btnEliminarClientes.Name = "btnEliminarClientes";
             this.btnEliminarClientes.Size = new System.Drawing.Size(120, 27);
             this.btnEliminarClientes.TabIndex = 74;
@@ -57,6 +56,7 @@
             this.btnEliminarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminarClientes.UseCompatibleTextRendering = true;
             this.btnEliminarClientes.UseVisualStyleBackColor = false;
+            this.btnEliminarClientes.Click += new System.EventHandler(this.btnEliminarClientes_Click);
             // 
             // btnEditarClientes
             // 
@@ -68,7 +68,7 @@
             this.btnEditarClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarClientes.ForeColor = System.Drawing.Color.White;
             this.btnEditarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarClientes.Location = new System.Drawing.Point(842, 78);
+            this.btnEditarClientes.Location = new System.Drawing.Point(662, 79);
             this.btnEditarClientes.Name = "btnEditarClientes";
             this.btnEditarClientes.Size = new System.Drawing.Size(120, 27);
             this.btnEditarClientes.TabIndex = 73;
@@ -76,6 +76,7 @@
             this.btnEditarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditarClientes.UseCompatibleTextRendering = true;
             this.btnEditarClientes.UseVisualStyleBackColor = false;
+            this.btnEditarClientes.Click += new System.EventHandler(this.btnEditarClientes_Click);
             // 
             // btnNuevoCliente
             // 
@@ -87,7 +88,7 @@
             this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
             this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(653, 78);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(473, 79);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(183, 27);
             this.btnNuevoCliente.TabIndex = 72;
@@ -110,11 +111,17 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(31, 130);
+            this.dgvClientes.Location = new System.Drawing.Point(56, 130);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(1057, 314);
+            this.dgvClientes.Size = new System.Drawing.Size(852, 314);
             this.dgvClientes.TabIndex = 78;
             // 
             // label1
@@ -137,31 +144,10 @@
             this.txtFiltroo.TabIndex = 80;
             this.txtFiltroo.TextChanged += new System.EventHandler(this.TxtFiltroo_TextChanged);
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnActualizar.CausesValidation = false;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(527, 78);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(120, 27);
-            this.btnActualizar.TabIndex = 81;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizar.UseCompatibleTextRendering = true;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // UserControlClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.txtFiltroo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvClientes);
@@ -186,6 +172,5 @@
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFiltroo;
-        private System.Windows.Forms.Button btnActualizar;
     }
 }

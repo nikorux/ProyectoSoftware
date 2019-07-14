@@ -19,6 +19,7 @@ namespace PMS_POS.View
         MySqlConnection conex;
         string cadenaconex;
         Huesped obj = new Huesped();
+
         RegistroNuevoCliente form2 = new RegistroNuevoCliente();
 
         private static UserControlClientes _instance;
@@ -124,6 +125,56 @@ namespace PMS_POS.View
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             RefreshGrid();
+        }
+
+        private void btnEditarClientes_Click(object sender, EventArgs e)
+        {
+
+            {
+                if (dgvClientes.SelectedRows.Count > 0)
+                {
+                    //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
+                    form2.ObtenerDatos(dgvClientes.CurrentRow.Cells[0].Value.ToString(), dgvClientes.CurrentRow.Cells[1].Value.ToString(), dgvClientes.CurrentRow.Cells[2].Value.ToString(), dgvClientes.CurrentRow.Cells[3].Value.ToString(), dgvClientes.CurrentRow.Cells[4].Value.ToString(), dgvClientes.CurrentRow.Cells[5].Value.ToString(), dgvClientes.CurrentRow.Cells[6].Value.ToString(), dgvClientes.CurrentRow.Cells[7].Value.ToString(), dgvClientes.CurrentRow.Cells[8].Value.ToString(), dgvClientes.CurrentRow.Cells[9].Value.ToString(), dgvClientes.CurrentRow.Cells[10].Value.ToString(), dgvClientes.CurrentRow.Cells[11].Value.ToString());
+                    form2.FormClosed += new FormClosedEventHandler(RegistroNuevoCliente_FormClosed);
+                    form2.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una fila.");
+                }
+            }
+        }
+
+        private void btnEliminarClientes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvClientes.SelectedRows.Count > 0)
+                {
+                    obj.IdHuesped = Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value);
+                    if (obj.Delete(obj) == true)
+                    {
+                        MessageBox.Show("El cliente ha sido eliminado.");
+                        dgvClientes.DataSource = null;
+                        dgvClientes.DataSource = obj.VistaTabla();
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar los datos.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una fila.");
+                }
+                   
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al borrar los clientes. (Error: " + ex + ")");
+            }
         }
     }
 }

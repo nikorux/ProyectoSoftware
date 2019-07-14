@@ -77,29 +77,19 @@ namespace PMS_POS.View
 
         private void BtnEditar_Click_1(object sender, EventArgs e)
         {
-
-
             if (dgvHab.SelectedRows.Count > 0)
             {
                 RegistrarHab regHab = new RegistrarHab();
                 //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
                 regHab.RecibirDatos(dgvHab.CurrentRow.Cells[0].Value.ToString(), dgvHab.CurrentRow.Cells[1].Value.ToString(), dgvHab.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dgvHab.CurrentRow.Cells[3].Value), Convert.ToInt32(dgvHab.CurrentRow.Cells[4].Value), Convert.ToInt32(dgvHab.CurrentRow.Cells[5].Value), dgvHab.CurrentRow.Cells[6].Value.ToString(), dgvHab.CurrentRow.Cells[7].Value.ToString(), dgvHab.CurrentRow.Cells[9].Value.ToString());
                 regHab.Show();
-
-
-
-
             }
             else
             {
                 MessageBox.Show("Seleccione una fila.");
             }
         }
-      
     
-
-      
-
         private void Button1_Click(object sender, EventArgs e)
         {
             RegistrarHab regHab = new RegistrarHab();
