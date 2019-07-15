@@ -84,6 +84,7 @@
             // 
             // dgvEstadoActualHabitaciones
             // 
+            this.dgvEstadoActualHabitaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEstadoActualHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstadoActualHabitaciones.Location = new System.Drawing.Point(17, 108);
             this.dgvEstadoActualHabitaciones.Name = "dgvEstadoActualHabitaciones";
@@ -114,6 +115,7 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Image = global::PMS_POS.Properties.Resources.habitacion;
             this.pictureBox7.Location = new System.Drawing.Point(6, 0);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(40, 40);
@@ -145,6 +147,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = global::PMS_POS.Properties.Resources.habitacion;
             this.pictureBox3.Location = new System.Drawing.Point(6, -1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
@@ -176,6 +179,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = global::PMS_POS.Properties.Resources.habitacion;
             this.pictureBox4.Location = new System.Drawing.Point(6, -1);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
@@ -211,7 +215,9 @@
             // 
             // dgvHabitacionesProximas
             // 
+            this.dgvHabitacionesProximas.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHabitacionesProximas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHabitacionesProximas.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHabitacionesProximas.Location = new System.Drawing.Point(23, 95);
             this.dgvHabitacionesProximas.Name = "dgvHabitacionesProximas";
             this.dgvHabitacionesProximas.Size = new System.Drawing.Size(532, 106);
@@ -248,7 +254,7 @@
             this.btnRegistrarCheckOut.Name = "btnRegistrarCheckOut";
             this.btnRegistrarCheckOut.Size = new System.Drawing.Size(139, 27);
             this.btnRegistrarCheckOut.TabIndex = 47;
-            this.btnRegistrarCheckOut.Text = "Registrar check-out";
+            this.btnRegistrarCheckOut.Text = "Registrar Check-Out";
             this.btnRegistrarCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrarCheckOut.UseCompatibleTextRendering = true;
             this.btnRegistrarCheckOut.UseVisualStyleBackColor = false;
@@ -299,6 +305,7 @@
             // 
             // dgvHabitacionesReservadas
             // 
+            this.dgvHabitacionesReservadas.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHabitacionesReservadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHabitacionesReservadas.Location = new System.Drawing.Point(29, 87);
             this.dgvHabitacionesReservadas.Name = "dgvHabitacionesReservadas";
@@ -336,7 +343,7 @@
             this.btnRegistrarCheckIn.Name = "btnRegistrarCheckIn";
             this.btnRegistrarCheckIn.Size = new System.Drawing.Size(139, 27);
             this.btnRegistrarCheckIn.TabIndex = 45;
-            this.btnRegistrarCheckIn.Text = "Registrar check-in";
+            this.btnRegistrarCheckIn.Text = "Registrar Check-In";
             this.btnRegistrarCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrarCheckIn.UseCompatibleTextRendering = true;
             this.btnRegistrarCheckIn.UseVisualStyleBackColor = false;
@@ -374,12 +381,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel4);
             this.Name = "UserControlInicio";
-            this.Size = new System.Drawing.Size(1290, 664);
+            this.Size = new System.Drawing.Size(1287, 677);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoActualHabitaciones)).EndInit();

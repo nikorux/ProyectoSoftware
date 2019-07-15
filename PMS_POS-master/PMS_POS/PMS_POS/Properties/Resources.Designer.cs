@@ -133,6 +133,16 @@ namespace PMS_POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap habitacion {
+            get {
+                object obj = ResourceManager.GetObject("habitacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hotel {
             get {
                 object obj = ResourceManager.GetObject("hotel", resourceCulture);
@@ -156,6 +166,16 @@ namespace PMS_POS.Properties {
         internal static System.Drawing.Bitmap hotel1 {
             get {
                 object obj = ResourceManager.GetObject("hotel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Imagen101 {
+            get {
+                object obj = ResourceManager.GetObject("Imagen101", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

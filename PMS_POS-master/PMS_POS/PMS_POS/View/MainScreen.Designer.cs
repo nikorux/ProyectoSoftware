@@ -61,6 +61,7 @@
             this.descuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeHabitacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoríaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -71,7 +72,6 @@
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnReservas = new System.Windows.Forms.Button();
-            this.categoríaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
@@ -138,10 +138,10 @@
             // 
             // userControlInicio1
             // 
-            this.userControlInicio1.BackColor = System.Drawing.Color.White;
-            this.userControlInicio1.Location = new System.Drawing.Point(80, 88);
+            this.userControlInicio1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.userControlInicio1.Location = new System.Drawing.Point(82, 88);
             this.userControlInicio1.Name = "userControlInicio1";
-            this.userControlInicio1.Size = new System.Drawing.Size(1290, 664);
+            this.userControlInicio1.Size = new System.Drawing.Size(1285, 680);
             this.userControlInicio1.TabIndex = 44;
             // 
             // panel2
@@ -153,7 +153,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 53);
+            this.panel2.Size = new System.Drawing.Size(1386, 53);
             this.panel2.TabIndex = 45;
             // 
             // button2
@@ -196,7 +196,7 @@
             // 
             this.panel6.Controls.Add(this.label19);
             this.panel6.Controls.Add(this.pictureBox15);
-            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Location = new System.Drawing.Point(2, 5);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 43);
             this.panel6.TabIndex = 23;
@@ -206,7 +206,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(48, 8);
+            this.label19.Location = new System.Drawing.Point(48, 9);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(45, 21);
             this.label19.TabIndex = 13;
@@ -214,6 +214,7 @@
             // 
             // pictureBox15
             // 
+            this.pictureBox15.Image = global::PMS_POS.Properties.Resources.Imagen101;
             this.pictureBox15.Location = new System.Drawing.Point(12, 5);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(30, 30);
@@ -259,35 +260,35 @@
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.EmpleadosToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.ClientesToolStripMenuItem_Click_1);
             // 
             // HabitacionesToolStripMenuItem
             // 
             this.HabitacionesToolStripMenuItem.Name = "HabitacionesToolStripMenuItem";
-            this.HabitacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.HabitacionesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.HabitacionesToolStripMenuItem.Text = "Habitaciones";
             this.HabitacionesToolStripMenuItem.Click += new System.EventHandler(this.HabitacionesToolStripMenuItem_Click_1);
             // 
             // reservacionesToolStripMenuItem
             // 
             this.reservacionesToolStripMenuItem.Name = "reservacionesToolStripMenuItem";
-            this.reservacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reservacionesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.reservacionesToolStripMenuItem.Text = "Reservaciones";
             this.reservacionesToolStripMenuItem.Click += new System.EventHandler(this.ReservacionesToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.ProveedoresToolStripMenuItem_Click);
             // 
@@ -333,20 +334,26 @@
             // descuentosToolStripMenuItem
             // 
             this.descuentosToolStripMenuItem.Name = "descuentosToolStripMenuItem";
-            this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.descuentosToolStripMenuItem.Text = "Descuentos";
             // 
             // tipoDeHabitacionesToolStripMenuItem
             // 
             this.tipoDeHabitacionesToolStripMenuItem.Name = "tipoDeHabitacionesToolStripMenuItem";
-            this.tipoDeHabitacionesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.tipoDeHabitacionesToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.tipoDeHabitacionesToolStripMenuItem.Text = "Tipo de Habitaciones";
             // 
             // tipoDeDocumentosToolStripMenuItem
             // 
             this.tipoDeDocumentosToolStripMenuItem.Name = "tipoDeDocumentosToolStripMenuItem";
-            this.tipoDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.tipoDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.tipoDeDocumentosToolStripMenuItem.Text = "Tipo de Documentos";
+            // 
+            // categoríaDeProductosToolStripMenuItem
+            // 
+            this.categoríaDeProductosToolStripMenuItem.Name = "categoríaDeProductosToolStripMenuItem";
+            this.categoríaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.categoríaDeProductosToolStripMenuItem.Text = "Categoría de Productos";
             // 
             // ayudaToolStripMenuItem
             // 
@@ -387,7 +394,7 @@
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(80, 80);
             this.btnCheckOut.TabIndex = 44;
-            this.btnCheckOut.Text = "Check Out";
+            this.btnCheckOut.Text = "Check-Out";
             this.btnCheckOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheckOut.UseCompatibleTextRendering = true;
@@ -451,7 +458,7 @@
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(80, 80);
             this.btnCheckIn.TabIndex = 45;
-            this.btnCheckIn.Text = "Check In";
+            this.btnCheckIn.Text = "Check-In";
             this.btnCheckIn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheckIn.UseCompatibleTextRendering = true;
@@ -495,27 +502,21 @@
             this.btnReservas.UseVisualStyleBackColor = false;
             this.btnReservas.Click += new System.EventHandler(this.BtnReservas_Click);
             // 
-            // categoríaDeProductosToolStripMenuItem
-            // 
-            this.categoríaDeProductosToolStripMenuItem.Name = "categoríaDeProductosToolStripMenuItem";
-            this.categoríaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.categoríaDeProductosToolStripMenuItem.Text = "Categoría de Productos";
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1386, 718);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnCheckIn);
             this.Controls.Add(this.btnReservas);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.userControlInicio1);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.userControlInicio1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
