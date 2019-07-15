@@ -182,7 +182,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "UserControlHabitaciones";
-            this.Size = new System.Drawing.Size(1143, 655);
+            this.Size = new System.Drawing.Size(1284, 659);
             this.Load += new System.EventHandler(this.UserControlHabitaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHab)).EndInit();
             this.grpBoxBuscarHab.ResumeLayout(false);

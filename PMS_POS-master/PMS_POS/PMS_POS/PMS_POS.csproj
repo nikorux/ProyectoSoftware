@@ -370,6 +370,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="img\arrows.png" />
+    <None Include="Resources\Imagen101.png" />
     <None Include="Resources\Imagen51.png" />
     <None Include="Resources\Imagen611.png" />
     <None Include="Resources\reservas.png" />
@@ -378,6 +379,7 @@
     <None Include="Resources\checkin.png" />
     <None Include="Resources\checkout.png" />
     <Content Include="Resources\habitacion.png" />
+    <None Include="Resources\habitacion1.png" />
     <Content Include="Resources\hotel.png" />
     <None Include="Resources\hotel1.png" />
     <None Include="Resources\target.png" />

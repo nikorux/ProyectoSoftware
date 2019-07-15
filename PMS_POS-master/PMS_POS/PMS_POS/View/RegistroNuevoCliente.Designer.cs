@@ -31,6 +31,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdHuesped = new System.Windows.Forms.MaskedTextBox();
             this.cbxCompania = new System.Windows.Forms.ComboBox();
             this.cbxSexo = new System.Windows.Forms.ComboBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
@@ -73,7 +74,6 @@
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtIdHuesped = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -163,6 +163,18 @@
             this.groupBox1.Size = new System.Drawing.Size(749, 399);
             this.groupBox1.TabIndex = 187;
             this.groupBox1.TabStop = false;
+            // 
+            // txtIdHuesped
+            // 
+            this.txtIdHuesped.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdHuesped.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdHuesped.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtIdHuesped.Location = new System.Drawing.Point(171, 19);
+            this.txtIdHuesped.Name = "txtIdHuesped";
+            this.txtIdHuesped.ReadOnly = true;
+            this.txtIdHuesped.RejectInputOnFirstFailure = true;
+            this.txtIdHuesped.Size = new System.Drawing.Size(128, 13);
+            this.txtIdHuesped.TabIndex = 198;
             // 
             // cbxCompania
             // 
@@ -616,22 +628,11 @@
             this.pictureBox1.TabIndex = 190;
             this.pictureBox1.TabStop = false;
             // 
-            // txtIdHuesped
-            // 
-            this.txtIdHuesped.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdHuesped.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdHuesped.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtIdHuesped.Location = new System.Drawing.Point(171, 19);
-            this.txtIdHuesped.Name = "txtIdHuesped";
-            this.txtIdHuesped.ReadOnly = true;
-            this.txtIdHuesped.RejectInputOnFirstFailure = true;
-            this.txtIdHuesped.Size = new System.Drawing.Size(128, 13);
-            this.txtIdHuesped.TabIndex = 198;
-            // 
             // RegistroNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1098, 528);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label17);

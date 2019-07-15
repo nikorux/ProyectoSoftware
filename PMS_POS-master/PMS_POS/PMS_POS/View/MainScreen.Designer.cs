@@ -138,10 +138,10 @@
             // 
             // userControlInicio1
             // 
-            this.userControlInicio1.BackColor = System.Drawing.Color.White;
-            this.userControlInicio1.Location = new System.Drawing.Point(80, 88);
+            this.userControlInicio1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.userControlInicio1.Location = new System.Drawing.Point(82, 88);
             this.userControlInicio1.Name = "userControlInicio1";
-            this.userControlInicio1.Size = new System.Drawing.Size(1290, 664);
+            this.userControlInicio1.Size = new System.Drawing.Size(1285, 680);
             this.userControlInicio1.TabIndex = 44;
             // 
             // panel2
@@ -153,7 +153,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 53);
+            this.panel2.Size = new System.Drawing.Size(1386, 53);
             this.panel2.TabIndex = 45;
             // 
             // button2
@@ -196,7 +196,7 @@
             // 
             this.panel6.Controls.Add(this.label19);
             this.panel6.Controls.Add(this.pictureBox15);
-            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Location = new System.Drawing.Point(2, 5);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 43);
             this.panel6.TabIndex = 23;
@@ -206,7 +206,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(48, 8);
+            this.label19.Location = new System.Drawing.Point(48, 9);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(45, 21);
             this.label19.TabIndex = 13;
@@ -214,6 +214,7 @@
             // 
             // pictureBox15
             // 
+            this.pictureBox15.Image = global::PMS_POS.Properties.Resources.Imagen101;
             this.pictureBox15.Location = new System.Drawing.Point(12, 5);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(30, 30);
@@ -393,7 +394,7 @@
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(80, 80);
             this.btnCheckOut.TabIndex = 44;
-            this.btnCheckOut.Text = "Check Out";
+            this.btnCheckOut.Text = "Check-Out";
             this.btnCheckOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheckOut.UseCompatibleTextRendering = true;
@@ -457,7 +458,7 @@
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(80, 80);
             this.btnCheckIn.TabIndex = 45;
-            this.btnCheckIn.Text = "Check In";
+            this.btnCheckIn.Text = "Check-In";
             this.btnCheckIn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheckIn.UseCompatibleTextRendering = true;
@@ -506,16 +507,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1386, 718);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnCheckIn);
             this.Controls.Add(this.btnReservas);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.userControlInicio1);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.userControlInicio1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
