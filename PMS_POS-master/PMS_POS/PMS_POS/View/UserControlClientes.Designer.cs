@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminarClientes = new System.Windows.Forms.Button();
             this.btnEditarClientes = new System.Windows.Forms.Button();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
@@ -47,12 +47,12 @@
             this.btnEliminarClientes.CausesValidation = false;
             this.btnEliminarClientes.FlatAppearance.BorderSize = 0;
             this.btnEliminarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarClientes.ForeColor = System.Drawing.Color.White;
             this.btnEliminarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarClientes.Location = new System.Drawing.Point(1036, 121);
+            this.btnEliminarClientes.Location = new System.Drawing.Point(1020, 121);
             this.btnEliminarClientes.Name = "btnEliminarClientes";
-            this.btnEliminarClientes.Size = new System.Drawing.Size(120, 27);
+            this.btnEliminarClientes.Size = new System.Drawing.Size(144, 27);
             this.btnEliminarClientes.TabIndex = 74;
             this.btnEliminarClientes.Text = "Eliminar";
             this.btnEliminarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -68,12 +68,12 @@
             this.btnEditarClientes.CausesValidation = false;
             this.btnEditarClientes.FlatAppearance.BorderSize = 0;
             this.btnEditarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarClientes.ForeColor = System.Drawing.Color.White;
             this.btnEditarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarClientes.Location = new System.Drawing.Point(910, 121);
+            this.btnEditarClientes.Location = new System.Drawing.Point(869, 121);
             this.btnEditarClientes.Name = "btnEditarClientes";
-            this.btnEditarClientes.Size = new System.Drawing.Size(120, 27);
+            this.btnEditarClientes.Size = new System.Drawing.Size(141, 27);
             this.btnEditarClientes.TabIndex = 73;
             this.btnEditarClientes.Text = "Editar";
             this.btnEditarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -88,12 +88,12 @@
             this.btnNuevoCliente.CausesValidation = false;
             this.btnNuevoCliente.FlatAppearance.BorderSize = 0;
             this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
             this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(721, 121);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(592, 121);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(183, 27);
+            this.btnNuevoCliente.Size = new System.Drawing.Size(265, 27);
             this.btnNuevoCliente.TabIndex = 72;
             this.btnNuevoCliente.Text = "+ Registrar nuevo cliente";
             this.btnNuevoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -105,7 +105,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label3.Location = new System.Drawing.Point(115, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(202, 30);
@@ -121,14 +121,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(130, 173);
             this.dgvClientes.Name = "dgvClientes";
@@ -138,7 +138,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(118, 123);
             this.label1.Name = "label1";

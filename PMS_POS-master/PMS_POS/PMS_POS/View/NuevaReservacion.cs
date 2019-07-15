@@ -135,6 +135,7 @@ namespace PMS_POS.View
                         {
                             Clear();
                             MessageBox.Show("La reservación ha sido creada.");
+                            ListadoReservaciones.Instance.refresh();
 
                         }
 
@@ -160,6 +161,11 @@ namespace PMS_POS.View
             txtBoxTotal.Clear();
             txtBoxCanal.Clear();
             txtBoxComentarios.Clear();
+        }
+
+        private void NuevaReservacion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
