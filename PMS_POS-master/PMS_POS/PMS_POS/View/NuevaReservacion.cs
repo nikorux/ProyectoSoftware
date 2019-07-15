@@ -136,6 +136,7 @@ namespace PMS_POS.View
                         if(hab.CambiarEstado(hab) == true)
                         {
                             Clear();
+                           
                             MessageBox.Show("La reservación ha sido creada.");
 
                         }

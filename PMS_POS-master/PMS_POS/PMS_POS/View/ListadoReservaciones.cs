@@ -36,10 +36,10 @@ namespace PMS_POS.View
             this.BringToFront();
             
             dgvReservaciones.DataSource = reservacion.Select();
-            /*dgvInfoHuesped.DataSource = huesped.VistaTabla();
-            dgvInfoHuesped.Columns[0].Visible = false;
-            dgvInfoHuesped.Columns[16].Visible = false;
-            dgvInfoHuesped.Columns[17].Visible = false;*/
+            //dgvInfoHuesped.DataSource = huesped.VistaTabla();
+          //  dgvInfoHuesped.Columns[0].Visible = false;
+          //  dgvInfoHuesped.Columns[16].Visible = false;
+           // dgvInfoHuesped.Columns[17].Visible = false;
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -48,8 +48,8 @@ namespace PMS_POS.View
             {
                 reservacion.IdReservacion = Convert.ToInt32(dgvReservaciones.CurrentRow.Cells[0].Value);
                 if (reservacion.Delete(reservacion) == true)
-                {
-                    MessageBox.Show("La habitación ha sido eliminada.");
+                {   
+                    MessageBox.Show("La reservación ha sido eliminada.");
                     Clear();
 
                 }
@@ -60,7 +60,7 @@ namespace PMS_POS.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al borrar las habitación. (Error: " + ex + ")");
+                MessageBox.Show("Error al borrar la reservación. (Error: " + ex + ")");
             }
         }
 
