@@ -12,6 +12,18 @@ namespace PMS_POS.View
 {
     public partial class UserControlInicio : UserControl
     {
+
+        private static UserControlInicio _instance;
+        public static UserControlInicio Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new UserControlInicio();
+                return _instance;
+            }
+        }
+
         public UserControlInicio()
         {
             InitializeComponent();

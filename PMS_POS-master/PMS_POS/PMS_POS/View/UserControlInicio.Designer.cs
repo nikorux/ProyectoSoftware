@@ -77,7 +77,7 @@
             this.panel4.Controls.Add(this.panelHabMantenimiento);
             this.panel4.Controls.Add(this.panelHabLibres);
             this.panel4.Controls.Add(this.panelHabOcupadas);
-            this.panel4.Location = new System.Drawing.Point(25, 61);
+            this.panel4.Location = new System.Drawing.Point(56, 61);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(559, 250);
             this.panel4.TabIndex = 42;
@@ -204,7 +204,7 @@
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.dateTimePicker2);
-            this.panel7.Location = new System.Drawing.Point(614, 333);
+            this.panel7.Location = new System.Drawing.Point(645, 333);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(580, 253);
             this.panel7.TabIndex = 44;
@@ -292,7 +292,7 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.dateTimePicker1);
-            this.panel6.Location = new System.Drawing.Point(26, 333);
+            this.panel6.Location = new System.Drawing.Point(57, 333);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(559, 253);
             this.panel6.TabIndex = 45;
@@ -379,7 +379,7 @@
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel4);
             this.Name = "UserControlInicio";
-            this.Size = new System.Drawing.Size(1287, 677);
+            this.Size = new System.Drawing.Size(1290, 664);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoActualHabitaciones)).EndInit();
