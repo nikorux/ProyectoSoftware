@@ -11,20 +11,15 @@ using PMS_POS.View;
 
 namespace PMS_POS
 {
-    public partial class Form1 : Form
+    public partial class MainScreen : Form
     {
-        public Form1()
+        public MainScreen()
         {
             InitializeComponent();
             userControlInicio1.BringToFront();
             this.WindowState = FormWindowState.Maximized;
         }
 
-        //private bool isCollapsedHuesped;
-        private bool isCollapsedProveedores = true;
-        private bool isCollapsedReportesFinancieros = true;
-        private bool isCollapsedControlUsuarios = true;
-        private bool isCollapsedConfiguracion = true;
 
         UserControlHabitaciones UserControlHabitaciones = new UserControlHabitaciones();
 
