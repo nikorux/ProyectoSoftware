@@ -55,6 +55,7 @@ namespace PMS_POS.Model
                 tipoHab = dgv.CurrentRow.Cells[2].Value.ToString();
                 precioHab = dgv.CurrentRow.Cells[9].Value.ToString();
                 nr.FillHab(idHab,numHab, tipoHab, precioHab);
+                nr.Revisar();
                // nr.calcular();
                 this.Close();
             }

@@ -102,6 +102,7 @@
             // 
             // txtBoxNumeroHabitacion
             // 
+            this.txtBoxNumeroHabitacion.Enabled = false;
             this.txtBoxNumeroHabitacion.Location = new System.Drawing.Point(174, 39);
             this.txtBoxNumeroHabitacion.Name = "txtBoxNumeroHabitacion";
             this.txtBoxNumeroHabitacion.Size = new System.Drawing.Size(187, 20);
@@ -109,6 +110,7 @@
             // 
             // txtBoxTipoHabitacion
             // 
+            this.txtBoxTipoHabitacion.Enabled = false;
             this.txtBoxTipoHabitacion.Location = new System.Drawing.Point(174, 65);
             this.txtBoxTipoHabitacion.Name = "txtBoxTipoHabitacion";
             this.txtBoxTipoHabitacion.Size = new System.Drawing.Size(187, 20);
@@ -121,6 +123,7 @@
             // 
             // txtBoxPrecio
             // 
+            this.txtBoxPrecio.Enabled = false;
             this.txtBoxPrecio.Location = new System.Drawing.Point(174, 92);
             this.txtBoxPrecio.Name = "txtBoxPrecio";
             this.txtBoxPrecio.Size = new System.Drawing.Size(187, 20);
@@ -188,6 +191,7 @@
             // 
             // txtBoxDocumento
             // 
+            this.txtBoxDocumento.Enabled = false;
             this.txtBoxDocumento.Location = new System.Drawing.Point(143, 77);
             this.txtBoxDocumento.Name = "txtBoxDocumento";
             this.txtBoxDocumento.Size = new System.Drawing.Size(187, 20);
@@ -195,6 +199,7 @@
             // 
             // txtBoxNombre
             // 
+            this.txtBoxNombre.Enabled = false;
             this.txtBoxNombre.Location = new System.Drawing.Point(142, 51);
             this.txtBoxNombre.Name = "txtBoxNombre";
             this.txtBoxNombre.Size = new System.Drawing.Size(187, 20);
@@ -263,6 +268,7 @@
             // 
             // txtBoxCanal
             // 
+            this.txtBoxCanal.Enabled = false;
             this.txtBoxCanal.Location = new System.Drawing.Point(149, 213);
             this.txtBoxCanal.Name = "txtBoxCanal";
             this.txtBoxCanal.Size = new System.Drawing.Size(218, 20);
@@ -281,6 +287,7 @@
             // 
             // numAdultos
             // 
+            this.numAdultos.Enabled = false;
             this.numAdultos.Location = new System.Drawing.Point(151, 142);
             this.numAdultos.Minimum = new decimal(new int[] {
             1,
@@ -299,6 +306,7 @@
             // 
             // numInfantes
             // 
+            this.numInfantes.Enabled = false;
             this.numInfantes.Location = new System.Drawing.Point(299, 142);
             this.numInfantes.Name = "numInfantes";
             this.numInfantes.Size = new System.Drawing.Size(67, 20);
@@ -328,6 +336,7 @@
             // 
             // txtBoxComentarios
             // 
+            this.txtBoxComentarios.Enabled = false;
             this.txtBoxComentarios.Location = new System.Drawing.Point(496, 48);
             this.txtBoxComentarios.Multiline = true;
             this.txtBoxComentarios.Name = "txtBoxComentarios";
@@ -363,6 +372,7 @@
             // 
             // dateTimePickerSalida
             // 
+            this.dateTimePickerSalida.Enabled = false;
             this.dateTimePickerSalida.Location = new System.Drawing.Point(152, 80);
             this.dateTimePickerSalida.Name = "dateTimePickerSalida";
             this.dateTimePickerSalida.Size = new System.Drawing.Size(218, 20);
@@ -371,6 +381,7 @@
             // 
             // dateTimePickerLlegada
             // 
+            this.dateTimePickerLlegada.Enabled = false;
             this.dateTimePickerLlegada.Location = new System.Drawing.Point(154, 48);
             this.dateTimePickerLlegada.MinDate = new System.DateTime(2019, 7, 8, 0, 0, 0, 0);
             this.dateTimePickerLlegada.Name = "dateTimePickerLlegada";

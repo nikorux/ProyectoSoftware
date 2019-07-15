@@ -53,12 +53,14 @@ namespace PMS_POS.View
         {
             BuscarHabitacion buscarhab = new BuscarHabitacion();
             buscarhab.Show();
+            Revisar();
         }
 
         private void BtnBuscarCliente_Click(object sender, EventArgs e)
         {
             BuscarCliente buscarCliente = new BuscarCliente();
             buscarCliente.Show();
+            Revisar();
         }
 
         private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -160,6 +162,18 @@ namespace PMS_POS.View
             txtBoxTotal.Clear();
             txtBoxCanal.Clear();
             txtBoxComentarios.Clear();
+        }
+        public void Revisar()
+        {
+            if(txtBoxPrecio.Text != string.Empty && txtBoxNombre.Text != string.Empty)
+            {
+                dateTimePickerLlegada.Enabled = true;
+                dateTimePickerSalida.Enabled = true;
+                numAdultos.Enabled = true;
+                numInfantes.Enabled = true;
+                txtBoxCanal.Enabled = true;
+                txtBoxComentarios.Enabled = true;
+            }
         }
     }
 
