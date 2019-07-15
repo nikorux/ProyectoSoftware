@@ -108,6 +108,12 @@
     <Compile Include="View\ConfigurarTipoHabitacion.designer.cs">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Facturacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Facturacion.Designer.cs">
+      <DependentUpon>Facturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\HistorialCompras.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     <EmbeddedResource Include="View\ConfigurarTipoHabitacion.resx">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Facturacion.resx">
+      <DependentUpon>Facturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\HistorialCompras.resx">
       <DependentUpon>HistorialCompras.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,7 +370,16 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="img\arrows.png" />
+    <None Include="Resources\Imagen51.png" />
+    <None Include="Resources\Imagen611.png" />
+    <None Include="Resources\reservas.png" />
+    <None Include="Resources\Imagen34.png" />
+    <None Include="Resources\hotel2.png" />
+    <None Include="Resources\checkin.png" />
+    <None Include="Resources\checkout.png" />
     <Content Include="Resources\habitacion.png" />
+    <Content Include="Resources\hotel.png" />
+    <None Include="Resources\hotel1.png" />
     <None Include="Resources\target.png" />
     <None Include="Resources\sleep.png" />
     <None Include="Resources\settings %281%29.png" />

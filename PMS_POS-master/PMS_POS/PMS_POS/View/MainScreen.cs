@@ -20,14 +20,11 @@ namespace PMS_POS
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private bool isCollapsedReservaciones = true;
         //private bool isCollapsedHuesped;
         private bool isCollapsedProveedores = true;
-        private bool isCollapsedProductos = true;
         private bool isCollapsedReportesFinancieros = true;
         private bool isCollapsedControlUsuarios = true;
         private bool isCollapsedConfiguracion = true;
-        private bool isCollapsedClientes = true;
 
         UserControlHabitaciones UserControlHabitaciones = new UserControlHabitaciones();
 
@@ -44,86 +41,51 @@ namespace PMS_POS
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = button1.Height;
-            SidePanel.Top = button1.Top;
-            userControlInicio1.BringToFront();           
-            
+           //No va
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            
-            SidePanel.Height = button2.Height;
-            SidePanel.Top = ReservacionesDropDown.Top;
-            timer1.Start();
+          //No va
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = button3.Height;
-            SidePanel.Top = button3.Top;
+            //No va
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = button4.Height;
-            SidePanel.Top = DropDownProductos.Top;
-            timer2.Start();            
+            //No va
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            {
-                SidePanel.Height = button5.Height;
-                SidePanel.Top = panelClientes.Top;
-                timer6.Start();
-            }
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = button6.Height;
-            SidePanel.Top = panelProveedores.Top;
-            timer7.Start();
+          //No va
         }
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = button7.Height;
-            SidePanel.Top = panelReportesFinancieros.Top;
-            timer3.Start();
+           //No va
         }
 
         private void Button8_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = button8.Height;
-            SidePanel.Top = button8.Top;
-            timer4.Start();
+          //No va
         }
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = button9.Height;
-            SidePanel.Top = button9.Top;
-            timer5.Start();
+           //No va
         }
 
         private void Button10_Click_1(object sender, EventArgs e)
         {
-            SidePanel.Height = button10.Height;
-            SidePanel.Top = button10.Top;
-            SidePanel.BringToFront();
-
-            if (!userControlInicio1.Controls.Contains(UserControlHabitaciones.Instance))
-            {
-                userControlInicio1.Controls.Add(UserControlHabitaciones.Instance);
-                UserControlHabitaciones.Instance.Dock = DockStyle.Fill;
-                UserControlHabitaciones.Instance.BringToFront();
-            }
-            else
-            {
-                UserControlHabitaciones.Instance.BringToFront();
-            }
+            //No va
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -135,27 +97,7 @@ namespace PMS_POS
         {
 
         }
-        private void Timer1_Tick_1(object sender, EventArgs e)
-        {
-            if (isCollapsedReservaciones)
-            {
-                ReservacionesDropDown.Height += 10;
-                if(ReservacionesDropDown.Size == ReservacionesDropDown.MaximumSize)
-                {
-                    timer1.Stop();
-                    isCollapsedReservaciones = false;
-                }
-            }
-            else
-            {
-                ReservacionesDropDown.Height -= 10;
-                if(ReservacionesDropDown.Size == ReservacionesDropDown.MinimumSize)
-                {
-                    timer1.Stop();
-                    isCollapsedReservaciones = true;
-                }
-            }
-        }
+        
 
         private void Button12_Click(object sender, EventArgs e)
         {
@@ -216,131 +158,25 @@ namespace PMS_POS
 
         private void BtnRegistroHabitaciones_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = button10.Height;
-            SidePanel.Top = button10.Top;
-            SidePanel.BringToFront();
-
-            if (!userControlInicio1.Controls.Contains(UserControlHabitaciones.Instance))
-            {
-                userControlInicio1.Controls.Add(UserControlHabitaciones.Instance);
-                UserControlHabitaciones.Instance.Dock = DockStyle.Fill;
-                UserControlHabitaciones.Instance.BringToFront();
-            }
-            else
-            {
-                UserControlHabitaciones.Instance.BringToFront();
-            }
+            //No va
         }
 
-        private void Timer2_Tick(object sender, EventArgs e)
-        {
-            if (isCollapsedProductos)
-            {
-                DropDownProductos.Height += 10;
-                if (DropDownProductos.Size == DropDownProductos.MaximumSize)
-                {
-                    timer2.Stop();
-                    isCollapsedProductos = false;
-                }
-            }
-            else
-            {
-                DropDownProductos.Height -= 10;
-                if (DropDownProductos.Size == DropDownProductos.MinimumSize)
-                {
-                    timer2.Stop();
-                    isCollapsedProductos = true;
-                }
-            }
-        }
-
+        
         private void Timer3_Tick(object sender, EventArgs e)
         {
-            if (isCollapsedReportesFinancieros)
-            {
-                panelReportesFinancieros.Height += 10;
-                if (panelReportesFinancieros.Size == panelReportesFinancieros.MaximumSize)
-                {
-                    timer3.Stop();
-                    isCollapsedReportesFinancieros = false;
-                }
-            }
-            else
-            {
-                panelReportesFinancieros.Height -= 10;
-                if (panelReportesFinancieros.Size == panelReportesFinancieros.MinimumSize)
-                {
-                    timer3.Stop();
-                    isCollapsedReportesFinancieros = true;
-                }
-            }
+          //No va
         }
 
         private void Timer4_Tick(object sender, EventArgs e)
         {
-            if (isCollapsedControlUsuarios)
-            {
-                panelControlUsuarios.Height += 10;
-                if (panelControlUsuarios.Size == panelControlUsuarios.MaximumSize)
-                {
-                    timer4.Stop();
-                    isCollapsedControlUsuarios = false;
-                }
-            }
-            else
-            {
-                panelControlUsuarios.Height -= 10;
-                if (panelControlUsuarios.Size == panelControlUsuarios.MinimumSize)
-                {
-                    timer4.Stop();
-                    isCollapsedControlUsuarios = true;
-                }
-            }
+          //No va
         }
 
         private void Timer5_Tick(object sender, EventArgs e)
         {
-            if (isCollapsedConfiguracion)
-            {
-                panelConfiguracion.Height += 10;
-                if (panelConfiguracion.Size == panelConfiguracion.MaximumSize)
-                {
-                    timer5.Stop();
-                    isCollapsedConfiguracion = false;
-                }
-            }
-            else
-            {
-                panelConfiguracion.Height -= 10;
-                if (panelConfiguracion.Size == panelConfiguracion.MinimumSize)
-                {
-                    timer5.Stop();
-                    isCollapsedConfiguracion = true;
-                }
-            }
+           //No va
         }
-
-        private void Timer6_Tick(object sender, EventArgs e)
-        {
-            if (isCollapsedClientes)
-            {
-                panelClientes.Height += 10;
-                if (panelClientes.Size == panelClientes.MaximumSize)
-                {
-                    timer6.Stop();
-                    isCollapsedClientes = false;
-                }
-            }
-            else
-            {
-                panelClientes.Height -= 10;
-                if (panelClientes.Size == panelClientes.MinimumSize)
-                {
-                    timer6.Stop();
-                    isCollapsedClientes = true;
-                }
-            }
-        }
+       
 
         private void BtnRegistroProducto_Click(object sender, EventArgs e)
         {
@@ -623,24 +459,7 @@ namespace PMS_POS
 
         private void Timer7_Tick(object sender, EventArgs e)
         {
-            if (isCollapsedProveedores)
-            {
-                panelProveedores.Height += 10;
-                if (panelProveedores.Size == panelProveedores.MaximumSize)
-                {
-                    timer7.Stop();
-                    isCollapsedProveedores = false;
-                }
-            }
-            else
-            {
-                panelProveedores.Height -= 10;
-                if (panelProveedores.Size == panelProveedores.MinimumSize)
-                {
-                    timer7.Stop();
-                    isCollapsedProveedores = true;
-                }
-            }
+            //No va
         }
 
         private void UserControlInicio1_Load(object sender, EventArgs e)
@@ -675,7 +494,161 @@ namespace PMS_POS
 
         private void habitacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //No va
         }
+
+        private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           //No va
+        }
+
+        private void NuevaReservaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          //No va
+        }
+
+        private void InsumosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!userControlInicio1.Controls.Contains(UserControlHabitaciones.Instance))
+            {
+                userControlInicio1.Controls.Add(UserControlHabitaciones.Instance);
+                UserControlHabitaciones.Instance.Dock = DockStyle.Fill;
+                UserControlHabitaciones.Instance.BringToFront();
+            }
+            else
+            {
+                UserControlHabitaciones.Instance.BringToFront();
+            }
+        }
+
+        private void ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+          //No va
+        }
+
+        private void ClientesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (!userControlInicio1.Controls.Contains(UserControlClientes.Instance))
+            {
+                userControlInicio1.Controls.Add(UserControlClientes.Instance);
+                UserControlClientes.Instance.Dock = DockStyle.Fill;
+                UserControlClientes.Instance.BringToFront();
+            }
+            else
+            {
+                UserControlClientes.Instance.BringToFront();
+            }
+        }
+
+        private void HabitacionesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (!userControlInicio1.Controls.Contains(UserControlHabitaciones.Instance))
+            {
+                userControlInicio1.Controls.Add(UserControlHabitaciones.Instance);
+                UserControlHabitaciones.Instance.Dock = DockStyle.Fill;
+                UserControlHabitaciones.Instance.BringToFront();
+            }
+            else
+            {
+                UserControlHabitaciones.Instance.BringToFront();
+            }
+        }
+        private void ReservacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!userControlInicio1.Controls.Contains(NuevaReservacion.Instance))
+            {
+                userControlInicio1.Controls.Add(NuevaReservacion.Instance);
+                NuevaReservacion.Instance.Dock = DockStyle.Fill;
+                NuevaReservacion.Instance.BringToFront();
+            }
+            else
+            {
+                NuevaReservacion.Instance.BringToFront();
+            }
+        }
+
+        private void ProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!userControlInicio1.Controls.Contains(ListadoProveedores.Instance))
+            {
+                userControlInicio1.Controls.Add(ListadoProveedores.Instance);
+                ListadoProveedores.Instance.Dock = DockStyle.Fill;
+                ListadoProveedores.Instance.BringToFront();
+            }
+            else
+            {
+                ListadoProveedores.Instance.BringToFront();
+            }
+        }
+
+        private void BtnClientes_Click(object sender, EventArgs e)
+        {
+            if (!userControlInicio1.Controls.Contains(UserControlClientes.Instance))
+            {
+                userControlInicio1.Controls.Add(UserControlClientes.Instance);
+                UserControlClientes.Instance.Dock = DockStyle.Fill;
+                UserControlClientes.Instance.BringToFront();
+            }
+            else
+            {
+                UserControlClientes.Instance.BringToFront();
+            }
+        }
+
+        private void BtnInicio_Click(object sender, EventArgs e)
+        {
+            if (!userControlInicio1.Controls.Contains(UserControlInicio.Instance))
+            {
+                userControlInicio1.Controls.Add(UserControlInicio.Instance);
+                UserControlInicio.Instance.Dock = DockStyle.Fill;
+                UserControlInicio.Instance.BringToFront();
+            }
+            else
+            {
+                UserControlInicio.Instance.BringToFront();
+            }
+        }
+
+        private void EmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!userControlInicio1.Controls.Contains(ListadoEmpleados.Instance))
+            {
+                userControlInicio1.Controls.Add(ListadoEmpleados.Instance);
+                ListadoEmpleados.Instance.Dock = DockStyle.Fill;
+                ListadoEmpleados.Instance.BringToFront();
+            }
+            else
+            {
+                ListadoEmpleados.Instance.BringToFront();
+            }
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Segur@ que desea cerrar el programa?", "¡Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void Button4_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnReservas_Click(object sender, EventArgs e)
+        {
+            if (!userControlInicio1.Controls.Contains(ListadoReservaciones.Instance))
+            {
+                userControlInicio1.Controls.Add(ListadoReservaciones.Instance);
+                ListadoReservaciones.Instance.Dock = DockStyle.Fill;
+                ListadoReservaciones.Instance.BringToFront();
+            }
+            else
+            {
+                ListadoReservaciones.Instance.BringToFront();
+            }
+        }
+
     }
 }
