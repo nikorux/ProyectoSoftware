@@ -73,6 +73,7 @@
     <Compile Include="Model\Habitacion.cs" />
     <Compile Include="Model\Huesped.cs" />
     <Compile Include="Controller\HuespedD.cs" />
+    <Compile Include="Model\Mostrador.cs" />
     <Compile Include="Model\Producto.cs" />
     <Compile Include="Model\Proveedor.cs" />
     <Compile Include="Model\Reservacion.cs" />
@@ -166,6 +167,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\MenuConfigurar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MenuConfigurar.Designer.cs">
+      <DependentUpon>MenuConfigurar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuActual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MenuActual.Designer.cs">
+      <DependentUpon>MenuActual.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NuevaReservacion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,11 +191,17 @@
     <Compile Include="View\NuevoHuesped.designer.cs">
       <DependentUpon>NuevoHuesped.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PuntoDeVenta.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="View\PosForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PuntoDeVenta.Designer.cs">
-      <DependentUpon>PuntoDeVenta.cs</DependentUpon>
+    <Compile Include="View\PosForm.Designer.cs">
+      <DependentUpon>PosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Receta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Receta.Designer.cs">
+      <DependentUpon>Receta.cs</DependentUpon>
     </Compile>
     <Compile Include="View\RecetaProducto.cs">
       <SubType>UserControl</SubType>
@@ -284,14 +303,23 @@
     <EmbeddedResource Include="View\MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\MenuConfigurar.resx">
+      <DependentUpon>MenuConfigurar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MenuActual.resx">
+      <DependentUpon>MenuActual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\NuevaReservacion.resx">
       <DependentUpon>NuevaReservacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuevoHuesped.resx">
       <DependentUpon>NuevoHuesped.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PuntoDeVenta.resx">
-      <DependentUpon>PuntoDeVenta.cs</DependentUpon>
+    <EmbeddedResource Include="View\PosForm.resx">
+      <DependentUpon>PosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Receta.resx">
+      <DependentUpon>Receta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RecetaProducto.resx">
       <DependentUpon>RecetaProducto.cs</DependentUpon>
@@ -335,6 +363,9 @@
   <ItemGroup>
     <Content Include="img\arrows.png" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\badge-2008747_1280.png" />
+    <None Include="Resources\restaurant-1724294_6401.png" />
+    <None Include="Resources\restaurant-1724294_640.png" />
     <None Include="Resources\service.png" />
     <None Include="Resources\target.png" />
     <None Include="Resources\sleep.png" />

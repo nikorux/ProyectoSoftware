@@ -528,6 +528,7 @@ namespace PMS_POS
 
         private void BtnFacturas_Click(object sender, EventArgs e)
         {
+
             if (!userControlInicio1.Controls.Contains(ListadoFacturas.Instance))
             {
                 userControlInicio1.Controls.Add(ListadoFacturas.Instance);
@@ -576,20 +577,6 @@ namespace PMS_POS
             {
                 ListadoProveedores.Instance.BringToFront();
             }*/
-        }
-
-        private void BtnPuntoDeVenta_Click(object sender, EventArgs e)
-        {
-            if (!userControlInicio1.Controls.Contains(PuntoDeVenta.Instance))
-            {
-                userControlInicio1.Controls.Add(PuntoDeVenta.Instance);
-                PuntoDeVenta.Instance.Dock = DockStyle.Fill;
-                PuntoDeVenta.Instance.BringToFront();
-            }
-            else
-            {
-                PuntoDeVenta.Instance.BringToFront();
-            }
         }
 
         private void BtnHistorialCompra_Click(object sender, EventArgs e)
@@ -664,6 +651,12 @@ namespace PMS_POS
         private void BtnGoBack_MouseClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void BtnPuntoDeVenta_MouseClick(object sender, MouseEventArgs e)
+        {
+            PosForm posForm = new PosForm();
+            posForm.Show();
         }
     }
 }

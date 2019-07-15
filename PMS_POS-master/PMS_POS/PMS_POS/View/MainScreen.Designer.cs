@@ -1094,7 +1094,7 @@ namespace PMS_POS
             this.btnPuntoDeVenta.Text = "Punto de Venta";
             this.btnPuntoDeVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPuntoDeVenta.UseVisualStyleBackColor = true;
-            this.btnPuntoDeVenta.Click += new System.EventHandler(this.BtnPuntoDeVenta_Click);
+            this.btnPuntoDeVenta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnPuntoDeVenta_MouseClick);
             // 
             // button10
             // 
