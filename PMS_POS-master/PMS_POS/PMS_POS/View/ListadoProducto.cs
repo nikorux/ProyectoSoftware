@@ -11,7 +11,6 @@ using PMS_POS.Model;
 using System.Data.SqlClient;
 using System.Configuration;
 using MySql.Data.MySqlClient;
-//using MySql.Data.MySqlClient;
 
 namespace PMS_POS.View
 {
