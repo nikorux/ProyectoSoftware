@@ -83,6 +83,8 @@ namespace PMS_POS.Model
             return NombreCompaniaP;
         }
 
+
+
         public int SelectIdProveedorFROMnombreCompania(string NombreProveedor)
         {
             int IdProveedor = 0;
@@ -160,7 +162,37 @@ namespace PMS_POS.Model
                 conn.Open();
                 adapter.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception)
+            {
+                
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public DataTable FiltrarPORproveedor(string NombreProveedor)
+        {
+            int IdProveedor = SelectIdProveedorFROMnombreCompania(NombreProveedor);
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT * FROM insumo WHERE Proveedor=@idProveedor AND IsDeleted=0";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@idProveedor", IdProveedor);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
             {
 
             }
@@ -187,7 +219,7 @@ namespace PMS_POS.Model
                 conn.Open();
                 adapter.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -197,11 +229,66 @@ namespace PMS_POS.Model
             }
             return dt;
         }
-        public bool Insert(Producto x)
+
+        public DataTable SelectBebidas()
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT NombreBebida FROM bebida WHERE IsDeleted=0";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SelectPlato()
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT NombrePlato FROM plato WHERE IsDeleted=0";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public bool Insert(Producto x, int EnMostrador)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "INSERT INTO insumo (NombreInsumo, IdCategoria, DescripcionInsumo, Proveedor, PrecioCompra, PorcientoImpuesto, Impuesto, PrecioVenta, CantActual, CantMinima, CantMaxima, UnidadMedida) VALUES (@NombreInsumo, @IdCategoria, @DescripcionInsumo, @IdProveedor, @PrecioCompra, @PorcientoImpuesto, @Impuesto, @PrecioVenta, @CantActual, @CantMinima, @CantMaxima, @UnidadMedida)";
+                string sql = "INSERT INTO insumo (NombreInsumo, IdCategoria, DescripcionInsumo, Proveedor, PrecioCompra, PorcientoImpuesto, Impuesto, PrecioVenta, CantActual, CantMinima, CantMaxima, UnidadMedida, EnMostrador) VALUES (@NombreInsumo, @IdCategoria, @DescripcionInsumo, @IdProveedor, @PrecioCompra, @PorcientoImpuesto, @Impuesto, @PrecioVenta, @CantActual, @CantMinima, @CantMaxima, @UnidadMedida, @EnMostrador)";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
@@ -217,6 +304,7 @@ namespace PMS_POS.Model
                 cmd.Parameters.AddWithValue("@CantMinima", x.CantMinima);
                 cmd.Parameters.AddWithValue("@CantMaxima", x.CantMaxima);
                 cmd.Parameters.AddWithValue("@UnidadMedida", x.UnidadMedida);
+                cmd.Parameters.AddWithValue("@EnMostrador", EnMostrador);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)

@@ -124,6 +124,9 @@
   <data name="end" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\end.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="restaurant-1724294_6401" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restaurant-1724294_6401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="arrows (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrows (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,6 +151,9 @@
   <data name="peak" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\peak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="service" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\service.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="line2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\line2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,7 +172,10 @@
   <data name="overflow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\overflow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="service" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\service.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="restaurant-1724294_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restaurant-1724294_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="badge-2008747_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\badge-2008747_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

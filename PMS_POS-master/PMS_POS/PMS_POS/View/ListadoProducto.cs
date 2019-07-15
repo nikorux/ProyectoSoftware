@@ -43,6 +43,7 @@ namespace PMS_POS.View
 
         Producto producto = new Producto();
         UnidadMedida unidadMedida = new UnidadMedida();
+        PosForm posForm = new PosForm();
 
         //Cuando el MainScreen llama a Listado producto, manda una variable string (showUC) con el nombre del UserControl a mostrar
         public ListadoProducto(string showUC)
@@ -62,16 +63,18 @@ namespace PMS_POS.View
                 btnGoBack.Visible = false;
             }
             dgvProductos.DataSource = producto.Select();
-            this.dgvProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
-            this.dgvProductos.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+            this.dgvProductos.DefaultCellStyle.Font = new Font("SansSerif", 12);
+            this.dgvProductos.ColumnHeadersDefaultCellStyle.Font = new Font("SansSerif", 12);
             dgvProductos.Columns[0].Visible = false;
             dgvProductos.Columns[13].Visible = false;
             dgvProductos.Columns[14].Visible = false;
             dgvProductos.Columns[2].Visible = false;
-            dgvProductos.Columns[4].Visible = false;
             dgvProductos.Columns[6].Visible = false;
             pnlAjustarStock.Visible = false;
-            
+            pnlOpcionesRegistroProducto.Visible = false;
+            pnlOpcionesRegistroProducto.BringToFront();
+            btnRegistrarReceta.Visible = false;
+
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -175,6 +178,7 @@ namespace PMS_POS.View
                 while (readerP.Read())
                 {
                     cbxProveedor.Items.Add(readerP.GetString("NombreCompañia"));
+                    cbxBuscarProveedor.Items.Add(readerP.GetString("NombreCompañia"));
                 }
                 connectionProveedores.Close();
             }
@@ -184,24 +188,16 @@ namespace PMS_POS.View
             }
         }
 
-        private void BtnNuevoProducto_Click(object sender, EventArgs e)
-        {
-            splitContainer1.Panel1Collapsed = true;
-            lblTitulo.Text = "Nuevo Producto";
-            btnEditarP.Visible = false;
-            btnGuardar.Visible = true;
-        }
-
         private void BtnGoBack_Click(object sender, EventArgs e)
         {
             splitContainer1.Panel2Collapsed= true;
             dgvProductos.DataSource = producto.Select();
         }
 
-        private void BtnGuardar_MouseClick(object sender, MouseEventArgs e)
+        public void Guardar(int EnMostrador)
         {
             try
-            {   
+            {
                 if (this.txtNombreProducto.Text == string.Empty || this.cbxProveedor.SelectedItem == null ||
                     this.txtDescripcion.Text == string.Empty || this.txtPrecioCompra.Text == string.Empty ||
                     this.txtPrecioVenta.Text == string.Empty || nudCantidadActual.Value == 0 ||
@@ -209,9 +205,9 @@ namespace PMS_POS.View
                     this.cbxUnidadMedida.SelectedItem == null || this.cbxCategoriaRP.SelectedItem == null || nudCantidadMaxima.Value < nudCantidadMinima.Value)
                 {
                     MessageBox.Show("Campos vacíos o incorrectos.", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }                
+                }
                 else
-                {                    
+                {
                     producto.NombreInsumo = txtNombreProducto.Text;
                     producto.IdProveedor = producto.SelectIdProveedorFROMnombreCompania(cbxProveedor.SelectedItem.ToString());
                     producto.DescripcionInsumo = txtDescripcion.Text;
@@ -232,7 +228,7 @@ namespace PMS_POS.View
                         producto.Impuesto = 0;
                         producto.PorcientoImpuesto = 0;
                     }
-                    if (producto.Insert(producto) == true)
+                    if (producto.Insert(producto, EnMostrador) == true)
                     {
                         cbxCategoriaRP.Text = "";
                         cbxUnidadMedida.Text = "";
@@ -262,6 +258,14 @@ namespace PMS_POS.View
             }
         }
 
+        private void BtnGuardar_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlOpcionesRegistroProducto.Visible = true;
+            pnlOpcionesRegistroProducto.BringToFront();
+        }
+
+        public static float precioRegistrado;
+
         private void BtnEditarP_MouseClick(object sender, MouseEventArgs e)
         {
             try
@@ -272,7 +276,7 @@ namespace PMS_POS.View
                 producto.DescripcionInsumo = txtDescripcion.Text;
                 producto.PrecioCompra = float.Parse(txtPrecioCompra.Text);
                 producto.IdCategoria = producto.SelectIdCategoria(cbxCategoriaRP.SelectedItem.ToString());
-                producto.PrecioVenta = float.Parse(string.Format("{0:0.00}", txtPrecioVenta.Text));
+                producto.PrecioVenta = precioRegistrado = float.Parse(string.Format("{0:0.00}", txtPrecioVenta.Text));
                 producto.CantActual = Convert.ToInt32(nudCantidadActual.Value);
                 producto.CantMinima = Convert.ToInt32(nudCantidadMinima.Value);
                 producto.CantMaxima = Convert.ToInt32(nudCantidadMaxima.Value);
@@ -313,45 +317,25 @@ namespace PMS_POS.View
             }
       
         }
-
-        private void BtnBorrar_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (dgvProductos.SelectedRows.Count > 0)
-            {
-                DialogResult ans = MessageBox.Show("Desea borrar " + dgvProductos.CurrentRow.Cells[1].Value.ToString() + " del inventario?", "Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if(ans == DialogResult.Yes){
-                    try
-                    {
-                        producto.IdInsumo = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
-                        if (producto.Delete(producto) == true);
-                        else
-                        {
-                            MessageBox.Show("Error al eliminar producto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al borrar el producto. (Error: " + ex + ")");
-                    }
-                }                
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            dgvProductos.DataSource = producto.Select();
-        }
-
         private void CbxCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cbxCategoria.Text == "Todas")
             {
                 dgvProductos.DataSource = producto.Select();
+                dgvProductos.Columns[0].Visible = false;
+                dgvProductos.Columns[13].Visible = false;
+                dgvProductos.Columns[14].Visible = false;
+                dgvProductos.Columns[2].Visible = false;
+                dgvProductos.Columns[6].Visible = false;
             }
             else
             {
                 dgvProductos.DataSource = producto.FiltrarPORcategoria(cbxCategoria.SelectedItem.ToString());
+                dgvProductos.Columns[0].Visible = false;
+                dgvProductos.Columns[13].Visible = false;
+                dgvProductos.Columns[14].Visible = false;
+                dgvProductos.Columns[2].Visible = false;
+                dgvProductos.Columns[6].Visible = false;
 
             }
         }
@@ -474,6 +458,120 @@ namespace PMS_POS.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void CbxBuscarProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxBuscarProveedor.Text == "Todos")
+            {
+                dgvProductos.DataSource = producto.Select();
+                dgvProductos.Columns[0].Visible = false;
+                dgvProductos.Columns[13].Visible = false;
+                dgvProductos.Columns[14].Visible = false;
+                dgvProductos.Columns[2].Visible = false;
+                dgvProductos.Columns[4].Visible = false;
+                dgvProductos.Columns[6].Visible = false;
+            }
+            else
+            {
+                dgvProductos.DataSource = producto.FiltrarPORproveedor(cbxBuscarProveedor.SelectedItem.ToString());
+                dgvProductos.Columns[0].Visible = false;
+                dgvProductos.Columns[13].Visible = false;
+                dgvProductos.Columns[14].Visible = false;
+                dgvProductos.Columns[2].Visible = false;
+                dgvProductos.Columns[4].Visible = false;
+                dgvProductos.Columns[6].Visible = false;
+            }
+        }
+
+        private void BtnProductoMostrador_MouseClick(object sender, MouseEventArgs e)
+        {
+            Guardar(1);
+            pnlOpcionesRegistroProducto.Visible = false;
+        }
+
+        private void BtnNuevoProducto_MouseClick(object sender, MouseEventArgs e)
+        {
+            splitContainer1.Panel1Collapsed = true;
+            lblTitulo.Text = "Nuevo Producto";
+            btnEditarP.Visible = false;
+            btnGuardar.Visible = true;
+            pnlOpcionesRegistroProducto.Visible = false;
+        }
+
+        private void BtnCancelar_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlOpcionesRegistroProducto.Visible = false;
+        }
+
+        private void BtnProductoAInventario_MouseClick(object sender, MouseEventArgs e)
+        {
+            Guardar(0);
+            pnlOpcionesRegistroProducto.Visible = false;
+        }
+
+        private void CbxCategoriaRP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRequiereReceta.Checked == true)
+            {
+                btnRegistrarReceta.Visible = true;
+            }
+            if (chkRequiereReceta.Checked == false && btnRegistrarReceta.Visible == true)
+            {
+                btnRegistrarReceta.Visible = true;
+            }
+        }
+
+        private void BtnRegistrarReceta_MouseClick(object sender, MouseEventArgs e)
+        {
+            Receta receta = new Receta(txtNombreProducto.Text);
+            receta.Show();
+        }
+
+        private void BtnEliminar_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count > 0)
+            {
+                DialogResult ans = MessageBox.Show("Desea borrar " + dgvProductos.CurrentRow.Cells[1].Value.ToString() + " del inventario?", "Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (ans == DialogResult.Yes)
+                {
+                    try
+                    {
+                        producto.IdInsumo = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
+                        if (producto.Delete(producto) == true) ;
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar producto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al borrar el producto. (Error: " + ex + ")");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            dgvProductos.DataSource = producto.Select();
+        }
+
+        private void ChkRequiereReceta_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+
         }
     }
 }
