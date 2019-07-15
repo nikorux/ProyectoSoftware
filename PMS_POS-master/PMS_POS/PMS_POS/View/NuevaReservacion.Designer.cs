@@ -98,6 +98,7 @@
             // 
             // txtBoxNumeroHabitacion
             // 
+            this.txtBoxNumeroHabitacion.Enabled = false;
             this.txtBoxNumeroHabitacion.Location = new System.Drawing.Point(135, 30);
             this.txtBoxNumeroHabitacion.Name = "txtBoxNumeroHabitacion";
             this.txtBoxNumeroHabitacion.Size = new System.Drawing.Size(133, 20);
@@ -105,6 +106,7 @@
             // 
             // txtBoxTipoHabitacion
             // 
+            this.txtBoxTipoHabitacion.Enabled = false;
             this.txtBoxTipoHabitacion.Location = new System.Drawing.Point(135, 56);
             this.txtBoxTipoHabitacion.Name = "txtBoxTipoHabitacion";
             this.txtBoxTipoHabitacion.Size = new System.Drawing.Size(133, 20);
@@ -117,6 +119,7 @@
             // 
             // txtBoxPrecio
             // 
+            this.txtBoxPrecio.Enabled = false;
             this.txtBoxPrecio.Location = new System.Drawing.Point(135, 81);
             this.txtBoxPrecio.Name = "txtBoxPrecio";
             this.txtBoxPrecio.Size = new System.Drawing.Size(133, 20);
@@ -178,6 +181,7 @@
             // 
             // txtBoxDocumento
             // 
+            this.txtBoxDocumento.Enabled = false;
             this.txtBoxDocumento.Location = new System.Drawing.Point(69, 81);
             this.txtBoxDocumento.Name = "txtBoxDocumento";
             this.txtBoxDocumento.Size = new System.Drawing.Size(133, 20);
@@ -185,6 +189,7 @@
             // 
             // txtBoxNombre
             // 
+            this.txtBoxNombre.Enabled = false;
             this.txtBoxNombre.Location = new System.Drawing.Point(69, 30);
             this.txtBoxNombre.Name = "txtBoxNombre";
             this.txtBoxNombre.Size = new System.Drawing.Size(133, 20);
