@@ -118,8 +118,8 @@ namespace PMS_POS.View
         {
             dgvHab.DataSource = habitacion.Select();
             dgvHab.Columns[0].Visible = false;
-            dgvHab.Columns[10].Visible = false;
-            dgvHab.Columns[11].Visible = false;
+          //  dgvHab.Columns[10].Visible = false;
+          //  dgvHab.Columns[11].Visible = false;
         }
 
         private void TxtBoxBuscar_TextChanged(object sender, EventArgs e)

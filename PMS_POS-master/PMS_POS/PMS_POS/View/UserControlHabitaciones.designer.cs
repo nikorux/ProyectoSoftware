@@ -89,7 +89,9 @@
             // 
             this.dgvHab.AllowUserToAddRows = false;
             this.dgvHab.AllowUserToDeleteRows = false;
-            this.dgvHab.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvHab.AllowUserToResizeColumns = false;
+            this.dgvHab.AllowUserToResizeRows = false;
+            this.dgvHab.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHab.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvHab.BackgroundColor = System.Drawing.Color.White;
             this.dgvHab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
