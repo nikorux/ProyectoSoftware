@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace PMS_POS.Model
 {
     class Producto
-    {//
+    {
         public int IdInsumo { get; set; }
         public string NombreInsumo { get; set; }
         public int IdCategoria { get; set; }
@@ -26,6 +26,34 @@ namespace PMS_POS.Model
         public string UnidadMedida { get; set; }
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
+
+
+        public DataTable SelectItemsEnInventario()
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT IdInsumo, NombreInsumo FROM insumo WHERE IsDeleted=0";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
 
         public string SelectNombreCategoriaFROMIdCategoria(int IdCategoria)
         {
@@ -63,7 +91,7 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT NombreCompañia FROM proveedor WHERE IdProveedor=@idProveedor";// creating cmd using sql and conn
+                string sql = "SELECT NombreCompañia FROM proveedor WHERE IdProveedor=@idProveedor";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@idProveedor", IdProveedor);
@@ -82,8 +110,6 @@ namespace PMS_POS.Model
             }
             return NombreCompaniaP;
         }
-
-
 
         public int SelectIdProveedorFROMnombreCompania(string NombreProveedor)
         {

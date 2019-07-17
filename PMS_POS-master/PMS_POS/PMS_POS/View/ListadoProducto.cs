@@ -63,23 +63,32 @@ namespace PMS_POS.View
                 btnGoBack.Visible = false;
             }
             dgvProductos.DataSource = producto.Select();
-            this.dgvProductos.DefaultCellStyle.Font = new Font("SansSerif", 12);
-            this.dgvProductos.ColumnHeadersDefaultCellStyle.Font = new Font("SansSerif", 12);
+            this.dgvProductos.DefaultCellStyle.Font = new Font("SansSerif", 10);
+            this.dgvProductos.ColumnHeadersDefaultCellStyle.Font = new Font("SansSerif", 10);
             dgvProductos.Columns[0].Visible = false;
             dgvProductos.Columns[13].Visible = false;
             dgvProductos.Columns[14].Visible = false;
+            dgvProductos.Columns[15].Visible = false;
             dgvProductos.Columns[2].Visible = false;
+            dgvProductos.Columns[4].Visible = false;
             dgvProductos.Columns[6].Visible = false;
             pnlAjustarStock.Visible = false;
             pnlOpcionesRegistroProducto.Visible = false;
             pnlOpcionesRegistroProducto.BringToFront();
-            btnRegistrarReceta.Visible = false;
 
+            cbxUnidadMedida.Items.Clear();
+            cbxUnidadMedida.Items.Add("Grano");
+            cbxUnidadMedida.Items.Add("Onza");
+            cbxUnidadMedida.Items.Add("Libra");
+            cbxUnidadMedida.Items.Add("Kilogramo");
+            cbxUnidadMedida.Items.Add("Miligramo");
+            cbxUnidadMedida.Items.Add("Gramo");
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             btnEditarP.Visible = true;
+            btnAgregarReceta.Visible = true;
             btnGuardar.Visible = false;
 
             if (dgvProductos.SelectedRows.Count > 0)
@@ -243,7 +252,6 @@ namespace PMS_POS.View
                         nudCantidadMinima.Value = 0;
                         nudCantidadMaxima.Value = 0;
                         cbxUnidadMedida.SelectedIndex = 0;
-                        MessageBox.Show("El producto ha sido registrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -406,8 +414,6 @@ namespace PMS_POS.View
             {
                 pnlAjustarStock.Visible = true;
                 lblNombreProductoAjustar.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
-                lblCantidadActual.Text = dgvProductos.CurrentRow.Cells[9].Value.ToString();
-                lblUnidadMedidaActual.Text = dgvProductos.CurrentRow.Cells[12].Value.ToString();
             }
             else
             {
@@ -432,7 +438,7 @@ namespace PMS_POS.View
                     float CantidadCalculada = 0;
                     if (cbxAccionAjuste.Text == "Aumentar")
                     {
-                        CantidadCalculada = float.Parse(dgvProductos.CurrentRow.Cells[9].Value.ToString()) + unidadMedida.Conversion(lblUnidadMedidaActual.Text, CantidadAjuste);
+                        CantidadCalculada = float.Parse(dgvProductos.CurrentRow.Cells[9].Value.ToString()) + unidadMedida.Conversion(dgvProductos.CurrentRow.Cells[12].Value.ToString(), CantidadAjuste);
                     }
                     if (cbxAccionAjuste.Text == "Disminuir")
                     {
@@ -487,6 +493,18 @@ namespace PMS_POS.View
         private void BtnProductoMostrador_MouseClick(object sender, MouseEventArgs e)
         {
             Guardar(1);
+
+            DialogResult result3 = MessageBox.Show("Este producto requiere receta?","Detalles producto",
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (result3 == DialogResult.Yes)
+            {
+                RegistrarReceta receta = new RegistrarReceta(txtNombreProducto.Text);
+                receta.Show();
+            }
+
             pnlOpcionesRegistroProducto.Visible = false;
         }
 
@@ -496,6 +514,7 @@ namespace PMS_POS.View
             lblTitulo.Text = "Nuevo Producto";
             btnEditarP.Visible = false;
             btnGuardar.Visible = true;
+            btnAgregarReceta.Visible = false;
             pnlOpcionesRegistroProducto.Visible = false;
         }
 
@@ -507,35 +526,19 @@ namespace PMS_POS.View
         private void BtnProductoAInventario_MouseClick(object sender, MouseEventArgs e)
         {
             Guardar(0);
+
+            DialogResult result3 = MessageBox.Show("Este producto requiere receta?", "Detalles producto",
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (result3 == DialogResult.Yes)
+            {
+                RegistrarReceta receta = new RegistrarReceta(txtNombreProducto.Text);
+                receta.Show();
+            }
+
             pnlOpcionesRegistroProducto.Visible = false;
-        }
-
-        private void CbxCategoriaRP_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkRequiereReceta.Checked == true)
-            {
-                btnRegistrarReceta.Visible = true;
-            }
-            if (chkRequiereReceta.Checked == false && btnRegistrarReceta.Visible == true)
-            {
-                btnRegistrarReceta.Visible = true;
-            }
-        }
-
-        private void BtnRegistrarReceta_MouseClick(object sender, MouseEventArgs e)
-        {
-            Receta receta = new Receta(txtNombreProducto.Text);
-            receta.Show();
         }
 
         private void BtnEliminar_MouseClick(object sender, MouseEventArgs e)
@@ -567,10 +570,42 @@ namespace PMS_POS.View
 
             dgvProductos.DataSource = producto.Select();
         }
-
-        private void ChkRequiereReceta_MouseClick(object sender, MouseEventArgs e)
+        private void BtnAgregarReceta_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            RegistrarReceta receta = new RegistrarReceta(txtNombreProducto.Text);
+            receta.Show();
+        }
+
+        private void ChkProductoLiquido_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkProductoLiquido.Checked)
+            {
+                cbxUnidadMedida.Items.Clear();
+                cbxUnidadMedida.Items.Add("Cuchara de té");
+                cbxUnidadMedida.Items.Add("Cuchara de madera");
+                cbxUnidadMedida.Items.Add("Onza fluida");
+                cbxUnidadMedida.Items.Add("Taza");
+                cbxUnidadMedida.Items.Add("Medio litro");
+                cbxUnidadMedida.Items.Add("Cuarto de galón");
+                cbxUnidadMedida.Items.Add("Galón");
+                cbxUnidadMedida.Items.Add("Barril");
+                cbxUnidadMedida.Items.Add("Mililitros");
+                cbxUnidadMedida.Items.Add("Litros");
+            }
+            else
+            {
+                cbxUnidadMedida.Items.Clear();
+                cbxUnidadMedida.Items.Add("Grano");
+                cbxUnidadMedida.Items.Add("Onza");
+                cbxUnidadMedida.Items.Add("Libra");
+                cbxUnidadMedida.Items.Add("Kilogramo");
+                cbxUnidadMedida.Items.Add("Miligramo");
+                cbxUnidadMedida.Items.Add("Gramo");
+            }
+        }
+
+        private void BtnNuevoProducto_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -29,9 +29,9 @@ namespace PMS_POS.View
         public PosForm()
         {
             InitializeComponent();
-            int width = Screen.PrimaryScreen.Bounds.Width;
+            /*int width = Screen.PrimaryScreen.Bounds.Width;
             int height = Screen.PrimaryScreen.Bounds.Height;
-            this.Size = new System.Drawing.Size(width, height);
+            this.Size = new System.Drawing.Size(width, height);*/
             panelUIseleccionada.Visible = false;
             panelBasePOS.Visible = true;
             lblestadoUI.Text = estadoUI;
@@ -69,16 +69,16 @@ namespace PMS_POS.View
             panelUIseleccionada.BringToFront();
             panelUIseleccionada.Visible = true;
 
-            /*if (!panelUIseleccionada.Controls.Contains(RegistroProveedor.Instance))
+            if (!panelUIseleccionada.Controls.Contains(Reportes.Instance))
             {
-                panelUIseleccionada.Controls.Add(RegistroProveedor.Instance);
-                RegistroProveedor.Instance.Dock = DockStyle.Fill;
-                RegistroProveedor.Instance.BringToFront();
+                panelUIseleccionada.Controls.Add(Reportes.Instance);
+                Reportes.Instance.Dock = DockStyle.Fill;
+                Reportes.Instance.BringToFront();
             }
             else
             {
-                RegistroProveedor.Instance.BringToFront();
-            }*/
+                Reportes.Instance.BringToFront();
+            }
 
             estadoUI = "Reportes";
         }
@@ -107,16 +107,16 @@ namespace PMS_POS.View
             panelUIseleccionada.BringToFront();
             panelUIseleccionada.Visible = true;
 
-            /*if (!panelUIseleccionada.Controls.Contains(RegistroProveedor.Instance))
+            if (!panelUIseleccionada.Controls.Contains(Inventario.Instance))
             {
-                panelUIseleccionada.Controls.Add(RegistroProveedor.Instance);
-                RegistroProveedor.Instance.Dock = DockStyle.Fill;
-                RegistroProveedor.Instance.BringToFront();
+                panelUIseleccionada.Controls.Add(Inventario.Instance);
+                Inventario.Instance.Dock = DockStyle.Fill;
+                Inventario.Instance.BringToFront();
             }
             else
             {
-                RegistroProveedor.Instance.BringToFront();
-            }*/
+                Inventario.Instance.BringToFront();
+            }
 
             estadoUI = "Inventario";
         }
@@ -193,6 +193,11 @@ namespace PMS_POS.View
                 panelUIseleccionada.Visible = false;
                 panelBasePOS.Visible = true;
             }
+        }
+
+        private void BtnMostrador_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

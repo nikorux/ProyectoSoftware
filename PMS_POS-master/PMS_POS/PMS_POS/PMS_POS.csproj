@@ -76,6 +76,7 @@
     <Compile Include="Model\Mostrador.cs" />
     <Compile Include="Model\Producto.cs" />
     <Compile Include="Model\Proveedor.cs" />
+    <Compile Include="Model\Receta.cs" />
     <Compile Include="Model\Reservacion.cs" />
     <Compile Include="Model\Rubro.cs" />
     <Compile Include="Model\TipoHabitacion.cs" />
@@ -122,6 +123,12 @@
     </Compile>
     <Compile Include="View\InformacionEstablecimiento.Designer.cs">
       <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Inventario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ListaClientes.cs">
       <SubType>UserControl</SubType>
@@ -197,17 +204,11 @@
     <Compile Include="View\PosForm.Designer.cs">
       <DependentUpon>PosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Receta.cs">
+    <Compile Include="View\RegistrarReceta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Receta.Designer.cs">
-      <DependentUpon>Receta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecetaProducto.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\RecetaProducto.Designer.cs">
-      <DependentUpon>RecetaProducto.cs</DependentUpon>
+    <Compile Include="View\RegistrarReceta.Designer.cs">
+      <DependentUpon>RegistrarReceta.cs</DependentUpon>
     </Compile>
     <Compile Include="View\RegistrarNuevaCompra.cs">
       <SubType>UserControl</SubType>
@@ -222,7 +223,7 @@
       <DependentUpon>RegistrarNuevoEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="View\RegistroNuevoProducto.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\RegistroNuevoProducto.designer.cs">
       <DependentUpon>RegistroNuevoProducto.cs</DependentUpon>
@@ -232,6 +233,12 @@
     </Compile>
     <Compile Include="View\RegistroProveedor.Designer.cs">
       <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reportes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControlHabitaciones.cs">
       <SubType>UserControl</SubType>
@@ -282,6 +289,9 @@
     <EmbeddedResource Include="View\InformacionEstablecimiento.resx">
       <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ListaClientes.resx">
       <DependentUpon>ListaClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,11 +328,8 @@
     <EmbeddedResource Include="View\PosForm.resx">
       <DependentUpon>PosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Receta.resx">
-      <DependentUpon>Receta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\RecetaProducto.resx">
-      <DependentUpon>RecetaProducto.cs</DependentUpon>
+    <EmbeddedResource Include="View\RegistrarReceta.resx">
+      <DependentUpon>RegistrarReceta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegistrarNuevaCompra.resx">
       <DependentUpon>RegistrarNuevaCompra.cs</DependentUpon>
@@ -335,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegistroProveedor.resx">
       <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControlHabitaciones.resx">
       <DependentUpon>UserControlHabitaciones.cs</DependentUpon>

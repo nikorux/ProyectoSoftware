@@ -33,6 +33,7 @@ namespace PMS_POS.View
         }
 
         Mostrador mostrador = new Mostrador();
+        Producto producto = new Producto();
 
         private void MenuActual_Load(object sender, EventArgs e)
         {
@@ -48,13 +49,39 @@ namespace PMS_POS.View
             }
             connectionCategoria.Close();
 
-           /* for (int i = 1; i <= cbxCategoria.Items.Count-1; i++)
+            /* for (int i = 1; i <= cbxCategoria.Items.Count-1; i++)
+             {
+                 listMenuActual.Items.Add(cbxCategoria.SelectedItem.ToString()[i]);
+                 listMenuActual.Items.Add(" ");
+                 listMenuActual.Items.Add(mostrador.SelectItemsListMenu(cbxCategoria.SelectedItem.ToString()[i]);
+                 listMenuActual.Items.Add(" ");
+             }*/
+
+            for (int i = 1; i <= cbxCategoria.Items.Count-1; i++)
             {
-                listMenuActual.Items.Add(cbxCategoria.SelectedItem.ToString()[i]);
+                string nombreCategoria = cbxCategoria.Items[i].ToString();
+                listMenuActual.Items.Add(nombreCategoria);
                 listMenuActual.Items.Add(" ");
-                listMenuActual.Items.Add(mostrador.SelectItemsListMenu(cbxCategoria.SelectedItem.ToString()[i]);
+                int IdCategoria = producto.SelectIdCategoria(nombreCategoria);
+
+                MySqlConnection connection = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
+                string query = "SELECT NombreInsumo FROM insumo WHERE IsDeleted=0 AND EnMostrador=1 AND IdCategoria=@idCategoria";
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@idCategoria", IdCategoria);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    listMenuActual.Items.Add(reader.GetString("NombreInsumo"));
+                }
+                connection.Close();
+
+                listMenuActual.Items.Add("- - - - - - - - - -");
                 listMenuActual.Items.Add(" ");
-            }*/
+
+
+            }
         }
     }
 }

@@ -21,6 +21,35 @@ namespace PMS_POS.Model
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
 
+        public DataTable SelectItemsParaMenuConMatchingIdCategoria(int IdCategoria)
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT NombreInsumo FROM insumo WHERE IsDeleted=0 AND EnMostrador=1 AND IdCategoria=@idCategoria";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@idCategoria", IdCategoria);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
         public DataTable SelectItemsDisponiblesParaMenu()
         {
             //hacer la conexion con sql
@@ -47,6 +76,7 @@ namespace PMS_POS.Model
             }
             return dt;
         }
+
         public DataTable SelectItemsListMenu(string categoria)
         {
             //hacer la conexion con sql
