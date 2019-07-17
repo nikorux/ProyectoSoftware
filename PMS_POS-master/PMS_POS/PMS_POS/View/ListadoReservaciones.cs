@@ -116,9 +116,9 @@ namespace PMS_POS.View
                 MessageBox.Show("Seleccione una fila.");
             }
         }
-        void refresh()
+       public void refresh()
         {
-
+            dgvReservaciones.DataSource = reservacion.Select();
         }
 
         private void BtnRegistrarReservacion_Click(object sender, EventArgs e)

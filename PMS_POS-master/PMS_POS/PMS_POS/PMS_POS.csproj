@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Controller\ControllerHabitacion.cs" />
     <Compile Include="Controller\DocumentoC.cs" />
+    <Compile Include="Controller\ReservacionC.cs" />
     <Compile Include="Controller\RubroC.cs" />
     <Compile Include="Controller\TipoHabitacion.cs" />
     <Compile Include="Model\BDGeneral.cs" />
@@ -230,6 +231,12 @@
     <Compile Include="View\RegistroProveedor.Designer.cs">
       <DependentUpon>RegistroProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Reservaciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Reservaciones.Designer.cs">
+      <DependentUpon>Reservaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControlClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -341,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegistroProveedor.resx">
       <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reservaciones.resx">
+      <DependentUpon>Reservaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControlClientes.resx">
       <DependentUpon>UserControlClientes.cs</DependentUpon>

@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using PMS_POS.Controller;
+
 
 namespace PMS_POS.Model
 {
-    class Reservacion
+    class Reservacion : ReservacionC
     {
+        string instruccion;
+
         public int IdReservacion { get; set; }
         public int IdHuesped { get; set; }
         public DateTime FechaLlegada { get; set; }
@@ -25,6 +29,7 @@ namespace PMS_POS.Model
         public float TotalPorEstadia { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime DeletedDate { get; set; }
+        public string EstadoReservacion { get; set; }
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
 
@@ -260,6 +265,15 @@ namespace PMS_POS.Model
                     return false;
                 }
             }
+        }
+
+        public DataTable VistaTabla()
+        {
+            instruccion = "Select hostal.reservacion.FechaLlegada as Llegada, hostal.reservacion.FechaSalida as Salida, hostal.habitacion.NumHab as Habitacion, hostal.reservacion.EstadoReservacion as Estado, CONCAT(huesped.PrimerNombre, ' ', huesped.SegundoNombre, ' ', huesped.PrimerApellido,' ', hostal.huesped.SegundoApellido) as Nombre, hostal.huesped.Telefono as Contacto FROM hostal.reservacion INNER JOIN hostal.habitacion ON hostal.reservacion.IdHabitacion = hostal.habitacion.IdHabitacion INNER JOIN hostal.huesped ON hostal.reservacion.IdHuesped = hostal.huesped.IdHuesped GROUP BY hostal.reservacion.FechaLlegada; ";
+            MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
+            DataTable COnsulta = new DataTable();
+            adp.Fill(COnsulta);
+            return COnsulta;
         }
     }
 }

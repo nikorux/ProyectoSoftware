@@ -138,6 +138,7 @@ namespace PMS_POS.View
                             Clear();
                            
                             MessageBox.Show("La reservación ha sido creada.");
+                            ListadoReservaciones.Instance.refresh();
 
                         }
 

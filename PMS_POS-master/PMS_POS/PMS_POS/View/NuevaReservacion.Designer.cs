@@ -448,7 +448,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "NuevaReservacion";
             this.Size = new System.Drawing.Size(1285, 680);
-            this.Load += new System.EventHandler(this.NuevaReservacion_Load);
+            //this.Load += new System.EventHandler(this.NuevaReservacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
