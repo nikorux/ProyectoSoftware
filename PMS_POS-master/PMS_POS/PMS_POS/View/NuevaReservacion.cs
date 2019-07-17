@@ -53,12 +53,14 @@ namespace PMS_POS.View
         {
             BuscarHabitacion buscarhab = new BuscarHabitacion();
             buscarhab.Show();
+            Revisar();
         }
 
         private void BtnBuscarCliente_Click(object sender, EventArgs e)
         {
             BuscarCliente buscarCliente = new BuscarCliente();
             buscarCliente.Show();
+            Revisar();
         }
 
         private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -134,8 +136,8 @@ namespace PMS_POS.View
                         if(hab.CambiarEstado(hab) == true)
                         {
                             Clear();
+                           
                             MessageBox.Show("La reservación ha sido creada.");
-                            ListadoReservaciones.Instance.refresh();
 
                         }
 
@@ -162,10 +164,17 @@ namespace PMS_POS.View
             txtBoxCanal.Clear();
             txtBoxComentarios.Clear();
         }
-
-        private void NuevaReservacion_Load(object sender, EventArgs e)
+        public void Revisar()
         {
-
+            if(txtBoxPrecio.Text != string.Empty && txtBoxNombre.Text != string.Empty)
+            {
+                dateTimePickerLlegada.Enabled = true;
+                dateTimePickerSalida.Enabled = true;
+                numAdultos.Enabled = true;
+                numInfantes.Enabled = true;
+                txtBoxCanal.Enabled = true;
+                txtBoxComentarios.Enabled = true;
+            }
         }
     }
 

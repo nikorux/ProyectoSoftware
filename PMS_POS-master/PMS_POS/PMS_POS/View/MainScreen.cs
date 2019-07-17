@@ -633,14 +633,20 @@ namespace PMS_POS
 
         private void BtnReservas_Click(object sender, EventArgs e)
         {
+
             if (!userControlInicio1.Controls.Contains(ListadoReservaciones.Instance))
             {
+               // ListadoReservaciones.Instance.
+                ListadoReservaciones.Instance.Controls.Remove(NuevaReservacion.Instance);
                 userControlInicio1.Controls.Add(ListadoReservaciones.Instance);
                 ListadoReservaciones.Instance.Dock = DockStyle.Fill;
                 ListadoReservaciones.Instance.BringToFront();
+
             }
             else
-            {
+
+              //  ListadoReservaciones.Instance.Refresh();
+            ListadoReservaciones.Instance.Controls.Remove(NuevaReservacion.Instance);
                 ListadoReservaciones.Instance.BringToFront();
             }
         }

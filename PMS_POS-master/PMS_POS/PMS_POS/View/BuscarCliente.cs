@@ -58,6 +58,7 @@ namespace PMS_POS.View
                 documento = dgvBuscarCliente.CurrentRow.Cells[8].Value.ToString();
                
                 nr.FillCliente(idHuesped,primerNombre, segundoNombre, primerApellido, segundoApellido, documento);
+                nr.Revisar();
                 this.Close();
             }
             else

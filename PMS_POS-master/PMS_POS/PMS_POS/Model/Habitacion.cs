@@ -38,7 +38,7 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT IdHabitacion, NumHab, TipoHab, CantCamas, MaxPersonas, Piso, Estado, Plan, Detalles, PrecioPorNoche FROM habitacion WHERE IsDeleted=0";
+                string sql = "SELECT IdHabitacion, NumHab, TipoHab, CantCamas, MaxPersonas, Piso, Estado, Plan, Detalles, PrecioPorNoche FROM habitacion WHERE IsDeleted=0 AND Estado != 'Ocupada'";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //Creating data adapter

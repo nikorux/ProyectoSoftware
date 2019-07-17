@@ -55,6 +55,7 @@ namespace PMS_POS.Model
                 tipoHab = dgv.CurrentRow.Cells[2].Value.ToString();
                 precioHab = dgv.CurrentRow.Cells[9].Value.ToString();
                 nr.FillHab(idHab,numHab, tipoHab, precioHab);
+                nr.Revisar();
                // nr.calcular();
                 this.Close();
             }
@@ -67,8 +68,8 @@ namespace PMS_POS.Model
         {
             dgv.DataSource = habitacion.Select();
             dgv.Columns[0].Visible = false;
-            //dgv.Columns[10].Visible = false;
-            //dgv.Columns[11].Visible = false;
+         //   dgv.Columns[10].Visible = false;
+          //  dgv.Columns[11].Visible = false;
         }
 
         private void TxtBoxBuscar_TextChanged(object sender, EventArgs e)
