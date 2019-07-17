@@ -43,7 +43,7 @@
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompras.Location = new System.Drawing.Point(31, 131);
             this.dgvCompras.Name = "dgvCompras";
-            this.dgvCompras.Size = new System.Drawing.Size(489, 254);
+            this.dgvCompras.Size = new System.Drawing.Size(802, 254);
             this.dgvCompras.TabIndex = 15;
             // 
             // txtBuscar
@@ -110,7 +110,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Name = "HistorialCompras";
-            this.Size = new System.Drawing.Size(567, 423);
+            this.Size = new System.Drawing.Size(857, 524);
             this.Load += new System.EventHandler(this.HistorialCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             this.ResumeLayout(false);
