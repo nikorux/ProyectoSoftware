@@ -11,6 +11,8 @@
 .pdb
 .cache
 .vs
+.resources
+.dll
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
