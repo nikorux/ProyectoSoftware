@@ -636,7 +636,7 @@ namespace PMS_POS
 
             if (!userControlInicio1.Controls.Contains(ListadoReservaciones.Instance))
             {
-               // ListadoReservaciones.Instance.
+                
                 ListadoReservaciones.Instance.Controls.Remove(NuevaReservacion.Instance);
                 userControlInicio1.Controls.Add(ListadoReservaciones.Instance);
                 ListadoReservaciones.Instance.Dock = DockStyle.Fill;

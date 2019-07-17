@@ -97,7 +97,7 @@ namespace PMS_POS.View
             {
                 splitContainer1.Panel1Collapsed = true;
                 dgvHabitaciones.DataSource = habitacion.Select();
-                dgvHuesped.DataSource = huesped.VistaTabla();
+               // dgvHuesped.DataSource = huesped.VistaTabla();
                 // splitContainer1.Panel2Collapsed = true;
                 //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
                 txtNombreHuesped.Text = dgvReservaciones.CurrentRow.Cells[0].Value.ToString();
@@ -116,9 +116,9 @@ namespace PMS_POS.View
                 MessageBox.Show("Seleccione una fila.");
             }
         }
-        void refresh()
+       public void refresh()
         {
-
+            dgvReservaciones.DataSource = reservacion.Select();
         }
 
         private void BtnRegistrarReservacion_Click(object sender, EventArgs e)
