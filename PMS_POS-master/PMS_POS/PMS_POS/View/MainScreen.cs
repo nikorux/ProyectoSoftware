@@ -85,6 +85,17 @@ namespace PMS_POS
             SidePanel.Height = button6.Height;
             SidePanel.Top = panelProveedores.Top;
             timer7.Start();
+
+            if (!userControlInicio1.Controls.Contains(RegistroProveedor.Instance))
+            {
+                userControlInicio1.Controls.Add(RegistroProveedor.Instance);
+                RegistroProveedor.Instance.Dock = DockStyle.Fill;
+                RegistroProveedor.Instance.BringToFront();
+            }
+            else
+            {
+                RegistroProveedor.Instance.BringToFront();
+            }
         }
 
         private void Button7_Click(object sender, EventArgs e)
@@ -344,29 +355,31 @@ namespace PMS_POS
 
         private void BtnRegistroProducto_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(RegistroNuevoProducto.Instance))
+            //llama la instancia para el registro de productos
+            if (!userControlInicio1.Controls.Contains(ListadoProducto.InstanceRP))
             {
-                userControlInicio1.Controls.Add(RegistroNuevoProducto.Instance);
-                RegistroNuevoProducto.Instance.Dock = DockStyle.Fill;
-                RegistroNuevoProducto.Instance.BringToFront();
+                userControlInicio1.Controls.Add(ListadoProducto.InstanceRP);
+                ListadoProducto.InstanceRP.Dock = DockStyle.Fill;
+                ListadoProducto.InstanceRP.BringToFront();
             }
             else
             {
-                RegistroNuevoProducto.Instance.BringToFront();
+                ListadoProducto.InstanceRP.BringToFront();
             }
         }
 
         private void BtnListaProductos_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoProducto.Instance))
+            //llama la instancia para el listado de productos
+            if (!userControlInicio1.Controls.Contains(ListadoProducto.InstanceLP))
             {
-                userControlInicio1.Controls.Add(ListadoProducto.Instance);
-                ListadoProducto.Instance.Dock = DockStyle.Fill;
-                ListadoProducto.Instance.BringToFront();
+                userControlInicio1.Controls.Add(ListadoProducto.InstanceLP);
+                ListadoProducto.InstanceLP.Dock = DockStyle.Fill;
+                ListadoProducto.InstanceLP.BringToFront();
             }
             else
             {
-                ListadoProducto.Instance.BringToFront();
+                ListadoProducto.InstanceLP.BringToFront();
             }
         }
 
@@ -515,6 +528,7 @@ namespace PMS_POS
 
         private void BtnFacturas_Click(object sender, EventArgs e)
         {
+
             if (!userControlInicio1.Controls.Contains(ListadoFacturas.Instance))
             {
                 userControlInicio1.Controls.Add(ListadoFacturas.Instance);
@@ -553,7 +567,7 @@ namespace PMS_POS
 
         private void BtnListadoProveedores_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoProveedores.Instance))
+            /*if (!userControlInicio1.Controls.Contains(ListadoProveedores.Instance))
             {
                 userControlInicio1.Controls.Add(ListadoProveedores.Instance);
                 ListadoProveedores.Instance.Dock = DockStyle.Fill;
@@ -562,21 +576,7 @@ namespace PMS_POS
             else
             {
                 ListadoProveedores.Instance.BringToFront();
-            }
-        }
-
-        private void BtnPuntoDeVenta_Click(object sender, EventArgs e)
-        {
-            if (!userControlInicio1.Controls.Contains(PuntoDeVenta.Instance))
-            {
-                userControlInicio1.Controls.Add(PuntoDeVenta.Instance);
-                PuntoDeVenta.Instance.Dock = DockStyle.Fill;
-                PuntoDeVenta.Instance.BringToFront();
-            }
-            else
-            {
-                PuntoDeVenta.Instance.BringToFront();
-            }
+            }*/
         }
 
         private void BtnHistorialCompra_Click(object sender, EventArgs e)
@@ -651,6 +651,12 @@ namespace PMS_POS
         private void BtnGoBack_MouseClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void BtnPuntoDeVenta_MouseClick(object sender, MouseEventArgs e)
+        {
+            PosForm posForm = new PosForm();
+            posForm.Show();
         }
     }
 }

@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace PMS_POS.View
 {
-    public partial class PuntoDeVenta : UserControl
+    public partial class Reportes : UserControl
     {
-        private static PuntoDeVenta _instance;
-        public static PuntoDeVenta Instance
+        private static Reportes _instance;
+        public static Reportes Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new PuntoDeVenta();
+                    _instance = new Reportes();
                 return _instance;
             }
         }
-
-        public PuntoDeVenta()
+        public Reportes()
         {
             InitializeComponent();
         }
