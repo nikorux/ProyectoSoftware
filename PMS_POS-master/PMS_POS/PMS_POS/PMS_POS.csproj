@@ -109,11 +109,11 @@
     <Compile Include="View\ConfigurarTipoHabitacion.designer.cs">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Facturacion.cs">
+    <Compile Include="View\FacturacionCheckIn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Facturacion.Designer.cs">
-      <DependentUpon>Facturacion.cs</DependentUpon>
+    <Compile Include="View\FacturacionCheckIn.Designer.cs">
+      <DependentUpon>FacturacionCheckIn.cs</DependentUpon>
     </Compile>
     <Compile Include="View\HistorialCompras.cs">
       <SubType>UserControl</SubType>
@@ -292,8 +292,8 @@
     <EmbeddedResource Include="View\ConfigurarTipoHabitacion.resx">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Facturacion.resx">
-      <DependentUpon>Facturacion.cs</DependentUpon>
+    <EmbeddedResource Include="View\FacturacionCheckIn.resx">
+      <DependentUpon>FacturacionCheckIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HistorialCompras.resx">
       <DependentUpon>HistorialCompras.cs</DependentUpon>

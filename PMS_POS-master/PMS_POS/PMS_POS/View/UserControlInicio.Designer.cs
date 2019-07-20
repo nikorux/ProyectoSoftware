@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvEstadoActualHabitaciones = new System.Windows.Forms.DataGridView();
+            this.dgvEstadoHabitaciones = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panelHabMantenimiento = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -55,7 +55,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoActualHabitaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoHabitaciones)).BeginInit();
             this.panelHabMantenimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelHabLibres.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.dgvEstadoActualHabitaciones);
+            this.panel4.Controls.Add(this.dgvEstadoHabitaciones);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.panelHabMantenimiento);
             this.panel4.Controls.Add(this.panelHabLibres);
@@ -82,14 +82,14 @@
             this.panel4.Size = new System.Drawing.Size(559, 250);
             this.panel4.TabIndex = 42;
             // 
-            // dgvEstadoActualHabitaciones
+            // dgvEstadoHabitaciones
             // 
-            this.dgvEstadoActualHabitaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvEstadoActualHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstadoActualHabitaciones.Location = new System.Drawing.Point(17, 108);
-            this.dgvEstadoActualHabitaciones.Name = "dgvEstadoActualHabitaciones";
-            this.dgvEstadoActualHabitaciones.Size = new System.Drawing.Size(519, 114);
-            this.dgvEstadoActualHabitaciones.TabIndex = 27;
+            this.dgvEstadoHabitaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvEstadoHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstadoHabitaciones.Location = new System.Drawing.Point(17, 108);
+            this.dgvEstadoHabitaciones.Name = "dgvEstadoHabitaciones";
+            this.dgvEstadoHabitaciones.Size = new System.Drawing.Size(519, 114);
+            this.dgvEstadoHabitaciones.TabIndex = 27;
             // 
             // label1
             // 
@@ -389,7 +389,7 @@
             this.Size = new System.Drawing.Size(1287, 677);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoActualHabitaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoHabitaciones)).EndInit();
             this.panelHabMantenimiento.ResumeLayout(false);
             this.panelHabMantenimiento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -412,7 +412,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dgvEstadoActualHabitaciones;
+        private System.Windows.Forms.DataGridView dgvEstadoHabitaciones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelHabMantenimiento;
         private System.Windows.Forms.PictureBox pictureBox7;
