@@ -73,10 +73,10 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvInfoHuesped = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new System.Windows.Forms.Label();
-            this.btnRegistrarReservacion = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnRegistrarReservacion = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Label();
             this.dgvReservaciones = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -590,20 +590,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar reservación";
             // 
-            // btnCancelar
+            // textBox1
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Tomato;
-            this.btnCancelar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(897, 22);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(150, 27);
-            this.btnCancelar.TabIndex = 192;
-            this.btnCancelar.Text = "Cancelar reservación";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            this.textBox1.Location = new System.Drawing.Point(6, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(463, 24);
+            this.textBox1.TabIndex = 195;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(808, 21);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 29);
+            this.btnEditar.TabIndex = 194;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click_1);
             // 
             // btnRegistrarReservacion
             // 
@@ -618,23 +622,20 @@
             this.btnRegistrarReservacion.UseVisualStyleBackColor = false;
             this.btnRegistrarReservacion.Click += new System.EventHandler(this.BtnRegistrarReservacion_Click);
             // 
-            // btnEditar
+            // btnCancelar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(808, 21);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 29);
-            this.btnEditar.TabIndex = 194;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(463, 24);
-            this.textBox1.TabIndex = 195;
+            this.btnCancelar.BackColor = System.Drawing.Color.Tomato;
+            this.btnCancelar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(897, 22);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(150, 27);
+            this.btnCancelar.TabIndex = 192;
+            this.btnCancelar.Text = "Cancelar reservación";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // dgvReservaciones
             // 

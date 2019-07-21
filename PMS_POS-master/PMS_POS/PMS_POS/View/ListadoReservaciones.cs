@@ -140,5 +140,23 @@ namespace PMS_POS.View
             
           
         }
+
+        private void BtnEditar_Click_1(object sender, EventArgs e)
+        {
+            if (!ListadoReservaciones.Instance.Controls.Contains(NuevaReservacion.Instance))
+            {
+
+                ListadoReservaciones.Instance.Controls.Add(NuevaReservacion.Instance);
+                NuevaReservacion.Instance.Dock = DockStyle.Fill;
+                NuevaReservacion.Instance.BringToFront();
+
+            }
+            else
+            {
+
+                NuevaReservacion.Instance.BringToFront();
+            }
+
+        }
     }
 }
