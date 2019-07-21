@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PMS_POS.View
 {
-    public partial class Facturacion : UserControl
+    public partial class FacturacionCheckIn : UserControl
     {
-        public Facturacion()
+        public FacturacionCheckIn()
         {
             InitializeComponent();
         }
