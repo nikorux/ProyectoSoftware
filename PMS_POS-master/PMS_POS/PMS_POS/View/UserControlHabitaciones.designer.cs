@@ -44,6 +44,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHab)).BeginInit();
             this.SuspendLayout();
             // 
+            // button1
+            // 
+            button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            button1.ForeColor = System.Drawing.Color.White;
+            button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            button1.Location = new System.Drawing.Point(586, 122);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(265, 29);
+            button1.TabIndex = 36;
+            button1.Text = "+ Registrar nueva habitación";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PMS_POS.Properties.Resources.room_key;
@@ -62,7 +77,7 @@
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
             this.btnBorrar.Location = new System.Drawing.Point(1012, 121);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(144, 27);
+            this.btnBorrar.Size = new System.Drawing.Size(144, 30);
             this.btnBorrar.TabIndex = 18;
             this.btnBorrar.Text = "Eliminar";
             this.btnBorrar.UseVisualStyleBackColor = false;
@@ -72,30 +87,15 @@
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(861, 122);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(141, 27);
+            this.btnEditar.Size = new System.Drawing.Size(141, 29);
             this.btnEditar.TabIndex = 31;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click_1);
-            // 
-            // button1
-            // 
-            button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            button1.ForeColor = System.Drawing.Color.White;
-            button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            button1.Location = new System.Drawing.Point(586, 122);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(265, 27);
-            button1.TabIndex = 36;
-            button1.Text = "+ Registrar nueva habitación";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // txtBoxBuscar
             // 
@@ -151,9 +151,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(button1);
             this.Controls.Add(this.txtBoxBuscar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBorrar);

@@ -29,17 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnCancelar = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvInfoHuesped = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvReservaciones = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnRegistrarReservacion = new System.Windows.Forms.Button();
-            this.txtSegundoNombre = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,11 +67,18 @@
             this.btnGuardar = new System.Windows.Forms.Label();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.txtSegundoNombre = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvInfoHuesped = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Label();
+            this.btnRegistrarReservacion = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dgvReservaciones = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoHuesped)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReservaciones)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -95,153 +91,12 @@
             this.groupBox6.SuspendLayout();
             this.grbInfoHuesped.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHuesped)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoHuesped)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReservaciones)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Tomato;
-            this.btnCancelar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(903, 28);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(150, 27);
-            this.btnCancelar.TabIndex = 192;
-            this.btnCancelar.Text = "Cancelar reservación";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvInfoHuesped);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(20, 385);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1053, 268);
-            this.groupBox3.TabIndex = 191;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Información huésped:";
-            // 
-            // dgvInfoHuesped
-            // 
-            this.dgvInfoHuesped.AllowUserToAddRows = false;
-            this.dgvInfoHuesped.AllowUserToDeleteRows = false;
-            this.dgvInfoHuesped.AllowUserToResizeColumns = false;
-            this.dgvInfoHuesped.AllowUserToResizeRows = false;
-            this.dgvInfoHuesped.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInfoHuesped.Location = new System.Drawing.Point(6, 23);
-            this.dgvInfoHuesped.MultiSelect = false;
-            this.dgvInfoHuesped.Name = "dgvInfoHuesped";
-            this.dgvInfoHuesped.ReadOnly = true;
-            this.dgvInfoHuesped.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInfoHuesped.Size = new System.Drawing.Size(1041, 239);
-            this.dgvInfoHuesped.TabIndex = 1;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(14, 120);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1059, 259);
-            this.groupBox2.TabIndex = 190;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Reservaciones registradas:";
-            // 
-            // dgvReservaciones
-            // 
-            this.dgvReservaciones.AllowUserToAddRows = false;
-            this.dgvReservaciones.AllowUserToDeleteRows = false;
-            this.dgvReservaciones.AllowUserToResizeColumns = false;
-            this.dgvReservaciones.AllowUserToResizeRows = false;
-            this.dgvReservaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvReservaciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReservaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvReservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReservaciones.Location = new System.Drawing.Point(23, 141);
-            this.dgvReservaciones.MultiSelect = false;
-            this.dgvReservaciones.Name = "dgvReservaciones";
-            this.dgvReservaciones.ReadOnly = true;
-            this.dgvReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReservaciones.Size = new System.Drawing.Size(1044, 232);
-            this.dgvReservaciones.TabIndex = 0;
-            this.dgvReservaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReservaciones_CellClick);
-            this.dgvReservaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReservaciones_CellContentClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.btnEditar);
-            this.groupBox1.Controls.Add(this.btnRegistrarReservacion);
-            this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(14, 51);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1059, 63);
-            this.groupBox1.TabIndex = 189;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar reservación";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(463, 24);
-            this.textBox1.TabIndex = 195;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(802, 28);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 29);
-            this.btnEditar.TabIndex = 194;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnRegistrarReservacion
-            // 
-            this.btnRegistrarReservacion.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnRegistrarReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarReservacion.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarReservacion.Location = new System.Drawing.Point(584, 28);
-            this.btnRegistrarReservacion.Name = "btnRegistrarReservacion";
-            this.btnRegistrarReservacion.Size = new System.Drawing.Size(193, 29);
-            this.btnRegistrarReservacion.TabIndex = 193;
-            this.btnRegistrarReservacion.Text = "Nueva Reservación";
-            this.btnRegistrarReservacion.UseVisualStyleBackColor = false;
-            this.btnRegistrarReservacion.Click += new System.EventHandler(this.BtnRegistrarReservacion_Click);
-            // 
-            // txtSegundoNombre
-            // 
-            this.txtSegundoNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSegundoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtSegundoNombre.Location = new System.Drawing.Point(202, 120);
-            this.txtSegundoNombre.Name = "txtSegundoNombre";
-            this.txtSegundoNombre.Size = new System.Drawing.Size(175, 19);
-            this.txtSegundoNombre.TabIndex = 188;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label17.Location = new System.Drawing.Point(15, 16);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(208, 31);
-            this.label17.TabIndex = 186;
-            this.label17.Text = "Reservaciones";
             // 
             // splitContainer1
             // 
@@ -660,6 +515,155 @@
             this.label18.TabIndex = 102;
             this.label18.Text = "$";
             // 
+            // txtSegundoNombre
+            // 
+            this.txtSegundoNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSegundoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtSegundoNombre.Location = new System.Drawing.Point(259, 173);
+            this.txtSegundoNombre.Name = "txtSegundoNombre";
+            this.txtSegundoNombre.Size = new System.Drawing.Size(175, 19);
+            this.txtSegundoNombre.TabIndex = 188;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(71, 173);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1059, 237);
+            this.groupBox2.TabIndex = 190;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Reservaciones registradas:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label17.Location = new System.Drawing.Point(72, 69);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(208, 31);
+            this.label17.TabIndex = 186;
+            this.label17.Text = "Reservaciones";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox3.Controls.Add(this.dgvInfoHuesped);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(71, 420);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1053, 243);
+            this.groupBox3.TabIndex = 191;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Información huésped:";
+            // 
+            // dgvInfoHuesped
+            // 
+            this.dgvInfoHuesped.AllowUserToAddRows = false;
+            this.dgvInfoHuesped.AllowUserToDeleteRows = false;
+            this.dgvInfoHuesped.AllowUserToResizeColumns = false;
+            this.dgvInfoHuesped.AllowUserToResizeRows = false;
+            this.dgvInfoHuesped.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInfoHuesped.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvInfoHuesped.Location = new System.Drawing.Point(6, 23);
+            this.dgvInfoHuesped.MultiSelect = false;
+            this.dgvInfoHuesped.Name = "dgvInfoHuesped";
+            this.dgvInfoHuesped.ReadOnly = true;
+            this.dgvInfoHuesped.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInfoHuesped.Size = new System.Drawing.Size(1041, 198);
+            this.dgvInfoHuesped.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnRegistrarReservacion);
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(71, 104);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1059, 63);
+            this.groupBox1.TabIndex = 189;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscar reservación";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Tomato;
+            this.btnCancelar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(897, 22);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(150, 27);
+            this.btnCancelar.TabIndex = 192;
+            this.btnCancelar.Text = "Cancelar reservación";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // btnRegistrarReservacion
+            // 
+            this.btnRegistrarReservacion.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRegistrarReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarReservacion.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarReservacion.Location = new System.Drawing.Point(601, 22);
+            this.btnRegistrarReservacion.Name = "btnRegistrarReservacion";
+            this.btnRegistrarReservacion.Size = new System.Drawing.Size(193, 29);
+            this.btnRegistrarReservacion.TabIndex = 193;
+            this.btnRegistrarReservacion.Text = "Nueva Reservación";
+            this.btnRegistrarReservacion.UseVisualStyleBackColor = false;
+            this.btnRegistrarReservacion.Click += new System.EventHandler(this.BtnRegistrarReservacion_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(808, 21);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 29);
+            this.btnEditar.TabIndex = 194;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(463, 24);
+            this.textBox1.TabIndex = 195;
+            // 
+            // dgvReservaciones
+            // 
+            this.dgvReservaciones.AllowUserToAddRows = false;
+            this.dgvReservaciones.AllowUserToDeleteRows = false;
+            this.dgvReservaciones.AllowUserToResizeColumns = false;
+            this.dgvReservaciones.AllowUserToResizeRows = false;
+            this.dgvReservaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvReservaciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvReservaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReservaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvReservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReservaciones.Location = new System.Drawing.Point(80, 194);
+            this.dgvReservaciones.MultiSelect = false;
+            this.dgvReservaciones.Name = "dgvReservaciones";
+            this.dgvReservaciones.ReadOnly = true;
+            this.dgvReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvReservaciones.Size = new System.Drawing.Size(1044, 206);
+            this.dgvReservaciones.TabIndex = 0;
+            this.dgvReservaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReservaciones_CellClick);
+            this.dgvReservaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReservaciones_CellContentClick);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvReservaciones);
@@ -680,12 +684,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitContainer1);
             this.Name = "ListadoReservaciones";
-            this.Size = new System.Drawing.Size(1287, 677);
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoHuesped)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReservaciones)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Size = new System.Drawing.Size(1285, 680);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -703,6 +702,11 @@
             this.grbInfoHuesped.ResumeLayout(false);
             this.grbInfoHuesped.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHuesped)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoHuesped)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReservaciones)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -710,15 +714,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label btnCancelar;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtSegundoNombre;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DataGridView dgvInfoHuesped;
-        private System.Windows.Forms.DataGridView dgvReservaciones;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -757,10 +752,18 @@
         private System.Windows.Forms.TextBox txtComentario;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnGoBack;
+        private System.Windows.Forms.TextBox txtSegundoNombre;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dgvInfoHuesped;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnRegistrarReservacion;
+        private System.Windows.Forms.Label btnCancelar;
+        private System.Windows.Forms.DataGridView dgvReservaciones;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
         /*private View.NuevaReservacion NuevaReservacion;*/
     }
 }
