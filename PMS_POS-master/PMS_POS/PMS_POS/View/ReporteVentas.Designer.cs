@@ -34,9 +34,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
             this.Name = "ReporteVentas";
-            this.Size = new System.Drawing.Size(1162, 638);
+            this.Size = new System.Drawing.Size(693, 450);
             this.ResumeLayout(false);
 
         }
