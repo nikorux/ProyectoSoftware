@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtBuscarProducto = new System.Windows.Forms.TextBox();
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.btnVerMenuActual = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxCategoria = new System.Windows.Forms.ComboBox();
-            this.txtBuscarProducto = new System.Windows.Forms.TextBox();
             this.btnRemoverItem = new System.Windows.Forms.Button();
             this.btnAgregarItem = new System.Windows.Forms.Button();
             this.dgvProductosEnMenu = new System.Windows.Forms.DataGridView();
             this.dgvProductosDisponibles = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosEnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosDisponibles)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnVerMenuActual);
             this.panel1.Controls.Add(this.label1);
@@ -62,10 +62,45 @@
             this.panel1.Size = new System.Drawing.Size(690, 470);
             this.panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.panel2.Controls.Add(this.txtBuscarProducto);
+            this.panel2.Controls.Add(this.cbxCategoria);
+            this.panel2.Location = new System.Drawing.Point(12, 29);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(269, 59);
+            this.panel2.TabIndex = 30;
+            // 
+            // txtBuscarProducto
+            // 
+            this.txtBuscarProducto.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBuscarProducto.Location = new System.Drawing.Point(3, 32);
+            this.txtBuscarProducto.Name = "txtBuscarProducto";
+            this.txtBuscarProducto.Size = new System.Drawing.Size(263, 20);
+            this.txtBuscarProducto.TabIndex = 26;
+            this.txtBuscarProducto.Text = "Buscar Producto";
+            this.txtBuscarProducto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBuscarProducto_MouseClick);
+            this.txtBuscarProducto.TextChanged += new System.EventHandler(this.TxtBuscarProducto_TextChanged);
+            // 
+            // cbxCategoria
+            // 
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Items.AddRange(new object[] {
+            "Todas"});
+            this.cbxCategoria.Location = new System.Drawing.Point(3, 5);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(263, 21);
+            this.cbxCategoria.TabIndex = 27;
+            this.cbxCategoria.SelectedIndexChanged += new System.EventHandler(this.CbxCategoria_SelectedIndexChanged);
+            // 
             // btnVerMenuActual
             // 
             this.btnVerMenuActual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVerMenuActual.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnVerMenuActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnVerMenuActual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerMenuActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerMenuActual.ForeColor = System.Drawing.Color.White;
             this.btnVerMenuActual.Location = new System.Drawing.Point(368, 34);
@@ -81,39 +116,18 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
             this.label1.Location = new System.Drawing.Point(487, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 28;
             this.label1.Text = "Categoria";
             // 
-            // cbxCategoria
-            // 
-            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Items.AddRange(new object[] {
-            "Todas"});
-            this.cbxCategoria.Location = new System.Drawing.Point(3, 5);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(201, 21);
-            this.cbxCategoria.TabIndex = 27;
-            this.cbxCategoria.SelectedIndexChanged += new System.EventHandler(this.CbxCategoria_SelectedIndexChanged);
-            // 
-            // txtBuscarProducto
-            // 
-            this.txtBuscarProducto.Location = new System.Drawing.Point(3, 32);
-            this.txtBuscarProducto.Name = "txtBuscarProducto";
-            this.txtBuscarProducto.Size = new System.Drawing.Size(263, 20);
-            this.txtBuscarProducto.TabIndex = 26;
-            this.txtBuscarProducto.Text = "Buscar Producto";
-            this.txtBuscarProducto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBuscarProducto_MouseClick);
-            this.txtBuscarProducto.TextChanged += new System.EventHandler(this.TxtBuscarProducto_TextChanged);
-            // 
             // btnRemoverItem
             // 
             this.btnRemoverItem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRemoverItem.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnRemoverItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnRemoverItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverItem.ForeColor = System.Drawing.Color.White;
             this.btnRemoverItem.Location = new System.Drawing.Point(285, 268);
@@ -127,7 +141,8 @@
             // btnAgregarItem
             // 
             this.btnAgregarItem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarItem.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnAgregarItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnAgregarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarItem.ForeColor = System.Drawing.Color.White;
             this.btnAgregarItem.Location = new System.Drawing.Point(285, 232);
@@ -142,6 +157,7 @@
             // 
             this.dgvProductosEnMenu.AllowUserToAddRows = false;
             this.dgvProductosEnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProductosEnMenu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.dgvProductosEnMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductosEnMenu.Location = new System.Drawing.Point(366, 94);
             this.dgvProductosEnMenu.Name = "dgvProductosEnMenu";
@@ -152,6 +168,7 @@
             // 
             this.dgvProductosDisponibles.AllowUserToAddRows = false;
             this.dgvProductosDisponibles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvProductosDisponibles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.dgvProductosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductosDisponibles.Location = new System.Drawing.Point(12, 94);
             this.dgvProductosDisponibles.Name = "dgvProductosDisponibles";
@@ -163,22 +180,12 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("SansSerif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label14.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
             this.label14.Location = new System.Drawing.Point(287, 9);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(75, 28);
             this.label14.TabIndex = 19;
             this.label14.Text = "Menu";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel2.Controls.Add(this.txtBuscarProducto);
-            this.panel2.Controls.Add(this.cbxCategoria);
-            this.panel2.Location = new System.Drawing.Point(12, 29);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 59);
-            this.panel2.TabIndex = 30;
             // 
             // MenuConfigurar
             // 
@@ -192,10 +199,10 @@
             this.Load += new System.EventHandler(this.MenuConfigurar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosEnMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosDisponibles)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosEnMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosDisponibles)).EndInit();
             this.ResumeLayout(false);
 
         }
