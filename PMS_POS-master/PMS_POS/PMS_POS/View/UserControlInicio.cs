@@ -33,5 +33,12 @@ namespace PMS_POS.View
         {
 
         }
+
+        private void UserControlInicio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

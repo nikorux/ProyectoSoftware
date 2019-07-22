@@ -183,6 +183,18 @@
     <Compile Include="View\NuevoHuesped.designer.cs">
       <DependentUpon>NuevoHuesped.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Probando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Probando.Designer.cs">
+      <DependentUpon>Probando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Prueba.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Prueba.Designer.cs">
+      <DependentUpon>Prueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PuntoDeVenta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -327,6 +339,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuevoHuesped.resx">
       <DependentUpon>NuevoHuesped.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Probando.resx">
+      <DependentUpon>Probando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Prueba.resx">
+      <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RecetaProducto.resx">
       <DependentUpon>RecetaProducto.cs</DependentUpon>

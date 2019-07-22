@@ -9,19 +9,35 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PMS_POS.View;
 
+
 namespace PMS_POS
 {
     public partial class MainScreen : Form
     {
+        static MainScreen _obj;
+
+        public static MainScreen Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new MainScreen();
+                }
+                return _obj;
+            }
+        }
+
+        public Panel PnlContainer
+        {
+            get { return PanelContenedor;  }
+            set { PanelContenedor = value; }
+        }
         public MainScreen()
         {
             InitializeComponent();
-            userControlInicio1.BringToFront();
-            this.WindowState = FormWindowState.Maximized;
+
         }
-
-
-        UserControlHabitaciones UserControlHabitaciones = new UserControlHabitaciones();
 
 
         private void Panel3_Paint(object sender, PaintEventArgs e)
@@ -523,75 +539,66 @@ namespace PMS_POS
 
         private void ClientesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(UserControlClientes.Instance))
-            {
-                userControlInicio1.Controls.Add(UserControlClientes.Instance);
-                UserControlClientes.Instance.Dock = DockStyle.Fill;
-                UserControlClientes.Instance.BringToFront();
-            }
-            else
-            {
-                UserControlClientes.Instance.BringToFront();
-            }
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            UserControlClientes thisprobando = new UserControlClientes();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
         }
 
         private void HabitacionesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(UserControlHabitaciones.Instance))
-            {
-                userControlInicio1.Controls.Add(UserControlHabitaciones.Instance);
-                UserControlHabitaciones.Instance.Dock = DockStyle.Fill;
-                UserControlHabitaciones.Instance.BringToFront();
-            }
-            else
-            {
-                UserControlHabitaciones.Instance.BringToFront();
-            }
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            UserControlHabitaciones thisprobando = new UserControlHabitaciones();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
         }
         private void ReservacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(NuevaReservacion.Instance))
-            {
-                userControlInicio1.Controls.Add(NuevaReservacion.Instance);
-                NuevaReservacion.Instance.Dock = DockStyle.Fill;
-                NuevaReservacion.Instance.BringToFront();
-            }
-            else
-            {
-                NuevaReservacion.Instance.BringToFront();
-            }
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            NuevaReservacion thisprobando = new NuevaReservacion();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
         }
 
         private void ProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoProveedores.Instance))
-            {
-                userControlInicio1.Controls.Add(ListadoProveedores.Instance);
-                ListadoProveedores.Instance.Dock = DockStyle.Fill;
-                ListadoProveedores.Instance.BringToFront();
-            }
-            else
-            {
-                ListadoProveedores.Instance.BringToFront();
-            }
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            ListadoProveedores thisprobando = new ListadoProveedores();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
         }
+
+        UserControlClientes este = new UserControlClientes();
 
         private void BtnClientes_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(UserControlClientes.Instance))
-            {
-                userControlInicio1.Controls.Add(UserControlClientes.Instance);
-                UserControlClientes.Instance.Dock = DockStyle.Fill;
-                UserControlClientes.Instance.BringToFront();
-            }
-            else
-            {
-                UserControlClientes.Instance.BringToFront();
-            }
+
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            UserControlClientes thisprobando = new UserControlClientes();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
+
         }
 
         private void BtnInicio_Click(object sender, EventArgs e)
         {
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            UserControlInicio thisprobando = new UserControlInicio();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
+            /*PanelContenedor.Hide();
             if (!userControlInicio1.Controls.Contains(UserControlInicio.Instance))
             {
                 userControlInicio1.Controls.Add(UserControlInicio.Instance);
@@ -601,21 +608,17 @@ namespace PMS_POS
             else
             {
                 UserControlInicio.Instance.BringToFront();
-            }
+            }*/
         }
 
         private void EmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoEmpleados.Instance))
-            {
-                userControlInicio1.Controls.Add(ListadoEmpleados.Instance);
-                ListadoEmpleados.Instance.Dock = DockStyle.Fill;
-                ListadoEmpleados.Instance.BringToFront();
-            }
-            else
-            {
-                ListadoEmpleados.Instance.BringToFront();
-            }
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            ListadoEmpleados thisprobando = new ListadoEmpleados();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
         }
 
         private void Button2_Click_1(object sender, EventArgs e)
@@ -633,6 +636,14 @@ namespace PMS_POS
 
         private void BtnReservas_Click(object sender, EventArgs e)
         {
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            Reservaciones thisprobando = new Reservaciones();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
+            /*PanelContenedor.Hide();
+
             if (!userControlInicio1.Controls.Contains(Reservaciones.Instance))
             {
                 userControlInicio1.Controls.Add(Reservaciones.Instance);
@@ -642,11 +653,48 @@ namespace PMS_POS
             else
             {
                 Reservaciones.Instance.BringToFront();
-            }
+            }*/
         }
+
 
         private void BtnCheckOut_Click(object sender, EventArgs e)
         {
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            UserControlClientes thisprobando = new UserControlClientes();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
+
+        }
+
+        private void userControlInicio1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCheckIn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+            _obj = this;
+
+            UserControlInicio uc = new UserControlInicio();
+            uc.Dock = DockStyle.Fill;
+            PanelContenedor.Controls.Add(uc);
+        }
+
+        private void TipoDeHabitacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            ConfigurarTipoHabitacion thisprobando = new ConfigurarTipoHabitacion();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
         }
     }
 
