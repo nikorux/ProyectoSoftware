@@ -88,8 +88,9 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(301, 20);
             this.txtBuscar.TabIndex = 4;
-            this.txtBuscar.Text = "Buscar Producto";
+            this.txtBuscar.Text = "Buscar";
             this.txtBuscar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBuscar_MouseClick);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label1
             // 
