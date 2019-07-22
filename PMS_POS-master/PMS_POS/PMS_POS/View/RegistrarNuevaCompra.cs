@@ -32,7 +32,7 @@ namespace PMS_POS.View
             LoadPrdCompra();
             LoadHistorial();
         }
-        public void LoadPrdCompra()//para listar
+        public void LoadPrdCompra()//para listar...
         {
             dgvProductosRegistrados.DataSource = GetProvList();
         }
