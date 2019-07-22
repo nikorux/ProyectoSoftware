@@ -387,6 +387,7 @@
             this.Controls.Add(this.panel4);
             this.Name = "UserControlInicio";
             this.Size = new System.Drawing.Size(1287, 677);
+            this.Load += new System.EventHandler(this.UserControlInicio_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoHabitaciones)).EndInit();

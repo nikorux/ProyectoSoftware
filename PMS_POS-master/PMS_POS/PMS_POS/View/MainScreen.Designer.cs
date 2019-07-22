@@ -38,7 +38,6 @@
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
-            this.userControlInicio1 = new PMS_POS.View.UserControlInicio();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -74,12 +73,15 @@
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnReservas = new System.Windows.Forms.Button();
+            this.PanelContenedor = new System.Windows.Forms.Panel();
+            this.userControlInicio1 = new PMS_POS.View.UserControlInicio();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.PanelContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer3
@@ -137,14 +139,6 @@
             this.btnMinimizar.UseCompatibleTextRendering = true;
             this.btnMinimizar.UseVisualStyleBackColor = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // userControlInicio1
-            // 
-            this.userControlInicio1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.userControlInicio1.Location = new System.Drawing.Point(82, 88);
-            this.userControlInicio1.Name = "userControlInicio1";
-            this.userControlInicio1.Size = new System.Drawing.Size(1285, 680);
-            this.userControlInicio1.TabIndex = 44;
             // 
             // panel2
             // 
@@ -364,6 +358,7 @@
             this.tipoDeHabitacionesToolStripMenuItem.Name = "tipoDeHabitacionesToolStripMenuItem";
             this.tipoDeHabitacionesToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.tipoDeHabitacionesToolStripMenuItem.Text = "Tipo de Habitaciones";
+            this.tipoDeHabitacionesToolStripMenuItem.Click += new System.EventHandler(this.TipoDeHabitacionesToolStripMenuItem_Click);
             // 
             // tipoDeRubroToolStripMenuItem
             // 
@@ -480,6 +475,7 @@
             this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheckIn.UseCompatibleTextRendering = true;
             this.btnCheckIn.UseVisualStyleBackColor = false;
+            this.btnCheckIn.Click += new System.EventHandler(this.BtnCheckIn_Click);
             // 
             // btnClientes
             // 
@@ -519,6 +515,23 @@
             this.btnReservas.UseVisualStyleBackColor = false;
             this.btnReservas.Click += new System.EventHandler(this.BtnReservas_Click);
             // 
+            // PanelContenedor
+            // 
+            this.PanelContenedor.Controls.Add(this.userControlInicio1);
+            this.PanelContenedor.Location = new System.Drawing.Point(82, 88);
+            this.PanelContenedor.Name = "PanelContenedor";
+            this.PanelContenedor.Size = new System.Drawing.Size(1304, 633);
+            this.PanelContenedor.TabIndex = 48;
+            // 
+            // userControlInicio1
+            // 
+            this.userControlInicio1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.userControlInicio1.Location = new System.Drawing.Point(0, 0);
+            this.userControlInicio1.Name = "userControlInicio1";
+            this.userControlInicio1.Size = new System.Drawing.Size(1285, 680);
+            this.userControlInicio1.TabIndex = 44;
+            this.userControlInicio1.Load += new System.EventHandler(this.userControlInicio1_Load_1);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,10 +546,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.userControlInicio1);
+            this.Controls.Add(this.PanelContenedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.MainScreen_Load);
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -546,6 +560,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.PanelContenedor.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -560,7 +575,6 @@
         private System.Windows.Forms.Timer timer7;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnMinimizar;
-        private View.UserControlInicio userControlInicio1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
@@ -596,6 +610,8 @@
         private System.Windows.Forms.ToolStripMenuItem categoríaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarLogoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeRubroToolStripMenuItem;
+        private System.Windows.Forms.Panel PanelContenedor;
+        private View.UserControlInicio userControlInicio1;
     }
 }
 

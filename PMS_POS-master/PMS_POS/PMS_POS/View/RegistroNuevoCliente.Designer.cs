@@ -489,9 +489,9 @@
             this.Text = "RegistroNuevoCliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistroNuevoCliente_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroNuevoCliente_FormClosed);
-            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(true);
             this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
+            this.ResumeLayout(true);
             this.PerformLayout();
 
         }

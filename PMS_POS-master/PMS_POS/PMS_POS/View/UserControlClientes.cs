@@ -15,13 +15,17 @@ namespace PMS_POS.View
 {
     public partial class UserControlClientes : UserControl
     {
+
+
         //MySqlConnection conex;
         MySqlConnection conex;
         string cadenaconex;
         Huesped obj = new Huesped();
 
         RegistroNuevoCliente form2 = new RegistroNuevoCliente();
+        FacturacionCheckIn ucFacturacionCheckIn = null;
 
+       
         private static UserControlClientes _instance;
         public static UserControlClientes Instance
         {
@@ -32,7 +36,6 @@ namespace PMS_POS.View
                 return _instance;
             }
         }
-
 
         public UserControlClientes()
         {
@@ -59,6 +62,7 @@ namespace PMS_POS.View
         private void UserControlClientes_Load(object sender, EventArgs e)
         {
             dgvClientes.DataSource = obj.VistaTabla();
+
         }
         private void TxtFiltro_TextChanged(object sender, EventArgs e)
         {
@@ -175,6 +179,36 @@ namespace PMS_POS.View
             {
                 MessageBox.Show("Error al borrar los clientes. (Error: " + ex + ")");
             }
+        }
+
+        public event EventHandler HideButtonClicked;
+
+        private void BtnCheckIn_Click(object sender, EventArgs e)
+        {
+            ucFacturacionCheckIn = new FacturacionCheckIn();
+            this.Controls.Add(ucFacturacionCheckIn);
+            label1.Visible = false;
+            label3.Visible = false;
+            panel2.Visible = false;
+            dgvClientes.Visible = false;
+        }
+        
+        private void BtnFacturacion_Click(object sender, EventArgs e)
+        {
+            //No va
+
+        }
+
+        private void BtnCheckIn_Click_1(object sender, EventArgs e)
+        {
+            if (!MainScreen.Instance.PnlContainer.Controls.ContainsKey("FacturacionCheckIn"))
+            {
+                FacturacionCheckIn un = new FacturacionCheckIn();
+                un.Dock = DockStyle.Fill;
+                MainScreen.Instance.PnlContainer.Controls.Add(un);
+            }
+            MainScreen.Instance.PnlContainer.Controls["FacturacionCheckIn"].BringToFront();
+
         }
     }
 }
