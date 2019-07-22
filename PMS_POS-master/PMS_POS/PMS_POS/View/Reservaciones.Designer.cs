@@ -48,7 +48,6 @@
             this.dgvReservaciones.Name = "dgvReservaciones";
             this.dgvReservaciones.Size = new System.Drawing.Size(1013, 405);
             this.dgvReservaciones.TabIndex = 0;
-            this.dgvReservaciones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvReservaciones_CellFormatting);
             // 
             // btnEliminarReservacion
             // 
@@ -68,6 +67,7 @@
             this.btnEliminarReservacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminarReservacion.UseCompatibleTextRendering = true;
             this.btnEliminarReservacion.UseVisualStyleBackColor = false;
+            this.btnEliminarReservacion.Click += new System.EventHandler(this.BtnEliminarReservacion_Click);
             // 
             // btnEditarReservacion
             // 
@@ -88,6 +88,7 @@
             this.btnEditarReservacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditarReservacion.UseCompatibleTextRendering = true;
             this.btnEditarReservacion.UseVisualStyleBackColor = false;
+            this.btnEditarReservacion.Click += new System.EventHandler(this.BtnEditarReservacion_Click);
             // 
             // panel2
             // 

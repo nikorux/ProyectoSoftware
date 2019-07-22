@@ -152,5 +152,33 @@ namespace PMS_POS.Model
                 }
             }
         }
+        public DataTable GetHuesped(int idHuesped)
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT * FROM huesped where IdHuesped = @IdHuesped ";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdHuesped", idHuesped);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
     }
 }

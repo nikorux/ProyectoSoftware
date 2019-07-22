@@ -189,7 +189,7 @@ namespace PMS_POS.Model
             }
             return dt;
         }
-        public bool CambiarEstado(Habitacion h)
+        public bool CambiarEstado(Habitacion h, string estado)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
@@ -200,7 +200,7 @@ namespace PMS_POS.Model
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdHabitacion", h.IdHabitacion);
-                cmd.Parameters.AddWithValue("@Estado", "Ocupada");
+                cmd.Parameters.AddWithValue("@Estado", estado);
                 //Open Connection
                 mySqlConn.Open();
                 int row = cmd.ExecuteNonQuery();
@@ -216,6 +216,34 @@ namespace PMS_POS.Model
                     return false;
                 }
             }
+        }
+        public DataTable GetHabitacion(int id)
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT * FROM habitacion where IdHabitacion = @IdHabitacion ";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdHabitacion", id);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
         }
     }
     

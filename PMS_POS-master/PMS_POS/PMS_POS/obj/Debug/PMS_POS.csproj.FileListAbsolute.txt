@@ -247,8 +247,8 @@ C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\ob
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistrarHab.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.Facturacion.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.MainScreen.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.Facturacion.resources
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.MainScreen.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csprojAssemblyReference.cache
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.Reservaciones.resources
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.Reservaciones.resources
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FacturacionCheckIn.resources
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csprojAssemblyReference.cache

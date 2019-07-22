@@ -30,6 +30,7 @@ namespace PMS_POS.Model
         public bool IsDeleted { get; set; }
         public DateTime DeletedDate { get; set; }
         public string EstadoReservacion { get; set; }
+        public int IdHabitacion { get; set; }
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
 
@@ -130,7 +131,7 @@ namespace PMS_POS.Model
 
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "INSERT INTO reservacion (IdHuesped,FechaLlegada,FechaSalida,CantNoches,CantAdultos,CantInfantes,Canal,Comentario,PrecioNoche,PrecioTotal) VALUES(@IdHuesped,@FechaLlegada,@FechaSalida,@CantNoches,@CantAdultos,@CantInfantes,@Canal,@Comentario,@PrecioNoche,@PrecioTotal)";
+                string sql = "INSERT INTO reservacion (IdHuesped,FechaLlegada,FechaSalida,CantNoches,CantAdultos,CantInfantes,Canal,Comentario,PrecioNoche,PrecioTotal,IdHabitacion) VALUES(@IdHuesped,@FechaLlegada,@FechaSalida,@CantNoches,@CantAdultos,@CantInfantes,@Canal,@Comentario,@PrecioNoche,@PrecioTotal,@IdHabitacion)";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 //cmd.Prepare();
@@ -145,6 +146,7 @@ namespace PMS_POS.Model
                 cmd.Parameters.AddWithValue("@Comentario", r.Comentario);
                 cmd.Parameters.AddWithValue("@PrecioNoche", r.PrecioPorNoche);
                 cmd.Parameters.AddWithValue("@PrecioTotal", r.TotalPorEstadia);
+                cmd.Parameters.AddWithValue("@IdHabitacion",r.IdHabitacion);
 
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
@@ -189,6 +191,32 @@ namespace PMS_POS.Model
 
             }
         }
+        public bool Update_reservacion_habitacion(int idReserv, int idHab)
+        {
+            //bool success = false
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+                string sql = "UPDATE reservacion_hab SET IdHabitacion = @IdHabitacion WHERE IdReservacion = @IdReservacion";
+                mySqlConn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdReservacion", idReserv);
+                cmd.Parameters.AddWithValue("@IdHabitacion", idHab);
+                int row = cmd.ExecuteNonQuery();
+                mySqlConn.Close();
+                if (row > 0)
+                {
+
+                    return true;
+                }
+                else
+                {
+
+                    return false;
+                }
+
+            }
+        }
 
 
         //Update
@@ -201,12 +229,13 @@ namespace PMS_POS.Model
             {
 
                 //SQL query Update
-                string sql = "UPDATE reservacion SET IdHuesped=@IdHuesped,FechaLlegada=@FechaLlegada,FechaSalida=@FechaSalida,FlechaCancelacion=@FlechaCancelacion,CantNoches=@CantNoches,CantAdultos=@CantAdultos,CantInfantes=@CantInfantes,Canal=@Canal,Comentario=@Comentario,PrecioNoche=@PrecioNoche,PrecioTotal=@PrecioTotal,IsDeleted=@IsDeleted WHERE IdReservacion=@IdReservacion";
+                string sql = "UPDATE reservacion SET FechaLlegada = @FechaLlegada, FechaSalida = @FechaSalida, CantNoches = @CantNoches, CantAdultos = @CantAdultos, CantInfantes = @CantInfantes, Canal = @Canal, Comentario = @Comentario, PrecioNoche = @PrecioNoche, PrecioTotal = @PrecioTotal, IdHabitacion = @IdHabitacion WHERE IdReservacion=@IdReservacion";
 
                 //Creating SQL Command
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdHuesped", r.IdHuesped);
+
+     
                 cmd.Parameters.AddWithValue("@FechaLlegada", r.FechaLlegada);
                 cmd.Parameters.AddWithValue("@FechaSalida", r.FechaSalida);
                 cmd.Parameters.AddWithValue("@CantNoches", r.CantidadNoches);
@@ -216,8 +245,10 @@ namespace PMS_POS.Model
                 cmd.Parameters.AddWithValue("@Comentario", r.Comentario);
                 cmd.Parameters.AddWithValue("@PrecioNoche", r.PrecioPorNoche);
                 cmd.Parameters.AddWithValue("@PrecioTotal", r.TotalPorEstadia);
-                cmd.Parameters.AddWithValue("@IsDeleted", r.IsDeleted);
-                cmd.Parameters.AddWithValue("@DeletedDate", r.DeletedDate);
+                cmd.Parameters.AddWithValue("@IdHabitacion", r.IdHabitacion);
+                cmd.Parameters.AddWithValue("@IdReservacion", r.IdReservacion);
+
+        
 
                 mySqlConn.Open();
                 int row = cmd.ExecuteNonQuery();
@@ -269,11 +300,12 @@ namespace PMS_POS.Model
 
         public DataTable VistaTabla()
         {
-            instruccion = "Select hostal.reservacion.FechaLlegada as Llegada, hostal.reservacion.FechaSalida as Salida, hostal.habitacion.NumHab as Habitacion, hostal.reservacion.EstadoReservacion as Estado, CONCAT(huesped.PrimerNombre, ' ', huesped.SegundoNombre, ' ', huesped.PrimerApellido,' ', hostal.huesped.SegundoApellido) as Nombre, hostal.huesped.Telefono as Contacto FROM hostal.reservacion INNER JOIN hostal.habitacion ON hostal.reservacion.IdHabitacion = hostal.habitacion.IdHabitacion INNER JOIN hostal.huesped ON hostal.reservacion.IdHuesped = hostal.huesped.IdHuesped GROUP BY hostal.reservacion.FechaLlegada; ";
+            instruccion = "Select hostal.reservacion.IdReservacion,hostal.reservacion.IdHuesped,hostal.reservacion.IdHabitacion, hostal.reservacion.FechaLlegada,hostal.reservacion.FechaSalida,hostal.reservacion.CantNoches,hostal.reservacion.CantAdultos,hostal.reservacion.CantInfantes,hostal.reservacion.Canal,hostal.reservacion.Comentario,hostal.reservacion.PrecioNoche,hostal.reservacion.PrecioTotal,hostal.reservacion.FechaLlegada as Llegada, hostal.reservacion.FechaSalida as Salida, hostal.habitacion.NumHab as Habitacion, hostal.reservacion.EstadoReservacion as Estado, CONCAT(huesped.PrimerNombre, ' ', huesped.SegundoNombre, ' ', huesped.PrimerApellido,' ', hostal.huesped.SegundoApellido) as Nombre, hostal.huesped.Telefono as Contacto FROM hostal.reservacion INNER JOIN hostal.habitacion ON hostal.reservacion.IdHabitacion = hostal.habitacion.IdHabitacion INNER JOIN hostal.huesped ON hostal.reservacion.IdHuesped = hostal.huesped.IdHuesped WHERE reservacion.IsDeleted = 0 GROUP BY hostal.reservacion.FechaLlegada; ";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
             return COnsulta;
         }
+        
     }
 }

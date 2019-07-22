@@ -26,17 +26,20 @@ namespace PMS_POS.View
                 return _instance;
             }
         }
-
+        UserControlInicio userControlInicio1 = new UserControlInicio();
         public Reservaciones()
         {
             InitializeComponent();
         }
+        Reservacion reservacion = new Reservacion();
 
         private void Reservaciones_Load(object sender, EventArgs e)
         {
-            dgvReservaciones.DataSource = obj.VistaTabla();
-        }
+            RefreshDgv();
 
+
+        }
+       /*
         private void DgvReservaciones_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // If the column is the Artist column, check the
@@ -62,10 +65,84 @@ namespace PMS_POS.View
                 }
 
             }
+            
+
+        }
+        */
+
+        private void BtnEditarReservacion_Click(object sender, EventArgs e)
+        {
+            if (dgvReservaciones.SelectedRows.Count > 0)
+            {
+                NuevaReservacion nr = NuevaReservacion.Instance;
+                
+                int index = dgvReservaciones.CurrentCell.RowIndex;
+                this.Controls.Add(NuevaReservacion.Instance);
+                nr.RecibirDatos(
+                    Convert.ToInt32(dgvReservaciones.Rows[index].Cells[0].Value),
+                    Convert.ToInt32(dgvReservaciones.Rows[index].Cells[1].Value),
+                    Convert.ToInt32(dgvReservaciones.Rows[index].Cells[2].Value),
+                    Convert.ToDateTime(dgvReservaciones.Rows[index].Cells[3].Value),
+                    Convert.ToDateTime(dgvReservaciones.Rows[index].Cells[4].Value),
+                    Convert.ToInt32(dgvReservaciones.Rows[index].Cells[5].Value),
+                    Convert.ToInt32(dgvReservaciones.Rows[index].Cells[6].Value),
+                    Convert.ToInt32(dgvReservaciones.Rows[index].Cells[7].Value),
+                    Convert.ToSingle(dgvReservaciones.Rows[index].Cells[11].Value),
+                    dgvReservaciones.Rows[index].Cells[8].Value.ToString(),
+                    dgvReservaciones.Rows[index].Cells[9].Value.ToString());
+                    nr.BringToFront();
+
+
+            }
+
+        }
+        public void RefreshDgv()
+        {
+            dgvReservaciones.DataSource = obj.VistaTabla();
+            dgvReservaciones.Columns[0].Visible = false;
+            dgvReservaciones.Columns[1].Visible = false;
+            dgvReservaciones.Columns[2].Visible = false;
+            dgvReservaciones.Columns[3].Visible = false;
+            dgvReservaciones.Columns[4].Visible = false;
+            dgvReservaciones.Columns[5].Visible = false;
+            dgvReservaciones.Columns[6].Visible = false;
+            dgvReservaciones.Columns[7].Visible = false;
+            dgvReservaciones.Columns[8].Visible = false;
+            dgvReservaciones.Columns[9].Visible = false;
+            dgvReservaciones.Columns[10].Visible = false;
+            dgvReservaciones.Columns[11].Visible = false;
 
         }
 
+        private void BtnEliminarReservacion_Click(object sender, EventArgs e)
+        {
 
+            if (dgvReservaciones.SelectedRows.Count > 0)
+            {
+                obj.IdReservacion = Convert.ToInt32(dgvReservaciones.CurrentRow.Cells[0].Value);
+                obj.IdHabitacion = Convert.ToInt32(dgvReservaciones.CurrentRow.Cells[2].Value);
+                if (obj.Delete(obj) == true)
+                {
+                    Habitacion hab = new Habitacion();
+                    hab.IdHabitacion = obj.IdHabitacion;
+
+                    if (hab.CambiarEstado(hab, "Disponible") == true)
+                    {
+                        MessageBox.Show("La reservacion ha sido eliminada.");
+                        RefreshDgv();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar los datos.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila.");
+            }
+        }
     }
 }
 

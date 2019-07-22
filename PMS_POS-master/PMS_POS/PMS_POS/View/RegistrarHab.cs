@@ -61,7 +61,7 @@ namespace PMS_POS.View
 
                         if (habitacion.Insert(habitacion) == true)
                         {
-                            Refresh();
+                            RefreshDgv();
                             Clear();
                             MessageBox.Show("La habitación ha sido creada.");
                            
@@ -81,35 +81,42 @@ namespace PMS_POS.View
             }
             if (editar == true)
             {
-                try
+                if (this.txtBoxNumHab.Text == string.Empty || this.cmbTipoHab.Text == string.Empty || this.cmbEstado.Text == string.Empty || this.txtBoxPrecioPorNoche.Text == string.Empty)
                 {
-                    //Controller code
-
-                    //Shitty code
-                    habitacion.IdHabitacion = Convert.ToInt32(txtBoxId.Text);
-                    habitacion.NumHab = Convert.ToInt32(txtBoxNumHab.Text);
-                    habitacion.TipoHab = cmbTipoHab.Text;
-                    habitacion.CantCamas = Convert.ToInt32(numCantCamas.Value);
-                    habitacion.MaxPersonas = Convert.ToInt32(numMaxPersonas.Value);
-                    habitacion.Piso = Convert.ToInt32(numPiso.Value);
-                    habitacion.Estado = cmbEstado.Text;
-                    habitacion.Detalles = txtBoxDetalles.Text;
-                    habitacion.PrecioPorNoche = Convert.ToSingle(txtBoxPrecioPorNoche.Text);
-
-
-                    if (habitacion.Update(habitacion) == true)
+                    MessageBox.Show("Falta ingresar algunos datos");
+                }
+                else
+                {
+                    try
                     {
-                        Refresh();
-                        MessageBox.Show("La habitación ha sido actualizada.");
-                        Clear();
-                        editar = false;
+                        //Controller code
+
+                        //Shitty code
+                        habitacion.IdHabitacion = Convert.ToInt32(txtBoxId.Text);
+                        habitacion.NumHab = Convert.ToInt32(txtBoxNumHab.Text);
+                        habitacion.TipoHab = cmbTipoHab.Text;
+                        habitacion.CantCamas = Convert.ToInt32(numCantCamas.Value);
+                        habitacion.MaxPersonas = Convert.ToInt32(numMaxPersonas.Value);
+                        habitacion.Piso = Convert.ToInt32(numPiso.Value);
+                        habitacion.Estado = cmbEstado.Text;
+                        habitacion.Detalles = txtBoxDetalles.Text;
+                        habitacion.PrecioPorNoche = Convert.ToSingle(txtBoxPrecioPorNoche.Text);
+
+
+                        if (habitacion.Update(habitacion) == true)
+                        {
+                            RefreshDgv();
+                            MessageBox.Show("La habitación ha sido actualizada.");
+                            Clear();
+                            editar = false;
+
+                        }
 
                     }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al editar los datos. (Error: " + ex + ")");
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al editar los datos. (Error: " + ex + ")");
+                    }
                 }
             }
         }
@@ -153,7 +160,7 @@ namespace PMS_POS.View
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            Refresh();
+            RefreshDgv();
             this.Close();
 
         }
@@ -171,7 +178,7 @@ namespace PMS_POS.View
             txtBoxDetalles.Text = detalles;
             txtBoxPrecioPorNoche.Text = precio;
         }
-        private void Refresh()
+        private void RefreshDgv()
         {
             UserControlHabitaciones.Instance.RefreshDgv();
         }

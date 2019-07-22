@@ -102,6 +102,7 @@
             // 
             // txtBoxNumeroHabitacion
             // 
+            this.txtBoxNumeroHabitacion.Enabled = false;
             this.txtBoxNumeroHabitacion.Location = new System.Drawing.Point(174, 39);
             this.txtBoxNumeroHabitacion.Name = "txtBoxNumeroHabitacion";
             this.txtBoxNumeroHabitacion.Size = new System.Drawing.Size(187, 24);
@@ -109,6 +110,7 @@
             // 
             // txtBoxTipoHabitacion
             // 
+            this.txtBoxTipoHabitacion.Enabled = false;
             this.txtBoxTipoHabitacion.Location = new System.Drawing.Point(174, 65);
             this.txtBoxTipoHabitacion.Name = "txtBoxTipoHabitacion";
             this.txtBoxTipoHabitacion.Size = new System.Drawing.Size(187, 24);
@@ -121,6 +123,7 @@
             // 
             // txtBoxPrecio
             // 
+            this.txtBoxPrecio.Enabled = false;
             this.txtBoxPrecio.Location = new System.Drawing.Point(174, 92);
             this.txtBoxPrecio.Name = "txtBoxPrecio";
             this.txtBoxPrecio.Size = new System.Drawing.Size(187, 24);
@@ -174,6 +177,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cliente";
+            this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
             // btnBuscarCliente
             // 
@@ -190,6 +194,7 @@
             // 
             // txtBoxDocumento
             // 
+            this.txtBoxDocumento.Enabled = false;
             this.txtBoxDocumento.Location = new System.Drawing.Point(143, 77);
             this.txtBoxDocumento.Name = "txtBoxDocumento";
             this.txtBoxDocumento.Size = new System.Drawing.Size(187, 24);
@@ -197,6 +202,7 @@
             // 
             // txtBoxNombre
             // 
+            this.txtBoxNombre.Enabled = false;
             this.txtBoxNombre.Location = new System.Drawing.Point(142, 51);
             this.txtBoxNombre.Name = "txtBoxNombre";
             this.txtBoxNombre.Size = new System.Drawing.Size(187, 24);
@@ -368,16 +374,15 @@
             // 
             this.dateTimePickerSalida.Location = new System.Drawing.Point(153, 80);
             this.dateTimePickerSalida.Name = "dateTimePickerSalida";
-            this.dateTimePickerSalida.Size = new System.Drawing.Size(218, 24);
+            this.dateTimePickerSalida.Size = new System.Drawing.Size(261, 24);
             this.dateTimePickerSalida.TabIndex = 14;
             this.dateTimePickerSalida.ValueChanged += new System.EventHandler(this.DateTimePicker2_ValueChanged);
             // 
             // dateTimePickerLlegada
             // 
             this.dateTimePickerLlegada.Location = new System.Drawing.Point(155, 48);
-            this.dateTimePickerLlegada.MinDate = new System.DateTime(2019, 7, 8, 0, 0, 0, 0);
             this.dateTimePickerLlegada.Name = "dateTimePickerLlegada";
-            this.dateTimePickerLlegada.Size = new System.Drawing.Size(216, 24);
+            this.dateTimePickerLlegada.Size = new System.Drawing.Size(259, 24);
             this.dateTimePickerLlegada.TabIndex = 13;
             this.dateTimePickerLlegada.Value = new System.DateTime(2019, 7, 8, 9, 58, 28, 0);
             this.dateTimePickerLlegada.ValueChanged += new System.EventHandler(this.DateTimePickerLlegada_ValueChanged);
@@ -448,7 +453,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "NuevaReservacion";
             this.Size = new System.Drawing.Size(1285, 680);
-            //this.Load += new System.EventHandler(this.NuevaReservacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
