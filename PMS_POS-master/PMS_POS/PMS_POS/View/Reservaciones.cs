@@ -143,6 +143,24 @@ namespace PMS_POS.View
                 MessageBox.Show("Seleccione una fila.");
             }
         }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (dgvReservaciones.SelectedRows.Count > 0)
+            {
+                if (!MainScreen.Instance.PnlContainer.Controls.ContainsKey("FacturacionCheckIn"))
+                {
+                    FacturacionCheckIn un = new FacturacionCheckIn();
+                    un.Dock = DockStyle.Fill;
+                    MainScreen.Instance.PnlContainer.Controls.Add(un);
+                }
+                MainScreen.Instance.PnlContainer.Controls["FacturacionCheckIn"].BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila.");
+            }
+        }
     }
 }
 

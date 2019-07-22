@@ -140,14 +140,15 @@
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(553, 87);
+            this.btnConfirmar.Location = new System.Drawing.Point(523, 87);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(236, 27);
+            this.btnConfirmar.Size = new System.Drawing.Size(266, 27);
             this.btnConfirmar.TabIndex = 87;
-            this.btnConfirmar.Text = "Confirmar Reservación";
+            this.btnConfirmar.Text = "Registrar Check-In";
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfirmar.UseCompatibleTextRendering = true;
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
             // Reservaciones
             // 
