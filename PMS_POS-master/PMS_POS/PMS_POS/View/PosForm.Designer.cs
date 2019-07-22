@@ -41,6 +41,8 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.panelUIseleccionada = new System.Windows.Forms.Panel();
             this.lblestadoUI = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelPOS.SuspendLayout();
             this.panelBasePOS.SuspendLayout();
             this.panelBotonesPOS.SuspendLayout();
@@ -82,6 +84,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnMostrador);
             this.panel1.Controls.Add(this.btnInventario);
             this.panel1.Controls.Add(this.btnMenu);
@@ -95,12 +99,12 @@
             // 
             // btnMostrador
             // 
-            this.btnMostrador.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnMostrador.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnMostrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrador.ForeColor = System.Drawing.Color.White;
-            this.btnMostrador.Location = new System.Drawing.Point(55, 370);
+            this.btnMostrador.Location = new System.Drawing.Point(55, 444);
             this.btnMostrador.Name = "btnMostrador";
-            this.btnMostrador.Size = new System.Drawing.Size(248, 179);
+            this.btnMostrador.Size = new System.Drawing.Size(248, 117);
             this.btnMostrador.TabIndex = 9;
             this.btnMostrador.Text = "Ir al Mostrador";
             this.btnMostrador.UseVisualStyleBackColor = false;
@@ -109,7 +113,7 @@
             // 
             // btnInventario
             // 
-            this.btnInventario.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnInventario.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.Color.White;
             this.btnInventario.Location = new System.Drawing.Point(55, 84);
@@ -122,7 +126,7 @@
             // 
             // btnMenu
             // 
-            this.btnMenu.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnMenu.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Location = new System.Drawing.Point(55, 174);
@@ -135,7 +139,7 @@
             // 
             // btnReportes
             // 
-            this.btnReportes.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnReportes.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Location = new System.Drawing.Point(55, 264);
@@ -148,7 +152,7 @@
             // 
             // btnProveedores
             // 
-            this.btnProveedores.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnProveedores.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.White;
             this.btnProveedores.Location = new System.Drawing.Point(195, 174);
@@ -161,7 +165,7 @@
             // 
             // btnOrdenes
             // 
-            this.btnOrdenes.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnOrdenes.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnOrdenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrdenes.ForeColor = System.Drawing.Color.White;
             this.btnOrdenes.Location = new System.Drawing.Point(195, 264);
@@ -170,6 +174,7 @@
             this.btnOrdenes.TabIndex = 8;
             this.btnOrdenes.Text = "Ordenes";
             this.btnOrdenes.UseVisualStyleBackColor = false;
+            this.btnOrdenes.Click += new System.EventHandler(this.btnOrdenes_Click);
             this.btnOrdenes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnOrdenes_MouseClick);
             // 
             // btnRegresar
@@ -203,6 +208,30 @@
             this.lblestadoUI.Text = "label1";
             this.lblestadoUI.Visible = false;
             this.lblestadoUI.TextChanged += new System.EventHandler(this.LblestadoUI_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(55, 354);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 84);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Productos";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(195, 354);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 84);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "...";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // PosForm
             // 
@@ -239,5 +268,7 @@
         private System.Windows.Forms.Label lblestadoUI;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelUIseleccionada;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -199,5 +199,10 @@ namespace PMS_POS.View
         {
 
         }
+
+        private void btnOrdenes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
