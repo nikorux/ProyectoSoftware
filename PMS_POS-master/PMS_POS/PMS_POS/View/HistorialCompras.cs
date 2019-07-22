@@ -61,5 +61,36 @@ namespace PMS_POS.View
         {
 
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvCompras.AllowUserToAddRows = false;
+
+            if (txtBuscar.Text != "")
+            {
+
+                dgvCompras.CurrentCell = null;
+                foreach (DataGridViewRow n in dgvCompras.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgvCompras.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscar.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                LoadHistorial();
+               
+            }
+        }
     }
 }

@@ -194,5 +194,36 @@ namespace PMS_POS.View
             total = cantComprada * precio;
             txtTotalCompra.Text = total.ToString();*/
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvProductosRegistrados.AllowUserToAddRows = false;
+
+            if (txtBuscar.Text != "")
+            {
+
+                dgvProductosRegistrados.CurrentCell = null;
+                foreach (DataGridViewRow n in dgvProductosRegistrados.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgvProductosRegistrados.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscar.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                LoadPrdCompra();
+            //    dgvProductosRegistrados.DataSource = producto.Select();
+            }
+        }
     }
 }
