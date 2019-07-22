@@ -675,7 +675,12 @@ namespace PMS_POS
 
         private void BtnCheckIn_Click(object sender, EventArgs e)
         {
-
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            FacturacionCheckIn thisprobando = new FacturacionCheckIn();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
         }
 
         private void MainScreen_Load(object sender, EventArgs e)

@@ -39,6 +39,10 @@ namespace PMS_POS.View
 
         }
 
-
+        private void HoraFecha_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
     }
 }
