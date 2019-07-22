@@ -186,6 +186,12 @@
     <Compile Include="View\MenuActual.Designer.cs">
       <DependentUpon>MenuActual.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MostradorUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MostradorUI.Designer.cs">
+      <DependentUpon>MostradorUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NuevaReservacion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +203,18 @@
     </Compile>
     <Compile Include="View\NuevoHuesped.designer.cs">
       <DependentUpon>NuevoHuesped.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ordenes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Ordenes.Designer.cs">
+      <DependentUpon>Ordenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PaginaInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PaginaInicio.Designer.cs">
+      <DependentUpon>PaginaInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PosForm.cs">
       <SubType>Form</SubType>
@@ -239,6 +257,18 @@
     </Compile>
     <Compile Include="View\Reportes.Designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReporteVentas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ReporteVentas.Designer.cs">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transacciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Transacciones.Designer.cs">
+      <DependentUpon>Transacciones.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControlHabitaciones.cs">
       <SubType>UserControl</SubType>
@@ -319,11 +349,20 @@
     <EmbeddedResource Include="View\MenuActual.resx">
       <DependentUpon>MenuActual.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\MostradorUI.resx">
+      <DependentUpon>MostradorUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\NuevaReservacion.resx">
       <DependentUpon>NuevaReservacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuevoHuesped.resx">
       <DependentUpon>NuevoHuesped.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ordenes.resx">
+      <DependentUpon>Ordenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PaginaInicio.resx">
+      <DependentUpon>PaginaInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PosForm.resx">
       <DependentUpon>PosForm.cs</DependentUpon>
@@ -345,6 +384,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReporteVentas.resx">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transacciones.resx">
+      <DependentUpon>Transacciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControlHabitaciones.resx">
       <DependentUpon>UserControlHabitaciones.cs</DependentUpon>
@@ -373,6 +418,26 @@
   <ItemGroup>
     <Content Include="img\arrows.png" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\ConfigurarMenuIMG.png" />
+    <None Include="Resources\ConfigurarMenuIMGhover.png" />
+    <None Include="Resources\OrdenesIMG.png" />
+    <None Include="Resources\OrdenesIMGhover.png" />
+    <None Include="Resources\VentasIMG.png" />
+    <None Include="Resources\VentasIMGhover.png" />
+    <None Include="Resources\TransaccionesIMG2.png" />
+    <None Include="Resources\TransaccionesIMGhover2.png" />
+    <None Include="Resources\MostradorIMG2.png" />
+    <None Include="Resources\MostradorIMGhover2.png" />
+    <None Include="Resources\HomeIMG2.png" />
+    <None Include="Resources\HomeIMGhover2.png" />
+    <None Include="Resources\MenuIMG2.png" />
+    <None Include="Resources\MenuIMGhover2.png" />
+    <None Include="Resources\ProveedoresIMGhover2.png" />
+    <None Include="Resources\ProveedoresIMGactualhover.png" />
+    <None Include="Resources\InventarioIMGhover2.png" />
+    <None Include="Resources\InventarioIMG2.png" />
+    <None Include="Resources\ReportsIMGhover2.png" />
+    <None Include="Resources\ReportsIMG5.png" />
     <None Include="Resources\badge-2008747_1280.png" />
     <None Include="Resources\restaurant-1724294_6401.png" />
     <None Include="Resources\restaurant-1724294_640.png" />

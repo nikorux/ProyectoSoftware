@@ -32,7 +32,7 @@ namespace PMS_POS.View
             InitializeComponent();
         }
 
-        Mostrador mostrador = new Mostrador();
+        MostradorUI mostrador = new MostradorUI();
         Producto producto = new Producto();
 
         private void MenuActual_Load(object sender, EventArgs e)
@@ -61,11 +61,11 @@ namespace PMS_POS.View
             {
                 string nombreCategoria = cbxCategoria.Items[i].ToString();
                 listMenuActual.Items.Add(nombreCategoria);
-                listMenuActual.Items.Add(" ");
                 int IdCategoria = producto.SelectIdCategoria(nombreCategoria);
 
+                //print Menu en list
                 MySqlConnection connection = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-                string query = "SELECT NombreInsumo FROM insumo WHERE IsDeleted=0 AND EnMostrador=1 AND IdCategoria=@idCategoria";
+                string query = "SELECT NombreInsumo, PrecioVenta FROM insumo WHERE IsDeleted=0 AND EnMostrador=1 AND IdCategoria=@idCategoria";
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.CommandType = CommandType.Text;
@@ -79,8 +79,6 @@ namespace PMS_POS.View
 
                 listMenuActual.Items.Add("- - - - - - - - - -");
                 listMenuActual.Items.Add(" ");
-
-
             }
         }
     }

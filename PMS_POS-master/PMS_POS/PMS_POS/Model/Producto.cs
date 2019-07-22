@@ -111,6 +111,35 @@ namespace PMS_POS.Model
             return NombreCompaniaP;
         }
 
+        public int CheckSiProductTieneReceta(int idInsumo)
+        {
+            int resp = 0;
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+
+            try
+            {
+                //Select query
+                string sql = "SELECT TieneReceta FROM insumo WHERE IdInsumo=@idInsumo";// creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@idInsumo", idInsumo);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                return resp = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return resp;
+        }
+
         public int SelectIdProveedorFROMnombreCompania(string NombreProveedor)
         {
             int IdProveedor = 0;
@@ -331,6 +360,28 @@ namespace PMS_POS.Model
                 cmd.Parameters.AddWithValue("@CantMaxima", x.CantMaxima);
                 cmd.Parameters.AddWithValue("@UnidadMedida", x.UnidadMedida);
                 cmd.Parameters.AddWithValue("@EnMostrador", EnMostrador);
+                int row = cmd.ExecuteNonQuery();
+                mySqlConn.Close();
+                if (row > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+        }
+        public bool UpdateInsumoTieneReceta(int IdInsumo)
+        {
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+                string sql = "UPDATE insumo SET TieneReceta=1 WHERE IdInsumo=@IdInsumo";
+                mySqlConn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdInsumo", IdInsumo);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)

@@ -58,7 +58,7 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT IdInsumo, NombreInsumo FROM insumo WHERE IsDeleted=0 AND EnMostrador=0";
+                string sql = "SELECT IdInsumo, NombreInsumo, UnidadMedida FROM insumo WHERE IsDeleted=0 AND EnMostrador=0";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //Creating data adapter
