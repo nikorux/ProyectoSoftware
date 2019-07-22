@@ -73,7 +73,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAgregar.Location = new System.Drawing.Point(577, 319);
+            this.btnAgregar.Location = new System.Drawing.Point(579, 319);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(138, 32);
             this.btnAgregar.TabIndex = 2;
