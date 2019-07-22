@@ -197,6 +197,43 @@ namespace PMS_POS.Model
             }
             return IdCategoria;
         }
+        public string getDetallesFacturas(string columna)
+        {
+            string sql = null;
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+                switch (columna)
+                {
+                    case "Tarjeta":
+                        sql = "SELECT * FROM factura WHERE FormaDePago=@columna";
+                        break;
+                    case "Efectivo":
+                        sql = "SELECT * FROM factura WHERE FormaDePago=@columna";
+                        break;
+                    case "CompraProveedor":
+                        sql = "SELECT * FROM factura WHERE TipoFactura=@columna";
+                        break;
+                    case "Mostrador":
+                        sql = "SELECT * FROM factura WHERE TipoFactura=@columna";
+                        break;
+                    case "Pagada":
+                        sql = "SELECT * FROM factura WHERE Pagado=1";
+                        break;
+                    case "Pendiente":
+                        sql = "SELECT * FROM factura WHERE Pagado=0";
+                        break;
+                    case "*":
+                        sql = "SELECT * FROM factura";
+                        break;
+                }
+                mySqlConn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@columna", columna);
+                return cmd.ExecuteNonQuery().ToString();
+
+            }
+        }
 
         public DataTable FiltrarPORcategoria(string NombreCategoria)
         {
@@ -283,6 +320,115 @@ namespace PMS_POS.Model
                 conn.Close();
             }
             return dt;
+        }
+
+        public DataTable SelectFacturas()
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT * FROM factura";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SelectHistorialComprasProveedores()
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT * FROM historial_compra_insumo";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SelectAjustes()
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT * FROM ajustesinventario";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public bool InsertAjuste(int IdInsumo, string NombreInsumo, string Accion, float CantidadAjuste, string UnidadMedida)
+        {
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+                string sql = "INSERT INTO insumo (IdInsumo, NombreInsumo, Accion, CantidadAjuste, UnidadMedida, DeleteDate) VALUES (@IdInsumo, @NombreInsumo, @Accion, @CantidadAjuste, @UnidadMedida, @DeleteDate)";
+                mySqlConn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdInsumo", IdInsumo);
+                cmd.Parameters.AddWithValue("@NombreInsumo", NombreInsumo);
+                cmd.Parameters.AddWithValue("@Accion", Accion);
+                cmd.Parameters.AddWithValue("@CantidadAjuste", CantidadAjuste);
+                cmd.Parameters.AddWithValue("@UnidadMedida", UnidadMedida);
+                cmd.Parameters.AddWithValue("@DeleteDate", DateTime.Now);
+                int row = cmd.ExecuteNonQuery();
+                mySqlConn.Close();
+                if (row > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
         }
 
         public DataTable SelectBebidas()
