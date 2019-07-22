@@ -64,9 +64,7 @@
             // 
             // panel2
             // 
-
-            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
-
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
             this.panel2.Controls.Add(this.txtBuscarProducto);
             this.panel2.Controls.Add(this.cbxCategoria);
             this.panel2.Location = new System.Drawing.Point(12, 29);
@@ -76,9 +74,7 @@
             // 
             // txtBuscarProducto
             // 
-
             this.txtBuscarProducto.ForeColor = System.Drawing.SystemColors.WindowFrame;
-
             this.txtBuscarProducto.Location = new System.Drawing.Point(3, 32);
             this.txtBuscarProducto.Name = "txtBuscarProducto";
             this.txtBuscarProducto.Size = new System.Drawing.Size(263, 20);
@@ -90,26 +86,21 @@
             // cbxCategoria
             // 
             this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
             this.cbxCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.Items.AddRange(new object[] {
             "Todas"});
             this.cbxCategoria.Location = new System.Drawing.Point(3, 5);
             this.cbxCategoria.Name = "cbxCategoria";
-
-            this.cbxCategoria.Size = new System.Drawing.Size(201, 21);
-
+            this.cbxCategoria.Size = new System.Drawing.Size(263, 21);
             this.cbxCategoria.TabIndex = 27;
             this.cbxCategoria.SelectedIndexChanged += new System.EventHandler(this.CbxCategoria_SelectedIndexChanged);
             // 
             // btnVerMenuActual
             // 
             this.btnVerMenuActual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-
-            this.btnVerMenuActual.BackColor = System.Drawing.Color.RoyalBlue;
-
+            this.btnVerMenuActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnVerMenuActual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerMenuActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerMenuActual.ForeColor = System.Drawing.Color.White;
             this.btnVerMenuActual.Location = new System.Drawing.Point(368, 34);
@@ -135,9 +126,8 @@
             // btnRemoverItem
             // 
             this.btnRemoverItem.Anchor = System.Windows.Forms.AnchorStyles.None;
-
-            this.btnRemoverItem.BackColor = System.Drawing.Color.RoyalBlue;
-
+            this.btnRemoverItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnRemoverItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverItem.ForeColor = System.Drawing.Color.White;
             this.btnRemoverItem.Location = new System.Drawing.Point(285, 268);
@@ -151,9 +141,8 @@
             // btnAgregarItem
             // 
             this.btnAgregarItem.Anchor = System.Windows.Forms.AnchorStyles.None;
-
-            this.btnAgregarItem.BackColor = System.Drawing.Color.RoyalBlue;
-
+            this.btnAgregarItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnAgregarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarItem.ForeColor = System.Drawing.Color.White;
             this.btnAgregarItem.Location = new System.Drawing.Point(285, 232);
@@ -190,13 +179,11 @@
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label14.AutoSize = true;
-
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.MediumBlue;
-
+            this.label14.Font = new System.Drawing.Font("SansSerif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
             this.label14.Location = new System.Drawing.Point(287, 9);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 29);
+            this.label14.Size = new System.Drawing.Size(75, 28);
             this.label14.TabIndex = 19;
             this.label14.Text = "Menu";
             // 
