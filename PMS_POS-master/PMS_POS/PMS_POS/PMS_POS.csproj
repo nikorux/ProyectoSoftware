@@ -123,6 +123,12 @@
     <Compile Include="View\FacturacionCheckIn.Designer.cs">
       <DependentUpon>FacturacionCheckIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FacturacionCheckOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FacturacionCheckOut.Designer.cs">
+      <DependentUpon>FacturacionCheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\HistorialCompras.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +140,12 @@
     </Compile>
     <Compile Include="View\InformacionEstablecimiento.Designer.cs">
       <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiquidarServiciosAdquiridos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LiquidarServiciosAdquiridos.Designer.cs">
+      <DependentUpon>LiquidarServiciosAdquiridos.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ListaClientes.cs">
       <SubType>UserControl</SubType>
@@ -324,11 +336,17 @@
     <EmbeddedResource Include="View\FacturacionCheckIn.resx">
       <DependentUpon>FacturacionCheckIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FacturacionCheckOut.resx">
+      <DependentUpon>FacturacionCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\HistorialCompras.resx">
       <DependentUpon>HistorialCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\InformacionEstablecimiento.resx">
       <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LiquidarServiciosAdquiridos.resx">
+      <DependentUpon>LiquidarServiciosAdquiridos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ListaClientes.resx">
       <DependentUpon>ListaClientes.cs</DependentUpon>

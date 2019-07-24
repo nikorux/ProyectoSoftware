@@ -166,6 +166,22 @@ namespace PMS_POS.View
         {
             RefreshDgv();
         }
+
+       /* private void CmbxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataView dv = new DataView(obj.dt);
+
+            if(cmbxEstado.SelectedItem.ToString()=="All")
+            {
+                dgvReservaciones.DataSource = dt;
+            }
+            else
+            {
+                dv.RowFilter = string.Format("Estado LIKE '%{0}%'", cmbxEstado.SelectedItem.ToString());
+
+                dgvReservaciones.DataSource = dv;
+            }
+        }*/
     }
 }
 

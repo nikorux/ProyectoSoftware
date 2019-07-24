@@ -62,7 +62,7 @@
             this.txtTotalAPagar = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtCajero = new System.Windows.Forms.TextBox();
+            this.txtAtendidoPor = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.txtNumFactura = new System.Windows.Forms.TextBox();
@@ -229,7 +229,7 @@
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Location = new System.Drawing.Point(39, 139);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(813, 217);
+            this.panel4.Size = new System.Drawing.Size(813, 213);
             this.panel4.TabIndex = 89;
             // 
             // panel1
@@ -239,7 +239,7 @@
             this.panel1.Controls.Add(this.dtpFechaActual);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.txtCajero);
+            this.panel1.Controls.Add(this.txtAtendidoPor);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.txtTelefono);
             this.panel1.Controls.Add(this.cmbFormaPago);
@@ -249,7 +249,7 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Location = new System.Drawing.Point(17, 62);
+            this.panel1.Location = new System.Drawing.Point(17, 63);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(780, 140);
             this.panel1.TabIndex = 90;
@@ -444,12 +444,12 @@
             this.label19.TabIndex = 24;
             this.label19.Text = "Teléfono:";
             // 
-            // txtCajero
+            // txtAtendidoPor
             // 
-            this.txtCajero.Location = new System.Drawing.Point(549, 74);
-            this.txtCajero.Name = "txtCajero";
-            this.txtCajero.Size = new System.Drawing.Size(194, 20);
-            this.txtCajero.TabIndex = 25;
+            this.txtAtendidoPor.Location = new System.Drawing.Point(549, 74);
+            this.txtAtendidoPor.Name = "txtAtendidoPor";
+            this.txtAtendidoPor.Size = new System.Drawing.Size(194, 20);
+            this.txtAtendidoPor.TabIndex = 25;
             // 
             // label21
             // 
@@ -542,16 +542,16 @@
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel10.Controls.Add(this.dgvHabitacion);
-            this.panel10.Location = new System.Drawing.Point(38, 373);
+            this.panel10.Location = new System.Drawing.Point(38, 364);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(813, 137);
+            this.panel10.Size = new System.Drawing.Size(813, 146);
             this.panel10.TabIndex = 93;
             // 
             // dgvHabitacion
             // 
             this.dgvHabitacion.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHabitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHabitacion.Location = new System.Drawing.Point(17, 16);
+            this.dgvHabitacion.Location = new System.Drawing.Point(17, 20);
             this.dgvHabitacion.Name = "dgvHabitacion";
             this.dgvHabitacion.Size = new System.Drawing.Size(783, 113);
             this.dgvHabitacion.TabIndex = 0;
@@ -561,7 +561,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label10.Location = new System.Drawing.Point(62, 364);
+            this.label10.Location = new System.Drawing.Point(62, 355);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(169, 21);
             this.label10.TabIndex = 94;
@@ -643,7 +643,7 @@
         private System.Windows.Forms.TextBox txtITBIS;
         private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtCajero;
+        private System.Windows.Forms.TextBox txtAtendidoPor;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DateTimePicker dtpFechaActual;
         private System.Windows.Forms.Label label21;

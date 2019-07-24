@@ -654,7 +654,7 @@ namespace PMS_POS
             PanelContenedor.Show();
             userControlInicio1.SendToBack();
             PanelContenedor.Controls.Clear();
-            UserControlClientes thisprobando = new UserControlClientes();
+            FacturacionCheckOut thisprobando = new FacturacionCheckOut();
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
 

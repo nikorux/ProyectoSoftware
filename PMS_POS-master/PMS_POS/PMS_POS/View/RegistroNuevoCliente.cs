@@ -58,7 +58,7 @@ namespace PMS_POS.View
                         //dgvclie.DataSource = null;
                         //dgvHuespedes.DataSource = obj.VistaTabla();
                         Huesped limpiar = new Huesped();
-                        limpiar.BorrarCampos(this, groupBox1);
+                        //limpiar.BorrarCampos(this, groupBox1);
                         //cbxTipoIdentificacion.Items.Clear();
                         //cbxTipoIdentificacion.SelectedIndex = 0;
 
@@ -84,7 +84,7 @@ namespace PMS_POS.View
                     MyReader2 = MyCommand2.ExecuteReader();
                     MessageBox.Show("El cliente ha sido modificado.");
                     Huesped limpiar = new Huesped();
-                    limpiar.BorrarCampos(this, groupBox1);
+                    //limpiar.BorrarCampos(this, groupbox1);
                     //cbxTipoIdentificacion.Items.Clear();
                     //cbxTipoIdentificacion.SelectedIndex = 0;
                     while (MyReader2.Read())
