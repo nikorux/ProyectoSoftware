@@ -113,7 +113,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(378, 78);
+            this.label4.Location = new System.Drawing.Point(380, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 21);
             this.label4.TabIndex = 3;
@@ -124,7 +124,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(378, 140);
+            this.label5.Location = new System.Drawing.Point(380, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 21);
             this.label5.TabIndex = 4;
@@ -214,9 +214,9 @@
             // 
             // numCantCamas
             // 
-            this.numCantCamas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numCantCamas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numCantCamas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numCantCamas.Location = new System.Drawing.Point(382, 50);
+            this.numCantCamas.Location = new System.Drawing.Point(384, 47);
             this.numCantCamas.Maximum = new decimal(new int[] {
             10,
             0,
@@ -228,7 +228,7 @@
             0,
             0});
             this.numCantCamas.Name = "numCantCamas";
-            this.numCantCamas.Size = new System.Drawing.Size(125, 25);
+            this.numCantCamas.Size = new System.Drawing.Size(125, 29);
             this.numCantCamas.TabIndex = 25;
             this.numCantCamas.Value = new decimal(new int[] {
             1,
@@ -260,7 +260,7 @@
             // numMaxPersonas
             // 
             this.numMaxPersonas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numMaxPersonas.Location = new System.Drawing.Point(382, 98);
+            this.numMaxPersonas.Location = new System.Drawing.Point(385, 100);
             this.numMaxPersonas.Maximum = new decimal(new int[] {
             6,
             0,
@@ -295,16 +295,15 @@
             // 
             // numPiso
             // 
-            this.numPiso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numPiso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPiso.Location = new System.Drawing.Point(379, 161);
+            this.numPiso.Location = new System.Drawing.Point(383, 161);
             this.numPiso.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numPiso.Name = "numPiso";
-            this.numPiso.Size = new System.Drawing.Size(128, 25);
+            this.numPiso.Size = new System.Drawing.Size(128, 29);
             this.numPiso.TabIndex = 14;
             this.numPiso.Value = new decimal(new int[] {
             1,

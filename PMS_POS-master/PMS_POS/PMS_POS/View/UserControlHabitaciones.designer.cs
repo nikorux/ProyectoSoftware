@@ -51,7 +51,7 @@
             button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             button1.ForeColor = System.Drawing.Color.White;
             button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            button1.Location = new System.Drawing.Point(586, 122);
+            button1.Location = new System.Drawing.Point(586, 110);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(265, 29);
             button1.TabIndex = 36;
@@ -75,7 +75,7 @@
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
-            this.btnBorrar.Location = new System.Drawing.Point(1012, 121);
+            this.btnBorrar.Location = new System.Drawing.Point(1012, 109);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(144, 30);
             this.btnBorrar.TabIndex = 18;
@@ -89,7 +89,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(861, 122);
+            this.btnEditar.Location = new System.Drawing.Point(861, 110);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(141, 29);
             this.btnEditar.TabIndex = 31;
@@ -99,7 +99,7 @@
             // 
             // txtBoxBuscar
             // 
-            this.txtBoxBuscar.Location = new System.Drawing.Point(214, 126);
+            this.txtBoxBuscar.Location = new System.Drawing.Point(214, 114);
             this.txtBoxBuscar.Name = "txtBoxBuscar";
             this.txtBoxBuscar.Size = new System.Drawing.Size(177, 20);
             this.txtBoxBuscar.TabIndex = 37;
@@ -110,7 +110,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(108, 125);
+            this.label2.Location = new System.Drawing.Point(108, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 80;
@@ -121,7 +121,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.dgvHab);
-            this.panel1.Location = new System.Drawing.Point(109, 157);
+            this.panel1.Location = new System.Drawing.Point(109, 145);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1047, 438);
             this.panel1.TabIndex = 81;
@@ -140,7 +140,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(104, 86);
+            this.label3.Location = new System.Drawing.Point(104, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(251, 30);
             this.label3.TabIndex = 82;
