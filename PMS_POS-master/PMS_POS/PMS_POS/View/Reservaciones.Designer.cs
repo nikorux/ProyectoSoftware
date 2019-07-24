@@ -42,10 +42,14 @@
             // 
             // dgvReservaciones
             // 
+            this.dgvReservaciones.AllowUserToAddRows = false;
+            this.dgvReservaciones.AllowUserToDeleteRows = false;
+            this.dgvReservaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReservaciones.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvReservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReservaciones.Location = new System.Drawing.Point(12, 14);
             this.dgvReservaciones.Name = "dgvReservaciones";
+            this.dgvReservaciones.ReadOnly = true;
             this.dgvReservaciones.Size = new System.Drawing.Size(1013, 405);
             this.dgvReservaciones.TabIndex = 0;
             // 

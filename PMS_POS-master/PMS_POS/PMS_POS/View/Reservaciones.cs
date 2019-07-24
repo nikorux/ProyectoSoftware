@@ -147,14 +147,21 @@ namespace PMS_POS.View
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
             if (dgvReservaciones.SelectedRows.Count > 0)
-            {
+            { int row = 0;
+                row = dgvReservaciones.SelectedCells[0].RowIndex;
+         
                 if (!MainScreen.Instance.PnlContainer.Controls.ContainsKey("FacturacionCheckIn"))
                 {
                     FacturacionCheckIn un = new FacturacionCheckIn();
                     un.Dock = DockStyle.Fill;
                     MainScreen.Instance.PnlContainer.Controls.Add(un);
+                    DataGridViewRow selectedRow = dgvReservaciones.Rows[row];
+                    
+                    un.FillFactura(Convert.ToInt32(selectedRow.Cells["IdReservacion"].Value));
                 }
                 MainScreen.Instance.PnlContainer.Controls["FacturacionCheckIn"].BringToFront();
+                
+                
             }
             else
             {
@@ -166,6 +173,7 @@ namespace PMS_POS.View
         {
             RefreshDgv();
         }
+
     }
 }
 

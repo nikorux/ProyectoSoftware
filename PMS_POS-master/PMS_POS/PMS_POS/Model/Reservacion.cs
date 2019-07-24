@@ -306,6 +306,34 @@ namespace PMS_POS.Model
             adp.Fill(COnsulta);
             return COnsulta;
         }
+        public DataTable reservacion(int idReservacion)
+        {
+         
+
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "Select hostal.reservacion.IdReservacion, hostal.reservacion.IdHuesped, hostal.reservacion.PrecioNoche, CONCAT(huesped.PrimerNombre, ' ',huesped.SegundoNombre, ' ',huesped.PrimerApellido, ' ',hostal.huesped.SegundoApellido) as Nombre, hostal.huesped.Telefono as Contacto, hostal.habitacion.NumHab as Habitación, hostal.habitacion.TipoHab as Tipo, hostal.habitacion.Piso as Piso, hostal.habitacion.Estado as Estado, hostal.habitacion.Plan as Plan, hostal.habitacion.Detalles as Detalles, hostal.habitacion.PrecioPorNoche as Precio_Noche, hostal.reservacion.PrecioTotal as Total FROM hostal.reservacion INNER JOIN hostal.habitacion ON hostal.reservacion.IdHabitacion = hostal.habitacion.IdHabitacion INNER JOIN hostal.huesped ON hostal.reservacion.IdHuesped = hostal.huesped.IdHuesped WHERE(reservacion.IsDeleted = 0 AND reservacion.IdReservacion = @idReservacion);  ";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@idReservacion", idReservacion);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+    }
         
     }
-}

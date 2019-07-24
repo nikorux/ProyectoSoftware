@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturacionCheckIn));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtTotalAPagar = new System.Windows.Forms.TextBox();
+            this.txtDescuento = new System.Windows.Forms.TextBox();
+            this.txtITBIS = new System.Windows.Forms.TextBox();
+            this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +46,11 @@
             this.btnRegistrarCheckIn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtCajero = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.cmbFormaPago = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
@@ -56,17 +65,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtCambio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSubtotal = new System.Windows.Forms.TextBox();
-            this.txtDescuento = new System.Windows.Forms.TextBox();
-            this.txtITBIS = new System.Windows.Forms.TextBox();
-            this.txtTotalAPagar = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtCajero = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
-            this.txtNumFactura = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.txtBusquedaCliente = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -114,6 +112,36 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(343, 173);
             this.panel5.TabIndex = 91;
+            // 
+            // txtTotalAPagar
+            // 
+            this.txtTotalAPagar.Enabled = false;
+            this.txtTotalAPagar.Location = new System.Drawing.Point(125, 126);
+            this.txtTotalAPagar.Name = "txtTotalAPagar";
+            this.txtTotalAPagar.Size = new System.Drawing.Size(195, 20);
+            this.txtTotalAPagar.TabIndex = 95;
+            // 
+            // txtDescuento
+            // 
+            this.txtDescuento.Location = new System.Drawing.Point(125, 91);
+            this.txtDescuento.Name = "txtDescuento";
+            this.txtDescuento.Size = new System.Drawing.Size(195, 20);
+            this.txtDescuento.TabIndex = 93;
+            // 
+            // txtITBIS
+            // 
+            this.txtITBIS.Location = new System.Drawing.Point(125, 57);
+            this.txtITBIS.Name = "txtITBIS";
+            this.txtITBIS.Size = new System.Drawing.Size(195, 20);
+            this.txtITBIS.TabIndex = 94;
+            // 
+            // txtSubtotal
+            // 
+            this.txtSubtotal.Enabled = false;
+            this.txtSubtotal.Location = new System.Drawing.Point(125, 25);
+            this.txtSubtotal.Name = "txtSubtotal";
+            this.txtSubtotal.Size = new System.Drawing.Size(195, 20);
+            this.txtSubtotal.TabIndex = 93;
             // 
             // label2
             // 
@@ -235,9 +263,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel1.Controls.Add(this.txtNumFactura);
             this.panel1.Controls.Add(this.dtpFechaActual);
-            this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtCajero);
             this.panel1.Controls.Add(this.label19);
@@ -253,6 +279,49 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(780, 140);
             this.panel1.TabIndex = 90;
+            // 
+            // dtpFechaActual
+            // 
+            this.dtpFechaActual.Enabled = false;
+            this.dtpFechaActual.Location = new System.Drawing.Point(549, 82);
+            this.dtpFechaActual.Name = "dtpFechaActual";
+            this.dtpFechaActual.Size = new System.Drawing.Size(194, 20);
+            this.dtpFechaActual.TabIndex = 31;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(416, 80);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(58, 20);
+            this.label21.TabIndex = 30;
+            this.label21.Text = "Fecha:";
+            // 
+            // txtCajero
+            // 
+            this.txtCajero.Location = new System.Drawing.Point(549, 48);
+            this.txtCajero.Name = "txtCajero";
+            this.txtCajero.Size = new System.Drawing.Size(194, 20);
+            this.txtCajero.TabIndex = 25;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(22, 78);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 20);
+            this.label19.TabIndex = 24;
+            this.label19.Text = "Teléfono:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Enabled = false;
+            this.txtTelefono.Location = new System.Drawing.Point(171, 80);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(194, 20);
+            this.txtTelefono.TabIndex = 23;
             // 
             // cmbFormaPago
             // 
@@ -295,7 +364,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(417, 75);
+            this.label12.Location = new System.Drawing.Point(417, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 20);
             this.label12.TabIndex = 4;
@@ -396,97 +465,6 @@
             this.label6.TabIndex = 74;
             this.label6.Text = "Cambio:";
             // 
-            // txtSubtotal
-            // 
-            this.txtSubtotal.Enabled = false;
-            this.txtSubtotal.Location = new System.Drawing.Point(125, 25);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(195, 20);
-            this.txtSubtotal.TabIndex = 93;
-            // 
-            // txtDescuento
-            // 
-            this.txtDescuento.Location = new System.Drawing.Point(125, 91);
-            this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(195, 20);
-            this.txtDescuento.TabIndex = 93;
-            // 
-            // txtITBIS
-            // 
-            this.txtITBIS.Location = new System.Drawing.Point(125, 57);
-            this.txtITBIS.Name = "txtITBIS";
-            this.txtITBIS.Size = new System.Drawing.Size(195, 20);
-            this.txtITBIS.TabIndex = 94;
-            // 
-            // txtTotalAPagar
-            // 
-            this.txtTotalAPagar.Enabled = false;
-            this.txtTotalAPagar.Location = new System.Drawing.Point(125, 126);
-            this.txtTotalAPagar.Name = "txtTotalAPagar";
-            this.txtTotalAPagar.Size = new System.Drawing.Size(195, 20);
-            this.txtTotalAPagar.TabIndex = 95;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Enabled = false;
-            this.txtTelefono.Location = new System.Drawing.Point(171, 80);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(194, 20);
-            this.txtTelefono.TabIndex = 23;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(22, 78);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(75, 20);
-            this.label19.TabIndex = 24;
-            this.label19.Text = "Teléfono:";
-            // 
-            // txtCajero
-            // 
-            this.txtCajero.Location = new System.Drawing.Point(549, 74);
-            this.txtCajero.Name = "txtCajero";
-            this.txtCajero.Size = new System.Drawing.Size(194, 20);
-            this.txtCajero.TabIndex = 25;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(417, 104);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(58, 20);
-            this.label21.TabIndex = 30;
-            this.label21.Text = "Fecha:";
-            // 
-            // dtpFechaActual
-            // 
-            this.dtpFechaActual.Enabled = false;
-            this.dtpFechaActual.Location = new System.Drawing.Point(549, 104);
-            this.dtpFechaActual.Name = "dtpFechaActual";
-            this.dtpFechaActual.Size = new System.Drawing.Size(194, 20);
-            this.dtpFechaActual.TabIndex = 31;
-            // 
-            // txtNumFactura
-            // 
-            this.txtNumFactura.Enabled = false;
-            this.txtNumFactura.Location = new System.Drawing.Point(549, 45);
-            this.txtNumFactura.Name = "txtNumFactura";
-            this.txtNumFactura.Size = new System.Drawing.Size(194, 20);
-            this.txtNumFactura.TabIndex = 33;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(417, 46);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(123, 20);
-            this.label22.TabIndex = 32;
-            this.label22.Text = "Nro. de Factura:";
-            // 
             // txtBusquedaCliente
             // 
             this.txtBusquedaCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -549,10 +527,14 @@
             // 
             // dgvHabitacion
             // 
+            this.dgvHabitacion.AllowUserToAddRows = false;
+            this.dgvHabitacion.AllowUserToDeleteRows = false;
+            this.dgvHabitacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHabitacion.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHabitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHabitacion.Location = new System.Drawing.Point(17, 16);
             this.dgvHabitacion.Name = "dgvHabitacion";
+            this.dgvHabitacion.ReadOnly = true;
             this.dgvHabitacion.Size = new System.Drawing.Size(783, 113);
             this.dgvHabitacion.TabIndex = 0;
             // 
@@ -647,8 +629,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DateTimePicker dtpFechaActual;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtNumFactura;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtBusquedaCliente;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel9;
