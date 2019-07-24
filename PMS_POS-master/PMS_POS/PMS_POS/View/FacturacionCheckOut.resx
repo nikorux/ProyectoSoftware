@@ -515,4 +515,18 @@
         TkSuQmCC
 </value>
   </data>
+  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAgAAAAAFCAYAAAAzKlRgAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EQAAFxEByibzPwAAAEBJREFUaEPt1lENwCAQBcGnqcpOQo0RcAZfRURvNhkPm9R8U2sDAH83ntwMAAA0
+        YQAAoCEDAAANGQAAaOgbgOQAtPe61lgsc+0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAgAAAAAFCAYAAAAzKlRgAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EQAAFxEByibzPwAAAEBJREFUaEPt1lENwCAQBcGnqcpOQo0RcAZfRURvNhkPm9R8U2sDAH83ntwMAAA0
+        YQAAoCEDAAANGQAAaOgbgOQAtPe61lgsc+0AAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
