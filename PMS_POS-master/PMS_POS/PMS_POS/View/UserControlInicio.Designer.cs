@@ -89,6 +89,11 @@
             // 
             // dgvEstadoHabitaciones
             // 
+            this.dgvEstadoHabitaciones.AllowUserToAddRows = false;
+            this.dgvEstadoHabitaciones.AllowUserToDeleteRows = false;
+            this.dgvEstadoHabitaciones.AllowUserToResizeColumns = false;
+            this.dgvEstadoHabitaciones.AllowUserToResizeRows = false;
+            this.dgvEstadoHabitaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEstadoHabitaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEstadoHabitaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
@@ -102,6 +107,7 @@
             this.dgvEstadoHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstadoHabitaciones.Location = new System.Drawing.Point(17, 108);
             this.dgvEstadoHabitaciones.Name = "dgvEstadoHabitaciones";
+            this.dgvEstadoHabitaciones.ReadOnly = true;
             this.dgvEstadoHabitaciones.Size = new System.Drawing.Size(519, 114);
             this.dgvEstadoHabitaciones.TabIndex = 27;
             // 
@@ -229,11 +235,14 @@
             // 
             // dgvHabitacionesProximas
             // 
+            this.dgvHabitacionesProximas.AllowUserToAddRows = false;
+            this.dgvHabitacionesProximas.AllowUserToDeleteRows = false;
             this.dgvHabitacionesProximas.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHabitacionesProximas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHabitacionesProximas.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHabitacionesProximas.Location = new System.Drawing.Point(23, 95);
             this.dgvHabitacionesProximas.Name = "dgvHabitacionesProximas";
+            this.dgvHabitacionesProximas.ReadOnly = true;
             this.dgvHabitacionesProximas.Size = new System.Drawing.Size(532, 106);
             this.dgvHabitacionesProximas.TabIndex = 45;
             // 
@@ -319,10 +328,13 @@
             // 
             // dgvHabitacionesReservadas
             // 
+            this.dgvHabitacionesReservadas.AllowUserToAddRows = false;
+            this.dgvHabitacionesReservadas.AllowUserToDeleteRows = false;
             this.dgvHabitacionesReservadas.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHabitacionesReservadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHabitacionesReservadas.Location = new System.Drawing.Point(29, 87);
             this.dgvHabitacionesReservadas.Name = "dgvHabitacionesReservadas";
+            this.dgvHabitacionesReservadas.ReadOnly = true;
             this.dgvHabitacionesReservadas.Size = new System.Drawing.Size(501, 114);
             this.dgvHabitacionesReservadas.TabIndex = 45;
             // 

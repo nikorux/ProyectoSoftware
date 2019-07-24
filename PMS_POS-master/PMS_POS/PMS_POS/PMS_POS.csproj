@@ -60,6 +60,7 @@
     <Compile Include="Controller\TipoHabitacion.cs" />
     <Compile Include="Model\BDGeneral.cs" />
     <Compile Include="Model\EstadoHabitaciones.cs" />
+    <Compile Include="Model\Factura_Reservacion.cs" />
     <Compile Include="View\BuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
