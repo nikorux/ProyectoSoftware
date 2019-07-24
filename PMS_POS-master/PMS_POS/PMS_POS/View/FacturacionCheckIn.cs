@@ -54,6 +54,7 @@ namespace PMS_POS.View
             txtIdCliente.Text = dgvHabitacion.Rows[0].Cells[1].Value.ToString();
             txtNombre.Text = dgvHabitacion.Rows[0].Cells[4].Value.ToString();
             txtTelefono.Text = dgvHabitacion.Rows[0].Cells[5].Value.ToString();
+            txtSubtotal.Text = dgvHabitacion.Rows[0].Cells[12].Value.ToString();
 
 
 
@@ -66,6 +67,37 @@ namespace PMS_POS.View
             dgvHabitacion.Columns[2].Visible = false;
             dgvHabitacion.Columns[3].Visible = false;
             dgvHabitacion.Columns[4].Visible = false;
+            dgvHabitacion.Columns[9].Visible = false;
+        }
+
+        private void BtnRegistrarCheckIn_Click(object sender, EventArgs e)
+        {
+            Factura_Reservacion f = new Factura_Reservacion();
+            if(txtNombre.Text == string.Empty && txtEfectivo.Text == string.Empty && txtTotalAPagar.Text == string.Empty)
+            {
+                MessageBox.Show("Faltan Ingresar datos.");
+            }
+            else
+            {
+                /*
+                 @IdReservacion, @IdHuesped, @SubTotal, @TotalAPagar, @Fecha, @FormaDePago, @EfectivoRecibido, @Devuelta
+                 */
+                f.IdReservacion = id;
+                f.IdHuesped = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[1].Value);
+                f.SubTotal =  Convert.ToSingle(dgvHabitacion.Rows[0].Cells[12].Value);
+                //  f.TotalAPagar = nicole
+                f.Fecha = dtpFechaActual.Value;
+                f.FormaDePago = cmbFormaPago.Text;
+                if (f.Insert(f) == true)
+                {
+                    MessageBox.Show("Se ha facturado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error al facturar.");
+                }
+            }
         }
     }
 }
+ 

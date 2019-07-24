@@ -130,6 +130,7 @@
             // 
             // txtITBIS
             // 
+            this.txtITBIS.Enabled = false;
             this.txtITBIS.Location = new System.Drawing.Point(125, 57);
             this.txtITBIS.Name = "txtITBIS";
             this.txtITBIS.Size = new System.Drawing.Size(195, 20);
@@ -250,6 +251,7 @@
             this.btnRegistrarCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrarCheckIn.UseCompatibleTextRendering = true;
             this.btnRegistrarCheckIn.UseVisualStyleBackColor = false;
+            this.btnRegistrarCheckIn.Click += new System.EventHandler(this.BtnRegistrarCheckIn_Click);
             // 
             // panel4
             // 
@@ -282,7 +284,6 @@
             // 
             // dtpFechaActual
             // 
-            this.dtpFechaActual.Enabled = false;
             this.dtpFechaActual.Location = new System.Drawing.Point(549, 82);
             this.dtpFechaActual.Name = "dtpFechaActual";
             this.dtpFechaActual.Size = new System.Drawing.Size(194, 20);
@@ -325,6 +326,7 @@
             // 
             // cmbFormaPago
             // 
+            this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormaPago.FormattingEnabled = true;
             this.cmbFormaPago.Items.AddRange(new object[] {
             "Efectivo",
@@ -529,9 +531,12 @@
             // 
             this.dgvHabitacion.AllowUserToAddRows = false;
             this.dgvHabitacion.AllowUserToDeleteRows = false;
+            this.dgvHabitacion.AllowUserToResizeColumns = false;
+            this.dgvHabitacion.AllowUserToResizeRows = false;
             this.dgvHabitacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHabitacion.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHabitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHabitacion.Enabled = false;
             this.dgvHabitacion.Location = new System.Drawing.Point(17, 16);
             this.dgvHabitacion.Name = "dgvHabitacion";
             this.dgvHabitacion.ReadOnly = true;
