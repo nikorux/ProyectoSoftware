@@ -3,37 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMS_POS.Model;
+using PMS_POS.Controller;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System.Windows.Forms;
-using PMS_POS.Controller;
-
 
 namespace PMS_POS.Model
 {
-    class Documento : DocumentoC
+    class EstadoHabitaciones : ReservacionC
     {
         string instruccion;
 
-        public string NombreDocumento { get; set; }
-
-        public Documento() { }
-
-        public Documento(string pNombreDocumento)
-
-        {
-            this.NombreDocumento = pNombreDocumento;
-        }
-
         public DataTable VistaTabla()
         {
-            instruccion = "Select NombreDocumento from documento";
+            instruccion = "Select NumHab as Número, TipoHab as Tipo, Estado from habitacion";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
             return COnsulta;
         }
-
+       
     }
 }
-

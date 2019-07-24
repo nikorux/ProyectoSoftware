@@ -239,7 +239,7 @@ namespace PMS_POS
                 ConfigurarTipoDocumento.Instance.Dock = DockStyle.Fill;
                 ConfigurarTipoDocumento.Instance.BringToFront();
             }
-            else//flkdsjk
+            else
             {
                 ConfigurarTipoDocumento.Instance.BringToFront();
             }
@@ -275,17 +275,9 @@ namespace PMS_POS
 
         private void BtnConfigurarTipoCategoria_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(UserControlClientes.Instance))
-            {
-                userControlInicio1.Controls.Add(UserControlClientes.Instance);
-                UserControlClientes.Instance.Dock = DockStyle.Fill;
-                UserControlClientes.Instance.BringToFront();
-            }
-            else
-            {
-                UserControlClientes.Instance.BringToFront();
-            }
+
         }
+     
 
         private void BtnConfigurarImpuestos_Click(object sender, EventArgs e)
         {
@@ -698,6 +690,28 @@ namespace PMS_POS
             userControlInicio1.SendToBack();
             PanelContenedor.Controls.Clear();
             ConfigurarTipoHabitacion thisprobando = new ConfigurarTipoHabitacion();
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
+        }
+
+        private void ModificarLogoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            ConfigurarImagen thisprobando = new ConfigurarImagen();
+            thisprobando.TopLevel = false;
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
+        }
+
+        private void ReportesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            VentanaGraficos thisprobando = new VentanaGraficos();
+            thisprobando.TopLevel = false;
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
         }

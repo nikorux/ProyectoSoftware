@@ -114,23 +114,23 @@ namespace PMS_POS.View
         }
 
         public void ObtenerDatos(string IdHuesped, string PrimerNombre, string SegundoNombre, string PrimerApellido,
-            string NombreCompañia, string TipoDocumento, string NumDocumento,
-            string Sexo, string Telefono, string Direccion, string Pais, string Correo)
+            string TipoDocumento, string NumDocumento,
+            string Telefono, string Pais, string Correo)
         {
             editar = true;
             txtIdHuesped.Text = IdHuesped;
             txtPrimerNombre.Text = PrimerNombre;
             txtSegundoNombre.Text = SegundoNombre;
             txtPrimerApellido.Text = PrimerApellido;
-           // txtSegundoApellido.Text = SegundoApellido;
-            cbxSexo.Text = Sexo;
+            //txtSegundoApellido.Text = SegundoApellido;
+            //cbxSexo.Text = Sexo;
             //cbxCompania.Text = Compañia;
-            txtNombreCompania.Text = NombreCompañia;
+            //txtNombreCompania.Text = NombreCompañia;
             txtCorreo.Text = Correo;
             txtIdentificacion.Text = NumDocumento;
             cbxTipoIdentificacion.Text = TipoDocumento;
             txtTelefono.Text = Telefono;
-            txtDireccion.Text = Direccion;
+            //txtDireccion.Text = Direccion;
             txtPaisNatal.Text = Pais;
             //txtProvincia.Text = Provincia;
             //txtCiudad.Text = Ciudad;

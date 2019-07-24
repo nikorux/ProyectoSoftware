@@ -63,7 +63,7 @@ namespace PMS_POS.Model
 
         public DataTable VistaTabla()
         {
-            instruccion = "Select IdHuesped, PrimerNombre, SegundoNombre, PrimerApellido, NombreCompañia, TipoDocumento, NumDocumento, Sexo, Telefono, Direccion, Pais, Correo FROM huesped WHERE IsDeleted = 0";
+            instruccion = "Select IdHuesped, PrimerNombre, SegundoNombre, PrimerApellido, NumDocumento, TipoDocumento, Telefono, Correo, Pais FROM huesped WHERE IsDeleted = 0";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);

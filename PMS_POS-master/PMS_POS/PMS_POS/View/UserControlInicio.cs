@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PMS_POS.Controller;
+using PMS_POS.Model;
+using MySql.Data.MySqlClient;
 
 namespace PMS_POS.View
 {
     public partial class UserControlInicio : UserControl
     {
+
+        EstadoHabitaciones obj = new EstadoHabitaciones();
+
 
         private static UserControlInicio _instance;
         public static UserControlInicio Instance
@@ -29,6 +35,8 @@ namespace PMS_POS.View
             InitializeComponent();
         }
 
+       
+
         private void btnVerDetallesReservadas_Click(object sender, EventArgs e)
         {
 
@@ -36,6 +44,7 @@ namespace PMS_POS.View
 
         private void UserControlInicio_Load(object sender, EventArgs e)
         {
+            dgvEstadoHabitaciones.DataSource = obj.VistaTabla();
 
         }
 
