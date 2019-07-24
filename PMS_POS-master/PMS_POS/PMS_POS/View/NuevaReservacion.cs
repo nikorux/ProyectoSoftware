@@ -150,7 +150,7 @@ namespace PMS_POS.View
                             
                             if (hab.CambiarEstado(r.IdHabitacion,"Ocupada") == true)
                             {
-                                MessageBox.Show("Sure");
+                               // MessageBox.Show("Sure");
                                 Clear();
                                 MessageBox.Show("La reservación ha sido creada.");
                                
