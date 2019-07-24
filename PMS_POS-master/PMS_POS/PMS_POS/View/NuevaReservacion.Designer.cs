@@ -195,7 +195,7 @@
             // txtBoxDocumento
             // 
             this.txtBoxDocumento.Enabled = false;
-            this.txtBoxDocumento.Location = new System.Drawing.Point(143, 77);
+            this.txtBoxDocumento.Location = new System.Drawing.Point(142, 77);
             this.txtBoxDocumento.Name = "txtBoxDocumento";
             this.txtBoxDocumento.Size = new System.Drawing.Size(187, 24);
             this.txtBoxDocumento.TabIndex = 10;
@@ -453,6 +453,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "NuevaReservacion";
             this.Size = new System.Drawing.Size(1285, 680);
+            this.Leave += new System.EventHandler(this.NuevaReservacion_Leave);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

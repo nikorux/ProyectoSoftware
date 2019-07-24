@@ -165,6 +165,7 @@
             this.Name = "Reservaciones";
             this.Size = new System.Drawing.Size(1285, 680);
             this.Load += new System.EventHandler(this.Reservaciones_Load);
+            this.Enter += new System.EventHandler(this.Reservaciones_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservaciones)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

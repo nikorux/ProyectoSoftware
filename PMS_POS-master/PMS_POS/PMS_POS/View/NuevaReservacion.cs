@@ -30,13 +30,14 @@ namespace PMS_POS.View
         private bool editar = false;
         private bool first = false;
         int idRes = 0;
-        public void FillHab( string idHab, string numHab, string tipoHab, string precioHab)
+        public void FillHab(Habitacion habitacion)
         {
-            hab.IdHabitacion = Convert.ToInt32(idHab);
-            r.IdHabitacion = Convert.ToInt32(idHab);
-            txtBoxNumeroHabitacion.Text = numHab;
-            txtBoxTipoHabitacion.Text = tipoHab;
-            txtBoxPrecio.Text = precioHab;
+            
+            txtBoxNumeroHabitacion.Text = habitacion.NumHab.ToString();
+            txtBoxTipoHabitacion.Text = habitacion.TipoHab.ToString();
+            txtBoxPrecio.Text = habitacion.PrecioPorNoche.ToString();
+            r.IdHabitacion = habitacion.IdHabitacion;
+
         }
         public void FillCliente(string idHuesped, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string documento)
         {
@@ -49,8 +50,9 @@ namespace PMS_POS.View
         public NuevaReservacion()
         {
             InitializeComponent();
-            Revisar();
-            dateTimePickerLlegada.MinDate = DateTime.Now;
+            DateTime hoy = DateTime.Today;
+            dateTimePickerLlegada.MinDate = hoy;
+            dateTimePickerSalida.MinDate = hoy.AddDays(1);
    
 
         }
@@ -73,7 +75,7 @@ namespace PMS_POS.View
         {
             if (txtBoxPrecio.Text == string.Empty)
             {
-                MessageBox.Show("Por favor, ingrese una habitación.");
+              //  MessageBox.Show("Por favor, ingrese una habitación.");
             }
             else
             {
@@ -101,9 +103,10 @@ namespace PMS_POS.View
 
             if (resta <= 0 && editar == false)
             {
+                
+                MessageBox.Show("Por favor, elegir una fecha correcta.");
                 txtBoxNoches.Text = "";
                 txtBoxTotal.Text = "";
-                MessageBox.Show("Por favor, elegir una fecha correcta.");
 
             }
             if(editar == true && resta < 0)
@@ -142,14 +145,15 @@ namespace PMS_POS.View
 
                     if (r.Insert(r) == true)
                     {
-                        if (r.Insert_reservacion_habitacion(r.SelectIdReservacion(), hab) == true)
+                        if (r.Insert_reservacion_habitacion(r.SelectIdReservacion(), r.IdHabitacion) == true)
                         {
-                            if (hab.CambiarEstado(hab,"Ocupada") == true)
+                            
+                            if (hab.CambiarEstado(r.IdHabitacion,"Ocupada") == true)
                             {
+                                MessageBox.Show("Sure");
                                 Clear();
-                                ListadoReservaciones.Instance.refresh();
                                 MessageBox.Show("La reservación ha sido creada.");
-                                ListadoReservaciones.Instance.refresh();
+                               
 
                             }
 
@@ -199,7 +203,7 @@ namespace PMS_POS.View
             txtBoxNombre.Clear();
             txtBoxDocumento.Clear();
             numAdultos.Value = 1;
-            numInfantes.Value = 1;
+            numInfantes.Value = 0;
             txtBoxNombre.Clear();
             txtBoxTotal.Clear();
             txtBoxCanal.Clear();
@@ -268,6 +272,11 @@ namespace PMS_POS.View
         private void GroupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void NuevaReservacion_Leave(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 

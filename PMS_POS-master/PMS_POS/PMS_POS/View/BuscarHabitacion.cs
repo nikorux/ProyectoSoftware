@@ -50,11 +50,11 @@ namespace PMS_POS.Model
             {
                 //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
                 NuevaReservacion nr = NuevaReservacion.Instance;
-                idHab = dgv.CurrentRow.Cells[0].Value.ToString();
-                numHab = dgv.CurrentRow.Cells[1].Value.ToString();
-                tipoHab = dgv.CurrentRow.Cells[2].Value.ToString();
-                precioHab = dgv.CurrentRow.Cells[9].Value.ToString();
-                nr.FillHab(idHab,numHab, tipoHab, precioHab);
+               habitacion.IdHabitacion = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value);
+               habitacion.NumHab = Convert.ToInt32(dgv.CurrentRow.Cells[1].Value);
+               habitacion.TipoHab = dgv.CurrentRow.Cells[2].Value.ToString();
+               habitacion.PrecioPorNoche = Convert.ToSingle(dgv.CurrentRow.Cells[9].Value);
+                nr.FillHab(habitacion);
                 nr.Revisar();
                 nr.calcular();
                // nr.calcular();
