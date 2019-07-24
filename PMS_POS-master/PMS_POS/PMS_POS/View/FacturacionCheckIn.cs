@@ -55,7 +55,7 @@ namespace PMS_POS.View
             txtNombre.Text = dgvHabitacion.Rows[0].Cells[4].Value.ToString();
             txtTelefono.Text = dgvHabitacion.Rows[0].Cells[5].Value.ToString();
             txtSubtotal.Text = dgvHabitacion.Rows[0].Cells[12].Value.ToString();
-
+            txtTotalAPagar.Text = txtSubtotal.Text;
 
 
         }
