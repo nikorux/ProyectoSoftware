@@ -553,7 +553,7 @@ namespace PMS_POS
             PanelContenedor.Show();
             userControlInicio1.SendToBack();
             PanelContenedor.Controls.Clear();
-            NuevaReservacion thisprobando = new NuevaReservacion();
+            NuevaReservacion thisprobando = NuevaReservacion.Instance;
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
         }

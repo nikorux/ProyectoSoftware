@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace PMS_POS.Model
 {
-    class Habitacion
+    public class Habitacion
     {
 
         //getters setters
@@ -189,7 +189,7 @@ namespace PMS_POS.Model
             }
             return dt;
         }
-        public bool CambiarEstado(Habitacion h, string estado)
+        public bool CambiarEstado(int idHabitacion, string estado)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
@@ -199,7 +199,7 @@ namespace PMS_POS.Model
                 //Creating SQL Command
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdHabitacion", h.IdHabitacion);
+                cmd.Parameters.AddWithValue("@IdHabitacion", idHabitacion);
                 cmd.Parameters.AddWithValue("@Estado", estado);
                 //Open Connection
                 mySqlConn.Open();

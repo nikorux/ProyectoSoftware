@@ -164,7 +164,7 @@ namespace PMS_POS.Model
             }
         }
 
-        public bool Insert_reservacion_habitacion(int idReserv, Habitacion hab)
+        public bool Insert_reservacion_habitacion(int idReserv, int idHabitacion)
         {
             //bool success = false
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
@@ -175,7 +175,7 @@ namespace PMS_POS.Model
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdReservacion", idReserv);
-                cmd.Parameters.AddWithValue("@IdHabitacion", hab.IdHabitacion);
+                cmd.Parameters.AddWithValue("@IdHabitacion", idHabitacion);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)
