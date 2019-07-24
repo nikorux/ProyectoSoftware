@@ -41,14 +41,14 @@
             this.HabitacionesPreferidas.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.HabitacionesPreferidas.Legends.Add(legend1);
-            this.HabitacionesPreferidas.Location = new System.Drawing.Point(12, 123);
+            this.HabitacionesPreferidas.Location = new System.Drawing.Point(177, 99);
             this.HabitacionesPreferidas.Name = "HabitacionesPreferidas";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.HabitacionesPreferidas.Series.Add(series1);
-            this.HabitacionesPreferidas.Size = new System.Drawing.Size(114, 99);
+            this.HabitacionesPreferidas.Size = new System.Drawing.Size(488, 262);
             this.HabitacionesPreferidas.TabIndex = 0;
             this.HabitacionesPreferidas.Text = "chart1";
             // 
