@@ -174,6 +174,42 @@ namespace PMS_POS.View
             RefreshDgv();
         }
 
+        private void txtFiltroo_TextChanged(object sender, EventArgs e)
+        {
+            {
+                if (txtFiltroo.Text != "")
+                {
+
+                    dgvReservaciones.CurrentCell = null;
+                    foreach (DataGridViewRow n in dgvReservaciones.Rows)
+                    {
+                        n.Visible = false;
+                    }
+                    foreach (DataGridViewRow n in dgvReservaciones.Rows)
+                    {
+                        foreach (DataGridViewCell m in n.Cells)
+                        {
+                            if ((m.Value.ToString().ToUpper().IndexOf(txtFiltroo.Text.ToUpper()) == 0))
+                            {
+                                n.Visible = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    dgvReservaciones.DataSource = obj.VistaTabla();
+                }
+
+            }
+
+        }
+
+        private void btnRegistrarCheckOut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

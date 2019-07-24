@@ -38,6 +38,7 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRegistrarCheckOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservaciones)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,7 +68,7 @@
             this.btnEliminarReservacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarReservacion.ForeColor = System.Drawing.Color.White;
             this.btnEliminarReservacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarReservacion.Location = new System.Drawing.Point(953, 87);
+            this.btnEliminarReservacion.Location = new System.Drawing.Point(1018, 93);
             this.btnEliminarReservacion.Name = "btnEliminarReservacion";
             this.btnEliminarReservacion.Size = new System.Drawing.Size(144, 27);
             this.btnEliminarReservacion.TabIndex = 77;
@@ -88,7 +89,7 @@
             this.btnEditarReservacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarReservacion.ForeColor = System.Drawing.Color.White;
             this.btnEditarReservacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarReservacion.Location = new System.Drawing.Point(802, 87);
+            this.btnEditarReservacion.Location = new System.Drawing.Point(867, 93);
             this.btnEditarReservacion.Name = "btnEditarReservacion";
             this.btnEditarReservacion.Size = new System.Drawing.Size(141, 27);
             this.btnEditarReservacion.TabIndex = 76;
@@ -102,25 +103,28 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Controls.Add(this.dgvReservaciones);
-            this.panel2.Location = new System.Drawing.Point(54, 131);
+            this.panel2.Location = new System.Drawing.Point(119, 137);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1047, 438);
             this.panel2.TabIndex = 83;
             // 
             // txtFiltroo
             // 
+            this.txtFiltroo.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtFiltroo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFiltroo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltroo.Location = new System.Drawing.Point(87, 87);
+            this.txtFiltroo.Location = new System.Drawing.Point(148, 96);
             this.txtFiltroo.Name = "txtFiltroo";
-            this.txtFiltroo.Size = new System.Drawing.Size(196, 25);
+            this.txtFiltroo.Size = new System.Drawing.Size(220, 18);
             this.txtFiltroo.TabIndex = 85;
+            this.txtFiltroo.TextChanged += new System.EventHandler(this.txtFiltroo_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(55, 39);
+            this.label3.Location = new System.Drawing.Point(120, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(252, 30);
             this.label3.TabIndex = 86;
@@ -137,9 +141,9 @@
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(523, 87);
+            this.btnConfirmar.Location = new System.Drawing.Point(399, 93);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(266, 27);
+            this.btnConfirmar.Size = new System.Drawing.Size(224, 27);
             this.btnConfirmar.TabIndex = 87;
             this.btnConfirmar.Text = "Registrar Check-In";
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -150,7 +154,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(56, 89);
+            this.pictureBox2.Location = new System.Drawing.Point(120, 95);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 21);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,18 +165,40 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(52, 86);
+            this.pictureBox1.Location = new System.Drawing.Point(117, 92);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(264, 27);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 90;
             this.pictureBox1.TabStop = false;
             // 
+            // btnRegistrarCheckOut
+            // 
+            this.btnRegistrarCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrarCheckOut.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRegistrarCheckOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRegistrarCheckOut.CausesValidation = false;
+            this.btnRegistrarCheckOut.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarCheckOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarCheckOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrarCheckOut.Location = new System.Drawing.Point(634, 93);
+            this.btnRegistrarCheckOut.Name = "btnRegistrarCheckOut";
+            this.btnRegistrarCheckOut.Size = new System.Drawing.Size(223, 27);
+            this.btnRegistrarCheckOut.TabIndex = 92;
+            this.btnRegistrarCheckOut.Text = "Registrar Check-Out";
+            this.btnRegistrarCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegistrarCheckOut.UseCompatibleTextRendering = true;
+            this.btnRegistrarCheckOut.UseVisualStyleBackColor = false;
+            this.btnRegistrarCheckOut.Click += new System.EventHandler(this.btnRegistrarCheckOut_Click);
+            // 
             // Reservaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.btnRegistrarCheckOut);
             this.Controls.Add(this.txtFiltroo);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -205,5 +231,6 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnRegistrarCheckOut;
     }
 }

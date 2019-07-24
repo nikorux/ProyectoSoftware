@@ -67,6 +67,19 @@ namespace PMS_POS.View
             }
         }
 
-      
+        private void TxtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
