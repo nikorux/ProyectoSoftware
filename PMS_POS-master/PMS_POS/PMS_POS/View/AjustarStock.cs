@@ -14,7 +14,7 @@ namespace PMS_POS.View
     {
         public AjustarStock()
         {
-            InitializeComponent();
+            InitializeComponent();///-----
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
