@@ -31,7 +31,7 @@ namespace PMS_POS.View
             LoadProveedores();//funcion para cargar los proveedores
             
         }
-       public void LoadProveedores()//para listar proveedores
+       public void LoadProveedores()//para listar proveedor
         {
             dgvProv.DataSource = GetProvList();   
         }

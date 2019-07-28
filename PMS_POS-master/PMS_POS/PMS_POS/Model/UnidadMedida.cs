@@ -14,8 +14,6 @@ namespace PMS_POS.Model
 
         public float Conversion(String comparador, float valorTransformar)
         {
-            //---------------Masa------------------
-
             //-----------------Masa------------------
 
             float transformado = 0;

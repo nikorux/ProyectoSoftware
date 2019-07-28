@@ -1,4 +1,4 @@
-﻿namespace PMS_POS
+namespace PMS_POS
 {
     partial class Form1
     {
@@ -101,6 +101,7 @@
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.timer7 = new System.Windows.Forms.Timer(this.components);
+            this.userControlInicio1 = new PMS_POS.View.UserControlInicio();
             this.panel1.SuspendLayout();
             this.ReservacionesDropDown.SuspendLayout();
             this.DropDownProductos.SuspendLayout();
@@ -1093,7 +1094,7 @@
             this.btnPuntoDeVenta.Text = "Punto de Venta";
             this.btnPuntoDeVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPuntoDeVenta.UseVisualStyleBackColor = true;
-            this.btnPuntoDeVenta.Click += new System.EventHandler(this.BtnPuntoDeVenta_Click);
+            this.btnPuntoDeVenta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnPuntoDeVenta_MouseClick);
             // 
             // button10
             // 
@@ -1253,6 +1254,15 @@
             this.timer7.Interval = 15;
             this.timer7.Tick += new System.EventHandler(this.Timer7_Tick);
             // 
+            // userControlInicio1
+            // 
+            this.userControlInicio1.BackColor = System.Drawing.SystemColors.Menu;
+            this.userControlInicio1.Location = new System.Drawing.Point(163, 91);
+            this.userControlInicio1.Name = "userControlInicio1";
+            this.userControlInicio1.Size = new System.Drawing.Size(1178, 692);
+            this.userControlInicio1.TabIndex = 1;
+            this.userControlInicio1.Load += new System.EventHandler(this.UserControlInicio1_Load);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1262,6 +1272,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.userControlInicio1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1359,4 +1370,3 @@
         private System.Windows.Forms.Timer timer7;
     }
 }
-

@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace PMS_POS.View
 {
@@ -26,8 +29,34 @@ namespace PMS_POS.View
         public HistorialCompras()
         {
             InitializeComponent();
+            LoadHistorial();
+        }
+        public void LoadHistorial()//para listar historial
+        {
+            dgvCompras.DataSource = GetProvList2();
         }
 
+        private DataTable GetProvList2()//listar historial
+
+        {
+            DataTable dt = new DataTable();
+            string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
+
+            using (MySqlConnection con = new MySqlConnection(connString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM historial_compra_insumo", con))
+                {
+                    con.Open();
+
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    dt.Load(reader);
+                }
+            }
+
+            return dt;
+
+        }
         private void HistorialCompras_Load(object sender, EventArgs e)
         {
 
