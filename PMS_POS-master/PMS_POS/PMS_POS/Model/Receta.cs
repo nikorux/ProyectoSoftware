@@ -27,7 +27,7 @@ namespace PMS_POS.Model
 
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
-
+        //----
         public bool UpdateEnTablaReceta(Receta x, int idReceta)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
