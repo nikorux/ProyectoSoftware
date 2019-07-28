@@ -200,7 +200,7 @@ namespace PMS_POS.View
 
                 //COMBOBOX DISPLAY PROVEEDORES
                 MySqlConnection connectionProveedores = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-                string queryProveedores = "SELECT * FROM proveedor";
+                string queryProveedores = "SELECT NombreInsumo FROM insumo";
                 connectionProveedores.Open();
                 MySqlCommand commandProveedores = new MySqlCommand(queryProveedores, connectionProveedores);
                 MySqlDataReader readerP = commandProveedores.ExecuteReader();

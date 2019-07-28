@@ -26,7 +26,7 @@ namespace PMS_POS.View
                 return _instance;
             }
         }
-
+        
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
             int left,
@@ -36,6 +36,7 @@ namespace PMS_POS.View
             int width,
             int height
         );
+
         public void showPaginaInicio()
         {
             panelUIseleccionada.BringToFront();
@@ -71,7 +72,7 @@ namespace PMS_POS.View
         }
         public void hideUIs()
         {
-            Ordenes.Instance.SendToBack();
+            Ordenes1.Instance.SendToBack();
             MostradorUI.Instance.SendToBack();
             RegistroProveedor.Instance.SendToBack();
             PaginaInicio.Instance.SendToBack();
@@ -82,7 +83,7 @@ namespace PMS_POS.View
             Transacciones.Instance.SendToBack();
         }
 
-        public void showProductos()//--------------------OJO--------------------//
+        public void showProductos()
         {
             panelUIseleccionada.BringToFront();
             panelUIseleccionada.Visible = true;
@@ -136,22 +137,27 @@ namespace PMS_POS.View
             }
         }
 
-        public void showOrdenes()
-        {
+       public void showOrdenes()
+       {
             panelUIseleccionada.BringToFront();
             panelUIseleccionada.Visible = true;
             hideUIs();
 
-            if (!panelUIseleccionada.Controls.Contains(Ordenes.Instance))
+            panelUIseleccionada.BringToFront();
+            panelUIseleccionada.Visible = true;
+            hideUIs();
+
+            if (!panelUIseleccionada.Controls.Contains(Ordenes1.Instance))
             {
-                panelUIseleccionada.Controls.Add(Ordenes.Instance);
-                Ordenes.Instance.Dock = DockStyle.Fill;
-                Ordenes.Instance.BringToFront();
+                panelUIseleccionada.Controls.Add(Ordenes1.Instance);
+                Ordenes1.Instance.Dock = DockStyle.Fill;
+                Ordenes1.Instance.BringToFront();
             }
             else
             {
-                Ordenes.Instance.BringToFront();
+                Ordenes1.Instance.BringToFront();
             }
+
         }
 
         public void showInventario()
@@ -226,389 +232,6 @@ namespace PMS_POS.View
             }
         }
 
-        private void BtnRegresar_MouseClick(object sender, MouseEventArgs e)
-        {
-            panelUIseleccionada.SendToBack();
-            panelUIseleccionada.Visible = false;
-            panelBasePOS.BringToFront();
-            panelBasePOS.Visible = true;
-        }
-
-        //BOTON REPORTES
-        private void PictureBox1_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMGhover;
-            pnlBotonReportes.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMG;
-            pnlBotonReportes.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        private void LblReportes_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMGhover;
-            pnlBotonReportes.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void LblReportes_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMG;
-            pnlBotonReportes.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //BOTON INVENTARIO
-        private void PictureBox2_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMGhover;
-            pnlBotonInventario.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMG;
-            pnlBotonInventario.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        private void Label1_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMGhover;
-            pnlBotonInventario.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void Label1_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMG;
-            pnlBotonInventario.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //BOTON PROVEEDORES
-        private void PictureBox4_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGactualhover;
-            pnlBotonesProveedores.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PictureBox4_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
-            pnlBotonesProveedores.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        private void LblBotonProveedores_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGactualhover;
-            pnlBotonesProveedores.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void LblBotonProveedores_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
-            pnlBotonesProveedores.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //BOTON MENU
-        private void PictureBox3_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMGhover;
-            pnlBotonMenu.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMG;
-            pnlBotonMenu.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        private void LblBotonesOrdenes_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMGhover;
-            pnlBotonMenu.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void LblBotonesOrdenes_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMG;
-            pnlBotonMenu.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //BOTON INICIO
-        private void PictureBox5_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMGhover;
-            pnlBotonInicio.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PictureBox5_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
-            pnlBotonInicio.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        private void Label1_MouseHover_1(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMGhover;
-            pnlBotonInicio.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void Label1_MouseLeave_1(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
-            pnlBotonInicio.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //BOTON MOSTRADOR
-        private void PictureBox6_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMGhover;
-            pnlBotonMostrador.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PictureBox6_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMG;
-            pnlBotonMostrador.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        private void Label2_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMGhover;
-            pnlBotonMostrador.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void Label2_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMG;
-            pnlBotonMostrador.BackColor = Color.FromArgb(121, 133, 170);
-        }
-    
-        //PANEL BOTON MENU
-        private void PnlBotonMenu_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMGhover;
-            pnlBotonMenu.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PnlBotonMenu_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMG;
-            pnlBotonMenu.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //PANEL BOTON REPORTES
-        private void PnlBotonReportes_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMG;
-            pnlBotonReportes.BackColor = Color.FromArgb(121,133,170);
-        }
-
-        private void PnlBotonReportes_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMGhover;
-            pnlBotonReportes.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        //PANEL BOTON PROVEEDORES
-        private void PnlBotonesProveedores_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGactualhover;
-            pnlBotonesProveedores.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PnlBotonesProveedores_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
-            pnlBotonesProveedores.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //PANEL BOTON INICIO
-        private void PnlBotonInicio_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMGhover;
-            pnlBotonInicio.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PnlBotonInicio_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
-            pnlBotonInicio.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //PANEL BOTON MOSTRADOR
-        private void PnlBotonMostrador_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMGhover;
-            pnlBotonMostrador.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PnlBotonMostrador_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMG;
-            pnlBotonMostrador.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //PANEL BOTON MOSTRADOR
-        private void PnlBotonInventario_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMGhover;
-            pnlBotonInventario.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PnlBotonInventario_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMG;
-            pnlBotonInventario.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //BOTON TRANSACCIONES + PANEL
-        private void PictureBox7_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMGhover;
-            pnlBotonTransacciones.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PictureBox7_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMG;
-            pnlBotonTransacciones.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        private void Label3_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMGhover;
-            pnlBotonTransacciones.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void Label3_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMG;
-            pnlBotonTransacciones.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        private void PnlBotonTransacciones_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMGhover;
-            pnlBotonTransacciones.BackColor = Color.FromArgb(198,212,255);
-        }
-
-        private void PnlBotonTransacciones_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMG;
-            pnlBotonTransacciones.BackColor = Color.FromArgb(121, 133, 170);
-        }
-
-        //SHOW UI INVENTARIO
-        private void PictureBox2_MouseClick(object sender, MouseEventArgs e)
-        {
-            showInventario();
-        }
-
-        private void LblBotonesInventario_MouseClick(object sender, MouseEventArgs e)
-        {
-            showInventario();
-        }
-
-        private void PnlBotonInventario_MouseClick(object sender, MouseEventArgs e)
-        {
-            showInventario();
-        }
-
-        //SHOW TRANSACCIONES
-        private void Label3_MouseClick(object sender, MouseEventArgs e)
-        {
-            showTransacciones();
-        }
-
-        private void PictureBox7_MouseClick(object sender, MouseEventArgs e)
-        {
-            showTransacciones();
-        }
-
-        private void PnlBotonTransacciones_MouseClick(object sender, MouseEventArgs e)
-        {
-            showTransacciones();
-        }
-
-        private void PnlBotonMostrador_MouseClick(object sender, MouseEventArgs e)
-        {
-            showMostrador();
-        }
-
-        private void Label2_MouseClick(object sender, MouseEventArgs e)
-        {
-            showMostrador();
-        }
-
-        private void PictureBox6_MouseClick(object sender, MouseEventArgs e)
-        {
-            showMostrador();
-        }
-
-        private void PictureBox5_MouseClick(object sender, MouseEventArgs e)
-        {
-            showPaginaInicio();
-        }
-
-        private void Label1_MouseClick(object sender, MouseEventArgs e)
-        {
-            showPaginaInicio();
-        }
-
-        private void PnlBotonInicio_MouseClick(object sender, MouseEventArgs e)
-        {
-            showPaginaInicio();
-        }
-
-        private void PnlBotonMenu_MouseClick(object sender, MouseEventArgs e)
-        {
-            MenuConfigurar menuConfigurar = new MenuConfigurar();
-            menuConfigurar.Show();
-        }
-
-        private void PictureBox3_MouseClick(object sender, MouseEventArgs e)
-        {
-            MenuConfigurar menuConfigurar = new MenuConfigurar();
-            menuConfigurar.Show();
-        }
-
-        private void LblBotonesOrdenes_MouseClick(object sender, MouseEventArgs e)
-        {
-            MenuConfigurar menuConfigurar = new MenuConfigurar();
-            menuConfigurar.Show();
-        }
-
-        private void PictureBox4_MouseClick(object sender, MouseEventArgs e)
-        {
-            showProveedores();
-        }
-
-        private void LblBotonProveedores_MouseClick(object sender, MouseEventArgs e)
-        {
-            showProveedores();
-        }
-
-        private void PnlBotonesProveedores_MouseClick(object sender, MouseEventArgs e)
-        {
-            showProveedores();
-        }
-
-        private void PnlBotonReportes_MouseClick(object sender, MouseEventArgs e)
-        {
-            showReportes();
-        }
-
-        private void PictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            showReportes();
-        }
-
-        private void LblReportes_MouseClick(object sender, MouseEventArgs e)
-        {
-            showReportes();
-        }
-
         private void Timer1_Tick(object sender, EventArgs e)
         {
             int ampmHOUR = Convert.ToInt32(DateTime.Now.ToString("HH"));
@@ -632,60 +255,415 @@ namespace PMS_POS.View
             timer1.Start();
         }
 
-        private void PictureBox8_MouseHover(object sender, EventArgs e)
+        private void PictureBox16_MouseClick(object sender, MouseEventArgs e)
         {
-            pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMGhover;
-            pnlBotonVentas.BackColor = Color.FromArgb(198, 212, 255);
+            showVentas();
         }
 
-        private void PictureBox8_MouseLeave(object sender, EventArgs e)
+        private void PnlBotonVentas_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            showVentas();
+        }
+
+        private void LblVentas_MouseClick(object sender, MouseEventArgs e)
+        {
+            showVentas();
+        }
+
+        private void PnlBotonVentas_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMG;
             pnlBotonVentas.BackColor = Color.FromArgb(121, 133, 170);
         }
 
-        private void Label5_MouseHover(object sender, EventArgs e)
+        private void PnlBotonVentas_MouseHover_1(object sender, EventArgs e)
         {
             pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMGhover;
             pnlBotonVentas.BackColor = Color.FromArgb(198, 212, 255);
         }
 
-        private void Label5_MouseLeave(object sender, EventArgs e)
+        private void LblVentas_MouseLeave(object sender, EventArgs e)
         {
             pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMG;
             pnlBotonVentas.BackColor = Color.FromArgb(121, 133, 170);
         }
 
-        private void PnlBotonVentas_MouseHover(object sender, EventArgs e)
+        private void LblVentas_MouseHover(object sender, EventArgs e)
         {
             pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMGhover;
             pnlBotonVentas.BackColor = Color.FromArgb(198, 212, 255);
         }
 
-        private void PnlBotonVentas_MouseLeave(object sender, EventArgs e)
+        private void PictureBox16_MouseLeave(object sender, EventArgs e)
         {
             pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMG;
             pnlBotonVentas.BackColor = Color.FromArgb(121, 133, 170);
         }
 
-        private void PictureBox8_MouseClick(object sender, MouseEventArgs e)
+        private void PictureBox16_MouseHover(object sender, EventArgs e)
         {
-            showVentas();
+            pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMGhover;
+            pnlBotonVentas.BackColor = Color.FromArgb(198, 212, 255);
         }
 
-        private void Label5_MouseClick(object sender, MouseEventArgs e)
+        private void PnlBotonReportes_MouseClick(object sender, MouseEventArgs e)
         {
-            showVentas();
+            showReportes();
         }
 
-        private void PnlBotonVentas_MouseClick(object sender, MouseEventArgs e)
+        private void Lblreporte_MouseClick(object sender, MouseEventArgs e)
         {
-            showVentas();
+            showReportes();
         }
 
-        private void btnOrdenes_Click(object sender, EventArgs e)
+        private void PictureBox11_MouseClick(object sender, MouseEventArgs e)
         {
+            showReportes();
+        }
 
+        private void PnlBotonesProveedores_MouseClick(object sender, MouseEventArgs e)
+        {
+            showProveedores();
+        }
+
+        private void LblProveedores_MouseClick(object sender, MouseEventArgs e)
+        {
+            showProveedores();
+        }
+
+        private void PictureBox15_MouseClick(object sender, MouseEventArgs e)
+        {
+            showProveedores();
+        }
+
+        private void PnlBotonMenu_MouseClick(object sender, MouseEventArgs e)
+        {
+            MenuConfigurar menuConfigurar = new MenuConfigurar();
+            menuConfigurar.Show();
+        }
+
+        private void Lblmenu_MouseClick(object sender, MouseEventArgs e)
+        {
+            MenuConfigurar menuConfigurar = new MenuConfigurar();
+            menuConfigurar.Show();
+        }
+
+        private void PictureBox12_MouseClick(object sender, MouseEventArgs e)
+        {
+            MenuConfigurar menuConfigurar = new MenuConfigurar();
+            menuConfigurar.Show();
+        }
+
+        private void PnlBotonInicio_MouseClick(object sender, MouseEventArgs e)
+        {
+            showPaginaInicio();
+        }
+
+        private void LblInicio_MouseClick(object sender, MouseEventArgs e)
+        {
+            showPaginaInicio();
+        }
+
+        private void PictureBox9_MouseClick(object sender, MouseEventArgs e)
+        {
+            showPaginaInicio();
+        }
+
+        private void PnlBotonMostrador_MouseClick(object sender, MouseEventArgs e)
+        {
+            showMostrador();
+        }
+
+        private void LblMostrador_MouseClick(object sender, MouseEventArgs e)
+        {
+            showMostrador();
+        }
+
+        private void PictureBox13_MouseClick(object sender, MouseEventArgs e)
+        {
+            showMostrador();
+        }
+
+        private void PnlBotonInventario_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            showInventario();
+        }
+
+        private void Label7_MouseClick(object sender, MouseEventArgs e)
+        {
+            showInventario();
+        }
+
+        private void PictureBox10_MouseClick(object sender, MouseEventArgs e)
+        {
+            showInventario();
+        }
+
+        private void PnlBotonTransacciones_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMG;
+            pnlBotonTransacciones.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void Ordenes_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMG;
+            pnlBotonTransacciones.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PictureBox14_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMG;
+            pnlBotonTransacciones.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PictureBox14_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox14.Image = PMS_POS.Properties.Resources.OrdenesIMG;
+            pnlBotonTransacciones.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void Ordenes_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox14.Image = PMS_POS.Properties.Resources.OrdenesIMG;
+            pnlBotonTransacciones.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlBotonTransacciones_MouseHover_1(object sender, EventArgs e)
+        {
+            pictureBox14.Image = PMS_POS.Properties.Resources.OrdenesIMG;
+            pnlBotonTransacciones.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlBotonInventario_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMG;
+            pnlBotonInventario.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void Label7_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMG;
+            pnlBotonInventario.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PictureBox10_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMG;
+            pnlBotonInventario.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void Label7_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMGhover;
+            pnlBotonInventario.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PictureBox10_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMGhover;
+            pnlBotonInventario.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlBotonInventario_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMGhover;
+            pnlBotonInventario.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlBotonMostrador_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMG;
+            pnlBotonMostrador.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void LblMostrador_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMG;
+            pnlBotonMostrador.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PictureBox13_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMG;
+            pnlBotonMostrador.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PnlBotonMostrador_MouseHover_1(object sender, EventArgs e)
+        {
+            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMGhover;
+            pnlBotonMostrador.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void LblMostrador_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMGhover;
+            pnlBotonMostrador.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PictureBox13_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMGhover;
+            pnlBotonMostrador.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlBotonInicio_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
+            pnlBotonInicio.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void LblInicio_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
+            pnlBotonInicio.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PictureBox9_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
+            pnlBotonInicio.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PnlBotonInicio_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMGhover;
+            pnlBotonInicio.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void LblInicio_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMGhover;
+            pnlBotonInicio.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PictureBox9_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMGhover;
+            pnlBotonInicio.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlBotonesProveedores_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
+            pnlBotonesProveedores.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void LblProveedores_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
+            pnlBotonesProveedores.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PictureBox15_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
+            pnlBotonesProveedores.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PnlBotonesProveedores_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGactualhover;
+            pnlBotonesProveedores.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void LblProveedores_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGactualhover;
+            pnlBotonesProveedores.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PictureBox15_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGactualhover;
+            pnlBotonesProveedores.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlBotonReportes_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMG;
+            pnlBotonReportes.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void Lblreporte_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMG;
+            pnlBotonReportes.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PictureBox11_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMG;
+            pnlBotonReportes.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PnlBotonReportes_MouseHover_1(object sender, EventArgs e)
+        {
+            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMGhover;
+            pnlBotonReportes.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void Lblreporte_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMGhover;
+            pnlBotonReportes.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PictureBox11_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMGhover;
+            pnlBotonReportes.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlBotonMenu_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMG;
+            pnlBotonMenu.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void Lblmenu_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMG;
+            pnlBotonMenu.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PictureBox12_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMG;
+            pnlBotonMenu.BackColor = Color.FromArgb(121, 133, 170);
+        }
+
+        private void PnlBotonMenu_MouseHover_1(object sender, EventArgs e)
+        {
+            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMGhover;
+            pnlBotonMenu.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void Lblmenu_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMGhover;
+            pnlBotonMenu.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PictureBox12_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMGhover;
+            pnlBotonMenu.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlBotonTransacciones_MouseClick(object sender, MouseEventArgs e)
+        {
+            showOrdenes();
+        }
+
+        private void Ordenes_MouseClick(object sender, MouseEventArgs e)
+        {
+            showOrdenes();
+        }
+
+        private void PictureBox14_MouseClick(object sender, MouseEventArgs e)
+        {
+            showOrdenes();
         }
     }
 }

@@ -31,6 +31,14 @@ namespace PMS_POS.View
             InitializeComponent();
             LoadPrdCompra();
             LoadHistorial();
+            dgvProductosRegistrados.Columns[0].Visible = false;
+            dgvProductosRegistrados.Columns[13].Visible = false;
+            dgvProductosRegistrados.Columns[14].Visible = false;
+            dgvProductosRegistrados.Columns[15].Visible = false;
+            dgvProductosRegistrados.Columns[16].Visible = false;
+            dgvProductosRegistrados.Columns[2].Visible = false;
+            dgvProductosRegistrados.Columns[4].Visible = false;
+            dgvProductosRegistrados.Columns[6].Visible = false;
         }
         public void LoadPrdCompra()//para listar...
         {

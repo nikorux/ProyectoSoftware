@@ -7,23 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PMS_POS.Model;
 
 namespace PMS_POS.View
 {
-    public partial class Ordenes : UserControl
+    public partial class Ordenes1 : UserControl
     {
-        private static Ordenes _instance;
-        public static Ordenes Instance
+        public static Ordenes1 _instance;
+        public static Ordenes1 Instance
         {
             get
             {
-                if (_instance == null)
-                    _instance = new Ordenes();
+                if(_instance == null)
+                    _instance = new Ordenes1();
                 return _instance;
             }
         }
-
-        public Ordenes()
+        public Ordenes1()
         {
             InitializeComponent();
         }

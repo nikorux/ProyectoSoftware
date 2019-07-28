@@ -210,7 +210,7 @@ namespace PMS_POS.Model
                     case "Efectivo":
                         sql = "SELECT * FROM factura WHERE FormaDePago=@columna";
                         break;
-                    case "CompraProveedor":
+                    case "Compra proveedor":
                         sql = "SELECT * FROM factura WHERE TipoFactura=@columna";
                         break;
                     case "Mostrador":
@@ -222,7 +222,7 @@ namespace PMS_POS.Model
                     case "Pendiente":
                         sql = "SELECT * FROM factura WHERE Pagado=0";
                         break;
-                    case "*":
+                    case "Todas":
                         sql = "SELECT * FROM factura";
                         break;
                 }

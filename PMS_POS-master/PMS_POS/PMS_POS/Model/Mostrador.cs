@@ -50,6 +50,59 @@ namespace PMS_POS.Model
             return dt;
         }
 
+        public string SelectEstadoPedido(string columna)
+        {
+            string sql = null;
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+                switch (columna)
+                {
+                    case "Facturado":
+                        sql = "SELECT * FROM pedido WHERE IsDeleted=0";
+                        break;
+                    case "Cancelado":
+                        sql = "SELECT * FROM pedido WHERE IsDeleted=1";
+                        break;
+                    case "Todos":
+                        sql = "SELECT * FROM pedido";
+                        break;
+                }
+                mySqlConn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@columna", columna);
+                return cmd.ExecuteNonQuery().ToString();
+
+            }
+        }
+
+        public DataTable SelectPedidos()
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT * FROM pedido";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
         public DataTable SelectItemsDisponiblesParaMenu()
         {
             //hacer la conexion con sql

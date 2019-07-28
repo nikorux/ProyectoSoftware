@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PMS_POS.Model;
+using MySql.Data.MySqlClient;
 
 namespace PMS_POS.View
 {
@@ -25,6 +26,7 @@ namespace PMS_POS.View
         }
 
         Producto producto = new Producto();
+        Mostrador mostrador = new Mostrador();
 
         public Reportes()
         {
@@ -32,6 +34,7 @@ namespace PMS_POS.View
             dgvAjustes.DataSource = producto.SelectAjustes();
             dgvRecepcion.DataSource = producto.SelectHistorialComprasProveedores();
             dgvFacturas.DataSource = producto.SelectFacturas();
+            dgvOrdenes.DataSource = mostrador.SelectPedidos();
         }
 
         private void TxtBuscarProducto_TextChanged(object sender, EventArgs e)
@@ -137,7 +140,7 @@ namespace PMS_POS.View
             }
             else
             {
-                dgvFacturas.DataSource = producto.Select();
+                dgvFacturas.DataSource = producto.getDetallesFacturas("Todas");
             }
         }
 
@@ -163,6 +166,65 @@ namespace PMS_POS.View
         {
             string search = cbxFacturasTipoPago.SelectedItem.ToString();
             dgvFacturas.DataSource = producto.getDetallesFacturas(search);
+        }
+
+        private void Reportes_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                //COMBOBOX DISPLAY CATEGORIA
+                MySqlConnection connectionCategoria = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
+                string queryCategoria = "SELECT NombreCategoria FROM categoria";
+                connectionCategoria.Open();
+                MySqlCommand command = new MySqlCommand(queryCategoria, connectionCategoria);
+                MySqlDataReader readerCategoria = command.ExecuteReader();
+                while (readerCategoria.Read())
+                {
+                    cbxCategoriaInventario.Items.Add(readerCategoria.GetString("NombreCategoria"));
+                    cbxRecepcion.Items.Add(readerCategoria.GetString("NombreCategoria"));
+                }
+                connectionCategoria.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBuscarVentas_TextChanged(object sender, EventArgs e)
+        {
+            dgvOrdenes.AllowUserToAddRows = false;
+
+            if (txtBuscarVentas.Text != "")
+            {
+
+                dgvOrdenes.CurrentCell = null;
+                foreach (DataGridViewRow n in dgvOrdenes.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgvOrdenes.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarVentas.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                dgvOrdenes.DataSource = mostrador.SelectPedidos();
+            }
+        }
+
+        private void CbxEstadoPedido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string search = cbxFormaPago.SelectedItem.ToString();
+            dgvFacturas.DataSource = mostrador.SelectEstadoPedido(search);
         }
     }
 }

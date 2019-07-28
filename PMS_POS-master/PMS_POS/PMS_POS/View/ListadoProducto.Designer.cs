@@ -771,7 +771,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.lblTitulo);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.splitContainer1.Size = new System.Drawing.Size(1021, 580);
-            this.splitContainer1.SplitterDistance = 951;
+            this.splitContainer1.SplitterDistance = 931;
             this.splitContainer1.TabIndex = 8;
             // 
             // panel2

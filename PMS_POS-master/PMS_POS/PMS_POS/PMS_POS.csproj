@@ -204,11 +204,11 @@
     <Compile Include="View\NuevoHuesped.designer.cs">
       <DependentUpon>NuevoHuesped.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Ordenes.cs">
+    <Compile Include="View\Ordenes1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Ordenes.Designer.cs">
-      <DependentUpon>Ordenes.cs</DependentUpon>
+    <Compile Include="View\Ordenes1.Designer.cs">
+      <DependentUpon>Ordenes1.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PaginaInicio.cs">
       <SubType>UserControl</SubType>
@@ -358,8 +358,8 @@
     <EmbeddedResource Include="View\NuevoHuesped.resx">
       <DependentUpon>NuevoHuesped.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Ordenes.resx">
-      <DependentUpon>Ordenes.cs</DependentUpon>
+    <EmbeddedResource Include="View\Ordenes1.resx">
+      <DependentUpon>Ordenes1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PaginaInicio.resx">
       <DependentUpon>PaginaInicio.cs</DependentUpon>

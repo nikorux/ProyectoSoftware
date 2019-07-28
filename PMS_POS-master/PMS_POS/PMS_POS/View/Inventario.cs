@@ -23,6 +23,7 @@ namespace PMS_POS.View
                 return _instance;
             }
         }
+
         public Inventario()
         {
             InitializeComponent();

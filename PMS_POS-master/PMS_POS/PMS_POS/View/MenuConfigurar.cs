@@ -138,12 +138,13 @@ namespace PMS_POS.View
 
         private void CbxCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lblCategoria.Text = cbxCategoria.Text;
             if (cbxCategoria.Text == "Todas")
             {
                 dgvProductosDisponibles.DataSource = producto.Select();
             }
             else
-            {
+            {   
                 dgvProductosDisponibles.DataSource = producto.FiltrarPORcategoria(cbxCategoria.SelectedItem.ToString());
             }
         }
