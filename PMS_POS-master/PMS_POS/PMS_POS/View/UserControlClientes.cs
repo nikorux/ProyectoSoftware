@@ -87,7 +87,6 @@ namespace PMS_POS.View
 
         private void TxtFiltroo_TextChanged(object sender, EventArgs e)
         {
-            {
                 if (txtFiltroo.Text != "")
                 {
 
@@ -113,8 +112,6 @@ namespace PMS_POS.View
                     dgvClientes.DataSource = obj.VistaTabla();
                 }
 
-            }
-
         }
 
         private void RegistroNuevoCliente_FormClosed(object sender, FormClosedEventArgs e)
@@ -133,8 +130,6 @@ namespace PMS_POS.View
 
         private void btnEditarClientes_Click(object sender, EventArgs e)
         {
-
-            {
                 if (dgvClientes.SelectedRows.Count > 0)
                 {
                     //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
@@ -146,7 +141,6 @@ namespace PMS_POS.View
                 {
                     MessageBox.Show("Seleccione una fila.");
                 }
-            }
         }
 
         private void btnEliminarClientes_Click(object sender, EventArgs e)

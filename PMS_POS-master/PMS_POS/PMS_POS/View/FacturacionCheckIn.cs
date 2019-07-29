@@ -52,8 +52,8 @@ namespace PMS_POS.View
 
             //Si las filas son más de 0 se muestran los valores de la fila
             txtIdCliente.Text = dgvHabitacion.Rows[0].Cells[1].Value.ToString();
-            txtNombre.Text = dgvHabitacion.Rows[0].Cells[4].Value.ToString();
-            txtTelefono.Text = dgvHabitacion.Rows[0].Cells[5].Value.ToString();
+            txtNombre.Text = dgvHabitacion.Rows[0].Cells[3].Value.ToString();
+            txtTelefono.Text = dgvHabitacion.Rows[0].Cells[4].Value.ToString();
             txtSubtotal.Text = dgvHabitacion.Rows[0].Cells[12].Value.ToString();
             txtTotalAPagar.Text = txtSubtotal.Text;
 
@@ -97,6 +97,15 @@ namespace PMS_POS.View
                     MessageBox.Show("Ha ocurrido un error al facturar.");
                 }
             }
+        }
+
+        private void TxtEfectivo_Leave(object sender, EventArgs e)
+        {
+            int total, efectivo, cambio;
+            total = Convert.ToInt32(txtTotalAPagar.Text);
+            efectivo = Convert.ToInt32(txtEfectivo.Text);
+            cambio = efectivo - total;
+            txtCambio.Text = cambio.ToString();
         }
     }
 }

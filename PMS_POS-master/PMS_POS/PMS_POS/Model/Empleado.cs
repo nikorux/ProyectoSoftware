@@ -1,28 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using System.Data;
-using System.Windows.Forms;
-using System.Configuration;
 using PMS_POS.Controller;
-
 
 namespace PMS_POS.Model
 {
-    class Huesped : HuespedD
+    class Empleado : EmpleadoC
     {
         string instruccion;
 
-        public int IdHuesped { get; set; }
+        public int IdEmpleado { get; set; }
         public string PrimerNombre { get; set; }
         public string SegundoNombre { get; set; }
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
-        public string Compania { get; set; }
-        public string NombreCompania { get; set; }
+        public string RolEmpleado { get; set; }
         public string TipoDocumento { get; set; }
         public string NumDocumento { get; set; }
         public string Sexo { get; set; }
@@ -35,20 +33,19 @@ namespace PMS_POS.Model
         public string IsDeleted { get; set; }
         public string DeletedDate { get; set; }
 
-        public Huesped() { }
+        public Empleado() { }
 
-        public Huesped(int pIdHuesped, string pPrimerNombre, string pSegundoNombre, string pPrimerApellido,
-            string pSegundoApellido, string pCompania, string pNombreCompania, string pTipoDocumento, string pNumDocumento,
+        public Empleado(int pIdEmpelado, string pPrimerNombre, string pSegundoNombre, string pPrimerApellido,
+            string pSegundoApellido, string pRolEmpleado, string pTipoDocumento, string pNumDocumento,
             string pSexo, string pTelefono, string pDireccion, string pCiudad, string pProvincia, string pPais, string pCorreo, string pIsDeleted, string pDeletedDate)
 
         {
-            this.IdHuesped = pIdHuesped;
+            this.IdEmpleado = pIdEmpelado;
             this.PrimerNombre = pPrimerNombre;
             this.SegundoNombre = pSegundoNombre;
             this.PrimerApellido = pPrimerApellido;
             this.SegundoApellido = pSegundoApellido;
-            this.Compania = pCompania;
-            this.NombreCompania = pNombreCompania;
+            this.RolEmpleado = pRolEmpleado;
             this.TipoDocumento = pTipoDocumento;
             this.NumDocumento = pNumDocumento;
             this.Sexo = pSexo;
@@ -65,14 +62,14 @@ namespace PMS_POS.Model
 
         public DataTable VistaTabla()
         {
-            instruccion = "Select IdHuesped, PrimerNombre, SegundoNombre, PrimerApellido, NumDocumento, TipoDocumento, Telefono, Correo, Pais FROM huesped WHERE IsDeleted = 0";
+            instruccion = "Select IdEmpleado, PrimerNombre, SegundoNombre, PrimerApellido, Rol, NumDocumento, TipoDocumento, Telefono, Correo, Pais FROM empleado WHERE IsDeleted = 0";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
             return COnsulta;
         }
 
-        public void BorrarCampos(Control control, GroupBox gb)
+       /* public void BorrarCampos(Control control, GroupBox gb)
         {
             foreach (var txt in control.Controls)
             {
@@ -96,7 +93,7 @@ namespace PMS_POS.Model
                     }
                 }
             }
-        }
+        }*/
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
         public DataTable Search(string s)
         {
@@ -106,7 +103,7 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT * FROM huesped WHERE IsDeleted=0 AND PrimerNombre like '%" + s + "%' OR SegundoNombre like '%" + s + "%' OR PrimerApellido like '%" + s + "%' OR SegundoApellido like '%" + s + "%' OR NombreCompañia like '%" + s + "%'";
+                string sql = "SELECT * FROM empleado WHERE IsDeleted=0 AND PrimerNombre like '%" + s + "%' OR SegundoNombre like '%" + s + "%' OR PrimerApellido like '%" + s + "%' OR SegundoApellido like '%" + s + "%' OR NombreCompañia like '%" + s + "%'";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //Creating data adapter
@@ -125,18 +122,18 @@ namespace PMS_POS.Model
             return dt;
         }
 
-        public bool Delete(Huesped p)
+        public bool Delete(Empleado p)
         {
             //Create Sql Connection
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
                 //Sql to delete
-                string sql = "UPDATE huesped SET IsDeleted=@IsDeleted WHERE IdHuesped=@IdHuesped";
+                string sql = "UPDATE empleado SET IsDeleted=@IsDeleted WHERE IdEmpleado=@IdEmpleado";
 
                 //Creating SQL Command
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdHuesped", p.IdHuesped);
+                cmd.Parameters.AddWithValue("@IdEmpleado", p.IdEmpleado);
                 cmd.Parameters.AddWithValue("@IsDeleted", 1);
                 //Open Connection
                 mySqlConn.Open();
@@ -154,7 +151,7 @@ namespace PMS_POS.Model
                 }
             }
         }
-        public DataTable GetHuesped(int idHuesped)
+        public DataTable GetEmpleado(int IdEmpleado)
         {
             //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
@@ -162,11 +159,11 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT * FROM huesped where IdHuesped = @IdHuesped ";
+                string sql = "SELECT * FROM empleado where IdEmpleado = @IdEmpleado ";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdHuesped", idHuesped);
+                cmd.Parameters.AddWithValue("@IdEmpleado", IdEmpleado);
                 //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
@@ -183,4 +180,6 @@ namespace PMS_POS.Model
             return dt;
         }
     }
+
 }
+

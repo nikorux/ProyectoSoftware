@@ -190,6 +190,7 @@
             this.txtEfectivo.Name = "txtEfectivo";
             this.txtEfectivo.Size = new System.Drawing.Size(195, 20);
             this.txtEfectivo.TabIndex = 74;
+            this.txtEfectivo.Leave += new System.EventHandler(this.TxtEfectivo_Leave);
             // 
             // label7
             // 
