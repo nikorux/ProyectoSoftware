@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturacionCheckOut));
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.dgvHabitacion = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -84,8 +81,10 @@
             this.btnVisualizarPagado = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHabitacion)).BeginInit();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtCompaniaTarjeta = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtNumDocumento = new System.Windows.Forms.TextBox();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,35 +102,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label10.Location = new System.Drawing.Point(65, 327);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(169, 21);
-            this.label10.TabIndex = 105;
-            this.label10.Text = "Habitación Reservada";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel10.Controls.Add(this.dgvHabitacion);
-            this.panel10.Location = new System.Drawing.Point(41, 336);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(813, 114);
-            this.panel10.TabIndex = 104;
-            // 
-            // dgvHabitacion
-            // 
-            this.dgvHabitacion.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvHabitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHabitacion.Location = new System.Drawing.Point(17, 20);
-            this.dgvHabitacion.Name = "dgvHabitacion";
-            this.dgvHabitacion.Size = new System.Drawing.Size(783, 86);
-            this.dgvHabitacion.TabIndex = 0;
-            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -140,7 +110,7 @@
             this.panel9.Controls.Add(this.txtBusquedaCliente);
             this.panel9.Controls.Add(this.pictureBox1);
             this.panel9.Controls.Add(this.label23);
-            this.panel9.Location = new System.Drawing.Point(59, 118);
+            this.panel9.Location = new System.Drawing.Point(59, 117);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(780, 46);
             this.panel9.TabIndex = 101;
@@ -267,6 +237,7 @@
             this.txtEfectivo.Name = "txtEfectivo";
             this.txtEfectivo.Size = new System.Drawing.Size(195, 20);
             this.txtEfectivo.TabIndex = 74;
+            this.txtEfectivo.TextChanged += new System.EventHandler(this.TxtEfectivo_TextChanged);
             this.txtEfectivo.Leave += new System.EventHandler(this.TxtEfectivo_Leave);
             // 
             // label7
@@ -303,14 +274,18 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel4.Controls.Add(this.panel1);
-            this.panel4.Location = new System.Drawing.Point(42, 111);
+            this.panel4.Location = new System.Drawing.Point(42, 110);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(813, 213);
+            this.panel4.Size = new System.Drawing.Size(813, 219);
             this.panel4.TabIndex = 99;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.txtNumDocumento);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.txtCompaniaTarjeta);
+            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.dtpFechaActual);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtAtendidoPor);
@@ -325,13 +300,13 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Location = new System.Drawing.Point(17, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 140);
+            this.panel1.Size = new System.Drawing.Size(780, 148);
             this.panel1.TabIndex = 90;
             // 
             // dtpFechaActual
             // 
             this.dtpFechaActual.Enabled = false;
-            this.dtpFechaActual.Location = new System.Drawing.Point(549, 77);
+            this.dtpFechaActual.Location = new System.Drawing.Point(549, 110);
             this.dtpFechaActual.Name = "dtpFechaActual";
             this.dtpFechaActual.Size = new System.Drawing.Size(194, 20);
             this.dtpFechaActual.TabIndex = 31;
@@ -340,7 +315,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(417, 77);
+            this.label21.Location = new System.Drawing.Point(417, 110);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(58, 20);
             this.label21.TabIndex = 30;
@@ -348,7 +323,7 @@
             // 
             // txtAtendidoPor
             // 
-            this.txtAtendidoPor.Location = new System.Drawing.Point(549, 47);
+            this.txtAtendidoPor.Location = new System.Drawing.Point(549, 80);
             this.txtAtendidoPor.Name = "txtAtendidoPor";
             this.txtAtendidoPor.Size = new System.Drawing.Size(194, 20);
             this.txtAtendidoPor.TabIndex = 25;
@@ -412,7 +387,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(417, 48);
+            this.label12.Location = new System.Drawing.Point(417, 81);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 20);
             this.label12.TabIndex = 4;
@@ -474,7 +449,7 @@
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(192, 27);
             this.btnImprimir.TabIndex = 97;
-            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.Text = "Imprimir factura";
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimir.UseCompatibleTextRendering = true;
             this.btnImprimir.UseVisualStyleBackColor = false;
@@ -588,9 +563,9 @@
             // 
             this.panel11.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel11.Controls.Add(this.panel12);
-            this.panel11.Location = new System.Drawing.Point(41, 456);
+            this.panel11.Location = new System.Drawing.Point(42, 335);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(435, 156);
+            this.panel11.Size = new System.Drawing.Size(813, 156);
             this.panel11.TabIndex = 106;
             // 
             // panel12
@@ -604,15 +579,15 @@
             this.panel12.Controls.Add(this.btnVisualizarPagado);
             this.panel12.Controls.Add(this.textBox1);
             this.panel12.Controls.Add(this.label11);
-            this.panel12.Location = new System.Drawing.Point(11, 5);
+            this.panel12.Location = new System.Drawing.Point(6, 5);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(415, 145);
+            this.panel12.Size = new System.Drawing.Size(799, 145);
             this.panel12.TabIndex = 91;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 114);
+            this.pictureBox3.Location = new System.Drawing.Point(410, 80);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(231, 10);
             this.pictureBox3.TabIndex = 109;
@@ -621,7 +596,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 50);
+            this.pictureBox4.Location = new System.Drawing.Point(11, 74);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(231, 10);
             this.pictureBox4.TabIndex = 108;
@@ -630,7 +605,7 @@
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(13, 99);
+            this.textBox2.Location = new System.Drawing.Point(411, 65);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(217, 13);
             this.textBox2.TabIndex = 107;
@@ -639,7 +614,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(9, 76);
+            this.label14.Location = new System.Drawing.Point(407, 37);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(221, 20);
             this.label14.TabIndex = 108;
@@ -656,9 +631,9 @@
             this.btnVisualizarPendiente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisualizarPendiente.ForeColor = System.Drawing.Color.White;
             this.btnVisualizarPendiente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVisualizarPendiente.Location = new System.Drawing.Point(289, 75);
+            this.btnVisualizarPendiente.Location = new System.Drawing.Point(680, 31);
             this.btnVisualizarPendiente.Name = "btnVisualizarPendiente";
-            this.btnVisualizarPendiente.Size = new System.Drawing.Size(93, 63);
+            this.btnVisualizarPendiente.Size = new System.Drawing.Size(105, 85);
             this.btnVisualizarPendiente.TabIndex = 108;
             this.btnVisualizarPendiente.Text = "Visualizar";
             this.btnVisualizarPendiente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -677,9 +652,9 @@
             this.btnVisualizarPagado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisualizarPagado.ForeColor = System.Drawing.Color.White;
             this.btnVisualizarPagado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVisualizarPagado.Location = new System.Drawing.Point(289, 6);
+            this.btnVisualizarPagado.Location = new System.Drawing.Point(259, 29);
             this.btnVisualizarPagado.Name = "btnVisualizarPagado";
-            this.btnVisualizarPagado.Size = new System.Drawing.Size(93, 63);
+            this.btnVisualizarPagado.Size = new System.Drawing.Size(105, 85);
             this.btnVisualizarPagado.TabIndex = 107;
             this.btnVisualizarPagado.Text = "Visualizar";
             this.btnVisualizarPagado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -689,7 +664,7 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(13, 34);
+            this.textBox1.Location = new System.Drawing.Point(12, 58);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(218, 13);
             this.textBox1.TabIndex = 74;
@@ -698,11 +673,46 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(8, 11);
+            this.label11.Location = new System.Drawing.Point(7, 35);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(126, 20);
             this.label11.TabIndex = 74;
             this.label11.Text = "Importe pagado:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(415, 48);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(134, 20);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Compañía tarjeta:";
+            // 
+            // txtCompaniaTarjeta
+            // 
+            this.txtCompaniaTarjeta.Location = new System.Drawing.Point(550, 48);
+            this.txtCompaniaTarjeta.Name = "txtCompaniaTarjeta";
+            this.txtCompaniaTarjeta.Size = new System.Drawing.Size(194, 20);
+            this.txtCompaniaTarjeta.TabIndex = 33;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(24, 111);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(129, 20);
+            this.label10.TabIndex = 107;
+            this.label10.Text = "Núm Documento";
+            // 
+            // txtNumDocumento
+            // 
+            this.txtNumDocumento.Enabled = false;
+            this.txtNumDocumento.Location = new System.Drawing.Point(171, 113);
+            this.txtNumDocumento.Name = "txtNumDocumento";
+            this.txtNumDocumento.Size = new System.Drawing.Size(194, 20);
+            this.txtNumDocumento.TabIndex = 108;
             // 
             // FacturacionCheckOut
             // 
@@ -710,8 +720,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.panel11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -724,8 +732,6 @@
             this.Name = "FacturacionCheckOut";
             this.Size = new System.Drawing.Size(1287, 677);
             this.Load += new System.EventHandler(this.FacturacionCheckOut_Load);
-            this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHabitacion)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -753,10 +759,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.DataGridView dgvHabitacion;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtBusquedaCliente;
@@ -809,5 +811,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtCompaniaTarjeta;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtNumDocumento;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -191,30 +191,10 @@ namespace PMS_POS
 
         private void BtnRegistroProducto_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(RegistroNuevoProducto.Instance))
-            {
-                userControlInicio1.Controls.Add(RegistroNuevoProducto.Instance);
-                RegistroNuevoProducto.Instance.Dock = DockStyle.Fill;
-                RegistroNuevoProducto.Instance.BringToFront();
-            }
-            else
-            {
-                RegistroNuevoProducto.Instance.BringToFront();
-            }
         }
 
         private void BtnListaProductos_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoProducto.Instance))
-            {
-                userControlInicio1.Controls.Add(ListadoProducto.Instance);
-                ListadoProducto.Instance.Dock = DockStyle.Fill;
-                ListadoProducto.Instance.BringToFront();
-            }
-            else
-            {
-                ListadoProducto.Instance.BringToFront();
-            }
         }
 
         private void BtnInformacionCompania_Click(object sender, EventArgs e)
@@ -291,30 +271,12 @@ namespace PMS_POS
 
         private void BtnListadoEmpleados_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoEmpleados.Instance))
-            {
-                userControlInicio1.Controls.Add(ListadoEmpleados.Instance);
-                ListadoEmpleados.Instance.Dock = DockStyle.Fill;
-                ListadoEmpleados.Instance.BringToFront();
-            }
-            else
-            {
-                ListadoEmpleados.Instance.BringToFront();
-            }
+    
         }
 
         private void BtnNuevoEmpleado_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(RegistrarNuevoEmpleado.Instance))
-            {
-                userControlInicio1.Controls.Add(RegistrarNuevoEmpleado.Instance);
-                RegistrarNuevoEmpleado.Instance.Dock = DockStyle.Fill;
-                RegistrarNuevoEmpleado.Instance.BringToFront();
-            }
-            else
-            {
-                RegistrarNuevoEmpleado.Instance.BringToFront();
-            }
+          
         }
 
         private void BtnIngresosDía_Click(object sender, EventArgs e)
@@ -354,16 +316,7 @@ namespace PMS_POS
 
         private void BtnFacturas_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoFacturas.Instance))
-            {
-                userControlInicio1.Controls.Add(ListadoFacturas.Instance);
-                ListadoFacturas.Instance.Dock = DockStyle.Fill;
-                ListadoFacturas.Instance.BringToFront();
-            }
-            else
-            {
-                ListadoFacturas.Instance.BringToFront();
-            }
+         
         }
 
         private void BtnCuentasPorHospedaje_Click(object sender, EventArgs e)
@@ -392,16 +345,7 @@ namespace PMS_POS
 
         private void BtnListadoProveedores_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ListadoProveedores.Instance))
-            {
-                userControlInicio1.Controls.Add(ListadoProveedores.Instance);
-                ListadoProveedores.Instance.Dock = DockStyle.Fill;
-                ListadoProveedores.Instance.BringToFront();
-            }
-            else
-            {
-                ListadoProveedores.Instance.BringToFront();
-            }
+           
         }
 
         private void BtnPuntoDeVenta_Click(object sender, EventArgs e)
@@ -420,30 +364,10 @@ namespace PMS_POS
 
         private void BtnHistorialCompra_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(HistorialCompras.Instance))
-            {
-                userControlInicio1.Controls.Add(HistorialCompras.Instance);
-                HistorialCompras.Instance.Dock = DockStyle.Fill;
-                HistorialCompras.Instance.BringToFront();
-            }
-            else
-            {
-                HistorialCompras.Instance.BringToFront();
-            }
         }
 
         private void BtnRegistrarCompra_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(RegistrarNuevaCompra.Instance))
-            {
-                userControlInicio1.Controls.Add(RegistrarNuevaCompra.Instance);
-                RegistrarNuevaCompra.Instance.Dock = DockStyle.Fill;
-                RegistrarNuevaCompra.Instance.BringToFront();
-            }
-            else
-            {
-                RegistrarNuevaCompra.Instance.BringToFront();
-            }
         }
 
         private void BtnVentasPorCategoria_Click(object sender, EventArgs e)
@@ -560,26 +484,18 @@ namespace PMS_POS
 
         private void ProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PanelContenedor.Show();
-            userControlInicio1.SendToBack();
-            PanelContenedor.Controls.Clear();
-            ListadoProveedores thisprobando = new ListadoProveedores();
-            PanelContenedor.Controls.Add(thisprobando);
-            thisprobando.Show();
         }
 
         UserControlClientes este = new UserControlClientes();
 
         private void BtnClientes_Click(object sender, EventArgs e)
         {
-
             PanelContenedor.Show();
             userControlInicio1.SendToBack();
             PanelContenedor.Controls.Clear();
             UserControlClientes thisprobando = new UserControlClientes();
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
-
         }
 
         private void BtnInicio_Click(object sender, EventArgs e)
@@ -608,7 +524,7 @@ namespace PMS_POS
             PanelContenedor.Show();
             userControlInicio1.SendToBack();
             PanelContenedor.Controls.Clear();
-            ListadoEmpleados thisprobando = new ListadoEmpleados();
+            UserControlEmpleados thisprobando = new UserControlEmpleados();
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
         }

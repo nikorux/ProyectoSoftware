@@ -121,5 +121,10 @@ namespace PMS_POS.View
             adp.Fill(COnsulta);
             return COnsulta;
         }
+
+        private void TxtEfectivo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

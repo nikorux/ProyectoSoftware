@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMS_POS.Model;
 using MySql.Data.MySqlClient;
+using System.Data;
+using System.Windows.Forms;
+using PMS_POS.View;
+using PMS_POS.Model;
 
 namespace PMS_POS.Controller
 {
