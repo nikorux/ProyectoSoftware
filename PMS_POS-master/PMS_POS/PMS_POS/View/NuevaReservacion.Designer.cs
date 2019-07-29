@@ -63,11 +63,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAdultos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInfantes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -297,6 +299,7 @@
             0,
             0});
             this.numAdultos.Name = "numAdultos";
+            this.numAdultos.ReadOnly = true;
             this.numAdultos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.numAdultos.Size = new System.Drawing.Size(81, 24);
             this.numAdultos.TabIndex = 22;
@@ -310,6 +313,7 @@
             // 
             this.numInfantes.Location = new System.Drawing.Point(300, 142);
             this.numInfantes.Name = "numInfantes";
+            this.numInfantes.ReadOnly = true;
             this.numInfantes.Size = new System.Drawing.Size(67, 24);
             this.numInfantes.TabIndex = 21;
             // 
@@ -442,6 +446,10 @@
             this.label14.TabIndex = 9;
             this.label14.Text = "Registro de Reservaciones";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // NuevaReservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,6 +470,7 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAdultos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInfantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,5 +511,6 @@
         private System.Windows.Forms.TextBox txtBoxNoches;
         private System.Windows.Forms.DateTimePicker dateTimePickerSalida;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

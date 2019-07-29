@@ -54,10 +54,10 @@ namespace PMS_POS.View
                 primerNombre = dgvBuscarCliente.CurrentRow.Cells[1].Value.ToString();
                 segundoNombre = dgvBuscarCliente.CurrentRow.Cells[2].Value.ToString();
                 primerApellido = dgvBuscarCliente.CurrentRow.Cells[3].Value.ToString();
-                segundoApellido = dgvBuscarCliente.CurrentRow.Cells[4].Value.ToString();
-                documento = dgvBuscarCliente.CurrentRow.Cells[8].Value.ToString();
+              //  segundoApellido = dgvBuscarCliente.CurrentRow.Cells[4].Value.ToString();
+                documento = dgvBuscarCliente.CurrentRow.Cells[4].Value.ToString();
                
-                nr.FillCliente(idHuesped,primerNombre, segundoNombre, primerApellido, segundoApellido, documento);
+                nr.FillCliente(idHuesped,primerNombre, segundoNombre, primerApellido, documento);
                 nr.Revisar();
                 this.Close();
             }

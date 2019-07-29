@@ -39,10 +39,10 @@ namespace PMS_POS.View
             r.IdHabitacion = habitacion.IdHabitacion;
 
         }
-        public void FillCliente(string idHuesped, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string documento)
+        public void FillCliente(string idHuesped, string primerNombre, string segundoNombre, string primerApellido, string documento)
         {
             r.IdHuesped = Convert.ToInt32(idHuesped);
-            txtBoxNombre.Text = primerNombre +" "+ segundoNombre + " " + primerApellido + " " + segundoApellido;
+            txtBoxNombre.Text = primerNombre +" "+ segundoNombre + " " + primerApellido;
             txtBoxDocumento.Text = documento;
         }
 
@@ -73,11 +73,7 @@ namespace PMS_POS.View
 
         private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            if (txtBoxPrecio.Text == string.Empty)
-            {
-              //  MessageBox.Show("Por favor, ingrese una habitación.");
-            }
-            else
+            if (txtBoxPrecio.Text != string.Empty)
             {
                 calcular();
             }
@@ -101,27 +97,23 @@ namespace PMS_POS.View
 
             int resta = (int)difference.TotalDays;
 
-            if (resta <= 0 && editar == false)
+            if( resta <= 0)
             {
-                
-                MessageBox.Show("Por favor, elegir una fecha correcta.");
                 txtBoxNoches.Text = "";
                 txtBoxTotal.Text = "";
-
+                errorProvider1.SetError(this.dateTimePickerSalida, "Ingrese una fecha adecuada.");
             }
-            if(editar == true && resta < 0)
+            else if ( resta > 0 )
             {
-                
-            }
-            else
-            {
+                errorProvider1.Clear();
                 r.FechaLlegada = llegada;
                 r.FechaSalida = salida;
                 txtBoxNoches.Text = resta.ToString();
                 r.CantidadNoches = resta;
-                int precio = (resta * int.Parse(txtBoxPrecio.Text));
+                float precio = (resta * float.Parse(txtBoxPrecio.Text));
                 txtBoxTotal.Text = Convert.ToString(precio);
             }
+           
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -232,8 +224,16 @@ namespace PMS_POS.View
             r.IdReservacion = idReservacion;
             getHabitacionInfo(idHabitacion);
             getHuespedInfo(idHuesped);
-            dateTimePickerLlegada.Value =  new DateTime(fechaLlegada.Year, fechaLlegada.Month, fechaLlegada.Day);
-            dateTimePickerSalida.Value = new DateTime(fechaSalida.Year,fechaSalida.Month,fechaSalida.Day);
+            try
+            {
+                dateTimePickerLlegada.Value = new DateTime(fechaLlegada.Year, fechaLlegada.Month, fechaLlegada.Day);
+                dateTimePickerSalida.Value = new DateTime(fechaSalida.Year, fechaSalida.Month, fechaSalida.Day);
+            }
+            catch (Exception e)
+            {
+              //  MessageBox.Show("La reservación es muy vieja, por favor elimínela y cree una nueva.");
+            }
+            
             txtBoxNoches.Text = noches.ToString();
             numAdultos.Value = numeroAdultos;
             numInfantes.Value = numeroInfantes;

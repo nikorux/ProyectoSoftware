@@ -52,8 +52,8 @@ namespace PMS_POS.View
 
             //Si las filas son más de 0 se muestran los valores de la fila
             txtIdCliente.Text = dgvHabitacion.Rows[0].Cells[1].Value.ToString();
-            txtNombre.Text = dgvHabitacion.Rows[0].Cells[4].Value.ToString();
-            txtTelefono.Text = dgvHabitacion.Rows[0].Cells[5].Value.ToString();
+            txtNombre.Text = dgvHabitacion.Rows[0].Cells[3].Value.ToString();
+            txtTelefono.Text = dgvHabitacion.Rows[0].Cells[4].Value.ToString();
             txtSubtotal.Text = dgvHabitacion.Rows[0].Cells[12].Value.ToString();
             txtTotalAPagar.Text = txtSubtotal.Text;
 
@@ -73,7 +73,7 @@ namespace PMS_POS.View
         private void BtnRegistrarCheckIn_Click(object sender, EventArgs e)
         {
             Factura_Reservacion f = new Factura_Reservacion();
-            if(txtNombre.Text == string.Empty && txtEfectivo.Text == string.Empty && txtTotalAPagar.Text == string.Empty)
+            if(txtNombre.Text == string.Empty && txtEfectivo.Text == string.Empty && txtTotalAPagar.Text == string.Empty && txtCambio.Text == string.Empty)
             {
                 MessageBox.Show("Faltan Ingresar datos.");
             }
@@ -97,6 +97,67 @@ namespace PMS_POS.View
                     MessageBox.Show("Ha ocurrido un error al facturar.");
                 }
             }
+        }
+
+        private void TxtEfectivo_Leave_1(object sender, EventArgs e)
+        {
+            
+            float total, efectivo, cambio;
+            total = Convert.ToSingle(txtTotalAPagar.Text);
+            try
+            {
+                efectivo = Convert.ToSingle(txtEfectivo.Text);
+                if (efectivo <= 0)
+                {
+                    //error
+                    
+                }
+                else
+                {
+                    cambio = efectivo - total;
+                    txtCambio.Text = cambio.ToString();
+                }
+            }
+            catch
+            {
+                // 
+            }
+           
+           
+            
+           
+        }
+
+        private void TxtDescuento_Leave(object sender, EventArgs e)
+        {
+            float subtotal, descuento;
+            subtotal = Convert.ToSingle(txtTotalAPagar.Text);
+            try
+            {
+                //Calcular el % de descuento
+                subtotal = Convert.ToSingle(txtSubtotal.Text);
+                descuento = Convert.ToSingle(txtDescuento.Text);
+
+                descuento = descuento / 100;
+
+                txtTotalAPagar.Text = (subtotal-(descuento * subtotal)).ToString();
+                txtCambio.Text = "";
+            }
+            catch
+            {
+                // 
+            }
+
+        }
+
+        private void TxtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloNumeros(e, txtDescuento);
+        }
+
+        private void TxtEfectivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloNumerosPunto(e, txtEfectivo);
         }
     }
 }

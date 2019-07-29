@@ -11,6 +11,7 @@ using PMS_POS.Controller;
 using PMS_POS.Model;
 using MySql.Data.MySqlClient;
 
+
 namespace PMS_POS.View
 {
     public partial class RegistroNuevoCliente : Form
@@ -136,7 +137,94 @@ namespace PMS_POS.View
             //txtCiudad.Text = Ciudad;
         }
 
+        private void TxtCorreo_TextChanged(object sender, EventArgs e)
+        {
+            if (validar.ValidarEmail(txtCorreo.Text) == true)
+            {
+                errorProviderCorreo.Clear();
+            }
+            else
+            {
+                errorProviderCorreo.SetError(this.txtCorreo, "Ingrese un correo válido.");
+            }
 
+        }
+
+        private void TxtIdentificacion_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void TxtPrimerNombre_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void TxtPrimerNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloLetras(e, txtPrimerNombre);
+        }
+
+        private void TxtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloLetras(e, txtPrimerApellido);
+        }
+
+        private void TxtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloLetras(e, txtSegundoApellido);
+        }
+
+        private void TxtPaisNatal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloLetras(e, txtPaisNatal);
+        }
+
+        private void TxtProvincia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloLetras(e, txtProvincia);
+        }
+
+        private void TxtCiudad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloLetras(e, txtCiudad);
+        }
+
+        private void PictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label8_Click(object sender, EventArgs e)
+        {
+
+        }
+    
+        private void TxtIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+ 
+            if (cbxTipoIdentificacion.Text == "Cédula")
+            {
+                if ((validar.ValidarCedula(txtIdentificacion.Text) == true))
+                {
+                    errorProviderCedula.Clear();
+                }
+                else
+                {
+                    errorProviderCedula.SetError(this.txtIdentificacion, "Ingrese una cédula válida.");
+                }
+            }
+            if (cbxTipoIdentificacion.Text == "Pasaporte")
+            {
+                validar.ValidarPasaporte(e, txtIdentificacion);
+            }
+        }
+
+        private void CbxTipoIdentificacion_TextChanged(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text = "";
+
+        }
     }
 }
 
