@@ -17,6 +17,7 @@ namespace PMS_POS.View
     {
         TipoHabitacion obj = new TipoHabitacion();
         private static ConfigurarTipoHabitacion _instance;
+        TipoHabitacion tipohab = new TipoHabitacion();
         public static ConfigurarTipoHabitacion Instance
         {
             get
@@ -60,7 +61,14 @@ namespace PMS_POS.View
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void TxtTipoHabitacion_TextChanged(object sender, EventArgs e)
@@ -77,6 +85,31 @@ namespace PMS_POS.View
         {
             dgvTipoHabitacion.DataSource = obj.VistaTabla();
 
+        }
+
+        private void DgvTipoHabitacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTipoHabitacion.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvTipoHabitacion.Rows[e.RowIndex];
+
+                txtTipoHabitacion.Text = row.Cells["NombreTipoHab"].Value.ToString();
+
+            }
+
+        }
+
+        private void DgvTipoHabitacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTipoHabitacion.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvTipoHabitacion.Rows[e.RowIndex];
+
+                txtTipoHabitacion.Text = row.Cells["NombreTipoHab"].Value.ToString();
+
+            }
         }
     }
 }

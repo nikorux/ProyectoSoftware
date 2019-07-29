@@ -170,7 +170,6 @@ C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Google.Protobuf.dll
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\MySql.Data.xml
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.Properties.Resources.resources
-C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarRubroProveedor.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarTipoDocumento.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarTipoHabitacion.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.InformacionEstablecimiento.resources
@@ -181,7 +180,6 @@ C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistroProveedor.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlHabitaciones.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlInicio.resources
-C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.VentaPorCategoria.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.GenerateResource.cache
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.CoreCompileInputs.cache
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.CopyComplete

@@ -58,7 +58,7 @@
     <Compile Include="Controller\EmpleadoC.cs" />
     <Compile Include="Controller\ReservacionC.cs" />
     <Compile Include="Controller\RubroC.cs" />
-    <Compile Include="Controller\TipoHabitacion.cs" />
+    <Compile Include="Controller\TipoHabitacionC.cs" />
     <Compile Include="Model\BDGeneral.cs" />
     <Compile Include="Model\Empleado.cs" />
     <Compile Include="Model\EstadoHabitaciones.cs" />
@@ -89,12 +89,6 @@
     </Compile>
     <Compile Include="View\ConfigurarImagen.Designer.cs">
       <DependentUpon>ConfigurarImagen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ConfigurarRubroProveedor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ConfigurarRubroProveedor.designer.cs">
-      <DependentUpon>ConfigurarRubroProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ConfigurarTipoDocumento.cs">
       <SubType>UserControl</SubType>
@@ -230,12 +224,6 @@
     <Compile Include="View\VentanaGraficos.Designer.cs">
       <DependentUpon>VentanaGraficos.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\VentaPorCategoria.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\VentaPorCategoria.Designer.cs">
-      <DependentUpon>VentaPorCategoria.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="View\BuscarCliente.resx">
       <DependentUpon>BuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,9 +242,6 @@
     </Compile>
     <EmbeddedResource Include="View\ConfigurarImagen.resx">
       <DependentUpon>ConfigurarImagen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ConfigurarRubroProveedor.resx">
-      <DependentUpon>ConfigurarRubroProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ConfigurarTipoDocumento.resx">
       <DependentUpon>ConfigurarTipoDocumento.cs</DependentUpon>
@@ -320,9 +305,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VentanaGraficos.resx">
       <DependentUpon>VentanaGraficos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\VentaPorCategoria.resx">
-      <DependentUpon>VentaPorCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
