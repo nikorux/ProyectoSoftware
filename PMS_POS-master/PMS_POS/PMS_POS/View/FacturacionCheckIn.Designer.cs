@@ -127,6 +127,8 @@
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(195, 20);
             this.txtDescuento.TabIndex = 93;
+            this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescuento_KeyPress);
+            this.txtDescuento.Leave += new System.EventHandler(this.TxtDescuento_Leave);
             // 
             // txtITBIS
             // 
@@ -190,7 +192,8 @@
             this.txtEfectivo.Name = "txtEfectivo";
             this.txtEfectivo.Size = new System.Drawing.Size(195, 20);
             this.txtEfectivo.TabIndex = 74;
-            this.txtEfectivo.Leave += new System.EventHandler(this.TxtEfectivo_Leave);
+            this.txtEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEfectivo_KeyPress);
+            this.txtEfectivo.Leave += new System.EventHandler(this.TxtEfectivo_Leave_1);
             // 
             // label7
             // 
@@ -453,8 +456,10 @@
             // 
             // txtCambio
             // 
+            this.txtCambio.Enabled = false;
             this.txtCambio.Location = new System.Drawing.Point(93, 17);
             this.txtCambio.Name = "txtCambio";
+            this.txtCambio.ReadOnly = true;
             this.txtCambio.Size = new System.Drawing.Size(195, 20);
             this.txtCambio.TabIndex = 74;
             // 

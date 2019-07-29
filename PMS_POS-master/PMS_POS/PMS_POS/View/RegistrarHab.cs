@@ -182,6 +182,16 @@ namespace PMS_POS.View
         {
             UserControlHabitaciones.Instance.RefreshDgv();
         }
+
+        private void TxtBoxNumHab_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloNumeros(e, txtBoxNumHab);
+        }
+
+        private void TxtBoxPrecioPorNoche_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloNumerosPunto(e, txtBoxPrecioPorNoche);
+        }
     }
 
 }

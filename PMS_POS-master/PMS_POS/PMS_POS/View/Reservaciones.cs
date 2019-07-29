@@ -208,7 +208,28 @@ namespace PMS_POS.View
 
         private void btnRegistrarCheckOut_Click(object sender, EventArgs e)
         {
+            if (dgvReservaciones.SelectedRows.Count > 0)
+            {
+                int row = 0;
+                row = dgvReservaciones.SelectedCells[0].RowIndex;
 
+                if (!MainScreen.Instance.PnlContainer.Controls.ContainsKey("FacturacionCheckOut"))
+                {
+                    FacturacionCheckOut un = new FacturacionCheckOut();
+                    un.Dock = DockStyle.Fill;
+                    MainScreen.Instance.PnlContainer.Controls.Add(un);
+                    DataGridViewRow selectedRow = dgvReservaciones.Rows[row];
+
+                    un.FillFactura(Convert.ToInt32(selectedRow.Cells["IdReservacion"].Value));
+                }
+                MainScreen.Instance.PnlContainer.Controls["FacturacionCheckOut"].BringToFront();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila.");
+            }
         }
     }
 }

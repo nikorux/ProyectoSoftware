@@ -126,5 +126,23 @@ namespace PMS_POS.View
         {
 
         }
+
+        internal void FillFactura(int idCliente)
+        {
+            // hice trampa para accesar el nombre y el telefono
+            // nombre = comentario 
+            // telefono = canal
+
+          //  id = idCliente;
+         //   RefreshDgv();
+
+
+            //Si las filas son más de 0 se muestran los valores de la fila
+          //  txtIdCliente.Text = dgvHabitacion.Rows[0].Cells[1].Value.ToString();
+          //  txtNombre.Text = dgvHabitacion.Rows[0].Cells[3].Value.ToString();
+          //  txtTelefono.Text = dgvHabitacion.Rows[0].Cells[4].Value.ToString();
+          //  txtSubtotal.Text = dgvHabitacion.Rows[0].Cells[12].Value.ToString();
+          //  txtTotalAPagar.Text = txtSubtotal.Text;
+        }
     }
 }
