@@ -15,18 +15,26 @@ namespace PMS_POS.Model
         string instruccion;
 
         public string NombreTipoHab { get; set; }
+        public string IdTipoHab { get; set; }
+        public string IsDeleted { get; set; }
+        public string DeletedDate { get; set; }
+
+
 
         public TipoHabitacion() { }
 
-        public TipoHabitacion(string pNombreTipoHab)
+        public TipoHabitacion(string pNombreTipoHab, string pIdTipoHab, string pIsDeleted, string pDeletedDate)
 
         {
             this.NombreTipoHab = pNombreTipoHab;
+            this.IdTipoHab = pIdTipoHab;
+            this.IsDeleted = pIsDeleted;
+            this.DeletedDate = pDeletedDate;
         }
 
         public DataTable VistaTabla()
         {
-            instruccion = "Select NombreTipoHab from tipo_habitacion";
+            instruccion = "Select NombreTipoHab from tipo_habitacion where IsDeleted = 0";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);

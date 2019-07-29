@@ -241,16 +241,6 @@ namespace PMS_POS
 
         private void BtnTipoRubroProveedores_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ConfigurarRubroProveedor.Instance))
-            {
-                userControlInicio1.Controls.Add(ConfigurarRubroProveedor.Instance);
-                ConfigurarRubroProveedor.Instance.Dock = DockStyle.Fill;
-                ConfigurarRubroProveedor.Instance.BringToFront();
-            }
-            else
-            {
-                ConfigurarRubroProveedor.Instance.BringToFront();
-            }
         }
 
         private void BtnConfigurarTipoCategoria_Click(object sender, EventArgs e)
@@ -372,16 +362,6 @@ namespace PMS_POS
 
         private void BtnVentasPorCategoria_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(VentaPorCategoria.Instance))
-            {
-                userControlInicio1.Controls.Add(VentaPorCategoria.Instance);
-                VentaPorCategoria.Instance.Dock = DockStyle.Fill;
-                VentaPorCategoria.Instance.BringToFront();
-            }
-            else
-            {
-                VentaPorCategoria.Instance.BringToFront();
-            }
         }
 
         private void Timer7_Tick(object sender, EventArgs e)
