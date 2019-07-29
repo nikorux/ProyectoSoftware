@@ -115,6 +115,7 @@ namespace PMS_POS.View
 
         public DataTable VistaTabla()
         {
+
             instruccion = "Select * from huesped where IdHuesped = " + txtIdCliente.Text;
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();

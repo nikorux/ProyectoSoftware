@@ -159,6 +159,14 @@ namespace PMS_POS.View
         {
             validar.soloNumerosPunto(e, txtEfectivo);
         }
+
+        private void CmbFormaPago_TextChanged(object sender, EventArgs e)
+        {
+            if (cmbFormaPago.Text == "Tarjeta")
+            {
+
+            }
+        }
     }
 }
  

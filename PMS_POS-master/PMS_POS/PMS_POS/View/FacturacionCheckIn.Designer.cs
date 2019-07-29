@@ -339,6 +339,7 @@
             this.cmbFormaPago.Name = "cmbFormaPago";
             this.cmbFormaPago.Size = new System.Drawing.Size(194, 21);
             this.cmbFormaPago.TabIndex = 22;
+            this.cmbFormaPago.TextChanged += new System.EventHandler(this.CmbFormaPago_TextChanged);
             // 
             // txtNombre
             // 
@@ -528,7 +529,7 @@
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel10.Controls.Add(this.dgvHabitacion);
-            this.panel10.Location = new System.Drawing.Point(38, 373);
+            this.panel10.Location = new System.Drawing.Point(39, 373);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(813, 137);
             this.panel10.TabIndex = 93;
