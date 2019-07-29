@@ -49,7 +49,7 @@ namespace PMS_POS.View
 
         private void LiquidarServiciosAdquiridos_Load(object sender, EventArgs e)
         {
-            dgvServiciosAdquiridos.DataSource = obj.VistaTabla();
+         //   dgvServiciosAdquiridos.DataSource = obj.VistaTabla();
 
         }
     }
