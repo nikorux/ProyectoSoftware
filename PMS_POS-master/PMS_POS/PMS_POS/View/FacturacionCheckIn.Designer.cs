@@ -192,6 +192,7 @@
             this.txtEfectivo.Name = "txtEfectivo";
             this.txtEfectivo.Size = new System.Drawing.Size(195, 20);
             this.txtEfectivo.TabIndex = 74;
+            this.txtEfectivo.TextChanged += new System.EventHandler(this.TxtEfectivo_TextChanged);
             this.txtEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEfectivo_KeyPress);
             this.txtEfectivo.Leave += new System.EventHandler(this.TxtEfectivo_Leave_1);
             // 
@@ -263,7 +264,7 @@
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Location = new System.Drawing.Point(39, 139);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(813, 217);
+            this.panel4.Size = new System.Drawing.Size(813, 219);
             this.panel4.TabIndex = 89;
             // 
             // panel1

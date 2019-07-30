@@ -26,7 +26,7 @@ namespace PMS_POS.View
         {
 
         }
-
+      
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
 
@@ -125,6 +125,67 @@ namespace PMS_POS.View
             txtPaisNatal.Text = Pais;
             //txtProvincia.Text = Provincia;
             //txtCiudad.Text = Ciudad;
+        }
+
+        private void TxtPrimerNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloLetras(e, txtPrimerNombre);
+        }
+
+        private void TxtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if( validar.ValidarEmail(txtCorreo.Text) == true)
+            {
+                errorProviderCorreo.Clear();
+            }
+          
+        }
+
+        private void TxtCorreo_Leave(object sender, EventArgs e)
+        {
+            if (validar.ValidarEmail(txtCorreo.Text) == true)
+            {
+                errorProviderCorreo.Clear();
+            }
+            else
+            {
+                errorProviderCorreo.SetError(this.txtCorreo, "Por favor ingresar un email válido.");
+            }
+        }
+
+        private void TxtIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if (cbxTipoIdentificacion.Text == "Pasaporte")
+            {
+                validar.ValidarPasaporte(e, txtIdentificacion);
+
+            }
+        }
+
+        private void TxtIdentificacion_Leave(object sender, EventArgs e)
+        {
+          
+           
+        }
+
+        private void TxtIdentificacion_TextChanged(object sender, EventArgs e)
+        {
+            if (cbxTipoIdentificacion.Text == "Cédula")
+            {
+                if (validar.ValidarCedula(txtIdentificacion.Text) == true)
+                {
+                    errorProviderIdentificacion.Clear();
+                }
+                else
+                {
+                    errorProviderIdentificacion.SetError(this.txtIdentificacion, "Por favor ingresar un número de cédula válido.");
+                }
+            }
+        }
+
+        private void TxtPaisNatal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloLetras(e,txtPaisNatal);
         }
     }
 }

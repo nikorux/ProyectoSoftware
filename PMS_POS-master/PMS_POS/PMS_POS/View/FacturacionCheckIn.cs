@@ -107,15 +107,18 @@ namespace PMS_POS.View
             try
             {
                 efectivo = Convert.ToSingle(txtEfectivo.Text);
-                if (efectivo <= 0)
+                cambio = efectivo - total;
+
+                if (cambio >= 0)
                 {
-                    //error
-                    
+
+                    txtCambio.Text = cambio.ToString();
+
                 }
                 else
                 {
-                    cambio = efectivo - total;
-                    txtCambio.Text = cambio.ToString();
+
+                    MessageBox.Show("");
                 }
             }
             catch
@@ -140,8 +143,16 @@ namespace PMS_POS.View
 
                 descuento = descuento / 100;
 
-                txtTotalAPagar.Text = (subtotal-(descuento * subtotal)).ToString();
-                txtCambio.Text = "";
+                if (subtotal - (descuento * subtotal) >= 0 )
+                {
+                    txtTotalAPagar.Text = (subtotal - (descuento * subtotal)).ToString();
+                    txtCambio.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("");
+                }
+                
             }
             catch
             {
@@ -166,6 +177,11 @@ namespace PMS_POS.View
             {
 
             }
+        }
+
+        private void TxtEfectivo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

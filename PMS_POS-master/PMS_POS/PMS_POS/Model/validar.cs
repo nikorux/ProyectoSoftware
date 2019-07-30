@@ -129,66 +129,50 @@ namespace PMS_POS.Model
             //* Método o función para validar una cédula dominicana*
             public static bool ValidarCedula(string cedula)
             {
-                //Declaración de variables a nivel de método o función.
-                int verificador = 0;
-                int digito = 0;
-                int digitoVerificador = 0;
-                int digitoImpar = 0;
-                int sumaPar = 0;
-                int sumaImpar = 0;
-                int longitud = Convert.ToInt32(cedula.Length);
-                /*Control de errores en el código*/
-                try
-                {
-                    //verificamos que la longitud del parametro sea igual a 11
-                    if (longitud == 11)
-                    {
-                        digitoVerificador = Convert.ToInt32(cedula.Substring(10, 1));
-                        //recorremos en un ciclo for cada dígito de la cédula
-                        for (int i = 9; i >= 0; i--)
-                      {
-                //si el digito no es par multiplicamos por 2
-                digito = Convert.ToInt32(cedula.Substring(i, 1));
-                if ((i % 2) != 0)
-                {
-                    digitoImpar = digito * 2;
-                    //si el digito obtenido es mayor a 10, restamos 9
-                    if (digitoImpar >= 10)
-                    {
-                        digitoImpar = digitoImpar - 9;
-                    }
-                    sumaImpar = sumaImpar + digitoImpar;
-                }
-                /*En los demás casos sumamos el dígito y lo aculamos 
-                 en la variable */
-                else
-                {
-                    sumaPar = sumaPar + digito;
-                }
+          
+            int[] organizacion = { 1, 2, 1, 2, 1, 2, 1, 2, 1, 2 };
+            int up = 0, result = 0, ac = 0;
+            string ab;
+            char[] oc;
+            
+            // Comprobaciones iniciales
+
+            if ((cedula == null) || (cedula.Length != 11))
+           {
+               return false;
             }
-            /*Obtenemos el verificador restandole a 10 el modulo 10 
-            de la suma total de los dígitos*/
-            verificador = 10 - ((sumaPar + sumaImpar) % 10);
-            /*si el verificador es igual a 10 y el dígito verificador
-              es igual a cero o el verificador y el dígito verificador 
-              son iguales retorna verdadero*/
-            if (((verificador == 10) && (digitoVerificador == 0))
-                      || (verificador == digitoVerificador))
-                      {
+
+            for (int i = 0; i < 10; i++)
+            {
+                up = (int) (char.GetNumericValue(cedula.ElementAt(i)) * organizacion[i]);
+                if (up >= 10)
+                {
+                    ab = up.ToString();
+                    oc = ab.ToCharArray();
+                    up = int.Parse(oc[0].ToString()) + int.Parse(oc[1].ToString());
+                }
+                result = result + up;
+            }
+            ac = (int)char.GetNumericValue(result.ToString().ToCharArray()[0]) * 10;
+            ac = (ac / 10) * 10;
+            if ( ac < result)
+            {
+                ac = (ac + 10) - result;
+            }
+            else
+            {
+                ac = ac - result;
+            }
+            if (char.GetNumericValue(cedula.ElementAt(10)) == ac)
+            {
                 return true;
             }
+            else
+            {
+                return false;
+            }
+           
         }
-                  else
-                 {
-                  Console.WriteLine("La cédula debe contener once(11) digitos");
-                }
-}
-             catch
-              {
-                Console.WriteLine("No se pudo validar la cédula");
-             }
-              return false;
-         }
         public static void ValidarPasaporte(KeyPressEventArgs tecla, TextBox text)
         {
             if (char.IsLetter(tecla.KeyChar))

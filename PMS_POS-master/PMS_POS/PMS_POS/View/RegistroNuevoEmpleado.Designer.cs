@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroNuevoEmpleado));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -74,6 +75,8 @@
             this.txtPrimerApellido = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
+            this.errorProviderCorreo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderIdentificacion = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -88,6 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderIdentificacion)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -161,7 +166,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(549, 70);
+            this.pictureBox11.Location = new System.Drawing.Point(549, 124);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(231, 10);
             this.pictureBox11.TabIndex = 209;
@@ -291,10 +296,13 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(231, 22);
             this.txtCorreo.TabIndex = 158;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCorreo_KeyPress);
+            this.txtCorreo.Leave += new System.EventHandler(this.TxtCorreo_Leave);
             // 
             // cbxTipoIdentificacion
             // 
             this.cbxTipoIdentificacion.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cbxTipoIdentificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoIdentificacion.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbxTipoIdentificacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoIdentificacion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -302,7 +310,7 @@
             this.cbxTipoIdentificacion.Items.AddRange(new object[] {
             "Cédula",
             "Pasaporte"});
-            this.cbxTipoIdentificacion.Location = new System.Drawing.Point(549, 104);
+            this.cbxTipoIdentificacion.Location = new System.Drawing.Point(549, 50);
             this.cbxTipoIdentificacion.Name = "cbxTipoIdentificacion";
             this.cbxTipoIdentificacion.Size = new System.Drawing.Size(231, 29);
             this.cbxTipoIdentificacion.TabIndex = 185;
@@ -317,6 +325,7 @@
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(231, 22);
             this.txtSegundoNombre.TabIndex = 165;
+            this.txtSegundoNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrimerNombre_KeyPress);
             // 
             // txtCiudad
             // 
@@ -328,6 +337,7 @@
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(231, 22);
             this.txtCiudad.TabIndex = 177;
+            this.txtCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPaisNatal_KeyPress);
             // 
             // txtIdentificacion
             // 
@@ -335,10 +345,13 @@
             this.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdentificacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificacion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtIdentificacion.Location = new System.Drawing.Point(549, 48);
+            this.txtIdentificacion.Location = new System.Drawing.Point(549, 102);
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.Size = new System.Drawing.Size(231, 22);
             this.txtIdentificacion.TabIndex = 110;
+            this.txtIdentificacion.TextChanged += new System.EventHandler(this.TxtIdentificacion_TextChanged);
+            this.txtIdentificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdentificacion_KeyPress);
+            this.txtIdentificacion.Leave += new System.EventHandler(this.TxtIdentificacion_Leave);
             // 
             // txtDireccion
             // 
@@ -362,6 +375,7 @@
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Size = new System.Drawing.Size(231, 22);
             this.txtSegundoApellido.TabIndex = 168;
+            this.txtSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrimerNombre_KeyPress);
             // 
             // label10
             // 
@@ -384,6 +398,7 @@
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(231, 22);
             this.txtPrimerNombre.TabIndex = 143;
+            this.txtPrimerNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrimerNombre_KeyPress);
             // 
             // txtTelefono
             // 
@@ -399,6 +414,7 @@
             // cbxSexo
             // 
             this.cbxSexo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cbxSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSexo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSexo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbxSexo.FormattingEnabled = true;
@@ -442,6 +458,7 @@
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(231, 22);
             this.txtProvincia.TabIndex = 173;
+            this.txtProvincia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPaisNatal_KeyPress);
             // 
             // label3
             // 
@@ -459,7 +476,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(545, 28);
+            this.label8.Location = new System.Drawing.Point(545, 82);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 21);
             this.label8.TabIndex = 91;
@@ -470,11 +487,11 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(545, 82);
+            this.label9.Location = new System.Drawing.Point(545, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 21);
+            this.label9.Size = new System.Drawing.Size(139, 21);
             this.label9.TabIndex = 141;
-            this.label9.Text = "Tipo Identicación:";
+            this.label9.Text = "Tipo Identificación:";
             // 
             // lbl
             // 
@@ -519,6 +536,7 @@
             this.txtPaisNatal.Name = "txtPaisNatal";
             this.txtPaisNatal.Size = new System.Drawing.Size(231, 22);
             this.txtPaisNatal.TabIndex = 172;
+            this.txtPaisNatal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPaisNatal_KeyPress);
             // 
             // label4
             // 
@@ -585,12 +603,13 @@
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(230, 22);
             this.txtPrimerApellido.TabIndex = 95;
+            this.txtPrimerApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrimerNombre_KeyPress);
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGuardar.Location = new System.Drawing.Point(307, 605);
             this.btnGuardar.Name = "btnGuardar";
@@ -603,13 +622,23 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label17.Location = new System.Drawing.Point(19, 32);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(282, 25);
+            this.label17.Size = new System.Drawing.Size(293, 25);
             this.label17.TabIndex = 200;
             this.label17.Text = "Registrar Nuevo Empleado";
+            // 
+            // errorProviderCorreo
+            // 
+            this.errorProviderCorreo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderCorreo.ContainerControl = this;
+            // 
+            // errorProviderIdentificacion
+            // 
+            this.errorProviderIdentificacion.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderIdentificacion.ContainerControl = this;
             // 
             // RegistroNuevoEmpleado
             // 
@@ -638,6 +667,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderIdentificacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,5 +721,7 @@
         private System.Windows.Forms.TextBox txtPrimerApellido;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ErrorProvider errorProviderCorreo;
+        private System.Windows.Forms.ErrorProvider errorProviderIdentificacion;
     }
 }
