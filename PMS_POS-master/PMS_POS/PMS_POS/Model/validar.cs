@@ -47,6 +47,21 @@ namespace PMS_POS.Model
                 tecla.Handled = true;
             }
         }
+        public static void soloNumeros4(KeyPressEventArgs tecla, TextBox text)
+        {
+            if (char.IsDigit(tecla.KeyChar) && text.TextLength < 4)
+            {
+                tecla.Handled = false;
+            }
+            else if (char.IsControl(tecla.KeyChar))
+            {
+                tecla.Handled = false;
+            }
+            else
+            {
+                tecla.Handled = true;
+            }
+        }
         public static void soloNumerosPunto(KeyPressEventArgs tecla, TextBox text)
         { //función para validar que lo que venga en un txtbox sean numeros y un solo punto decimal y que
             //NO sea al principio

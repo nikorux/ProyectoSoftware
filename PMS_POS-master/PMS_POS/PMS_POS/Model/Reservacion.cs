@@ -300,7 +300,7 @@ namespace PMS_POS.Model
 
         public DataTable VistaTabla()
         {
-            instruccion = "Select hostal.reservacion.IdReservacion,hostal.reservacion.IdHuesped,hostal.reservacion.IdHabitacion, hostal.reservacion.FechaLlegada,hostal.reservacion.FechaSalida,hostal.reservacion.CantNoches,hostal.reservacion.CantAdultos,hostal.reservacion.CantInfantes,hostal.reservacion.Canal,hostal.reservacion.Comentario,hostal.reservacion.PrecioNoche,hostal.reservacion.PrecioTotal,hostal.reservacion.FechaLlegada as Llegada, hostal.reservacion.FechaSalida as Salida, hostal.habitacion.NumHab as Habitacion, hostal.reservacion.EstadoReservacion as Estado, CONCAT(huesped.PrimerNombre, ' ', huesped.SegundoNombre, ' ', huesped.PrimerApellido,' ', hostal.huesped.SegundoApellido) as Nombre, hostal.huesped.Telefono as Contacto FROM hostal.reservacion INNER JOIN hostal.habitacion ON hostal.reservacion.IdHabitacion = hostal.habitacion.IdHabitacion INNER JOIN hostal.huesped ON hostal.reservacion.IdHuesped = hostal.huesped.IdHuesped WHERE reservacion.IsDeleted = 0 GROUP BY hostal.reservacion.FechaLlegada; ";
+            instruccion = "Select hostal.reservacion.IdReservacion,hostal.reservacion.IdHuesped,hostal.reservacion.IdHabitacion, hostal.reservacion.FechaLlegada,hostal.reservacion.FechaSalida,hostal.reservacion.CantNoches,hostal.reservacion.CantAdultos,hostal.reservacion.CantInfantes,hostal.reservacion.Canal,hostal.reservacion.Comentario,hostal.reservacion.PrecioNoche,hostal.reservacion.PrecioTotal,hostal.reservacion.FechaLlegada as Llegada, hostal.reservacion.FechaSalida as Salida, hostal.habitacion.NumHab as Habitacion, hostal.reservacion.EstadoReservacion as Estado, CONCAT(huesped.PrimerNombre, ' ', huesped.SegundoNombre, ' ', huesped.PrimerApellido,' ', hostal.huesped.SegundoApellido) as Nombre, hostal.huesped.Telefono as Contacto FROM hostal.reservacion INNER JOIN hostal.habitacion ON hostal.reservacion.IdHabitacion = hostal.habitacion.IdHabitacion INNER JOIN hostal.huesped ON hostal.reservacion.IdHuesped = hostal.huesped.IdHuesped WHERE ( reservacion.IsDeleted = 0 ) GROUP BY hostal.reservacion.FechaLlegada; ";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
@@ -333,6 +333,44 @@ namespace PMS_POS.Model
                 conn.Close();
             }
             return dt;
+        }
+        public bool Confirmar(Reservacion r)
+        {
+            //create a default type and return its default value to false
+            //bool success = false;
+            //SQL Connection
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+
+                //SQL query Update
+                string sql = "UPDATE reservacion SET EstadoReservacion = @EstadoReservacion WHERE IdReservacion=@IdReservacion";
+
+                //Creating SQL Command
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+
+
+                cmd.Parameters.AddWithValue("@EstadoReservacion", "Confirmada");
+                cmd.Parameters.AddWithValue("@IdReservacion", r.IdReservacion);
+
+
+
+                mySqlConn.Open();
+                int row = cmd.ExecuteNonQuery();
+                mySqlConn.Close();
+                if (row > 0)
+                {
+
+                    return true;
+                }
+                else
+                {
+
+                    return false;
+                }
+            }
+
+
         }
     }
         

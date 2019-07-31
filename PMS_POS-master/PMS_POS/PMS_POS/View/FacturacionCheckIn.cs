@@ -73,30 +73,109 @@ namespace PMS_POS.View
         private void BtnRegistrarCheckIn_Click(object sender, EventArgs e)
         {
             Factura_Reservacion f = new Factura_Reservacion();
-            if(txtNombre.Text == string.Empty && txtEfectivo.Text == string.Empty && txtTotalAPagar.Text == string.Empty && txtCambio.Text == string.Empty)
+            if( cmbFormaPago.Text == string.Empty)
             {
-                MessageBox.Show("Faltan Ingresar datos.");
+                MessageBox.Show("Seleccione una forma de pago.");
             }
-            else
+            if ( cmbFormaPago.Text == "Tarjeta")
             {
-                /*
-                 @IdReservacion, @IdHuesped, @SubTotal, @TotalAPagar, @Fecha, @FormaDePago, @EfectivoRecibido, @Devuelta
-                 */
-                f.IdReservacion = id;
-                f.IdHuesped = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[1].Value);
-                f.SubTotal =  Convert.ToSingle(dgvHabitacion.Rows[0].Cells[12].Value);
-                //  f.TotalAPagar = nicole
-                f.Fecha = dtpFechaActual.Value;
-                f.FormaDePago = cmbFormaPago.Text;
-                if (f.Insert(f) == true)
+                if (txtNombre.Text == string.Empty || txtTotalAPagar.Text == string.Empty || txtBoxDigitos.Text == string.Empty || txtBoxCompania.Text == string.Empty || txtCajero.Text == string.Empty)
                 {
-                    MessageBox.Show("Se ha facturado correctamente.");
+                    MessageBox.Show("Faltan Ingresar datos.");
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un error al facturar.");
+                    f.IdReservacion = id;
+                    f.IdHuesped = Convert.ToInt32(txtIdCliente.Text);
+                    f.Empleado = txtCajero.Text;
+                    f.TotalAPagar = Convert.ToSingle(txtTotalAPagar.Text);
+                    f.FormaDePago = cmbFormaPago.Text;
+                    f.SubTotal = Convert.ToSingle(dgvHabitacion.Rows[0].Cells[12].Value);
+                    f.Fecha = dtpFechaActual.Value;
+                    f.UltimosDigitos = Convert.ToInt32(txtBoxDigitos.Text);
+                    f.CompaniaTarjeta = txtBoxCompania.Text;
+                    if (txtDescuento.Text == string.Empty)
+                    {
+                        //do nothing
+
+                    }
+                    else
+                    {
+                        f.Descuento = Convert.ToSingle(txtDescuento.Text);
+                    }
+
+
+                    if (f.InsertTarjeta(f) == true)
+                    {
+                        MessageBox.Show("Se ha facturado correctamente.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un error al facturar.");
+                    }
+
                 }
             }
+            if(cmbFormaPago.Text == "Efectivo")
+            {
+                if (txtNombre.Text == string.Empty && txtEfectivo.Text == string.Empty && txtTotalAPagar.Text == string.Empty && txtCambio.Text == string.Empty && txtCajero.Text == string.Empty)
+                {
+                    MessageBox.Show("Faltan Ingresar datos.");
+                }
+                else
+                {
+                    /*
+                     @IdReservacion, @IdHuesped, @SubTotal, @TotalAPagar, @Fecha, @FormaDePago, @EfectivoRecibido, @Devuelta
+                     */
+                    f.IdReservacion = id;
+                    f.IdHuesped = Convert.ToInt32(txtIdCliente.Text);
+                    f.Empleado = txtCajero.Text;
+                    f.TotalAPagar = Convert.ToSingle(txtTotalAPagar.Text);
+                    f.Fecha = dtpFechaActual.Value;
+                    f.FormaDePago = cmbFormaPago.Text;
+                    f.SubTotal = Convert.ToSingle(dgvHabitacion.Rows[0].Cells[12].Value);
+                    if (txtDescuento.Text == string.Empty)
+                    {
+                        //do nothing
+                        
+                    }
+                    else
+                    {
+                        f.Descuento = Convert.ToSingle(txtDescuento.Text);
+                    }
+                    if( txtEfectivo.Text == string.Empty)
+                    {
+                        //do nothing
+                       
+                    }
+                    else
+                    {
+                        f.EfectivoRecibido = Convert.ToSingle(txtEfectivo.Text);
+                    }
+                   if ( txtCambio.Text == string.Empty)
+                    {
+                        //do nothing
+                        MessageBox.Show("Faltan Ingresar datos.");
+                    }
+                    else
+                    {
+                        f.Devuelta = Convert.ToSingle(txtCambio.Text);
+                    }
+                 
+                    if (f.InsertEfectivo(f) == true && txtCambio.Text != "")
+                    {
+                        Reservacion reserva = new Reservacion();
+                        MessageBox.Show("Se ha facturado correctamente.");
+                        reserva.IdReservacion = f.IdReservacion;
+                        reserva.Confirmar(reserva);
+                    }
+                    else
+                    {
+                      //  MessageBox.Show("Ha ocurrido un error al facturar.");
+                    }
+                }
+            }
+          
         }
 
         private void TxtEfectivo_Leave_1(object sender, EventArgs e)
@@ -118,7 +197,7 @@ namespace PMS_POS.View
                 else
                 {
 
-                    MessageBox.Show("");
+                   // MessageBox.Show("");
                 }
             }
             catch
@@ -175,6 +254,14 @@ namespace PMS_POS.View
         {
             if (cmbFormaPago.Text == "Tarjeta")
             {
+                pnlTarjeta.Visible = true;
+                txtEfectivo.Enabled = false;
+               
+            }
+            if (cmbFormaPago.Text == "Efectivo")
+            {
+                pnlTarjeta.Visible = false;
+                txtEfectivo.Enabled = true;
 
             }
         }
@@ -183,6 +270,19 @@ namespace PMS_POS.View
         {
 
         }
+
+        private void LblDigitos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtBoxDigitos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            validar.soloNumeros4(e, txtBoxDigitos);
+        }
+
+      
     }
 }
  
