@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.txtIdTipoHab = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoHabitacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -58,7 +59,6 @@
             // 
             this.txtTipoHabitacion.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtTipoHabitacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipoHabitacion.Enabled = false;
             this.txtTipoHabitacion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTipoHabitacion.Location = new System.Drawing.Point(105, 234);
             this.txtTipoHabitacion.Name = "txtTipoHabitacion";
@@ -90,7 +90,7 @@
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(168, 35);
             this.btnBorrar.TabIndex = 10;
-            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.Text = "Eliminar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.BtnBorrar_Click);
             // 
@@ -114,7 +114,7 @@
             this.dgvTipoHabitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTipoHabitacion.Location = new System.Drawing.Point(356, 157);
             this.dgvTipoHabitacion.Name = "dgvTipoHabitacion";
-            this.dgvTipoHabitacion.Size = new System.Drawing.Size(174, 193);
+            this.dgvTipoHabitacion.Size = new System.Drawing.Size(245, 193);
             this.dgvTipoHabitacion.TabIndex = 8;
             this.dgvTipoHabitacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTipoHabitacion_CellClick);
             this.dgvTipoHabitacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTipoHabitacion_CellContentClick);
@@ -149,11 +149,24 @@
             this.pictureBox8.TabIndex = 207;
             this.pictureBox8.TabStop = false;
             // 
+            // txtIdTipoHab
+            // 
+            this.txtIdTipoHab.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtIdTipoHab.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdTipoHab.Enabled = false;
+            this.txtIdTipoHab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtIdTipoHab.Location = new System.Drawing.Point(105, 126);
+            this.txtIdTipoHab.Name = "txtIdTipoHab";
+            this.txtIdTipoHab.Size = new System.Drawing.Size(231, 13);
+            this.txtIdTipoHab.TabIndex = 208;
+            this.txtIdTipoHab.Visible = false;
+            // 
             // ConfigurarTipoHabitacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.txtIdTipoHab);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -185,5 +198,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.TextBox txtIdTipoHab;
     }
 }

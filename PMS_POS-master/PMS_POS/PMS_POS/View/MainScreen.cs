@@ -611,6 +611,17 @@ namespace PMS_POS
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
         }
+
+        private void TipoDeDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            ConfigurarTipoDocumento thisprobando = new ConfigurarTipoDocumento();
+            //thisprobando.TopLevel = false;
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
+        }
     }
 
     }

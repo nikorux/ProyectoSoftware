@@ -43,6 +43,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +56,7 @@
             this.CheckInToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.CheckOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FacturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoríaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,24 +67,22 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCheckOut = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.btnExtras = new System.Windows.Forms.Button();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnReservas = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.btnExtras = new System.Windows.Forms.Button();
-            this.btnInicio = new System.Windows.Forms.Button();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.reportesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.userControlInicio1 = new PMS_POS.View.UserControlInicio();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.PanelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.SuspendLayout();
             // 
             // timer3
@@ -209,6 +209,16 @@
             this.label19.TabIndex = 13;
             this.label19.Text = "Logo";
             // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = global::PMS_POS.Properties.Resources.Imagen101;
+            this.pictureBox15.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.TabIndex = 12;
+            this.pictureBox15.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.menuStrip1);
@@ -308,6 +318,13 @@
             this.FacturacionToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.FacturacionToolStripMenuItem.Text = "Facturación";
             // 
+            // reportesToolStripMenuItem1
+            // 
+            this.reportesToolStripMenuItem1.Name = "reportesToolStripMenuItem1";
+            this.reportesToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.reportesToolStripMenuItem1.Text = "Reportes";
+            this.reportesToolStripMenuItem1.Click += new System.EventHandler(this.ReportesToolStripMenuItem1_Click);
+            // 
             // configuracionesToolStripMenuItem
             // 
             this.configuracionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -345,6 +362,7 @@
             this.tipoDeDocumentosToolStripMenuItem.Name = "tipoDeDocumentosToolStripMenuItem";
             this.tipoDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.tipoDeDocumentosToolStripMenuItem.Text = "Tipo de Documentos";
+            this.tipoDeDocumentosToolStripMenuItem.Click += new System.EventHandler(this.TipoDeDocumentosToolStripMenuItem_Click);
             // 
             // tipoDeHabitacionesToolStripMenuItem
             // 
@@ -386,6 +404,25 @@
             this.panel3.Size = new System.Drawing.Size(82, 681);
             this.panel3.TabIndex = 47;
             // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCheckOut.FlatAppearance.BorderSize = 0;
+            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Image = global::PMS_POS.Properties.Resources.checkout;
+            this.btnCheckOut.Location = new System.Drawing.Point(2, 246);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(80, 80);
+            this.btnCheckOut.TabIndex = 44;
+            this.btnCheckOut.Text = "Check-Out";
+            this.btnCheckOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCheckOut.UseCompatibleTextRendering = true;
+            this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.BtnCheckOut_Click);
+            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -393,6 +430,44 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(7, 80);
             this.panel10.TabIndex = 49;
+            // 
+            // btnExtras
+            // 
+            this.btnExtras.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnExtras.FlatAppearance.BorderSize = 0;
+            this.btnExtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExtras.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExtras.ForeColor = System.Drawing.Color.White;
+            this.btnExtras.Image = global::PMS_POS.Properties.Resources.Imagen611;
+            this.btnExtras.Location = new System.Drawing.Point(1, 408);
+            this.btnExtras.Name = "btnExtras";
+            this.btnExtras.Size = new System.Drawing.Size(80, 80);
+            this.btnExtras.TabIndex = 48;
+            this.btnExtras.Text = "Extras";
+            this.btnExtras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExtras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnExtras.UseCompatibleTextRendering = true;
+            this.btnExtras.UseVisualStyleBackColor = false;
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnInicio.CausesValidation = false;
+            this.btnInicio.FlatAppearance.BorderSize = 0;
+            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.ForeColor = System.Drawing.Color.White;
+            this.btnInicio.Image = global::PMS_POS.Properties.Resources.Imagen34;
+            this.btnInicio.Location = new System.Drawing.Point(1, 0);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(80, 80);
+            this.btnInicio.TabIndex = 46;
+            this.btnInicio.Text = "Inicio";
+            this.btnInicio.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnInicio.UseCompatibleTextRendering = true;
+            this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.BtnInicio_Click);
             // 
             // PanelContenedor
             // 
@@ -459,80 +534,6 @@
             this.btnReservas.UseVisualStyleBackColor = false;
             this.btnReservas.Click += new System.EventHandler(this.BtnReservas_Click);
             // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCheckOut.FlatAppearance.BorderSize = 0;
-            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Image = global::PMS_POS.Properties.Resources.checkout;
-            this.btnCheckOut.Location = new System.Drawing.Point(2, 246);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(80, 80);
-            this.btnCheckOut.TabIndex = 44;
-            this.btnCheckOut.Text = "Check-Out";
-            this.btnCheckOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCheckOut.UseCompatibleTextRendering = true;
-            this.btnCheckOut.UseVisualStyleBackColor = false;
-            this.btnCheckOut.Click += new System.EventHandler(this.BtnCheckOut_Click);
-            // 
-            // btnExtras
-            // 
-            this.btnExtras.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnExtras.FlatAppearance.BorderSize = 0;
-            this.btnExtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExtras.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExtras.ForeColor = System.Drawing.Color.White;
-            this.btnExtras.Image = global::PMS_POS.Properties.Resources.Imagen611;
-            this.btnExtras.Location = new System.Drawing.Point(1, 408);
-            this.btnExtras.Name = "btnExtras";
-            this.btnExtras.Size = new System.Drawing.Size(80, 80);
-            this.btnExtras.TabIndex = 48;
-            this.btnExtras.Text = "Extras";
-            this.btnExtras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExtras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnExtras.UseCompatibleTextRendering = true;
-            this.btnExtras.UseVisualStyleBackColor = false;
-            // 
-            // btnInicio
-            // 
-            this.btnInicio.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnInicio.CausesValidation = false;
-            this.btnInicio.FlatAppearance.BorderSize = 0;
-            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.ForeColor = System.Drawing.Color.White;
-            this.btnInicio.Image = global::PMS_POS.Properties.Resources.Imagen34;
-            this.btnInicio.Location = new System.Drawing.Point(1, 0);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(80, 80);
-            this.btnInicio.TabIndex = 46;
-            this.btnInicio.Text = "Inicio";
-            this.btnInicio.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnInicio.UseCompatibleTextRendering = true;
-            this.btnInicio.UseVisualStyleBackColor = false;
-            this.btnInicio.Click += new System.EventHandler(this.BtnInicio_Click);
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = global::PMS_POS.Properties.Resources.Imagen101;
-            this.pictureBox15.Location = new System.Drawing.Point(12, 5);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox15.TabIndex = 12;
-            this.pictureBox15.TabStop = false;
-            // 
-            // reportesToolStripMenuItem1
-            // 
-            this.reportesToolStripMenuItem1.Name = "reportesToolStripMenuItem1";
-            this.reportesToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
-            this.reportesToolStripMenuItem1.Text = "Reportes";
-            this.reportesToolStripMenuItem1.Click += new System.EventHandler(this.ReportesToolStripMenuItem1_Click);
-            // 
             // userControlInicio1
             // 
             this.userControlInicio1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -564,13 +565,13 @@
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.PanelContenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.ResumeLayout(false);
 
         }

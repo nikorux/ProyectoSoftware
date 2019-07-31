@@ -16,18 +16,21 @@ namespace PMS_POS.Model
         string instruccion;
 
         public string NombreDocumento { get; set; }
+        public string IdTipoDocumento { get; set; }
+
 
         public Documento() { }
 
-        public Documento(string pNombreDocumento)
+        public Documento(string pNombreDocumento, string pIdTipoDocumento)
 
         {
             this.NombreDocumento = pNombreDocumento;
+            this.IdTipoDocumento = pIdTipoDocumento;
         }
 
         public DataTable VistaTabla()
         {
-            instruccion = "Select NombreDocumento from documento";
+            instruccion = "Select NombreDocumento, IdTipoDocumento from documento WHERE IsDeleted = 0 ORDER BY IdTipoDocumento ASC";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
