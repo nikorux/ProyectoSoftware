@@ -116,6 +116,12 @@ namespace PMS_POS.View
             dgvProductosEnReceta.AllowUserToAddRows = false;
 
             int n = dgvProductosEnReceta.Rows.Add();
+
+            /*int IdInsumo = Convert.ToInt32(dgvProductosEnReceta.CurrentRow.Cells[0].Value);
+            float PrecioVenta = Convert.ToInt32(dgvProductosEnReceta.CurrentRow.Cells[3].Value);
+            string unidadMedida = cbxUnidadMedida.Text;
+            int CantidadComprada = Convert.ToInt32(dgvProductosEnReceta.CurrentRow.Cells[2].Value);*/
+
             dgvProductosEnReceta.Rows[n].Cells[0].Value = dgvProductosEnInventario.CurrentRow.Cells[1].Value.ToString();
             dgvProductosEnReceta.Rows[n].Cells[1].Value = nudCantidad.Value.ToString();
             dgvProductosEnReceta.Rows[n].Cells[2].Value = cbxUnidadMedida.SelectedItem.ToString();

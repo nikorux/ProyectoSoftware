@@ -186,6 +186,12 @@
     <Compile Include="View\MenuActual.Designer.cs">
       <DependentUpon>MenuActual.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MostradorPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MostradorPOS.Designer.cs">
+      <DependentUpon>MostradorPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MostradorUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -348,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MenuActual.resx">
       <DependentUpon>MenuActual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MostradorPOS.resx">
+      <DependentUpon>MostradorPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MostradorUI.resx">
       <DependentUpon>MostradorUI.cs</DependentUpon>
