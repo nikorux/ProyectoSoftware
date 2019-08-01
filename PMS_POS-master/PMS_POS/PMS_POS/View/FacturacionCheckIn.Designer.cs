@@ -47,6 +47,13 @@
             this.btnRegistrarCheckIn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNumDocumento = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pnlTarjeta = new System.Windows.Forms.Panel();
+            this.txtBoxCompania = new System.Windows.Forms.TextBox();
+            this.lblDigitos = new System.Windows.Forms.Label();
+            this.lblCompania = new System.Windows.Forms.Label();
+            this.txtBoxDigitos = new System.Windows.Forms.TextBox();
             this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.txtCajero = new System.Windows.Forms.TextBox();
@@ -74,16 +81,12 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.dgvHabitacion = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtBoxCompania = new System.Windows.Forms.TextBox();
-            this.lblDigitos = new System.Windows.Forms.Label();
-            this.txtBoxDigitos = new System.Windows.Forms.TextBox();
-            this.lblCompania = new System.Windows.Forms.Label();
-            this.pnlTarjeta = new System.Windows.Forms.Panel();
             this.errorProviderDigitos = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnlTarjeta.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHabitacion)).BeginInit();
-            this.pnlTarjeta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDigitos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,6 +131,7 @@
             this.txtTotalAPagar.Name = "txtTotalAPagar";
             this.txtTotalAPagar.Size = new System.Drawing.Size(195, 20);
             this.txtTotalAPagar.TabIndex = 95;
+            this.txtTotalAPagar.TextChanged += new System.EventHandler(this.TxtTotalAPagar_TextChanged);
             // 
             // txtDescuento
             // 
@@ -273,12 +276,14 @@
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Location = new System.Drawing.Point(39, 139);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(820, 246);
+            this.panel4.Size = new System.Drawing.Size(820, 278);
             this.panel4.TabIndex = 89;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.txtNumDocumento);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.pnlTarjeta);
             this.panel1.Controls.Add(this.dtpFechaActual);
             this.panel1.Controls.Add(this.label21);
@@ -294,32 +299,105 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Location = new System.Drawing.Point(17, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(790, 169);
+            this.panel1.Size = new System.Drawing.Size(790, 210);
             this.panel1.TabIndex = 90;
+            // 
+            // txtNumDocumento
+            // 
+            this.txtNumDocumento.Enabled = false;
+            this.txtNumDocumento.Location = new System.Drawing.Point(171, 111);
+            this.txtNumDocumento.Name = "txtNumDocumento";
+            this.txtNumDocumento.Size = new System.Drawing.Size(194, 20);
+            this.txtNumDocumento.TabIndex = 110;
+            this.txtNumDocumento.TextChanged += new System.EventHandler(this.TxtNumDocumento_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(24, 109);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(129, 20);
+            this.label11.TabIndex = 109;
+            this.label11.Text = "Núm Documento";
+            this.label11.Click += new System.EventHandler(this.Label11_Click);
+            // 
+            // pnlTarjeta
+            // 
+            this.pnlTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTarjeta.Controls.Add(this.txtBoxCompania);
+            this.pnlTarjeta.Controls.Add(this.lblDigitos);
+            this.pnlTarjeta.Controls.Add(this.lblCompania);
+            this.pnlTarjeta.Controls.Add(this.txtBoxDigitos);
+            this.pnlTarjeta.Location = new System.Drawing.Point(420, 65);
+            this.pnlTarjeta.Name = "pnlTarjeta";
+            this.pnlTarjeta.Size = new System.Drawing.Size(347, 96);
+            this.pnlTarjeta.TabIndex = 36;
+            this.pnlTarjeta.Visible = false;
+            // 
+            // txtBoxCompania
+            // 
+            this.txtBoxCompania.Location = new System.Drawing.Point(137, 59);
+            this.txtBoxCompania.Name = "txtBoxCompania";
+            this.txtBoxCompania.Size = new System.Drawing.Size(194, 20);
+            this.txtBoxCompania.TabIndex = 35;
+            // 
+            // lblDigitos
+            // 
+            this.lblDigitos.AutoSize = true;
+            this.lblDigitos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDigitos.Location = new System.Drawing.Point(4, 9);
+            this.lblDigitos.Name = "lblDigitos";
+            this.lblDigitos.Size = new System.Drawing.Size(121, 20);
+            this.lblDigitos.TabIndex = 34;
+            this.lblDigitos.Text = "Último 4 dígitos:";
+            this.lblDigitos.Click += new System.EventHandler(this.LblDigitos_Click);
+            // 
+            // lblCompania
+            // 
+            this.lblCompania.AutoSize = true;
+            this.lblCompania.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompania.Location = new System.Drawing.Point(4, 57);
+            this.lblCompania.Name = "lblCompania";
+            this.lblCompania.Size = new System.Drawing.Size(85, 20);
+            this.lblCompania.TabIndex = 32;
+            this.lblCompania.Text = "Compañía:";
+            // 
+            // txtBoxDigitos
+            // 
+            this.txtBoxDigitos.Location = new System.Drawing.Point(137, 11);
+            this.txtBoxDigitos.Name = "txtBoxDigitos";
+            this.txtBoxDigitos.Size = new System.Drawing.Size(194, 20);
+            this.txtBoxDigitos.TabIndex = 33;
+            this.txtBoxDigitos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxDigitos_KeyPress);
             // 
             // dtpFechaActual
             // 
-            this.dtpFechaActual.Location = new System.Drawing.Point(171, 141);
+            this.dtpFechaActual.Enabled = false;
+            this.dtpFechaActual.Location = new System.Drawing.Point(171, 177);
             this.dtpFechaActual.Name = "dtpFechaActual";
             this.dtpFechaActual.Size = new System.Drawing.Size(194, 20);
             this.dtpFechaActual.TabIndex = 31;
+            this.dtpFechaActual.ValueChanged += new System.EventHandler(this.DtpFechaActual_ValueChanged);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(23, 141);
+            this.label21.Location = new System.Drawing.Point(23, 177);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(58, 20);
             this.label21.TabIndex = 30;
             this.label21.Text = "Fecha:";
+            this.label21.Click += new System.EventHandler(this.Label21_Click);
             // 
             // txtCajero
             // 
-            this.txtCajero.Location = new System.Drawing.Point(171, 109);
+            this.txtCajero.Location = new System.Drawing.Point(171, 141);
             this.txtCajero.Name = "txtCajero";
             this.txtCajero.Size = new System.Drawing.Size(194, 20);
             this.txtCajero.TabIndex = 25;
+            this.txtCajero.TextChanged += new System.EventHandler(this.TxtCajero_TextChanged);
             // 
             // label19
             // 
@@ -382,11 +460,12 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(24, 109);
+            this.label12.Location = new System.Drawing.Point(24, 141);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 20);
             this.label12.TabIndex = 4;
             this.label12.Text = "Atendido por:";
+            this.label12.Click += new System.EventHandler(this.Label12_Click);
             // 
             // label8
             // 
@@ -540,7 +619,7 @@
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel10.Controls.Add(this.dgvHabitacion);
-            this.panel10.Location = new System.Drawing.Point(39, 397);
+            this.panel10.Location = new System.Drawing.Point(39, 433);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(820, 137);
             this.panel10.TabIndex = 93;
@@ -566,61 +645,11 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label10.Location = new System.Drawing.Point(62, 388);
+            this.label10.Location = new System.Drawing.Point(62, 424);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(169, 21);
             this.label10.TabIndex = 94;
             this.label10.Text = "Habitación Reservada";
-            // 
-            // txtBoxCompania
-            // 
-            this.txtBoxCompania.Location = new System.Drawing.Point(137, 59);
-            this.txtBoxCompania.Name = "txtBoxCompania";
-            this.txtBoxCompania.Size = new System.Drawing.Size(194, 20);
-            this.txtBoxCompania.TabIndex = 35;
-            // 
-            // lblDigitos
-            // 
-            this.lblDigitos.AutoSize = true;
-            this.lblDigitos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDigitos.Location = new System.Drawing.Point(4, 9);
-            this.lblDigitos.Name = "lblDigitos";
-            this.lblDigitos.Size = new System.Drawing.Size(121, 20);
-            this.lblDigitos.TabIndex = 34;
-            this.lblDigitos.Text = "Último 4 dígitos:";
-            this.lblDigitos.Click += new System.EventHandler(this.LblDigitos_Click);
-            // 
-            // txtBoxDigitos
-            // 
-            this.txtBoxDigitos.Location = new System.Drawing.Point(137, 11);
-            this.txtBoxDigitos.Name = "txtBoxDigitos";
-            this.txtBoxDigitos.Size = new System.Drawing.Size(194, 20);
-            this.txtBoxDigitos.TabIndex = 33;
-        
-            this.txtBoxDigitos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxDigitos_KeyPress);
-            // 
-            // lblCompania
-            // 
-            this.lblCompania.AutoSize = true;
-            this.lblCompania.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompania.Location = new System.Drawing.Point(4, 57);
-            this.lblCompania.Name = "lblCompania";
-            this.lblCompania.Size = new System.Drawing.Size(85, 20);
-            this.lblCompania.TabIndex = 32;
-            this.lblCompania.Text = "Compañía:";
-            // 
-            // pnlTarjeta
-            // 
-            this.pnlTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlTarjeta.Controls.Add(this.txtBoxCompania);
-            this.pnlTarjeta.Controls.Add(this.lblDigitos);
-            this.pnlTarjeta.Controls.Add(this.lblCompania);
-            this.pnlTarjeta.Controls.Add(this.txtBoxDigitos);
-            this.pnlTarjeta.Location = new System.Drawing.Point(420, 65);
-            this.pnlTarjeta.Name = "pnlTarjeta";
-            this.pnlTarjeta.Size = new System.Drawing.Size(347, 96);
-            this.pnlTarjeta.TabIndex = 36;
-            this.pnlTarjeta.Visible = false;
             // 
             // errorProviderDigitos
             // 
@@ -652,6 +681,8 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlTarjeta.ResumeLayout(false);
+            this.pnlTarjeta.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -664,8 +695,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHabitacion)).EndInit();
-            this.pnlTarjeta.ResumeLayout(false);
-            this.pnlTarjeta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDigitos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -724,5 +753,7 @@
         private System.Windows.Forms.Label lblCompania;
         private System.Windows.Forms.Panel pnlTarjeta;
         private System.Windows.Forms.ErrorProvider errorProviderDigitos;
+        private System.Windows.Forms.TextBox txtNumDocumento;
+        private System.Windows.Forms.Label label11;
     }
 }

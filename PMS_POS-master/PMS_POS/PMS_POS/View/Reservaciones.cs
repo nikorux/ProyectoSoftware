@@ -126,11 +126,11 @@ namespace PMS_POS.View
                     Habitacion hab = new Habitacion();
                     hab.IdHabitacion = obj.IdHabitacion;
 
-                    if (hab.CambiarEstado(hab.IdHabitacion, "Disponible") == true)
-                    {
+                   // if (hab.CambiarEstados(hab.IdHabitacion, "Disponible") == true)
+                   // {
                         MessageBox.Show("La reservacion ha sido eliminada.");
                         RefreshDgv();
-                    }
+                //    }
 
                 }
                 else

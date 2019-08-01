@@ -111,6 +111,47 @@ namespace PMS_POS.Model
 
             }
         }
+        public bool InsertSinRecargo(Factura_Reservacion f)
+        {
+            //bool success = false;
+
+
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+                string sql = "Insert into factura_reservacion (IdReservacion, IdHuesped, Empleado, SubTotal, TotalAPagar, Fecha, ) VALUES(@IdReservacion, @IdHuesped, @Empleado,  @SubTotal, @TotalAPagar, @Fecha)";
+                mySqlConn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                //cmd.Prepare();
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdReservacion", f.IdReservacion);          //1
+                cmd.Parameters.AddWithValue("@IdHuesped", f.IdHuesped);                  //2
+                cmd.Parameters.AddWithValue("@Empleado", f.Empleado);                    //
+               // cmd.Parameters.AddWithValue("@Descuento", f.Descuento);                  //
+                cmd.Parameters.AddWithValue("@SubTotal", f.SubTotal);                    //3
+                cmd.Parameters.AddWithValue("@TotalAPagar", f.TotalAPagar);              //4
+                cmd.Parameters.AddWithValue("@Fecha", DateTime.Today);                   //5
+              //  cmd.Parameters.AddWithValue("@FormaDePago", f.FormaDePago);              //6
+               // cmd.Parameters.AddWithValue("@EfectivoRecibido", f.EfectivoRecibido);    //7
+             //   cmd.Parameters.AddWithValue("@Devuelta", f.Devuelta);                    //8
+                                                                                         // cmd.Parameters.AddWithValue("@CompaniaTarjeta", f.CompaniaTarjeta);       //
+                                                                                         // cmd.Parameters.AddWithValue("@UltimosDigitos", f.UltimosDigitos);         //
+
+                int row = cmd.ExecuteNonQuery();
+                mySqlConn.Close();
+                if (row > 0)
+                {
+
+                    return true;
+                }
+                else
+                {
+
+                    return false;
+                }
+
+            }
+        }
+
 
 
 

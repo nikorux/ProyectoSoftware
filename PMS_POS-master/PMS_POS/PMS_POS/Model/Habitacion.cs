@@ -189,7 +189,7 @@ namespace PMS_POS.Model
             }
             return dt;
         }
-        public bool CambiarEstado(int idHabitacion, string estado)
+        public bool CambiarEstados(int idHabitacion, string estado)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {

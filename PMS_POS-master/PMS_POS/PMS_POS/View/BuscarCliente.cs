@@ -21,15 +21,7 @@ namespace PMS_POS.View
                 Huesped obj = new Huesped();
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) && txtBuscarCliente.Text != string.Empty)
-            {
-                dgvBuscarCliente.DataSource = obj.Search(txtBuscarCliente.Text);
-            }
-            else
-            {
-                dgvBuscarCliente.DataSource = obj.VistaTabla();
-                dgvBuscarCliente.Columns[0].Visible = false;
-            }
+          
         }
 
         private void BuscarCliente_Load(object sender, EventArgs e)
@@ -69,7 +61,30 @@ namespace PMS_POS.View
 
         private void TxtBuscarCliente_TextChanged(object sender, EventArgs e)
         {
+            if (txtBuscarCliente.Text != "")
+            {
 
+                dgvBuscarCliente.CurrentCell = null;
+                foreach (DataGridViewRow n in dgvBuscarCliente.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgvBuscarCliente.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarCliente.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                cargar();
+            }
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
@@ -80,6 +95,23 @@ namespace PMS_POS.View
         private void PictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DgvBuscarCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        void cargar()
+        {
+            dgvBuscarCliente.DataSource = obj.VistaTabla();
+            dgvBuscarCliente.Columns[0].Visible = false;
+            //   dgv.Columns[10].Visible = false;
+            //  dgv.Columns[11].Visible = false;
         }
     }
 }

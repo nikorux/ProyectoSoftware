@@ -56,6 +56,7 @@ namespace PMS_POS.View
             txtTelefono.Text = dgvHabitacion.Rows[0].Cells[4].Value.ToString();
             txtSubtotal.Text = dgvHabitacion.Rows[0].Cells[12].Value.ToString();
             txtTotalAPagar.Text = txtSubtotal.Text;
+            txtNumDocumento.Text = dgvHabitacion.Rows[0].Cells[14].Value.ToString();
 
 
         }
@@ -68,6 +69,9 @@ namespace PMS_POS.View
             dgvHabitacion.Columns[3].Visible = false;
             dgvHabitacion.Columns[4].Visible = false;
             dgvHabitacion.Columns[9].Visible = false;
+            dgvHabitacion.Columns[13].Visible = false;
+            dgvHabitacion.Columns[14].Visible = false;
+
         }
 
         private void BtnRegistrarCheckIn_Click(object sender, EventArgs e)
@@ -107,6 +111,15 @@ namespace PMS_POS.View
 
                     if (f.InsertTarjeta(f) == true)
                     {
+                        
+                        // RESERVACION PASA DE SIN CONFIRMAR A CHECK IN
+                        Reservacion reserva = new Reservacion();
+                        reserva.IdReservacion = f.IdReservacion;
+                        reserva.Confirmar(reserva);
+                        // HABITACION PASA DE DISPONIBLE A OCUPADA
+                        Habitacion hab = new Habitacion();
+                        hab.IdHabitacion = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[13].Value);
+                        hab.CambiarEstados(hab.IdHabitacion, "Ocupada");
                         MessageBox.Show("Se ha facturado correctamente.");
                     }
                     else
@@ -118,7 +131,7 @@ namespace PMS_POS.View
             }
             if(cmbFormaPago.Text == "Efectivo")
             {
-                if (txtNombre.Text == string.Empty && txtEfectivo.Text == string.Empty && txtTotalAPagar.Text == string.Empty && txtCambio.Text == string.Empty && txtCajero.Text == string.Empty)
+                if (txtNombre.Text == string.Empty || txtEfectivo.Text == string.Empty || txtTotalAPagar.Text == string.Empty || txtCambio.Text == string.Empty || txtCajero.Text == string.Empty)
                 {
                     MessageBox.Show("Faltan Ingresar datos.");
                 }
@@ -164,10 +177,15 @@ namespace PMS_POS.View
                  
                     if (f.InsertEfectivo(f) == true && txtCambio.Text != "")
                     {
+                        // RESERVACION PASA DE SIN CONFIRMAR A CHECK IN
                         Reservacion reserva = new Reservacion();
-                        MessageBox.Show("Se ha facturado correctamente.");
                         reserva.IdReservacion = f.IdReservacion;
                         reserva.Confirmar(reserva);
+                        // HABITACION PASA DE DISPONIBLE A OCUPADA
+                        Habitacion hab = new Habitacion();
+                        hab.IdHabitacion = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[13].Value);
+                        hab.CambiarEstados(hab.IdHabitacion, "Ocupada");
+                        MessageBox.Show("Se ha facturado correctamente.");
                     }
                     else
                     {
@@ -282,7 +300,40 @@ namespace PMS_POS.View
             validar.soloNumeros4(e, txtBoxDigitos);
         }
 
-      
+        private void TxtNumDocumento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtCajero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DtpFechaActual_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtTotalAPagar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
  
