@@ -46,13 +46,13 @@
             // 
             this.dgvCompras.AllowUserToAddRows = false;
             this.dgvCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCompras.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvCompras.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompras.Location = new System.Drawing.Point(14, 15);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
-            this.dgvCompras.Size = new System.Drawing.Size(1110, 524);
+            this.dgvCompras.Size = new System.Drawing.Size(1110, 401);
             this.dgvCompras.TabIndex = 15;
             // 
             // txtBuscar
@@ -107,7 +107,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(49, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(254, 29);
@@ -116,7 +116,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dateTimePicker3);
@@ -129,23 +129,23 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Controls.Add(this.dgvCompras);
             this.panel2.Location = new System.Drawing.Point(23, 134);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1144, 559);
+            this.panel2.Size = new System.Drawing.Size(1144, 429);
             this.panel2.TabIndex = 17;
             // 
             // HistorialCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "HistorialCompras";
-            this.Size = new System.Drawing.Size(1187, 710);
+            this.Size = new System.Drawing.Size(1020, 581);
             this.Load += new System.EventHandler(this.HistorialCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             this.panel1.ResumeLayout(false);

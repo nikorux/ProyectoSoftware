@@ -53,8 +53,6 @@
             this.btnProductoAInventario = new System.Windows.Forms.Button();
             this.cbxCategoriaRP = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscarProducto = new System.Windows.Forms.TextBox();
@@ -115,9 +113,9 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.lblTitulo.BackColor = System.Drawing.Color.White;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblTitulo.Location = new System.Drawing.Point(264, 28);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(197, 28);
@@ -215,7 +213,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.txtDescripcion.BackColor = System.Drawing.Color.Gainsboro;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(21, 34);
@@ -310,7 +308,7 @@
             // 
             // btnGoBack
             // 
-            this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnGoBack.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoBack.ForeColor = System.Drawing.Color.White;
@@ -329,7 +327,7 @@
             this.chxAplicarITBIS.AutoSize = true;
             this.chxAplicarITBIS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chxAplicarITBIS.ForeColor = System.Drawing.Color.White;
-            this.chxAplicarITBIS.Location = new System.Drawing.Point(35, 36);
+            this.chxAplicarITBIS.Location = new System.Drawing.Point(35, 55);
             this.chxAplicarITBIS.Name = "chxAplicarITBIS";
             this.chxAplicarITBIS.Size = new System.Drawing.Size(123, 22);
             this.chxAplicarITBIS.TabIndex = 72;
@@ -338,7 +336,7 @@
             // 
             // pnlOpcionesRegistroProducto
             // 
-            this.pnlOpcionesRegistroProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlOpcionesRegistroProducto.BackColor = System.Drawing.Color.LightSteelBlue;
             this.pnlOpcionesRegistroProducto.Controls.Add(this.label18);
             this.pnlOpcionesRegistroProducto.Controls.Add(this.btnCancelar);
             this.pnlOpcionesRegistroProducto.Controls.Add(this.btnProductoMostrador);
@@ -362,7 +360,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
@@ -376,7 +374,7 @@
             // 
             // btnProductoMostrador
             // 
-            this.btnProductoMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
+            this.btnProductoMostrador.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnProductoMostrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductoMostrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductoMostrador.ForeColor = System.Drawing.Color.White;
@@ -390,7 +388,7 @@
             // 
             // btnProductoAInventario
             // 
-            this.btnProductoAInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnProductoAInventario.BackColor = System.Drawing.Color.SteelBlue;
             this.btnProductoAInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductoAInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductoAInventario.ForeColor = System.Drawing.Color.White;
@@ -424,33 +422,6 @@
             this.label3.Size = new System.Drawing.Size(74, 16);
             this.label3.TabIndex = 41;
             this.label3.Text = "Categoría:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(32, 73);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(109, 16);
-            this.label19.TabIndex = 84;
-            this.label19.Text = "Tipo producto:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Bebidas",
-            "Platos",
-            "Guarnición"});
-            this.comboBox1.Location = new System.Drawing.Point(147, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 26);
-            this.comboBox1.TabIndex = 85;
             // 
             // cbxCategoria
             // 
@@ -489,7 +460,7 @@
             // 
             // btnAjustarStock
             // 
-            this.btnAjustarStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnAjustarStock.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAjustarStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAjustarStock.Font = new System.Drawing.Font("SansSerif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnAjustarStock.ForeColor = System.Drawing.Color.White;
@@ -505,12 +476,14 @@
             // 
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvProductos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(19, 13);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvProductos.RowTemplate.Height = 90;
             this.dgvProductos.Size = new System.Drawing.Size(922, 399);
             this.dgvProductos.TabIndex = 1;
             // 
@@ -518,7 +491,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label14.Location = new System.Drawing.Point(41, 9);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(221, 29);
@@ -528,7 +501,7 @@
             // btnNuevoProducto
             // 
             this.btnNuevoProducto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnNuevoProducto.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnNuevoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoProducto.Font = new System.Drawing.Font("SansSerif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnNuevoProducto.ForeColor = System.Drawing.Color.White;
@@ -579,9 +552,9 @@
             this.cbxAccionAjuste.Items.AddRange(new object[] {
             "Aumentar",
             "Disminuir"});
-            this.cbxAccionAjuste.Location = new System.Drawing.Point(194, 77);
+            this.cbxAccionAjuste.Location = new System.Drawing.Point(176, 77);
             this.cbxAccionAjuste.Name = "cbxAccionAjuste";
-            this.cbxAccionAjuste.Size = new System.Drawing.Size(159, 26);
+            this.cbxAccionAjuste.Size = new System.Drawing.Size(177, 26);
             this.cbxAccionAjuste.TabIndex = 79;
             // 
             // cbxUnidadMedidaAjustar
@@ -617,6 +590,7 @@
             // 
             this.lblNombreProductoAjustar.AutoSize = true;
             this.lblNombreProductoAjustar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreProductoAjustar.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblNombreProductoAjustar.Location = new System.Drawing.Point(191, 44);
             this.lblNombreProductoAjustar.Name = "lblNombreProductoAjustar";
             this.lblNombreProductoAjustar.Size = new System.Drawing.Size(79, 16);
@@ -625,7 +599,7 @@
             // 
             // btnGuardarAjuste
             // 
-            this.btnGuardarAjuste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnGuardarAjuste.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnGuardarAjuste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarAjuste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarAjuste.ForeColor = System.Drawing.Color.White;
@@ -639,7 +613,7 @@
             // 
             // btnCancelarAjuste
             // 
-            this.btnCancelarAjuste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnCancelarAjuste.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnCancelarAjuste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarAjuste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarAjuste.ForeColor = System.Drawing.Color.White;
@@ -655,7 +629,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(136, 78);
+            this.label11.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label11.Location = new System.Drawing.Point(102, 77);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 16);
             this.label11.TabIndex = 73;
@@ -665,6 +640,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("SansSerif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label13.Location = new System.Drawing.Point(87, 163);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 34);
@@ -675,6 +651,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label15.Location = new System.Drawing.Point(87, 123);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(74, 16);
@@ -746,7 +723,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel1.Controls.Add(this.pnlAjustarStock);
             this.splitContainer1.Panel1.Controls.Add(this.panel2);
             this.splitContainer1.Panel1.Controls.Add(this.panel1);
@@ -759,25 +736,25 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.btnEditarReceta);
             this.splitContainer1.Panel2.Controls.Add(this.panel5);
+            this.splitContainer1.Panel2.Controls.Add(this.btnEditarP);
             this.splitContainer1.Panel2.Controls.Add(this.pnlOpcionesRegistroProducto);
             this.splitContainer1.Panel2.Controls.Add(this.btnAgregarReceta);
             this.splitContainer1.Panel2.Controls.Add(this.panel4);
-            this.splitContainer1.Panel2.Controls.Add(this.btnEditarP);
             this.splitContainer1.Panel2.Controls.Add(this.panel6);
             this.splitContainer1.Panel2.Controls.Add(this.btnGuardar);
             this.splitContainer1.Panel2.Controls.Add(this.btnGoBack);
             this.splitContainer1.Panel2.Controls.Add(this.lblTitulo);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.splitContainer1.Size = new System.Drawing.Size(1021, 580);
-            this.splitContainer1.SplitterDistance = 36;
+            this.splitContainer1.SplitterDistance = 989;
             this.splitContainer1.TabIndex = 8;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Controls.Add(this.txtBuscarProducto);
             this.panel2.Controls.Add(this.cbxCategoria);
             this.panel2.Controls.Add(this.label17);
@@ -790,7 +767,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.dgvProductos);
             this.panel1.Location = new System.Drawing.Point(19, 125);
             this.panel1.Name = "panel1";
@@ -800,7 +777,7 @@
             // btnEliminar
             // 
             this.btnEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.SkyBlue;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("SansSerif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
@@ -814,7 +791,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnEditar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("SansSerif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
@@ -828,7 +805,7 @@
             // 
             // btnEditarReceta
             // 
-            this.btnEditarReceta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnEditarReceta.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEditarReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarReceta.ForeColor = System.Drawing.Color.White;
@@ -842,7 +819,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.panel5.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.txtDescripcion);
             this.panel5.Location = new System.Drawing.Point(624, 68);
@@ -852,7 +829,7 @@
             // 
             // btnAgregarReceta
             // 
-            this.btnAgregarReceta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnAgregarReceta.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAgregarReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarReceta.ForeColor = System.Drawing.Color.White;
@@ -866,7 +843,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.chkProductoLiquido);
             this.panel4.Controls.Add(this.cbxUnidadMedida);
@@ -929,7 +906,7 @@
             // 
             // btnEditarP
             // 
-            this.btnEditarP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnEditarP.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarP.ForeColor = System.Drawing.Color.White;
@@ -943,10 +920,8 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
-            this.panel6.Controls.Add(this.label19);
+            this.panel6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.comboBox1);
             this.panel6.Controls.Add(this.chxAplicarITBIS);
             this.panel6.Location = new System.Drawing.Point(624, 341);
             this.panel6.Name = "panel6";
@@ -966,7 +941,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnGuardar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
@@ -1044,8 +1019,6 @@
         private System.Windows.Forms.Button btnProductoAInventario;
         private System.Windows.Forms.ComboBox cbxCategoriaRP;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox cbxCategoria;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscarProducto;

@@ -65,13 +65,13 @@
             // 
             this.dgvProductosComprados.AllowUserToAddRows = false;
             this.dgvProductosComprados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProductosComprados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvProductosComprados.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvProductosComprados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductosComprados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductosComprados.Location = new System.Drawing.Point(6, 21);
             this.dgvProductosComprados.Name = "dgvProductosComprados";
             this.dgvProductosComprados.ReadOnly = true;
-            this.dgvProductosComprados.Size = new System.Drawing.Size(763, 259);
+            this.dgvProductosComprados.Size = new System.Drawing.Size(763, 271);
             this.dgvProductosComprados.TabIndex = 1;
             // 
             // btnAgregar
@@ -92,9 +92,9 @@
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBuscar.Location = new System.Drawing.Point(44, 66);
+            this.txtBuscar.Location = new System.Drawing.Point(30, 66);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(301, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(338, 22);
             this.txtBuscar.TabIndex = 4;
             this.txtBuscar.Text = "Buscar Producto";
             this.txtBuscar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBuscar_MouseClick);
@@ -103,7 +103,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(39, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(292, 28);
@@ -133,26 +133,26 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.groupBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Controls.Add(this.dgvProductosComprados);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(382, 267);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(775, 286);
+            this.groupBox1.Size = new System.Drawing.Size(775, 298);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos comprados";
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.groupBox2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox2.Controls.Add(this.dgvProductosRegistrados);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(29, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(339, 459);
+            this.groupBox2.Size = new System.Drawing.Size(339, 471);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Productos registrados";
@@ -160,14 +160,14 @@
             // dgvProductosRegistrados
             // 
             this.dgvProductosRegistrados.AllowUserToAddRows = false;
-            this.dgvProductosRegistrados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvProductosRegistrados.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvProductosRegistrados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductosRegistrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductosRegistrados.Location = new System.Drawing.Point(7, 19);
             this.dgvProductosRegistrados.Name = "dgvProductosRegistrados";
             this.dgvProductosRegistrados.ReadOnly = true;
             this.dgvProductosRegistrados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductosRegistrados.Size = new System.Drawing.Size(326, 434);
+            this.dgvProductosRegistrados.Size = new System.Drawing.Size(326, 446);
             this.dgvProductosRegistrados.TabIndex = 1;
             this.dgvProductosRegistrados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductosRegistrados_CellClick);
             this.dgvProductosRegistrados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductosRegistrados_CellContentClick);
@@ -225,7 +225,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.groupBox3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox3.Controls.Add(this.txtIdInsumo);
             this.groupBox3.Controls.Add(this.txtIdProveedor);
             this.groupBox3.Controls.Add(this.txtCantDisp);
@@ -334,7 +334,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
@@ -348,7 +348,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -356,7 +356,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
             this.Name = "RegistrarNuevaCompra";
-            this.Size = new System.Drawing.Size(1187, 710);
+            this.Size = new System.Drawing.Size(1020, 581);
             this.Load += new System.EventHandler(this.RegistrarNuevaCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosComprados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnCantComprada)).EndInit();
