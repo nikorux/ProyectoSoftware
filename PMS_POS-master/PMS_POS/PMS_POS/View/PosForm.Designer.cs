@@ -33,8 +33,6 @@
             this.panelBasePOS = new System.Windows.Forms.Panel();
             this.panelUIseleccionada = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.lblAMPM = new System.Windows.Forms.Label();
             this.pnlBotonVentas = new System.Windows.Forms.Panel();
             this.lblVentas = new System.Windows.Forms.Label();
@@ -87,7 +85,6 @@
             this.panelBasePOS.SuspendLayout();
             this.panelUIseleccionada.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.pnlBotonVentas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.pnlBotonInventario.SuspendLayout();
@@ -136,6 +133,7 @@
             // 
             // panelUIseleccionada
             // 
+            this.panelUIseleccionada.BackColor = System.Drawing.Color.White;
             this.panelUIseleccionada.Controls.Add(this.panel2);
             this.panelUIseleccionada.Controls.Add(this.panel1);
             this.panelUIseleccionada.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -146,8 +144,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel2.Controls.Add(this.lblAMPM);
             this.panel2.Controls.Add(this.pnlBotonVentas);
             this.panel2.Controls.Add(this.pnlBotonInventario);
@@ -162,35 +159,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1187, 109);
+            this.panel2.Size = new System.Drawing.Size(1187, 80);
             this.panel2.TabIndex = 14;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Teal;
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(202, 108);
-            this.panel3.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(73, 39);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 24);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "LOGO";
             // 
             // lblAMPM
             // 
             this.lblAMPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAMPM.ForeColor = System.Drawing.Color.White;
-            this.lblAMPM.Location = new System.Drawing.Point(1105, 62);
+            this.lblAMPM.Location = new System.Drawing.Point(1106, 45);
             this.lblAMPM.Name = "lblAMPM";
             this.lblAMPM.Size = new System.Drawing.Size(55, 29);
             this.lblAMPM.TabIndex = 2;
@@ -198,12 +174,12 @@
             // 
             // pnlBotonVentas
             // 
-            this.pnlBotonVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.pnlBotonVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.pnlBotonVentas.Controls.Add(this.lblVentas);
             this.pnlBotonVentas.Controls.Add(this.pictureBox16);
-            this.pnlBotonVentas.Location = new System.Drawing.Point(884, 8);
+            this.pnlBotonVentas.Location = new System.Drawing.Point(523, 9);
             this.pnlBotonVentas.Name = "pnlBotonVentas";
-            this.pnlBotonVentas.Size = new System.Drawing.Size(88, 101);
+            this.pnlBotonVentas.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonVentas.TabIndex = 0;
             this.pnlBotonVentas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBotonVentas_MouseClick_1);
             this.pnlBotonVentas.MouseLeave += new System.EventHandler(this.PnlBotonVentas_MouseLeave_1);
@@ -212,10 +188,10 @@
             // lblVentas
             // 
             this.lblVentas.AutoSize = true;
-            this.lblVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVentas.Location = new System.Drawing.Point(17, 82);
+            this.lblVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVentas.Location = new System.Drawing.Point(12, 54);
             this.lblVentas.Name = "lblVentas";
-            this.lblVentas.Size = new System.Drawing.Size(59, 18);
+            this.lblVentas.Size = new System.Drawing.Size(50, 15);
             this.lblVentas.TabIndex = 20;
             this.lblVentas.Text = "Ventas";
             this.lblVentas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblVentas_MouseClick);
@@ -225,9 +201,9 @@
             // pictureBox16
             // 
             this.pictureBox16.Image = global::PMS_POS.Properties.Resources.VentasIMG;
-            this.pictureBox16.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox16.Location = new System.Drawing.Point(9, 3);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(82, 80);
+            this.pictureBox16.Size = new System.Drawing.Size(53, 52);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 18;
             this.pictureBox16.TabStop = false;
@@ -237,12 +213,12 @@
             // 
             // pnlBotonInventario
             // 
-            this.pnlBotonInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.pnlBotonInventario.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonInventario.Controls.Add(this.label7);
             this.pnlBotonInventario.Controls.Add(this.pictureBox10);
-            this.pnlBotonInventario.Location = new System.Drawing.Point(338, 8);
+            this.pnlBotonInventario.Location = new System.Drawing.Point(85, 9);
             this.pnlBotonInventario.Name = "pnlBotonInventario";
-            this.pnlBotonInventario.Size = new System.Drawing.Size(88, 101);
+            this.pnlBotonInventario.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonInventario.TabIndex = 8;
             this.pnlBotonInventario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBotonInventario_MouseClick_1);
             this.pnlBotonInventario.MouseLeave += new System.EventHandler(this.PnlBotonInventario_MouseLeave_1);
@@ -251,10 +227,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 81);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(0, 54);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 18);
+            this.label7.Size = new System.Drawing.Size(70, 15);
             this.label7.TabIndex = 14;
             this.label7.Text = "Inventario";
             this.label7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Label7_MouseClick);
@@ -264,9 +240,9 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::PMS_POS.Properties.Resources.InventarioIMG;
-            this.pictureBox10.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox10.Location = new System.Drawing.Point(9, 3);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(82, 80);
+            this.pictureBox10.Size = new System.Drawing.Size(53, 52);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 13;
             this.pictureBox10.TabStop = false;
@@ -276,12 +252,12 @@
             // 
             // pnlBotonTransacciones
             // 
-            this.pnlBotonTransacciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.pnlBotonTransacciones.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonTransacciones.Controls.Add(this.Ordenes);
             this.pnlBotonTransacciones.Controls.Add(this.pictureBox14);
-            this.pnlBotonTransacciones.Location = new System.Drawing.Point(702, 8);
+            this.pnlBotonTransacciones.Location = new System.Drawing.Point(377, 9);
             this.pnlBotonTransacciones.Name = "pnlBotonTransacciones";
-            this.pnlBotonTransacciones.Size = new System.Drawing.Size(88, 101);
+            this.pnlBotonTransacciones.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonTransacciones.TabIndex = 5;
             this.pnlBotonTransacciones.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBotonTransacciones_MouseClick);
             this.pnlBotonTransacciones.MouseLeave += new System.EventHandler(this.PnlBotonTransacciones_MouseLeave_1);
@@ -290,10 +266,10 @@
             // Ordenes
             // 
             this.Ordenes.AutoSize = true;
-            this.Ordenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ordenes.Location = new System.Drawing.Point(8, 82);
+            this.Ordenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ordenes.Location = new System.Drawing.Point(6, 54);
             this.Ordenes.Name = "Ordenes";
-            this.Ordenes.Size = new System.Drawing.Size(72, 18);
+            this.Ordenes.Size = new System.Drawing.Size(61, 15);
             this.Ordenes.TabIndex = 18;
             this.Ordenes.Text = "Ordenes";
             this.Ordenes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Ordenes_MouseClick);
@@ -303,9 +279,9 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = global::PMS_POS.Properties.Resources.OrdenesIMG;
-            this.pictureBox14.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox14.Location = new System.Drawing.Point(9, 3);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(82, 80);
+            this.pictureBox14.Size = new System.Drawing.Size(53, 52);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 16;
             this.pictureBox14.TabStop = false;
@@ -315,12 +291,12 @@
             // 
             // pnlBotonInicio
             // 
-            this.pnlBotonInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            this.pnlBotonInicio.Controls.Add(this.lblInicio);
+            this.pnlBotonInicio.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonInicio.Controls.Add(this.pictureBox9);
-            this.pnlBotonInicio.Location = new System.Drawing.Point(247, 8);
+            this.pnlBotonInicio.Controls.Add(this.lblInicio);
+            this.pnlBotonInicio.Location = new System.Drawing.Point(12, 9);
             this.pnlBotonInicio.Name = "pnlBotonInicio";
-            this.pnlBotonInicio.Size = new System.Drawing.Size(88, 101);
+            this.pnlBotonInicio.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonInicio.TabIndex = 6;
             this.pnlBotonInicio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBotonInicio_MouseClick);
             this.pnlBotonInicio.MouseLeave += new System.EventHandler(this.PnlBotonInicio_MouseLeave_1);
@@ -330,7 +306,7 @@
             // 
             this.lblInicio.AutoSize = true;
             this.lblInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInicio.Location = new System.Drawing.Point(22, 81);
+            this.lblInicio.Location = new System.Drawing.Point(14, 52);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(48, 18);
             this.lblInicio.TabIndex = 13;
@@ -342,9 +318,9 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::PMS_POS.Properties.Resources.HomeIMG;
-            this.pictureBox9.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox9.Location = new System.Drawing.Point(9, 3);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(82, 80);
+            this.pictureBox9.Size = new System.Drawing.Size(53, 52);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 12;
             this.pictureBox9.TabStop = false;
@@ -356,7 +332,7 @@
             // 
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.White;
-            this.lblHora.Location = new System.Drawing.Point(1001, 51);
+            this.lblHora.Location = new System.Drawing.Point(1002, 34);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(110, 29);
             this.lblHora.TabIndex = 4;
@@ -366,7 +342,7 @@
             // 
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(1025, 22);
+            this.lblFecha.Location = new System.Drawing.Point(1025, 11);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(115, 29);
             this.lblFecha.TabIndex = 3;
@@ -374,12 +350,12 @@
             // 
             // pnlBotonesProveedores
             // 
-            this.pnlBotonesProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.pnlBotonesProveedores.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonesProveedores.Controls.Add(this.lblProveedores);
             this.pnlBotonesProveedores.Controls.Add(this.pictureBox15);
-            this.pnlBotonesProveedores.Location = new System.Drawing.Point(793, 8);
+            this.pnlBotonesProveedores.Location = new System.Drawing.Point(450, 9);
             this.pnlBotonesProveedores.Name = "pnlBotonesProveedores";
-            this.pnlBotonesProveedores.Size = new System.Drawing.Size(88, 101);
+            this.pnlBotonesProveedores.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonesProveedores.TabIndex = 7;
             this.pnlBotonesProveedores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBotonesProveedores_MouseClick);
             this.pnlBotonesProveedores.MouseLeave += new System.EventHandler(this.PnlBotonesProveedores_MouseLeave_1);
@@ -388,10 +364,10 @@
             // lblProveedores
             // 
             this.lblProveedores.AutoSize = true;
-            this.lblProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedores.Location = new System.Drawing.Point(0, 83);
+            this.lblProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProveedores.Location = new System.Drawing.Point(-3, 56);
             this.lblProveedores.Name = "lblProveedores";
-            this.lblProveedores.Size = new System.Drawing.Size(87, 15);
+            this.lblProveedores.Size = new System.Drawing.Size(78, 13);
             this.lblProveedores.TabIndex = 19;
             this.lblProveedores.Text = "Proveedores";
             this.lblProveedores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblProveedores_MouseClick);
@@ -401,9 +377,9 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = global::PMS_POS.Properties.Resources.ProveedoresIMGhover;
-            this.pictureBox15.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox15.Location = new System.Drawing.Point(9, 3);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(82, 80);
+            this.pictureBox15.Size = new System.Drawing.Size(53, 52);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 17;
             this.pictureBox15.TabStop = false;
@@ -413,12 +389,12 @@
             // 
             // pnlBotonMostrador
             // 
-            this.pnlBotonMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.pnlBotonMostrador.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonMostrador.Controls.Add(this.lblMostrador);
             this.pnlBotonMostrador.Controls.Add(this.pictureBox13);
-            this.pnlBotonMostrador.Location = new System.Drawing.Point(611, 8);
+            this.pnlBotonMostrador.Location = new System.Drawing.Point(304, 9);
             this.pnlBotonMostrador.Name = "pnlBotonMostrador";
-            this.pnlBotonMostrador.Size = new System.Drawing.Size(88, 101);
+            this.pnlBotonMostrador.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonMostrador.TabIndex = 9;
             this.pnlBotonMostrador.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBotonMostrador_MouseClick);
             this.pnlBotonMostrador.MouseLeave += new System.EventHandler(this.PnlBotonMostrador_MouseLeave_1);
@@ -427,10 +403,10 @@
             // lblMostrador
             // 
             this.lblMostrador.AutoSize = true;
-            this.lblMostrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostrador.Location = new System.Drawing.Point(0, 81);
+            this.lblMostrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostrador.Location = new System.Drawing.Point(0, 54);
             this.lblMostrador.Name = "lblMostrador";
-            this.lblMostrador.Size = new System.Drawing.Size(86, 18);
+            this.lblMostrador.Size = new System.Drawing.Size(72, 15);
             this.lblMostrador.TabIndex = 17;
             this.lblMostrador.Text = "Mostrador";
             this.lblMostrador.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblMostrador_MouseClick);
@@ -440,9 +416,9 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = global::PMS_POS.Properties.Resources.MostradorIMG;
-            this.pictureBox13.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox13.Location = new System.Drawing.Point(9, 3);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(82, 80);
+            this.pictureBox13.Size = new System.Drawing.Size(53, 52);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 15;
             this.pictureBox13.TabStop = false;
@@ -452,12 +428,12 @@
             // 
             // pnlBotonMenu
             // 
-            this.pnlBotonMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.pnlBotonMenu.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonMenu.Controls.Add(this.lblmenu);
             this.pnlBotonMenu.Controls.Add(this.pictureBox12);
-            this.pnlBotonMenu.Location = new System.Drawing.Point(520, 8);
+            this.pnlBotonMenu.Location = new System.Drawing.Point(231, 9);
             this.pnlBotonMenu.Name = "pnlBotonMenu";
-            this.pnlBotonMenu.Size = new System.Drawing.Size(88, 101);
+            this.pnlBotonMenu.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonMenu.TabIndex = 10;
             this.pnlBotonMenu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBotonMenu_MouseClick);
             this.pnlBotonMenu.MouseLeave += new System.EventHandler(this.PnlBotonMenu_MouseLeave_1);
@@ -466,10 +442,10 @@
             // lblmenu
             // 
             this.lblmenu.AutoSize = true;
-            this.lblmenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmenu.Location = new System.Drawing.Point(20, 82);
+            this.lblmenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmenu.Location = new System.Drawing.Point(15, 56);
             this.lblmenu.Name = "lblmenu";
-            this.lblmenu.Size = new System.Drawing.Size(49, 18);
+            this.lblmenu.Size = new System.Drawing.Size(43, 15);
             this.lblmenu.TabIndex = 16;
             this.lblmenu.Text = "Menu";
             this.lblmenu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Lblmenu_MouseClick);
@@ -479,9 +455,9 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = global::PMS_POS.Properties.Resources.ConfigurarMenuIMG;
-            this.pictureBox12.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox12.Location = new System.Drawing.Point(9, 3);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(82, 80);
+            this.pictureBox12.Size = new System.Drawing.Size(53, 52);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 15;
             this.pictureBox12.TabStop = false;
@@ -491,12 +467,12 @@
             // 
             // pnlBotonReportes
             // 
-            this.pnlBotonReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.pnlBotonReportes.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonReportes.Controls.Add(this.lblreporte);
             this.pnlBotonReportes.Controls.Add(this.pictureBox11);
-            this.pnlBotonReportes.Location = new System.Drawing.Point(429, 8);
+            this.pnlBotonReportes.Location = new System.Drawing.Point(158, 9);
             this.pnlBotonReportes.Name = "pnlBotonReportes";
-            this.pnlBotonReportes.Size = new System.Drawing.Size(88, 101);
+            this.pnlBotonReportes.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonReportes.TabIndex = 11;
             this.pnlBotonReportes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBotonReportes_MouseClick);
             this.pnlBotonReportes.MouseLeave += new System.EventHandler(this.PnlBotonReportes_MouseLeave_1);
@@ -505,10 +481,10 @@
             // lblreporte
             // 
             this.lblreporte.AutoSize = true;
-            this.lblreporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblreporte.Location = new System.Drawing.Point(6, 81);
+            this.lblreporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblreporte.Location = new System.Drawing.Point(4, 54);
             this.lblreporte.Name = "lblreporte";
-            this.lblreporte.Size = new System.Drawing.Size(77, 18);
+            this.lblreporte.Size = new System.Drawing.Size(65, 15);
             this.lblreporte.TabIndex = 15;
             this.lblreporte.Text = "Reportes";
             this.lblreporte.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Lblreporte_MouseClick);
@@ -518,9 +494,9 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = global::PMS_POS.Properties.Resources.ReportsIMG;
-            this.pictureBox11.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox11.Location = new System.Drawing.Point(9, 3);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(82, 80);
+            this.pictureBox11.Size = new System.Drawing.Size(53, 52);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 14;
             this.pictureBox11.TabStop = false;
@@ -530,11 +506,11 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(0, 107);
+            this.panel1.Location = new System.Drawing.Point(0, 80);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(223, 690);
+            this.panel1.Size = new System.Drawing.Size(223, 629);
             this.panel1.TabIndex = 0;
             // 
             // label6
@@ -707,8 +683,6 @@
             this.panelBasePOS.ResumeLayout(false);
             this.panelUIseleccionada.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.pnlBotonVentas.ResumeLayout(false);
             this.pnlBotonVentas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -786,7 +760,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox16;
@@ -795,7 +768,6 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label Ordenes;
         private System.Windows.Forms.Label lblInicio;
         private System.Windows.Forms.Label lblVentas;

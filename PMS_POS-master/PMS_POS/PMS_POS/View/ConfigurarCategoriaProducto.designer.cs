@@ -37,15 +37,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chxCategoriaEnMostrador = new System.Windows.Forms.CheckBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoriaProducto)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(123, 167);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(29, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 20;
@@ -57,7 +60,7 @@
             this.txtCategoriaProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCategoriaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategoriaProducto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtCategoriaProducto.Location = new System.Drawing.Point(216, 165);
+            this.txtCategoriaProducto.Location = new System.Drawing.Point(122, 12);
             this.txtCategoriaProducto.Name = "txtCategoriaProducto";
             this.txtCategoriaProducto.Size = new System.Drawing.Size(187, 26);
             this.txtCategoriaProducto.TabIndex = 19;
@@ -65,7 +68,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
@@ -79,7 +82,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
+            this.btnBorrar.BackColor = System.Drawing.Color.SkyBlue;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
@@ -93,7 +96,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnEditar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
@@ -107,7 +110,7 @@
             // 
             // dgvCategoriaProducto
             // 
-            this.dgvCategoriaProducto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvCategoriaProducto.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvCategoriaProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCategoriaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoriaProducto.Location = new System.Drawing.Point(12, 16);
@@ -119,7 +122,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(63, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(368, 25);
@@ -128,7 +131,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.dgvCategoriaProducto);
             this.panel1.Location = new System.Drawing.Point(542, 119);
             this.panel1.Name = "panel1";
@@ -139,7 +142,8 @@
             // 
             this.chxCategoriaEnMostrador.AutoSize = true;
             this.chxCategoriaEnMostrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chxCategoriaEnMostrador.Location = new System.Drawing.Point(175, 241);
+            this.chxCategoriaEnMostrador.ForeColor = System.Drawing.Color.White;
+            this.chxCategoriaEnMostrador.Location = new System.Drawing.Point(57, 59);
             this.chxCategoriaEnMostrador.Name = "chxCategoriaEnMostrador";
             this.chxCategoriaEnMostrador.Size = new System.Drawing.Size(217, 24);
             this.chxCategoriaEnMostrador.TabIndex = 23;
@@ -147,16 +151,25 @@
             this.chxCategoriaEnMostrador.UseVisualStyleBackColor = true;
             this.chxCategoriaEnMostrador.CheckedChanged += new System.EventHandler(this.ChxCategoriaEnMostrador_CheckedChanged);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.chxCategoriaEnMostrador);
+            this.panel2.Controls.Add(this.txtCategoriaProducto);
+            this.panel2.Location = new System.Drawing.Point(102, 167);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(329, 91);
+            this.panel2.TabIndex = 24;
+            // 
             // ConfigurarCategoriaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.chxCategoriaEnMostrador);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtCategoriaProducto);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnEditar);
@@ -165,6 +178,8 @@
             this.Load += new System.EventHandler(this.ConfigurarCategoriaProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoriaProducto)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +196,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox chxCategoriaEnMostrador;
+        private System.Windows.Forms.Panel panel2;
     }
 }

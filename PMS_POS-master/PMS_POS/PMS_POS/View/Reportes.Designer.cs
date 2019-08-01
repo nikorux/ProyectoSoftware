@@ -43,6 +43,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtBuscarRecepcion = new System.Windows.Forms.TextBox();
+            this.cbxRecepcion = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dgvRecepcion = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -55,32 +63,24 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscarDetallesPedido = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dgvProductoFactura = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dgvInfoFactura = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.cbxEstadoPedido = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.txtBuscarVentas = new System.Windows.Forms.TextBox();
             this.cbxProductosVentas = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.dgvOrdenes = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbxRecepcion = new System.Windows.Forms.ComboBox();
-            this.txtBuscarRecepcion = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.dgvRecepcion = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dgvInfoFactura = new System.Windows.Forms.DataGridView();
-            this.dgvProductoFactura = new System.Windows.Forms.DataGridView();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnBuscarDetallesPedido = new System.Windows.Forms.Button();
-            this.cbxEstadoPedido = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.dgvOrdenes = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,21 +90,21 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepcion)).BeginInit();
             this.tabPage7.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductoFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoFactura)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepcion)).BeginInit();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoFactura)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductoFactura)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,7 +124,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
@@ -140,7 +140,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label8.Location = new System.Drawing.Point(35, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(205, 24);
@@ -149,7 +149,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Controls.Add(this.txtBuscarProductoAjustesInventario);
             this.panel2.Location = new System.Drawing.Point(287, 6);
             this.panel2.Name = "panel2";
@@ -170,7 +170,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.dgvAjustes);
             this.panel1.Location = new System.Drawing.Point(6, 62);
             this.panel1.Name = "panel1";
@@ -181,7 +181,7 @@
             // 
             this.dgvAjustes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvAjustes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgvAjustes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvAjustes.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvAjustes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAjustes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAjustes.Location = new System.Drawing.Point(19, 13);
@@ -192,7 +192,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.panel4);
@@ -208,7 +208,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label7.Location = new System.Drawing.Point(35, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(221, 24);
@@ -217,7 +217,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel3.Controls.Add(this.txtBuscarInventario);
             this.panel3.Controls.Add(this.cbxCategoriaInventario);
             this.panel3.Controls.Add(this.label3);
@@ -261,7 +261,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel4.Controls.Add(this.dgvInventario);
             this.panel4.Location = new System.Drawing.Point(6, 62);
             this.panel4.Name = "panel4";
@@ -272,7 +272,7 @@
             // 
             this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvInventario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgvInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvInventario.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(18, 14);
@@ -281,9 +281,99 @@
             this.dgvInventario.Size = new System.Drawing.Size(1096, 471);
             this.dgvInventario.TabIndex = 1;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.panel5);
+            this.tabPage3.Controls.Add(this.panel6);
+            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1151, 564);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Historial de Compras";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label9.Location = new System.Drawing.Point(21, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(240, 24);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Recepción de productos";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel5.Controls.Add(this.txtBuscarRecepcion);
+            this.panel5.Controls.Add(this.cbxRecepcion);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Location = new System.Drawing.Point(287, 6);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(850, 50);
+            this.panel5.TabIndex = 16;
+            // 
+            // txtBuscarRecepcion
+            // 
+            this.txtBuscarRecepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarRecepcion.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBuscarRecepcion.Location = new System.Drawing.Point(7, 13);
+            this.txtBuscarRecepcion.Name = "txtBuscarRecepcion";
+            this.txtBuscarRecepcion.Size = new System.Drawing.Size(448, 22);
+            this.txtBuscarRecepcion.TabIndex = 6;
+            this.txtBuscarRecepcion.Text = "Buscar Producto";
+            this.txtBuscarRecepcion.TextChanged += new System.EventHandler(this.TxtBuscarRecepcion_TextChanged);
+            // 
+            // cbxRecepcion
+            // 
+            this.cbxRecepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxRecepcion.FormattingEnabled = true;
+            this.cbxRecepcion.Items.AddRange(new object[] {
+            "Todas"});
+            this.cbxRecepcion.Location = new System.Drawing.Point(565, 13);
+            this.cbxRecepcion.Name = "cbxRecepcion";
+            this.cbxRecepcion.Size = new System.Drawing.Size(268, 24);
+            this.cbxRecepcion.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(479, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Categoría:";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel6.Controls.Add(this.dgvRecepcion);
+            this.panel6.Location = new System.Drawing.Point(6, 62);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1131, 525);
+            this.panel6.TabIndex = 15;
+            // 
+            // dgvRecepcion
+            // 
+            this.dgvRecepcion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvRecepcion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dgvRecepcion.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvRecepcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvRecepcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecepcion.Location = new System.Drawing.Point(19, 13);
+            this.dgvRecepcion.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.dgvRecepcion.Name = "dgvRecepcion";
+            this.dgvRecepcion.Size = new System.Drawing.Size(1096, 471);
+            this.dgvRecepcion.TabIndex = 1;
+            // 
             // tabPage7
             // 
-            this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.tabPage7.BackColor = System.Drawing.Color.White;
             this.tabPage7.Controls.Add(this.label10);
             this.tabPage7.Controls.Add(this.panel7);
             this.tabPage7.Controls.Add(this.panel8);
@@ -297,7 +387,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label10.Location = new System.Drawing.Point(35, 19);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(190, 24);
@@ -306,7 +396,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel7.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel7.Controls.Add(this.chxPagadas);
             this.panel7.Controls.Add(this.cbxFormaPago);
             this.panel7.Controls.Add(this.label2);
@@ -394,29 +484,29 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel8.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel8.Controls.Add(this.dgvFacturas);
             this.panel8.Location = new System.Drawing.Point(6, 62);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1131, 525);
+            this.panel8.Size = new System.Drawing.Size(1142, 499);
             this.panel8.TabIndex = 15;
             // 
             // dgvFacturas
             // 
             this.dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvFacturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgvFacturas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvFacturas.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacturas.Location = new System.Drawing.Point(19, 13);
             this.dgvFacturas.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.dgvFacturas.Name = "dgvFacturas";
-            this.dgvFacturas.Size = new System.Drawing.Size(1096, 495);
+            this.dgvFacturas.Size = new System.Drawing.Size(1108, 471);
             this.dgvFacturas.TabIndex = 1;
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.tabPage4.BackColor = System.Drawing.Color.White;
             this.tabPage4.Controls.Add(this.btnBuscarDetallesPedido);
             this.tabPage4.Controls.Add(this.panel11);
             this.tabPage4.Controls.Add(this.label6);
@@ -428,22 +518,96 @@
             this.tabPage4.TabIndex = 7;
             this.tabPage4.Text = "Historial de ordenes";
             // 
-            // label1
+            // btnBuscarDetallesPedido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
-            this.label1.Location = new System.Drawing.Point(595, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 31);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Reportes";
+            this.btnBuscarDetallesPedido.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnBuscarDetallesPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarDetallesPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarDetallesPedido.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarDetallesPedido.Location = new System.Drawing.Point(482, 301);
+            this.btnBuscarDetallesPedido.Name = "btnBuscarDetallesPedido";
+            this.btnBuscarDetallesPedido.Size = new System.Drawing.Size(125, 71);
+            this.btnBuscarDetallesPedido.TabIndex = 21;
+            this.btnBuscarDetallesPedido.Text = "Detalles de la pedido\n>>>\r\n";
+            this.btnBuscarDetallesPedido.UseVisualStyleBackColor = false;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel11.Controls.Add(this.label15);
+            this.panel11.Controls.Add(this.label14);
+            this.panel11.Controls.Add(this.dgvProductoFactura);
+            this.panel11.Controls.Add(this.label13);
+            this.panel11.Controls.Add(this.dgvInfoFactura);
+            this.panel11.Location = new System.Drawing.Point(613, 59);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(525, 505);
+            this.panel11.TabIndex = 19;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(44, 242);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(133, 16);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Productos en factura:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(44, 26);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(123, 16);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Información factura:";
+            // 
+            // dgvProductoFactura
+            // 
+            this.dgvProductoFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProductoFactura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dgvProductoFactura.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvProductoFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProductoFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductoFactura.Location = new System.Drawing.Point(19, 261);
+            this.dgvProductoFactura.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.dgvProductoFactura.Name = "dgvProductoFactura";
+            this.dgvProductoFactura.Size = new System.Drawing.Size(489, 230);
+            this.dgvProductoFactura.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(192, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(147, 20);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Detalles Factura:";
+            // 
+            // dgvInfoFactura
+            // 
+            this.dgvInfoFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvInfoFactura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dgvInfoFactura.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvInfoFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInfoFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInfoFactura.Location = new System.Drawing.Point(19, 45);
+            this.dgvInfoFactura.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.dgvInfoFactura.Name = "dgvInfoFactura";
+            this.dgvInfoFactura.Size = new System.Drawing.Size(489, 176);
+            this.dgvInfoFactura.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label6.Location = new System.Drawing.Point(42, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(198, 24);
@@ -452,7 +616,7 @@
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel9.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel9.Controls.Add(this.cbxEstadoPedido);
             this.panel9.Controls.Add(this.label16);
             this.panel9.Controls.Add(this.txtBuscarVentas);
@@ -462,6 +626,31 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(892, 50);
             this.panel9.TabIndex = 19;
+            // 
+            // cbxEstadoPedido
+            // 
+            this.cbxEstadoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEstadoPedido.FormattingEnabled = true;
+            this.cbxEstadoPedido.Items.AddRange(new object[] {
+            "Todos",
+            "Facturado",
+            "Cancelado"});
+            this.cbxEstadoPedido.Location = new System.Drawing.Point(698, 13);
+            this.cbxEstadoPedido.Name = "cbxEstadoPedido";
+            this.cbxEstadoPedido.Size = new System.Drawing.Size(177, 24);
+            this.cbxEstadoPedido.TabIndex = 7;
+            this.cbxEstadoPedido.SelectedIndexChanged += new System.EventHandler(this.CbxEstadoPedido_SelectedIndexChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(631, 16);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(61, 16);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Estado:";
             // 
             // txtBuscarVentas
             // 
@@ -499,116 +688,13 @@
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.panel10.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel10.Controls.Add(this.label12);
             this.panel10.Controls.Add(this.dgvOrdenes);
             this.panel10.Location = new System.Drawing.Point(7, 59);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(469, 505);
             this.panel10.TabIndex = 18;
-            // 
-            // dgvOrdenes
-            // 
-            this.dgvOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvOrdenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgvOrdenes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            this.dgvOrdenes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrdenes.Location = new System.Drawing.Point(19, 37);
-            this.dgvOrdenes.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.dgvOrdenes.Name = "dgvOrdenes";
-            this.dgvOrdenes.Size = new System.Drawing.Size(435, 454);
-            this.dgvOrdenes.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
-            this.panel5.Controls.Add(this.txtBuscarRecepcion);
-            this.panel5.Controls.Add(this.cbxRecepcion);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(287, 6);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(850, 50);
-            this.panel5.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(479, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Categoría:";
-            // 
-            // cbxRecepcion
-            // 
-            this.cbxRecepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxRecepcion.FormattingEnabled = true;
-            this.cbxRecepcion.Items.AddRange(new object[] {
-            "Todas"});
-            this.cbxRecepcion.Location = new System.Drawing.Point(565, 13);
-            this.cbxRecepcion.Name = "cbxRecepcion";
-            this.cbxRecepcion.Size = new System.Drawing.Size(268, 24);
-            this.cbxRecepcion.TabIndex = 4;
-            // 
-            // txtBuscarRecepcion
-            // 
-            this.txtBuscarRecepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarRecepcion.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBuscarRecepcion.Location = new System.Drawing.Point(7, 13);
-            this.txtBuscarRecepcion.Name = "txtBuscarRecepcion";
-            this.txtBuscarRecepcion.Size = new System.Drawing.Size(448, 22);
-            this.txtBuscarRecepcion.TabIndex = 6;
-            this.txtBuscarRecepcion.Text = "Buscar Producto";
-            this.txtBuscarRecepcion.TextChanged += new System.EventHandler(this.TxtBuscarRecepcion_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
-            this.label9.Location = new System.Drawing.Point(21, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(240, 24);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Recepción de productos";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.panel5);
-            this.tabPage3.Controls.Add(this.panel6);
-            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1151, 564);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Historial de Compras";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
-            this.panel6.Controls.Add(this.dgvRecepcion);
-            this.panel6.Location = new System.Drawing.Point(6, 62);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1131, 525);
-            this.panel6.TabIndex = 15;
-            // 
-            // dgvRecepcion
-            // 
-            this.dgvRecepcion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvRecepcion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgvRecepcion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            this.dgvRecepcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvRecepcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRecepcion.Location = new System.Drawing.Point(19, 13);
-            this.dgvRecepcion.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.dgvRecepcion.Name = "dgvRecepcion";
-            this.dgvRecepcion.Size = new System.Drawing.Size(1096, 471);
-            this.dgvRecepcion.TabIndex = 1;
             // 
             // label12
             // 
@@ -621,121 +707,35 @@
             this.label12.TabIndex = 2;
             this.label12.Text = "Ordenes:";
             // 
-            // panel11
+            // dgvOrdenes
             // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
-            this.panel11.Controls.Add(this.label15);
-            this.panel11.Controls.Add(this.label14);
-            this.panel11.Controls.Add(this.dgvProductoFactura);
-            this.panel11.Controls.Add(this.label13);
-            this.panel11.Controls.Add(this.dgvInfoFactura);
-            this.panel11.Location = new System.Drawing.Point(613, 59);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(525, 505);
-            this.panel11.TabIndex = 19;
+            this.dgvOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvOrdenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dgvOrdenes.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvOrdenes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrdenes.Location = new System.Drawing.Point(19, 37);
+            this.dgvOrdenes.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.dgvOrdenes.Name = "dgvOrdenes";
+            this.dgvOrdenes.Size = new System.Drawing.Size(435, 454);
+            this.dgvOrdenes.TabIndex = 1;
             // 
-            // label13
+            // label1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(192, 10);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(147, 20);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Detalles Factura:";
-            // 
-            // dgvInfoFactura
-            // 
-            this.dgvInfoFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvInfoFactura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgvInfoFactura.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            this.dgvInfoFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvInfoFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInfoFactura.Location = new System.Drawing.Point(19, 45);
-            this.dgvInfoFactura.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.dgvInfoFactura.Name = "dgvInfoFactura";
-            this.dgvInfoFactura.Size = new System.Drawing.Size(489, 176);
-            this.dgvInfoFactura.TabIndex = 1;
-            // 
-            // dgvProductoFactura
-            // 
-            this.dgvProductoFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvProductoFactura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgvProductoFactura.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            this.dgvProductoFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProductoFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductoFactura.Location = new System.Drawing.Point(19, 261);
-            this.dgvProductoFactura.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.dgvProductoFactura.Name = "dgvProductoFactura";
-            this.dgvProductoFactura.Size = new System.Drawing.Size(489, 230);
-            this.dgvProductoFactura.TabIndex = 3;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(44, 26);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(123, 16);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Información factura:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(44, 242);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(133, 16);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Productos en factura:";
-            // 
-            // btnBuscarDetallesPedido
-            // 
-            this.btnBuscarDetallesPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
-            this.btnBuscarDetallesPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarDetallesPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarDetallesPedido.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarDetallesPedido.Location = new System.Drawing.Point(482, 301);
-            this.btnBuscarDetallesPedido.Name = "btnBuscarDetallesPedido";
-            this.btnBuscarDetallesPedido.Size = new System.Drawing.Size(125, 71);
-            this.btnBuscarDetallesPedido.TabIndex = 21;
-            this.btnBuscarDetallesPedido.Text = "Detalles de la pedido\n>>>\r\n";
-            this.btnBuscarDetallesPedido.UseVisualStyleBackColor = false;
-            // 
-            // cbxEstadoPedido
-            // 
-            this.cbxEstadoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxEstadoPedido.FormattingEnabled = true;
-            this.cbxEstadoPedido.Items.AddRange(new object[] {
-            "Todos",
-            "Facturado",
-            "Cancelado"});
-            this.cbxEstadoPedido.Location = new System.Drawing.Point(698, 13);
-            this.cbxEstadoPedido.Name = "cbxEstadoPedido";
-            this.cbxEstadoPedido.Size = new System.Drawing.Size(177, 24);
-            this.cbxEstadoPedido.TabIndex = 7;
-            this.cbxEstadoPedido.SelectedIndexChanged += new System.EventHandler(this.CbxEstadoPedido_SelectedIndexChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(631, 16);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 16);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "Estado:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(595, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 31);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Reportes";
             // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Reportes";
@@ -754,6 +754,12 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepcion)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -762,21 +768,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductoFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoFactura)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepcion)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoFactura)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductoFactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

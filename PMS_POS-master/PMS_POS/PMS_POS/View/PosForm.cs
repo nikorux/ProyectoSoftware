@@ -232,6 +232,58 @@ namespace PMS_POS.View
             }
         }
 
+        public void uiColor()
+        {
+                pnlBotonInicio.BackColor = Color.FromArgb(0, 102, 204);
+            
+                pnlBotonInventario.BackColor = Color.FromArgb(0, 102, 204);
+            
+                pnlBotonReportes.BackColor = Color.FromArgb(0, 102, 204);
+            
+                pnlBotonMenu.BackColor = Color.FromArgb(0, 102, 204);
+            
+                pnlBotonMostrador.BackColor = Color.FromArgb(0, 102, 204);
+
+                pnlBotonTransacciones.BackColor = Color.FromArgb(0, 102, 204);
+
+                pnlBotonesProveedores.BackColor = Color.FromArgb(0, 102, 204);
+
+                pnlBotonVentas.BackColor = Color.FromArgb(0, 102, 204);
+        }
+
+        public void panelSeleccionada(string ui)
+        {
+            uiColor();
+
+            switch (ui)
+            {
+                case "Home":
+                    pnlBotonInicio.BackColor = Color.FromArgb(198, 212, 255);
+                    break;
+                case "Inventario":
+                    pnlBotonInventario.BackColor = Color.FromArgb(198, 212, 255);
+                    break;
+                case "Reportes":
+                    pnlBotonReportes.BackColor = Color.FromArgb(198, 212, 255);
+                    break;
+                case "Menu":
+                    pnlBotonMenu.BackColor = Color.FromArgb(198, 212, 255);
+                    break;
+                case "Mostrador":
+                    pnlBotonMostrador.BackColor = Color.FromArgb(198, 212, 255);
+                    break;
+                case "Ordenes":
+                    pnlBotonTransacciones.BackColor = Color.FromArgb(198, 212, 255);
+                    break;
+                case "Proveedores":
+                    pnlBotonesProveedores.BackColor = Color.FromArgb(198, 212, 255);
+                    break;
+                case "Ventas":
+                    pnlBotonVentas.BackColor = Color.FromArgb(198, 212, 255);
+                    break;
+            }
+        }
+
         private void Timer1_Tick(object sender, EventArgs e)
         {
             int ampmHOUR = Convert.ToInt32(DateTime.Now.ToString("HH"));
@@ -258,22 +310,25 @@ namespace PMS_POS.View
         private void PictureBox16_MouseClick(object sender, MouseEventArgs e)
         {
             showVentas();
+            panelSeleccionada("Ventas");
         }
 
         private void PnlBotonVentas_MouseClick_1(object sender, MouseEventArgs e)
         {
             showVentas();
+            panelSeleccionada("Ventas");
         }
 
         private void LblVentas_MouseClick(object sender, MouseEventArgs e)
         {
             showVentas();
+            panelSeleccionada("Ventas");
         }
 
         private void PnlBotonVentas_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMG;
-            pnlBotonVentas.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonVentas.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PnlBotonVentas_MouseHover_1(object sender, EventArgs e)
@@ -285,7 +340,7 @@ namespace PMS_POS.View
         private void LblVentas_MouseLeave(object sender, EventArgs e)
         {
             pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMG;
-            pnlBotonVentas.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonVentas.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void LblVentas_MouseHover(object sender, EventArgs e)
@@ -297,7 +352,7 @@ namespace PMS_POS.View
         private void PictureBox16_MouseLeave(object sender, EventArgs e)
         {
             pictureBox8.Image = PMS_POS.Properties.Resources.VentasIMG;
-            pnlBotonVentas.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonVentas.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PictureBox16_MouseHover(object sender, EventArgs e)
@@ -407,19 +462,19 @@ namespace PMS_POS.View
         private void PnlBotonTransacciones_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMG;
-            pnlBotonTransacciones.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonTransacciones.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void Ordenes_MouseLeave(object sender, EventArgs e)
         {
             pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMG;
-            pnlBotonTransacciones.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonTransacciones.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PictureBox14_MouseLeave(object sender, EventArgs e)
         {
             pictureBox7.Image = PMS_POS.Properties.Resources.OrdenesIMG;
-            pnlBotonTransacciones.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonTransacciones.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PictureBox14_MouseHover(object sender, EventArgs e)
@@ -443,19 +498,19 @@ namespace PMS_POS.View
         private void PnlBotonInventario_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMG;
-            pnlBotonInventario.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonInventario.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void Label7_MouseLeave(object sender, EventArgs e)
         {
             pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMG;
-            pnlBotonInventario.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonInventario.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PictureBox10_MouseLeave(object sender, EventArgs e)
         {
             pictureBox2.Image = PMS_POS.Properties.Resources.InventarioIMG;
-            pnlBotonInventario.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonInventario.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void Label7_MouseHover(object sender, EventArgs e)
@@ -479,19 +534,19 @@ namespace PMS_POS.View
         private void PnlBotonMostrador_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMG;
-            pnlBotonMostrador.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonMostrador.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void LblMostrador_MouseLeave(object sender, EventArgs e)
         {
             pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMG;
-            pnlBotonMostrador.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonMostrador.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PictureBox13_MouseLeave(object sender, EventArgs e)
         {
             pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMG;
-            pnlBotonMostrador.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonMostrador.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PnlBotonMostrador_MouseHover_1(object sender, EventArgs e)
@@ -515,19 +570,19 @@ namespace PMS_POS.View
         private void PnlBotonInicio_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
-            pnlBotonInicio.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonInicio.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void LblInicio_MouseLeave(object sender, EventArgs e)
         {
             pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
-            pnlBotonInicio.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonInicio.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PictureBox9_MouseLeave(object sender, EventArgs e)
         {
             pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
-            pnlBotonInicio.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonInicio.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PnlBotonInicio_MouseHover(object sender, EventArgs e)
@@ -551,19 +606,19 @@ namespace PMS_POS.View
         private void PnlBotonesProveedores_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
-            pnlBotonesProveedores.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonesProveedores.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void LblProveedores_MouseLeave(object sender, EventArgs e)
         {
             pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
-            pnlBotonesProveedores.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonesProveedores.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PictureBox15_MouseLeave(object sender, EventArgs e)
         {
             pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
-            pnlBotonesProveedores.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonesProveedores.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PnlBotonesProveedores_MouseHover(object sender, EventArgs e)
@@ -587,19 +642,19 @@ namespace PMS_POS.View
         private void PnlBotonReportes_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMG;
-            pnlBotonReportes.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonReportes.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void Lblreporte_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMG;
-            pnlBotonReportes.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonReportes.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PictureBox11_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.Image = PMS_POS.Properties.Resources.ReportsIMG;
-            pnlBotonReportes.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonReportes.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PnlBotonReportes_MouseHover_1(object sender, EventArgs e)
@@ -623,19 +678,19 @@ namespace PMS_POS.View
         private void PnlBotonMenu_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMG;
-            pnlBotonMenu.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonMenu.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void Lblmenu_MouseLeave(object sender, EventArgs e)
         {
             pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMG;
-            pnlBotonMenu.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonMenu.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PictureBox12_MouseLeave(object sender, EventArgs e)
         {
             pictureBox3.Image = PMS_POS.Properties.Resources.ConfigurarMenuIMG;
-            pnlBotonMenu.BackColor = Color.FromArgb(121, 133, 170);
+            pnlBotonMenu.BackColor = Color.FromArgb(0, 102, 204);
         }
 
         private void PnlBotonMenu_MouseHover_1(object sender, EventArgs e)
