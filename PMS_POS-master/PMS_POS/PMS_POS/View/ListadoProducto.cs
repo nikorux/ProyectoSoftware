@@ -200,7 +200,7 @@ namespace PMS_POS.View
 
                 //COMBOBOX DISPLAY PROVEEDORES
                 MySqlConnection connectionProveedores = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-                string queryProveedores = "SELECT NombreInsumo FROM insumo";
+                string queryProveedores = "SELECT NombreCompañia FROM proveedor";
                 connectionProveedores.Open();
                 MySqlCommand commandProveedores = new MySqlCommand(queryProveedores, connectionProveedores);
                 MySqlDataReader readerP = commandProveedores.ExecuteReader();
@@ -228,7 +228,7 @@ namespace PMS_POS.View
         {
             try
             {
-                if (this.txtNombreProducto.Text == string.Empty || this.cbxProveedor.SelectedItem == null ||
+                if (this.txtNombreProducto.Text == string.Empty /*|| this.cbxProveedor.SelectedItem == null*/ ||
                     this.txtDescripcion.Text == string.Empty || this.txtPrecioCompra.Text == string.Empty ||
                     this.txtPrecioVenta.Text == string.Empty || nudCantidadActual.Value == 0 ||
                     this.nudCantidadMinima.Value == 0 || this.nudCantidadMaxima.Value == 0 ||
@@ -261,7 +261,7 @@ namespace PMS_POS.View
                     }
                     if (producto.Insert(producto, EnMostrador) == true)
                     {
-                        Clear();
+                        
                     }
                     else
                     {
@@ -509,6 +509,7 @@ namespace PMS_POS.View
             {
                 RegistrarReceta receta = new RegistrarReceta(txtNombreProducto.Text, 0);
                 receta.Show();
+                Clear();
             }
 
             pnlOpcionesRegistroProducto.Visible = false;
@@ -543,6 +544,7 @@ namespace PMS_POS.View
             {
                 RegistrarReceta receta = new RegistrarReceta(producto.NombreInsumo, 0);
                 receta.Show();
+                Clear();
             }
 
             pnlOpcionesRegistroProducto.Visible = false;
@@ -615,6 +617,11 @@ namespace PMS_POS.View
         {
             RegistrarReceta receta = new RegistrarReceta(txtNombreProducto.Text, Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value));
             receta.Show();
+        }
+
+        private void BtnGoBack_MouseClick(object sender, MouseEventArgs e)
+        {
+            Clear();
         }
     }
 }

@@ -371,17 +371,22 @@ namespace PMS_POS.View
 
         private void PnlBotonMostrador_MouseClick(object sender, MouseEventArgs e)
         {
-            showMostrador();
+            MostradorPOS mostradorPOS = new MostradorPOS();
+            mostradorPOS.Show();
         }
 
         private void LblMostrador_MouseClick(object sender, MouseEventArgs e)
         {
-            showMostrador();
+            //showMostrador();
+            MostradorPOS mostradorPOS = new MostradorPOS();
+            mostradorPOS.Show();
         }
 
         private void PictureBox13_MouseClick(object sender, MouseEventArgs e)
         {
-            showMostrador();
+            //showMostrador();
+            MostradorPOS mostradorPOS = new MostradorPOS();
+            mostradorPOS.Show();
         }
 
         private void PnlBotonInventario_MouseClick_1(object sender, MouseEventArgs e)
