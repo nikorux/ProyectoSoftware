@@ -650,6 +650,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label17);
             this.Name = "RegistroNuevoEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroNuevoEmpleado";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroNuevoEmpleado_FormClosed);
             this.panel1.ResumeLayout(false);

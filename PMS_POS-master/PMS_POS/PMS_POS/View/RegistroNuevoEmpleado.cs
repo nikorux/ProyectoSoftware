@@ -57,7 +57,7 @@ namespace PMS_POS.View
                     int resultado = EmpleadoC.Agregar(pEmpleado);
                     if (resultado > 0)
                     {
-                        MessageBox.Show("Empleado guardado con exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        NotificacionCorrecto.confirmacionForm("AGREGADO");
                         //dgvclie.DataSource = null;
                         //dgvHuespedes.DataSource = obj.VistaTabla();
                         Huesped limpiar = new Huesped();

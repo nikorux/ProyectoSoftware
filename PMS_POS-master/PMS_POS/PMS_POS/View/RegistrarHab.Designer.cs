@@ -426,7 +426,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGuardar);
             this.Name = "RegistrarHab";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistrarHabitación";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrarHab_FormClosed);
             this.Load += new System.EventHandler(this.RegistrarHabitación_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

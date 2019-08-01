@@ -42,9 +42,17 @@ namespace PMS_POS.View
              //Refrescar el data grid view
                  RefreshDgv();
                 dgvHab.Columns[0].Visible = false;
-        }       
+        }
 
- 
+      
+
+        private void RegistrarHab_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshDgv();
+            dgvHab.Columns[0].Visible = false;
+        }
+
+
         private void BtnBorrar_Click(object sender, EventArgs e)
         {
             try
@@ -54,7 +62,7 @@ namespace PMS_POS.View
                     habitacion.IdHabitacion = Convert.ToInt32(dgvHab.CurrentRow.Cells[0].Value);
                     if (habitacion.Delete(habitacion) == true)
                     {
-                        MessageBox.Show("La habitación ha sido eliminada.");
+                        NotificacionCorrecto.confirmacionForm("ELIMINADO");
                         RefreshDgv();
 
                     }

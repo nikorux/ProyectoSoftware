@@ -65,6 +65,8 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.errorProviderCorreo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCedula = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -77,10 +79,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.errorProviderCorreo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProviderCedula = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -93,8 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -552,6 +552,14 @@
             this.panel2.Size = new System.Drawing.Size(900, 499);
             this.panel2.TabIndex = 0;
             // 
+            // errorProviderCorreo
+            // 
+            this.errorProviderCorreo.ContainerControl = this;
+            // 
+            // errorProviderCedula
+            // 
+            this.errorProviderCedula.ContainerControl = this;
+            // 
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
@@ -661,14 +669,6 @@
             this.pictureBox4.TabIndex = 199;
             this.pictureBox4.TabStop = false;
             // 
-            // errorProviderCorreo
-            // 
-            this.errorProviderCorreo.ContainerControl = this;
-            // 
-            // errorProviderCedula
-            // 
-            this.errorProviderCedula.ContainerControl = this;
-            // 
             // RegistroNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,12 +679,15 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label17);
             this.Name = "RegistroNuevoCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroNuevoCliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistroNuevoCliente_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroNuevoCliente_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -697,8 +700,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

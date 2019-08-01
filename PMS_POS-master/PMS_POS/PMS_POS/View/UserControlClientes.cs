@@ -152,7 +152,7 @@ namespace PMS_POS.View
                     obj.IdHuesped = Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value);
                     if (obj.Delete(obj) == true)
                     {
-                        MessageBox.Show("El cliente ha sido eliminado.");
+                        NotificacionCorrecto.confirmacionForm("ELIMINADO");
                         dgvClientes.DataSource = null;
                         dgvClientes.DataSource = obj.VistaTabla();
 

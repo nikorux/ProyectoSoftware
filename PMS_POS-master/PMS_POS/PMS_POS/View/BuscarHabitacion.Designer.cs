@@ -136,6 +136,7 @@
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.panel1);
             this.Name = "BuscarHabitacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarHabitacion";
             this.Load += new System.EventHandler(this.BuscarHabitacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();

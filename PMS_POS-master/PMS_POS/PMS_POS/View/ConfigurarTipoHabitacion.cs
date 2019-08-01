@@ -65,7 +65,6 @@ namespace PMS_POS.View
             txtTipoHabitacion.Text = "";
 
         }
-
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             {
@@ -75,7 +74,7 @@ namespace PMS_POS.View
                 int resultado = TipoHabitacionC.Agregar(pNombreTipoHab);
                 if (resultado > 0)
                 {
-                    MessageBox.Show("Se ha creado un nuevo tipo de habitación", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    NotificacionCorrecto.confirmacionForm("AGREGADO");
                     dgvTipoHabitacion.DataSource = null;
                     dgvTipoHabitacion.DataSource = obj.VistaTabla();
                 }
