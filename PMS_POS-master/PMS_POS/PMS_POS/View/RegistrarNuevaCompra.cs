@@ -40,7 +40,7 @@ namespace PMS_POS.View
             dgvProductosRegistrados.Columns[4].Visible = false;
             dgvProductosRegistrados.Columns[6].Visible = false;
         }
-        public void LoadPrdCompra()//para listar...
+        public void LoadPrdCompra()//para listar
         {
             dgvProductosRegistrados.DataSource = GetProvList();
         }

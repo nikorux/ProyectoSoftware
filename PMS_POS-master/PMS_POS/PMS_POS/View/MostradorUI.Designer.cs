@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.pnlBase = new System.Windows.Forms.Panel();
             this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnCancelarFactura = new System.Windows.Forms.Button();
             this.btnRemoverDeFactura = new System.Windows.Forms.Button();
+
             this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,6 +77,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtCantidadOrdenesAbiertas = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+
             this.pnlCantidadItemsFactura = new System.Windows.Forms.Panel();
             this.txtItemsEnFactura = new System.Windows.Forms.TextBox();
             this.txtIdFactura = new System.Windows.Forms.TextBox();
@@ -95,11 +98,13 @@
             this.dgvFactura = new System.Windows.Forms.DataGridView();
             this.pnlBase.SuspendLayout();
             this.pnlEligirCantidadDeProducto.SuspendLayout();
+
             this.panel4.SuspendLayout();
             this.pnlITBIS.SuspendLayout();
             this.pnlSubTotal.SuspendLayout();
             this.pnlTotalAPagar.SuspendLayout();
             this.pnlCantidadOrdenesAbiertas.SuspendLayout();
+
             this.pnlCantidadItemsFactura.SuspendLayout();
             this.pnlDetallesProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosMostrador)).BeginInit();
@@ -433,6 +438,7 @@
             this.btnRemoverDeFactura.TabIndex = 6;
             this.btnRemoverDeFactura.Text = "Remover Item";
             this.btnRemoverDeFactura.UseVisualStyleBackColor = false;
+
             // 
             // panel4
             // 
@@ -450,10 +456,12 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.pnlSubTotal);
             this.panel4.Controls.Add(this.pnlTotalAPagar);
+
             this.panel4.Location = new System.Drawing.Point(312, 501);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(864, 198);
             this.panel4.TabIndex = 5;
+
             // 
             // label11
             // 
@@ -621,10 +629,12 @@
             this.pnlCantidadOrdenesAbiertas.Controls.Add(this.label13);
             this.pnlCantidadOrdenesAbiertas.Controls.Add(this.txtCantidadOrdenesAbiertas);
             this.pnlCantidadOrdenesAbiertas.Controls.Add(this.label12);
+
             this.pnlCantidadOrdenesAbiertas.Location = new System.Drawing.Point(900, 3);
             this.pnlCantidadOrdenesAbiertas.Name = "pnlCantidadOrdenesAbiertas";
             this.pnlCantidadOrdenesAbiertas.Size = new System.Drawing.Size(276, 72);
             this.pnlCantidadOrdenesAbiertas.TabIndex = 4;
+
             // 
             // label13
             // 
@@ -655,6 +665,7 @@
             this.label12.TabIndex = 16;
             this.label12.Text = "   Ordenes \r\n   abiertas:";
             // 
+
             // pnlCantidadItemsFactura
             // 
             this.pnlCantidadItemsFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -837,11 +848,13 @@
             this.dgvFactura.Name = "dgvFactura";
             this.dgvFactura.Size = new System.Drawing.Size(276, 423);
             this.dgvFactura.TabIndex = 0;
+
             // 
             // MostradorUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.Controls.Add(this.pnlBase);
             this.Name = "MostradorUI";
             this.Size = new System.Drawing.Size(1187, 710);
@@ -849,6 +862,7 @@
             this.pnlBase.PerformLayout();
             this.pnlEligirCantidadDeProducto.ResumeLayout(false);
             this.pnlEligirCantidadDeProducto.PerformLayout();
+
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnlITBIS.ResumeLayout(false);
@@ -859,6 +873,7 @@
             this.pnlTotalAPagar.PerformLayout();
             this.pnlCantidadOrdenesAbiertas.ResumeLayout(false);
             this.pnlCantidadOrdenesAbiertas.PerformLayout();
+
             this.pnlCantidadItemsFactura.ResumeLayout(false);
             this.pnlCantidadItemsFactura.PerformLayout();
             this.pnlDetallesProducto.ResumeLayout(false);
@@ -866,7 +881,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosMostrador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).EndInit();
+
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -898,6 +915,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnCancelarFactura;
         private System.Windows.Forms.Button btnRemoverDeFactura;
+
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -919,6 +937,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCantidadOrdenesAbiertas;
         private System.Windows.Forms.Label label12;
+
         private System.Windows.Forms.Panel pnlCantidadItemsFactura;
         private System.Windows.Forms.TextBox txtItemsEnFactura;
         private System.Windows.Forms.TextBox txtIdFactura;
@@ -937,5 +956,6 @@
         private System.Windows.Forms.DataGridView dgvProductosMostrador;
         private System.Windows.Forms.DataGridView dgvPedidos;
         private System.Windows.Forms.DataGridView dgvFactura;
+
     }
 }
