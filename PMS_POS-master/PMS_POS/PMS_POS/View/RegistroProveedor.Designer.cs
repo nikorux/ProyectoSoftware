@@ -74,7 +74,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(537, 26);
             this.txtBuscar.TabIndex = 271;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            //this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dgvProveedores
             // 
@@ -362,7 +362,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(643, 557);
             this.panel2.TabIndex = 294;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+           // this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnBuscar
             // 
@@ -372,7 +372,7 @@
             this.btnBuscar.TabIndex = 272;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+           // this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnGuardar
             // 
@@ -400,7 +400,7 @@
             this.btnBorrar.TabIndex = 295;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            //this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnEditar
             // 
@@ -414,7 +414,7 @@
             this.btnEditar.TabIndex = 297;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.button1_Click);
+           // this.btnEditar.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 

@@ -93,20 +93,6 @@ namespace PMS_POS.View
 
         }
 
-        private void dgvProductosMostrador_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.dgvProductosMostrador.Rows[e.RowIndex];
-                txtNombre.Text = row.Cells["NombreInsumo"].Value.ToString();
-                txtPrecio.Text = row.Cells["PrecioVenta"].Value.ToString();
-                txtIdInsumo.Text = row.Cells["IdInsumo"].Value.ToString();
-                txtIdInsumo.Text = row.Cells["IdInsumo"].Value.ToString();
-
-
-            }
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
