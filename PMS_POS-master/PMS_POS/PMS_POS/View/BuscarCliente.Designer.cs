@@ -62,6 +62,7 @@
             this.dgvBuscarCliente.ReadOnly = true;
             this.dgvBuscarCliente.Size = new System.Drawing.Size(711, 205);
             this.dgvBuscarCliente.TabIndex = 2;
+            this.dgvBuscarCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBuscarCliente_CellContentClick);
             // 
             // btnAceptar
             // 
@@ -119,6 +120,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(732, 216);
             this.panel1.TabIndex = 94;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // BuscarCliente
             // 

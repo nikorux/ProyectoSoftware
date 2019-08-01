@@ -66,6 +66,12 @@
     <Compile Include="Model\Empleado.cs" />
     <Compile Include="Model\EstadoHabitaciones.cs" />
     <Compile Include="Model\Factura_Reservacion.cs" />
+    <Compile Include="View\BuscarCheckedIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BuscarCheckedIn.Designer.cs">
+      <DependentUpon>BuscarCheckedIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\BuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,7 @@
     <Compile Include="View\FacturacionCheckOut.Designer.cs">
       <DependentUpon>FacturacionCheckOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Impresion.cs" />
     <Compile Include="View\InformacionEstablecimiento.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -239,6 +246,9 @@
     <Compile Include="View\VentanaGraficos.Designer.cs">
       <DependentUpon>VentanaGraficos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\BuscarCheckedIn.resx">
+      <DependentUpon>BuscarCheckedIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\BuscarCliente.resx">
       <DependentUpon>BuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
