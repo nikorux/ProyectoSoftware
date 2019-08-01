@@ -16,11 +16,6 @@ namespace PMS_POS.View
 {
     public partial class RegistroProveedor :UserControl
     {
-        MySqlConnection connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["cString"].ConnectionString);
-        MySqlCommand command;
-        MySqlDataAdapter adapter;
-        DataTable table;
-
         int IdRubro = 0;
         private static RegistroProveedor _instance;
         public static RegistroProveedor Instance
@@ -136,7 +131,7 @@ namespace PMS_POS.View
             }
         }
 
-        private void btnGuardar_Click_1(object sender, EventArgs e)//boton guardar...  
+        private void btnGuardar_Click_1(object sender, EventArgs e)//boton guardar
         {
             try
             {
@@ -166,43 +161,6 @@ namespace PMS_POS.View
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void btnBorrar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-        public void searchData(string valueToSearch)
-        {
-            
-            
-            string query = "SELECT * FROM proveedor WHERE CONCAT('PrimerNombre', 'SegundoNombre', 'PrimerApellido', 'SegundoApellido','NombreCompañia','TipoDocumento','NumDocumento','RNC','Telefono','Correo') like '%" + valueToSearch + "%'";
-            command = new MySqlCommand(query, connection);
-            adapter = new MySqlDataAdapter(command);
-            table = new DataTable();
-            adapter.Fill(table);
-            dgvProveedores.DataSource = table;
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            string valueToSearch = txtBuscar.Text.ToString();
-            searchData(valueToSearch);
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-           
         }
     }
 }

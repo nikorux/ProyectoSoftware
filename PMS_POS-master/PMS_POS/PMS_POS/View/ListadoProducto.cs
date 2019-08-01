@@ -355,6 +355,7 @@ namespace PMS_POS.View
                 dgvProductos.Columns[14].Visible = false;
                 dgvProductos.Columns[2].Visible = false;
                 dgvProductos.Columns[6].Visible = false;
+
             }
         }
 
@@ -455,7 +456,6 @@ namespace PMS_POS.View
                         cbxUnidadMedidaAjustar.Text = "";
                         nudCantidadAjustar.Value = 0;
                         MessageBox.Show("Ajuste de stock exitoso.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        producto.InsertAjuste(idAjuste, dgvProductos.CurrentRow.Cells[1].Value.ToString(), cbxAccionAjuste.Text, CantidadCalculada, cbxUnidadMedidaAjustar.Text);
                     }
                     else
                     {
