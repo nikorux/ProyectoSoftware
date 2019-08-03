@@ -72,77 +72,6 @@ namespace PMS_POS.View
             txtBuscarProductoAjustesInventario.Text = "";
         }
 
-        private void CbxCategoria_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (cbxCategoriaInventario.Text == "Todas")
-            {
-                dgvAjustes.DataSource = producto.SelectAjustes();
-            }
-            else
-            {
-                dgvAjustes.DataSource = producto.FiltrarPORcategoria(cbxCategoriaInventario.SelectedItem.ToString());
-            }
-        }
-
-        private void TxtBuscarRecepcion_TextChanged(object sender, EventArgs e)
-        {
-            dgvRecepcion.AllowUserToAddRows = false;
-
-            if (txtBuscarInventario.Text != "")
-            {
-
-                dgvRecepcion.CurrentCell = null;
-                foreach (DataGridViewRow n in dgvRecepcion.Rows)
-                {
-                    n.Visible = false;
-                }
-                foreach (DataGridViewRow n in dgvRecepcion.Rows)
-                {
-                    foreach (DataGridViewCell m in n.Cells)
-                    {
-                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarInventario.Text.ToUpper()) == 0))
-                        {
-                            n.Visible = true;
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                dgvRecepcion.DataSource = producto.Select();
-            }
-        }
-
-        private void TxtBuscarFacturas_TextChanged(object sender, EventArgs e)
-        {
-            dgvFacturas.AllowUserToAddRows = false;
-
-            if (txtBuscarInventario.Text != "")
-            {
-
-                dgvFacturas.CurrentCell = null;
-                foreach (DataGridViewRow n in dgvFacturas.Rows)
-                {
-                    n.Visible = false;
-                }
-                foreach (DataGridViewRow n in dgvFacturas.Rows)
-                {
-                    foreach (DataGridViewCell m in n.Cells)
-                    {
-                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarFacturas.Text.ToUpper()) == 0))
-                        {
-                            n.Visible = true;
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                dgvFacturas.DataSource = producto.getDetallesFacturas("Todas");
-            }
-        }
 
         private void ChxPagadas_CheckedChanged(object sender, EventArgs e)
         {
@@ -180,7 +109,6 @@ namespace PMS_POS.View
                 MySqlDataReader readerCategoria = command.ExecuteReader();
                 while (readerCategoria.Read())
                 {
-                    cbxCategoriaInventario.Items.Add(readerCategoria.GetString("NombreCategoria"));
                     cbxRecepcion.Items.Add(readerCategoria.GetString("NombreCategoria"));
                 }
                 connectionCategoria.Close();

@@ -35,14 +35,6 @@
             this.txtBuscarProductoAjustesInventario = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvAjustes = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtBuscarInventario = new System.Windows.Forms.TextBox();
-            this.cbxCategoriaInventario = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -86,10 +78,6 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAjustes)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -112,7 +100,6 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage4);
@@ -190,97 +177,6 @@
             this.dgvAjustes.Size = new System.Drawing.Size(1096, 471);
             this.dgvAjustes.TabIndex = 1;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Controls.Add(this.panel4);
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1151, 564);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Historial de inventario";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(35, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(221, 24);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Reportes de Inventario";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel3.Controls.Add(this.txtBuscarInventario);
-            this.panel3.Controls.Add(this.cbxCategoriaInventario);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(287, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(850, 50);
-            this.panel3.TabIndex = 16;
-            // 
-            // txtBuscarInventario
-            // 
-            this.txtBuscarInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarInventario.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBuscarInventario.Location = new System.Drawing.Point(7, 13);
-            this.txtBuscarInventario.Name = "txtBuscarInventario";
-            this.txtBuscarInventario.Size = new System.Drawing.Size(448, 22);
-            this.txtBuscarInventario.TabIndex = 6;
-            this.txtBuscarInventario.Text = "Buscar Producto";
-            // 
-            // cbxCategoriaInventario
-            // 
-            this.cbxCategoriaInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCategoriaInventario.FormattingEnabled = true;
-            this.cbxCategoriaInventario.Items.AddRange(new object[] {
-            "Todas"});
-            this.cbxCategoriaInventario.Location = new System.Drawing.Point(565, 13);
-            this.cbxCategoriaInventario.Name = "cbxCategoriaInventario";
-            this.cbxCategoriaInventario.Size = new System.Drawing.Size(268, 24);
-            this.cbxCategoriaInventario.TabIndex = 4;
-            this.cbxCategoriaInventario.SelectedIndexChanged += new System.EventHandler(this.CbxCategoria_SelectedIndexChanged_1);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(479, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Categoría:";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel4.Controls.Add(this.dgvInventario);
-            this.panel4.Location = new System.Drawing.Point(6, 62);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1131, 525);
-            this.panel4.TabIndex = 15;
-            // 
-            // dgvInventario
-            // 
-            this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvInventario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgvInventario.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Location = new System.Drawing.Point(18, 14);
-            this.dgvInventario.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.dgvInventario.Name = "dgvInventario";
-            this.dgvInventario.Size = new System.Drawing.Size(1096, 471);
-            this.dgvInventario.TabIndex = 1;
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
@@ -325,7 +221,6 @@
             this.txtBuscarRecepcion.Size = new System.Drawing.Size(448, 22);
             this.txtBuscarRecepcion.TabIndex = 6;
             this.txtBuscarRecepcion.Text = "Buscar Producto";
-            this.txtBuscarRecepcion.TextChanged += new System.EventHandler(this.TxtBuscarRecepcion_TextChanged);
             // 
             // cbxRecepcion
             // 
@@ -455,7 +350,6 @@
             this.txtBuscarFacturas.Size = new System.Drawing.Size(237, 22);
             this.txtBuscarFacturas.TabIndex = 6;
             this.txtBuscarFacturas.Text = "Buscar";
-            this.txtBuscarFacturas.TextChanged += new System.EventHandler(this.TxtBuscarFacturas_TextChanged);
             // 
             // cbxFacturasTipoPago
             // 
@@ -748,12 +642,6 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAjustes)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -786,19 +674,12 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBuscarProductoAjustesInventario;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvAjustes;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtBuscarInventario;
-        private System.Windows.Forms.ComboBox cbxCategoriaInventario;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dgvInventario;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txtBuscarFacturas;
         private System.Windows.Forms.ComboBox cbxFacturasTipoPago;
@@ -806,7 +687,6 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView dgvFacturas;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbxFormaPago;
         private System.Windows.Forms.Label label2;
