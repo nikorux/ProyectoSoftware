@@ -458,7 +458,6 @@ namespace PMS_POS
             userControlInicio1.SendToBack();
             PanelContenedor.Controls.Clear();
             NuevaReservacion thisprobando = NuevaReservacion.Instance;
-          //  NuevaReservacion.Instance.Reseting();
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
         }
@@ -613,9 +612,15 @@ namespace PMS_POS
             thisprobando.Show();
         }
 
-        private void ArchivoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TipoDeDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            ConfigurarTipoDocumento thisprobando = new ConfigurarTipoDocumento();
+            //thisprobando.TopLevel = false;
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
         }
     }
 

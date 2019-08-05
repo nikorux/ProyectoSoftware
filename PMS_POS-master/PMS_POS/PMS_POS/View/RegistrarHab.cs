@@ -63,8 +63,9 @@ namespace PMS_POS.View
                         {
                             RefreshDgv();
                             Clear();
-                            MessageBox.Show("La habitación ha sido creada.");
-                           
+                            NotificacionCorrecto.confirmacionForm("AGREGADO");
+
+
                         }
                         else
                         {
@@ -191,6 +192,10 @@ namespace PMS_POS.View
         private void TxtBoxPrecioPorNoche_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.soloNumerosPunto(e, txtBoxPrecioPorNoche);
+        }
+
+        private void RegistrarHab_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 

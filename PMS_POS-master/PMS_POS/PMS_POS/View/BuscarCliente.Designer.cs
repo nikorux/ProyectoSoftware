@@ -137,6 +137,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "BuscarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarCliente";
             this.Load += new System.EventHandler(this.BuscarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarCliente)).EndInit();

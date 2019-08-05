@@ -121,7 +121,7 @@ namespace PMS_POS.View
                     obj.IdEmpleado = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells[0].Value);
                     if (obj.Delete(obj) == true)
                     {
-                        MessageBox.Show("El empleado ha sido eliminado.");
+                        NotificacionCorrecto.confirmacionForm("ELIMINADO");
                         dgvEmpleados.DataSource = null;
                         dgvEmpleados.DataSource = obj.VistaTabla();
 

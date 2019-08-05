@@ -55,7 +55,7 @@ namespace PMS_POS.View
                     int resultado = HuespedD.Agregar(pHuesped);
                     if (resultado > 0)
                     {
-                        MessageBox.Show("Cliente guardado con exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        NotificacionCorrecto.confirmacionForm("AGREGADO");
                         //dgvclie.DataSource = null;
                         //dgvHuespedes.DataSource = obj.VistaTabla();
                         Huesped limpiar = new Huesped();
@@ -152,7 +152,18 @@ namespace PMS_POS.View
 
         private void TxtIdentificacion_TextChanged(object sender, EventArgs e)
         {
-           
+
+            if (cbxTipoIdentificacion.Text == "Cédula")
+            {
+                if ((validar.ValidarCedula(txtIdentificacion.Text) == true))
+                {
+                    errorProviderCedula.Clear();
+                }
+                else
+                {
+                    errorProviderCedula.SetError(this.txtIdentificacion, "Ingrese una cédula válida.");
+                }
+            }
         }
 
         private void TxtPrimerNombre_TextChanged(object sender, EventArgs e)
@@ -203,17 +214,6 @@ namespace PMS_POS.View
         private void TxtIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
         {
  
-            if (cbxTipoIdentificacion.Text == "Cédula")
-            {
-                if ((validar.ValidarCedula(txtIdentificacion.Text) == true))
-                {
-                    errorProviderCedula.Clear();
-                }
-                else
-                {
-                    errorProviderCedula.SetError(this.txtIdentificacion, "Ingrese una cédula válida.");
-                }
-            }
             if (cbxTipoIdentificacion.Text == "Pasaporte")
             {
                 validar.ValidarPasaporte(e, txtIdentificacion);

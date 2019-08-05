@@ -39,10 +39,10 @@ namespace PMS_POS.View
             }
         }
 
-        MainScreen main = new MainScreen();
+        MainScreen main = MainScreen.Instance;
         private void BtnGuardarImagen_Click(object sender, EventArgs e)
         {
-            main.pictureBox15 = picturebImagen;
+            main.pictureBox15.Image = picturebImagen.Image;
         }
     }
 }
