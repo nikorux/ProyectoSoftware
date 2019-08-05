@@ -77,12 +77,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.btnAgregarRecargo = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtRecargoPendiente = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnVisualizarPendiente = new System.Windows.Forms.Button();
             this.dgvFill = new System.Windows.Forms.DataGridView();
-            this.btnAgregarRecargo = new System.Windows.Forms.Button();
             this.dataGridViewRecargos = new System.Windows.Forms.DataGridView();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -477,6 +477,7 @@
             this.btnImprimir.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnImprimir.CausesValidation = false;
+            this.btnImprimir.Enabled = false;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -490,6 +491,7 @@
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimir.UseCompatibleTextRendering = true;
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
             // panel2
             // 
@@ -622,6 +624,27 @@
             this.panel12.Size = new System.Drawing.Size(799, 145);
             this.panel12.TabIndex = 91;
             // 
+            // btnAgregarRecargo
+            // 
+            this.btnAgregarRecargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarRecargo.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAgregarRecargo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAgregarRecargo.CausesValidation = false;
+            this.btnAgregarRecargo.FlatAppearance.BorderSize = 0;
+            this.btnAgregarRecargo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarRecargo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarRecargo.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarRecargo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarRecargo.Location = new System.Drawing.Point(570, 21);
+            this.btnAgregarRecargo.Name = "btnAgregarRecargo";
+            this.btnAgregarRecargo.Size = new System.Drawing.Size(105, 85);
+            this.btnAgregarRecargo.TabIndex = 110;
+            this.btnAgregarRecargo.Text = "Agregar Recargo";
+            this.btnAgregarRecargo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregarRecargo.UseCompatibleTextRendering = true;
+            this.btnAgregarRecargo.UseVisualStyleBackColor = false;
+            this.btnAgregarRecargo.Click += new System.EventHandler(this.BtnAgregarRecargo_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -684,27 +707,6 @@
             this.dgvFill.Size = new System.Drawing.Size(240, 150);
             this.dgvFill.TabIndex = 107;
             this.dgvFill.Visible = false;
-            // 
-            // btnAgregarRecargo
-            // 
-            this.btnAgregarRecargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarRecargo.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAgregarRecargo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAgregarRecargo.CausesValidation = false;
-            this.btnAgregarRecargo.FlatAppearance.BorderSize = 0;
-            this.btnAgregarRecargo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarRecargo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarRecargo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarRecargo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarRecargo.Location = new System.Drawing.Point(570, 21);
-            this.btnAgregarRecargo.Name = "btnAgregarRecargo";
-            this.btnAgregarRecargo.Size = new System.Drawing.Size(105, 85);
-            this.btnAgregarRecargo.TabIndex = 110;
-            this.btnAgregarRecargo.Text = "Agregar Recargo";
-            this.btnAgregarRecargo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregarRecargo.UseCompatibleTextRendering = true;
-            this.btnAgregarRecargo.UseVisualStyleBackColor = false;
-            this.btnAgregarRecargo.Click += new System.EventHandler(this.BtnAgregarRecargo_Click);
             // 
             // dataGridViewRecargos
             // 

@@ -146,7 +146,7 @@ namespace PMS_POS.View
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            if (dgvReservaciones.SelectedRows.Count > 0)
+            if (dgvReservaciones.SelectedRows.Count > 0 )
             { int row = 0;
                 row = dgvReservaciones.SelectedCells[0].RowIndex;
          
@@ -160,8 +160,7 @@ namespace PMS_POS.View
                     un.FillFactura(Convert.ToInt32(selectedRow.Cells["IdReservacion"].Value));
                 }
                 MainScreen.Instance.PnlContainer.Controls["FacturacionCheckIn"].BringToFront();
-                
-                
+               
             }
             else
             {
@@ -229,6 +228,67 @@ namespace PMS_POS.View
             else
             {
                 MessageBox.Show("Seleccione una fila.");
+            }
+        }
+
+        private void DgvReservaciones_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgvReservaciones.SelectedRows.Count > 0)
+            {
+                int row = 0;
+                row = dgvReservaciones.SelectedCells[0].RowIndex;
+                DataGridViewRow dgvRow = dgvReservaciones.Rows[row];
+                if (dgvRow.Cells["Estado"].Value.ToString() == "Sin Confirmar")
+                {
+                    btnRegistrarCheckOut.Enabled = false;
+
+                    btnConfirmar.Enabled = true;
+
+
+                }
+                else if (dgvRow.Cells["Estado"].Value.ToString() == "Checked-In")
+                {
+                    btnConfirmar.Enabled = false;
+                    btnEditarReservacion.Enabled = false;
+                    btnRegistrarCheckOut.Enabled = true;
+
+
+
+                }
+
+
+
+            }
+        }
+
+        private void DgvReservaciones_Enter(object sender, EventArgs e)
+        {
+            if (dgvReservaciones.SelectedRows.Count > 0)
+            {
+                int row = 0;
+                row = dgvReservaciones.SelectedCells[0].RowIndex;
+                DataGridViewRow dgvRow = dgvReservaciones.Rows[row];
+                if (dgvRow.Cells["Estado"].Value.ToString() == "Sin Confirmar")
+                {
+                    btnRegistrarCheckOut.Enabled = false;
+
+                    btnConfirmar.Enabled = true;
+
+
+                }
+                else if (dgvRow.Cells["Estado"].Value.ToString() == "Checked-In")
+                {
+                    btnConfirmar.Enabled = false;
+                    btnEditarReservacion.Enabled = false;
+                    btnRegistrarCheckOut.Enabled = true;
+
+
+
+                }
+
+
+
             }
         }
     }

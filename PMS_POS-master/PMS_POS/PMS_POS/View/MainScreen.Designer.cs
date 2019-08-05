@@ -43,6 +43,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +56,7 @@
             this.CheckInToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.CheckOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FacturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoríaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,24 +67,22 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCheckOut = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.btnExtras = new System.Windows.Forms.Button();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnReservas = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.btnExtras = new System.Windows.Forms.Button();
-            this.btnInicio = new System.Windows.Forms.Button();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.reportesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.userControlInicio1 = new PMS_POS.View.UserControlInicio();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.PanelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.SuspendLayout();
             // 
             // timer3
@@ -161,9 +161,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1298, 2);
+            this.button2.Location = new System.Drawing.Point(1300, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 48);
+            this.button2.Size = new System.Drawing.Size(65, 48);
             this.button2.TabIndex = 27;
             this.button2.Text = "x";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -179,9 +179,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1245, 1);
+            this.button4.Location = new System.Drawing.Point(1229, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 49);
+            this.button4.Size = new System.Drawing.Size(68, 49);
             this.button4.TabIndex = 26;
             this.button4.Text = "-";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -208,6 +208,16 @@
             this.label19.Size = new System.Drawing.Size(45, 21);
             this.label19.TabIndex = 13;
             this.label19.Text = "Logo";
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = global::PMS_POS.Properties.Resources.Imagen101;
+            this.pictureBox15.Location = new System.Drawing.Point(12, 5);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.TabIndex = 12;
+            this.pictureBox15.TabStop = false;
             // 
             // panel1
             // 
@@ -243,6 +253,7 @@
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(63, 29);
             this.archivoToolStripMenuItem.Text = "Archivo";
+            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.ArchivoToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -307,6 +318,13 @@
             this.FacturacionToolStripMenuItem.Name = "FacturacionToolStripMenuItem";
             this.FacturacionToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.FacturacionToolStripMenuItem.Text = "Facturación";
+            // 
+            // reportesToolStripMenuItem1
+            // 
+            this.reportesToolStripMenuItem1.Name = "reportesToolStripMenuItem1";
+            this.reportesToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.reportesToolStripMenuItem1.Text = "Reportes";
+            this.reportesToolStripMenuItem1.Click += new System.EventHandler(this.ReportesToolStripMenuItem1_Click);
             // 
             // configuracionesToolStripMenuItem
             // 
@@ -386,82 +404,10 @@
             this.panel3.Size = new System.Drawing.Size(82, 681);
             this.panel3.TabIndex = 47;
             // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel10.Location = new System.Drawing.Point(-2, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(7, 80);
-            this.panel10.TabIndex = 49;
-            // 
-            // PanelContenedor
-            // 
-            this.PanelContenedor.Controls.Add(this.userControlInicio1);
-            this.PanelContenedor.Location = new System.Drawing.Point(82, 88);
-            this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(1304, 633);
-            this.PanelContenedor.TabIndex = 48;
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.Image = global::PMS_POS.Properties.Resources.Imagen51;
-            this.btnClientes.Location = new System.Drawing.Point(0, 412);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(80, 80);
-            this.btnClientes.TabIndex = 43;
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnClientes.UseCompatibleTextRendering = true;
-            this.btnClientes.UseVisualStyleBackColor = false;
-            this.btnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
-            // 
-            // btnCheckIn
-            // 
-            this.btnCheckIn.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCheckIn.FlatAppearance.BorderSize = 0;
-            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Image = global::PMS_POS.Properties.Resources.checkin;
-            this.btnCheckIn.Location = new System.Drawing.Point(2, 249);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(80, 80);
-            this.btnCheckIn.TabIndex = 45;
-            this.btnCheckIn.Text = "Check-In";
-            this.btnCheckIn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCheckIn.UseCompatibleTextRendering = true;
-            this.btnCheckIn.UseVisualStyleBackColor = false;
-            this.btnCheckIn.Click += new System.EventHandler(this.BtnCheckIn_Click);
-            // 
-            // btnReservas
-            // 
-            this.btnReservas.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnReservas.FlatAppearance.BorderSize = 0;
-            this.btnReservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReservas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservas.ForeColor = System.Drawing.Color.White;
-            this.btnReservas.Image = global::PMS_POS.Properties.Resources.reservas;
-            this.btnReservas.Location = new System.Drawing.Point(2, 169);
-            this.btnReservas.Name = "btnReservas";
-            this.btnReservas.Size = new System.Drawing.Size(80, 80);
-            this.btnReservas.TabIndex = 42;
-            this.btnReservas.Text = "Reservas";
-            this.btnReservas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReservas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnReservas.UseCompatibleTextRendering = true;
-            this.btnReservas.UseVisualStyleBackColor = false;
-            this.btnReservas.Click += new System.EventHandler(this.BtnReservas_Click);
-            // 
             // btnCheckOut
             // 
             this.btnCheckOut.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCheckOut.Enabled = false;
             this.btnCheckOut.FlatAppearance.BorderSize = 0;
             this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -477,6 +423,14 @@
             this.btnCheckOut.UseCompatibleTextRendering = true;
             this.btnCheckOut.UseVisualStyleBackColor = false;
             this.btnCheckOut.Click += new System.EventHandler(this.BtnCheckOut_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel10.Location = new System.Drawing.Point(-2, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(7, 80);
+            this.panel10.TabIndex = 49;
             // 
             // btnExtras
             // 
@@ -516,22 +470,71 @@
             this.btnInicio.UseVisualStyleBackColor = false;
             this.btnInicio.Click += new System.EventHandler(this.BtnInicio_Click);
             // 
-            // pictureBox15
+            // PanelContenedor
             // 
-            this.pictureBox15.Image = global::PMS_POS.Properties.Resources.Imagen101;
-            this.pictureBox15.Location = new System.Drawing.Point(12, 5);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox15.TabIndex = 12;
-            this.pictureBox15.TabStop = false;
+            this.PanelContenedor.Controls.Add(this.userControlInicio1);
+            this.PanelContenedor.Location = new System.Drawing.Point(82, 88);
+            this.PanelContenedor.Name = "PanelContenedor";
+            this.PanelContenedor.Size = new System.Drawing.Size(1304, 633);
+            this.PanelContenedor.TabIndex = 48;
             // 
-            // reportesToolStripMenuItem1
+            // btnClientes
             // 
-            this.reportesToolStripMenuItem1.Name = "reportesToolStripMenuItem1";
-            this.reportesToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
-            this.reportesToolStripMenuItem1.Text = "Reportes";
-            this.reportesToolStripMenuItem1.Click += new System.EventHandler(this.ReportesToolStripMenuItem1_Click);
+            this.btnClientes.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.Color.White;
+            this.btnClientes.Image = global::PMS_POS.Properties.Resources.Imagen51;
+            this.btnClientes.Location = new System.Drawing.Point(0, 412);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(80, 80);
+            this.btnClientes.TabIndex = 43;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnClientes.UseCompatibleTextRendering = true;
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
+            // 
+            // btnCheckIn
+            // 
+            this.btnCheckIn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCheckIn.Enabled = false;
+            this.btnCheckIn.FlatAppearance.BorderSize = 0;
+            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.Image = global::PMS_POS.Properties.Resources.checkin;
+            this.btnCheckIn.Location = new System.Drawing.Point(2, 249);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Size = new System.Drawing.Size(80, 80);
+            this.btnCheckIn.TabIndex = 45;
+            this.btnCheckIn.Text = "Check-In";
+            this.btnCheckIn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCheckIn.UseCompatibleTextRendering = true;
+            this.btnCheckIn.UseVisualStyleBackColor = false;
+            this.btnCheckIn.Click += new System.EventHandler(this.BtnCheckIn_Click);
+            // 
+            // btnReservas
+            // 
+            this.btnReservas.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnReservas.FlatAppearance.BorderSize = 0;
+            this.btnReservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReservas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservas.ForeColor = System.Drawing.Color.White;
+            this.btnReservas.Image = global::PMS_POS.Properties.Resources.reservas;
+            this.btnReservas.Location = new System.Drawing.Point(2, 169);
+            this.btnReservas.Name = "btnReservas";
+            this.btnReservas.Size = new System.Drawing.Size(80, 80);
+            this.btnReservas.TabIndex = 42;
+            this.btnReservas.Text = "Reservas";
+            this.btnReservas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReservas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnReservas.UseCompatibleTextRendering = true;
+            this.btnReservas.UseVisualStyleBackColor = false;
+            this.btnReservas.Click += new System.EventHandler(this.BtnReservas_Click);
             // 
             // userControlInicio1
             // 
@@ -564,13 +567,13 @@
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.PanelContenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.ResumeLayout(false);
 
         }

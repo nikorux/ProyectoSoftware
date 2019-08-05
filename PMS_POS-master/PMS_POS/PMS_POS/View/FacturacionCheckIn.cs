@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PMS_POS.Model;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
 
 namespace PMS_POS.View
 {
@@ -73,10 +76,10 @@ namespace PMS_POS.View
             dgvHabitacion.Columns[14].Visible = false;
 
         }
-
+        Factura_Reservacion f = new Factura_Reservacion();
         private void BtnRegistrarCheckIn_Click(object sender, EventArgs e)
         {
-            Factura_Reservacion f = new Factura_Reservacion();
+            
             if( cmbFormaPago.Text == string.Empty)
             {
                 MessageBox.Show("Seleccione una forma de pago.");
@@ -121,6 +124,9 @@ namespace PMS_POS.View
                         hab.IdHabitacion = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[13].Value);
                         hab.CambiarEstados(hab.IdHabitacion, "Ocupada");
                         MessageBox.Show("Se ha facturado correctamente.");
+                        f.IdFactura = f.SelectIdFactura();
+                        btnImprimir.Enabled = true;
+                 
                     }
                     else
                     {
@@ -186,6 +192,8 @@ namespace PMS_POS.View
                         hab.IdHabitacion = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[13].Value);
                         hab.CambiarEstados(hab.IdHabitacion, "Ocupada");
                         MessageBox.Show("Se ha facturado correctamente.");
+                         f.IdFactura = f.SelectIdFactura();
+                        btnImprimir.Enabled = true;
                     }
                     else
                     {
@@ -332,6 +340,55 @@ namespace PMS_POS.View
 
         private void TxtTotalAPagar_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void BtnImprimir_Click_1(object sender, EventArgs e)
+        {
+            FacturaDetails();
+            using(SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF file |*.pdf", ValidateNames = true })
+            {
+                if(sfd.ShowDialog() == DialogResult.OK)
+                {
+                    iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
+                    try
+                    {
+                        PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+                        doc.Open();
+                        doc.Add(new iTextSharp.text.Paragraph(txtBoxFactura.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        doc.Close();
+                    }
+                }
+            }
+        }
+        private void FacturaDetails()
+        {
+            txtBoxFactura.Text =
+                "HOTEL XXXXX\n" +
+                "************************************************************************\n" +
+                "No. Factura: " + f.IdFactura.ToString() + "\n" +
+                "Fecha: " + DateTime.Now + "\n" +
+                "Le atendió: " + txtCajero.Text + "\n" +
+                "--------------------------------------------------------------------------------\n" +
+                "DESCRIPCIÓN          PRECIO POR NOCHE      SUBTOTAL \n" +
+                "Habitación " + dgvHabitacion.Rows[0].Cells[6].Value.ToString() + "                 " + dgvHabitacion.Rows[0].Cells[11].Value.ToString() + " RD$               " + dgvHabitacion.Rows[0].Cells[12].Value.ToString() +
+                "RD$\n--------------------------------------------------------------------------------\n" +
+                "Sub-Total                                                                 " + txtSubtotal.Text + " RD$\n" +
+                "% Descuento                                                                " + txtDescuento.Text + " %\n\n" +
+                "Total                                                                       " + txtTotalAPagar.Text + " RD$\n" +
+                "Efectivo entregado                                                   " + txtEfectivo.Text + " RD$" +
+                "\nEfectivo devuelto                                                 " + txtCambio.Text + " RD$" +
+                 "\n--------------------------------------------------------------------------------";
+
+
+
 
         }
     }

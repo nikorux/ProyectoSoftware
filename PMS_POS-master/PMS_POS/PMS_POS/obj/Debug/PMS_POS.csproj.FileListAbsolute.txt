@@ -239,3 +239,5 @@ C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\ob
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlEmpleados.resources
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.BuscarCheckedIn.resources
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csprojAssemblyReference.cache
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.dll
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.xml

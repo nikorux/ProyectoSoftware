@@ -49,14 +49,21 @@
             // 
             this.dgvReservaciones.AllowUserToAddRows = false;
             this.dgvReservaciones.AllowUserToDeleteRows = false;
+            this.dgvReservaciones.AllowUserToResizeColumns = false;
+            this.dgvReservaciones.AllowUserToResizeRows = false;
             this.dgvReservaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvReservaciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReservaciones.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvReservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReservaciones.Location = new System.Drawing.Point(12, 14);
+            this.dgvReservaciones.MultiSelect = false;
             this.dgvReservaciones.Name = "dgvReservaciones";
             this.dgvReservaciones.ReadOnly = true;
+            this.dgvReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReservaciones.Size = new System.Drawing.Size(1013, 405);
             this.dgvReservaciones.TabIndex = 0;
+            this.dgvReservaciones.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReservaciones_RowEnter);
+            this.dgvReservaciones.Enter += new System.EventHandler(this.DgvReservaciones_Enter);
             // 
             // btnEliminarReservacion
             // 
@@ -103,7 +110,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Controls.Add(this.dgvReservaciones);
-            this.panel2.Location = new System.Drawing.Point(119, 137);
+            this.panel2.Location = new System.Drawing.Point(120, 135);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1047, 438);
             this.panel2.TabIndex = 83;
@@ -136,6 +143,7 @@
             this.btnConfirmar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnConfirmar.CausesValidation = false;
+            this.btnConfirmar.Enabled = false;
             this.btnConfirmar.FlatAppearance.BorderSize = 0;
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,6 +186,7 @@
             this.btnRegistrarCheckOut.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnRegistrarCheckOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnRegistrarCheckOut.CausesValidation = false;
+            this.btnRegistrarCheckOut.Enabled = false;
             this.btnRegistrarCheckOut.FlatAppearance.BorderSize = 0;
             this.btnRegistrarCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarCheckOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -458,6 +458,7 @@ namespace PMS_POS
             userControlInicio1.SendToBack();
             PanelContenedor.Controls.Clear();
             NuevaReservacion thisprobando = NuevaReservacion.Instance;
+          //  NuevaReservacion.Instance.Reseting();
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
         }
@@ -610,6 +611,11 @@ namespace PMS_POS
             thisprobando.TopLevel = false;
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
+        }
+
+        private void ArchivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

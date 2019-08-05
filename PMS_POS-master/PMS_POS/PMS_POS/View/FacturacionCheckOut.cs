@@ -131,11 +131,14 @@ namespace PMS_POS.View
                     Reservacion reserva = new Reservacion();
                     reserva.IdReservacion = f.IdReservacion;
                     reserva.CheckOut(reserva);
-                    // HABITACION PASA DE OCUPADA A DISPONIBLE
+                    // HABITACION PASA DE OCUPADA A DISPONIBLE Y SU ESTADO DE RESERVADA PASA A NEGATIVO
                     Habitacion hab = new Habitacion();
                     hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[2].Value);
                     hab.CambiarEstados(hab.IdHabitacion, "Disponible");
+                    hab.IsReserved(hab.IdHabitacion, 0);
                     MessageBox.Show("Check out correctamente.");
+                    f.IdFactura = f.SelectIdFactura();
+                    btnImprimir.Enabled = true;
                 }
               
 
@@ -180,6 +183,8 @@ namespace PMS_POS.View
                         hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[2].Value);
                         hab.CambiarEstados(hab.IdHabitacion, "Disponible");
                         MessageBox.Show("Se ha facturado correctamente.");
+                        f.IdFactura = f.SelectIdFactura();
+                        btnImprimir.Enabled = true;
                     }
                     else
                     {
@@ -227,7 +232,7 @@ namespace PMS_POS.View
                     if (txtCambio.Text == string.Empty)
                     {
                         //do nothing
-                        MessageBox.Show("Faltan Ingresar datos.");
+                        MessageBox.Show("Falta Ingresar datos.");
                     }
                     else
                     {
@@ -245,6 +250,8 @@ namespace PMS_POS.View
                         hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[2].Value);
                         hab.CambiarEstados(hab.IdHabitacion, "Disponible");
                         MessageBox.Show("Se ha facturado correctamente.");
+                        f.IdFactura = f.SelectIdFactura();
+                        btnImprimir.Enabled = true;
                     }
                     else
                     {
@@ -417,6 +424,11 @@ namespace PMS_POS.View
         {
             txtSubtotal.Text = txtRecargoPendiente.Text;
             txtTotalAPagar.Text = txtRecargoPendiente.Text;
+        }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

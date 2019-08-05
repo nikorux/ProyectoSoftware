@@ -56,6 +56,33 @@ namespace PMS_POS.Model
             }
             return dt;
         }
+
+        public DataTable SelectBuscarHabitacion()
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT IdHabitacion, NumHab, TipoHab, CantCamas, MaxPersonas, Piso, Estado, Plan, Detalles, PrecioPorNoche,IsReserved FROM habitacion WHERE IsDeleted=0 AND Estado != 'Ocupada'";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
         public bool Insert(Habitacion h)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
@@ -230,6 +257,63 @@ namespace PMS_POS.Model
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdHabitacion", id);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public bool IsReserved(int idHabitacion, Byte reserved)
+        {
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+
+                string sql = "UPDATE habitacion SET IsReserved=@IsReserved WHERE IdHabitacion=@IdHabitacion";
+
+                //Creating SQL Command
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdHabitacion", idHabitacion);
+                cmd.Parameters.AddWithValue("@IsReserved", reserved);
+                //Open Connection
+                mySqlConn.Open();
+                int row = cmd.ExecuteNonQuery();
+                mySqlConn.Close();
+                if (row > 0)
+                {
+
+                    return true;
+                }
+                else
+                {
+
+                    return false;
+                }
+            }
+        }
+        public DataTable ReservationsInRoom(int IdHabitacion)
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "Select IdReservacion, IdHabitacion, FechaLlegada, FechaSalida from reservacion where IsDeleted=0 AND EstadoReservacion = 'Sin Confirmar'AND IdHabitacion = @IdHabitacion;";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdHabitacion", IdHabitacion);
                 //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
