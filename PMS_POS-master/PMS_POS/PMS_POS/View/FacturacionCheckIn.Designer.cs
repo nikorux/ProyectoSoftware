@@ -662,11 +662,12 @@
             // 
             // txtBoxFactura
             // 
-            this.txtBoxFactura.Location = new System.Drawing.Point(871, 504);
+            this.txtBoxFactura.Location = new System.Drawing.Point(871, 535);
             this.txtBoxFactura.Name = "txtBoxFactura";
             this.txtBoxFactura.Size = new System.Drawing.Size(398, 139);
             this.txtBoxFactura.TabIndex = 96;
             this.txtBoxFactura.Text = "";
+            this.txtBoxFactura.Visible = false;
             // 
             // FacturacionCheckIn
             // 
