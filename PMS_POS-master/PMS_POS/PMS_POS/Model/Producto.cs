@@ -27,7 +27,6 @@ namespace PMS_POS.Model
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
 
-
         public DataTable SelectItemsEnInventario()
         {
             //hacer la conexion con sql

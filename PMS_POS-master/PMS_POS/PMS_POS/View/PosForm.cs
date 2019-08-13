@@ -73,7 +73,6 @@ namespace PMS_POS.View
         public void hideUIs()
         {
             Ordenes1.Instance.SendToBack();
-            MostradorUI.Instance.SendToBack();
             RegistroProveedor.Instance.SendToBack();
             PaginaInicio.Instance.SendToBack();
             ListadoProducto.InstanceLP.SendToBack();
@@ -219,17 +218,6 @@ namespace PMS_POS.View
             panelUIseleccionada.BringToFront();
             panelUIseleccionada.Visible = true;
             hideUIs();
-
-            if (!panelUIseleccionada.Controls.Contains(MostradorUI.Instance))
-            {
-                panelUIseleccionada.Controls.Add(MostradorUI.Instance);
-                MostradorUI.Instance.Dock = DockStyle.Fill;
-                MostradorUI.Instance.BringToFront();
-            }
-            else
-            {
-                MostradorUI.Instance.BringToFront();
-            }
         }
 
         public void uiColor()

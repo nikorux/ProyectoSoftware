@@ -113,6 +113,26 @@ namespace PMS_POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ConfiguracionIMG {
+            get {
+                object obj = ResourceManager.GetObject("ConfiguracionIMG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ConfigurarIMG {
+            get {
+                object obj = ResourceManager.GetObject("ConfigurarIMG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ConfigurarMenuIMG {
             get {
                 object obj = ResourceManager.GetObject("ConfigurarMenuIMG", resourceCulture);
@@ -166,6 +186,26 @@ namespace PMS_POS.Properties {
         internal static System.Drawing.Bitmap hotel__1_ {
             get {
                 object obj = ResourceManager.GetObject("hotel (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_mastercard_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-mastercard-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_visa_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-visa-96", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
