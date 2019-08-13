@@ -151,8 +151,11 @@
   <data name="recipe-book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recipe-book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="line2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\line2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ConfiguracionIMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfiguracionIMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-visa-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-visa-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VentasIMGhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VentasIMGhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -174,6 +177,12 @@
   </data>
   <data name="MenuIMGhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuIMGhover2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="line2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\line2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConfigurarMenuIMGhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfigurarMenuIMGhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TransaccionesIMGhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TransaccionesIMGhover2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +211,14 @@
   <data name="OrdenesIMGhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OrdenesIMGhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ConfigurarIMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfigurarIMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="settings (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConfigurarMenuIMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConfigurarMenuIMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="restaurant-1724294_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restaurant-1724294_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,10 +247,7 @@
   <data name="VentasIMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VentasIMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ConfigurarMenuIMGhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ConfigurarMenuIMGhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ConfigurarMenuIMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ConfigurarMenuIMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-mastercard-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-mastercard-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

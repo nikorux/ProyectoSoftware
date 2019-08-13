@@ -441,16 +441,7 @@ namespace PMS_POS
 
         private void BtnConfigurarTipoCategoria_Click(object sender, EventArgs e)
         {
-            if (!userControlInicio1.Controls.Contains(ConfigurarCategoriaProducto.Instance))
-            {
-                userControlInicio1.Controls.Add(ConfigurarCategoriaProducto.Instance);
-                ConfigurarCategoriaProducto.Instance.Dock = DockStyle.Fill;
-                ConfigurarCategoriaProducto.Instance.BringToFront();
-            }
-            else
-            {
-                ConfigurarCategoriaProducto.Instance.BringToFront();
-            }
+           
         }
 
         private void BtnConfigurarImpuestos_Click(object sender, EventArgs e)

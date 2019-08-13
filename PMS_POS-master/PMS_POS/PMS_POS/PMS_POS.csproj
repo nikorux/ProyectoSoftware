@@ -68,11 +68,13 @@
     <Compile Include="Controller\RubroC.cs" />
     <Compile Include="Controller\TipoHabitacion.cs" />
     <Compile Include="Model\BDGeneral.cs" />
+    <Compile Include="Model\Caja.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Documento.cs" />
     <Compile Include="Model\Habitacion.cs" />
     <Compile Include="Model\Huesped.cs" />
     <Compile Include="Controller\HuespedD.cs" />
+    <Compile Include="Model\Mesa.cs" />
     <Compile Include="Model\Mostrador.cs" />
     <Compile Include="Model\Producto.cs" />
     <Compile Include="Model\Proveedor.cs" />
@@ -88,11 +90,11 @@
     <Compile Include="View\AjustarStock.Designer.cs">
       <DependentUpon>AjustarStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ConfigurarCategoriaProducto.cs">
+    <Compile Include="View\ConfigurarPOS.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\ConfigurarCategoriaProducto.designer.cs">
-      <DependentUpon>ConfigurarCategoriaProducto.cs</DependentUpon>
+    <Compile Include="View\ConfigurarPOS.Designer.cs">
+      <DependentUpon>ConfigurarPOS.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ConfigurarRubroProveedor.cs">
       <SubType>UserControl</SubType>
@@ -191,12 +193,6 @@
     </Compile>
     <Compile Include="View\MostradorPOS.Designer.cs">
       <DependentUpon>MostradorPOS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MostradorUI.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\MostradorUI.Designer.cs">
-      <DependentUpon>MostradorUI.cs</DependentUpon>
     </Compile>
     <Compile Include="View\NuevaReservacion.cs">
       <SubType>UserControl</SubType>
@@ -307,8 +303,8 @@
     <EmbeddedResource Include="View\AjustarStock.resx">
       <DependentUpon>AjustarStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ConfigurarCategoriaProducto.resx">
-      <DependentUpon>ConfigurarCategoriaProducto.cs</DependentUpon>
+    <EmbeddedResource Include="View\ConfigurarPOS.resx">
+      <DependentUpon>ConfigurarPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ConfigurarRubroProveedor.resx">
       <DependentUpon>ConfigurarRubroProveedor.cs</DependentUpon>
@@ -357,9 +353,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MostradorPOS.resx">
       <DependentUpon>MostradorPOS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MostradorUI.resx">
-      <DependentUpon>MostradorUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuevaReservacion.resx">
       <DependentUpon>NuevaReservacion.cs</DependentUpon>
@@ -427,6 +420,10 @@
   <ItemGroup>
     <Content Include="img\arrows.png" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\icons8-mastercard-96.png" />
+    <None Include="Resources\icons8-visa-96.png" />
+    <None Include="Resources\ConfigurarIMG.png" />
+    <None Include="Resources\ConfiguracionIMG.png" />
     <None Include="Resources\ConfigurarMenuIMG.png" />
     <None Include="Resources\ConfigurarMenuIMGhover.png" />
     <None Include="Resources\OrdenesIMG.png" />

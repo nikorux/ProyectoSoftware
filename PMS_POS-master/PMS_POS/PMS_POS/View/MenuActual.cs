@@ -32,7 +32,6 @@ namespace PMS_POS.View
             InitializeComponent();
         }
 
-        MostradorUI mostrador = new MostradorUI();
         Producto producto = new Producto();
 
         private void MenuActual_Load(object sender, EventArgs e)
