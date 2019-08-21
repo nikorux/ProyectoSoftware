@@ -161,9 +161,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1298, 2);
+            this.button2.Location = new System.Drawing.Point(1300, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 48);
+            this.button2.Size = new System.Drawing.Size(65, 48);
             this.button2.TabIndex = 27;
             this.button2.Text = "x";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -179,9 +179,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1245, 1);
+            this.button4.Location = new System.Drawing.Point(1229, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 49);
+            this.button4.Size = new System.Drawing.Size(68, 49);
             this.button4.TabIndex = 26;
             this.button4.Text = "-";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -212,7 +212,7 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = global::PMS_POS.Properties.Resources.Imagen101;
-            this.pictureBox15.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox15.Location = new System.Drawing.Point(12, 5);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(30, 30);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -253,6 +253,7 @@
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(63, 29);
             this.archivoToolStripMenuItem.Text = "Archivo";
+            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.ArchivoToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -362,7 +363,6 @@
             this.tipoDeDocumentosToolStripMenuItem.Name = "tipoDeDocumentosToolStripMenuItem";
             this.tipoDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.tipoDeDocumentosToolStripMenuItem.Text = "Tipo de Documentos";
-            this.tipoDeDocumentosToolStripMenuItem.Click += new System.EventHandler(this.TipoDeDocumentosToolStripMenuItem_Click);
             // 
             // tipoDeHabitacionesToolStripMenuItem
             // 
@@ -407,6 +407,7 @@
             // btnCheckOut
             // 
             this.btnCheckOut.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCheckOut.Enabled = false;
             this.btnCheckOut.FlatAppearance.BorderSize = 0;
             this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -499,6 +500,7 @@
             // btnCheckIn
             // 
             this.btnCheckIn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCheckIn.Enabled = false;
             this.btnCheckIn.FlatAppearance.BorderSize = 0;
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

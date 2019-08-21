@@ -82,6 +82,7 @@
             this.dgvHabitacion = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.errorProviderDigitos = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtBoxFactura = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -248,6 +249,7 @@
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimir.UseCompatibleTextRendering = true;
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click_1);
             // 
             // btnRegistrarCheckIn
             // 
@@ -581,6 +583,7 @@
             this.label23.Size = new System.Drawing.Size(184, 20);
             this.label23.TabIndex = 34;
             this.label23.Text = "Búsqueda por Id Cliente:";
+            this.label23.Visible = false;
             // 
             // panel9
             // 
@@ -614,6 +617,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 94;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // panel10
             // 
@@ -656,11 +660,21 @@
             this.errorProviderDigitos.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderDigitos.ContainerControl = this;
             // 
+            // txtBoxFactura
+            // 
+            this.txtBoxFactura.Location = new System.Drawing.Point(871, 535);
+            this.txtBoxFactura.Name = "txtBoxFactura";
+            this.txtBoxFactura.Size = new System.Drawing.Size(398, 139);
+            this.txtBoxFactura.TabIndex = 96;
+            this.txtBoxFactura.Text = "";
+            this.txtBoxFactura.Visible = false;
+            // 
             // FacturacionCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.txtBoxFactura);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
@@ -755,5 +769,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderDigitos;
         private System.Windows.Forms.TextBox txtNumDocumento;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RichTextBox txtBoxFactura;
     }
 }

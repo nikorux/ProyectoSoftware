@@ -36,9 +36,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvReservedRooms = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReservedRooms)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBoxBuscar
@@ -122,12 +124,25 @@
             this.pictureBox1.TabIndex = 88;
             this.pictureBox1.TabStop = false;
             // 
+            // dgvReservedRooms
+            // 
+            this.dgvReservedRooms.AllowUserToAddRows = false;
+            this.dgvReservedRooms.AllowUserToDeleteRows = false;
+            this.dgvReservedRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReservedRooms.Location = new System.Drawing.Point(658, 288);
+            this.dgvReservedRooms.Name = "dgvReservedRooms";
+            this.dgvReservedRooms.ReadOnly = true;
+            this.dgvReservedRooms.Size = new System.Drawing.Size(240, 150);
+            this.dgvReservedRooms.TabIndex = 90;
+            this.dgvReservedRooms.Visible = false;
+            // 
             // BuscarHabitacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(803, 320);
+            this.Controls.Add(this.dgvReservedRooms);
             this.Controls.Add(this.txtBoxBuscar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -142,6 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReservedRooms)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +171,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dgvReservedRooms;
     }
 }

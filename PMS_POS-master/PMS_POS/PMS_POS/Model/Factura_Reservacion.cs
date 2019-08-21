@@ -11,6 +11,7 @@ namespace PMS_POS.Model
 {
     class Factura_Reservacion
     {
+        public int IdFactura { get; set; }
         public int IdReservacion { get; set; }
         public int IdHuesped { get; set; }
         public string Empleado { get; set; }
@@ -150,6 +151,33 @@ namespace PMS_POS.Model
                 }
 
             }
+        }
+        public int SelectIdFactura()
+        {
+            int idReserv = 0;
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+
+
+            try
+            {
+                //Select query
+                string sql = "SELECT IdFacturaReservacion FROM factura_reservacion ORDER BY IdReservacion DESC LIMIT 1";// creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                return idReserv = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return idReserv;
         }
 
 

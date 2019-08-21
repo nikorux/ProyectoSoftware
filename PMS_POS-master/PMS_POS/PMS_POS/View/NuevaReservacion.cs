@@ -50,16 +50,20 @@ namespace PMS_POS.View
         public NuevaReservacion()
         {
             InitializeComponent();
-            DateTime hoy = DateTime.Today;
-            dateTimePickerLlegada.MinDate = hoy;
-            dateTimePickerSalida.MinDate = hoy.AddDays(1);
+
+            dateTimePickerLlegada.MinDate = DateTime.Today;
+            dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
+           // calcularNoches();
    
 
         }
         
         private void BtnBuscarHabitacion_Click(object sender, EventArgs e)
         {
+            DateTime llegada = r.FechaLlegada;
+            DateTime salida = r.FechaSalida;
             BuscarHabitacion buscarhab = new BuscarHabitacion();
+            buscarhab.getFechas(llegada,salida);
             buscarhab.Show();
             Revisar();
         }
@@ -73,23 +77,35 @@ namespace PMS_POS.View
 
         private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            if (txtBoxPrecio.Text != string.Empty)
+            if (txtBoxPrecio.Text == string.Empty)
             {
-                calcular();
+                calcularNoches();
+            }
+            else
+            {
+                calcularPrecio();
+                calcularNoches();
             }
         }
 
+       
+
         private void DateTimePickerLlegada_ValueChanged(object sender, EventArgs e)
         {
-            if(txtBoxPrecio.Text != string.Empty)
+            if(txtBoxPrecio.Text == string.Empty)
             {
-                calcular();
+              calcularNoches();
+            }
+            else
+            {
+              calcularPrecio();
+              calcularNoches();
             }
            
             
            
         }
-        public void calcular()
+        public void calcularPrecio()
         {
             DateTime llegada = dateTimePickerLlegada.Value;
             DateTime salida = dateTimePickerSalida.Value;
@@ -99,19 +115,43 @@ namespace PMS_POS.View
 
             if( resta <= 0)
             {
-                txtBoxNoches.Text = "";
+               // txtBoxNoches.Text = "";
                 txtBoxTotal.Text = "";
-                errorProvider1.SetError(this.dateTimePickerSalida, "Ingrese una fecha adecuada.");
+              
             }
             else if ( resta > 0 )
             {
                 errorProvider1.Clear();
+              //  r.FechaLlegada = llegada;
+              //  r.FechaSalida = salida;
+             //   txtBoxNoches.Text = resta.ToString();
+              //  r.CantidadNoches = resta;
+                float precio = (resta * float.Parse(txtBoxPrecio.Text));
+                txtBoxTotal.Text = Convert.ToString(precio);
+            }
+           
+
+        }
+        private void calcularNoches()
+        {
+            DateTime llegada = dateTimePickerLlegada.Value;
+            DateTime salida = dateTimePickerSalida.Value;
+            TimeSpan difference = salida.Date - llegada.Date;
+
+            int resta = (int)difference.TotalDays;
+            if ( resta < 0 || resta == 0 )
+            {
+                txtBoxNoches.Text = "";
+                errorProvider1.SetError(this.dateTimePickerSalida, "Ingrese una fecha adecuada.");
+            }
+            else if ( resta > 0)
+            {
+                errorProvider1.Clear(); 
                 r.FechaLlegada = llegada;
                 r.FechaSalida = salida;
                 txtBoxNoches.Text = resta.ToString();
                 r.CantidadNoches = resta;
-                float precio = (resta * float.Parse(txtBoxPrecio.Text));
-                txtBoxTotal.Text = Convert.ToString(precio);
+
             }
            
         }
@@ -139,11 +179,16 @@ namespace PMS_POS.View
                     {
                         if (r.Insert_reservacion_habitacion(r.SelectIdReservacion(), r.IdHabitacion) == true)
                         {
-                            
-                           
+
+                            Habitacion hab = new Habitacion();
+                            hab.IsReserved(r.IdHabitacion, 1);
                                // MessageBox.Show("Sure");
                                 Clear();
-                                MessageBox.Show("La reservación ha sido creada.");
+
+                            dateTimePickerLlegada.MinDate = DateTime.Today;
+                            dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
+
+                            MessageBox.Show("La reservación ha sido creada.");
 
                         }
                     }
@@ -171,7 +216,9 @@ namespace PMS_POS.View
                     {
                         if(r.Update_reservacion_habitacion(r.IdReservacion,r.IdHabitacion) == true)
                         btnBuscarCliente.Enabled = true;
-                        
+
+                        dateTimePickerLlegada.MinDate = DateTime.Today;
+                        dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
                         MessageBox.Show("update successful");
                     }
                 
@@ -218,7 +265,7 @@ namespace PMS_POS.View
             btnBuscarCliente.Enabled = false;
             idRes = idReservacion;
             r.IdReservacion = idReservacion;
-            getHabitacionInfo(idHabitacion);
+           // getHabitacionInfo(idHabitacion);
             getHuespedInfo(idHuesped);
             try
             {
@@ -272,7 +319,60 @@ namespace PMS_POS.View
 
         private void NuevaReservacion_Leave(object sender, EventArgs e)
         {
-            Clear();
+            
+
+            dateTimePickerLlegada.MinDate = DateTime.Today;
+            dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
+            
+
+        }
+
+        private void NuevaReservacion_Load(object sender, EventArgs e)
+        {
+            
+            dateTimePickerLlegada.MinDate = DateTime.Today;
+            dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
+           
+        }
+
+        private void TxtBoxNoches_TextChanged(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        private void DateTimePickerSalida_Leave(object sender, EventArgs e)
+        {
+      
+        }
+
+        private void NuevaReservacion_Enter(object sender, EventArgs e)
+        {
+           
+            dateTimePickerLlegada.MinDate = DateTime.Today;
+            dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
+        }
+
+        private void NuevaReservacion_ControlAdded(object sender, ControlEventArgs e)
+        {
+            
+        }
+        public void Reseting()
+        {
+
+            dateTimePickerLlegada.MinDate = DateTime.Today;
+            dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
+        }
+
+        private void NuevaReservacion_LocationChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NuevaReservacion_VisibleChanged(object sender, EventArgs e)
+        {
+            dateTimePickerLlegada.Value= DateTime.Today;
+            dateTimePickerSalida.Value = DateTime.Today.AddDays(1);
         }
     }
 
