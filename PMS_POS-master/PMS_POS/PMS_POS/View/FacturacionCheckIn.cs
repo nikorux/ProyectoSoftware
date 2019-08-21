@@ -120,7 +120,7 @@ namespace PMS_POS.View
                         Habitacion hab = new Habitacion();
                         hab.IdHabitacion = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[13].Value);
                         hab.CambiarEstados(hab.IdHabitacion, "Ocupada");
-                        MessageBox.Show("Se ha facturado correctamente.");
+                        NotificacionCorrecto.confirmacionForm("FACTURADO");
                     }
                     else
                     {
@@ -185,7 +185,7 @@ namespace PMS_POS.View
                         Habitacion hab = new Habitacion();
                         hab.IdHabitacion = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[13].Value);
                         hab.CambiarEstados(hab.IdHabitacion, "Ocupada");
-                        MessageBox.Show("Se ha facturado correctamente.");
+                        NotificacionCorrecto.confirmacionForm("FACTURADO");
                     }
                     else
                     {

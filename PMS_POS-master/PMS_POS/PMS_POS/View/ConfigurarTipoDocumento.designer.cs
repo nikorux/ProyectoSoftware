@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigurarTipoDocumento));
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -98,11 +100,37 @@
             // 
             // dgvTipoDocumento
             // 
+            this.dgvTipoDocumento.AllowUserToAddRows = false;
+            this.dgvTipoDocumento.AllowUserToDeleteRows = false;
+            this.dgvTipoDocumento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTipoDocumento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTipoDocumento.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvTipoDocumento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvTipoDocumento.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTipoDocumento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTipoDocumento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTipoDocumento.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTipoDocumento.Location = new System.Drawing.Point(398, 145);
             this.dgvTipoDocumento.Name = "dgvTipoDocumento";
-            this.dgvTipoDocumento.Size = new System.Drawing.Size(174, 193);
+            this.dgvTipoDocumento.ReadOnly = true;
+            this.dgvTipoDocumento.RowHeadersVisible = false;
+            this.dgvTipoDocumento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTipoDocumento.Size = new System.Drawing.Size(310, 193);
             this.dgvTipoDocumento.TabIndex = 8;
             this.dgvTipoDocumento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTipoDocumento_CellClick);
             this.dgvTipoDocumento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTipoDocumento_CellContentClick);

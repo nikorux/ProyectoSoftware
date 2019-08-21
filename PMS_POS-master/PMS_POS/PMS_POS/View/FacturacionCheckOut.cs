@@ -381,7 +381,7 @@ namespace PMS_POS.View
         private void CargarRecargos(string idCliente)
         {
             //LLENAR RECARGOS
-            instruccion = "Select hostal.huesped.IdHuesped, hostal.pedido.Fecha, hostal.pedido_bebida.CantidadBebida as Cantidad, hostal.pedido_bebida.NombreBebida as Producto, hostal.pedido_bebida.Total as Precio FROM hostal.pedido INNER JOIN hostal.pedido_bebida ON hostal.pedido.IdPedido = hostal.pedido_bebida.IdPedido INNER JOIN hostal.huesped ON hostal.pedido.IdCliente = hostal.huesped.IdHuesped; ";
+            instruccion = "Select hostal.huesped.IdHuesped, hostal.pedido.Fecha, hostal.pedido_bebida.CantidadBebida as Cantidad, hostal.bebida.NombreBebida as Producto, hostal.pedido_bebida.Total as Precio FROM hostal.pedido INNER JOIN hostal.pedido_bebida ON hostal.pedido.IdPedidoBebida = hostal.pedido_bebida.IdPedidoBebida INNER JOIN hostal.huesped ON hostal.pedido.IdCliente = hostal.huesped.IdHuesped INNER JOIN hostal.bebida ON hostal.pedido.IdPedidoBebida = hostal.bebida.IdBebida;";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
