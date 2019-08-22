@@ -32,28 +32,27 @@ namespace PMS_POS.View
         public int idInsumo { get; set; }
         public int idReceta { get; set; }
 
-        public RegistrarReceta(string nombreReceta, int IdInsumo)
+        public RegistrarReceta(string nombreReceta, int Editar)
         {
             InitializeComponent();
             dgvProductosEnInventario.DataSource = mostrador.SelectItemsDisponiblesParaMenu();
             txtNombre.Text = nombreReceta;
             pnlMedidaEnReceta.Visible = false;
-            idInsumo = IdInsumo;
+            idInsumo = Editar;
             int cantRecetas = receta.CountRecetasRegistradas();
             if(cantRecetas == 0)
             {
                 idReceta = 1;
             }
-            if(IdInsumo != 0)
+            if(Editar != 0)
             {
-                idReceta = receta.SearchIdRecetaDelIdInsumo(IdInsumo);
-            }            
+                idReceta = receta.SearchIdRecetaDelIdInsumo(Editar);
+            }
+
         }
 
         public void Clear()
         {
-            txtDescripcion.Text = "";
-            txtComentario.Text = "";
             nudCantidad.Value = 0;
             cbxUnidadMedida.SelectedIndex = 0;
         }
@@ -75,9 +74,11 @@ namespace PMS_POS.View
                unidadMedidaInsumo == "Onza fluida" || unidadMedidaInsumo == "Taza" ||
                unidadMedidaInsumo == "Medio litro" || unidadMedidaInsumo == "Cuarto de galón" ||
                unidadMedidaInsumo == "Galón" || unidadMedidaInsumo == "Barril" ||
-               unidadMedidaInsumo == "Mililitros" || unidadMedidaInsumo == "Litros")
+               unidadMedidaInsumo == "Mililitros" || unidadMedidaInsumo == "Litros" ||
+               unidadMedidaInsumo == "Botellas")
             {
                 cbxUnidadMedida.Items.Clear();
+                cbxUnidadMedida.Items.Add("Botellas");
                 cbxUnidadMedida.Items.Add("Cuchara de té");
                 cbxUnidadMedida.Items.Add("Cuchara de madera");
                 cbxUnidadMedida.Items.Add("Onza fluida");
@@ -92,6 +93,7 @@ namespace PMS_POS.View
             else
             {
                 cbxUnidadMedida.Items.Clear();
+                cbxUnidadMedida.Items.Add("Unidad");
                 cbxUnidadMedida.Items.Add("Grano");
                 cbxUnidadMedida.Items.Add("Onza");
                 cbxUnidadMedida.Items.Add("Libra");
@@ -114,18 +116,12 @@ namespace PMS_POS.View
         private void BtnAceptarMedida_MouseClick(object sender, MouseEventArgs e)
         {
             dgvProductosEnReceta.AllowUserToAddRows = false;
-
             int n = dgvProductosEnReceta.Rows.Add();
 
-            /*int IdInsumo = Convert.ToInt32(dgvProductosEnReceta.CurrentRow.Cells[0].Value);
-            float PrecioVenta = Convert.ToInt32(dgvProductosEnReceta.CurrentRow.Cells[3].Value);
-            string unidadMedida = cbxUnidadMedida.Text;
-            int CantidadComprada = Convert.ToInt32(dgvProductosEnReceta.CurrentRow.Cells[2].Value);*/
-
-            dgvProductosEnReceta.Rows[n].Cells[0].Value = dgvProductosEnInventario.CurrentRow.Cells[1].Value.ToString();
-            dgvProductosEnReceta.Rows[n].Cells[1].Value = nudCantidad.Value.ToString();
-            dgvProductosEnReceta.Rows[n].Cells[2].Value = cbxUnidadMedida.SelectedItem.ToString();
-            dgvProductosEnReceta.Rows[n].Cells[3].Value = dgvProductosEnInventario.CurrentRow.Cells[0].Value.ToString();
+            dgvProductosEnReceta.Rows[n].Cells[0].Value = dgvProductosEnInventario.CurrentRow.Cells[0].Value.ToString();
+            dgvProductosEnReceta.Rows[n].Cells[1].Value = dgvProductosEnInventario.CurrentRow.Cells[1].Value.ToString();
+            dgvProductosEnReceta.Rows[n].Cells[2].Value = nudCantidad.Value.ToString();
+            dgvProductosEnReceta.Rows[n].Cells[3].Value = cbxUnidadMedida.SelectedItem.ToString();
 
             Clear();
             pnlMedidaEnReceta.Visible = false;
@@ -135,121 +131,101 @@ namespace PMS_POS.View
         {
             if (idInsumo != 0)
             {
-                int idReceta = receta.SearchIdRecetaDelIdInsumo(idInsumo);
-                txtComentario.Text = receta.getDetallesReceta("Comentario", idReceta);
-                txtDescripcion.Text = receta.getDetallesReceta("Descripcion", idReceta);
-                if (idInsumo != 0)
-                {
-                    dgvProductosEnReceta.DataSource = receta.SearchProductosEnReceta(idInsumo);
-                }
+                receta.DeleteTablaRelacionalReceta(idReceta);
+                receta.Delete(idReceta);
             }
-            else
-            {
-                txtComentario.Text = "" ;
-                txtDescripcion.Text = "";
-            }
-        }
-
-        private void BtnAceptarReceta_MouseClick(object sender, MouseEventArgs e)
-        {
-            dgvProductosEnReceta.AllowUserToAddRows = false;
-
-            if (idInsumo == 0)
-            {
-                //insert new recipe
-                try
-                {
-                    //tabla 'receta'
-                    receta.NombreReceta_receta = txtNombre.Text;
-                    receta.DescripcionReceta_receta = txtDescripcion.Text;
-                    receta.ComentarioReceta_receta = txtComentario.Text;
-                    receta.IdInsumo_receta = receta.SearchIdINSUMOLastRecord();
-
-                    if (receta.InsertEnTablaReceta(receta) == true)
-                    {
-                        receta.IdReceta_receta = receta.SearchIdRECETALastRecord();
-
-                        //tabla 'insumo_receta'
-                        MySqlConnection conn = new MySqlConnection("Server=localhost;Database=hostal;Uid=root;Pwd=root;");
-                        for (int i = 0; i < dgvProductosEnReceta.Rows.Count - 1; i++)
-                        {
-                            SqlCommand cmd = new SqlCommand(@"INSERT INTO insumo_receta (IdReceta, IdInsumo, CantidadInsumo, UnidadMedida) VALUES ('"+ receta.IdReceta_receta +"','" + dgvProductosEnReceta.Rows[i].Cells[3]+"','"+ "','"+dgvProductosEnReceta.Rows[i].Cells[1]+ "','"+dgvProductosEnReceta.Rows[i].Cells[2]+ "'");
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
-                        }
-                        /*foreach (DataGridViewRow row in dgvProductosEnReceta.Rows)
-                        {
-                            int n = dgvProductosEnReceta.Rows.Add();
-                            receta.CantidadInsumo_InsumoReceta = Convert.ToInt32(dgvProductosEnReceta.Rows[n].Cells[1].Value);
-                            receta.UnidadMedida_InsumoReceta = dgvProductosEnReceta.Rows[n].Cells[2].Value.ToString();
-                            receta.IdInsumo_InsumoReceta = Convert.ToInt32(dgvProductosEnReceta.Rows[n].Cells[3].Value);
-                            receta.InsertEnTablaInsumoReceta(receta);
-                        }*/
-                        Clear();
-                    }
-                    producto.UpdateInsumoTieneReceta(idInsumo);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-                pnlMedidaEnReceta.Visible = false;
-                dgvProductosEnReceta.DataSource = receta.SearchProductosEnReceta(receta.IdReceta_InsumoReceta);
-            }
-            else
-            {
-                //update recipe
-                try
-                {
-                    if (receta.UpdateEnTablaInsumoReceta(receta, idReceta, idInsumo) == true)
-                    {
-                        txtDescripcion.Text = "";
-                        txtComentario.Text = "";
-                        nudCantidad.Value = 0;
-                        cbxUnidadMedida.SelectedIndex = 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-                pnlMedidaEnReceta.Visible = false;
-                //dgvProductosEnReceta.DataSource = receta.SearchProductosEnReceta(receta.IdReceta_InsumoReceta);
-            }            
+            txtComentario.Text = "";
+            txtDescripcion.Text = "";
         }
 
         private void BtnRemoverDeReceta_MouseClick(object sender, MouseEventArgs e)
         {
             if (dgvProductosEnReceta.SelectedRows.Count > 0)
             {
-                DialogResult ans = MessageBox.Show("Desea remover " + dgvProductosEnReceta.CurrentRow.Cells[1].Value.ToString() + " de la receta?", "Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (ans == DialogResult.Yes)
-                {
-                    try
-                    {
-                        int ingrediente = Convert.ToInt32(dgvProductosEnReceta.CurrentRow.Cells[0].Value);
-                        MessageBox.Show("" + idReceta);
-                        if (receta.Delete(idReceta) == true);
-                        else
-                        {
-                            MessageBox.Show("Error al eliminar producto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al borrar el producto. (Error: " + ex + ")");
-                    }
-                }
-
-                dgvProductosEnReceta.DataSource = receta.SearchProductosEnReceta(receta.IdReceta_InsumoReceta);
+                int rowIndex = dgvProductosEnReceta.CurrentCell.RowIndex;
+                dgvProductosEnReceta.Rows.RemoveAt(rowIndex);
             }
             else
             {
-                MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Seleccione una fila de 'Productos en Receta'.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void RegistrarReceta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result3 = MessageBox.Show("Seguro que quiere cerrar la ventana?", "Detalles producto",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (result3 == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void BtnGuardarReceta_MouseClick(object sender, MouseEventArgs e)
+        {
+            int IdInsumo = 0;
+            string NombreInsumo = null;
+            float CantidadInsumo = 0;
+            string UnidadMedida = null;
+
+            try
+            {
+                if (this.txtNombre.Text == string.Empty || this.txtDescripcion.Text == string.Empty ||
+                    this.txtComentario.Text == string.Empty || dgvProductosEnReceta.Rows.Count == 0 )
+                {
+                    MessageBox.Show("Campos vacíos o incorrectos.", "Error al ajustar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    int IdReceta = receta.CountRecetasRegistradas() + 1; //ESTO ES PARA CUANDO ES UN PRODUCTO NUEVO Y NO UNA EDICION DE RECETA
+
+                    if (receta.InsertEnTablaReceta(txtNombre.Text, txtDescripcion.Text, txtComentario.Text, receta.CountInsumosRegistrados()) == true)
+                    {
+                        foreach (DataGridViewRow row in dgvProductosEnReceta.Rows)
+                        {
+                            foreach (DataGridViewColumn col in dgvProductosEnReceta.Columns)
+                            {
+
+                                if (col.Index == 0)
+                                {
+                                    IdInsumo = Convert.ToInt32(dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                }
+                                if(col.Index == 1)
+                                {
+                                    NombreInsumo = dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                }
+                                if (col.Index == 2)
+                                {
+                                    CantidadInsumo = float.Parse(dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                }
+                                if (col.Index == 3)
+                                {
+                                    UnidadMedida = dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                }
+                            }
+
+                            if (receta.InsertEnTablaInsumoReceta(IdReceta, IdInsumo, NombreInsumo, CantidadInsumo, UnidadMedida) == true)
+                            {
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error registrando Items en Receta", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            this.Close();
         }
     }
 }

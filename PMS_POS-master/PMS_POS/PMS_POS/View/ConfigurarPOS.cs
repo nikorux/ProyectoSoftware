@@ -24,7 +24,9 @@ namespace PMS_POS.View
             }
         }
 
-        static bool editar = false;
+        static bool editarCategoria = false;
+        static bool editarMesa = false;
+        static bool editarCaja = false;
 
         Caja caja = new Caja();
         Categoria categoria = new Categoria();
@@ -32,22 +34,59 @@ namespace PMS_POS.View
         public ConfigurarPOS()
         {
             InitializeComponent();
+            
             btnMostrarCajasDisponibles.Visible = false;
             btnMostrarCajasNoDisponibles.Visible = true;
             dgvCajas.DataSource = caja.Select("Disponible");
             dgvMesas.DataSource = mesa.Select("Disponible");
+            dgvCategoria.DataSource = categoria.Select();
+            loadDGVs();
+            btnMostrarCajasDisponiblesMesas.Visible = false;
+            btnMostrarCajasNoDisponiblesMesas.Visible = true;
+            btnGuardarEdicionCategoria.Visible = false;
+            btnGuardarEdicionMesas.Visible = false;
+            btnGuardarEdicionCajas.Visible = false;
+
         }
 
-        private void ConfigurarPOS_Load(object sender, EventArgs e)
+        public void Clear()
         {
-            
+            btnLimpiarCajas.Text = "Limpiar";
+            btnLimpiarMesas.Text = "Limpiar";
+            button6.Text = "Limpiar";
+            txtIdCategorias.Text = categoria.countCategorias().ToString();
+            txtIdCajas.Text = caja.countCajas().ToString();
+            txtIdMesas.Text = mesa.countMesas().ToString();
+            txtNombreCaja.Text = "";
+            txtNombreMesa.Text = "";
+            textBox2.Text = "";
+            txtDescripcionCaja.Text = "";
+            txtDescripcionMesa.Text = "";
+            chkGuardarCajaNoDisponible.Checked = false;
+            chkGuardarMesaNoDisponible.Checked = false;
+            chxCategoriaEnMostrador.Checked = false;
         }
 
-        private void BtnAgregarCaja_MouseClick(object sender, MouseEventArgs e)
+        public void loadDGVs()
+        {
+            dgvCajas.Columns[3].Visible = false;
+            dgvCajas.Columns[4].Visible = false;
+            dgvCajas.Columns[5].Visible = false;
+
+            dgvMesas.Columns[3].Visible = false;
+            dgvMesas.Columns[4].Visible = false;
+            dgvMesas.Columns[5].Visible = false;
+
+            //dgvCategoria.Columns[2].Visible = false;
+            dgvCategoria.Columns[3].Visible = false;
+            dgvCategoria.Columns[4].Visible = false;
+        }
+
+        private void BtnGuardarCajas_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
-                if (this.txtNombreCaja.Text == string.Empty || this.txtDescripcionCaja.Text == string.Empty)
+                if (this.txtNombreCaja.Text == string.Empty)
                 {
                     MessageBox.Show("Campos vacíos o incorrectos.", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -65,7 +104,7 @@ namespace PMS_POS.View
                     }
                     if (caja.Insert(caja) == true)
                     {
-
+                        Clear();
                     }
                     else
                     {
@@ -78,89 +117,97 @@ namespace PMS_POS.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            dgvCajas.DataSource = caja.Select("Disponible");
+            loadDGVs();
+            txtIdCajas.Text = caja.countCajas().ToString();
         }
 
-        private void BtnEditarCaja_MouseClick(object sender, MouseEventArgs e)
+        private void BtnEditarCajas_MouseClick(object sender, MouseEventArgs e)
         {
             if (dgvCajas.SelectedRows.Count > 0)
             {
-                if (float.Parse(dgvCajas.CurrentRow.Cells[3].Value.ToString()) == 0)
+                btnGuardarEdicionCajas.Visible = true;
+                btnEditarCajas.Visible = false;
+                txtIdCajas.Text = dgvCajas.CurrentRow.Cells[0].Value.ToString();
+                txtNombreCaja.Text = dgvCajas.CurrentRow.Cells[1].Value.ToString();
+                txtDescripcionCaja.Text = dgvCajas.CurrentRow.Cells[2].Value.ToString();
+                if (Convert.ToInt32(dgvCajas.CurrentRow.Cells[3].Value.ToString()) == 0)
                 {
                     chkGuardarCajaNoDisponible.Checked = true;
                 }
-                if (float.Parse(dgvCajas.CurrentRow.Cells[3].Value.ToString()) == 1)
+                if (Convert.ToInt32(dgvCajas.CurrentRow.Cells[3].Value.ToString()) == 1)
                 {
                     chkGuardarCajaNoDisponible.Checked = false;
-                }
-                caja.IdCaja = Convert.ToInt32(dgvCajas.CurrentRow.Cells[0].Value);
-                txtNombreCaja.Text = dgvCajas.CurrentRow.Cells[1].Value.ToString();
-                txtDescripcionCaja.Text = dgvCajas.CurrentRow.Cells[2].Value.ToString();
-                if (chkGuardarCajaNoDisponible.Checked == true)
-                {
-                    caja.DisponibleCaja = 0;
-                }
-                else
-                {
-                    caja.DisponibleCaja = 1;
-                }
-                if (caja.Update(caja) == true)
-                {
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Error al editar caja.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            btnLimpiarCajas.Text = "Cancelar";
+            dgvCajas.DataSource = caja.Select("Disponible");
+            loadDGVs();
         }
 
-        private void BtnBorrarCaja_MouseClick(object sender, MouseEventArgs e)
+        private void BtnBorrarCajas_MouseClick(object sender, MouseEventArgs e)
         {
-            if (dgvCajas.SelectedRows.Count > 0)
+            DialogResult result3 = MessageBox.Show("Seguro que desea guardar?", "Nueva mesa",
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (result3 == DialogResult.Yes)
             {
-                if (float.Parse(dgvCajas.CurrentRow.Cells[3].Value.ToString()) != 1)
+                if (dgvCajas.SelectedRows.Count > 0)
                 {
-                    chkGuardarCajaNoDisponible.Checked = false;
-                }
-                if (float.Parse(dgvCajas.CurrentRow.Cells[3].Value.ToString()) == 1)
-                {
-                    chkGuardarCajaNoDisponible.Checked = true;
-                }
-                caja.IdCaja = Convert.ToInt32(dgvCajas.CurrentRow.Cells[0].Value);
-                txtNombreCaja.Text = dgvCajas.CurrentRow.Cells[1].Value.ToString();
-                txtDescripcionCaja.Text = dgvCajas.CurrentRow.Cells[2].Value.ToString();
-                if (chkGuardarCajaNoDisponible.Checked == true)
-                {
-                    caja.DisponibleCaja = 0;
+                    if (float.Parse(dgvCajas.CurrentRow.Cells[3].Value.ToString()) != 1)
+                    {
+                        chkGuardarCajaNoDisponible.Checked = false;
+                    }
+                    if (float.Parse(dgvCajas.CurrentRow.Cells[3].Value.ToString()) == 1)
+                    {
+                        chkGuardarCajaNoDisponible.Checked = true;
+                    }
+                    caja.IdCaja = Convert.ToInt32(dgvCajas.CurrentRow.Cells[0].Value);
+                    txtNombreCaja.Text = dgvCajas.CurrentRow.Cells[1].Value.ToString();
+                    txtDescripcionCaja.Text = dgvCajas.CurrentRow.Cells[2].Value.ToString();
+                    if (chkGuardarCajaNoDisponible.Checked == true)
+                    {
+                        caja.DisponibleCaja = 0;
+                    }
+                    else
+                    {
+                        caja.DisponibleCaja = 1;
+                    }
+                    if (caja.Delete(caja) == true)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al borrar caja.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    caja.DisponibleCaja = 1;
+                    MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if (caja.Delete(caja) == true)
-                {
+            }
 
-                }
-                else
-                {
-                    MessageBox.Show("Error al borrar caja.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            Clear();
+            dgvCajas.DataSource = caja.Select("Disponible");
+            loadDGVs();
+            txtIdCajas.Text = caja.countCajas().ToString();
         }
 
-        private void BtnMostrarCajasNoDisponibles_MouseClick(object sender, MouseEventArgs e)
+        private void BtnMostrarCajasNoDisponibles_MouseClick_1(object sender, MouseEventArgs e)
         {
-            dgvCajas.DataSource = caja.Select("No Disponible");
             btnMostrarCajasDisponibles.Visible = true;
             btnMostrarCajasNoDisponibles.Visible = false;
+            dgvCajas.DataSource = caja.Select("NO Disponible");
+            loadDGVs();
         }
 
         private void BtnMostrarCajasDisponibles_MouseClick(object sender, MouseEventArgs e)
@@ -168,27 +215,30 @@ namespace PMS_POS.View
             dgvCajas.DataSource = caja.Select("Disponible");
             btnMostrarCajasDisponibles.Visible = false;
             btnMostrarCajasNoDisponibles.Visible = true;
+            loadDGVs();
         }
 
-        private void BtnMostrarCajasDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
+        private void BtnMostrarCajasDisponiblesMesas_MouseClick_1(object sender, MouseEventArgs e)
         {
             dgvMesas.DataSource = mesa.Select("Disponible");
             btnMostrarCajasDisponiblesMesas.Visible = false;
             btnMostrarCajasNoDisponiblesMesas.Visible = true;
+            loadDGVs();
         }
 
-        private void BtnMostrarCajasNoDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
+        private void BtnMostrarCajasNoDisponiblesMesas_MouseClick_1(object sender, MouseEventArgs e)
         {
-            dgvMesas.DataSource = caja.Select("No Disponible");
+            dgvMesas.DataSource = mesa.Select("NO Disponible");
             btnMostrarCajasDisponiblesMesas.Visible = true;
             btnMostrarCajasNoDisponiblesMesas.Visible = false;
+            loadDGVs();
         }
 
-        private void BtnAgregarMesa_MouseClick(object sender, MouseEventArgs e)
+        private void BtnGuardarMesas_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
-                if (this.txtNombreMesa.Text == string.Empty || this.txtDescripcionMesa.Text == string.Empty)
+                if (this.txtNombreMesa.Text == string.Empty )
                 {
                     MessageBox.Show("Campos vacíos o incorrectos.", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -200,7 +250,7 @@ namespace PMS_POS.View
                     {
                         mesa.DisponibleMesa = 0;
                     }
-                    else
+                    if (chkGuardarMesaNoDisponible.Checked == false)
                     {
                         mesa.DisponibleMesa = 1;
                     }
@@ -212,99 +262,118 @@ namespace PMS_POS.View
                     {
                         MessageBox.Show("Error al registrar producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
+
+            Clear();
+            dgvMesas.DataSource = mesa.Select("Disponible");
+            loadDGVs();
+            txtIdMesas.Text = mesa.countMesas().ToString();
         }
 
-        private void BtnEditarMesa_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (editar == true) 
-            {         
-                if (chkGuardarMesaNoDisponible.Checked == true)
-                {
-                    mesa.DisponibleMesa = 0;
-                }
-                else
-                {
-                    mesa.DisponibleMesa = 1;
-                }
-                mesa.NombreMesa = txtNombreMesa.Text;
-                mesa.DescripcionMesa = txtDescripcionMesa.Text;
-                if (mesa.Update(mesa) == true)
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show("Error al editar caja.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void BtnBorrarMesa_MouseClick(object sender, MouseEventArgs e)
+        private void BtnEditarMesas_MouseClick(object sender, MouseEventArgs e)
         {
             if (dgvMesas.SelectedRows.Count > 0)
             {
-                if (float.Parse(dgvMesas.CurrentRow.Cells[3].Value.ToString()) != 1)
-                {
-                    chkGuardarMesaNoDisponible.Checked = false;
-                }
-                if (float.Parse(dgvMesas.CurrentRow.Cells[3].Value.ToString()) == 1)
+                btnGuardarEdicionMesas.Visible = true;
+                btnEditarMesas.Visible = false;
+                txtIdMesas.Text = dgvMesas.CurrentRow.Cells[0].Value.ToString();
+                txtNombreMesa.Text = dgvMesas.CurrentRow.Cells[1].Value.ToString();
+                txtDescripcionMesa.Text = dgvMesas.CurrentRow.Cells[2].Value.ToString();
+                if (Convert.ToInt32(dgvMesas.CurrentRow.Cells[3].Value.ToString()) == 0)
                 {
                     chkGuardarMesaNoDisponible.Checked = true;
                 }
-                mesa.IdMesa = Convert.ToInt32(dgvMesas.CurrentRow.Cells[0].Value);
-                txtNombreMesa.Text = dgvMesas.CurrentRow.Cells[1].Value.ToString();
-                txtDescripcionMesa.Text = dgvMesas.CurrentRow.Cells[2].Value.ToString();
-                if (chkGuardarMesaNoDisponible.Checked == true)
+                if (Convert.ToInt32(dgvMesas.CurrentRow.Cells[3].Value.ToString()) == 1)
                 {
-                    mesa.DisponibleMesa = 0;
-                }
-                else
-                {
-                    mesa.DisponibleMesa = 1;
-                }
-                if (mesa.Delete(mesa) == true)
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show("Error al editar caja.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    chkGuardarMesaNoDisponible.Checked = false;
                 }
             }
             else
             {
                 MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            btnLimpiarMesas.Text = "Cancelar";
+            dgvMesas.DataSource = mesa.Select("Disponible");
+            loadDGVs();
         }
 
-        private void BtnAgregarCategoria_MouseClick(object sender, MouseEventArgs e)
+        private void BtnBorrarMesas_MouseClick(object sender, MouseEventArgs e)
+        {
+            DialogResult result3 = MessageBox.Show("Seguro que desea guardar?", "Nueva mesa",
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (result3 == DialogResult.Yes)
+            {
+                if (dgvMesas.SelectedRows.Count > 0)
+                {
+                    if (float.Parse(dgvMesas.CurrentRow.Cells[3].Value.ToString()) != 1)
+                    {
+                        chkGuardarMesaNoDisponible.Checked = false;
+                    }
+                    if (float.Parse(dgvMesas.CurrentRow.Cells[3].Value.ToString()) == 1)
+                    {
+                        chkGuardarMesaNoDisponible.Checked = true;
+                    }
+                    mesa.IdMesa = Convert.ToInt32(dgvMesas.CurrentRow.Cells[0].Value);
+                    txtNombreMesa.Text = dgvMesas.CurrentRow.Cells[1].Value.ToString();
+                    txtDescripcionMesa.Text = dgvMesas.CurrentRow.Cells[2].Value.ToString();
+                    if (chkGuardarMesaNoDisponible.Checked == true)
+                    {
+                        mesa.DisponibleMesa = 0;
+                    }
+                    else
+                    {
+                        mesa.DisponibleMesa = 1;
+                    }
+                    if (mesa.Delete(mesa) == true)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al editar caja.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            Clear();
+            dgvMesas.DataSource = mesa.Select("Disponible");
+            loadDGVs();
+            txtIdMesas.Text = mesa.countMesas().ToString();
+        }
+
+        private void Button3_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
-                if (this.txtCategoriaProducto.Text == string.Empty)
+                if (editarCategoria == true)
+                {
+                    MessageBox.Show("Campos ya existentes.", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (this.textBox2.Text == string.Empty)
                 {
                     MessageBox.Show("Campos vacíos o incorrectos.", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    categoria.NombreCategoria = txtCategoriaProducto.Text;
+                    categoria.NombreCategoria = textBox2.Text;
                     if (chxCategoriaEnMostrador.Checked == true)
                     {
                         categoria.EnMostrador = 1;
                     }
-                    else
+                    if (chxCategoriaEnMostrador.Checked == false)
                     {
                         categoria.EnMostrador = 0;
                     }
@@ -322,55 +391,266 @@ namespace PMS_POS.View
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            Clear();
+            dgvCategoria.DataSource = categoria.Select();
+            loadDGVs();
+            txtIdCategorias.Text = categoria.countCategorias().ToString();
         }
 
-        private void BtnEditarCategoria_MouseClick(object sender, MouseEventArgs e)
+        private void Button4_MouseClick(object sender, MouseEventArgs e)
         {
             if (dgvCategoria.SelectedRows.Count > 0)
             {
-                if (float.Parse(dgvCategoria.CurrentRow.Cells[2].Value.ToString()) != 1)
+                btnGuardarEdicionCategoria.Visible = true;
+                button4.Visible = false;
+                txtIdCategorias.Text = dgvCategoria.CurrentRow.Cells[0].Value.ToString();
+                textBox2.Text = dgvCategoria.CurrentRow.Cells[1].Value.ToString();
+                int checkIfEnMostrador = Convert.ToInt32(dgvCategoria.CurrentRow.Cells[2].Value.ToString());
+                if (checkIfEnMostrador == 1)
                 {
-                    chkGuardarMesaNoDisponible.Checked = false;
+                    chxCategoriaEnMostrador.Checked = true;
                 }
-                if (float.Parse(dgvCategoria.CurrentRow.Cells[2].Value.ToString()) == 1)
+                if (checkIfEnMostrador == 0)
                 {
-                    chkGuardarMesaNoDisponible.Checked = true;
-                }
-                categoria.IdCategoria = Convert.ToInt32(dgvCategoria.CurrentRow.Cells[0].Value);
-                txtCategoriaProducto.Text = dgvCategoria.CurrentRow.Cells[1].Value.ToString();
-
-                if (chxCategoriaEnMostrador.Checked == true)
-                {
-                    categoria.EnMostrador = 1;
-                }
-                else
-                {
-                    categoria.EnMostrador = 0;
-                }
-                if (categoria.Update(categoria) == true)
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show("Error al editar caja.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    chxCategoriaEnMostrador.Checked = false;
                 }
             }
             else
             {
                 MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            button6.Text = "Cancelar";
+            dgvCategoria.DataSource = categoria.Select();
+            loadDGVs();
         }
 
-        private void DgvMesas_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvMesas_CellMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             MessageBox.Show(e.RowIndex.ToString());
         }
 
-        private void BtnLimpiarCategoria_MouseClick(object sender, MouseEventArgs e)
+        private void Button6_MouseClick(object sender, MouseEventArgs e)
         {
-            txtCategoriaProducto.Text = "";
+            textBox2.Text = "";
             chxCategoriaEnMostrador.Checked = false;
+            editarCategoria = false;
+            btnGuardarEdicionCategoria.Visible = false;
+            button4.Visible = true;
+        }
+
+        private void BtnMostrarCategoriasDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnMostrarCategoriasDisponiblesMesas.Visible = false;
+            btnMostrarCategoriasNoDisponiblesMesas.Visible = true;
+            dgvCategoria.DataSource = categoria.Select();
+            loadDGVs();
+        }
+
+        private void BtnMostrarCategoriasNoDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnMostrarCategoriasDisponiblesMesas.Visible = true;
+            btnMostrarCategoriasNoDisponiblesMesas.Visible = false;
+            dgvCategoria.DataSource = categoria.Select();
+            loadDGVs();
+        }
+
+        
+        private void Button5_MouseClick(object sender, MouseEventArgs e)
+        {
+            DialogResult result3 = MessageBox.Show("Seguro que desea guardar?", "Nueva mesa",
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (result3 == DialogResult.Yes)
+            {
+                if (dgvCategoria.SelectedRows.Count > 0)
+                {
+                    categoria.IdCategoria = Convert.ToInt32(dgvCategoria.CurrentRow.Cells[0].Value);
+                    categoria.NombreCategoria = dgvCategoria.CurrentRow.Cells[1].Value.ToString();
+                    if (chxCategoriaEnMostrador.Checked == true)
+                    {
+                        categoria.EnMostrador = 1;
+                    }
+                    else
+                    {
+                        categoria.EnMostrador = 0;
+                    }
+                    if (categoria.Delete(categoria) == true)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar categoría.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            Clear();
+            dgvCategoria.DataSource = categoria.Select();
+            loadDGVs();
+            txtIdCategorias.Text = categoria.countCategorias().ToString();
+        }
+
+        private void BtnGuardarEdicion_MouseClick(object sender, MouseEventArgs e)
+        {
+            DialogResult result3 = MessageBox.Show("Seguro que desea guardar?", "Nueva categoría",
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (result3 == DialogResult.Yes)
+            {
+                try
+                {
+                    categoria.IdCategoria = Convert.ToInt32(dgvCategoria.CurrentRow.Cells[0].Value);
+                    categoria.NombreCategoria = dgvCategoria.CurrentRow.Cells[1].Value.ToString();
+
+                    if (chxCategoriaEnMostrador.Checked == true)
+                    {
+                        categoria.EnMostrador = 1;
+                    }
+                    else
+                    {
+                        categoria.EnMostrador = 0;
+                    }
+
+                    if (categoria.Update(categoria) == true)
+                    {
+                        txtIdCategorias.Text = "";
+                        chxCategoriaEnMostrador.Checked = false;
+                        MessageBox.Show("La categoría ha sido editado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                btnGuardarEdicionCategoria.Visible = false;
+                button4.Visible = true;
+            }
+            if (result3 == DialogResult.No)
+            {
+                btnGuardarEdicionCategoria.Visible = false;
+                button4.Visible = true;
+                Clear();
+            }
+
+            txtIdCategorias.Text = categoria.countCategorias().ToString();
+        }
+
+        private void BtnGuardarEdicionCajas_MouseClick(object sender, MouseEventArgs e)
+        {
+            DialogResult result3 = MessageBox.Show("Seguro que desea guardar?", "Nueva caja",
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (result3 == DialogResult.Yes)
+            {
+                try
+                {
+                    caja.IdCaja = Convert.ToInt32(txtIdCajas.Text);
+                    caja.NombreCaja = txtNombreCaja.Text;
+                    caja.DescripcionCaja = txtDescripcionCaja.Text;
+
+                    if (chkGuardarCajaNoDisponible.Checked == false)
+                    {
+                        caja.DisponibleCaja = 1;
+                    }
+                    if (chkGuardarCajaNoDisponible.Checked == true)
+                    {
+                        caja.DisponibleCaja = 0;
+                    }
+
+                    if (caja.Update(caja) == true)
+                    {
+                        Clear();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                btnEditarCajas.Visible = true;
+                btnGuardarEdicionCajas.Visible = false;
+            }
+            if (result3 == DialogResult.No)
+            {
+                btnEditarCajas.Visible = true;
+                btnGuardarEdicionCajas.Visible = false;
+                Clear();
+            }
+
+            dgvCajas.DataSource = caja.Select("Disponible");
+            txtIdCajas.Text = caja.countCajas().ToString();
+        }
+
+        private void BtnGuardarEdicionMesas_MouseClick(object sender, MouseEventArgs e)
+        {
+            DialogResult result3 = MessageBox.Show("Seguro que desea guardar?", "Nueva mesa",
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (result3 == DialogResult.Yes)
+            {
+                try
+                {
+                    mesa.IdMesa = Convert.ToInt32(txtIdMesas.Text);
+                    mesa.NombreMesa = txtNombreMesa.Text;
+                    mesa.DescripcionMesa = txtDescripcionMesa.Text;
+
+                    if (chkGuardarMesaNoDisponible.Checked == false)
+                    {
+                        mesa.DisponibleMesa = 1;
+                    }
+                    if (chkGuardarMesaNoDisponible.Checked == true)
+                    {
+                        mesa.DisponibleMesa = 0;
+                    }
+
+                    if (mesa.Update(mesa) == true)
+                    {
+                        Clear();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            if (result3 == DialogResult.No)
+            {
+                Clear();
+            }
+
+            btnEditarMesas.Visible = true;
+            btnGuardarEdicionMesas.Visible = false;
+            dgvMesas.DataSource = mesa.Select("Disponible");
+            txtIdMesas.Text = mesa.countMesas().ToString();
+        }
+
+        private void ConfigurarPOS_Load(object sender, EventArgs e)
+        {
+            txtIdCategorias.Text = categoria.countCategorias().ToString();
+            txtIdCajas.Text = caja.countCajas().ToString();
+            txtIdMesas.Text = mesa.countMesas().ToString();
+        }
+
+        private void BtnLimpiarMesas_MouseClick(object sender, MouseEventArgs e)
+        {
+            Clear();
         }
     }
 }

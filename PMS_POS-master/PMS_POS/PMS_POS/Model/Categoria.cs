@@ -19,6 +19,62 @@ namespace PMS_POS.Model
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
 
+        public int countCategorias()
+        {
+            int resp = 1;
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+
+            try
+            {
+                //Select query
+                string sql = "SELECT count(*) FROM categoria";// creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                return resp += Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return resp;
+        }
+
+        public int countCategoriasDisponibles()
+        {
+            int resp = 1;
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+
+            try
+            {
+                //Select query
+                string sql = "SELECT count(*) FROM categoria WHERE IsDeleted=0";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                return resp += Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return resp;
+        }
+
         public DataTable Select()
         {
             //hacer la conexion con sql

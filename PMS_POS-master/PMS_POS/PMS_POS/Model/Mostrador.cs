@@ -15,18 +15,14 @@ namespace PMS_POS.Model
 
         /*public DataTable SelectItemsParaMenuConMatchingIdCategoria(int IdCategoria)
         {
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                //Select query
                 string sql = "SELECT NombreInsumo FROM insumo WHERE IsDeleted=0 AND EnMostrador=1 AND IdCategoria=@idCategoria";
-                // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@idCategoria", IdCategoria);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
@@ -41,6 +37,31 @@ namespace PMS_POS.Model
             }
             return dt;
         }*/
+
+        public DataTable SelectProductosFROMcaja(string nombreCaja)
+        {
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT * FROM insumo WHERE NombreCaja=@nombreCaja AND IsDeleted=0 AND EnMostrador=1";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@nombreCaja", nombreCaja);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
 
         public string SelectEstadoPedido(string columna)
         {
@@ -75,11 +96,8 @@ namespace PMS_POS.Model
             DataTable dt = new DataTable();
             try
             {
-                //Select query
                 string sql = "SELECT * FROM pedido";
-                // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
@@ -97,16 +115,12 @@ namespace PMS_POS.Model
 
         public DataTable SelectItemsDisponiblesParaMenu()
         {
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                //Select query
                 string sql = "SELECT IdInsumo, NombreInsumo, UnidadMedida FROM insumo WHERE IsDeleted=0 AND EnMostrador=0";
-                // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
@@ -237,18 +251,14 @@ namespace PMS_POS.Model
 
         public DataTable FiltrarPORmesa(string NombreMesa)
         {
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                //Select query
                 string sql = "SELECT IdFactura FROM factura_mostrador WHERE IdCategoria=@nombreMesa AND Pagado=0";
-                // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@nombreMesa", NombreMesa);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
@@ -267,17 +277,14 @@ namespace PMS_POS.Model
         public string SearchNombreClienteFROMIdFactura(int idFactura)
         {
             string resp = null;
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
 
             try
             {
-                //Select query
                 string sql = "SELECT NombreCliente FROM factura_mostrador WHERE IdFactura=@idFactura AND Pagado=0";// creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@idFactura", idFactura);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 return resp = cmd.ExecuteScalar().ToString();
@@ -293,18 +300,16 @@ namespace PMS_POS.Model
             return resp;
         }
 
-        public DataTable SelectOrdenesAbiertas()
+        public DataTable SelectOrdenesAbiertas(string caja)
         {
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                //Select query
-                string sql = "select IdFacturaMostrador, NombreCliente from factura_mostrador where Pagado=0";
-                // creating cmd using sql and conn
+                string sql = "SELECT IdFacturaMostrador, NombreCliente FROM factura_mostrador WHERE Pagado=0 AND NombreCaja=@caja";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                //Creating data adapter
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@caja", caja);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
@@ -322,16 +327,12 @@ namespace PMS_POS.Model
 
         public DataTable SelectInsumosDisponibleParaMostrador()
         {
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                //Select query
                 string sql = "SELECT * FROM insumo WHERE IsDeleted=0 AND EnMostrador=1";
-                // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
@@ -350,16 +351,13 @@ namespace PMS_POS.Model
         public int CantidadDeFacturas()
         {
             int resp = -1;
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
 
             try
             {
-                //Select query
-                string sql = "select count(*) from factura_mostrador";// creating cmd using sql and conn
+                string sql = "select count(*) from factura_mostrador";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 return resp = Convert.ToInt32(cmd.ExecuteScalar());
@@ -378,16 +376,13 @@ namespace PMS_POS.Model
         public int CantidadDePedidos()
         {
             int resp = -1;
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
 
             try
             {
-                //Select query
-                string sql = "select count(*) from pedido";// creating cmd using sql and conn
+                string sql = "select count(*) from pedido";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 return resp = Convert.ToInt32(cmd.ExecuteScalar());
@@ -406,16 +401,13 @@ namespace PMS_POS.Model
         public int CantidadDeOrdenes()
         {
             int resp = -1;
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
 
             try
             {
-                //Select query
-                string sql = "select count(*) from factura_mostrador where Pagado=1";// creating cmd using sql and conn
+                string sql = "select count(*) from factura_mostrador where Pagado=1";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 return resp = Convert.ToInt32(cmd.ExecuteScalar());
@@ -430,22 +422,19 @@ namespace PMS_POS.Model
             }
             return resp;
         }
-        //------COPIADAS DE LA CLASE PRODUCTO.CS DEL REPO
+        //------COPIADAS DE LA CLASE PRODUCTO.CS
 
         public int SelectIdCategoria(string NombreCategoria)
         {
             int IdCategoria = 0;
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
 
             try
             {
-                //Select query
-                string sql = "SELECT IdCategoria FROM categoria WHERE NombreCategoria=@nombreCategoria";// creating cmd using sql and conn
+                string sql = "SELECT IdCategoria FROM categoria WHERE NombreCategoria=@nombreCategoria";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@nombreCategoria", NombreCategoria);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 return IdCategoria = Convert.ToInt32(cmd.ExecuteScalar());
@@ -461,21 +450,18 @@ namespace PMS_POS.Model
             return IdCategoria;
         }
 
-        public DataTable FiltrarPORcategoria(string NombreCategoria)
+        public DataTable FiltrarPORcategoria(string NombreCategoria, string nombreCaja)
         {
             int IdCategoria = SelectIdCategoria(NombreCategoria);
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                //Select query
-                string sql = "SELECT * FROM insumo WHERE IdCategoria=@idCategoria AND IsDeleted=0";
-                // creating cmd using sql and conn
+                string sql = "SELECT * FROM hostal.insumo WHERE IdCategoria=@idCategoria AND IsDeleted=0 AND NombreCaja=@nombreCaja AND EnMostrador=1";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@idCategoria", IdCategoria);
-                //Creating data adapter
+                cmd.Parameters.AddWithValue("@nombreCaja", nombreCaja);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
@@ -491,11 +477,11 @@ namespace PMS_POS.Model
             return dt;
         }
 
-        public bool InsertFactura(string NombreCliente, string FormaDePago, float ITBIS, float SubTotal, float Total, int Pagado)
+        public bool InsertFactura(string NombreCliente, string FormaDePago, float ITBIS, float SubTotal, float Total, string NombreCaja, int Pagado)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "INSERT INTO factura_mostrador (NombreCliente, TipoFactura, Fecha, FormaDePago, ITBIS, SubTotal, Total, Pagado) VALUES (@NombreCliente, @TipoFactura, @Fecha, @FormaDePago, @ITBIS, @SubTotal, @Total, @Pagado)";
+                string sql = "INSERT INTO factura_mostrador (NombreCliente, TipoFactura, Fecha, FormaDePago, ITBIS, SubTotal, Total, NombreCaja, Pagado) VALUES (@NombreCliente, @TipoFactura, @Fecha, @FormaDePago, @ITBIS, @SubTotal, @Total, @NombreCaja, @Pagado)";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
@@ -504,6 +490,7 @@ namespace PMS_POS.Model
                 cmd.Parameters.AddWithValue("@ITBIS", ITBIS);
                 cmd.Parameters.AddWithValue("@SubTotal", SubTotal);
                 cmd.Parameters.AddWithValue("@Total", Total);
+                cmd.Parameters.AddWithValue("@NombreCaja", NombreCaja);
                 cmd.Parameters.AddWithValue("@TipoFactura", "Mostrador");
                 cmd.Parameters.AddWithValue("@Pagado", Pagado);
                 cmd.Parameters.AddWithValue("@FormaDePago", FormaDePago);
@@ -541,7 +528,6 @@ namespace PMS_POS.Model
                 {
                     return false;
                 }
-
             }
         }
 
@@ -555,7 +541,7 @@ namespace PMS_POS.Model
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdPedido", IdPedido);
                 cmd.Parameters.AddWithValue("@IdFactura", IdFactura);
-                cmd.Parameters.AddWithValue("@NombreClienteFactura", nombreCliente);
+                cmd.Parameters.AddWithValue("@nombreCliente", nombreCliente);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)
@@ -570,18 +556,22 @@ namespace PMS_POS.Model
             }
         }
 
-        public bool InsertRelacionFacturaInsumo(int IdFactura, int IdInsumo, float PrecioVenta, int CantidadComprada)
+        public bool InsertRelacionFacturaInsumo(int IdFactura, int IdInsumo, string NombreInsumo, float CantidadComprada, float PrecioVenta, float Importe, float ITBIS, string UnidadMedida)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "INSERT INTO facturamostrador_insumo (IdFacturaMostrador, IdInsumo, PrecioVenta, CantidadComprada) VALUES (@IdFactura, @IdInsumo, @PrecioVenta, @CantidadComprada)";
+                string sql = "INSERT INTO facturamostrador_insumo (IdFacturaMostrador, IdInsumo, NombreInsumo, CantidadComprada,  PrecioVenta, Importe, ITBIS, UnidadMedida) VALUES (@IdFactura, @IdInsumo, @NombreInsumo, @CantidadComprada, @PrecioVenta, @Importe, @ITBIS, @UnidadMedida)";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdFactura", IdFactura);
-                cmd.Parameters.AddWithValue("@IdInsumo", IdInsumo);
-                cmd.Parameters.AddWithValue("@PrecioVenta", PrecioVenta);
+                cmd.Parameters.AddWithValue("@IdInsumo", IdInsumo); 
+                cmd.Parameters.AddWithValue("@NombreInsumo", NombreInsumo);
                 cmd.Parameters.AddWithValue("@CantidadComprada", CantidadComprada);
+                cmd.Parameters.AddWithValue("@PrecioVenta", PrecioVenta);
+                cmd.Parameters.AddWithValue("@Importe", Importe);
+                cmd.Parameters.AddWithValue("@ITBIS", ITBIS);
+                cmd.Parameters.AddWithValue("@UnidadMedida", UnidadMedida);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)
@@ -592,24 +582,20 @@ namespace PMS_POS.Model
                 {
                     return false;
                 }
-
             }
         }
 
         public int SearchIdMesaFROMNombreMesa(string NombreMesa)
         {
             int IdCategoria = 0;
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
 
             try
             {
-                //Select query
-                string sql = "SELECT IdMesa FROM mesa WHERE NombreMesa=@NombreMesa";// creating cmd using sql and conn
+                string sql = "SELECT IdMesa FROM mesa WHERE NombreMesa=@NombreMesa";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@NombreMesa", NombreMesa);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 return IdCategoria = Convert.ToInt32(cmd.ExecuteScalar());
@@ -655,17 +641,14 @@ namespace PMS_POS.Model
         public int SelectIdPedidoCorrespondienteConIdFactura(int idFactura)
         {
             int resp = 0;
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
 
             try
             {
-                //Select query
-                string sql = "SELECT IdPedido FROM detalle_pedido WHERE IdFactura=@idFactura";// creating cmd using sql and conn
+                string sql = "SELECT IdPedido FROM detalle_pedido WHERE IdFactura=@idFactura";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@idFactura", idFactura);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 return resp = Convert.ToInt32(cmd.ExecuteScalar());
@@ -683,18 +666,14 @@ namespace PMS_POS.Model
 
         public DataTable SelectFacturasEnOrden(int IdPedido)
         {
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                //Select query
                 string sql = "SELECT IdFactura FROM detalle_pedido WHERE IdPedido=@idPedido";
-                // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@idPedido", IdPedido);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
@@ -712,18 +691,14 @@ namespace PMS_POS.Model
 
         public DataTable ItemsEnFactura(int IdFactura)//PENDIENTE
         {
-            //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                //Select query
                 string sql = "SELECT IdInsumo FROM facturamostrador_insumo WHERE IdFactura=@IdFactura";
-                // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdFactura", IdFactura);
-                //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);

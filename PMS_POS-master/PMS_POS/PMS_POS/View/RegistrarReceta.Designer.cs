@@ -44,6 +44,10 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.dgvProductosEnReceta = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProductosEnInventario = new System.Windows.Forms.DataGridView();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -52,11 +56,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnAceptarReceta = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGuardarReceta = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlMedidaEnReceta.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -67,8 +67,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(212)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.btnAceptarReceta);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnGuardarReceta);
             this.panel1.Controls.Add(this.pnlMedidaEnReceta);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.btnAgregarReceta);
@@ -95,7 +95,7 @@
             this.pnlMedidaEnReceta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
             this.pnlMedidaEnReceta.Controls.Add(this.label1);
             this.pnlMedidaEnReceta.Controls.Add(this.panel3);
-            this.pnlMedidaEnReceta.Location = new System.Drawing.Point(415, 137);
+            this.pnlMedidaEnReceta.Location = new System.Drawing.Point(395, 137);
             this.pnlMedidaEnReceta.Name = "pnlMedidaEnReceta";
             this.pnlMedidaEnReceta.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.pnlMedidaEnReceta.Size = new System.Drawing.Size(396, 246);
@@ -104,11 +104,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(122, 5);
+            this.label1.Location = new System.Drawing.Point(131, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 20);
+            this.label1.Size = new System.Drawing.Size(157, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Medida en receta";
             // 
@@ -171,7 +171,7 @@
             // 
             // btnMedidaMedida
             // 
-            this.btnMedidaMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnMedidaMedida.BackColor = System.Drawing.Color.Navy;
             this.btnMedidaMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMedidaMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMedidaMedida.ForeColor = System.Drawing.Color.White;
@@ -185,7 +185,7 @@
             // 
             // btnAceptarMedida
             // 
-            this.btnAceptarMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnAceptarMedida.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAceptarMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptarMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptarMedida.ForeColor = System.Drawing.Color.White;
@@ -218,7 +218,7 @@
             // 
             // btnAgregarReceta
             // 
-            this.btnAgregarReceta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnAgregarReceta.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAgregarReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarReceta.ForeColor = System.Drawing.Color.White;
@@ -232,7 +232,7 @@
             // 
             // btnRemoverDeReceta
             // 
-            this.btnRemoverDeReceta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(114)))));
+            this.btnRemoverDeReceta.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnRemoverDeReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverDeReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverDeReceta.ForeColor = System.Drawing.Color.White;
@@ -247,50 +247,80 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("SansSerif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
-            this.label21.Location = new System.Drawing.Point(852, 3);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
+            this.label21.Location = new System.Drawing.Point(801, 3);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(231, 25);
+            this.label21.Size = new System.Drawing.Size(239, 25);
             this.label21.TabIndex = 26;
             this.label21.Text = "Productos en Receta:";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("SansSerif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
             this.label23.Location = new System.Drawing.Point(24, 7);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(256, 25);
+            this.label23.Size = new System.Drawing.Size(262, 25);
             this.label23.TabIndex = 25;
             this.label23.Text = "Productos en Inventario";
             // 
             // dgvProductosEnReceta
             // 
             this.dgvProductosEnReceta.AllowUserToAddRows = false;
-            this.dgvProductosEnReceta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvProductosEnReceta.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvProductosEnReceta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductosEnReceta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductosEnReceta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
             this.Column1,
             this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dgvProductosEnReceta.Location = new System.Drawing.Point(780, 31);
+            this.Column3});
+            this.dgvProductosEnReceta.Location = new System.Drawing.Point(777, 31);
             this.dgvProductosEnReceta.Name = "dgvProductosEnReceta";
             this.dgvProductosEnReceta.ReadOnly = true;
             this.dgvProductosEnReceta.Size = new System.Drawing.Size(360, 513);
             this.dgvProductosEnReceta.TabIndex = 24;
             // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "ID";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column1.HeaderText = "Nombre";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 69;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column2.HeaderText = "Cantidad";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 74;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column3.HeaderText = "Unidad";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 66;
+            // 
             // dgvProductosEnInventario
             // 
-            this.dgvProductosEnInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.dgvProductosEnInventario.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvProductosEnInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductosEnInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosEnInventario.Location = new System.Drawing.Point(0, 66);
+            this.dgvProductosEnInventario.Location = new System.Drawing.Point(3, 66);
             this.dgvProductosEnInventario.Name = "dgvProductosEnInventario";
-            this.dgvProductosEnInventario.Size = new System.Drawing.Size(293, 478);
+            this.dgvProductosEnInventario.Size = new System.Drawing.Size(293, 466);
             this.dgvProductosEnInventario.TabIndex = 23;
             // 
             // txtComentario
@@ -323,83 +353,57 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(310, 90);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(131, 25);
+            this.label22.Size = new System.Drawing.Size(91, 18);
             this.label22.TabIndex = 19;
             this.label22.Text = "Descripción:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(309, 252);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(128, 25);
+            this.label20.Size = new System.Drawing.Size(90, 18);
             this.label20.TabIndex = 18;
             this.label20.Text = "Comentario:";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(309, 42);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 25);
+            this.label19.Size = new System.Drawing.Size(66, 18);
             this.label19.TabIndex = 17;
             this.label19.Text = "Nombre:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("SansSerif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
             this.label18.Location = new System.Drawing.Point(512, 7);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(110, 33);
+            this.label18.Size = new System.Drawing.Size(86, 25);
             this.label18.TabIndex = 16;
             this.label18.Text = "Receta";
             // 
-            // btnAceptarReceta
+            // btnGuardarReceta
             // 
-            this.btnAceptarReceta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
-            this.btnAceptarReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptarReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarReceta.ForeColor = System.Drawing.Color.White;
-            this.btnAceptarReceta.Location = new System.Drawing.Point(314, 493);
-            this.btnAceptarReceta.Name = "btnAceptarReceta";
-            this.btnAceptarReceta.Size = new System.Drawing.Size(447, 48);
-            this.btnAceptarReceta.TabIndex = 34;
-            this.btnAceptarReceta.Text = "Aceptar";
-            this.btnAceptarReceta.UseVisualStyleBackColor = false;
-            this.btnAceptarReceta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnAceptarReceta_MouseClick);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 69;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column2.HeaderText = "Cantidad";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 74;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column3.HeaderText = "Unidad";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 66;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "ID";
-            this.Column4.Name = "Column4";
+            this.btnGuardarReceta.BackColor = System.Drawing.Color.Navy;
+            this.btnGuardarReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarReceta.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarReceta.Location = new System.Drawing.Point(315, 495);
+            this.btnGuardarReceta.Name = "btnGuardarReceta";
+            this.btnGuardarReceta.Size = new System.Drawing.Size(446, 44);
+            this.btnGuardarReceta.TabIndex = 34;
+            this.btnGuardarReceta.Text = "Guardar";
+            this.btnGuardarReceta.UseVisualStyleBackColor = false;
+            this.btnGuardarReceta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarReceta_MouseClick);
             // 
             // RegistrarReceta
             // 
@@ -411,6 +415,7 @@
             this.Name = "RegistrarReceta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RECETA";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrarReceta_FormClosing);
             this.Load += new System.EventHandler(this.RegistrarReceta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -451,10 +456,10 @@
         private System.Windows.Forms.Button btnAceptarMedida;
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.ComboBox cbxUnidadMedida;
-        private System.Windows.Forms.Button btnAceptarReceta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnGuardarReceta;
     }
 }

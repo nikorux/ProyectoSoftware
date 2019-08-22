@@ -639,11 +639,6 @@ namespace PMS_POS
 
         }
 
-        private void BtnGoBack_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void BtnPuntoDeVenta_MouseClick(object sender, MouseEventArgs e)
         {
             PosForm posForm = new PosForm();
