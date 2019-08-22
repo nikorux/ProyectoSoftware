@@ -18,6 +18,62 @@ namespace PMS_POS.Model
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
 
+        public int countCajas()
+        {
+            int resp = 1;
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+
+            try
+            {
+                //Select query
+                string sql = "SELECT count(*) FROM caja";// creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                return resp += Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return resp;
+        }
+
+        public int countCajasDisponible()
+        {
+            int resp = 1;
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+
+            try
+            {
+                //Select query
+                string sql = "SELECT count(*) FROM caja WHERE IdDeleted=0 AND Disponible=1";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                return resp += Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return resp;
+        }
+
         public DataTable Select(string estado)
         {
             //hacer la conexion con sql
@@ -58,12 +114,13 @@ namespace PMS_POS.Model
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "INSERT INTO caja (NombreCaja, Descripcion) VALUES (@NombreCaja, @DescripcionCaja)";
+                string sql = "INSERT INTO caja (NombreCaja, Descripcion, Disponible) VALUES (@NombreCaja, @DescripcionCaja, @Disponible)";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@NombreCaja", x.NombreCaja);
                 cmd.Parameters.AddWithValue("@DescripcionCaja", x.DescripcionCaja);
+                cmd.Parameters.AddWithValue("@Disponible", x.DisponibleCaja);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)

@@ -45,17 +45,6 @@ namespace PMS_POS.View
                 ListadoProducto.InstanceLP.BringToFront();
             }
 
-            if (!tabPage3.Controls.Contains(ConfigurarCategoriaProducto.Instance))
-            {
-                tabPage3.Controls.Add(ConfigurarCategoriaProducto.Instance);
-                ConfigurarCategoriaProducto.Instance.Dock = DockStyle.Fill;
-                ConfigurarCategoriaProducto.Instance.BringToFront();
-            }
-            else
-            {
-                ConfigurarCategoriaProducto.Instance.BringToFront();
-            }
-
             if (!tabPage4.Controls.Contains(RegistrarNuevaCompra.Instance))
             {
                 tabPage4.Controls.Add(RegistrarNuevaCompra.Instance);

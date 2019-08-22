@@ -47,8 +47,7 @@
             this.btn1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbxFacturasEnMesa = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.cbxFacturaDeCliente = new System.Windows.Forms.ComboBox();
             this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.btnGuardarOrdenAbierta = new System.Windows.Forms.Button();
@@ -102,12 +101,17 @@
             this.dgvProductosMostrador = new System.Windows.Forms.DataGridView();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.dgvFactura = new System.Windows.Forms.DataGridView();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtCaja = new System.Windows.Forms.TextBox();
+            this.btnFacturarExistente = new System.Windows.Forms.Button();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label19 = new System.Windows.Forms.Label();
             this.pnlBase.SuspendLayout();
             this.pnlEligirCantidadDeProducto.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -127,7 +131,7 @@
             this.pnlBase.Controls.Add(this.pnlEligirCantidadDeProducto);
             this.pnlBase.Controls.Add(this.panel2);
             this.pnlBase.Controls.Add(this.panel1);
-            this.pnlBase.Controls.Add(this.cbxFacturasEnMesa);
+            this.pnlBase.Controls.Add(this.cbxFacturaDeCliente);
             this.pnlBase.Controls.Add(this.label19);
             this.pnlBase.Controls.Add(this.txtBuscarCliente);
             this.pnlBase.Controls.Add(this.label20);
@@ -376,35 +380,23 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(12, 104);
+            this.panel1.Location = new System.Drawing.Point(10, 104);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(278, 400);
             this.panel1.TabIndex = 35;
             // 
-            // cbxFacturasEnMesa
+            // cbxFacturaDeCliente
             // 
-            this.cbxFacturasEnMesa.Enabled = false;
-            this.cbxFacturasEnMesa.FormattingEnabled = true;
-            this.cbxFacturasEnMesa.Items.AddRange(new object[] {
+            this.cbxFacturaDeCliente.Enabled = false;
+            this.cbxFacturaDeCliente.FormattingEnabled = true;
+            this.cbxFacturaDeCliente.Items.AddRange(new object[] {
             "Todas"});
-            this.cbxFacturasEnMesa.Location = new System.Drawing.Point(91, 77);
-            this.cbxFacturasEnMesa.Name = "cbxFacturasEnMesa";
-            this.cbxFacturasEnMesa.Size = new System.Drawing.Size(160, 21);
-            this.cbxFacturasEnMesa.TabIndex = 34;
-            this.cbxFacturasEnMesa.Visible = false;
-            this.cbxFacturasEnMesa.SelectedIndexChanged += new System.EventHandler(this.CbxFacturasEnMesa_SelectedIndexChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Enabled = false;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(35, 79);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(50, 16);
-            this.label19.TabIndex = 33;
-            this.label19.Text = "Mesa:";
-            this.label19.Visible = false;
+            this.cbxFacturaDeCliente.Location = new System.Drawing.Point(91, 77);
+            this.cbxFacturaDeCliente.Name = "cbxFacturaDeCliente";
+            this.cbxFacturaDeCliente.Size = new System.Drawing.Size(160, 21);
+            this.cbxFacturaDeCliente.TabIndex = 34;
+            this.cbxFacturaDeCliente.Visible = false;
+            this.cbxFacturaDeCliente.SelectedIndexChanged += new System.EventHandler(this.CbxFacturasEnMesa_SelectedIndexChanged);
             // 
             // txtBuscarCliente
             // 
@@ -447,7 +439,7 @@
             this.btnAgregarFacturaAOrden.Name = "btnAgregarFacturaAOrden";
             this.btnAgregarFacturaAOrden.Size = new System.Drawing.Size(138, 72);
             this.btnAgregarFacturaAOrden.TabIndex = 29;
-            this.btnAgregarFacturaAOrden.Text = "+ Agregar factura a la orden";
+            this.btnAgregarFacturaAOrden.Text = "+ Agregar factura al pedido";
             this.btnAgregarFacturaAOrden.UseVisualStyleBackColor = false;
             this.btnAgregarFacturaAOrden.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnAgregarFacturaAOrden_MouseClick);
             // 
@@ -471,7 +463,7 @@
             this.btnAgregarAFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarAFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarAFactura.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarAFactura.Location = new System.Drawing.Point(312, 449);
+            this.btnAgregarAFactura.Location = new System.Drawing.Point(312, 459);
             this.btnAgregarAFactura.Name = "btnAgregarAFactura";
             this.btnAgregarAFactura.Size = new System.Drawing.Size(564, 46);
             this.btnAgregarAFactura.TabIndex = 24;
@@ -484,9 +476,9 @@
             this.cbxSeleccionarMesa.FormattingEnabled = true;
             this.cbxSeleccionarMesa.Items.AddRange(new object[] {
             "Todas"});
-            this.cbxSeleccionarMesa.Location = new System.Drawing.Point(956, 79);
+            this.cbxSeleccionarMesa.Location = new System.Drawing.Point(947, 79);
             this.cbxSeleccionarMesa.Name = "cbxSeleccionarMesa";
-            this.cbxSeleccionarMesa.Size = new System.Drawing.Size(50, 21);
+            this.cbxSeleccionarMesa.Size = new System.Drawing.Size(64, 21);
             this.cbxSeleccionarMesa.TabIndex = 20;
             this.cbxSeleccionarMesa.SelectedIndexChanged += new System.EventHandler(this.CbxSeleccionarMesa_SelectedIndexChanged);
             // 
@@ -512,6 +504,7 @@
             this.btnCancelarFactura.TabIndex = 8;
             this.btnCancelarFactura.Text = "Cancelar orden";
             this.btnCancelarFactura.UseVisualStyleBackColor = false;
+            this.btnCancelarFactura.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnCancelarFactura_MouseClick);
             // 
             // btnRemoverDeFactura
             // 
@@ -525,10 +518,12 @@
             this.btnRemoverDeFactura.TabIndex = 6;
             this.btnRemoverDeFactura.Text = "Remover Item";
             this.btnRemoverDeFactura.UseVisualStyleBackColor = false;
+            this.btnRemoverDeFactura.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnRemoverDeFactura_MouseClick);
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.btnFacturarExistente);
             this.panel4.Controls.Add(this.cbxFormaDePago);
             this.panel4.Controls.Add(this.label22);
             this.panel4.Controls.Add(this.label11);
@@ -544,7 +539,7 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.pnlSubTotal);
             this.panel4.Controls.Add(this.pnlTotalAPagar);
-            this.panel4.Location = new System.Drawing.Point(312, 501);
+            this.panel4.Location = new System.Drawing.Point(312, 509);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(864, 198);
             this.panel4.TabIndex = 5;
@@ -678,7 +673,7 @@
             this.btnFacturar.Name = "btnFacturar";
             this.btnFacturar.Size = new System.Drawing.Size(252, 89);
             this.btnFacturar.TabIndex = 7;
-            this.btnFacturar.Text = "Facturar";
+            this.btnFacturar.Text = "Facturar Nueva";
             this.btnFacturar.UseVisualStyleBackColor = false;
             this.btnFacturar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnFacturar_MouseClick);
             // 
@@ -857,9 +852,11 @@
             // pnlDetallesProducto
             // 
             this.pnlDetallesProducto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDetallesProducto.Controls.Add(this.txtCaja);
+            this.pnlDetallesProducto.Controls.Add(this.label23);
+            this.pnlDetallesProducto.Controls.Add(this.btnNuevaOrden);
             this.pnlDetallesProducto.Controls.Add(this.cbxCategoria);
             this.pnlDetallesProducto.Controls.Add(this.label21);
-            this.pnlDetallesProducto.Controls.Add(this.btnNuevaOrden);
             this.pnlDetallesProducto.Controls.Add(this.txtNombreCliente);
             this.pnlDetallesProducto.Controls.Add(this.cbxAsignarMesa);
             this.pnlDetallesProducto.Controls.Add(this.label9);
@@ -875,7 +872,7 @@
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.Items.AddRange(new object[] {
             "Todas"});
-            this.cbxCategoria.Location = new System.Drawing.Point(154, 69);
+            this.cbxCategoria.Location = new System.Drawing.Point(373, 73);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(183, 21);
             this.cbxCategoria.TabIndex = 28;
@@ -885,7 +882,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(3, 69);
+            this.label21.Location = new System.Drawing.Point(222, 73);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(145, 16);
             this.label21.TabIndex = 27;
@@ -897,17 +894,17 @@
             this.btnNuevaOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaOrden.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaOrden.Location = new System.Drawing.Point(348, 3);
+            this.btnNuevaOrden.Location = new System.Drawing.Point(3, 42);
             this.btnNuevaOrden.Name = "btnNuevaOrden";
-            this.btnNuevaOrden.Size = new System.Drawing.Size(209, 92);
+            this.btnNuevaOrden.Size = new System.Drawing.Size(209, 54);
             this.btnNuevaOrden.TabIndex = 26;
-            this.btnNuevaOrden.Text = "+ Nueva Orden";
+            this.btnNuevaOrden.Text = "+ Nuevo Pedido";
             this.btnNuevaOrden.UseVisualStyleBackColor = false;
             this.btnNuevaOrden.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnNuevaOrden_MouseClick);
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(126, 3);
+            this.txtNombreCliente.Location = new System.Drawing.Point(345, 7);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(211, 20);
             this.txtNombreCliente.TabIndex = 24;
@@ -915,7 +912,7 @@
             // cbxAsignarMesa
             // 
             this.cbxAsignarMesa.FormattingEnabled = true;
-            this.cbxAsignarMesa.Location = new System.Drawing.Point(126, 29);
+            this.cbxAsignarMesa.Location = new System.Drawing.Point(345, 33);
             this.cbxAsignarMesa.Name = "cbxAsignarMesa";
             this.cbxAsignarMesa.Size = new System.Drawing.Size(211, 21);
             this.cbxAsignarMesa.TabIndex = 22;
@@ -923,7 +920,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 47);
+            this.label9.Location = new System.Drawing.Point(222, 51);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(340, 13);
             this.label9.TabIndex = 25;
@@ -934,7 +931,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 4);
+            this.label2.Location = new System.Drawing.Point(222, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 16);
             this.label2.TabIndex = 23;
@@ -944,7 +941,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 29);
+            this.label1.Location = new System.Drawing.Point(232, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 16);
             this.label1.TabIndex = 21;
@@ -979,12 +976,48 @@
             this.Column4,
             this.Column5,
             this.Column6,
+            this.Column2,
             this.Column7,
             this.Column1});
             this.dgvFactura.Location = new System.Drawing.Point(10, 104);
             this.dgvFactura.Name = "dgvFactura";
             this.dgvFactura.Size = new System.Drawing.Size(278, 400);
             this.dgvFactura.TabIndex = 0;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(17, -2);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(43, 15);
+            this.label23.TabIndex = 19;
+            this.label23.Text = "CAJA:";
+            // 
+            // txtCaja
+            // 
+            this.txtCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCaja.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtCaja.Location = new System.Drawing.Point(3, 15);
+            this.txtCaja.Name = "txtCaja";
+            this.txtCaja.ReadOnly = true;
+            this.txtCaja.Size = new System.Drawing.Size(209, 26);
+            this.txtCaja.TabIndex = 29;
+            this.txtCaja.Text = "Seleccionar";
+            this.txtCaja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnFacturarExistente
+            // 
+            this.btnFacturarExistente.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnFacturarExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacturarExistente.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturarExistente.ForeColor = System.Drawing.Color.White;
+            this.btnFacturarExistente.Location = new System.Drawing.Point(3, 37);
+            this.btnFacturarExistente.Name = "btnFacturarExistente";
+            this.btnFacturarExistente.Size = new System.Drawing.Size(79, 60);
+            this.btnFacturarExistente.TabIndex = 31;
+            this.btnFacturarExistente.Text = "Facturar Existente";
+            this.btnFacturarExistente.UseVisualStyleBackColor = false;
             // 
             // Column3
             // 
@@ -1011,6 +1044,12 @@
             this.Column6.HeaderText = "Precio";
             this.Column6.Name = "Column6";
             // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Importe";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
             // Column7
             // 
             this.Column7.HeaderText = "ITBIS";
@@ -1022,6 +1061,18 @@
             this.Column1.HeaderText = "UMedida";
             this.Column1.Name = "Column1";
             this.Column1.Visible = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Enabled = false;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(35, 79);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(60, 16);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "Cliente:";
+            this.label19.Visible = false;
             // 
             // MostradorPOS
             // 
@@ -1077,8 +1128,7 @@
         private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Button btn5;
         private System.Windows.Forms.Button btn1;
-        private System.Windows.Forms.ComboBox cbxFacturasEnMesa;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox cbxFacturaDeCliente;
         private System.Windows.Forms.TextBox txtBuscarCliente;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnGuardarOrdenAbierta;
@@ -1134,11 +1184,16 @@
         private System.Windows.Forms.DataGridView dgvFactura;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtCaja;
+        private System.Windows.Forms.Button btnFacturarExistente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Label label19;
     }
 }

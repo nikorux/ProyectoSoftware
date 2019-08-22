@@ -18,10 +18,36 @@ namespace PMS_POS.Model
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
 
+        public int countMesas()
+        {
+            int resp = 1;
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+
+            try
+            {
+                //Select query
+                string sql = "SELECT count(*) FROM mesa";// creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                return resp += Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return resp;
+        }
 
         public DataTable Select(string estado)
         {
-
             //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
@@ -60,12 +86,13 @@ namespace PMS_POS.Model
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "INSERT INTO mesa (Nombre, Descripcion) VALUES (@NombreMesa, @DescripcionMesa)";
+                string sql = "INSERT INTO mesa (Nombre, Descripcion, Disponible) VALUES (@NombreMesa, @DescripcionMesa, @Disponible)";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@NombreMesa", x.NombreMesa);
                 cmd.Parameters.AddWithValue("@DescripcionMesa", x.DescripcionMesa);
+                cmd.Parameters.AddWithValue("@Disponible", x.DisponibleMesa);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)
@@ -85,14 +112,14 @@ namespace PMS_POS.Model
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "UPDATE mesa SET NombreMesa=@NombreMesa, DescripcionMesa=@DescripcionMesa, DisponibleMesa=@DisponibleMesa WHERE IdMesa=@IdMesa";
+                string sql = "UPDATE mesa SET Nombre=@Nombre, Descripcion=@Descripcion, Disponible=@Disponible WHERE IdMesa=@IdMesa";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdMesa", x.IdMesa);
-                cmd.Parameters.AddWithValue("@NombreMesa", x.NombreMesa);
-                cmd.Parameters.AddWithValue("@DescripcionMesa", x.DescripcionMesa);
-                cmd.Parameters.AddWithValue("@DisponibleMesa", x.DisponibleMesa);
+                cmd.Parameters.AddWithValue("@Nombre", x.NombreMesa);
+                cmd.Parameters.AddWithValue("@Descripcion", x.DescripcionMesa);
+                cmd.Parameters.AddWithValue("@Disponible", x.DisponibleMesa);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)
@@ -115,8 +142,7 @@ namespace PMS_POS.Model
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
                 //Sql to delete
-                string sql = "UPDATE insumo SET IsDeleted=@IsDeleted, DeletedDate=@DeletedDated WHERE IdInsumo=@IdInsumo";
-
+                string sql = "UPDATE mesa SET IsDeleted=@IsDeleted, DeletedDate=@DeletedDated WHERE IdMesa=@IdMesa";
                 //Creating SQL Command
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
@@ -129,12 +155,10 @@ namespace PMS_POS.Model
                 mySqlConn.Close();
                 if (row > 0)
                 {
-
                     return true;
                 }
                 else
                 {
-
                     return false;
                 }
             }

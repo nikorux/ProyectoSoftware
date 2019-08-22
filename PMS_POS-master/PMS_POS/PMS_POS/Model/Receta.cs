@@ -81,7 +81,7 @@ namespace PMS_POS.Model
             }
         }
 
-        public bool InsertEnTablaReceta(Receta x)
+        public bool InsertEnTablaReceta(string NombreReceta, string DescripcionReceta, string ComentarioReceta, int IdInsumo)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
@@ -89,10 +89,10 @@ namespace PMS_POS.Model
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@NombreReceta", x.NombreReceta_receta);
-                cmd.Parameters.AddWithValue("@DescripcionReceta", x.DescripcionReceta_receta);
-                cmd.Parameters.AddWithValue("@ComentarioReceta", x.ComentarioReceta_receta);
-                cmd.Parameters.AddWithValue("@idInsumo", x.IdInsumo_InsumoReceta);
+                cmd.Parameters.AddWithValue("@NombreReceta", NombreReceta);
+                cmd.Parameters.AddWithValue("@DescripcionReceta", DescripcionReceta);
+                cmd.Parameters.AddWithValue("@ComentarioReceta", ComentarioReceta);
+                cmd.Parameters.AddWithValue("@idInsumo", IdInsumo);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)
@@ -106,18 +106,19 @@ namespace PMS_POS.Model
             }
         }
 
-        public bool InsertEnTablaInsumoReceta(Receta x)
+        public bool InsertEnTablaInsumoReceta(int IdReceta, int IdInsumo, string NombreInsumo, float CantidadInsumo, string UnidadMedida)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "INSERT INTO insumo_receta (IdReceta, IdInsumo, CantidadInsumo, UnidadMedida) VALUES (@IdReceta, @IdInsumo, @CantidadInsumo, @UnidadMedida)";
+                string sql = "INSERT INTO insumo_receta (IdReceta, IdInsumo, NombreInsumo, CantidadInsumo, UnidadMedida) VALUES (@IdReceta, @IdInsumo, @NombreInsumo, @CantidadInsumo, @UnidadMedida)";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdReceta", x.IdReceta_InsumoReceta);
-                cmd.Parameters.AddWithValue("@IdInsumo", x.IdInsumo_InsumoReceta);
-                cmd.Parameters.AddWithValue("@CantidadInsumo", x.CantidadInsumo_InsumoReceta);
-                cmd.Parameters.AddWithValue("@UnidadMedida", x.UnidadMedida_InsumoReceta);
+                cmd.Parameters.AddWithValue("@IdReceta", IdReceta);
+                cmd.Parameters.AddWithValue("@IdInsumo", IdInsumo);
+                cmd.Parameters.AddWithValue("@NombreInsumo", NombreInsumo);
+                cmd.Parameters.AddWithValue("@CantidadInsumo", CantidadInsumo);
+                cmd.Parameters.AddWithValue("@UnidadMedida", UnidadMedida);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)
@@ -170,6 +171,33 @@ namespace PMS_POS.Model
             {
                 //Select query
                 string sql = "SELECT COUNT(*) FROM receta";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                return cantRecetas = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return cantRecetas;
+        }
+
+        public int CountInsumosRegistrados()
+        {
+            int cantRecetas = 0;
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+
+            try
+            {
+                //Select query
+                string sql = "SELECT COUNT(*) FROM insumo";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -273,7 +301,7 @@ namespace PMS_POS.Model
             return IdInsumo;
         }
 
-        public string SearchNombreUltimoProducto()
+        public string SearchDescripcionReceta()
         {
             string NombreInsumo = null;
             //hacer la conexion con sql
@@ -304,24 +332,36 @@ namespace PMS_POS.Model
         public string getDetallesReceta(string columna, int idReceta)
         {
             string sql = null;
+            string result = null;
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                switch (columna)
+                try
                 {
-                    case "Descripcion":
-                        sql = "SELECT DescripcionReceta FROM receta WHERE IdReceta=@idReceta";
-                        break;
-                    case "Comentario":
-                        sql = "SELECT ComentarioReceta FROM receta WHERE IdReceta=@idReceta";
-                        break;
+                    switch (columna)
+                    {
+                        case "Descripcion":
+                            sql = "SELECT DescripcionReceta FROM receta WHERE IdReceta=@idReceta";
+                            break;
+                        case "Comentario":
+                            sql = "SELECT ComentarioReceta FROM receta WHERE IdReceta=@idReceta";
+                            break;
+                    }
+                    mySqlConn.Open();
+                    MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@idReceta", idReceta);
+                    return result = cmd.ExecuteNonQuery().ToString();
                 }
-                mySqlConn.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@idReceta", idReceta);
-                return cmd.ExecuteNonQuery().ToString();
-                
+                catch (Exception /* ex*/)
+                {
+
+                }
+                finally
+                {
+                    mySqlConn.Close();
+                }
             }
+            return result;
         }
 
         public bool DeleteTablaRelacionalReceta(int idReceta)
@@ -330,8 +370,7 @@ namespace PMS_POS.Model
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
                 //Sql to delete
-                string sql = "Delete from hostal.insumo_receta where IdReceta=@idReceta";
-
+                string sql = "UPDATE hostal.insumo_receta SET IsDeleted = @IsDeleted, DeletedDate = @DeletedDated WHERE IdReceta = @idReceta";
                 //Creating SQL Command
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
@@ -362,7 +401,7 @@ namespace PMS_POS.Model
                 using (MySqlConnection mySqlConn = new MySqlConnection(connString))
                 {
                     //Sql to delete
-                    string sql = "Delete from hostal.receta where IdReceta=@idReceta";
+                    string sql = "UPDATE hostal.receta SET IsDeleted=@IsDeleted, DeletedDate=@DeletedDated WHERE IdReceta=@idReceta";
 
                     //Creating SQL Command
                     MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);

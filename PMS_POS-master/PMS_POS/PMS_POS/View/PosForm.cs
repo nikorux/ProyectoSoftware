@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PMS_POS.View;
 using System.Runtime.InteropServices;
+using PMS_POS.Model;
 
 namespace PMS_POS.View
 {
     public partial class PosForm : Form
     {
-        public bool estadoUI { get; set; }
-
         private static PosForm _instance;
         public static PosForm Instance
         {
@@ -37,6 +36,9 @@ namespace PMS_POS.View
             int height
         );
 
+        static public string cajaSeleccionada;
+        static public int IDcaja;
+
         public void showPaginaInicio()
         {
             panelUIseleccionada.BringToFront();
@@ -54,12 +56,16 @@ namespace PMS_POS.View
             }
         }
 
+        Caja caja = new Caja();
+
         public PosForm()
         {
             InitializeComponent();
             panelBasePOS.Visible = true;
 
             showPaginaInicio();
+            pnlCajasDisponibles.Visible = false;
+            cajaSeleccionada = txtCajaSeleccionada.Text;
 
             pnlBotonesProveedores.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             pnlBotonInicio.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -69,6 +75,7 @@ namespace PMS_POS.View
             pnlBotonReportes.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             pnlBotonTransacciones.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             pnlBotonVentas.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            pnlConfigurar.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         public void hideUIs()
         {
@@ -82,21 +89,21 @@ namespace PMS_POS.View
             Transacciones.Instance.SendToBack();
         }
 
-        public void showProductos()
+        public void showConfigurar()
         {
             panelUIseleccionada.BringToFront();
             panelUIseleccionada.Visible = true;
             hideUIs();
 
-            if (!panelUIseleccionada.Controls.Contains(ListadoProducto.InstanceLP))
+            if (!panelUIseleccionada.Controls.Contains(ConfigurarPOS.Instance))
             {
-                panelUIseleccionada.Controls.Add(ListadoProducto.InstanceLP);
-                ListadoProducto.InstanceLP.Dock = DockStyle.Fill;
-                ListadoProducto.InstanceLP.BringToFront();
+                panelUIseleccionada.Controls.Add(ConfigurarPOS.Instance);
+                ConfigurarPOS.Instance.Dock = DockStyle.Fill;
+                ConfigurarPOS.Instance.BringToFront();
             }
             else
             {
-                ListadoProducto.InstanceLP.BringToFront();
+                ConfigurarPOS.Instance.BringToFront();
             }
         }
         
@@ -293,6 +300,8 @@ namespace PMS_POS.View
         private void PosForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            lblAMPM.Select();
+            lblAMPM.Focus();
         }
 
         private void PictureBox16_MouseClick(object sender, MouseEventArgs e)
@@ -414,22 +423,44 @@ namespace PMS_POS.View
 
         private void PnlBotonMostrador_MouseClick(object sender, MouseEventArgs e)
         {
-            MostradorPOS mostradorPOS = new MostradorPOS();
-            mostradorPOS.Show();
+            if(cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                MostradorPOS mostradorPOS = new MostradorPOS(cajaSeleccionada, IDcaja);
+                mostradorPOS.Show();
+            }
+            
         }
 
         private void LblMostrador_MouseClick(object sender, MouseEventArgs e)
         {
             //showMostrador();
-            MostradorPOS mostradorPOS = new MostradorPOS();
-            mostradorPOS.Show();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                MostradorPOS mostradorPOS = new MostradorPOS(cajaSeleccionada, IDcaja);
+                mostradorPOS.Show();
+            }
         }
 
         private void PictureBox13_MouseClick(object sender, MouseEventArgs e)
         {
             //showMostrador();
-            MostradorPOS mostradorPOS = new MostradorPOS();
-            mostradorPOS.Show();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                MostradorPOS mostradorPOS = new MostradorPOS(cajaSeleccionada, IDcaja);
+                mostradorPOS.Show();
+            }
         }
 
         private void PnlBotonInventario_MouseClick_1(object sender, MouseEventArgs e)
@@ -712,6 +743,94 @@ namespace PMS_POS.View
         private void PictureBox14_MouseClick(object sender, MouseEventArgs e)
         {
             showOrdenes();
+        }
+
+        private void Label8_MouseHover(object sender, EventArgs e)
+        {
+            pnlBotonTransacciones.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void Label8_MouseLeave(object sender, EventArgs e)
+        {
+            pnlBotonTransacciones.BackColor = Color.FromArgb(0, 102, 204);
+        }
+
+        private void Label9_MouseHover(object sender, EventArgs e)
+        {
+            pnlBotonVentas.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void Label9_MouseLeave(object sender, EventArgs e)
+        {
+            pnlBotonVentas.BackColor = Color.FromArgb(0, 102, 204);
+        }
+
+        private void Label10_MouseHover(object sender, EventArgs e)
+        {
+            pnlConfigurar.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void Label10_MouseLeave(object sender, EventArgs e)
+        {
+            pnlConfigurar.BackColor = Color.FromArgb(0, 102, 204);
+        }
+
+        private void PictureBox17_MouseHover(object sender, EventArgs e)
+        {
+            pnlConfigurar.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PictureBox17_MouseLeave(object sender, EventArgs e)
+        {
+            pnlConfigurar.BackColor = Color.FromArgb(0, 102, 204);
+        }
+
+        private void PnlConfigurar_MouseHover(object sender, EventArgs e)
+        {
+            pnlConfigurar.BackColor = Color.FromArgb(198, 212, 255);
+        }
+
+        private void PnlConfigurar_MouseLeave(object sender, EventArgs e)
+        {
+            pnlConfigurar.BackColor = Color.FromArgb(0, 102, 204);
+        }
+
+        private void PnlConfigurar_MouseClick(object sender, MouseEventArgs e)
+        {
+            showConfigurar();
+        }
+
+        private void PictureBox17_MouseClick(object sender, MouseEventArgs e)
+        {
+            showConfigurar();
+        }
+
+        private void Label10_MouseClick(object sender, MouseEventArgs e)
+        {
+            showConfigurar();
+        }
+
+        private void DgvCajasDisponibles_MouseLeave(object sender, EventArgs e)
+        {
+            pnlCajasDisponibles.Visible = false;
+        }
+
+        private void Button1_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlCajasDisponibles.Visible = true;
+            pnlCajasDisponibles.BringToFront();
+            dgvCajasDisponibles.DataSource = caja.Select("Disponible");
+            dgvCajasDisponibles.Columns[2].Visible = false;
+            dgvCajasDisponibles.Columns[3].Visible = false;
+            dgvCajasDisponibles.Columns[4].Visible = false;
+            dgvCajasDisponibles.Columns[5].Visible = false;
+        }
+
+        private void DgvCajasDisponibles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCajaSeleccionada.Text = dgvCajasDisponibles.CurrentRow.Cells[1].Value.ToString();
+            cajaSeleccionada = txtCajaSeleccionada.Text;
+            IDcaja = Convert.ToInt32(dgvCajasDisponibles.CurrentRow.Cells[0].Value);
         }
     }
 }

@@ -32,20 +32,31 @@
             this.panelPOS = new System.Windows.Forms.Panel();
             this.panelBasePOS = new System.Windows.Forms.Panel();
             this.panelUIseleccionada = new System.Windows.Forms.Panel();
+            this.pnlCajasDisponibles = new System.Windows.Forms.Panel();
+            this.dgvCajasDisponibles = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtCajaSeleccionada = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pnlConfigurar = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.lblAMPM = new System.Windows.Forms.Label();
             this.pnlBotonVentas = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.lblVentas = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pnlBotonInventario = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pnlBotonTransacciones = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.Ordenes = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pnlBotonInicio = new System.Windows.Forms.Panel();
-            this.lblInicio = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.lblInicio = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.pnlBotonesProveedores = new System.Windows.Forms.Panel();
@@ -84,7 +95,12 @@
             this.panelPOS.SuspendLayout();
             this.panelBasePOS.SuspendLayout();
             this.panelUIseleccionada.SuspendLayout();
+            this.pnlCajasDisponibles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCajasDisponibles)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.pnlConfigurar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.pnlBotonVentas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.pnlBotonInventario.SuspendLayout();
@@ -134,6 +150,7 @@
             // panelUIseleccionada
             // 
             this.panelUIseleccionada.BackColor = System.Drawing.Color.White;
+            this.panelUIseleccionada.Controls.Add(this.pnlCajasDisponibles);
             this.panelUIseleccionada.Controls.Add(this.panel2);
             this.panelUIseleccionada.Controls.Add(this.panel1);
             this.panelUIseleccionada.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -142,9 +159,30 @@
             this.panelUIseleccionada.Size = new System.Drawing.Size(1187, 710);
             this.panelUIseleccionada.TabIndex = 13;
             // 
+            // pnlCajasDisponibles
+            // 
+            this.pnlCajasDisponibles.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlCajasDisponibles.Controls.Add(this.dgvCajasDisponibles);
+            this.pnlCajasDisponibles.Location = new System.Drawing.Point(692, 84);
+            this.pnlCajasDisponibles.Name = "pnlCajasDisponibles";
+            this.pnlCajasDisponibles.Size = new System.Drawing.Size(299, 169);
+            this.pnlCajasDisponibles.TabIndex = 15;
+            // 
+            // dgvCajasDisponibles
+            // 
+            this.dgvCajasDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCajasDisponibles.Location = new System.Drawing.Point(3, 3);
+            this.dgvCajasDisponibles.Name = "dgvCajasDisponibles";
+            this.dgvCajasDisponibles.Size = new System.Drawing.Size(293, 163);
+            this.dgvCajasDisponibles.TabIndex = 0;
+            this.dgvCajasDisponibles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCajasDisponibles_CellDoubleClick);
+            this.dgvCajasDisponibles.MouseLeave += new System.EventHandler(this.DgvCajasDisponibles_MouseLeave);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.pnlConfigurar);
             this.panel2.Controls.Add(this.lblAMPM);
             this.panel2.Controls.Add(this.pnlBotonVentas);
             this.panel2.Controls.Add(this.pnlBotonInventario);
@@ -162,6 +200,92 @@
             this.panel2.Size = new System.Drawing.Size(1187, 80);
             this.panel2.TabIndex = 14;
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.txtCajaSeleccionada);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Location = new System.Drawing.Point(729, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(232, 80);
+            this.panel3.TabIndex = 15;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(3, 53);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(222, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Seleccionar cajas disponibles";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Button1_MouseClick);
+            // 
+            // txtCajaSeleccionada
+            // 
+            this.txtCajaSeleccionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCajaSeleccionada.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtCajaSeleccionada.Location = new System.Drawing.Point(3, 22);
+            this.txtCajaSeleccionada.Name = "txtCajaSeleccionada";
+            this.txtCajaSeleccionada.ReadOnly = true;
+            this.txtCajaSeleccionada.Size = new System.Drawing.Size(222, 31);
+            this.txtCajaSeleccionada.TabIndex = 1;
+            this.txtCajaSeleccionada.Text = "Seleccionar";
+            this.txtCajaSeleccionada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(84, -2);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 20);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Caja:";
+            // 
+            // pnlConfigurar
+            // 
+            this.pnlConfigurar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pnlConfigurar.Controls.Add(this.label10);
+            this.pnlConfigurar.Controls.Add(this.pictureBox17);
+            this.pnlConfigurar.Location = new System.Drawing.Point(596, 9);
+            this.pnlConfigurar.Name = "pnlConfigurar";
+            this.pnlConfigurar.Size = new System.Drawing.Size(72, 71);
+            this.pnlConfigurar.TabIndex = 20;
+            this.pnlConfigurar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlConfigurar_MouseClick);
+            this.pnlConfigurar.MouseLeave += new System.EventHandler(this.PnlConfigurar_MouseLeave);
+            this.pnlConfigurar.MouseHover += new System.EventHandler(this.PnlConfigurar_MouseHover);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 56);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Configurar";
+            this.label10.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Label10_MouseClick);
+            this.label10.MouseLeave += new System.EventHandler(this.Label10_MouseLeave);
+            this.label10.MouseHover += new System.EventHandler(this.Label10_MouseHover);
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = global::PMS_POS.Properties.Resources.ConfigurarIMG;
+            this.pictureBox17.Location = new System.Drawing.Point(9, 3);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(53, 52);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 17;
+            this.pictureBox17.TabStop = false;
+            this.pictureBox17.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBox17_MouseClick);
+            this.pictureBox17.MouseLeave += new System.EventHandler(this.PictureBox17_MouseLeave);
+            this.pictureBox17.MouseHover += new System.EventHandler(this.PictureBox17_MouseHover);
+            // 
             // lblAMPM
             // 
             this.lblAMPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,6 +299,7 @@
             // pnlBotonVentas
             // 
             this.pnlBotonVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.pnlBotonVentas.Controls.Add(this.label9);
             this.pnlBotonVentas.Controls.Add(this.lblVentas);
             this.pnlBotonVentas.Controls.Add(this.pictureBox16);
             this.pnlBotonVentas.Location = new System.Drawing.Point(523, 9);
@@ -185,11 +310,23 @@
             this.pnlBotonVentas.MouseLeave += new System.EventHandler(this.PnlBotonVentas_MouseLeave_1);
             this.pnlBotonVentas.MouseHover += new System.EventHandler(this.PnlBotonVentas_MouseHover_1);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(17, 55);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 15);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "HOY";
+            this.label9.MouseLeave += new System.EventHandler(this.Label9_MouseLeave);
+            this.label9.MouseHover += new System.EventHandler(this.Label9_MouseHover);
+            // 
             // lblVentas
             // 
             this.lblVentas.AutoSize = true;
             this.lblVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVentas.Location = new System.Drawing.Point(12, 54);
+            this.lblVentas.Location = new System.Drawing.Point(9, 0);
             this.lblVentas.Name = "lblVentas";
             this.lblVentas.Size = new System.Drawing.Size(50, 15);
             this.lblVentas.TabIndex = 20;
@@ -201,9 +338,9 @@
             // pictureBox16
             // 
             this.pictureBox16.Image = global::PMS_POS.Properties.Resources.VentasIMG;
-            this.pictureBox16.Location = new System.Drawing.Point(9, 3);
+            this.pictureBox16.Location = new System.Drawing.Point(12, 15);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(53, 52);
+            this.pictureBox16.Size = new System.Drawing.Size(46, 39);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 18;
             this.pictureBox16.TabStop = false;
@@ -253,6 +390,7 @@
             // pnlBotonTransacciones
             // 
             this.pnlBotonTransacciones.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pnlBotonTransacciones.Controls.Add(this.label8);
             this.pnlBotonTransacciones.Controls.Add(this.Ordenes);
             this.pnlBotonTransacciones.Controls.Add(this.pictureBox14);
             this.pnlBotonTransacciones.Location = new System.Drawing.Point(377, 9);
@@ -263,11 +401,23 @@
             this.pnlBotonTransacciones.MouseLeave += new System.EventHandler(this.PnlBotonTransacciones_MouseLeave_1);
             this.pnlBotonTransacciones.MouseHover += new System.EventHandler(this.PnlBotonTransacciones_MouseHover_1);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(17, 55);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 15);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "HOY";
+            this.label8.MouseLeave += new System.EventHandler(this.Label8_MouseLeave);
+            this.label8.MouseHover += new System.EventHandler(this.Label8_MouseHover);
+            // 
             // Ordenes
             // 
             this.Ordenes.AutoSize = true;
             this.Ordenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ordenes.Location = new System.Drawing.Point(6, 54);
+            this.Ordenes.Location = new System.Drawing.Point(5, 2);
             this.Ordenes.Name = "Ordenes";
             this.Ordenes.Size = new System.Drawing.Size(61, 15);
             this.Ordenes.TabIndex = 18;
@@ -279,9 +429,9 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = global::PMS_POS.Properties.Resources.OrdenesIMG;
-            this.pictureBox14.Location = new System.Drawing.Point(9, 3);
+            this.pictureBox14.Location = new System.Drawing.Point(12, 15);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(53, 52);
+            this.pictureBox14.Size = new System.Drawing.Size(46, 39);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 16;
             this.pictureBox14.TabStop = false;
@@ -302,19 +452,6 @@
             this.pnlBotonInicio.MouseLeave += new System.EventHandler(this.PnlBotonInicio_MouseLeave_1);
             this.pnlBotonInicio.MouseHover += new System.EventHandler(this.PnlBotonInicio_MouseHover);
             // 
-            // lblInicio
-            // 
-            this.lblInicio.AutoSize = true;
-            this.lblInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInicio.Location = new System.Drawing.Point(14, 52);
-            this.lblInicio.Name = "lblInicio";
-            this.lblInicio.Size = new System.Drawing.Size(48, 18);
-            this.lblInicio.TabIndex = 13;
-            this.lblInicio.Text = "Inicio";
-            this.lblInicio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblInicio_MouseClick);
-            this.lblInicio.MouseLeave += new System.EventHandler(this.LblInicio_MouseLeave);
-            this.lblInicio.MouseHover += new System.EventHandler(this.LblInicio_MouseHover);
-            // 
             // pictureBox9
             // 
             this.pictureBox9.Image = global::PMS_POS.Properties.Resources.HomeIMG;
@@ -327,6 +464,19 @@
             this.pictureBox9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBox9_MouseClick);
             this.pictureBox9.MouseLeave += new System.EventHandler(this.PictureBox9_MouseLeave);
             this.pictureBox9.MouseHover += new System.EventHandler(this.PictureBox9_MouseHover);
+            // 
+            // lblInicio
+            // 
+            this.lblInicio.AutoSize = true;
+            this.lblInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInicio.Location = new System.Drawing.Point(14, 52);
+            this.lblInicio.Name = "lblInicio";
+            this.lblInicio.Size = new System.Drawing.Size(48, 18);
+            this.lblInicio.TabIndex = 13;
+            this.lblInicio.Text = "Inicio";
+            this.lblInicio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblInicio_MouseClick);
+            this.lblInicio.MouseLeave += new System.EventHandler(this.LblInicio_MouseLeave);
+            this.lblInicio.MouseHover += new System.EventHandler(this.LblInicio_MouseHover);
             // 
             // lblHora
             // 
@@ -682,7 +832,14 @@
             this.panelPOS.ResumeLayout(false);
             this.panelBasePOS.ResumeLayout(false);
             this.panelUIseleccionada.ResumeLayout(false);
+            this.pnlCajasDisponibles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCajasDisponibles)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.pnlConfigurar.ResumeLayout(false);
+            this.pnlConfigurar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.pnlBotonVentas.ResumeLayout(false);
             this.pnlBotonVentas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -776,5 +933,16 @@
         private System.Windows.Forms.Label lblMostrador;
         private System.Windows.Forms.Label lblmenu;
         private System.Windows.Forms.Label lblreporte;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel pnlConfigurar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.Panel pnlCajasDisponibles;
+        private System.Windows.Forms.DataGridView dgvCajasDisponibles;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtCajaSeleccionada;
+        private System.Windows.Forms.Label label11;
     }
 }

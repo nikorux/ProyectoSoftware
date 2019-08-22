@@ -16,6 +16,7 @@ namespace PMS_POS.Model
         public int IdCategoria { get; set; }
         public string DescripcionInsumo { get; set; }
         public int IdProveedor { get; set; }
+        public string NombreCaja { get; set; }
         public float PrecioCompra { get; set; }
         public float PorcientoImpuesto { get; set; }
         public float Impuesto { get; set; }
@@ -148,7 +149,7 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT IdProveedor FROM proveedor WHERE NombreCompañia=@nombreProveedor";// creating cmd using sql and conn
+                string sql = "SELECT IdProveedor FROM proveedor WHERE NombreCompañia=@nombreProveedor";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@nombreProveedor", NombreProveedor);
@@ -309,6 +310,15 @@ namespace PMS_POS.Model
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
+                dt.Columns["IdInsumo"].ColumnName = "##";
+                dt.Columns["NombreInsumo"].ColumnName = "Nombre";
+                dt.Columns["DescripcionInsumo"].ColumnName = "Descripción";
+                dt.Columns["PrecioCompra"].ColumnName = "Precio Compra";
+                dt.Columns["PrecioVenta"].ColumnName = "Precio Venta";
+                dt.Columns["CantActual"].ColumnName = "Cant. Actual";
+                dt.Columns["CantMinima"].ColumnName = "Cant. Mínima";
+                dt.Columns["CantMaxima"].ColumnName = "Cant. Máxima";
+                dt.Columns["UnidadMedida"].ColumnName = "Unidad Medida";
             }
             catch (Exception)
             {
@@ -488,7 +498,7 @@ namespace PMS_POS.Model
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "INSERT INTO insumo (NombreInsumo, IdCategoria, DescripcionInsumo, Proveedor, PrecioCompra, PorcientoImpuesto, Impuesto, PrecioVenta, CantActual, CantMinima, CantMaxima, UnidadMedida, EnMostrador) VALUES (@NombreInsumo, @IdCategoria, @DescripcionInsumo, @IdProveedor, @PrecioCompra, @PorcientoImpuesto, @Impuesto, @PrecioVenta, @CantActual, @CantMinima, @CantMaxima, @UnidadMedida, @EnMostrador)";
+                string sql = "INSERT INTO insumo (NombreInsumo, IdCategoria, DescripcionInsumo, Proveedor, NombreCaja, PrecioCompra, PorcientoImpuesto, Impuesto, PrecioVenta, CantActual, CantMinima, CantMaxima, UnidadMedida, EnMostrador) VALUES (@NombreInsumo, @IdCategoria, @DescripcionInsumo, @IdProveedor, @NombreCaja, @PrecioCompra, @PorcientoImpuesto, @Impuesto, @PrecioVenta, @CantActual, @CantMinima, @CantMaxima, @UnidadMedida, @EnMostrador)";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
@@ -496,6 +506,7 @@ namespace PMS_POS.Model
                 cmd.Parameters.AddWithValue("@IdCategoria", x.IdCategoria);
                 cmd.Parameters.AddWithValue("@DescripcionInsumo", x.DescripcionInsumo);
                 cmd.Parameters.AddWithValue("@IdProveedor", x.IdProveedor);
+                cmd.Parameters.AddWithValue("@NombreCaja", x.NombreCaja);
                 cmd.Parameters.AddWithValue("@PrecioCompra", x.PrecioCompra);
                 cmd.Parameters.AddWithValue("@PorcientoImpuesto", x.PorcientoImpuesto);
                 cmd.Parameters.AddWithValue("@Impuesto", x.Impuesto);
