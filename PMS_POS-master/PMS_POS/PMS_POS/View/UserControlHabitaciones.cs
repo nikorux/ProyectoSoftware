@@ -62,7 +62,7 @@ namespace PMS_POS.View
                     habitacion.IdHabitacion = Convert.ToInt32(dgvHab.CurrentRow.Cells[0].Value);
                     if (habitacion.Delete(habitacion) == true)
                     {
-                        NotificacionCorrecto.confirmacionForm("ELIMINADO");
+                        FrmCorrecto.confirmacionForm("ELIMINADO");
                         RefreshDgv();
 
                     }

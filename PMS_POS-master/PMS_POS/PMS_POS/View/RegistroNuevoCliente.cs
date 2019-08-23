@@ -55,7 +55,7 @@ namespace PMS_POS.View
                     int resultado = HuespedD.Agregar(pHuesped);
                     if (resultado > 0)
                     {
-                        NotificacionCorrecto.confirmacionForm("AGREGADO");
+                        FrmCorrecto.confirmacionForm("AGREGADO");
                         //dgvclie.DataSource = null;
                         //dgvHuespedes.DataSource = obj.VistaTabla();
                         Huesped limpiar = new Huesped();

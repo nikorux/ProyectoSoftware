@@ -63,7 +63,7 @@ namespace PMS_POS.View
                         {
                             RefreshDgv();
                             Clear();
-                            NotificacionCorrecto.confirmacionForm("AGREGADO");
+                            FrmCorrecto.confirmacionForm("AGREGADO");
 
 
                         }

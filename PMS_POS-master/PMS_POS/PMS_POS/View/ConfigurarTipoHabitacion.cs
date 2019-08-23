@@ -74,7 +74,7 @@ namespace PMS_POS.View
                 int resultado = TipoHabitacionC.Agregar(pNombreTipoHab);
                 if (resultado > 0)
                 {
-                    NotificacionCorrecto.confirmacionForm("AGREGADO");
+                    FrmCorrecto.confirmacionForm("AGREGADO");
                     dgvTipoHabitacion.DataSource = null;
                     dgvTipoHabitacion.DataSource = obj.VistaTabla();
                 }
