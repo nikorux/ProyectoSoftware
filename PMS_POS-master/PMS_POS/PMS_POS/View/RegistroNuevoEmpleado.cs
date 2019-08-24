@@ -34,7 +34,7 @@ namespace PMS_POS.View
             {
                 if (this.txtPrimerNombre.Text == string.Empty || this.txtPrimerApellido.Text == string.Empty)
                 {
-                    MessageBox.Show("Falta ingresar algunos datos");
+                    MessageBox.Show("Falta ingresar algunos datos.");
                 }
                 else
                 {
@@ -58,18 +58,24 @@ namespace PMS_POS.View
                     if (resultado > 0)
                     {
                         FrmCorrecto.confirmacionForm("AGREGADO");
-                        //dgvclie.DataSource = null;
-                        //dgvHuespedes.DataSource = obj.VistaTabla();
-                        Huesped limpiar = new Huesped();
-                        //limpiar.BorrarCampos(this, groupBox1);
-                        //cbxTipoIdentificacion.Items.Clear();
-                        //cbxTipoIdentificacion.SelectedIndex = 0;
-
-
+                        txtPrimerNombre.Text = "";
+                        txtSegundoNombre.Text = "";
+                        txtPrimerApellido.Text = "";
+                        txtSegundoApellido.Text = "";
+                        txtRolEmpleado.Text = "";
+                        cbxTipoIdentificacion.SelectedIndex = -1;
+                        txtIdentificacion.Text = "";
+                        cbxSexo.SelectedIndex = -1;
+                        txtTelefono.Text = "";
+                        txtDireccion.Text = "";
+                        txtCiudad.Text = "";
+                        txtProvincia.Text = "";
+                        txtPaisNatal.Text = "";
+                        txtCorreo.Text = "";
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("No se pudo guardar el empleado", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }

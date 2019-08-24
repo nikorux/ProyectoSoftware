@@ -29,7 +29,7 @@ namespace PMS_POS.View
         {
             if (editar == false)
             {
-                if (this.txtPrimerNombre.Text == string.Empty || this.txtSegundoNombre.Text == string.Empty || this.txtPrimerApellido.Text == string.Empty)
+                if (this.txtPrimerNombre.Text == string.Empty || this.txtPrimerApellido.Text == string.Empty)
                 {
                     MessageBox.Show("Falta ingresar algunos datos");
                 }
@@ -56,6 +56,20 @@ namespace PMS_POS.View
                     if (resultado > 0)
                     {
                         FrmCorrecto.confirmacionForm("AGREGADO");
+                        txtPrimerNombre.Text = "";
+                        txtSegundoNombre.Text = "";
+                        txtPrimerApellido.Text = "";
+                        txtSegundoApellido.Text = "";
+                        txtNombreCompania.Text = "";
+                        cbxCompania.SelectedIndex = -1;
+                        cbxTipoIdentificacion.SelectedIndex = -1;
+                        cbxSexo.SelectedIndex = -1;
+                        txtTelefono.Text = "";
+                        txtDireccion.Text = "";
+                        txtCiudad.Text = "";
+                        txtProvincia.Text = "";
+                        txtPaisNatal.Text = "";
+                        txtCorreo.Text = "";
                         //dgvclie.DataSource = null;
                         //dgvHuespedes.DataSource = obj.VistaTabla();
                         Huesped limpiar = new Huesped();
