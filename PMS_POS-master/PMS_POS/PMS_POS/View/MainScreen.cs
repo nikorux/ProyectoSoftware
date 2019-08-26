@@ -622,6 +622,11 @@ namespace PMS_POS
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
         }
+
+        private void CheckOutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     }

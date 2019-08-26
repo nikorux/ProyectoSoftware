@@ -239,6 +239,11 @@ namespace PMS_POS.View
             txtIdentificacion.Text = "";
 
         }
+
+        private void MaskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
 

@@ -72,10 +72,10 @@
             this.btnExtras = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.PanelContenedor = new System.Windows.Forms.Panel();
+            this.userControlInicio1 = new PMS_POS.View.UserControlInicio();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnReservas = new System.Windows.Forms.Button();
-            this.userControlInicio1 = new PMS_POS.View.UserControlInicio();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
@@ -253,7 +253,6 @@
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(63, 29);
             this.archivoToolStripMenuItem.Text = "Archivo";
-           // this.archivoToolStripMenuItem.Click += new System.EventHandler(this.ArchivoToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -304,25 +303,26 @@
             // CheckInToolStripMenuItem1
             // 
             this.CheckInToolStripMenuItem1.Name = "CheckInToolStripMenuItem1";
-            this.CheckInToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.CheckInToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.CheckInToolStripMenuItem1.Text = "Check-In";
             // 
             // CheckOutToolStripMenuItem1
             // 
             this.CheckOutToolStripMenuItem1.Name = "CheckOutToolStripMenuItem1";
-            this.CheckOutToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.CheckOutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.CheckOutToolStripMenuItem1.Text = "Check-Out";
+            this.CheckOutToolStripMenuItem1.Click += new System.EventHandler(this.CheckOutToolStripMenuItem1_Click);
             // 
             // FacturacionToolStripMenuItem
             // 
             this.FacturacionToolStripMenuItem.Name = "FacturacionToolStripMenuItem";
-            this.FacturacionToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.FacturacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.FacturacionToolStripMenuItem.Text = "Facturación";
             // 
             // reportesToolStripMenuItem1
             // 
             this.reportesToolStripMenuItem1.Name = "reportesToolStripMenuItem1";
-            this.reportesToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.reportesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.reportesToolStripMenuItem1.Text = "Reportes";
             this.reportesToolStripMenuItem1.Click += new System.EventHandler(this.ReportesToolStripMenuItem1_Click);
             // 
@@ -478,6 +478,15 @@
             this.PanelContenedor.Size = new System.Drawing.Size(1304, 633);
             this.PanelContenedor.TabIndex = 48;
             // 
+            // userControlInicio1
+            // 
+            this.userControlInicio1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.userControlInicio1.Location = new System.Drawing.Point(0, 2);
+            this.userControlInicio1.Name = "userControlInicio1";
+            this.userControlInicio1.Size = new System.Drawing.Size(1285, 680);
+            this.userControlInicio1.TabIndex = 44;
+            this.userControlInicio1.Load += new System.EventHandler(this.userControlInicio1_Load_1);
+            // 
             // btnClientes
             // 
             this.btnClientes.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -535,15 +544,6 @@
             this.btnReservas.UseCompatibleTextRendering = true;
             this.btnReservas.UseVisualStyleBackColor = false;
             this.btnReservas.Click += new System.EventHandler(this.BtnReservas_Click);
-            // 
-            // userControlInicio1
-            // 
-            this.userControlInicio1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.userControlInicio1.Location = new System.Drawing.Point(0, 2);
-            this.userControlInicio1.Name = "userControlInicio1";
-            this.userControlInicio1.Size = new System.Drawing.Size(1285, 680);
-            this.userControlInicio1.TabIndex = 44;
-            this.userControlInicio1.Load += new System.EventHandler(this.userControlInicio1_Load_1);
             // 
             // MainScreen
             // 

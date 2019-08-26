@@ -65,8 +65,6 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.errorProviderCorreo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProviderCedula = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -79,10 +77,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.errorProviderCorreo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCedula = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtTelefono2 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -95,6 +94,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -393,9 +394,9 @@
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTelefono.Location = new System.Drawing.Point(549, 159);
+            this.txtTelefono.Location = new System.Drawing.Point(546, 163);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(231, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(184, 22);
             this.txtTelefono.TabIndex = 161;
             // 
             // label6
@@ -504,10 +505,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel2.Controls.Add(this.pictureBox9);
+            this.panel2.Controls.Add(this.txtTelefono2);
             this.panel2.Controls.Add(this.pictureBox12);
             this.panel2.Controls.Add(this.pictureBox11);
             this.panel2.Controls.Add(this.pictureBox10);
-            this.panel2.Controls.Add(this.pictureBox9);
             this.panel2.Controls.Add(this.pictureBox8);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txtIdentificacion);
@@ -552,14 +554,6 @@
             this.panel2.Size = new System.Drawing.Size(900, 499);
             this.panel2.TabIndex = 0;
             // 
-            // errorProviderCorreo
-            // 
-            this.errorProviderCorreo.ContainerControl = this;
-            // 
-            // errorProviderCedula
-            // 
-            this.errorProviderCedula.ContainerControl = this;
-            // 
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
@@ -591,9 +585,9 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(549, 181);
+            this.pictureBox9.Location = new System.Drawing.Point(546, 183);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(231, 10);
+            this.pictureBox9.Size = new System.Drawing.Size(177, 10);
             this.pictureBox9.TabIndex = 207;
             this.pictureBox9.TabStop = false;
             // 
@@ -669,6 +663,24 @@
             this.pictureBox4.TabIndex = 199;
             this.pictureBox4.TabStop = false;
             // 
+            // errorProviderCorreo
+            // 
+            this.errorProviderCorreo.ContainerControl = this;
+            // 
+            // errorProviderCedula
+            // 
+            this.errorProviderCedula.ContainerControl = this;
+            // 
+            // txtTelefono2
+            // 
+            this.txtTelefono2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTelefono2.Location = new System.Drawing.Point(345, 216);
+            this.txtTelefono2.Mask = "(000) 000-0000";
+            this.txtTelefono2.Name = "txtTelefono2";
+            this.txtTelefono2.Size = new System.Drawing.Size(174, 29);
+            this.txtTelefono2.TabIndex = 211;
+            this.txtTelefono2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MaskedTextBox1_MaskInputRejected);
+            // 
             // RegistroNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -686,8 +698,6 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -700,6 +710,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -756,5 +768,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProviderCorreo;
         private System.Windows.Forms.ErrorProvider errorProviderCedula;
+        private System.Windows.Forms.MaskedTextBox txtTelefono2;
     }
 }

@@ -132,9 +132,9 @@ namespace PMS_POS.View
         {
                 if (dgvClientes.SelectedRows.Count > 0)
                 {
-                    //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
-                    form2.ObtenerDatos(dgvClientes.CurrentRow.Cells[0].Value.ToString(), dgvClientes.CurrentRow.Cells[1].Value.ToString(), dgvClientes.CurrentRow.Cells[2].Value.ToString(), dgvClientes.CurrentRow.Cells[3].Value.ToString(), dgvClientes.CurrentRow.Cells[4].Value.ToString(), dgvClientes.CurrentRow.Cells[5].Value.ToString(), dgvClientes.CurrentRow.Cells[6].Value.ToString(), dgvClientes.CurrentRow.Cells[7].Value.ToString(), dgvClientes.CurrentRow.Cells[8].Value.ToString());
-                    form2.FormClosed += new FormClosedEventHandler(RegistroNuevoCliente_FormClosed);
+                //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
+                form2.ObtenerDatos(dgvClientes.CurrentRow.Cells[0].Value.ToString(), dgvClientes.CurrentRow.Cells[1].Value.ToString(), dgvClientes.CurrentRow.Cells[2].Value.ToString(), dgvClientes.CurrentRow.Cells[3].Value.ToString(), dgvClientes.CurrentRow.Cells[4].Value.ToString(), dgvClientes.CurrentRow.Cells[5].Value.ToString(), dgvClientes.CurrentRow.Cells[6].Value.ToString(), dgvClientes.CurrentRow.Cells[7].Value.ToString(), dgvClientes.CurrentRow.Cells[8].Value.ToString());
+                form2.FormClosed += new FormClosedEventHandler(RegistroNuevoCliente_FormClosed);
                     form2.ShowDialog();
                 }
                 else
@@ -196,6 +196,11 @@ namespace PMS_POS.View
                 MainScreen.Instance.PnlContainer.Controls.Add(un);
             }
             MainScreen.Instance.PnlContainer.Controls["FacturacionCheckIn"].BringToFront();
+
+        }
+
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
 
         }
     }
