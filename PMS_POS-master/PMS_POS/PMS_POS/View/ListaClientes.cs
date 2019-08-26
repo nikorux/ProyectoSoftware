@@ -123,6 +123,7 @@ namespace PMS_POS.View
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            //prueba guardar
             try
             {
                 string MyConnection2 = "server=localhost; database=hostal; Uid=root; pwd=root";
