@@ -15,30 +15,22 @@ namespace PMS_POS.View
 {
     public partial class RegistrarReceta : Form
     {
-        private static RegistrarReceta _instanceLP;
-        public static RegistrarReceta InstanceLP
-        {
-            get
-            {
-                if (_instanceLP == null)
-                    _instanceLP = new RegistrarReceta("NombreProducto", 0);
-                return _instanceLP;
-            }
-        }
-
         Mostrador mostrador = new Mostrador();
         Receta receta = new Receta();
 
-        public int idInsumo { get; set; }
+        public int editar { get; set; }
         public int idReceta { get; set; }
 
-        public RegistrarReceta(string nombreReceta, int Editar)
+        static public int IdInsumoP = 0;
+
+        public RegistrarReceta(int IdInsumo, string nombreReceta, int Editar, string NombreCaja)
         {
             InitializeComponent();
-            dgvProductosEnInventario.DataSource = mostrador.SelectItemsDisponiblesParaMenu();
+            IdInsumoP = IdInsumo;
+            dgvProductosEnInventario.DataSource = mostrador.SelectItemsDisponiblesParaMenu(NombreCaja);
             txtNombre.Text = nombreReceta;
             pnlMedidaEnReceta.Visible = false;
-            idInsumo = Editar;
+            editar = Editar;
             int cantRecetas = receta.CountRecetasRegistradas();
             if(cantRecetas == 0)
             {
@@ -129,7 +121,7 @@ namespace PMS_POS.View
 
         private void RegistrarReceta_Load(object sender, EventArgs e)
         {
-            if (idInsumo != 0)
+            if (editar != 0)
             {
                 receta.DeleteTablaRelacionalReceta(idReceta);
                 receta.Delete(idReceta);
@@ -151,19 +143,6 @@ namespace PMS_POS.View
             }
         }
 
-        private void RegistrarReceta_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult result3 = MessageBox.Show("Seguro que quiere cerrar la ventana?", "Detalles producto",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question,
-            MessageBoxDefaultButton.Button2);
-
-            if (result3 == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
         private void BtnGuardarReceta_MouseClick(object sender, MouseEventArgs e)
         {
             int IdInsumo = 0;
@@ -173,50 +152,68 @@ namespace PMS_POS.View
 
             try
             {
-                if (this.txtNombre.Text == string.Empty || this.txtDescripcion.Text == string.Empty ||
-                    this.txtComentario.Text == string.Empty || dgvProductosEnReceta.Rows.Count == 0 )
-                {
-                    MessageBox.Show("Campos vacíos o incorrectos.", "Error al ajustar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    int IdReceta = receta.CountRecetasRegistradas() + 1; //ESTO ES PARA CUANDO ES UN PRODUCTO NUEVO Y NO UNA EDICION DE RECETA
+                DialogResult result3 = MessageBox.Show("Desea guardar la receta?", "Detalles producto",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
 
-                    if (receta.InsertEnTablaReceta(txtNombre.Text, txtDescripcion.Text, txtComentario.Text, receta.CountInsumosRegistrados()) == true)
+                if (result3 == DialogResult.Yes)
+                {
+                    if (this.txtNombre.Text == string.Empty || this.txtDescripcion.Text == string.Empty ||
+                    this.txtComentario.Text == string.Empty || dgvProductosEnReceta.Rows.Count == 0)
                     {
-                        foreach (DataGridViewRow row in dgvProductosEnReceta.Rows)
-                        {
-                            foreach (DataGridViewColumn col in dgvProductosEnReceta.Columns)
-                            {
+                        MessageBox.Show("Campos vacíos o incorrectos.", "Error al ajustar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        int IdReceta = receta.CountRecetasRegistradas() + 1; //ESTO ES PARA CUANDO ES UN PRODUCTO NUEVO Y NO UNA EDICION DE RECETA
 
-                                if (col.Index == 0)
+                        if (receta.InsertEnTablaReceta(txtNombre.Text, txtDescripcion.Text, txtComentario.Text, receta.CountInsumosRegistrados()) == true)
+                        {
+                            foreach (DataGridViewRow row in dgvProductosEnReceta.Rows)
+                            {
+                                foreach (DataGridViewColumn col in dgvProductosEnReceta.Columns)
                                 {
-                                    IdInsumo = Convert.ToInt32(dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString());
+
+                                    if (col.Index == 0)
+                                    {
+                                        IdInsumo = Convert.ToInt32(dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                    }
+                                    if (col.Index == 1)
+                                    {
+                                        NombreInsumo = dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                    }
+                                    if (col.Index == 2)
+                                    {
+                                        CantidadInsumo = float.Parse(dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                    }
+                                    if (col.Index == 3)
+                                    {
+                                        UnidadMedida = dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                    }
                                 }
-                                if(col.Index == 1)
+
+                                if (receta.InsertEnTablaInsumoReceta(IdReceta, IdInsumo, NombreInsumo, CantidadInsumo, UnidadMedida) == true)
                                 {
-                                    NombreInsumo = dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString();
+
                                 }
-                                if (col.Index == 2)
+                                else
                                 {
-                                    CantidadInsumo = float.Parse(dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString());
-                                }
-                                if (col.Index == 3)
-                                {
-                                    UnidadMedida = dgvProductosEnReceta.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                    MessageBox.Show("Error registrando Items en Receta", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
-
-                            if (receta.InsertEnTablaInsumoReceta(IdReceta, IdInsumo, NombreInsumo, CantidadInsumo, UnidadMedida) == true)
+                        }
+                        if(IdInsumoP != 0)
+                        {
+                            if (producto.UpdateInsumoTieneReceta(IdInsumoP) == true)
                             {
 
                             }
                             else
                             {
                                 MessageBox.Show("Error registrando Items en Receta", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                break;
                             }
-                        }
+                        }                        
                     }
                 }
             }

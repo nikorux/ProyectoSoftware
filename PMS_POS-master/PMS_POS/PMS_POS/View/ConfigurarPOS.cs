@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PMS_POS.Model;
+using MySql.Data.MySqlClient;
 
 namespace PMS_POS.View
 {
@@ -22,6 +23,17 @@ namespace PMS_POS.View
                     _instance = new ConfigurarPOS();
                 return _instance;
             }
+        }
+
+        public void loadDGVs()
+        {
+            dgvCajas.Columns[3].Visible = false;
+            dgvCajas.Columns[4].Visible = false;
+            dgvCajas.Columns[5].Visible = false;
+
+            dgvMesas.Columns[5].Visible = false;
+            dgvMesas.Columns[3].Visible = false;
+            dgvMesas.Columns[6].Visible = false;
         }
 
         static bool editarCategoria = false;
@@ -39,13 +51,14 @@ namespace PMS_POS.View
             btnMostrarCajasNoDisponibles.Visible = true;
             dgvCajas.DataSource = caja.Select("Disponible");
             dgvMesas.DataSource = mesa.Select("Disponible");
-            dgvCategoria.DataSource = categoria.Select();
+            dgvCategoria.DataSource = categoria.SelectCategoriasEnMostrador();
             loadDGVs();
             btnMostrarCajasDisponiblesMesas.Visible = false;
             btnMostrarCajasNoDisponiblesMesas.Visible = true;
             btnGuardarEdicionCategoria.Visible = false;
             btnGuardarEdicionMesas.Visible = false;
             btnGuardarEdicionCajas.Visible = false;
+            dgvCategoria.Columns[2].Visible = false;
 
         }
 
@@ -65,22 +78,35 @@ namespace PMS_POS.View
             chkGuardarCajaNoDisponible.Checked = false;
             chkGuardarMesaNoDisponible.Checked = false;
             chxCategoriaEnMostrador.Checked = false;
+            cbxPuntoVentaCategoria.Text = "";
+            cbxPuntoVentaMesas.Text = "";
         }
 
-        public void loadDGVs()
+        public void displayComboBox()
         {
-            dgvCajas.Columns[3].Visible = false;
-            dgvCajas.Columns[4].Visible = false;
-            dgvCajas.Columns[5].Visible = false;
-
-            dgvMesas.Columns[3].Visible = false;
-            dgvMesas.Columns[4].Visible = false;
-            dgvMesas.Columns[5].Visible = false;
-
-            //dgvCategoria.Columns[2].Visible = false;
-            dgvCategoria.Columns[3].Visible = false;
-            dgvCategoria.Columns[4].Visible = false;
+            cbxPuntoVentaCategoria.Items.Clear();
+            cbxPuntoVentaMesas.Items.Clear();
+            try
+            {
+                //COMBOBOX DISPLAY PUNTOS DE VENTA
+                MySqlConnection connectionPV = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
+                string queryPV = "SELECT NombreCaja FROM caja WHERE IsDeleted=0 AND Disponible=1";
+                connectionPV.Open();
+                MySqlCommand commandPV = new MySqlCommand(queryPV, connectionPV);
+                MySqlDataReader readerPV = commandPV.ExecuteReader();
+                while (readerPV.Read())
+                {
+                    cbxPuntoVentaCategoria.Items.Add(readerPV.GetString("NombreCaja"));
+                    cbxPuntoVentaMesas.Items.Add(readerPV.GetString("NombreCaja"));
+                }
+                connectionPV.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void BtnGuardarCajas_MouseClick(object sender, MouseEventArgs e)
         {
@@ -238,7 +264,7 @@ namespace PMS_POS.View
         {
             try
             {
-                if (this.txtNombreMesa.Text == string.Empty )
+                if (this.txtNombreMesa.Text == string.Empty || this.cbxPuntoVentaMesas.Text == string.Empty)
                 {
                     MessageBox.Show("Campos vacíos o incorrectos.", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -246,6 +272,7 @@ namespace PMS_POS.View
                 {
                     mesa.NombreMesa = txtNombreMesa.Text;
                     mesa.DescripcionMesa = txtDescripcionMesa.Text;
+                    mesa.NombreCaja = cbxPuntoVentaMesas.Text;
                     if (chkGuardarMesaNoDisponible.Checked == true)
                     {
                         mesa.DisponibleMesa = 0;
@@ -362,20 +389,21 @@ namespace PMS_POS.View
                 {
                     MessageBox.Show("Campos ya existentes.", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (this.textBox2.Text == string.Empty)
+                else if (this.textBox2.Text == string.Empty || cbxPuntoVentaCategoria.SelectedItem == null)
                 {
                     MessageBox.Show("Campos vacíos o incorrectos.", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     categoria.NombreCategoria = textBox2.Text;
+                    categoria.NombreCaja = cbxPuntoVentaCategoria.Text;
                     if (chxCategoriaEnMostrador.Checked == true)
                     {
-                        categoria.EnMostrador = 1;
-                    }
-                    if (chxCategoriaEnMostrador.Checked == false)
-                    {
                         categoria.EnMostrador = 0;
+                    }
+                    else
+                    {
+                        categoria.EnMostrador = 1;
                     }
                     if (categoria.Insert(categoria) == true)
                     {
@@ -393,7 +421,7 @@ namespace PMS_POS.View
             }
 
             Clear();
-            dgvCategoria.DataSource = categoria.Select();
+            dgvCategoria.DataSource = categoria.SelectCategoriasEnMostrador();
             loadDGVs();
             txtIdCategorias.Text = categoria.countCategorias().ToString();
         }
@@ -406,14 +434,16 @@ namespace PMS_POS.View
                 button4.Visible = false;
                 txtIdCategorias.Text = dgvCategoria.CurrentRow.Cells[0].Value.ToString();
                 textBox2.Text = dgvCategoria.CurrentRow.Cells[1].Value.ToString();
+                cbxPuntoVentaCategoria.Text = dgvCategoria.CurrentRow.Cells[3].Value.ToString();
+
                 int checkIfEnMostrador = Convert.ToInt32(dgvCategoria.CurrentRow.Cells[2].Value.ToString());
                 if (checkIfEnMostrador == 1)
                 {
-                    chxCategoriaEnMostrador.Checked = true;
+                    chxCategoriaEnMostrador.Checked = false;
                 }
                 if (checkIfEnMostrador == 0)
                 {
-                    chxCategoriaEnMostrador.Checked = false;
+                    chxCategoriaEnMostrador.Checked = true;
                 }
             }
             else
@@ -422,7 +452,7 @@ namespace PMS_POS.View
             }
 
             button6.Text = "Cancelar";
-            dgvCategoria.DataSource = categoria.Select();
+            dgvCategoria.DataSource = categoria.SelectCategoriasEnMostrador();
             loadDGVs();
         }
 
@@ -442,18 +472,18 @@ namespace PMS_POS.View
 
         private void BtnMostrarCategoriasDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
         {
-            btnMostrarCategoriasDisponiblesMesas.Visible = false;
-            btnMostrarCategoriasNoDisponiblesMesas.Visible = true;
-            dgvCategoria.DataSource = categoria.Select();
-            loadDGVs();
+            btnMostrarCategoriasEnMostrador.Visible = false;
+            btnMostrarCategoriasEnInventario.Visible = true;
+            dgvCategoria.DataSource = categoria.SelectCategoriasEnMostrador();
+            dgvCategoria.Columns[2].Visible = false;
         }
 
         private void BtnMostrarCategoriasNoDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
         {
-            btnMostrarCategoriasDisponiblesMesas.Visible = true;
-            btnMostrarCategoriasNoDisponiblesMesas.Visible = false;
-            dgvCategoria.DataSource = categoria.Select();
-            loadDGVs();
+            btnMostrarCategoriasEnMostrador.Visible = true;
+            btnMostrarCategoriasEnInventario.Visible = false;
+            dgvCategoria.DataSource = categoria.SelectCategoriasEnInventario();
+            dgvCategoria.Columns[2].Visible = false;
         }
 
         
@@ -494,7 +524,7 @@ namespace PMS_POS.View
             }
 
             Clear();
-            dgvCategoria.DataSource = categoria.Select();
+            dgvCategoria.DataSource = categoria.SelectCategoriasEnMostrador();
             loadDGVs();
             txtIdCategorias.Text = categoria.countCategorias().ToString();
         }
@@ -510,25 +540,25 @@ namespace PMS_POS.View
             {
                 try
                 {
-                    categoria.IdCategoria = Convert.ToInt32(dgvCategoria.CurrentRow.Cells[0].Value);
-                    categoria.NombreCategoria = dgvCategoria.CurrentRow.Cells[1].Value.ToString();
-
+                    categoria.IdCategoria = Convert.ToInt32(txtIdCategorias.Text);
+                    categoria.NombreCategoria = textBox2.Text;
+                    categoria.NombreCaja = cbxPuntoVentaCategoria.Text;
                     if (chxCategoriaEnMostrador.Checked == true)
                     {
-                        categoria.EnMostrador = 1;
+                        categoria.EnMostrador = 0;
                     }
                     else
                     {
-                        categoria.EnMostrador = 0;
+                        categoria.EnMostrador = 1;
                     }
 
                     if (categoria.Update(categoria) == true)
                     {
                         txtIdCategorias.Text = "";
                         chxCategoriaEnMostrador.Checked = false;
-                        MessageBox.Show("La categoría ha sido editado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     }
+
+                    dgvCategoria.Columns[2].Visible = false;
                 }
                 catch (Exception ex)
                 {
@@ -542,10 +572,11 @@ namespace PMS_POS.View
             {
                 btnGuardarEdicionCategoria.Visible = false;
                 button4.Visible = true;
-                Clear();
             }
 
             txtIdCategorias.Text = categoria.countCategorias().ToString();
+            dgvCategoria.DataSource = categoria.SelectCategoriasEnMostrador();
+            Clear();
         }
 
         private void BtnGuardarEdicionCajas_MouseClick(object sender, MouseEventArgs e)
@@ -610,7 +641,7 @@ namespace PMS_POS.View
                     mesa.IdMesa = Convert.ToInt32(txtIdMesas.Text);
                     mesa.NombreMesa = txtNombreMesa.Text;
                     mesa.DescripcionMesa = txtDescripcionMesa.Text;
-
+                    mesa.NombreCaja = cbxPuntoVentaMesas.Text;
                     if (chkGuardarMesaNoDisponible.Checked == false)
                     {
                         mesa.DisponibleMesa = 1;
@@ -651,6 +682,16 @@ namespace PMS_POS.View
         private void BtnLimpiarMesas_MouseClick(object sender, MouseEventArgs e)
         {
             Clear();
+        }
+
+        private void CbxPuntoVentaCategoria_MouseClick(object sender, MouseEventArgs e)
+        {
+            displayComboBox();
+        }
+
+        private void CbxPuntoVentaMesas_MouseClick(object sender, MouseEventArgs e)
+        {
+            displayComboBox();
         }
     }
 }

@@ -16,11 +16,15 @@ namespace PMS_POS.View
     {
         Mostrador mostrador = new Mostrador();
         Producto producto = new Producto();
+        UnidadMedida unidadMedida = new UnidadMedida();
+        Mesa mesa = new Mesa();
         public static int cantItemsDeProducto = 0;
         public static float sumITBIS = 0;
         public static float sumSubTotal = 0;
         public static float sumTotalAPagar = 0;
         public static int IdCajaSeleccionada = 0;
+        public static bool editar;
+        public static int Pagada;
 
         public MostradorPOS(string caja, int IDcaja)
         {
@@ -33,6 +37,9 @@ namespace PMS_POS.View
             txtItemsEnFactura.Text = "0";
             txtCantidadOrdenesAbiertas.Text = mostrador.SelectOrdenesAbiertas(txtCaja.Text).ToString();
             dgvPedidos.DataSource = mostrador.SelectOrdenesAbiertas(txtCaja.Text);
+            pnlNombreClientePedido.Visible = false;
+            pnlHuespedes.Visible = false;
+            hideProductosColumns();
         }
         
         public int contarCantidadItems()
@@ -48,40 +55,22 @@ namespace PMS_POS.View
 
         private void BtnNuevaOrden_MouseClick(object sender, MouseEventArgs e)
         {
-            hideProductosColumns();
-            panel1.Visible = false;
-            panel2.Visible = false;
-
-            txtNombreCliente.Text = "";
-            cbxAsignarMesa.Text = "";
-            dgvFactura.Rows.Clear();
-            dgvFactura.Refresh();
-
-            if (mostrador.CantidadDePedidos() == 0)
-            {
-                txtIdPedido.Text = "1";
-                txtIdFactura.Text = "1";
-            }
-            else
-            {
-                int cantOrdenes = mostrador.CantidadDePedidos();
-                int cantFacturas = mostrador.CantidadDeFacturas();
-                txtIdPedido.Text = (cantOrdenes + 1).ToString();
-                txtIdFactura.Text = (cantFacturas + 1).ToString();
-                txtItemsEnFactura.Text = "0";
-            }
+            pnlNombreClientePedido.Visible = true;
+            cbxFacturaDeCliente.Visible = false;
+            label19.Visible = false;
+            editar = false;
+            Pagada = 1;
         }
 
-        private void MostradorPOS_Load(object sender, EventArgs e)
+        public void loadComboBoxes()
         {
-            txtCantidadOrdenesAbiertas.Text = mostrador.SelectOrdenesAbiertas(txtCaja.Text).ToString();
-            //FIX 1
+            cbxCategoria.Items.Clear();
+            cbxAsignarMesa.Items.Clear();
             try
             {
                 //COMBOBOX DISPLAY CATEGORIA
                 MySqlConnection connectionCategoria = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-                //string queryCategoria = "SELECT NombreCategoria FROM categoria where EnMostrador=1 AND NombreCaja='" + this.txtCaja.Text + "';";
-                string queryCategoria = "SELECT NombreCategoria FROM categoria";
+                string queryCategoria = "SELECT NombreCategoria FROM categoria WHERE NombreCaja='" + this.txtCaja.Text + "';";
                 connectionCategoria.Open();
                 MySqlCommand cmd = new MySqlCommand(queryCategoria, connectionCategoria);
                 MySqlDataReader readerCategoria = cmd.ExecuteReader();
@@ -93,7 +82,7 @@ namespace PMS_POS.View
 
                 //COMBOBOX DISPLAY ASIGNAR MESAS DISPONIBLES
                 MySqlConnection connectionMesasDisponibles = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-                string queryMesasDisponibles = "select Nombre from mesa where Disponible=1";
+                string queryMesasDisponibles = "select Nombre from mesa where Disponible=1 AND NombreCaja='" + this.txtCaja.Text + "';";
                 connectionMesasDisponibles.Open();
                 MySqlCommand command = new MySqlCommand(queryMesasDisponibles, connectionMesasDisponibles);
                 MySqlDataReader readerMesasDisponibles = command.ExecuteReader();
@@ -102,18 +91,6 @@ namespace PMS_POS.View
                     cbxAsignarMesa.Items.Add(readerMesasDisponibles.GetString("Nombre"));
                 }
                 connectionMesasDisponibles.Close();
-
-                //COMBOBOX DISPLAY SELEECIONAR MESAS DE PEDIDOS NO DISPONIBLES
-                MySqlConnection connectionMesasNODisponibles = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-                string queryMesasNODisponibles = "select Nombre from mesa where Disponible=0";
-                connectionMesasNODisponibles.Open();
-                MySqlCommand commandMesasNODisponibles = new MySqlCommand(queryMesasNODisponibles, connectionMesasNODisponibles);
-                MySqlDataReader readerMesasNODisponibles = commandMesasNODisponibles.ExecuteReader();
-                while (readerMesasNODisponibles.Read())
-                {
-                    cbxSeleccionarMesa.Items.Add(readerMesasNODisponibles.GetString("Nombre"));
-                }
-                readerMesasNODisponibles.Close();
             }
             catch (Exception ex)
             {
@@ -187,28 +164,6 @@ namespace PMS_POS.View
             enterCantidad("0");
         }
 
-        private void CbxSeleccionarMesa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dgvPedidos.AllowUserToAddRows = false;
-            int n = dgvPedidos.Rows.Add();
-
-            if (cbxSeleccionarMesa.Text == "Todas")
-            {
-                dgvPedidos.DataSource = mostrador.SelectOrdenesAbiertas(txtCaja.Text);//FIX
-            }
-            else
-            {
-                DataTable dt = new DataTable();
-                dt = mostrador.FiltrarPORmesa(cbxSeleccionarMesa.Text);
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    dgvPedidos.Rows[n].Cells[0].Value = Convert.ToInt32(row);
-                    dgvPedidos.Rows[n].Cells[1].Value = mostrador.SearchNombreClienteFROMIdFactura(Convert.ToInt32(row));
-                }
-            }
-        }
-
         private void BtnAgregarAFactura_MouseClick(object sender, MouseEventArgs e)
         {
             if (dgvProductosMostrador.SelectedRows.Count > 0)
@@ -258,7 +213,7 @@ namespace PMS_POS.View
         {
             if (cbxCategoria.Text == "Todas")
             {
-                dgvProductosMostrador.DataSource = mostrador.SelectInsumosDisponibleParaMostrador();
+                dgvProductosMostrador.DataSource = mostrador.SelectInsumosDisponibleParaMostrador(txtCaja.Text);
                 hideProductosColumns();
             }
             else
@@ -273,7 +228,12 @@ namespace PMS_POS.View
             dgvProductosMostrador.AllowUserToAddRows = false;
             int n = dgvFactura.Rows.Add();
 
-            int cantidad = Convert.ToInt32(txtCantidadProducto.Text);
+            int cantidad = 0;
+            if (txtCantidadProducto.Text != "")
+            {
+                cantidad = Convert.ToInt32(txtCantidadProducto.Text);
+            }
+
             float precio = float.Parse(dgvProductosMostrador.CurrentRow.Cells[9].Value.ToString());
 
             dgvFactura.Rows[n].Cells[0].Value = Convert.ToInt32(dgvProductosMostrador.CurrentRow.Cells[0].Value);
@@ -287,8 +247,8 @@ namespace PMS_POS.View
             int cant = Convert.ToInt32(txtCantidadProducto.Text);
             int cantItems = Convert.ToInt32(txtItemsEnFactura.Text);
 
-            sumITBIS += (float.Parse(dgvProductosMostrador.CurrentRow.Cells[7].Value.ToString()) * cant);
-            sumSubTotal += (float.Parse(dgvProductosMostrador.CurrentRow.Cells[8].Value.ToString()) * cant);
+            sumITBIS += (float.Parse(dgvProductosMostrador.CurrentRow.Cells[8].Value.ToString()) * cant);
+            sumSubTotal += (float.Parse(dgvProductosMostrador.CurrentRow.Cells[9].Value.ToString()) * cant);
             sumTotalAPagar = (sumITBIS + sumSubTotal);
             lblITBIS.Text = Convert.ToString(sumITBIS);
             lblSubTotal.Text = Convert.ToString(sumSubTotal);
@@ -305,7 +265,7 @@ namespace PMS_POS.View
             float cambio = float.Parse(txtCambioPara.Text);
             float total = float.Parse(lblTotalAPagar.Text);
             float devuelta = cambio - total;
-            if (txtCambioPara.Text != "")
+            if (txtCambioPara.Text != "" )
             {
                 txtDevuelta.Text = Convert.ToString(devuelta);
             }
@@ -317,35 +277,165 @@ namespace PMS_POS.View
 
         private void BtnFacturar_MouseClick(object sender, MouseEventArgs e)
         {
-            DialogResult result3 = MessageBox.Show("Desea facturar este pedido?", "Facturación",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question,
-            MessageBoxDefaultButton.Button2);
-
-            if (result3 == DialogResult.Yes)
+            if (editar == false)
             {
-                int IdFactura = Convert.ToInt32(txtIdFactura.Text);
-                int IdPedido = Convert.ToInt32(txtIdPedido.Text);
-                int IdInsumo = 0;
-                string NombreInsumo = null;
-                float CantidadComprada = 0;
-                float PrecioVenta = 0;
-                float Importe = 0;
-                float ITBIS = 0;
-                string UnidadMedida = null;
+                DialogResult result3 = MessageBox.Show("Desea facturar este pedido?", "Facturación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
 
-                try
+                if (result3 == DialogResult.Yes)
                 {
-                    if (this.txtNombreCliente.Text == string.Empty || this.cbxFormaDePago.SelectedItem == null)
+                    int IdFactura = Convert.ToInt32(txtIdFactura.Text);
+                    int IdPedido = Convert.ToInt32(txtIdPedido.Text);
+                    int IdInsumo = 0;
+                    string NombreInsumo = null;
+                    float CantidadComprada = 0;
+                    float PrecioVenta = 0;
+                    float Importe = 0;
+                    float ITBIS = 0;
+                    string UnidadMedida = null;
+                    string Hora = DateTime.Now.ToString("hh:mm ");
+
+                    try
                     {
-                        MessageBox.Show("Campos vacíos o incorrectos. Tal vez, 'Nombre Cliente' ó 'Forma de Pago' está vacías?", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        if (mostrador.InsertFactura(txtNombreCliente.Text, cbxFormaDePago.SelectedIndex.ToString(), float.Parse(lblITBIS.Text), float.Parse(lblSubTotal.Text), float.Parse(lblTotalAPagar.Text), txtCaja.Text, 1) == true)
+                        if (this.txtNombreCliente.Text == string.Empty || this.cbxFormaDePago.SelectedItem == null && Pagada == 1)
                         {
-                            if (mostrador.InsertPedido(txtNombreCliente.Text) == true)
+                            MessageBox.Show("Campos vacíos o incorrectos. Tal vez, 'Nombre Cliente' ó 'Forma de Pago' están vacías?", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            if (mostrador.InsertFactura(txtNombreCliente.Text, cbxFormaDePago.SelectedIndex.ToString(), Hora, float.Parse(lblITBIS.Text), float.Parse(lblSubTotal.Text), float.Parse(lblTotalAPagar.Text), txtCaja.Text, Pagada) == true)
                             {
+                                if (mostrador.InsertPedido(txtNombrePedido.Text, txtCaja.Text, cbxAsignarMesa.Text) == true)
+                                {
+                                    foreach (DataGridViewRow row in dgvFactura.Rows)
+                                    {
+                                        foreach (DataGridViewColumn col in dgvFactura.Columns)
+                                        {
+                                            if (col.Index == 0)
+                                            {
+                                                IdInsumo = Convert.ToInt32(dgvFactura.Rows[row.Index].Cells[col.Index].Value);
+                                            }
+                                            if (col.Index == 1)
+                                            {
+                                                NombreInsumo = dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                            }
+                                            if (col.Index == 2)
+                                            {
+                                                CantidadComprada = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                            }
+                                            if (col.Index == 3)
+                                            {
+                                                PrecioVenta = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                            }
+                                            if (col.Index == 4)
+                                            {
+                                                ITBIS = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                            }
+                                            if (col.Index == 5)
+                                            {
+                                                Importe = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                            }
+                                            if (col.Index == 6)
+                                            {
+                                                UnidadMedida = dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                            }
+                                        }
+
+                                        if (mostrador.InsertRelacionFacturaInsumo(IdFactura, IdInsumo, NombreInsumo, CantidadComprada, PrecioVenta, Importe, ITBIS, UnidadMedida) == true)
+                                        {
+                                            //AJUSTANDO INVENTARIO con receta
+                                            if (producto.CheckSiProductTieneReceta(IdInsumo) == 1)
+                                            {
+                                                DataTable dt = mostrador.AjustarCantidadProductoSegunReceta(IdInsumo);
+                                                foreach (DataRow rw in dt.Rows)
+                                                {
+                                                    int IdInsumoEnReceta = Convert.ToInt32(rw["IdInsumo"].ToString());
+                                                    float cantActualInsumoRECETA = producto.findCantidadActualInsumo(IdInsumoEnReceta);
+
+                                                    string unidadInsumo = producto.SearchUnidadMedidaInsumo(IdInsumoEnReceta);
+                                                    string unidadInsumoRECETA = rw["UnidadMedida"].ToString();
+
+                                                    string nombreInsumoRECETA = rw["NombreInsumo"].ToString();
+                                                    float cantidadInsumoRECETA = float.Parse(rw["CantidadInsumo"].ToString());
+                                                    unidadMedida.Nombre = unidadInsumoRECETA;
+                                                    float cantidadTransformada = unidadMedida.Conversion(unidadInsumo, cantidadInsumoRECETA);
+                                                    float cantidadAjustarInventario = cantidadTransformada * CantidadComprada;
+
+                                                    //Insumo de la receta
+                                                    producto.InsertAjuste(IdInsumoEnReceta, nombreInsumoRECETA, "Disminuir", cantActualInsumoRECETA - cantidadAjustarInventario, unidadInsumoRECETA, txtCaja.Text);
+                                                    producto.UpdateAjusteStock(IdInsumoEnReceta, cantActualInsumoRECETA - cantidadAjustarInventario);
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Error registrando Items en Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+
+                                        float cantActualInsumo = producto.findCantidadActualInsumo(IdInsumo);
+                                        producto.UpdateAjusteStock(IdInsumo, cantActualInsumo - CantidadComprada);
+
+                                    }
+                                    if (mostrador.InsertRelacionPedidoFactura(IdPedido, IdFactura, txtNombreCliente.Text) == true)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error registrando Items en RELACION Factura-Pedido", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error registrando Pedido", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error registrando Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            if (editar == true)
+            {
+                DialogResult result3 = MessageBox.Show("Desea facturar este pedido?", "Facturación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+                if (result3 == DialogResult.Yes)
+                {
+                    int IdFactura = Convert.ToInt32(txtIdFactura.Text);
+                    int IdPedido = Convert.ToInt32(txtIdPedido.Text);
+                    int IdInsumo = 0;
+                    string NombreInsumo = null;
+                    float CantidadComprada = 0;
+                    float PrecioVenta = 0;
+                    float Importe = 0;
+                    float ITBIS = 0;
+                    string UnidadMedida = null;
+                    string Hora = DateTime.Now.ToString("hh:mm ");
+
+
+                    try
+                    {
+                        if (this.txtNombreCliente.Text == string.Empty || this.cbxFormaDePago.Text == string.Empty && Pagada == 1)
+                        {
+                            MessageBox.Show("Campos vacíos o incorrectos. Tal vez, 'Nombre Cliente' ó 'Forma de Pago' está vacías?", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            if (mostrador.UpdateFactura(IdFactura, cbxFormaDePago.SelectedIndex, 1) == true)//FIX!!!
+                            {
+
                                 foreach (DataGridViewRow row in dgvFactura.Rows)
                                 {
                                     foreach (DataGridViewColumn col in dgvFactura.Columns)
@@ -380,279 +470,309 @@ namespace PMS_POS.View
                                             UnidadMedida = dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString();
                                         }
                                     }
+                                    int IdFacturaInsumo = mostrador.SearchIdFacturaInsumo(IdFactura, IdInsumo);
 
-                                    if (mostrador.InsertRelacionFacturaInsumo(IdFactura, IdInsumo, NombreInsumo, CantidadComprada, PrecioVenta, Importe, ITBIS, UnidadMedida) == true)
+                                    if (CantidadComprada != mostrador.SearchCantidadCompradaDelInsumo(IdFactura, IdInsumo) && mostrador.SearchIdFacturaInsumo(IdFactura, IdInsumo) != 0)
                                     {
-                                        int cantActualInsumo = producto.findCantidadActualInsumo(IdInsumo);
-                                        producto.InsertAjuste(IdInsumo, NombreInsumo, "Disminuir", cantActualInsumo - CantidadComprada, UnidadMedida);
-                                        producto.UpdateInsumoCantidad(IdInsumo, cantActualInsumo - CantidadComprada);
+                                        if (mostrador.UpdateRelacionFacturaInsumo(IdFacturaInsumo, IdFactura, IdInsumo, NombreInsumo, CantidadComprada, PrecioVenta, Importe, ITBIS, UnidadMedida) == true)
+                                        {
+                                            //AJUSTANDO INVENTARIO con receta
+                                            if (producto.CheckSiProductTieneReceta(IdInsumo) == 1)
+                                            {
+                                                DataTable dt = mostrador.AjustarCantidadProductoSegunReceta(IdInsumo);
+                                                foreach (DataRow rw in dt.Rows)
+                                                {
+                                                    int IdInsumoEnReceta = Convert.ToInt32(rw["IdInsumo"].ToString());
+                                                    float cantActualInsumoRECETA = producto.findCantidadActualInsumo(IdInsumoEnReceta);
+
+                                                    string unidadInsumo = producto.SearchUnidadMedidaInsumo(IdInsumoEnReceta);
+                                                    string unidadInsumoRECETA = rw["UnidadMedida"].ToString();
+
+                                                    string nombreInsumoRECETA = rw["NombreInsumo"].ToString();
+                                                    float cantidadInsumoRECETA = float.Parse(rw["CantidadInsumo"].ToString());
+                                                    unidadMedida.Nombre = unidadInsumoRECETA;
+                                                    float cantidadTransformada = unidadMedida.Conversion(unidadInsumo, cantidadInsumoRECETA);
+                                                    float cantidadAjustarInventario = cantidadTransformada * CantidadComprada;
+
+                                                    //Insumo de la receta
+                                                    producto.InsertAjuste(IdInsumoEnReceta, nombreInsumoRECETA, "Disminuir", cantActualInsumoRECETA - cantidadAjustarInventario, unidadInsumoRECETA, txtCaja.Text);
+                                                    producto.UpdateAjusteStock(IdInsumoEnReceta, cantActualInsumoRECETA - cantidadAjustarInventario);
+                                                }
+                                            }
+                                        }
+                                        
+                                        }
+
+                                    }
+                                    if(mostrador.SearchIdFacturaInsumo(IdFactura, IdInsumo) == 0)
+                                    {
+                                        if (mostrador.InsertRelacionFacturaInsumo(IdFactura, IdInsumo, NombreInsumo, CantidadComprada, PrecioVenta, Importe, ITBIS, UnidadMedida) == true)
+                                        {
+                                            //AJUSTANDO INVENTARIO con receta
+                                            if (producto.CheckSiProductTieneReceta(IdInsumo) == 1)
+                                            {
+                                                DataTable dt = mostrador.AjustarCantidadProductoSegunReceta(IdInsumo);
+                                                foreach (DataRow rw in dt.Rows)
+                                                {
+                                                    int IdInsumoEnReceta = Convert.ToInt32(rw["IdInsumo"].ToString());
+                                                    float cantActualInsumoRECETA = producto.findCantidadActualInsumo(IdInsumoEnReceta);
+
+                                                    string unidadInsumo = producto.SearchUnidadMedidaInsumo(IdInsumoEnReceta);
+                                                    string unidadInsumoRECETA = rw["UnidadMedida"].ToString();
+
+                                                    string nombreInsumoRECETA = rw["NombreInsumo"].ToString();
+                                                    float cantidadInsumoRECETA = float.Parse(rw["CantidadInsumo"].ToString());
+                                                    unidadMedida.Nombre = unidadInsumoRECETA;
+                                                    float cantidadTransformada = unidadMedida.Conversion(unidadInsumo, cantidadInsumoRECETA);
+                                                    float cantidadAjustarInventario = cantidadTransformada * CantidadComprada;
+
+                                                    //Insumo de la receta
+                                                    producto.InsertAjuste(IdInsumoEnReceta, nombreInsumoRECETA, "Disminuir", cantActualInsumoRECETA - cantidadAjustarInventario, unidadInsumoRECETA, txtCaja.Text);
+                                                    producto.UpdateAjusteStock(IdInsumoEnReceta, cantActualInsumoRECETA - cantidadAjustarInventario);
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Error registrando Items en Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+
+
+                                    }
+                                    if (mostrador.InsertRelacionPedidoFactura(IdPedido, IdFactura, txtNombreCliente.Text) == true)
+                                    {
+                                        MessageBox.Show("19 InsertRelacionPedidoFactura!");
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Error registrando Items en Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        MessageBox.Show("Error registrando Items en RELACION Factura-Pedido", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
-                                }
-                                if (mostrador.InsertRelacionPedidoFactura(IdPedido, IdFactura, txtNombreCliente.Text) == true)
-                                {
-                                    /*int cantActualInsumo = producto.findCantidadActualInsumo(IdInsumo);
-                                    producto.InsertAjuste(IdInsumo, dgvFactura.CurrentRow.Cells[1].Value.ToString(), "Disminuir", cantActualInsumo - CantidadComprada, dgvFactura.CurrentRow.Cells[5].Value.ToString());
-                                    producto.UpdateInsumoCantidad(IdInsumo, cantActualInsumo - CantidadComprada);*/
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Error registrando Items en RELACION Factura-Pedido", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
                             }
                             else
                             {
-                                MessageBox.Show("Error registrando Pedido", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Error registrando Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        else
-                        {
-                            MessageBox.Show("Error registrando Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-
-            Clear();
-            /*if (mostrador.InsertRelacionPedidoFactura(Convert.ToInt32(txtIdPedido.Text), IdFactura, txtNombreCliente.Text) == true)
-            {
-
-            }
-            else
-            {
-                MessageBox.Show("Error registrando Relacion pedido-factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
-
-            //Clear();
+            dgvFactura.Rows.Clear();
+            int cantOrdenes = mostrador.CantidadDePedidos();
+            int cantFacturas = mostrador.CantidadDeFacturas();
+            txtIdPedido.Text = (cantOrdenes + 1).ToString();
+            txtIdFactura.Text = (cantFacturas + 1).ToString();
+            txtItemsEnFactura.Text = "0";
+            cbxFacturaDeCliente.Text = "";
+            cbxAsignarMesa.Text = "";
+            txtNombreCliente.Text = "";
+            dgvPedidos.DataSource = mostrador.SelectOrdenesAbiertas(txtCaja.Text);
+            dgvProductosMostrador.DataSource = mostrador.SelectProductosFROMcaja(txtCaja.Text);
         }
-
 
         private void BtnGuardarOrdenAbierta_MouseClick(object sender, MouseEventArgs e)
         {
-            int IdFactura = Convert.ToInt32(txtIdFactura.Text);
-            int IdPedido = Convert.ToInt32(txtIdPedido.Text);
-            int IdInsumo = 0;
-            string NombreInsumo = null;
-            float CantidadComprada = 0;
-            float PrecioVenta = 0;
-            float Importe = 0;
-            float ITBIS = 0;
-            string UnidadMedida = null;
-
-            try
+            editar = false;
+            Pagada = 0;
+            if (editar == false)
             {
-                if (this.txtNombreCliente.Text == string.Empty || this.cbxFormaDePago.SelectedItem == null)
+                DialogResult result3 = MessageBox.Show("Desea facturar este pedido?", "Facturación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+                if (result3 == DialogResult.Yes)
                 {
-                    MessageBox.Show("Campos vacíos o incorrectos. Tal vez, 'Nombre Cliente' ó 'Forma de Pago' está vacías?", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    if (mostrador.InsertFactura(txtNombreCliente.Text, cbxFormaDePago.SelectedIndex.ToString(), float.Parse(lblITBIS.Text), float.Parse(lblSubTotal.Text), float.Parse(lblTotalAPagar.Text), txtCaja.Text, 0) == true)
+                    int IdFactura = Convert.ToInt32(txtIdFactura.Text);
+                    int IdPedido = Convert.ToInt32(txtIdPedido.Text);
+                    int IdInsumo = 0;
+                    string NombreInsumo = null;
+                    float CantidadComprada = 0;
+                    float PrecioVenta = 0;
+                    float Importe = 0;
+                    float ITBIS = 0;
+                    string UnidadMedida = null;
+                    string Hora = DateTime.Now.ToString("hh:mm ");
+
+                    try
                     {
-                        if (mostrador.InsertPedido(txtNombreCliente.Text) == true)
+                        if ((this.cbxAsignarMesa.Text == string.Empty || txtNombreCliente.Text == string.Empty) && Pagada == 0)
                         {
-                            foreach (DataGridViewRow row in dgvFactura.Rows)
-                            {
-                                foreach (DataGridViewColumn col in dgvFactura.Columns)
-                                {
-
-                                    if (col.Index == 0)
-                                    {
-                                        IdInsumo = Convert.ToInt32(dgvFactura.Rows[row.Index].Cells[col.Index].Value);
-                                    }
-                                    if (col.Index == 1)
-                                    {
-                                        NombreInsumo = dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString();
-                                    }
-                                    if (col.Index == 2)
-                                    {
-                                        CantidadComprada = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
-                                    }
-                                    if (col.Index == 3)
-                                    {
-                                        PrecioVenta = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
-                                    }
-                                    if (col.Index == 4)
-                                    {
-                                        ITBIS = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
-                                    }
-                                    if (col.Index == 5)
-                                    {
-                                        Importe = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
-                                    }
-                                    if (col.Index == 6)
-                                    {
-                                        UnidadMedida = dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString();
-                                    }
-                                }
-
-                                if (mostrador.InsertRelacionFacturaInsumo(IdFactura, IdInsumo, NombreInsumo, CantidadComprada, PrecioVenta, Importe, ITBIS, UnidadMedida) == true)
-                                {
-                                    /*int cantActualInsumo = producto.findCantidadActualInsumo(IdInsumo);
-                                    producto.InsertAjuste(IdInsumo, dgvFactura.CurrentRow.Cells[1].Value.ToString(), "Disminuir", cantActualInsumo - CantidadComprada, dgvFactura.CurrentRow.Cells[5].Value.ToString());
-                                    producto.UpdateInsumoCantidad(IdInsumo, cantActualInsumo - CantidadComprada);*/
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Error registrando Items en Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-
-                            if (mostrador.InsertRelacionPedidoFactura(IdPedido, IdFactura, txtNombreCliente.Text) == true)
-                            {
-                                /*int cantActualInsumo = producto.findCantidadActualInsumo(IdInsumo);
-                                producto.InsertAjuste(IdInsumo, dgvFactura.CurrentRow.Cells[1].Value.ToString(), "Disminuir", cantActualInsumo - CantidadComprada, dgvFactura.CurrentRow.Cells[5].Value.ToString());
-                                producto.UpdateInsumoCantidad(IdInsumo, cantActualInsumo - CantidadComprada);*/
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error registrando Items en RELACION Factura-Pedido", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-
+                            MessageBox.Show("Campos vacíos o incorrectos. Tal vez, 'Asignar Mesa' está vacía?", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
-                            MessageBox.Show("Error registrando Pedido", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-                        Clear();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error registrando Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-            /*if (mostrador.InsertRelacionPedidoFactura(Convert.ToInt32(txtIdPedido.Text), IdFactura, txtNombreCliente.Text) == true)
-            {
-
-            }
-            else
-            {
-                MessageBox.Show("Error registrando Relacion pedido-factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
-
-            //Clear();
-        }
-
-        //============================= F U N C I O N   F A C T U R A R ==================================
-
-        /*public void facturar(int ifCancelada)
-        {
-            int IdFactura = Convert.ToInt32(txtIdFactura.Text); //REMEMBER TO UNCOMMENT THE TWO CALLINGS
-                                                                //OF THIS FUNCTION
-
-            try
-            {
-                if (this.txtNombreCliente.Text == string.Empty || this.cbxFormaDePago.SelectedItem == null)
-                {
-                    MessageBox.Show("Campos vacíos o incorrectos. Tal vez, 'Nombre Cliente' ó 'Forma de Pago' está vacías?", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    if (mostrador.InsertFactura(txtNombreCliente.Text, cbxFormaDePago.SelectedIndex.ToString(), float.Parse(lblITBIS.Text), float.Parse(lblSubTotal.Text), float.Parse(lblTotalAPagar.Text), txtCaja.Text, ifCancelada) == true)
-                    {
-                        foreach (DataGridViewRow row in dgvFactura.Rows)
-                        {
-                            int IdInsumo = Convert.ToInt32(dgvFactura.CurrentRow.Cells[0].Value);
-                            float PrecioVenta = Convert.ToInt32(dgvFactura.CurrentRow.Cells[3].Value);
-                            int CantidadComprada = Convert.ToInt32(dgvFactura.CurrentRow.Cells[2].Value);
-
-                            if (mostrador.InsertRelacionFacturaInsumo(IdFactura, IdInsumo, PrecioVenta, CantidadComprada) == true)
+                            if (mostrador.InsertFactura(txtNombreCliente.Text, null, Hora, float.Parse(lblITBIS.Text), float.Parse(lblSubTotal.Text), float.Parse(lblTotalAPagar.Text), txtCaja.Text, Pagada) == true)
                             {
+                                if (mostrador.InsertPedido(txtNombrePedido.Text, txtCaja.Text, cbxAsignarMesa.Text) == true)
+                                {
+                                    int IdMesa = mesa.SearchIdMesa(cbxAsignarMesa.Text, txtCaja.Text);
+                                    mesa.UpdateHacerMesaNODisponible(IdMesa);
+                                    MessageBox.Show("" + IdMesa);
 
+                                    foreach (DataGridViewRow row in dgvFactura.Rows)
+                                    {
+                                        foreach (DataGridViewColumn col in dgvFactura.Columns)
+                                        {
+                                            if (col.Index == 0)
+                                            {
+                                                IdInsumo = Convert.ToInt32(dgvFactura.Rows[row.Index].Cells[col.Index].Value);
+                                            }
+                                            if (col.Index == 1)
+                                            {
+                                                NombreInsumo = dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                            }
+                                            if (col.Index == 2)
+                                            {
+                                                CantidadComprada = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                            }
+                                            if (col.Index == 3)
+                                            {
+                                                PrecioVenta = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                            }
+                                            if (col.Index == 4)
+                                            {
+                                                ITBIS = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                            }
+                                            if (col.Index == 5)
+                                            {
+                                                Importe = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                            }
+                                            if (col.Index == 6)
+                                            {
+                                                UnidadMedida = dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                            }
+                                        }
+
+                                        if (mostrador.InsertRelacionFacturaInsumo(IdFactura, IdInsumo, NombreInsumo, CantidadComprada, PrecioVenta, Importe, ITBIS, UnidadMedida) == true)
+                                        {
+                                            //AJUSTANDO INVENTARIO con receta
+                                            if (producto.CheckSiProductTieneReceta(IdInsumo) == 1)
+                                            {
+                                                DataTable dt = mostrador.AjustarCantidadProductoSegunReceta(IdInsumo);
+                                                foreach (DataRow rw in dt.Rows)
+                                                {
+                                                    int IdInsumoEnReceta = Convert.ToInt32(rw["IdInsumo"].ToString());
+                                                    float cantActualInsumoRECETA = producto.findCantidadActualInsumo(IdInsumoEnReceta);
+
+                                                    string unidadInsumo = producto.SearchUnidadMedidaInsumo(IdInsumoEnReceta);
+                                                    string unidadInsumoRECETA = rw["UnidadMedida"].ToString();
+
+                                                    string nombreInsumoRECETA = rw["NombreInsumo"].ToString();
+                                                    float cantidadInsumoRECETA = float.Parse(rw["CantidadInsumo"].ToString());
+                                                    unidadMedida.Nombre = unidadInsumoRECETA;
+                                                    float cantidadTransformada = unidadMedida.Conversion(unidadInsumo, cantidadInsumoRECETA);
+                                                    float cantidadAjustarInventario = cantidadTransformada * CantidadComprada;
+
+                                                    //Insumo de la receta
+                                                    producto.InsertAjuste(IdInsumoEnReceta, nombreInsumoRECETA, "Disminuir", cantActualInsumoRECETA - cantidadAjustarInventario, unidadInsumoRECETA, txtCaja.Text);
+                                                    producto.UpdateAjusteStock(IdInsumoEnReceta, cantActualInsumoRECETA - cantidadAjustarInventario);
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Error registrando Items en Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+
+                                        float cantActualInsumo = producto.findCantidadActualInsumo(IdInsumo);
+                                        producto.UpdateAjusteStock(IdInsumo, cantActualInsumo - CantidadComprada);
+
+                                    }
+                                    if (mostrador.InsertRelacionPedidoFactura(IdPedido, IdFactura, txtNombreCliente.Text) == true)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error registrando Items en RELACION Factura-Pedido", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error registrando Pedido", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Error registrando Items en Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                break;
+                                MessageBox.Show("Error registrando Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
+
+                            dgvFactura.Rows.Clear();
+                            txtNombreCliente.Text = "";
+                            dgvProductosMostrador.DataSource = mostrador.SelectProductosFROMcaja(txtCaja.Text);
+                            dgvPedidos.DataSource = mostrador.SelectOrdenesAbiertas(txtCaja.Text);
+                            txtCantidadOrdenesAbiertas.Text = mostrador.CantidadDeOrdenesAbierta(txtCaja.Text);
+                            int cantFacturas = mostrador.CantidadDeFacturas();
+                            txtIdFactura.Text = (cantFacturas + 1).ToString();
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Error registrando Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                Clear();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }*/
+        }
 
-        //========^^^^^^^^^^^^^=========== F U N C I O N   F A C T U R A R ======^^^^^^^^^^^^^^=============
-
-        private void BtnAgregarFacturaAOrden_MouseClick(object sender, MouseEventArgs e)
-        {
-            //facturar(0);
-       }
         private void BtnSeleccionarOrden_MouseClick(object sender, MouseEventArgs e)
         {
+            editar = true;
+            Pagada = 1;
+            dgvFactura.Rows.Clear();
             if (dgvPedidos.SelectedRows.Count > 0)
             {
-                txtIdFactura.Text = dgvPedidos.CurrentRow.Cells[0].Value.ToString();
-                int idPedido = mostrador.SelectIdPedidoCorrespondienteConIdFactura(Convert.ToInt32(txtIdFactura.Text));
-                txtIdPedido.Text = idPedido.ToString();
-                DataTable dt = mostrador.SelectFacturasEnOrden(idPedido);
-                //COMBOBOX DISPLAY FACTURAS EN ESTA MESA
-                for (int j = 0; j < dt.Rows.Count; j++)
+                int IdFactura = Convert.ToInt32(dgvPedidos.CurrentRow.Cells[0].Value.ToString());
+                int IdPedido = mostrador.SearchIdPedidoFROMIdFactura(IdFactura, dgvPedidos.CurrentRow.Cells[1].Value.ToString());
+                txtIdPedido.Text = IdPedido.ToString();
+                DataTable dt = mostrador.SelectFacturasEnOrden(IdPedido);
+                cbxFacturaDeCliente.Items.Clear();
+                //COMBOBOX DISPLAY FACTURAS EN PEDIDO
+                foreach (DataRow row in dt.Rows)
                 {
-                    MySqlConnection connectionFacturas = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-                    string queryFacturas = "select NombreCliente from factura_mostrador where IdFactura=" + Convert.ToInt32(dt.Rows[j]);
-                    connectionFacturas.Open();
-                    MySqlCommand commandFacturas = new MySqlCommand(queryFacturas, connectionFacturas);
-                    MySqlDataReader readerFacturas = commandFacturas.ExecuteReader();
-                    while (readerFacturas.Read())
-                    {
-                        cbxFacturaDeCliente.Items.Add(readerFacturas.GetString("Nombre"));
-                    }
-                    readerFacturas.Close();
+                    cbxFacturaDeCliente.Items.Add(row["NombreClienteFactura"].ToString());
                 }
 
+                cbxAsignarMesa.Text = mostrador.searchMesa(IdPedido);
+                txtNombreCliente.Text = dgvPedidos.CurrentRow.Cells[1].Value.ToString();
+                txtIdFactura.Text = dgvPedidos.CurrentRow.Cells[0].Value.ToString();
+
+                txtNombrePedido.Text = dgvPedidos.CurrentRow.Cells[1].Value.ToString();
                 label19.Visible = true;
                 cbxFacturaDeCliente.Visible = true;
+                cbxFacturaDeCliente.Text = dgvPedidos.CurrentRow.Cells[1].Value.ToString();
             }
             else
             {
-                MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Seleccione una orden.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void CbxFacturasEnMesa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //PENDIENTE
-
-            /*int idPedido = mostrador.SelectIdPedidoCorrespondienteConIdFactura(Convert.ToInt32(txtIdFactura.Text));
-            DataTable dtIdFacturas = mostrador.SelectFacturasEnOrden(idPedido);
-            int idFactura = mostrador.encontrarIdFactura(idPedido, cbxFacturasEnMesa.Text);
-            DataTable IdInsumosEnFactura = mostrador.ItemsEnFactura(idFactura);
+            int IdFactura = mostrador.encontrarIdFactura(Convert.ToInt32(txtIdPedido.Text), cbxFacturaDeCliente.Text);
+            DataTable dt = mostrador.ItemsEnFactura(IdFactura);
 
             dgvFactura.AllowUserToAddRows = false;
-            int n = dgvFactura.Rows.Add();
-
-            for (int j = 0; j < dtIdFacturas.Rows.Count; j++)
+            txtItemsEnFactura.Text = "0";
+            dgvFactura.Rows.Clear();
+            foreach (DataRow row in dt.Rows)
             {
-                dgvFactura.Rows[n].Cells[0].Value = Convert.ToInt32(dgvProductosMostrador.CurrentRow.Cells[0].Value);
-                dgvFactura.Rows[n].Cells[1].Value = dgvProductosMostrador.CurrentRow.Cells[1].Value.ToString();
-                dgvFactura.Rows[n].Cells[2].Value = Convert.ToInt32(txtCantidadProducto.Text);
-                dgvFactura.Rows[n].Cells[3].Value = float.Parse(dgvProductosMostrador.CurrentRow.Cells[8].Value.ToString());
-                dgvFactura.Rows[n].Cells[4].Value = float.Parse(dgvProductosMostrador.CurrentRow.Cells[7].Value.ToString());
-            }*/
+                dgvFactura.Rows.Add(Convert.ToInt32(row["IdInsumo"].ToString()), row["NombreInsumo"].ToString(), 
+                    Convert.ToInt32(row["CantidadComprada"].ToString()), float.Parse(row["PrecioVenta"].ToString()), 
+                    float.Parse(row["Importe"].ToString()), float.Parse(row["ITBIS"].ToString()),
+                    row["UnidadMedida"].ToString());
+
+                int cant = Convert.ToInt32(row["CantidadComprada"].ToString());
+                int cantItems = Convert.ToInt32(txtItemsEnFactura.Text);
+
+                cantItems += cant;
+                txtItemsEnFactura.Text = cantItems.ToString();
+            }
         }
 
         private void BtnRemoverDeFactura_MouseClick(object sender, MouseEventArgs e)
@@ -670,8 +790,235 @@ namespace PMS_POS.View
 
         private void BtnCancelarFactura_MouseClick(object sender, MouseEventArgs e)
         {
-            //facturar(1);
+            try
+            {
+                if(editar == true)
+                {
+                    if (mostrador.UpdateFacturaCancelada(Convert.ToInt32(txtIdFactura.Text)) == true)
+                    {
+                        
+                    }
+                }
+                else
+                {
+                    if (mostrador.InsertFacturaCancelada(txtNombreCliente.Text, cbxFormaDePago.SelectedIndex.ToString(), float.Parse(lblITBIS.Text), float.Parse(lblSubTotal.Text), float.Parse(lblTotalAPagar.Text), txtCaja.Text, 0) == true)
+                    {
+                        int IdFactura = Convert.ToInt32(txtIdFactura.Text);
+                        int IdPedido = Convert.ToInt32(txtIdPedido.Text);
+                        int IdInsumo = 0;
+                        string NombreInsumo = null;
+                        float CantidadComprada = 0;
+                        float PrecioVenta = 0;
+                        float Importe = 0;
+                        float ITBIS = 0;
+                        string UnidadMedida = null;
+                        string Hora = DateTime.Now.ToString("hh:mm ");
+
+                        foreach (DataGridViewRow row in dgvFactura.Rows)
+                        {
+                            foreach (DataGridViewColumn col in dgvFactura.Columns)
+                            {
+                                if (col.Index == 0)
+                                {
+                                    IdInsumo = Convert.ToInt32(dgvFactura.Rows[row.Index].Cells[col.Index].Value);
+                                }
+                                if (col.Index == 1)
+                                {
+                                    NombreInsumo = dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                }
+                                if (col.Index == 2)
+                                {
+                                    CantidadComprada = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                }
+                                if (col.Index == 3)
+                                {
+                                    PrecioVenta = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                }
+                                if (col.Index == 4)
+                                {
+                                    ITBIS = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                }
+                                if (col.Index == 5)
+                                {
+                                    Importe = float.Parse(dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString());
+                                }
+                                if (col.Index == 6)
+                                {
+                                    UnidadMedida = dgvFactura.Rows[row.Index].Cells[col.Index].Value.ToString();
+                                }
+                            }
+
+                            if (mostrador.InsertRelacionFacturaInsumo(IdFactura, IdInsumo, NombreInsumo, CantidadComprada, PrecioVenta, Importe, ITBIS, UnidadMedida) == true)
+                            {
+                                
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error registrando Items en Factura", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            txtNombreCliente.Text = "";
             dgvFactura.Rows.Clear();
+            txtNombrePedido.Text = "- - -";
+            int cantOrdenes = mostrador.CantidadDePedidos();
+            int cantFacturas = mostrador.CantidadDeFacturas();
+            txtIdPedido.Text = (cantOrdenes + 1).ToString();
+            txtIdFactura.Text = (cantFacturas + 1).ToString();
+            txtItemsEnFactura.Text = "0";
+            dgvPedidos.DataSource = mostrador.SelectOrdenesAbiertas(txtCaja.Text);
+        }
+
+        private void BtnContinuar_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(txtNombreClientePedido.Text == "")
+            {
+                MessageBox.Show("Digite un nombre.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                txtNombreCliente.Text = txtNombreClientePedido.Text;
+                txtNombrePedido.Text = txtNombreClientePedido.Text;
+                pnlNombreClientePedido.Visible = false;
+                txtNombreClientePedido.Text = "";
+
+                editar = false;
+                hideProductosColumns();
+                panel1.Visible = false;
+                panel2.Visible = false;
+                panel6.Visible = false;
+
+                cbxAsignarMesa.Text = "";
+                dgvFactura.Rows.Clear();
+                dgvFactura.Refresh();
+
+                if (mostrador.CantidadDePedidos() == 0)
+                {
+                    txtIdPedido.Text = "1";
+                    txtIdFactura.Text = "1";
+                }
+                else
+                {
+                    int cantOrdenes = mostrador.CantidadDePedidos();
+                    int cantFacturas = mostrador.CantidadDeFacturas();
+                    txtIdPedido.Text = (cantOrdenes + 1).ToString();
+                    txtIdFactura.Text = (cantFacturas + 1).ToString();
+                    txtItemsEnFactura.Text = "0";
+                }
+            }
+        }
+
+        private void TxtNombrePedido_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            pnlNombreClientePedido.Visible = true;
+        }
+
+        private void PicBuscarHuespedes_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlHuespedes.Visible = true;
+        }
+
+        private void PicManejarMesas_MouseClick(object sender, MouseEventArgs e)
+        {
+            DisponibilidadMesas manejarMesas = new DisponibilidadMesas(txtCaja.Text);
+            manejarMesas.Show();
+        }
+
+        private void TxtBuscarHuespedes_TextChanged(object sender, EventArgs e)
+        {
+            dgvHuespedes.AllowUserToAddRows = false;
+
+            if (txtBuscarHuespedes.Text != "" && txtBuscarHuespedes.Text != "Buscar")
+            {
+                dgvHuespedes.CurrentCell = null;
+                foreach (DataGridViewRow n in dgvHuespedes.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgvHuespedes.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarHuespedes.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+               // dgvHuespedes.DataSource = mesa.MesasDisponibles();
+            }
+        }
+
+        private void PicCerrarPnlHuespedes_MouseClick(object sender, MouseEventArgs e)
+        {
+            pnlHuespedes.Visible = false;
+            txtBuscarHuespedes.Text = "";
+        }
+
+        private void CbxAsignarMesa_MouseClick(object sender, MouseEventArgs e)
+        {
+            loadComboBoxes();
+        }
+
+        private void TxtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+            dgvPedidos.AllowUserToAddRows = false;
+
+            if (txtBuscarCliente.Text != "" && txtBuscarCliente.Text != "Buscar")
+            {
+
+                dgvPedidos.CurrentCell = null;
+                foreach (DataGridViewRow n in dgvPedidos.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgvPedidos.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarCliente.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                dgvPedidos.DataSource = mostrador.SelectOrdenesAbiertas(txtCaja.Text);
+            }
+        }
+        private void MostradorPOS_Load(object sender, EventArgs e)
+        {
+            txtCantidadOrdenesAbiertas.Text = mostrador.CantidadDeOrdenesAbierta(txtCaja.Text);
+        }
+
+        private void CbxCategoria_MouseClick(object sender, MouseEventArgs e)
+        {
+            loadComboBoxes();
+        }
+
+        private void PnlBase_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtBuscarCliente.Text = "Buscar";
+        }
+
+        private void Panel8_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtBuscarHuespedes.Text = "Buscar";
         }
     }
 }

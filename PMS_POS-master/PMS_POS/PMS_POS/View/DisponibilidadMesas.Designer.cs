@@ -1,6 +1,6 @@
 ﻿namespace PMS_POS.View
 {
-    partial class MenuConfigurar
+    partial class DisponibilidadMesas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,226 +28,205 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtBuscarProducto = new System.Windows.Forms.TextBox();
-            this.cbxCategoria = new System.Windows.Forms.ComboBox();
-            this.btnVerMenuActual = new System.Windows.Forms.Button();
-            this.lblCategoria = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvMesasDisponibles = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvMesasNODisponibles = new System.Windows.Forms.DataGridView();
             this.btnRemoverItem = new System.Windows.Forms.Button();
             this.btnAgregarItem = new System.Windows.Forms.Button();
-            this.dgvProductosEnMenu = new System.Windows.Forms.DataGridView();
-            this.dgvProductosDisponibles = new System.Windows.Forms.DataGridView();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosEnMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosDisponibles)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.lblMno = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnNODisponiblesTodos = new System.Windows.Forms.Button();
+            this.btnDisponiblesTodos = new System.Windows.Forms.Button();
+            this.txtMesasDisponibles = new System.Windows.Forms.TextBox();
+            this.txtMesasNODisponibles = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMesasDisponibles)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMesasNODisponibles)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel4
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnVerMenuActual);
-            this.panel1.Controls.Add(this.lblCategoria);
-            this.panel1.Controls.Add(this.btnRemoverItem);
-            this.panel1.Controls.Add(this.btnAgregarItem);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(690, 470);
-            this.panel1.TabIndex = 0;
+            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel4.Controls.Add(this.dgvMesasDisponibles);
+            this.panel4.Location = new System.Drawing.Point(12, 53);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(197, 300);
+            this.panel4.TabIndex = 36;
             // 
-            // panel2
+            // dgvMesasDisponibles
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel2.Controls.Add(this.txtBuscarProducto);
-            this.panel2.Controls.Add(this.cbxCategoria);
-            this.panel2.Location = new System.Drawing.Point(12, 29);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 59);
-            this.panel2.TabIndex = 30;
+            this.dgvMesasDisponibles.AllowUserToAddRows = false;
+            this.dgvMesasDisponibles.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvMesasDisponibles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMesasDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMesasDisponibles.Location = new System.Drawing.Point(3, 3);
+            this.dgvMesasDisponibles.Name = "dgvMesasDisponibles";
+            this.dgvMesasDisponibles.Size = new System.Drawing.Size(191, 294);
+            this.dgvMesasDisponibles.TabIndex = 20;
             // 
-            // txtBuscarProducto
+            // panel3
             // 
-            this.txtBuscarProducto.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBuscarProducto.Location = new System.Drawing.Point(3, 32);
-            this.txtBuscarProducto.Name = "txtBuscarProducto";
-            this.txtBuscarProducto.Size = new System.Drawing.Size(263, 20);
-            this.txtBuscarProducto.TabIndex = 26;
-            this.txtBuscarProducto.Text = "Buscar Producto";
-            this.txtBuscarProducto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBuscarProducto_MouseClick);
-            this.txtBuscarProducto.TextChanged += new System.EventHandler(this.TxtBuscarProducto_TextChanged);
+            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel3.Controls.Add(this.dgvMesasNODisponibles);
+            this.panel3.Location = new System.Drawing.Point(296, 53);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(197, 300);
+            this.panel3.TabIndex = 35;
             // 
-            // cbxCategoria
+            // dgvMesasNODisponibles
             // 
-            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Items.AddRange(new object[] {
-            "Todas"});
-            this.cbxCategoria.Location = new System.Drawing.Point(3, 5);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(201, 21);
-            this.cbxCategoria.TabIndex = 27;
-            this.cbxCategoria.SelectedIndexChanged += new System.EventHandler(this.CbxCategoria_SelectedIndexChanged);
-            // 
-            // btnVerMenuActual
-            // 
-            this.btnVerMenuActual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVerMenuActual.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnVerMenuActual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerMenuActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerMenuActual.ForeColor = System.Drawing.Color.White;
-            this.btnVerMenuActual.Location = new System.Drawing.Point(368, 34);
-            this.btnVerMenuActual.Name = "btnVerMenuActual";
-            this.btnVerMenuActual.Size = new System.Drawing.Size(319, 36);
-            this.btnVerMenuActual.TabIndex = 29;
-            this.btnVerMenuActual.Text = "Ver Menu Actual";
-            this.btnVerMenuActual.UseVisualStyleBackColor = false;
-            this.btnVerMenuActual.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnVerMenuActual_MouseClick);
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
-            this.lblCategoria.Location = new System.Drawing.Point(487, 73);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(81, 18);
-            this.lblCategoria.TabIndex = 28;
-            this.lblCategoria.Text = "Categoria";
+            this.dgvMesasNODisponibles.AllowUserToAddRows = false;
+            this.dgvMesasNODisponibles.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvMesasNODisponibles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMesasNODisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMesasNODisponibles.Location = new System.Drawing.Point(3, 3);
+            this.dgvMesasNODisponibles.Name = "dgvMesasNODisponibles";
+            this.dgvMesasNODisponibles.Size = new System.Drawing.Size(191, 294);
+            this.dgvMesasNODisponibles.TabIndex = 21;
             // 
             // btnRemoverItem
             // 
-            this.btnRemoverItem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRemoverItem.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnRemoverItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoverItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoverItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverItem.ForeColor = System.Drawing.Color.White;
-            this.btnRemoverItem.Location = new System.Drawing.Point(290, 268);
+            this.btnRemoverItem.Location = new System.Drawing.Point(215, 186);
             this.btnRemoverItem.Name = "btnRemoverItem";
-            this.btnRemoverItem.Size = new System.Drawing.Size(75, 29);
-            this.btnRemoverItem.TabIndex = 24;
+            this.btnRemoverItem.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoverItem.TabIndex = 34;
             this.btnRemoverItem.Text = "<<";
             this.btnRemoverItem.UseVisualStyleBackColor = false;
             this.btnRemoverItem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnRemoverItem_MouseClick);
             // 
             // btnAgregarItem
             // 
-            this.btnAgregarItem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregarItem.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAgregarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarItem.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarItem.Location = new System.Drawing.Point(290, 232);
+            this.btnAgregarItem.Location = new System.Drawing.Point(215, 162);
             this.btnAgregarItem.Name = "btnAgregarItem";
-            this.btnAgregarItem.Size = new System.Drawing.Size(75, 30);
-            this.btnAgregarItem.TabIndex = 23;
+            this.btnAgregarItem.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarItem.TabIndex = 33;
             this.btnAgregarItem.Text = ">>";
             this.btnAgregarItem.UseVisualStyleBackColor = false;
             this.btnAgregarItem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnAgregarItem_MouseClick);
             // 
-            // dgvProductosEnMenu
+            // lblMno
             // 
-            this.dgvProductosEnMenu.AllowUserToAddRows = false;
-            this.dgvProductosEnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProductosEnMenu.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvProductosEnMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProductosEnMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosEnMenu.Location = new System.Drawing.Point(3, 3);
-            this.dgvProductosEnMenu.Name = "dgvProductosEnMenu";
-            this.dgvProductosEnMenu.Size = new System.Drawing.Size(314, 367);
-            this.dgvProductosEnMenu.TabIndex = 21;
+            this.lblMno.AutoSize = true;
+            this.lblMno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
+            this.lblMno.Location = new System.Drawing.Point(306, 12);
+            this.lblMno.Name = "lblMno";
+            this.lblMno.Size = new System.Drawing.Size(181, 18);
+            this.lblMno.TabIndex = 37;
+            this.lblMno.Text = "Mesas NO Disponibles";
+            this.lblMno.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblMno_MouseClick);
             // 
-            // dgvProductosDisponibles
+            // label1
             // 
-            this.dgvProductosDisponibles.AllowUserToAddRows = false;
-            this.dgvProductosDisponibles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvProductosDisponibles.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvProductosDisponibles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProductosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosDisponibles.Location = new System.Drawing.Point(3, 3);
-            this.dgvProductosDisponibles.Name = "dgvProductosDisponibles";
-            this.dgvProductosDisponibles.Size = new System.Drawing.Size(271, 370);
-            this.dgvProductosDisponibles.TabIndex = 20;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
+            this.label1.Location = new System.Drawing.Point(35, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 18);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Mesas Disponibles";
+            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Label1_MouseClick);
             // 
-            // label14
+            // btnNODisponiblesTodos
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label14.Location = new System.Drawing.Point(287, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 29);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "Menu";
+            this.btnNODisponiblesTodos.BackColor = System.Drawing.Color.Blue;
+            this.btnNODisponiblesTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNODisponiblesTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNODisponiblesTodos.ForeColor = System.Drawing.Color.White;
+            this.btnNODisponiblesTodos.Location = new System.Drawing.Point(215, 126);
+            this.btnNODisponiblesTodos.Name = "btnNODisponiblesTodos";
+            this.btnNODisponiblesTodos.Size = new System.Drawing.Size(75, 23);
+            this.btnNODisponiblesTodos.TabIndex = 39;
+            this.btnNODisponiblesTodos.Text = ">>>";
+            this.btnNODisponiblesTodos.UseVisualStyleBackColor = false;
+            this.btnNODisponiblesTodos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnNODisponiblesTodos_MouseClick);
             // 
-            // panel3
+            // btnDisponiblesTodos
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel3.Controls.Add(this.dgvProductosEnMenu);
-            this.panel3.Location = new System.Drawing.Point(366, 91);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(321, 373);
-            this.panel3.TabIndex = 31;
+            this.btnDisponiblesTodos.BackColor = System.Drawing.Color.Blue;
+            this.btnDisponiblesTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisponiblesTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisponiblesTodos.ForeColor = System.Drawing.Color.White;
+            this.btnDisponiblesTodos.Location = new System.Drawing.Point(215, 225);
+            this.btnDisponiblesTodos.Name = "btnDisponiblesTodos";
+            this.btnDisponiblesTodos.Size = new System.Drawing.Size(75, 23);
+            this.btnDisponiblesTodos.TabIndex = 40;
+            this.btnDisponiblesTodos.Text = "<<<";
+            this.btnDisponiblesTodos.UseVisualStyleBackColor = false;
+            this.btnDisponiblesTodos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnDisponiblesTodos_MouseClick);
             // 
-            // panel4
+            // txtMesasDisponibles
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel4.Controls.Add(this.dgvProductosDisponibles);
-            this.panel4.Location = new System.Drawing.Point(12, 91);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(277, 376);
-            this.panel4.TabIndex = 32;
+            this.txtMesasDisponibles.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtMesasDisponibles.Location = new System.Drawing.Point(24, 30);
+            this.txtMesasDisponibles.Name = "txtMesasDisponibles";
+            this.txtMesasDisponibles.Size = new System.Drawing.Size(172, 20);
+            this.txtMesasDisponibles.TabIndex = 41;
+            this.txtMesasDisponibles.Text = "Buscar Mesa";
+            this.txtMesasDisponibles.TextChanged += new System.EventHandler(this.TxtMesasDisponibles_TextChanged);
             // 
-            // MenuConfigurar
+            // txtMesasNODisponibles
+            // 
+            this.txtMesasNODisponibles.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtMesasNODisponibles.Location = new System.Drawing.Point(309, 30);
+            this.txtMesasNODisponibles.Name = "txtMesasNODisponibles";
+            this.txtMesasNODisponibles.Size = new System.Drawing.Size(172, 20);
+            this.txtMesasNODisponibles.TabIndex = 42;
+            this.txtMesasNODisponibles.Text = "Buscar Mesa";
+            this.txtMesasNODisponibles.TextChanged += new System.EventHandler(this.TxtMesasNODisponibles_TextChanged);
+            // 
+            // DisponibilidadMesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 470);
-            this.Controls.Add(this.panel1);
-            this.Name = "MenuConfigurar";
+            this.ClientSize = new System.Drawing.Size(506, 365);
+            this.Controls.Add(this.txtMesasNODisponibles);
+            this.Controls.Add(this.txtMesasDisponibles);
+            this.Controls.Add(this.btnDisponiblesTodos);
+            this.Controls.Add(this.btnNODisponiblesTodos);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMno);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btnRemoverItem);
+            this.Controls.Add(this.btnAgregarItem);
+            this.Name = "DisponibilidadMesas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CONFIGURACION DE MENU";
-            this.Load += new System.EventHandler(this.MenuConfigurar_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosEnMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosDisponibles)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.Text = "DisponibilidadMesas";
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DisponibilidadMesas_MouseClick);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMesasDisponibles)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMesasNODisponibles)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnVerMenuActual;
-        private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.ComboBox cbxCategoria;
-        private System.Windows.Forms.TextBox txtBuscarProducto;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dgvMesasDisponibles;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dgvMesasNODisponibles;
         private System.Windows.Forms.Button btnRemoverItem;
         private System.Windows.Forms.Button btnAgregarItem;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dgvProductosEnMenu;
-        private System.Windows.Forms.DataGridView dgvProductosDisponibles;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblMno;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNODisponiblesTodos;
+        private System.Windows.Forms.Button btnDisponiblesTodos;
+        private System.Windows.Forms.TextBox txtMesasDisponibles;
+        private System.Windows.Forms.TextBox txtMesasNODisponibles;
     }
 }

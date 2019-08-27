@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardarReceta = new System.Windows.Forms.Button();
             this.pnlMedidaEnReceta = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -56,7 +57,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnGuardarReceta = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlMedidaEnReceta.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -89,6 +89,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1140, 544);
             this.panel1.TabIndex = 0;
+            // 
+            // btnGuardarReceta
+            // 
+            this.btnGuardarReceta.BackColor = System.Drawing.Color.Navy;
+            this.btnGuardarReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarReceta.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarReceta.Location = new System.Drawing.Point(315, 495);
+            this.btnGuardarReceta.Name = "btnGuardarReceta";
+            this.btnGuardarReceta.Size = new System.Drawing.Size(446, 44);
+            this.btnGuardarReceta.TabIndex = 34;
+            this.btnGuardarReceta.Text = "Guardar";
+            this.btnGuardarReceta.UseVisualStyleBackColor = false;
+            this.btnGuardarReceta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarReceta_MouseClick);
             // 
             // pnlMedidaEnReceta
             // 
@@ -391,20 +405,6 @@
             this.label18.TabIndex = 16;
             this.label18.Text = "Receta";
             // 
-            // btnGuardarReceta
-            // 
-            this.btnGuardarReceta.BackColor = System.Drawing.Color.Navy;
-            this.btnGuardarReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarReceta.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarReceta.Location = new System.Drawing.Point(315, 495);
-            this.btnGuardarReceta.Name = "btnGuardarReceta";
-            this.btnGuardarReceta.Size = new System.Drawing.Size(446, 44);
-            this.btnGuardarReceta.TabIndex = 34;
-            this.btnGuardarReceta.Text = "Guardar";
-            this.btnGuardarReceta.UseVisualStyleBackColor = false;
-            this.btnGuardarReceta.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarReceta_MouseClick);
-            // 
             // RegistrarReceta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,7 +415,6 @@
             this.Name = "RegistrarReceta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RECETA";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrarReceta_FormClosing);
             this.Load += new System.EventHandler(this.RegistrarReceta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

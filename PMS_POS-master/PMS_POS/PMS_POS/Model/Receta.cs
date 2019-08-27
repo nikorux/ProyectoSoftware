@@ -215,24 +215,27 @@ namespace PMS_POS.Model
             return cantRecetas;
         }
 
-        public DataTable SearchProductosEnReceta(int idInsumo)
+        public DataTable SearchProductosEnReceta(int IdReceta)
         {
-            int idReceta = SearchIdRecetaDelIdInsumo(idInsumo);
             //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
                 //Select query
-                string sql = "SELECT r.NombreReceta, ir.CantidadInsumo, ir.UnidadMedida FROM hostal.receta r, hostal.insumo_receta ir WHERE r.IdReceta=@idReceta AND ir.IdReceta=@idReceta";
+                string sql = "SELECT IdInsumo, NombreInsumo, CantidadInsumo, UnidadMedida FROM hostal.insumo_receta WHERE IdReceta=@idReceta AND IsDeleted=0";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@idReceta", idReceta);
+                cmd.Parameters.AddWithValue("@idReceta", IdReceta);
                 //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
+                dt.Columns["IdInsumo"].ColumnName = "##";
+                dt.Columns["NombreInsumo"].ColumnName = "Nombre";
+                dt.Columns["CantidadInsumo"].ColumnName = "Cantidad";
+                dt.Columns["UnidadMedida"].ColumnName = "Unidad Medida";
             }
             catch (Exception)
             {
@@ -301,7 +304,7 @@ namespace PMS_POS.Model
             return IdInsumo;
         }
 
-        public string SearchDescripcionReceta()
+        public string SearchDescripcionReceta(int IdReceta)
         {
             string NombreInsumo = null;
             //hacer la conexion con sql
@@ -310,9 +313,10 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT NombreInsumo FROM insumo ORDER BY IdInsumo DESC LIMIT 1";
+                string sql = "SELECT DescripcionReceta FROM receta WHERE IdReceta=@idReceta AND IsDeleted=0";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@idReceta", IdReceta);
                 //Creating data adapter
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
@@ -329,39 +333,33 @@ namespace PMS_POS.Model
             return NombreInsumo;
         }
 
-        public string getDetallesReceta(string columna, int idReceta)
+        public string SearchComentarioReceta(int IdReceta)
         {
-            string sql = null;
-            string result = null;
-            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
-            {
-                try
-                {
-                    switch (columna)
-                    {
-                        case "Descripcion":
-                            sql = "SELECT DescripcionReceta FROM receta WHERE IdReceta=@idReceta";
-                            break;
-                        case "Comentario":
-                            sql = "SELECT ComentarioReceta FROM receta WHERE IdReceta=@idReceta";
-                            break;
-                    }
-                    mySqlConn.Open();
-                    MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@idReceta", idReceta);
-                    return result = cmd.ExecuteNonQuery().ToString();
-                }
-                catch (Exception /* ex*/)
-                {
+            string NombreInsumo = null;
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
 
-                }
-                finally
-                {
-                    mySqlConn.Close();
-                }
+            try
+            {
+                //Select query
+                string sql = "SELECT ComentarioReceta FROM receta WHERE IdReceta=@idReceta AND IsDeleted=0";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@idReceta", IdReceta);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                return NombreInsumo = cmd.ExecuteScalar().ToString();
             }
-            return result;
+            catch (Exception /* ex*/)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return NombreInsumo;
         }
 
         public bool DeleteTablaRelacionalReceta(int idReceta)

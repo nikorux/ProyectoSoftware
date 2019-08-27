@@ -28,52 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvProductosDisponibles = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvProductosEnMenu = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBuscarProducto = new System.Windows.Forms.TextBox();
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.btnVerMenuActual = new System.Windows.Forms.Button();
-            this.lblCategoria = new System.Windows.Forms.Label();
             this.btnRemoverItem = new System.Windows.Forms.Button();
             this.btnAgregarItem = new System.Windows.Forms.Button();
-            this.dgvProductosEnMenu = new System.Windows.Forms.DataGridView();
-            this.dgvProductosDisponibles = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosEnMenu)).BeginInit();
+            this.txtCajaSeleccionada = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosDisponibles)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosEnMenu)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel4
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnVerMenuActual);
-            this.panel1.Controls.Add(this.lblCategoria);
-            this.panel1.Controls.Add(this.btnRemoverItem);
-            this.panel1.Controls.Add(this.btnAgregarItem);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(690, 470);
-            this.panel1.TabIndex = 0;
+            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel4.Controls.Add(this.dgvProductosDisponibles);
+            this.panel4.Location = new System.Drawing.Point(29, 128);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(277, 411);
+            this.panel4.TabIndex = 32;
+            // 
+            // dgvProductosDisponibles
+            // 
+            this.dgvProductosDisponibles.AllowUserToAddRows = false;
+            this.dgvProductosDisponibles.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgvProductosDisponibles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProductosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductosDisponibles.Location = new System.Drawing.Point(3, 3);
+            this.dgvProductosDisponibles.Name = "dgvProductosDisponibles";
+            this.dgvProductosDisponibles.Size = new System.Drawing.Size(271, 405);
+            this.dgvProductosDisponibles.TabIndex = 20;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel3.Controls.Add(this.dgvProductosEnMenu);
+            this.panel3.Location = new System.Drawing.Point(383, 128);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(321, 411);
+            this.panel3.TabIndex = 31;
+            // 
+            // dgvProductosEnMenu
+            // 
+            this.dgvProductosEnMenu.AllowUserToAddRows = false;
+            this.dgvProductosEnMenu.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgvProductosEnMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProductosEnMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductosEnMenu.Location = new System.Drawing.Point(4, 3);
+            this.dgvProductosEnMenu.Name = "dgvProductosEnMenu";
+            this.dgvProductosEnMenu.Size = new System.Drawing.Size(314, 405);
+            this.dgvProductosEnMenu.TabIndex = 21;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Controls.Add(this.txtBuscarProducto);
             this.panel2.Controls.Add(this.cbxCategoria);
-            this.panel2.Location = new System.Drawing.Point(12, 29);
+            this.panel2.Location = new System.Drawing.Point(29, 53);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 59);
+            this.panel2.Size = new System.Drawing.Size(277, 59);
             this.panel2.TabIndex = 30;
             // 
             // txtBuscarProducto
@@ -102,12 +125,11 @@
             // 
             // btnVerMenuActual
             // 
-            this.btnVerMenuActual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVerMenuActual.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnVerMenuActual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerMenuActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerMenuActual.ForeColor = System.Drawing.Color.White;
-            this.btnVerMenuActual.Location = new System.Drawing.Point(368, 34);
+            this.btnVerMenuActual.Location = new System.Drawing.Point(382, 53);
             this.btnVerMenuActual.Name = "btnVerMenuActual";
             this.btnVerMenuActual.Size = new System.Drawing.Size(319, 36);
             this.btnVerMenuActual.TabIndex = 29;
@@ -115,26 +137,13 @@
             this.btnVerMenuActual.UseVisualStyleBackColor = false;
             this.btnVerMenuActual.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnVerMenuActual_MouseClick);
             // 
-            // lblCategoria
-            // 
-            this.lblCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
-            this.lblCategoria.Location = new System.Drawing.Point(487, 73);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(81, 18);
-            this.lblCategoria.TabIndex = 28;
-            this.lblCategoria.Text = "Categoria";
-            // 
             // btnRemoverItem
             // 
-            this.btnRemoverItem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRemoverItem.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnRemoverItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverItem.ForeColor = System.Drawing.Color.White;
-            this.btnRemoverItem.Location = new System.Drawing.Point(290, 268);
+            this.btnRemoverItem.Location = new System.Drawing.Point(306, 304);
             this.btnRemoverItem.Name = "btnRemoverItem";
             this.btnRemoverItem.Size = new System.Drawing.Size(75, 29);
             this.btnRemoverItem.TabIndex = 24;
@@ -144,12 +153,11 @@
             // 
             // btnAgregarItem
             // 
-            this.btnAgregarItem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregarItem.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAgregarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarItem.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarItem.Location = new System.Drawing.Point(290, 232);
+            this.btnAgregarItem.Location = new System.Drawing.Point(306, 268);
             this.btnAgregarItem.Name = "btnAgregarItem";
             this.btnAgregarItem.Size = new System.Drawing.Size(75, 30);
             this.btnAgregarItem.TabIndex = 23;
@@ -157,88 +165,86 @@
             this.btnAgregarItem.UseVisualStyleBackColor = false;
             this.btnAgregarItem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnAgregarItem_MouseClick);
             // 
-            // dgvProductosEnMenu
-            // 
-            this.dgvProductosEnMenu.AllowUserToAddRows = false;
-            this.dgvProductosEnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProductosEnMenu.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvProductosEnMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProductosEnMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosEnMenu.Location = new System.Drawing.Point(3, 3);
-            this.dgvProductosEnMenu.Name = "dgvProductosEnMenu";
-            this.dgvProductosEnMenu.Size = new System.Drawing.Size(314, 367);
-            this.dgvProductosEnMenu.TabIndex = 21;
-            // 
-            // dgvProductosDisponibles
-            // 
-            this.dgvProductosDisponibles.AllowUserToAddRows = false;
-            this.dgvProductosDisponibles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvProductosDisponibles.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvProductosDisponibles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProductosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosDisponibles.Location = new System.Drawing.Point(3, 3);
-            this.dgvProductosDisponibles.Name = "dgvProductosDisponibles";
-            this.dgvProductosDisponibles.Size = new System.Drawing.Size(271, 370);
-            this.dgvProductosDisponibles.TabIndex = 20;
-            // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label14.Location = new System.Drawing.Point(287, 9);
+            this.label14.Location = new System.Drawing.Point(80, 17);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 29);
+            this.label14.Size = new System.Drawing.Size(91, 33);
             this.label14.TabIndex = 19;
             this.label14.Text = "Menu";
             // 
-            // panel3
+            // txtCajaSeleccionada
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel3.Controls.Add(this.dgvProductosEnMenu);
-            this.panel3.Location = new System.Drawing.Point(366, 91);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(321, 373);
-            this.panel3.TabIndex = 31;
+            this.txtCajaSeleccionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCajaSeleccionada.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtCajaSeleccionada.Location = new System.Drawing.Point(456, 12);
+            this.txtCajaSeleccionada.Name = "txtCajaSeleccionada";
+            this.txtCajaSeleccionada.ReadOnly = true;
+            this.txtCajaSeleccionada.Size = new System.Drawing.Size(222, 31);
+            this.txtCajaSeleccionada.TabIndex = 33;
+            this.txtCajaSeleccionada.Text = "Seleccionar";
+            this.txtCajaSeleccionada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel4
+            // label1
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel4.Controls.Add(this.dgvProductosDisponibles);
-            this.panel4.Location = new System.Drawing.Point(12, 91);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(277, 376);
-            this.panel4.TabIndex = 32;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(381, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Caja:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Location = new System.Drawing.Point(389, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 20);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "En Mostrador:";
             // 
             // MenuConfigurar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 470);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(730, 551);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtCajaSeleccionada);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.btnVerMenuActual);
+            this.Controls.Add(this.btnAgregarItem);
+            this.Controls.Add(this.btnRemoverItem);
             this.Name = "MenuConfigurar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONFIGURACION DE MENU";
             this.Load += new System.EventHandler(this.MenuConfigurar_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosEnMenu)).EndInit();
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosDisponibles)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductosEnMenu)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnVerMenuActual;
-        private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.ComboBox cbxCategoria;
         private System.Windows.Forms.TextBox txtBuscarProducto;
         private System.Windows.Forms.Button btnRemoverItem;
@@ -249,5 +255,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtCajaSeleccionada;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
