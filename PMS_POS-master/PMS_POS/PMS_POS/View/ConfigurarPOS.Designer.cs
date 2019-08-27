@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnGuardarEdicionCajas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMostrarCajasDisponibles = new System.Windows.Forms.Button();
             this.dgvCajas = new System.Windows.Forms.DataGridView();
             this.btnMostrarCajasNoDisponibles = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.txtIdCajas = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.chkGuardarCajaNoDisponible = new System.Windows.Forms.CheckBox();
@@ -51,10 +55,17 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnGuardarEdicionCategoria = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnMostrarCategoriasDisponiblesMesas = new System.Windows.Forms.Button();
+            this.btnMostrarCategoriasEnInventario = new System.Windows.Forms.Button();
+            this.btnMostrarCategoriasEnMostrador = new System.Windows.Forms.Button();
             this.dgvCategoria = new System.Windows.Forms.DataGridView();
-            this.btnMostrarCategoriasNoDisponiblesMesas = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cbxPuntoVentaCategoria = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtIdCategorias = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,11 +77,18 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnGuardarEdicionMesas = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnMostrarCajasDisponiblesMesas = new System.Windows.Forms.Button();
             this.dgvMesas = new System.Windows.Forms.DataGridView();
             this.btnMostrarCajasNoDisponiblesMesas = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cbxPuntoVentaMesas = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtIdMesas = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.chkGuardarMesaNoDisponible = new System.Windows.Forms.CheckBox();
@@ -84,8 +102,6 @@
             this.btnLimpiarMesas = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGuardarEdicionCajas = new System.Windows.Forms.Button();
-            this.btnGuardarEdicionMesas = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -129,6 +145,20 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cajas";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardarEdicionCajas
+            // 
+            this.btnGuardarEdicionCajas.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGuardarEdicionCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarEdicionCajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEdicionCajas.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarEdicionCajas.Location = new System.Drawing.Point(206, 100);
+            this.btnGuardarEdicionCajas.Name = "btnGuardarEdicionCajas";
+            this.btnGuardarEdicionCajas.Size = new System.Drawing.Size(240, 31);
+            this.btnGuardarEdicionCajas.TabIndex = 18;
+            this.btnGuardarEdicionCajas.Text = "Guardar edición";
+            this.btnGuardarEdicionCajas.UseVisualStyleBackColor = false;
+            this.btnGuardarEdicionCajas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarEdicionCajas_MouseClick);
             // 
             // panel2
             // 
@@ -180,6 +210,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.txtIdCajas);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.chkGuardarCajaNoDisponible);
@@ -191,6 +223,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(483, 333);
             this.panel1.TabIndex = 7;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(465, 51);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(13, 16);
+            this.label24.TabIndex = 101;
+            this.label24.Text = "*";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(361, 300);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(98, 13);
+            this.label26.TabIndex = 99;
+            this.label26.Text = "* Campo obligatorio";
             // 
             // txtIdCajas
             // 
@@ -363,26 +417,39 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel3.Controls.Add(this.btnMostrarCategoriasDisponiblesMesas);
+            this.panel3.Controls.Add(this.btnMostrarCategoriasEnInventario);
+            this.panel3.Controls.Add(this.btnMostrarCategoriasEnMostrador);
             this.panel3.Controls.Add(this.dgvCategoria);
-            this.panel3.Controls.Add(this.btnMostrarCategoriasNoDisponiblesMesas);
             this.panel3.Location = new System.Drawing.Point(583, 100);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(483, 370);
             this.panel3.TabIndex = 16;
             // 
-            // btnMostrarCategoriasDisponiblesMesas
+            // btnMostrarCategoriasEnInventario
             // 
-            this.btnMostrarCategoriasDisponiblesMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarCategoriasDisponiblesMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarCategoriasDisponiblesMesas.ForeColor = System.Drawing.Color.White;
-            this.btnMostrarCategoriasDisponiblesMesas.Location = new System.Drawing.Point(12, 5);
-            this.btnMostrarCategoriasDisponiblesMesas.Name = "btnMostrarCategoriasDisponiblesMesas";
-            this.btnMostrarCategoriasDisponiblesMesas.Size = new System.Drawing.Size(454, 31);
-            this.btnMostrarCategoriasDisponiblesMesas.TabIndex = 17;
-            this.btnMostrarCategoriasDisponiblesMesas.Text = "Mostrar categorías disponible(s)";
-            this.btnMostrarCategoriasDisponiblesMesas.UseVisualStyleBackColor = true;
-            this.btnMostrarCategoriasDisponiblesMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCategoriasDisponiblesMesas_MouseClick);
+            this.btnMostrarCategoriasEnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarCategoriasEnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarCategoriasEnInventario.ForeColor = System.Drawing.Color.White;
+            this.btnMostrarCategoriasEnInventario.Location = new System.Drawing.Point(12, 5);
+            this.btnMostrarCategoriasEnInventario.Name = "btnMostrarCategoriasEnInventario";
+            this.btnMostrarCategoriasEnInventario.Size = new System.Drawing.Size(454, 31);
+            this.btnMostrarCategoriasEnInventario.TabIndex = 9;
+            this.btnMostrarCategoriasEnInventario.Text = "Mostrar categorías en INVENTARIO";
+            this.btnMostrarCategoriasEnInventario.UseVisualStyleBackColor = true;
+            this.btnMostrarCategoriasEnInventario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCategoriasNoDisponiblesMesas_MouseClick);
+            // 
+            // btnMostrarCategoriasEnMostrador
+            // 
+            this.btnMostrarCategoriasEnMostrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarCategoriasEnMostrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarCategoriasEnMostrador.ForeColor = System.Drawing.Color.White;
+            this.btnMostrarCategoriasEnMostrador.Location = new System.Drawing.Point(12, 5);
+            this.btnMostrarCategoriasEnMostrador.Name = "btnMostrarCategoriasEnMostrador";
+            this.btnMostrarCategoriasEnMostrador.Size = new System.Drawing.Size(454, 31);
+            this.btnMostrarCategoriasEnMostrador.TabIndex = 17;
+            this.btnMostrarCategoriasEnMostrador.Text = "Mostrar categorías en MOSTRADOR";
+            this.btnMostrarCategoriasEnMostrador.UseVisualStyleBackColor = true;
+            this.btnMostrarCategoriasEnMostrador.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCategoriasDisponiblesMesas_MouseClick);
             // 
             // dgvCategoria
             // 
@@ -394,22 +461,16 @@
             this.dgvCategoria.Size = new System.Drawing.Size(454, 311);
             this.dgvCategoria.TabIndex = 0;
             // 
-            // btnMostrarCategoriasNoDisponiblesMesas
-            // 
-            this.btnMostrarCategoriasNoDisponiblesMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarCategoriasNoDisponiblesMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarCategoriasNoDisponiblesMesas.ForeColor = System.Drawing.Color.White;
-            this.btnMostrarCategoriasNoDisponiblesMesas.Location = new System.Drawing.Point(12, 5);
-            this.btnMostrarCategoriasNoDisponiblesMesas.Name = "btnMostrarCategoriasNoDisponiblesMesas";
-            this.btnMostrarCategoriasNoDisponiblesMesas.Size = new System.Drawing.Size(454, 31);
-            this.btnMostrarCategoriasNoDisponiblesMesas.TabIndex = 9;
-            this.btnMostrarCategoriasNoDisponiblesMesas.Text = "Mostrar categorías NO disponible(s)";
-            this.btnMostrarCategoriasNoDisponiblesMesas.UseVisualStyleBackColor = true;
-            this.btnMostrarCategoriasNoDisponiblesMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCategoriasNoDisponiblesMesas_MouseClick);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel4.Controls.Add(this.label16);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.cbxPuntoVentaCategoria);
+            this.panel4.Controls.Add(this.label21);
+            this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.txtIdCategorias);
             this.panel4.Controls.Add(this.label7);
@@ -419,6 +480,83 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(483, 333);
             this.panel4.TabIndex = 15;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(465, 54);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(13, 16);
+            this.label16.TabIndex = 98;
+            this.label16.Text = "*";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(465, 102);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(13, 16);
+            this.label15.TabIndex = 97;
+            this.label15.Text = "*";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(361, 303);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 13);
+            this.label14.TabIndex = 96;
+            this.label14.Text = "* Campo obligatorio";
+            // 
+            // cbxPuntoVentaCategoria
+            // 
+            this.cbxPuntoVentaCategoria.BackColor = System.Drawing.Color.White;
+            this.cbxPuntoVentaCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPuntoVentaCategoria.FormattingEnabled = true;
+            this.cbxPuntoVentaCategoria.Location = new System.Drawing.Point(148, 102);
+            this.cbxPuntoVentaCategoria.Name = "cbxPuntoVentaCategoria";
+            this.cbxPuntoVentaCategoria.Size = new System.Drawing.Size(311, 24);
+            this.cbxPuntoVentaCategoria.TabIndex = 95;
+            this.cbxPuntoVentaCategoria.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbxPuntoVentaCategoria_MouseClick);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(100, 118);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(35, 14);
+            this.label21.TabIndex = 94;
+            this.label21.Text = "(caja)";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(33, 102);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(109, 16);
+            this.label19.TabIndex = 93;
+            this.label19.Text = "Punto de Venta:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(322, 282);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(137, 13);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "(Por defecto: En Mostrador)";
             // 
             // textBox2
             // 
@@ -449,11 +587,11 @@
             // 
             this.chxCategoriaEnMostrador.AutoSize = true;
             this.chxCategoriaEnMostrador.ForeColor = System.Drawing.Color.White;
-            this.chxCategoriaEnMostrador.Location = new System.Drawing.Point(45, 299);
+            this.chxCategoriaEnMostrador.Location = new System.Drawing.Point(45, 279);
             this.chxCategoriaEnMostrador.Name = "chxCategoriaEnMostrador";
             this.chxCategoriaEnMostrador.Size = new System.Drawing.Size(282, 20);
             this.chxCategoriaEnMostrador.TabIndex = 4;
-            this.chxCategoriaEnMostrador.Text = "Guardar como categoría para el Mostrador";
+            this.chxCategoriaEnMostrador.Text = "Guardar como categoría para el Inventario.";
             this.chxCategoriaEnMostrador.UseVisualStyleBackColor = true;
             // 
             // label8
@@ -551,6 +689,20 @@
             this.tabPage3.Text = "Mesas";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnGuardarEdicionMesas
+            // 
+            this.btnGuardarEdicionMesas.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGuardarEdicionMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarEdicionMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEdicionMesas.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarEdicionMesas.Location = new System.Drawing.Point(206, 100);
+            this.btnGuardarEdicionMesas.Name = "btnGuardarEdicionMesas";
+            this.btnGuardarEdicionMesas.Size = new System.Drawing.Size(240, 31);
+            this.btnGuardarEdicionMesas.TabIndex = 18;
+            this.btnGuardarEdicionMesas.Text = "Guardar edición";
+            this.btnGuardarEdicionMesas.UseVisualStyleBackColor = false;
+            this.btnGuardarEdicionMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarEdicionMesas_MouseClick);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -577,16 +729,18 @@
             // dgvMesas
             // 
             this.dgvMesas.AllowUserToAddRows = false;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dgvMesas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMesas.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvMesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMesas.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMesas.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMesas.Location = new System.Drawing.Point(12, 42);
             this.dgvMesas.Name = "dgvMesas";
             this.dgvMesas.Size = new System.Drawing.Size(454, 311);
@@ -608,6 +762,12 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel6.Controls.Add(this.label23);
+            this.panel6.Controls.Add(this.label22);
+            this.panel6.Controls.Add(this.label17);
+            this.panel6.Controls.Add(this.cbxPuntoVentaMesas);
+            this.panel6.Controls.Add(this.label18);
+            this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.txtIdMesas);
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.chkGuardarMesaNoDisponible);
@@ -619,6 +779,72 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(483, 333);
             this.panel6.TabIndex = 15;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(361, 303);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(98, 13);
+            this.label23.TabIndex = 103;
+            this.label23.Text = "* Campo obligatorio";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(465, 52);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(13, 16);
+            this.label22.TabIndex = 102;
+            this.label22.Text = "*";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(465, 87);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(13, 16);
+            this.label17.TabIndex = 101;
+            this.label17.Text = "*";
+            // 
+            // cbxPuntoVentaMesas
+            // 
+            this.cbxPuntoVentaMesas.BackColor = System.Drawing.Color.White;
+            this.cbxPuntoVentaMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPuntoVentaMesas.FormattingEnabled = true;
+            this.cbxPuntoVentaMesas.Location = new System.Drawing.Point(148, 83);
+            this.cbxPuntoVentaMesas.Name = "cbxPuntoVentaMesas";
+            this.cbxPuntoVentaMesas.Size = new System.Drawing.Size(311, 24);
+            this.cbxPuntoVentaMesas.TabIndex = 100;
+            this.cbxPuntoVentaMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbxPuntoVentaMesas_MouseClick);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(97, 94);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(35, 14);
+            this.label18.TabIndex = 99;
+            this.label18.Text = "(caja)";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(33, 81);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(109, 16);
+            this.label20.TabIndex = 98;
+            this.label20.Text = "Punto de Venta:";
             // 
             // txtIdMesas
             // 
@@ -654,10 +880,10 @@
             // txtDescripcionMesa
             // 
             this.txtDescripcionMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcionMesa.Location = new System.Drawing.Point(122, 90);
+            this.txtDescripcionMesa.Location = new System.Drawing.Point(122, 117);
             this.txtDescripcionMesa.Multiline = true;
             this.txtDescripcionMesa.Name = "txtDescripcionMesa";
-            this.txtDescripcionMesa.Size = new System.Drawing.Size(337, 204);
+            this.txtDescripcionMesa.Size = new System.Drawing.Size(337, 177);
             this.txtDescripcionMesa.TabIndex = 3;
             // 
             // txtNombreMesa
@@ -673,7 +899,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(33, 93);
+            this.label9.Location = new System.Drawing.Point(33, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 16);
             this.label9.TabIndex = 1;
@@ -768,34 +994,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Configuración";
             // 
-            // btnGuardarEdicionCajas
-            // 
-            this.btnGuardarEdicionCajas.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnGuardarEdicionCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarEdicionCajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEdicionCajas.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarEdicionCajas.Location = new System.Drawing.Point(206, 101);
-            this.btnGuardarEdicionCajas.Name = "btnGuardarEdicionCajas";
-            this.btnGuardarEdicionCajas.Size = new System.Drawing.Size(240, 31);
-            this.btnGuardarEdicionCajas.TabIndex = 18;
-            this.btnGuardarEdicionCajas.Text = "Guardar edición";
-            this.btnGuardarEdicionCajas.UseVisualStyleBackColor = false;
-            this.btnGuardarEdicionCajas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarEdicionCajas_MouseClick);
-            // 
-            // btnGuardarEdicionMesas
-            // 
-            this.btnGuardarEdicionMesas.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnGuardarEdicionMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarEdicionMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEdicionMesas.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarEdicionMesas.Location = new System.Drawing.Point(206, 100);
-            this.btnGuardarEdicionMesas.Name = "btnGuardarEdicionMesas";
-            this.btnGuardarEdicionMesas.Size = new System.Drawing.Size(240, 31);
-            this.btnGuardarEdicionMesas.TabIndex = 18;
-            this.btnGuardarEdicionMesas.Text = "Guardar edición";
-            this.btnGuardarEdicionMesas.UseVisualStyleBackColor = false;
-            this.btnGuardarEdicionMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarEdicionMesas_MouseClick);
-            // 
             // ConfigurarPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -854,10 +1052,10 @@
         private System.Windows.Forms.TextBox txtNombreCaja;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnMostrarCategoriasDisponiblesMesas;
+        private System.Windows.Forms.Button btnMostrarCategoriasEnMostrador;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvCategoria;
-        private System.Windows.Forms.Button btnMostrarCategoriasNoDisponiblesMesas;
+        private System.Windows.Forms.Button btnMostrarCategoriasEnInventario;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.CheckBox chxCategoriaEnMostrador;
         private System.Windows.Forms.Label label8;
@@ -889,5 +1087,20 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnGuardarEdicionCajas;
         private System.Windows.Forms.Button btnGuardarEdicionMesas;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbxPuntoVentaCategoria;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbxPuntoVentaMesas;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label26;
     }
 }

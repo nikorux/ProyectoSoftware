@@ -76,6 +76,7 @@
     <Compile Include="Controller\HuespedD.cs" />
     <Compile Include="Model\Mesa.cs" />
     <Compile Include="Model\Mostrador.cs" />
+    <Compile Include="Model\Ordenes.cs" />
     <Compile Include="Model\Producto.cs" />
     <Compile Include="Model\Proveedor.cs" />
     <Compile Include="Model\Receta.cs" />
@@ -113,6 +114,12 @@
     </Compile>
     <Compile Include="View\ConfigurarTipoHabitacion.designer.cs">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DisponibilidadMesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DisponibilidadMesas.Designer.cs">
+      <DependentUpon>DisponibilidadMesas.cs</DependentUpon>
     </Compile>
     <Compile Include="View\HistorialCompras.cs">
       <SubType>UserControl</SubType>
@@ -194,6 +201,12 @@
     <Compile Include="View\MostradorPOS.Designer.cs">
       <DependentUpon>MostradorPOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MostrarArticulosFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MostrarArticulosFactura.Designer.cs">
+      <DependentUpon>MostrarArticulosFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NuevaReservacion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +224,12 @@
     </Compile>
     <Compile Include="View\Ordenes1.Designer.cs">
       <DependentUpon>Ordenes1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrdenesHOY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OrdenesHOY.Designer.cs">
+      <DependentUpon>OrdenesHOY.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PaginaInicio.cs">
       <SubType>UserControl</SubType>
@@ -290,6 +309,18 @@
     <Compile Include="View\VentaPorCategoria.Designer.cs">
       <DependentUpon>VentaPorCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VentasHOY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VentasHOY.Designer.cs">
+      <DependentUpon>VentasHOY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VerReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VerReceta.Designer.cs">
+      <DependentUpon>VerReceta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -314,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ConfigurarTipoHabitacion.resx">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DisponibilidadMesas.resx">
+      <DependentUpon>DisponibilidadMesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HistorialCompras.resx">
       <DependentUpon>HistorialCompras.cs</DependentUpon>
@@ -354,6 +388,9 @@
     <EmbeddedResource Include="View\MostradorPOS.resx">
       <DependentUpon>MostradorPOS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\MostrarArticulosFactura.resx">
+      <DependentUpon>MostrarArticulosFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\NuevaReservacion.resx">
       <DependentUpon>NuevaReservacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Ordenes1.resx">
       <DependentUpon>Ordenes1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OrdenesHOY.resx">
+      <DependentUpon>OrdenesHOY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PaginaInicio.resx">
       <DependentUpon>PaginaInicio.cs</DependentUpon>
@@ -402,6 +442,12 @@
     <EmbeddedResource Include="View\VentaPorCategoria.resx">
       <DependentUpon>VentaPorCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\VentasHOY.resx">
+      <DependentUpon>VentasHOY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VerReceta.resx">
+      <DependentUpon>VerReceta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -420,6 +466,12 @@
   <ItemGroup>
     <Content Include="img\arrows.png" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\refresh1.PNG" />
+    <None Include="Resources\refresh.PNG" />
+    <None Include="Resources\icons8-cerrar-ventana-100 %281%29.png" />
+    <None Include="Resources\facturas.png" />
+    <None Include="Resources\mesas.png" />
+    <None Include="Resources\search.png" />
     <None Include="Resources\icons8-mastercard-96.png" />
     <None Include="Resources\icons8-visa-96.png" />
     <None Include="Resources\ConfigurarIMG.png" />

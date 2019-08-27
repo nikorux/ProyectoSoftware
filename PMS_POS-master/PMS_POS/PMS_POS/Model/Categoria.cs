@@ -15,6 +15,7 @@ namespace PMS_POS.Model
         public int IdCategoria { get; set; }
         public string NombreCategoria { get; set; }
         public int EnMostrador { get; set; }
+        public string NombreCaja { get; set; }
 
 
         static string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
@@ -75,7 +76,7 @@ namespace PMS_POS.Model
             return resp;
         }
 
-        public DataTable Select()
+        public DataTable SelectCategoriasEnMostrador()
         {
             //hacer la conexion con sql
             MySqlConnection conn = new MySqlConnection(connString);
@@ -83,7 +84,34 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT * FROM categoria WHERE IsDeleted=0";
+                string sql = "SELECT IdCategoria, NombreCategoria, EnMostrador, NombreCaja FROM categoria WHERE IsDeleted=0 AND EnMostrador=1";
+                // creating cmd using sql and conn
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Creating data adapter
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SelectCategoriasEnInventario()
+        {
+            //hacer la conexion con sql
+            MySqlConnection conn = new MySqlConnection(connString);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Select query
+                string sql = "SELECT IdCategoria, NombreCategoria, EnMostrador, NombreCaja FROM categoria WHERE IsDeleted=0 AND EnMostrador=0";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //Creating data adapter
@@ -106,12 +134,13 @@ namespace PMS_POS.Model
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "INSERT INTO categoria (NombreCategoria, EnMostrador) VALUES (@NombreCategoria, @EnMostrador)";
+                string sql = "INSERT INTO categoria (NombreCategoria, EnMostrador, NombreCaja) VALUES (@NombreCategoria, @EnMostrador, @NombreCaja)";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@NombreCategoria", x.NombreCategoria);
-                cmd.Parameters.AddWithValue("@EnMostrador", 1);
+                cmd.Parameters.AddWithValue("@NombreCaja", x.NombreCaja);
+                cmd.Parameters.AddWithValue("@EnMostrador", x.EnMostrador);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)
@@ -131,13 +160,14 @@ namespace PMS_POS.Model
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {
-                string sql = "UPDATE categoria SET NombreCategoria=@NombreCategoria, EnMostrador=@EnMostrador WHERE IdCategoria=@IdCategoria";
+                string sql = "UPDATE categoria SET NombreCategoria=@NombreCategoria, EnMostrador=@EnMostrador, NombreCaja=@NombreCaja WHERE IdCategoria=@IdCategoria";
                 mySqlConn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdCategoria", x.IdCategoria);
                 cmd.Parameters.AddWithValue("@NombreCategoria", x.NombreCategoria);
                 cmd.Parameters.AddWithValue("@EnMostrador", x.EnMostrador);
+                cmd.Parameters.AddWithValue("@NombreCaja", x.NombreCaja);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)

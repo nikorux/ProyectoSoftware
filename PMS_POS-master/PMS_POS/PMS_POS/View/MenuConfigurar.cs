@@ -20,23 +20,25 @@ namespace PMS_POS.View
             get
             {
                 if (_instance == null)
-                    _instance = new MenuConfigurar();
+                    _instance = new MenuConfigurar("haha");
                 return _instance;
             }
         }
 
         Mostrador mostrador = new Mostrador();
+        static public string Caja = null;
 
-        public MenuConfigurar()
+        public MenuConfigurar(string NombreCaja)
         {
             InitializeComponent();
-            dgvProductosDisponibles.DataSource = mostrador.SelectItemsDisponiblesParaMenu();
-            dgvProductosEnMenu.DataSource = mostrador.SelectItemsEnMenu();
+            Caja = NombreCaja;
+            dgvProductosDisponibles.DataSource = mostrador.SelectItemsDisponiblesParaMenu(Caja);
+            dgvProductosEnMenu.DataSource = mostrador.SelectItemsEnMenu(Caja);
         }
 
         private void BtnVerMenuActual_MouseClick(object sender, MouseEventArgs e)
         {
-            MenuActual menuactual = new MenuActual();
+            MenuActual menuactual = new MenuActual(Caja);
             menuactual.Show();
         }
 
@@ -44,10 +46,11 @@ namespace PMS_POS.View
         {
             //COMBOBOX DISPLAY CATEGORIA
             MySqlConnection connectionCategoria = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-            string queryCategoria = "SELECT NombreCategoria FROM categoria";
+            //string queryCategoria = "SELECT NombreCategoria FROM categoria where EnMostrador=1 AND NombreCaja='" + this.txtCaja.Text + "';";
+            string queryCategoria = "SELECT NombreCategoria FROM categoria WHERE NombreCaja='" + Caja + "';";
             connectionCategoria.Open();
-            MySqlCommand command = new MySqlCommand(queryCategoria, connectionCategoria);
-            MySqlDataReader readerCategoria = command.ExecuteReader();
+            MySqlCommand cmd = new MySqlCommand(queryCategoria, connectionCategoria);
+            MySqlDataReader readerCategoria = cmd.ExecuteReader();
             while (readerCategoria.Read())
             {
                 cbxCategoria.Items.Add(readerCategoria.GetString("NombreCategoria"));
@@ -81,7 +84,7 @@ namespace PMS_POS.View
             }
             else
             {
-                dgvProductosDisponibles.DataSource = mostrador.SelectItemsDisponiblesParaMenu();
+                dgvProductosDisponibles.DataSource = mostrador.SelectItemsDisponiblesParaMenu(Caja);
             }
         }
 
@@ -103,8 +106,8 @@ namespace PMS_POS.View
                 MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            dgvProductosDisponibles.DataSource = mostrador.SelectItemsDisponiblesParaMenu();
-            dgvProductosEnMenu.DataSource = mostrador.SelectItemsEnMenu();
+            dgvProductosDisponibles.DataSource = mostrador.SelectItemsDisponiblesParaMenu(Caja);
+            dgvProductosEnMenu.DataSource = mostrador.SelectItemsEnMenu(Caja);
         }
 
         private void TxtBuscarProducto_MouseClick(object sender, MouseEventArgs e)
@@ -123,30 +126,19 @@ namespace PMS_POS.View
                 {
                     MessageBox.Show("Error al registrar producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             else
             {
                 MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            dgvProductosDisponibles.DataSource = mostrador.SelectItemsDisponiblesParaMenu();
-            dgvProductosEnMenu.DataSource = mostrador.SelectItemsEnMenu();
+            dgvProductosDisponibles.DataSource = mostrador.SelectItemsDisponiblesParaMenu(Caja);
+            dgvProductosEnMenu.DataSource = mostrador.SelectItemsEnMenu(Caja);
         }
-
-        Producto producto = new Producto();
 
         private void CbxCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblCategoria.Text = cbxCategoria.Text;
-            if (cbxCategoria.Text == "Todas")
-            {
-                dgvProductosDisponibles.DataSource = producto.Select();
-            }
-            else
-            {   
-                dgvProductosDisponibles.DataSource = producto.FiltrarPORcategoria(cbxCategoria.SelectedItem.ToString());
-            }
+            dgvProductosDisponibles.DataSource = mostrador.FiltrarPORcategoria(cbxCategoria.SelectedItem.ToString(), Caja);
         }
     }
 }

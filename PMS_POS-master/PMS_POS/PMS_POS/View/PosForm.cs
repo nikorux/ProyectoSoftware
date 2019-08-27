@@ -306,20 +306,47 @@ namespace PMS_POS.View
 
         private void PictureBox16_MouseClick(object sender, MouseEventArgs e)
         {
-            showVentas();
-            panelSeleccionada("Ventas");
+            /*showVentas();
+            panelSeleccionada("Ventas");*/
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                VentasHOY ventas = new VentasHOY(txtCajaSeleccionada.Text);
+                ventas.Show();
+            }
         }
 
         private void PnlBotonVentas_MouseClick_1(object sender, MouseEventArgs e)
         {
-            showVentas();
-            panelSeleccionada("Ventas");
+            /*showVentas();
+            panelSeleccionada("Ventas");*/
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                VentasHOY ventas = new VentasHOY(txtCajaSeleccionada.Text);
+                ventas.Show();
+            }
         }
 
         private void LblVentas_MouseClick(object sender, MouseEventArgs e)
         {
-            showVentas();
-            panelSeleccionada("Ventas");
+            /*showVentas();
+            panelSeleccionada("Ventas");*/
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                VentasHOY ventas = new VentasHOY(txtCajaSeleccionada.Text);
+                ventas.Show();
+            }
         }
 
         private void PnlBotonVentas_MouseLeave_1(object sender, EventArgs e)
@@ -390,20 +417,41 @@ namespace PMS_POS.View
 
         private void PnlBotonMenu_MouseClick(object sender, MouseEventArgs e)
         {
-            MenuConfigurar menuConfigurar = new MenuConfigurar();
-            menuConfigurar.Show();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                MenuConfigurar menuConfigurar = new MenuConfigurar(txtCajaSeleccionada.Text);
+                menuConfigurar.Show();
+            }
         }
 
         private void Lblmenu_MouseClick(object sender, MouseEventArgs e)
         {
-            MenuConfigurar menuConfigurar = new MenuConfigurar();
-            menuConfigurar.Show();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                MenuConfigurar menuConfigurar = new MenuConfigurar(txtCajaSeleccionada.Text);
+                menuConfigurar.Show();
+            }
         }
 
         private void PictureBox12_MouseClick(object sender, MouseEventArgs e)
         {
-            MenuConfigurar menuConfigurar = new MenuConfigurar();
-            menuConfigurar.Show();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                MenuConfigurar menuConfigurar = new MenuConfigurar(txtCajaSeleccionada.Text);
+                menuConfigurar.Show();
+            }
         }
 
         private void PnlBotonInicio_MouseClick(object sender, MouseEventArgs e)
@@ -732,17 +780,44 @@ namespace PMS_POS.View
 
         private void PnlBotonTransacciones_MouseClick(object sender, MouseEventArgs e)
         {
-            showOrdenes();
+            //showOrdenes();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                OrdenesHOY ordenes = new OrdenesHOY(txtCajaSeleccionada.Text);
+                ordenes.Show();
+            }
         }
 
         private void Ordenes_MouseClick(object sender, MouseEventArgs e)
         {
-            showOrdenes();
+            //showOrdenes();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                OrdenesHOY ordenes = new OrdenesHOY(txtCajaSeleccionada.Text);
+                ordenes.Show();
+            }
         }
 
         private void PictureBox14_MouseClick(object sender, MouseEventArgs e)
         {
-            showOrdenes();
+            //showOrdenes();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, elige una caja.");
+            }
+            else
+            {
+                OrdenesHOY ordenes = new OrdenesHOY(txtCajaSeleccionada.Text);
+                ordenes.Show();
+            }
         }
 
         private void Label8_MouseHover(object sender, EventArgs e)
