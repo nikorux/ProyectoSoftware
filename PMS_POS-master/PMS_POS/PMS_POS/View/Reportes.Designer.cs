@@ -221,6 +221,7 @@
             this.txtBuscarRecepcion.Size = new System.Drawing.Size(448, 22);
             this.txtBuscarRecepcion.TabIndex = 6;
             this.txtBuscarRecepcion.Text = "Buscar Producto";
+            this.txtBuscarRecepcion.TextChanged += new System.EventHandler(this.txtBuscarRecepcion_TextChanged);
             // 
             // cbxRecepcion
             // 
