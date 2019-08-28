@@ -26,6 +26,7 @@ namespace PMS_POS.View
             dgvVentas.Columns[11].Visible = false;
             dgvVentas.Columns[12].Visible = false;
             dgvVentas.Columns[13].Visible = false;
+            dgvVentas.Columns[14].Visible = false;
             dgvVentas.Columns[10].Visible = false;
         }
         public VentasHOY(string NombreCaja)

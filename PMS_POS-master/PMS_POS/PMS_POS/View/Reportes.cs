@@ -14,178 +14,176 @@ namespace PMS_POS.View
 
 {
     public partial class Reportes : UserControl//uygvoygo
-{
-    public partial class Reportes : UserControl
-
     {
-        private static Reportes _instance;
-        public static Reportes Instance
-        {
-            get
+            private static Reportes _instance;
+            public static Reportes Instance
             {
-                if (_instance == null)
-                    _instance = new Reportes();
-                return _instance;
-            }
-        }
-
-        Producto producto = new Producto();
-        Mostrador mostrador = new Mostrador();
-
-        public Reportes()
-        {
-            InitializeComponent();
-            dgvAjustes.DataSource = producto.SelectAjustes();
-            dgvRecepcion.DataSource = producto.SelectHistorialComprasProveedores();
-            dgvFacturas.DataSource = producto.SelectFacturas();
-            dgvOrdenes.DataSource = mostrador.SelectPedidos();
-        }
-
-        private void TxtBuscarProducto_TextChanged(object sender, EventArgs e)
-        {
-            dgvAjustes.AllowUserToAddRows = false;
-
-            if (txtBuscarProductoAjustesInventario.Text != "")
-            {
-
-                dgvAjustes.CurrentCell = null;
-                foreach (DataGridViewRow n in dgvAjustes.Rows)
+                get
                 {
-                    n.Visible = false;
-                }
-                foreach (DataGridViewRow n in dgvAjustes.Rows)
-                {
-                    foreach (DataGridViewCell m in n.Cells)
-                    {
-                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarProductoAjustesInventario.Text.ToUpper()) == 0))
-                        {
-                            n.Visible = true;
-                            break;
-                        }
-                    }
+                    if (_instance == null)
+                        _instance = new Reportes();
+                    return _instance;
                 }
             }
-            else
+
+            Producto producto = new Producto();
+            Mostrador mostrador = new Mostrador();
+
+            public Reportes()
             {
-                //dgvAjustes.DataSource = producto.Select();
-            }
-        }
-
-        private void TxtBuscarProducto_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtBuscarProductoAjustesInventario.Text = "";
-        }
-
-
-        private void ChxPagadas_CheckedChanged(object sender, EventArgs e)
-        {
-            if(chxPagadas.Checked == true)
-            {
-                dgvFacturas.DataSource = producto.getDetallesFacturas("Pagada");
-            }
-            else
-            {
-                dgvFacturas.DataSource = producto.getDetallesFacturas("Pendiente");
-            }
-        }
-
-        private void CbxFormaPago_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string search = cbxFormaPago.SelectedItem.ToString();
-            dgvFacturas.DataSource = producto.getDetallesFacturas(search);
-        }
-
-        private void CbxFacturasTipoPago_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string search = cbxFacturasTipoPago.SelectedItem.ToString();
-            dgvFacturas.DataSource = producto.getDetallesFacturas(search);
-        }
-
-        private void Reportes_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                //COMBOBOX DISPLAY CTEGORIA
-                MySqlConnection connectionCategoria = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-                string queryCategoria = "SELECT NombreCategoria FROM categoria";
-                connectionCategoria.Open();
-                MySqlCommand command = new MySqlCommand(queryCategoria, connectionCategoria);
-                MySqlDataReader readerCategoria = command.ExecuteReader();
-                while (readerCategoria.Read())
-                {
-                    cbxRecepcion.Items.Add(readerCategoria.GetString("NombreCategoria"));
-                }
-                connectionCategoria.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void TxtBuscarVentas_TextChanged(object sender, EventArgs e)
-        {
-            dgvOrdenes.AllowUserToAddRows = false;
-
-            if (txtBuscarVentas.Text != "")
-            {
-
-                dgvOrdenes.CurrentCell = null;
-                foreach (DataGridViewRow n in dgvOrdenes.Rows)
-                {
-                    n.Visible = false;
-                }
-                foreach (DataGridViewRow n in dgvOrdenes.Rows)
-                {
-                    foreach (DataGridViewCell m in n.Cells)
-                    {
-                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarVentas.Text.ToUpper()) == 0))
-                        {
-                            n.Visible = true;
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
+                InitializeComponent();
+                dgvAjustes.DataSource = producto.SelectAjustes();
+                dgvRecepcion.DataSource = producto.SelectHistorialComprasProveedores();
+                dgvFacturas.DataSource = producto.SelectFacturas();
                 dgvOrdenes.DataSource = mostrador.SelectPedidos();
             }
-        }
 
-        private void CbxEstadoPedido_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string search = cbxFormaPago.SelectedItem.ToString();
-            dgvFacturas.DataSource = mostrador.SelectEstadoPedido(search);
-        }
-
-        private void txtBuscarRecepcion_TextChanged(object sender, EventArgs e)
-        {
-            dgvRecepcion.AllowUserToAddRows = false;
-
-            if (txtBuscarRecepcion.Text != "" && txtBuscarRecepcion.Text != "Buscar")
+            private void TxtBuscarProducto_TextChanged(object sender, EventArgs e)
             {
-                dgvRecepcion.CurrentCell = null;
-                foreach (DataGridViewRow n in dgvRecepcion.Rows)
+                dgvAjustes.AllowUserToAddRows = false;
+
+                if (txtBuscarProductoAjustesInventario.Text != "")
                 {
-                    n.Visible = false;
-                }
-                foreach (DataGridViewRow n in dgvRecepcion.Rows)
-                {
-                    foreach (DataGridViewCell m in n.Cells)
+
+                    dgvAjustes.CurrentCell = null;
+                    foreach (DataGridViewRow n in dgvAjustes.Rows)
                     {
-                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarRecepcion.Text.ToUpper()) == 0))
+                        n.Visible = false;
+                    }
+                    foreach (DataGridViewRow n in dgvAjustes.Rows)
+                    {
+                        foreach (DataGridViewCell m in n.Cells)
                         {
-                            n.Visible = true;
-                            break;
+                            if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarProductoAjustesInventario.Text.ToUpper()) == 0))
+                            {
+                                n.Visible = true;
+                                break;
+                            }
                         }
                     }
                 }
+                else
+                {
+                    //dgvAjustes.DataSource = producto.Select();
+                }
             }
-            else
+
+            private void TxtBuscarProducto_MouseClick(object sender, MouseEventArgs e)
             {
-                dgvRecepcion.DataSource = producto.SelectHistorialComprasProveedores();
+                txtBuscarProductoAjustesInventario.Text = "";
+            }
+
+
+            private void ChxPagadas_CheckedChanged(object sender, EventArgs e)
+            {
+                if (chxPagadas.Checked == true)
+                {
+                    dgvFacturas.DataSource = producto.getDetallesFacturas("Pagada");
+                }
+                else
+                {
+                    dgvFacturas.DataSource = producto.getDetallesFacturas("Pendiente");
+                }
+            }
+
+            private void CbxFormaPago_SelectedIndexChanged(object sender, EventArgs e)
+            {
+                string search = cbxFormaPago.SelectedItem.ToString();
+                dgvFacturas.DataSource = producto.getDetallesFacturas(search);
+            }
+
+            private void CbxFacturasTipoPago_SelectedIndexChanged(object sender, EventArgs e)
+            {
+                string search = cbxFacturasTipoPago.SelectedItem.ToString();
+                dgvFacturas.DataSource = producto.getDetallesFacturas(search);
+            }
+
+            private void Reportes_Load(object sender, EventArgs e)
+            {
+                try
+                {
+                    //COMBOBOX DISPLAY CTEGORIA
+                    MySqlConnection connectionCategoria = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
+                    string queryCategoria = "SELECT NombreCategoria FROM categoria";
+                    connectionCategoria.Open();
+                    MySqlCommand command = new MySqlCommand(queryCategoria, connectionCategoria);
+                    MySqlDataReader readerCategoria = command.ExecuteReader();
+                    while (readerCategoria.Read())
+                    {
+                        cbxRecepcion.Items.Add(readerCategoria.GetString("NombreCategoria"));
+                    }
+                    connectionCategoria.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            private void TxtBuscarVentas_TextChanged(object sender, EventArgs e)
+            {
+                dgvOrdenes.AllowUserToAddRows = false;
+
+                if (txtBuscarVentas.Text != "")
+                {
+
+                    dgvOrdenes.CurrentCell = null;
+                    foreach (DataGridViewRow n in dgvOrdenes.Rows)
+                    {
+                        n.Visible = false;
+                    }
+                    foreach (DataGridViewRow n in dgvOrdenes.Rows)
+                    {
+                        foreach (DataGridViewCell m in n.Cells)
+                        {
+                            if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarVentas.Text.ToUpper()) == 0))
+                            {
+                                n.Visible = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    dgvOrdenes.DataSource = mostrador.SelectPedidos();
+                }
+            }
+
+            private void CbxEstadoPedido_SelectedIndexChanged(object sender, EventArgs e)
+            {
+                string search = cbxFormaPago.SelectedItem.ToString();
+                dgvFacturas.DataSource = mostrador.SelectEstadoPedido(search);
+            }
+
+            private void txtBuscarRecepcion_TextChanged(object sender, EventArgs e)
+            {
+                dgvRecepcion.AllowUserToAddRows = false;
+
+                if (txtBuscarRecepcion.Text != "" && txtBuscarRecepcion.Text != "Buscar")
+                {
+                    dgvRecepcion.CurrentCell = null;
+                    foreach (DataGridViewRow n in dgvRecepcion.Rows)
+                    {
+                        n.Visible = false;
+                    }
+                    foreach (DataGridViewRow n in dgvRecepcion.Rows)
+                    {
+                        foreach (DataGridViewCell m in n.Cells)
+                        {
+                            if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarRecepcion.Text.ToUpper()) == 0))
+                            {
+                                n.Visible = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    dgvRecepcion.DataSource = producto.SelectHistorialComprasProveedores();
+                }
             }
         }
-    }
+  
 }
