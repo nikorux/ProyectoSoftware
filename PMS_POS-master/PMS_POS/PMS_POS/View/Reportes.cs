@@ -101,7 +101,7 @@ namespace PMS_POS.View
         {
             try
             {
-                //COMBOBOX DISPLAY CATEGORIA
+                //COMBOBOX DISPLAY CTEGORIA
                 MySqlConnection connectionCategoria = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
                 string queryCategoria = "SELECT NombreCategoria FROM categoria";
                 connectionCategoria.Open();

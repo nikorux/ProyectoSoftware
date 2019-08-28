@@ -869,7 +869,7 @@ namespace PMS_POS.View
             dgvProductosRegistrados.DataSource = GetProvList();
         }
 
-        private DataTable GetProvList()//listar 
+        private DataTable GetProvList()// listar 
         {
             DataTable dtProveedores = new DataTable();
             string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;

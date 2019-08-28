@@ -261,22 +261,22 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label21.Location = new System.Drawing.Point(801, 3);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(239, 25);
+            this.label21.Size = new System.Drawing.Size(219, 25);
             this.label21.TabIndex = 26;
             this.label21.Text = "Productos en Receta:";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label23.Location = new System.Drawing.Point(24, 7);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(262, 25);
+            this.label23.Size = new System.Drawing.Size(239, 25);
             this.label23.TabIndex = 25;
             this.label23.Text = "Productos en Inventario";
             // 
@@ -397,11 +397,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(81)))), ((int)(((byte)(193)))));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label18.Location = new System.Drawing.Point(512, 7);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(86, 25);
+            this.label18.Size = new System.Drawing.Size(80, 25);
             this.label18.TabIndex = 16;
             this.label18.Text = "Receta";
             // 
