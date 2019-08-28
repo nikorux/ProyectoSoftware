@@ -13,6 +13,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,23 +40,37 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Downloads\Bunifu UI\Bunifu UI\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
@@ -64,11 +80,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,8 +98,9 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ControllerHabitacion.cs" />
@@ -90,6 +113,33 @@
     <Compile Include="Model\Empleado.cs" />
     <Compile Include="Model\EstadoHabitaciones.cs" />
     <Compile Include="Model\Factura_Reservacion.cs" />
+    <Compile Include="Reportes\frmReporteHuesped.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteHuesped.Designer.cs">
+      <DependentUpon>frmReporteHuesped.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Prueba.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prueba.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSet.cs">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSetEmpleado.cs">
+      <DependentUpon>ReportesDataSetEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSetEmpleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportesDataSetEmpleado.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="View\BuscarCheckedIn.cs">
       <SubType>Form</SubType>
@@ -142,6 +192,12 @@
     <Compile Include="View\ConfigurarTipoHabitacion.designer.cs">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ErrorDatosFaltantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ErrorDatosFaltantes.Designer.cs">
+      <DependentUpon>ErrorDatosFaltantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FacturacionCheckIn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,17 +210,23 @@
     <Compile Include="View\FacturacionCheckOut.Designer.cs">
       <DependentUpon>FacturacionCheckOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FrmCorrecto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FrmCorrecto.Designer.cs">
       <DependentUpon>FrmCorrecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLogincs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogincs.Designer.cs">
+      <DependentUpon>FrmLogincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmSeguroCerrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSeguroCerrar.Designer.cs">
+      <DependentUpon>FrmSeguroCerrar.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Impresion.cs" />
     <Compile Include="View\InformacionEstablecimiento.cs">
@@ -271,12 +333,24 @@
     <Compile Include="View\UserControlInicio.Designer.cs">
       <DependentUpon>UserControlInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControlInicioFaltante.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlInicioFaltante.Designer.cs">
+      <DependentUpon>UserControlInicioFaltante.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VentanaGraficos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\VentanaGraficos.Designer.cs">
       <DependentUpon>VentanaGraficos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\frmReporteHuesped.resx">
+      <DependentUpon>frmReporteHuesped.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes\reportehuespedes.rdlc" />
+    <EmbeddedResource Include="Reportes\WizardPrueba.rdlc" />
     <EmbeddedResource Include="View\BuscarCheckedIn.resx">
       <DependentUpon>BuscarCheckedIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +382,9 @@
     <EmbeddedResource Include="View\ConfigurarTipoHabitacion.resx">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ErrorDatosFaltantes.resx">
+      <DependentUpon>ErrorDatosFaltantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FacturacionCheckIn.resx">
       <DependentUpon>FacturacionCheckIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +393,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCorrecto.resx">
       <DependentUpon>FrmCorrecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLogincs.resx">
+      <DependentUpon>FrmLogincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmSeguroCerrar.resx">
+      <DependentUpon>FrmSeguroCerrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\InformacionEstablecimiento.resx">
       <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
@@ -365,11 +448,13 @@
     <EmbeddedResource Include="View\UserControlInicio.resx">
       <DependentUpon>UserControlInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlInicioFaltante.resx">
+      <DependentUpon>UserControlInicioFaltante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\VentanaGraficos.resx">
       <DependentUpon>VentanaGraficos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\PMS_POS.Model.Factura_Reservacion.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -383,7 +468,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="img\arrows.png" />
     <Content Include="SqlServerTypes\readme.htm" />
@@ -399,6 +486,39 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Reportes\Prueba.xsc">
+      <DependentUpon>Prueba.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Prueba.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Prueba.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Prueba.xss">
+      <DependentUpon>Prueba.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xsc">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xss">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSetEmpleado.xsc">
+      <DependentUpon>ReportesDataSetEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSetEmpleado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportesDataSetEmpleado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportesDataSetEmpleado.xss">
+      <DependentUpon>ReportesDataSetEmpleado.xsd</DependentUpon>
+    </None>
     <None Include="Resources\img_63493.png" />
     <None Include="Resources\Imagen101.png" />
     <None Include="Resources\Imagen51.png" />

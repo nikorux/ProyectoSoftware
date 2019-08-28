@@ -34,7 +34,7 @@ namespace PMS_POS.View
             {
                 if (this.txtPrimerNombre.Text == string.Empty || this.txtPrimerApellido.Text == string.Empty)
                 {
-                    MessageBox.Show("Falta ingresar algunos datos.");
+                    ErrorDatosFaltantes.confirmacionForm("ERROR");
                 }
                 else
                 {
@@ -53,6 +53,8 @@ namespace PMS_POS.View
                     pEmpleado.Provincia = txtProvincia.Text.Trim();
                     pEmpleado.Pais = txtPaisNatal.Text.Trim();
                     pEmpleado.Correo = txtCorreo.Text.Trim();
+                    pEmpleado.Usuario = txtUsuario.Text.Trim();
+                    pEmpleado.Contraseña = txtContra.Text.Trim();
 
                     int resultado = EmpleadoC.Agregar(pEmpleado);
                     if (resultado > 0)
@@ -72,10 +74,12 @@ namespace PMS_POS.View
                         txtProvincia.Text = "";
                         txtPaisNatal.Text = "";
                         txtCorreo.Text = "";
+                        txtUsuario.Text = "";
+                        txtContra.Text = "";
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo guardar el empleado", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        FrmSeguroCerrar.confirmacionForm("ERROR");
                     }
                 }
             }

@@ -19,7 +19,7 @@ namespace PMS_POS.Controller
             int retorno = 0;
 
             MySqlCommand comando = new MySqlCommand(string.Format("Insert into tipo_habitacion (NombreTipoHab) values ('{0}')",
-                pNombreTipoHab.NombreTipoHab), BDGeneral.ObtenerConexion());
+            pNombreTipoHab.NombreTipoHab), BDGeneral.ObtenerConexion());
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }

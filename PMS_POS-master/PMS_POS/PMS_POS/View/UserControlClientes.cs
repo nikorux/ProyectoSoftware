@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PMS_POS.Controller;
 using PMS_POS.Model;
 using MySql.Data.MySqlClient;
+using PMS_POS.Reportes;
 
 namespace PMS_POS.View
 {
@@ -25,17 +26,17 @@ namespace PMS_POS.View
         RegistroNuevoCliente form2 = new RegistroNuevoCliente();
         FacturacionCheckIn ucFacturacionCheckIn = null;
 
-       
-       /* private static UserControlClientes _instance;
-        public static UserControlClientes Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new UserControlClientes();
-                return _instance;
-            }
-        }*/
+
+        /* private static UserControlClientes _instance;
+         public static UserControlClientes Instance
+         {
+             get
+             {
+                 if (_instance == null)
+                     _instance = new UserControlClientes();
+                 return _instance;
+             }
+         }*/
 
         public UserControlClientes()
         {
@@ -132,10 +133,11 @@ namespace PMS_POS.View
         {
                 if (dgvClientes.SelectedRows.Count > 0)
                 {
-                    //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
-                    form2.ObtenerDatos(dgvClientes.CurrentRow.Cells[0].Value.ToString(), dgvClientes.CurrentRow.Cells[1].Value.ToString(), dgvClientes.CurrentRow.Cells[2].Value.ToString(), dgvClientes.CurrentRow.Cells[3].Value.ToString(), dgvClientes.CurrentRow.Cells[4].Value.ToString(), dgvClientes.CurrentRow.Cells[5].Value.ToString(), dgvClientes.CurrentRow.Cells[6].Value.ToString(), dgvClientes.CurrentRow.Cells[7].Value.ToString(), dgvClientes.CurrentRow.Cells[8].Value.ToString());
-                    form2.FormClosed += new FormClosedEventHandler(RegistroNuevoCliente_FormClosed);
-                    form2.ShowDialog();
+                //Si las filas son más de 0 se muestran los valores de la fila y se actualiza el booleano "editar"
+                form2.ObtenerDatos(dgvClientes.CurrentRow.Cells[0].Value.ToString(), dgvClientes.CurrentRow.Cells[1].Value.ToString(), dgvClientes.CurrentRow.Cells[2].Value.ToString(), dgvClientes.CurrentRow.Cells[3].Value.ToString(), dgvClientes.CurrentRow.Cells[4].Value.ToString(), dgvClientes.CurrentRow.Cells[5].Value.ToString(), dgvClientes.CurrentRow.Cells[6].Value.ToString(), dgvClientes.CurrentRow.Cells[7].Value.ToString(), dgvClientes.CurrentRow.Cells[8].Value.ToString());
+                form2.FormClosed += new FormClosedEventHandler(RegistroNuevoCliente_FormClosed);
+                form2.ShowDialog();
+                form2.DatosClientesD();
                 }
                 else
                 {
@@ -143,6 +145,7 @@ namespace PMS_POS.View
                 }
         }
 
+       
         private void btnEliminarClientes_Click(object sender, EventArgs e)
         {
             try
@@ -197,6 +200,17 @@ namespace PMS_POS.View
             }
             MainScreen.Instance.PnlContainer.Controls["FacturacionCheckIn"].BringToFront();
 
+        }
+
+        private void FrmReporteHuesped_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
+            frmReporteHuesped form2 = new frmReporteHuesped();
+            form2.FormClosed += new FormClosedEventHandler(FrmReporteHuesped_FormClosed);
+            form2.ShowDialog();
         }
     }
 }

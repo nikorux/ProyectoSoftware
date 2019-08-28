@@ -20,8 +20,8 @@ namespace PMS_POS.Controller
         {
             int retorno = 0;
 
-            MySqlCommand comando = new MySqlCommand(string.Format("Insert into empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Rol, TipoDocumento, NumDocumento, Sexo, Telefono, Direccion, Ciudad, Provincia, Pais, Correo) values ('{0}','{1}','{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}')",
-                pEmpleado.PrimerNombre, pEmpleado.SegundoNombre, pEmpleado.PrimerApellido, pEmpleado.SegundoApellido, pEmpleado.RolEmpleado, pEmpleado.TipoDocumento, pEmpleado.NumDocumento, pEmpleado.Sexo, pEmpleado.Telefono, pEmpleado.Direccion, pEmpleado.Ciudad, pEmpleado.Provincia, pEmpleado.Pais, pEmpleado.Correo), BDGeneral.ObtenerConexion()); //Conexión abierta
+            MySqlCommand comando = new MySqlCommand(string.Format("Insert into empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Rol, TipoDocumento, NumDocumento, Sexo, Telefono, Direccion, Ciudad, Provincia, Pais, Correo, Usuario, Contraseña) values ('{0}','{1}','{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}')",
+                pEmpleado.PrimerNombre, pEmpleado.SegundoNombre, pEmpleado.PrimerApellido, pEmpleado.SegundoApellido, pEmpleado.RolEmpleado, pEmpleado.TipoDocumento, pEmpleado.NumDocumento, pEmpleado.Sexo, pEmpleado.Telefono, pEmpleado.Direccion, pEmpleado.Ciudad, pEmpleado.Provincia, pEmpleado.Pais, pEmpleado.Correo, pEmpleado.Usuario, pEmpleado.Contraseña), BDGeneral.ObtenerConexion()); //Conexión abierta
 
             retorno = comando.ExecuteNonQuery();
 
