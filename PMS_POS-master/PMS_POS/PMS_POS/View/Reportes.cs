@@ -63,7 +63,7 @@ namespace PMS_POS.View
             }
             else
             {
-                dgvAjustes.DataSource = producto.Select();
+                //dgvAjustes.DataSource = producto.Select();
             }
         }
 

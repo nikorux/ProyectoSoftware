@@ -334,7 +334,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -347,7 +347,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -360,7 +360,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -388,7 +388,7 @@ namespace PMS_POS.View
         {
             if(cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -402,7 +402,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -415,7 +415,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -426,17 +426,44 @@ namespace PMS_POS.View
 
         private void PnlBotonInventario_MouseClick_1(object sender, MouseEventArgs e)
         {
-            showInventario();
+            //showInventario();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, seleccione una caja.");
+            }
+            else
+            {
+                InventarioProductos inventario = new InventarioProductos(txtCajaSeleccionada.Text);
+                inventario.Show();
+            }
         }
 
         private void Label7_MouseClick(object sender, MouseEventArgs e)
         {
-            showInventario();
+            //showInventario();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, seleccione una caja.");
+            }
+            else
+            {
+                InventarioProductos inventario = new InventarioProductos(txtCajaSeleccionada.Text);
+                inventario.Show();
+            }
         }
 
         private void PictureBox10_MouseClick(object sender, MouseEventArgs e)
         {
-            showInventario();
+            //showInventario();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, seleccione una caja.");
+            }
+            else
+            {
+                InventarioProductos inventario = new InventarioProductos(txtCajaSeleccionada.Text);
+                inventario.Show();
+            }
         }
 
         private void PnlBotonTransacciones_MouseLeave_1(object sender, EventArgs e)

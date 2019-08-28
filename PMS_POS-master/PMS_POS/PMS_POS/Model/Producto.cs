@@ -222,20 +222,30 @@ namespace PMS_POS.Model
             }
         }
 
-        public DataTable FiltrarPORcategoria(string NombreCategoria)
+        public DataTable FiltrarPORcategoria(string NombreCategoria, string NombreCaja)
         {
             int IdCategoria = SelectIdCategoria(NombreCategoria);
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                string sql = "SELECT * FROM insumo WHERE IdCategoria=@idCategoria AND IsDeleted=0";
+                string sql = "SELECT * FROM insumo WHERE IdCategoria=@idCategoria AND IsDeleted=0 AND NombreCaja=@NombreCaja";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@idCategoria", IdCategoria);
+                cmd.Parameters.AddWithValue("@NombreCaja", NombreCaja);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
+                dt.Columns["IdInsumo"].ColumnName = "##";
+                dt.Columns["NombreInsumo"].ColumnName = "Nombre";
+                dt.Columns["DescripcionInsumo"].ColumnName = "Descripción";
+                dt.Columns["PrecioCompra"].ColumnName = "Precio Compra";
+                dt.Columns["PrecioVenta"].ColumnName = "Precio Venta";
+                dt.Columns["CantActual"].ColumnName = "Cant. Actual";
+                dt.Columns["CantMinima"].ColumnName = "Cant. Mínima";
+                dt.Columns["CantMaxima"].ColumnName = "Cant. Máxima";
+                dt.Columns["UnidadMedida"].ColumnName = "Unidad Medida";
             }
             catch (Exception)
             {
@@ -248,20 +258,30 @@ namespace PMS_POS.Model
             return dt;
         }
 
-        public DataTable FiltrarPORproveedor(string NombreProveedor)
+        public DataTable FiltrarPORproveedor(string NombreProveedor, string NombreCaja)
         {
             int IdProveedor = SelectIdProveedorFROMnombreCompania(NombreProveedor);
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                string sql = "SELECT * FROM insumo WHERE Proveedor=@idProveedor AND IsDeleted=0";
+                string sql = "SELECT * FROM insumo WHERE Proveedor=@idProveedor AND IsDeleted=0 AND NombreCaja=@NombreCaja";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@idProveedor", IdProveedor);
+                cmd.Parameters.AddWithValue("@NombreCaja", NombreCaja);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
+                dt.Columns["IdInsumo"].ColumnName = "##";
+                dt.Columns["NombreInsumo"].ColumnName = "Nombre";
+                dt.Columns["DescripcionInsumo"].ColumnName = "Descripción";
+                dt.Columns["PrecioCompra"].ColumnName = "Precio Compra";
+                dt.Columns["PrecioVenta"].ColumnName = "Precio Venta";
+                dt.Columns["CantActual"].ColumnName = "Cant. Actual";
+                dt.Columns["CantMinima"].ColumnName = "Cant. Mínima";
+                dt.Columns["CantMaxima"].ColumnName = "Cant. Máxima";
+                dt.Columns["UnidadMedida"].ColumnName = "Unidad Medida";
             }
             catch (Exception)
             {
@@ -283,7 +303,6 @@ namespace PMS_POS.Model
             {
                 string sql = "select count(*) from insumo";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.CommandType = CommandType.Text;
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 return resp = Convert.ToInt32(cmd.ExecuteScalar());
@@ -299,14 +318,16 @@ namespace PMS_POS.Model
             return resp;
         }
 
-        public DataTable Select()
+        public DataTable Select(string NombreCaja)
         {
             MySqlConnection conn = new MySqlConnection(connString);
             DataTable dt = new DataTable();
             try
             {
-                string sql = "SELECT * FROM insumo WHERE IsDeleted=0";
+                string sql = "SELECT * FROM insumo WHERE IsDeleted=0 AND NombreCaja=@NombreCaja";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@NombreCaja", NombreCaja);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
@@ -453,6 +474,46 @@ namespace PMS_POS.Model
                 cmd.Parameters.AddWithValue("@UnidadMedida", x.UnidadMedida);
                 cmd.Parameters.AddWithValue("@EnMostrador", x.EnMostrador);
                 cmd.Parameters.AddWithValue("@TieneReceta", x.TieneReceta);
+                int row = cmd.ExecuteNonQuery();
+                mySqlConn.Close();
+                if (row > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+        }
+
+        public bool InsertHistorialInsumo(Producto x)
+        {
+            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
+            {
+                string sql = "INSERT INTO insumo (IdInsumo, NombreInsumo, IdCategoria, DescripcionInsumo, Proveedor, NombreCaja, PrecioCompra, PorcientoImpuesto, Impuesto, PrecioVenta, CantActual, CantMinima, CantMaxima, UnidadMedida, TieneReceta, EnMostrador) VALUES (@NombreInsumo, @IdCategoria, @DescripcionInsumo, @IdProveedor, @NombreCaja, @PrecioCompra, @PorcientoImpuesto, @Impuesto, @PrecioVenta, @CantActual, @CantMinima, @CantMaxima, @UnidadMedida, @TieneReceta, @EnMostrador)";
+                mySqlConn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdInsumo", x.IdInsumo);
+                cmd.Parameters.AddWithValue("@NombreInsumo", x.NombreInsumo);
+                cmd.Parameters.AddWithValue("@IdCategoria", x.IdCategoria);
+                cmd.Parameters.AddWithValue("@DescripcionInsumo", x.DescripcionInsumo);
+                cmd.Parameters.AddWithValue("@IdProveedor", x.IdProveedor);
+                cmd.Parameters.AddWithValue("@NombreCaja", x.NombreCaja);
+                cmd.Parameters.AddWithValue("@PrecioCompra", x.PrecioCompra);
+                cmd.Parameters.AddWithValue("@PorcientoImpuesto", x.PorcientoImpuesto);
+                cmd.Parameters.AddWithValue("@Impuesto", x.Impuesto);
+                cmd.Parameters.AddWithValue("@PrecioVenta", x.PrecioVenta);
+                cmd.Parameters.AddWithValue("@CantActual", x.CantActual);
+                cmd.Parameters.AddWithValue("@CantMinima", x.CantMinima);
+                cmd.Parameters.AddWithValue("@CantMaxima", x.CantMaxima);
+                cmd.Parameters.AddWithValue("@UnidadMedida", x.UnidadMedida);
+                cmd.Parameters.AddWithValue("@EnMostrador", x.EnMostrador);
+                cmd.Parameters.AddWithValue("@TieneReceta", x.TieneReceta);
+                cmd.Parameters.AddWithValue("@IsDeleted", 1);
+                cmd.Parameters.AddWithValue("@DeletedDate", DateTime.Now);
                 int row = cmd.ExecuteNonQuery();
                 mySqlConn.Close();
                 if (row > 0)

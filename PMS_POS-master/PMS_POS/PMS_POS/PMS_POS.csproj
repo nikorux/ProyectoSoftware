@@ -133,6 +133,12 @@
     <Compile Include="View\Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\InventarioProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InventarioProductos.Designer.cs">
+      <DependentUpon>InventarioProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ListaClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InventarioProductos.resx">
+      <DependentUpon>InventarioProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ListaClientes.resx">
       <DependentUpon>ListaClientes.cs</DependentUpon>
