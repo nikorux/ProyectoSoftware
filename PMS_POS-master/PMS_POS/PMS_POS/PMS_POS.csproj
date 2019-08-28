@@ -85,12 +85,6 @@
     <Compile Include="Model\TipoHabitacion.cs" />
     <Compile Include="Model\UnidadMedida.cs" />
     <Compile Include="Model\validar.cs" />
-    <Compile Include="View\AjustarStock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\AjustarStock.Designer.cs">
-      <DependentUpon>AjustarStock.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ConfiguracionPOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,12 +279,6 @@
     <Compile Include="View\ReporteVentas.Designer.cs">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Transacciones.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Transacciones.Designer.cs">
-      <DependentUpon>Transacciones.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\UserControlHabitaciones.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -331,9 +319,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\AjustarStock.resx">
-      <DependentUpon>AjustarStock.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\ConfiguracionPOS.resx">
       <DependentUpon>ConfiguracionPOS.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,9 +414,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ReporteVentas.resx">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Transacciones.resx">
-      <DependentUpon>Transacciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControlHabitaciones.resx">
       <DependentUpon>UserControlHabitaciones.cs</DependentUpon>

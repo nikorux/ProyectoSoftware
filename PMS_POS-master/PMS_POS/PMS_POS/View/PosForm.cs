@@ -63,7 +63,7 @@ namespace PMS_POS.View
             InitializeComponent();
             panelBasePOS.Visible = true;
 
-            showPaginaInicio();
+            //showPaginaInicio();
             pnlCajasDisponibles.Visible = false;
             cajaSeleccionada = txtCajaSeleccionada.Text;
 
@@ -86,7 +86,6 @@ namespace PMS_POS.View
             ReporteVentas.Instance.SendToBack();
             Reportes.Instance.SendToBack();
             Inventario.Instance.SendToBack();
-            Transacciones.Instance.SendToBack();
         }
 
         public void showReportes()
@@ -107,29 +106,6 @@ namespace PMS_POS.View
             }
         }
 
-       public void showOrdenes()
-       {
-            panelUIseleccionada.BringToFront();
-            panelUIseleccionada.Visible = true;
-            hideUIs();
-
-            panelUIseleccionada.BringToFront();
-            panelUIseleccionada.Visible = true;
-            hideUIs();
-
-            if (!panelUIseleccionada.Controls.Contains(Ordenes1.Instance))
-            {
-                panelUIseleccionada.Controls.Add(Ordenes1.Instance);
-                Ordenes1.Instance.Dock = DockStyle.Fill;
-                Ordenes1.Instance.BringToFront();
-            }
-            else
-            {
-                Ordenes1.Instance.BringToFront();
-            }
-
-        }
-
         public void showInventario()
         {
             panelUIseleccionada.BringToFront();
@@ -147,25 +123,6 @@ namespace PMS_POS.View
                 Inventario.Instance.BringToFront();
             }
         }
-
-        public void showTransacciones()
-        {
-            panelUIseleccionada.BringToFront();
-            panelUIseleccionada.Visible = true;
-            hideUIs();
-
-            if (!panelUIseleccionada.Controls.Contains(Transacciones.Instance))
-            {
-                panelUIseleccionada.Controls.Add(Transacciones.Instance);
-                Transacciones.Instance.Dock = DockStyle.Fill;
-                Transacciones.Instance.BringToFront();
-            }
-            else
-            {
-                Transacciones.Instance.BringToFront();
-            }
-        }
-
         public void showProveedores()
         {
             panelUIseleccionada.BringToFront();
@@ -414,17 +371,17 @@ namespace PMS_POS.View
 
         private void PnlBotonInicio_MouseClick(object sender, MouseEventArgs e)
         {
-            showPaginaInicio();
+            //showPaginaInicio();
         }
 
         private void LblInicio_MouseClick(object sender, MouseEventArgs e)
         {
-            showPaginaInicio();
+            //showPaginaInicio();
         }
 
         private void PictureBox9_MouseClick(object sender, MouseEventArgs e)
         {
-            showPaginaInicio();
+            //showPaginaInicio();
         }
 
         private void PnlBotonMostrador_MouseClick(object sender, MouseEventArgs e)
