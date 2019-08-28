@@ -18,7 +18,7 @@ namespace PMS_POS.View
         Mostrador mostrador = new Mostrador();
         Receta receta = new Receta();
 
-        public int editar { get; set; }//ubkuhvgv
+        public int editar { get; set; }
         public int idReceta { get; set; }
 
         static public int IdInsumoP = 0;

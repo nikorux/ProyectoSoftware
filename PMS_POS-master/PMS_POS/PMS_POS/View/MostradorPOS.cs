@@ -940,6 +940,9 @@ namespace PMS_POS.View
                 cbxAsignarMesa.Text = "";
                 dgvFactura.Rows.Clear();
                 dgvFactura.Refresh();
+                lblITBIS.Text = "0.00";
+                lblSubTotal.Text = "0.00";
+                lblTotalAPagar.Text = "0.00";
 
                 if (mostrador.CantidadDePedidos() == 0)
                 {

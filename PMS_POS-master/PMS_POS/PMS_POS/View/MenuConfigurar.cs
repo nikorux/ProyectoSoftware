@@ -14,7 +14,7 @@ namespace PMS_POS.View
 {
     public partial class MenuConfigurar : Form
     {
-        private static MenuConfigurar _instance;//kuyvkuvgy
+        private static MenuConfigurar _instance;
         public static MenuConfigurar Instance
         {
             get

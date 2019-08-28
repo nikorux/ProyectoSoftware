@@ -172,7 +172,7 @@
             this.label14.BackColor = System.Drawing.Color.White;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label14.Location = new System.Drawing.Point(80, 17);
+            this.label14.Location = new System.Drawing.Point(84, 17);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(91, 33);
             this.label14.TabIndex = 19;

@@ -54,9 +54,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Ordenes = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pnlBotonInicio = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.lblInicio = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.pnlBotonesProveedores = new System.Windows.Forms.Panel();
@@ -107,8 +104,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.pnlBotonTransacciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.pnlBotonInicio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.pnlBotonesProveedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.pnlBotonMostrador.SuspendLayout();
@@ -187,7 +182,6 @@
             this.panel2.Controls.Add(this.pnlBotonVentas);
             this.panel2.Controls.Add(this.pnlBotonInventario);
             this.panel2.Controls.Add(this.pnlBotonTransacciones);
-            this.panel2.Controls.Add(this.pnlBotonInicio);
             this.panel2.Controls.Add(this.lblHora);
             this.panel2.Controls.Add(this.lblFecha);
             this.panel2.Controls.Add(this.pnlBotonesProveedores);
@@ -252,7 +246,7 @@
             this.pnlConfigurar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlConfigurar.Controls.Add(this.label10);
             this.pnlConfigurar.Controls.Add(this.pictureBox17);
-            this.pnlConfigurar.Location = new System.Drawing.Point(596, 9);
+            this.pnlConfigurar.Location = new System.Drawing.Point(543, 9);
             this.pnlConfigurar.Name = "pnlConfigurar";
             this.pnlConfigurar.Size = new System.Drawing.Size(72, 71);
             this.pnlConfigurar.TabIndex = 20;
@@ -302,7 +296,7 @@
             this.pnlBotonVentas.Controls.Add(this.label9);
             this.pnlBotonVentas.Controls.Add(this.lblVentas);
             this.pnlBotonVentas.Controls.Add(this.pictureBox16);
-            this.pnlBotonVentas.Location = new System.Drawing.Point(523, 9);
+            this.pnlBotonVentas.Location = new System.Drawing.Point(470, 9);
             this.pnlBotonVentas.Name = "pnlBotonVentas";
             this.pnlBotonVentas.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonVentas.TabIndex = 0;
@@ -353,7 +347,7 @@
             this.pnlBotonInventario.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonInventario.Controls.Add(this.label7);
             this.pnlBotonInventario.Controls.Add(this.pictureBox10);
-            this.pnlBotonInventario.Location = new System.Drawing.Point(85, 9);
+            this.pnlBotonInventario.Location = new System.Drawing.Point(32, 9);
             this.pnlBotonInventario.Name = "pnlBotonInventario";
             this.pnlBotonInventario.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonInventario.TabIndex = 8;
@@ -393,7 +387,7 @@
             this.pnlBotonTransacciones.Controls.Add(this.label8);
             this.pnlBotonTransacciones.Controls.Add(this.Ordenes);
             this.pnlBotonTransacciones.Controls.Add(this.pictureBox14);
-            this.pnlBotonTransacciones.Location = new System.Drawing.Point(377, 9);
+            this.pnlBotonTransacciones.Location = new System.Drawing.Point(324, 9);
             this.pnlBotonTransacciones.Name = "pnlBotonTransacciones";
             this.pnlBotonTransacciones.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonTransacciones.TabIndex = 5;
@@ -439,45 +433,6 @@
             this.pictureBox14.MouseLeave += new System.EventHandler(this.PictureBox14_MouseLeave);
             this.pictureBox14.MouseHover += new System.EventHandler(this.PictureBox14_MouseHover);
             // 
-            // pnlBotonInicio
-            // 
-            this.pnlBotonInicio.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.pnlBotonInicio.Controls.Add(this.pictureBox9);
-            this.pnlBotonInicio.Controls.Add(this.lblInicio);
-            this.pnlBotonInicio.Location = new System.Drawing.Point(12, 9);
-            this.pnlBotonInicio.Name = "pnlBotonInicio";
-            this.pnlBotonInicio.Size = new System.Drawing.Size(72, 71);
-            this.pnlBotonInicio.TabIndex = 6;
-            this.pnlBotonInicio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBotonInicio_MouseClick);
-            this.pnlBotonInicio.MouseLeave += new System.EventHandler(this.PnlBotonInicio_MouseLeave_1);
-            this.pnlBotonInicio.MouseHover += new System.EventHandler(this.PnlBotonInicio_MouseHover);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::PMS_POS.Properties.Resources.HomeIMG;
-            this.pictureBox9.Location = new System.Drawing.Point(9, 3);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(53, 52);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 12;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBox9_MouseClick);
-            this.pictureBox9.MouseLeave += new System.EventHandler(this.PictureBox9_MouseLeave);
-            this.pictureBox9.MouseHover += new System.EventHandler(this.PictureBox9_MouseHover);
-            // 
-            // lblInicio
-            // 
-            this.lblInicio.AutoSize = true;
-            this.lblInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInicio.Location = new System.Drawing.Point(14, 52);
-            this.lblInicio.Name = "lblInicio";
-            this.lblInicio.Size = new System.Drawing.Size(48, 18);
-            this.lblInicio.TabIndex = 13;
-            this.lblInicio.Text = "Inicio";
-            this.lblInicio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblInicio_MouseClick);
-            this.lblInicio.MouseLeave += new System.EventHandler(this.LblInicio_MouseLeave);
-            this.lblInicio.MouseHover += new System.EventHandler(this.LblInicio_MouseHover);
-            // 
             // lblHora
             // 
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -503,7 +458,7 @@
             this.pnlBotonesProveedores.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonesProveedores.Controls.Add(this.lblProveedores);
             this.pnlBotonesProveedores.Controls.Add(this.pictureBox15);
-            this.pnlBotonesProveedores.Location = new System.Drawing.Point(450, 9);
+            this.pnlBotonesProveedores.Location = new System.Drawing.Point(397, 9);
             this.pnlBotonesProveedores.Name = "pnlBotonesProveedores";
             this.pnlBotonesProveedores.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonesProveedores.TabIndex = 7;
@@ -542,7 +497,7 @@
             this.pnlBotonMostrador.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonMostrador.Controls.Add(this.lblMostrador);
             this.pnlBotonMostrador.Controls.Add(this.pictureBox13);
-            this.pnlBotonMostrador.Location = new System.Drawing.Point(304, 9);
+            this.pnlBotonMostrador.Location = new System.Drawing.Point(251, 9);
             this.pnlBotonMostrador.Name = "pnlBotonMostrador";
             this.pnlBotonMostrador.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonMostrador.TabIndex = 9;
@@ -581,7 +536,7 @@
             this.pnlBotonMenu.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonMenu.Controls.Add(this.lblmenu);
             this.pnlBotonMenu.Controls.Add(this.pictureBox12);
-            this.pnlBotonMenu.Location = new System.Drawing.Point(231, 9);
+            this.pnlBotonMenu.Location = new System.Drawing.Point(178, 9);
             this.pnlBotonMenu.Name = "pnlBotonMenu";
             this.pnlBotonMenu.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonMenu.TabIndex = 10;
@@ -620,7 +575,7 @@
             this.pnlBotonReportes.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlBotonReportes.Controls.Add(this.lblreporte);
             this.pnlBotonReportes.Controls.Add(this.pictureBox11);
-            this.pnlBotonReportes.Location = new System.Drawing.Point(158, 9);
+            this.pnlBotonReportes.Location = new System.Drawing.Point(105, 9);
             this.pnlBotonReportes.Name = "pnlBotonReportes";
             this.pnlBotonReportes.Size = new System.Drawing.Size(72, 71);
             this.pnlBotonReportes.TabIndex = 11;
@@ -849,9 +804,6 @@
             this.pnlBotonTransacciones.ResumeLayout(false);
             this.pnlBotonTransacciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            this.pnlBotonInicio.ResumeLayout(false);
-            this.pnlBotonInicio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.pnlBotonesProveedores.ResumeLayout(false);
             this.pnlBotonesProveedores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
@@ -898,7 +850,6 @@
         private System.Windows.Forms.Panel pnlBotonesProveedores;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblBotonProveedores;
-        private System.Windows.Forms.Panel pnlBotonInicio;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlBotonMostrador;
@@ -918,7 +869,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox10;
@@ -926,7 +876,6 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label Ordenes;
-        private System.Windows.Forms.Label lblInicio;
         private System.Windows.Forms.Label lblVentas;
         private System.Windows.Forms.Label lblProveedores;
         private System.Windows.Forms.Label label7;

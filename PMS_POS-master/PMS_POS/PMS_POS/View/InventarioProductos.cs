@@ -15,20 +15,8 @@ using System.Text.RegularExpressions;
 
 namespace PMS_POS.View
 {
-    public partial class ListadoProducto : UserControl
+    public partial class InventarioProductos : Form
     {
-        //instancia que llama al user control ListadoProducto
-        private static ListadoProducto _instanceLP;
-        public static ListadoProducto InstanceLP
-        {
-            get
-            {
-                if (_instanceLP == null)
-                    _instanceLP = new ListadoProducto("ListadoProducto");
-                return _instanceLP;
-            }
-        }
-
         public void Clear()
         {
             cbxCategoriaRP.Text = "";
@@ -49,28 +37,20 @@ namespace PMS_POS.View
 
         Caja caja = new Caja();
         Categoria categoria = new Categoria();
-        //instancia que llama al user control RegistroProducto
-        private static ListadoProducto _instanceRP;
-
-        public static ListadoProducto InstanceRP
-        {
-            get
-            {
-                if (_instanceRP == null)
-                    _instanceRP = new ListadoProducto("NuevoProducto");
-                return _instanceRP;
-            }
-        }
-
         Producto producto = new Producto();
         UnidadMedida unidadMedida = new UnidadMedida();
         PosForm posForm = new PosForm();
         static public string CajaN = null;
 
-        //Cuando el MainScreen llama a Listado producto, manda una variable string (showUC) con el nombre del UserControl a mostrar
-        public ListadoProducto(string showUC)
+        public InventarioProductos(/*string showUC*/string NombreCaja)
         {
             InitializeComponent();
+            
+            // ------ INVENTARIO --------
+
+            CajaN = NombreCaja;
+            txtCaja.Text = CajaN;
+            /*
             if (showUC == "ListadoProducto")
             {
                 splitContainer1.Panel2Collapsed = true;
@@ -83,13 +63,13 @@ namespace PMS_POS.View
                 btnGuardar.Visible = true;
                 splitContainer1.Panel1Collapsed = true;
                 btnGoBack.Visible = false;
-            }
+            }*/
             dgvProductos.DataSource = producto.Select(CajaN);
             colorProductos();
             this.dgvProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             this.dgvProductos.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             this.dgvProductos.RowTemplate.MinimumHeight = 35;
-                       
+
             displaydgvProductos();
 
             pnlAjustarStock.Visible = false;
@@ -109,7 +89,35 @@ namespace PMS_POS.View
             cbxUnidadMedidaAjustar.SelectedIndex = 0;
             nudCantidadAjustar.Value = 0;
             cbxAccionAjuste.SelectedIndex = 0;
+
+            // ----- REGISTRO COMPRAS --------
+            this.dgvProductosRegistrados.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
+            this.dgvProductosRegistrados.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            this.dgvProductosRegistrados.RowTemplate.MinimumHeight = 35;
+            LoadPrdCompra();
+            LoadHistorial();
+            dgvProductosRegistrados.Columns[2].Visible = false;
+            dgvProductosRegistrados.Columns[3].Visible = false;
+            dgvProductosRegistrados.Columns[4].Visible = false;
+            dgvProductosRegistrados.Columns[5].Visible = false;
+            dgvProductosRegistrados.Columns[6].Visible = false;
+            dgvProductosRegistrados.Columns[7].Visible = false;
+            dgvProductosRegistrados.Columns[8].Visible = false;
+            dgvProductosRegistrados.Columns[9].Visible = false;
+            dgvProductosRegistrados.Columns[10].Visible = false;
+            dgvProductosRegistrados.Columns[11].Visible = false;
+            dgvProductosRegistrados.Columns[12].Visible = false;
+            dgvProductosRegistrados.Columns[13].Visible = false;
+            dgvProductosRegistrados.Columns[14].Visible = false;
+            dgvProductosRegistrados.Columns[15].Visible = false;
+            dgvProductosRegistrados.Columns[16].Visible = false;
+            dgvProductosRegistrados.Columns[17].Visible = false;
+
+            // ---------- HISTORIAL COMPRAS ----------------
+            LoadHistorialCompras();
         }
+
+        // ------ INVENTARIO ------------
 
         public void colorProductos()
         {
@@ -132,18 +140,19 @@ namespace PMS_POS.View
 
         public void displaydgvProductos()
         {
-            dgvProductos.Columns[17].Visible = false;
-            dgvProductos.Columns[14].Visible = false;
-            dgvProductos.Columns[15].Visible = false;
-            dgvProductos.Columns[16].Visible = false;
             dgvProductos.Columns[2].Visible = false;
             dgvProductos.Columns[4].Visible = false;
             dgvProductos.Columns[5].Visible = false;
+            dgvProductos.Columns[6].Visible = false;
             dgvProductos.Columns[7].Visible = false;
             dgvProductos.Columns[8].Visible = false;
+            dgvProductos.Columns[14].Visible = false;
+            dgvProductos.Columns[15].Visible = false;
+            dgvProductos.Columns[16].Visible = false;
+            dgvProductos.Columns[17].Visible = false;
         }
 
-        private void BtnEditar_Click(object sender, EventArgs e)//there
+        private void BtnEditar_MouseClick(object sender, MouseEventArgs e)
         {
             displayComboBox();
             btnEditarP.Visible = true;
@@ -152,7 +161,7 @@ namespace PMS_POS.View
 
             if (dgvProductos.SelectedRows.Count > 0)
             {
-                if(producto.CheckSiProductTieneReceta(Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value.ToString())) == 0)
+                if (producto.CheckSiProductTieneReceta(Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value.ToString())) == 0)
                 {
                     btnAgregarReceta.Visible = true;
                 }
@@ -171,7 +180,7 @@ namespace PMS_POS.View
                 }
                 lblTitulo.Text = "Editar Producto";
                 splitContainer1.Panel1Collapsed = true;
-                if(float.Parse(dgvProductos.CurrentRow.Cells[7].Value.ToString()) == 0.18f)
+                if (float.Parse(dgvProductos.CurrentRow.Cells[7].Value.ToString()) == 0.18f)
                 {
                     chxAplicarITBIS.Checked = true;
                 }
@@ -230,6 +239,8 @@ namespace PMS_POS.View
 
         private void TxtBuscarProducto_MouseClick(object sender, MouseEventArgs e)
         {
+            cbxBuscarProveedor.Text = "";
+            cbxCategoria.Text = "";
             txtBuscarProducto.Text = string.Empty;
         }
 
@@ -237,30 +248,27 @@ namespace PMS_POS.View
         {
             cbxPuntosDeVentas.Items.Clear();
 
-            cbxBuscarProveedor.Items.Clear();
-            cbxBuscarProveedor.Items.Add("Todos");
-
             cbxCategoriaRP.Items.Clear();
-
-            cbxCategoria.Items.Clear();
-            cbxCategoria.Items.Add("Todas");
 
             cbxProveedor.Items.Clear();
 
             try
             {
-                //COMBOBOX DISPLAY CATEGORIA
-                MySqlConnection connectionCategoria = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
-                string queryCategoria = "SELECT NombreCategoria FROM categoria";
-                connectionCategoria.Open();
-                MySqlCommand command = new MySqlCommand(queryCategoria, connectionCategoria);
-                MySqlDataReader readerCategoria = command.ExecuteReader();
-                while (readerCategoria.Read())
+                if(cbxPuntosDeVentas.Text != "")
                 {
-                    cbxCategoria.Items.Add(readerCategoria.GetString("NombreCategoria"));
-                    cbxCategoriaRP.Items.Add(readerCategoria.GetString("NombreCategoria"));
+                    //COMBOBOX DISPLAY CATEGORIA
+                    MySqlConnection connectionCategoria = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
+                    string queryCategoria = "SELECT NombreCategoria FROM categoria WHERE NombreCaja='" + this.cbxPuntosDeVentas.Text+ " AND IsDeleted='" + 0 + "';";
+                    connectionCategoria.Open();
+                    MySqlCommand command = new MySqlCommand(queryCategoria, connectionCategoria);
+                    MySqlDataReader readerCategoria = command.ExecuteReader();
+                    while (readerCategoria.Read())
+                    {
+                        cbxCategoriaRP.Items.Add(readerCategoria.GetString("NombreCategoria"));
+                    }
+                    connectionCategoria.Close();
                 }
-                connectionCategoria.Close();
+                
 
                 //COMBOBOX DISPLAY PROVEEDORES
                 MySqlConnection connectionProveedores = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
@@ -271,7 +279,6 @@ namespace PMS_POS.View
                 while (readerP.Read())
                 {
                     cbxProveedor.Items.Add(readerP.GetString("NombreCompañia"));
-                    cbxBuscarProveedor.Items.Add(readerP.GetString("NombreCompañia"));
                 }
                 connectionProveedores.Close();
 
@@ -293,20 +300,20 @@ namespace PMS_POS.View
             }
         }
 
-        private void BtnGoBack_Click(object sender, EventArgs e)
+        private void BtnGoBack_MouseClick(object sender, MouseEventArgs e)
         {
             Clear();
             splitContainer1.Panel2Collapsed = true;
-            dgvProductos.DataSource = producto.Select(CajaN);            
+            dgvProductos.DataSource = producto.Select(CajaN);
         }
 
         public void Guardar(int EnMostrador, int TieneReceta)
         {
-            if (txtNombreProducto.Text == string.Empty || cbxProveedor.Text == string.Empty || 
-                txtPrecioVenta.Text == string.Empty || nudCantidadActual.Value == 0 || 
-                nudCantidadMinima.Value == 0 || nudCantidadMaxima.Value == 0 || 
-                cbxUnidadMedida.Text == string.Empty || cbxCategoriaRP.Text == string.Empty || 
-                (nudCantidadMaxima.Value < nudCantidadMinima.Value) ||cbxPuntosDeVentas.Text == string.Empty)
+            if (txtNombreProducto.Text == string.Empty || cbxProveedor.Text == string.Empty ||
+                txtPrecioVenta.Text == string.Empty || nudCantidadActual.Value == 0 ||
+                nudCantidadMinima.Value == 0 || nudCantidadMaxima.Value == 0 ||
+                cbxUnidadMedida.Text == string.Empty || cbxCategoriaRP.Text == string.Empty ||
+                (nudCantidadMaxima.Value < nudCantidadMinima.Value) || cbxPuntosDeVentas.Text == string.Empty)
             {
                 MessageBox.Show("Campos vacíos o incorrectos.", "Error al ingresar datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -337,6 +344,11 @@ namespace PMS_POS.View
                 }
                 if (producto.Insert(producto) == true)
                 {
+                    producto.IdInsumo = producto.CantidadDeInsumos();
+                    if (producto.InsertHistorialInsumo(producto) == true)
+                    {
+                        Clear();
+                    }
                 }
                 else
                 {
@@ -381,43 +393,23 @@ namespace PMS_POS.View
 
                 if (producto.Update(producto) == true)
                 {
-                    Clear();
+                    if(producto.InsertHistorialInsumo(producto) == true)
+                    {
+                        Clear();
+                    }
+                    
                     MessageBox.Show("El producto ha sido editado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     splitContainer1.Panel2Collapsed = true;
                     dgvProductos.DataSource = producto.Select(CajaN);
-                }             
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void CbxCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //dgvProductos.DataSource = mostrador.FiltrarPORcategoria(cbxCategoria.SelectedItem.ToString(), Caja);
 
-
-            if (cbxCategoria.Text == "Todas")
-            {
-                dgvProductos.DataSource = producto.Select(CajaN);
-                dgvProductos.Columns[0].Visible = false;
-                dgvProductos.Columns[13].Visible = false;
-                dgvProductos.Columns[14].Visible = false;
-                dgvProductos.Columns[2].Visible = false;
-                dgvProductos.Columns[6].Visible = false;
-            }
-            else
-            {
-                dgvProductos.DataSource = producto.FiltrarPORcategoria(cbxCategoria.SelectedItem.ToString(), CajaN);
-                dgvProductos.Columns[0].Visible = false;
-                dgvProductos.Columns[13].Visible = false;
-                dgvProductos.Columns[14].Visible = false;
-                dgvProductos.Columns[2].Visible = false;
-                dgvProductos.Columns[6].Visible = false;
-            }
-        }
-
-        private void TxtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
             if (ch == 46 && txtPrecioVenta.Text.IndexOf('.') != -1)
@@ -433,9 +425,10 @@ namespace PMS_POS.View
 
             if (e.KeyChar == '.')
             {
-                if (txtPrecioVenta.Text.Length == 0){
+                if (txtPrecioVenta.Text.Length == 0)
+                {
                     e.Handled = true;
-                    }
+                }
             }
         }
 
@@ -449,7 +442,7 @@ namespace PMS_POS.View
             }
         }
 
-        private void TxtPrecioCompra_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void TxtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
             if (ch == 46 && txtPrecioCompra.Text.IndexOf('.') != -1)
@@ -469,7 +462,7 @@ namespace PMS_POS.View
             }
         }
 
-        private void BtnCancelarAjuste_Click(object sender, EventArgs e)
+        private void BtnCancelarAjuste_MouseClick(object sender, MouseEventArgs e)
         {
             pnlAjustarStock.Visible = false;
             cbxUnidadMedidaAjustar.SelectedIndex = 0;
@@ -499,7 +492,7 @@ namespace PMS_POS.View
                     cbxUnidadMedidaAjustar.Items.Add("Miligramo");
                     cbxUnidadMedidaAjustar.Items.Add("Gramo");
                 }
-                else if(unidadMedidaProductoSeleccionado == "Unidad")
+                else if (unidadMedidaProductoSeleccionado == "Unidad")
                 {
                     cbxUnidadMedidaAjustar.Text = "Unidad";
                 }
@@ -530,7 +523,7 @@ namespace PMS_POS.View
             try
             {
                 if (this.cbxAccionAjuste.Text == string.Empty || this.nudCantidadAjustar.Value == 0 ||
-                       this.cbxUnidadMedidaAjustar.Text == string.Empty )
+                       this.cbxUnidadMedidaAjustar.Text == string.Empty)
                 {
                     MessageBox.Show("Campos vacíos o incorrectos.", "Error al ajustar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -542,7 +535,7 @@ namespace PMS_POS.View
                     float CantidadCalculada = 0;
                     if (cbxAccionAjuste.Text == "Aumentar")
                     {
-                        if(dgvProductos.CurrentRow.Cells[13].Value.ToString() == "Unidad" || dgvProductos.CurrentRow.Cells[13].Value.ToString() == "Botellas")
+                        if (dgvProductos.CurrentRow.Cells[13].Value.ToString() == "Unidad" || dgvProductos.CurrentRow.Cells[13].Value.ToString() == "Botellas")
                         {
                             CantidadCalculada = float.Parse(dgvProductos.CurrentRow.Cells[10].Value.ToString()) + CantidadAjuste;
                             cbxUnidadMedidaAjustar.Enabled = false;
@@ -618,7 +611,7 @@ namespace PMS_POS.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if(producto.UnidadMedida == "Botellas")
+            if (producto.UnidadMedida == "Botellas")
             {
 
             }
@@ -641,9 +634,6 @@ namespace PMS_POS.View
             }
 
             Clear();
-
-
-
             pnlOpcionesRegistroProducto.Visible = false;
         }
 
@@ -663,6 +653,7 @@ namespace PMS_POS.View
         {
             pnlOpcionesRegistroProducto.Visible = false;
         }
+
         private void BtnProductoAInventario_MouseClick(object sender, MouseEventArgs e)
         {
             try
@@ -710,7 +701,7 @@ namespace PMS_POS.View
                     try
                     {
                         producto.IdInsumo = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
-                        if (producto.Delete(producto) == true);
+                        if (producto.Delete(producto) == true) ;
                         else
                         {
                             MessageBox.Show("Error al eliminar producto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -729,6 +720,7 @@ namespace PMS_POS.View
 
             dgvProductos.DataSource = producto.Select(CajaN);
         }
+
         private void BtnAgregarReceta_MouseClick(object sender, MouseEventArgs e)
         {
             RegistrarReceta receta = new RegistrarReceta(0, txtNombreProducto.Text, 0, cbxPuntosDeVentas.Text);
@@ -775,14 +767,8 @@ namespace PMS_POS.View
             if (result3 == DialogResult.Yes)
             {
                 RegistrarReceta receta = new RegistrarReceta(0, txtNombreProducto.Text, Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value), cbxPuntosDeVentas.Text);
-               receta.Show();
+                receta.Show();
             }
-            
-        }
-
-        private void BtnGoBack_MouseClick(object sender, MouseEventArgs e)
-        {
-            Clear();
         }
 
         private void BtnVerReceta_MouseClick(object sender, MouseEventArgs e)
@@ -798,7 +784,7 @@ namespace PMS_POS.View
                 {
                     MessageBox.Show("Este producto no tiene receta.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
+
             }
             else
             {
@@ -824,6 +810,262 @@ namespace PMS_POS.View
         private void SplitContainer1_Panel1_MouseClick(object sender, MouseEventArgs e)
         {
             txtBuscarProducto.Text = "Buscar";
+        }
+
+        private void CbxCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxCategoria.Text == "Todas")
+            {
+                dgvProductos.DataSource = producto.Select(CajaN);
+                displaydgvProductos();
+            }
+            else
+            {
+                dgvProductos.DataSource = producto.FiltrarPORcategoria(cbxCategoria.SelectedItem.ToString(), CajaN);
+                displaydgvProductos();
+            }
+        }
+
+        private void CbxBuscarProveedor_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbxCategoria.Text = "";
+            cbxBuscarProveedor.Items.Clear();
+            cbxBuscarProveedor.Items.Add("Todos");
+            //COMBOBOX DISPLAY PROVEEDORES
+            MySqlConnection connectionProveedores = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
+            string queryProveedores = "SELECT NombreCompañia FROM proveedor";
+            connectionProveedores.Open();
+            MySqlCommand commandProveedores = new MySqlCommand(queryProveedores, connectionProveedores);
+            MySqlDataReader readerP = commandProveedores.ExecuteReader();
+            while (readerP.Read())
+            {
+                cbxBuscarProveedor.Items.Add(readerP.GetString("NombreCompañia"));
+            }
+            connectionProveedores.Close();
+        }
+
+        private void CbxCategoria_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbxBuscarProveedor.Text = "";
+            cbxCategoria.Items.Clear();
+            cbxCategoria.Items.Add("Todas");
+            //COMBOBOX DISPLAY CATEGORIA
+            MySqlConnection connectionCategoria = new MySqlConnection("server=localhost; database=hostal; username=root; password=root");
+            string queryCategoria = "SELECT NombreCategoria FROM categoria WHERE NombreCaja='" + CajaN + "';";
+            connectionCategoria.Open();
+            MySqlCommand command = new MySqlCommand(queryCategoria, connectionCategoria);
+            MySqlDataReader readerCategoria = command.ExecuteReader();
+            while (readerCategoria.Read())
+            {
+                cbxCategoria.Items.Add(readerCategoria.GetString("NombreCategoria"));
+            }
+            connectionCategoria.Close();
+        }
+
+        // ----- REGISTRO COMPRAS
+
+        public void LoadPrdCompra()//para listar
+        {
+            dgvProductosRegistrados.DataSource = GetProvList();
+        }
+
+        private DataTable GetProvList()// listar 
+        {
+            DataTable dtProveedores = new DataTable();
+            string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
+
+            using (MySqlConnection con = new MySqlConnection(connString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM INSUMO", con))
+                {
+                    con.Open();
+
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    dtProveedores.Load(reader);
+                    dtProveedores.Columns["IdInsumo"].ColumnName = "##";
+                    dtProveedores.Columns["NombreInsumo"].ColumnName = "Nombre Producto";
+                }
+            }
+
+            return dtProveedores;
+
+        }
+
+        public void LoadHistorial()//para listar historial
+        {
+            dgvProductosComprados.DataSource = GetProvList2();
+        }
+
+        private DataTable GetProvList2()//listar historial
+
+        {
+            DataTable dt = new DataTable();
+            string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
+
+            using (MySqlConnection con = new MySqlConnection(connString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM historial_compra_insumo", con))
+                {
+                    con.Open();
+
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    dt.Load(reader);
+                    dt.Columns["Id"].ColumnName = "##";
+                    dt.Columns["FechaCompra"].ColumnName = "Fecha compra";
+                    dt.Columns["IdInsumo"].ColumnName = "ID producto";
+                    dt.Columns["CantidadComprada"].ColumnName = "Cantidad comprada";
+                    dt.Columns["IdProveedor"].ColumnName = "ID proveedor";
+                    dt.Columns["NombreProducto"].ColumnName = "Nombre Producto";
+                }
+            }
+
+            return dt;
+
+        }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvProductosRegistrados.AllowUserToAddRows = false;
+
+            if (txtBuscar.Text != "" && txtBuscar.Text != "Buscar")
+            {
+                dgvProductosRegistrados.CurrentCell = null;
+                foreach (DataGridViewRow n in dgvProductosRegistrados.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgvProductosRegistrados.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscar.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                dgvProductosRegistrados.DataSource = GetProvList();
+            }
+        }
+
+        private void DgvProductosRegistrados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvProductosRegistrados.Rows[e.RowIndex];
+                txtNombreProd.Text = row.Cells["NombreInsumo"].Value.ToString();
+                txtPrecioProd.Text = row.Cells["PrecioCompra"].Value.ToString();
+                txtId.Text = row.Cells["IdInsumo"].Value.ToString();
+                txtCantDisp.Text = row.Cells["CantActual"].Value.ToString();
+                txtIdProveedor.Text = row.Cells["Proveedor"].Value.ToString();
+                txtIdInsumo.Text = row.Cells["IdInsumo"].Value.ToString();
+
+
+            }
+        }
+
+        private void BtnAgregar_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                int cant = Convert.ToInt32(txtCantDisp.Text);
+                int cant2 = Convert.ToInt32(spnCantComprada.Text);
+                int cantTotal = cant + cant2;
+
+                //This is my connection string i have assigned the database file address path  
+                string MyConnection2 = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
+                //This is my update query in which i am taking input from the user through windows forms and update the record.  
+                string Query = "update hostal.insumo set CantActual='" + cantTotal + "' where IdInsumo='" + this.txtId.Text + "';";
+                //This is  MySqlConnection here i have created the object and pass my connection string.  
+                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlDataReader MyReader2;
+                MyConn2.Open();
+                MyReader2 = MyCommand2.ExecuteReader();
+                MessageBox.Show("Datos Registrados");
+                LoadPrdCompra();
+
+                while (MyReader2.Read())
+                {
+                }
+                MyConn2.Close();//Connection closed here  
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            //insertar en historial
+            try
+            {
+                DateTime today = DateTime.Today;
+                //This is my connection string i have assigned the database file address path  
+                string MyConnection2 = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
+                // This is my insert query in which i am taking input from the user through windows forms  
+                string Query = "insert into hostal.historial_compra_insumo(FechaCompra,IdInsumo,CantidadComprada,IdProveedor, NombreProducto) values('" + DateTime.Now.ToString("dd-MM-yyyy hh:mm") + "','" + Convert.ToInt32(txtIdInsumo.Text) + "','" + Convert.ToInt32(spnCantComprada.Text) + "','" + this.txtIdProveedor.Text + "','" + txtNombreProd.Text + "');";
+                //This is  MySqlConnection here i have created the object and pass my connection string.  
+                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                //This is command class which will handle the query and connection object.  
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlDataReader MyReader2;
+                MyConn2.Open();
+                MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database.  
+                MessageBox.Show("Historial Actualizado");
+                clearDatos();
+                LoadHistorial();
+                while (MyReader2.Read())
+                {
+                }
+                MyConn2.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //fin insertar en historial
+
+        }
+        public void clearDatos()
+        {
+            txtNombreProd.Text = "";
+            txtPrecioProd.Text = "";
+            txtId.Text = "";
+            txtCantDisp.Text = "";
+            spnCantComprada.Text = "1";
+        }
+
+        // ------------- HISTORIAL COMPRAS ------------------
+
+        public void LoadHistorialCompras()//para listar historial
+        {
+            dgvCompras.DataSource = GetProvList2Compras();
+        }
+
+        private DataTable GetProvList2Compras()//listar historial
+
+        {
+            DataTable dt = new DataTable();
+            string connString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
+
+            using (MySqlConnection con = new MySqlConnection(connString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM historial_compra_insumo", con))
+                {
+                    con.Open();
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    dt.Load(reader);
+                }
+            }
+
+            return dt;
+
         }
     }
 }

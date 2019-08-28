@@ -51,7 +51,7 @@
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.Items.AddRange(new object[] {
             "Todas"});
-            this.cbxCategoria.Location = new System.Drawing.Point(57, 23);
+            this.cbxCategoria.Location = new System.Drawing.Point(56, 26);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(206, 21);
             this.cbxCategoria.TabIndex = 28;

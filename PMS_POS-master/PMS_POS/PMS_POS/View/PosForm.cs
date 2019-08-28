@@ -68,7 +68,6 @@ namespace PMS_POS.View
             cajaSeleccionada = txtCajaSeleccionada.Text;
 
             pnlBotonesProveedores.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            pnlBotonInicio.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             pnlBotonInventario.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             pnlBotonMenu.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             pnlBotonMostrador.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -149,9 +148,7 @@ namespace PMS_POS.View
         }
 
         public void uiColor()
-        {
-                pnlBotonInicio.BackColor = Color.FromArgb(0, 102, 204);
-            
+        {            
                 pnlBotonInventario.BackColor = Color.FromArgb(0, 102, 204);
             
                 pnlBotonReportes.BackColor = Color.FromArgb(0, 102, 204);
@@ -173,9 +170,6 @@ namespace PMS_POS.View
 
             switch (ui)
             {
-                case "Home":
-                    pnlBotonInicio.BackColor = Color.FromArgb(198, 212, 255);
-                    break;
                 case "Inventario":
                     pnlBotonInventario.BackColor = Color.FromArgb(198, 212, 255);
                     break;
@@ -334,7 +328,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -347,7 +341,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -360,7 +354,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -388,7 +382,7 @@ namespace PMS_POS.View
         {
             if(cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -402,7 +396,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -415,7 +409,7 @@ namespace PMS_POS.View
         {
             if (cajaSeleccionada == "Seleccionar")
             {
-                MessageBox.Show("Por favor, elige una caja.");
+                MessageBox.Show("Por favor, seleccione una caja.");
             }
             else
             {
@@ -426,17 +420,44 @@ namespace PMS_POS.View
 
         private void PnlBotonInventario_MouseClick_1(object sender, MouseEventArgs e)
         {
-            showInventario();
+            //showInventario();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, seleccione una caja.");
+            }
+            else
+            {
+                InventarioProductos inventario = new InventarioProductos(txtCajaSeleccionada.Text);
+                inventario.Show();
+            }
         }
 
         private void Label7_MouseClick(object sender, MouseEventArgs e)
         {
-            showInventario();
+            //showInventario();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, seleccione una caja.");
+            }
+            else
+            {
+                InventarioProductos inventario = new InventarioProductos(txtCajaSeleccionada.Text);
+                inventario.Show();
+            }
         }
 
         private void PictureBox10_MouseClick(object sender, MouseEventArgs e)
         {
-            showInventario();
+            //showInventario();
+            if (cajaSeleccionada == "Seleccionar")
+            {
+                MessageBox.Show("Por favor, seleccione una caja.");
+            }
+            else
+            {
+                InventarioProductos inventario = new InventarioProductos(txtCajaSeleccionada.Text);
+                inventario.Show();
+            }
         }
 
         private void PnlBotonTransacciones_MouseLeave_1(object sender, EventArgs e)
@@ -546,43 +567,6 @@ namespace PMS_POS.View
             pictureBox6.Image = PMS_POS.Properties.Resources.MostradorIMGhover;
             pnlBotonMostrador.BackColor = Color.FromArgb(198, 212, 255);
         }
-
-        private void PnlBotonInicio_MouseLeave_1(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
-            pnlBotonInicio.BackColor = Color.FromArgb(0, 102, 204);
-        }
-
-        private void LblInicio_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
-            pnlBotonInicio.BackColor = Color.FromArgb(0, 102, 204);
-        }
-
-        private void PictureBox9_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMG;
-            pnlBotonInicio.BackColor = Color.FromArgb(0, 102, 204);
-        }
-
-        private void PnlBotonInicio_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMGhover;
-            pnlBotonInicio.BackColor = Color.FromArgb(198, 212, 255);
-        }
-
-        private void LblInicio_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMGhover;
-            pnlBotonInicio.BackColor = Color.FromArgb(198, 212, 255);
-        }
-
-        private void PictureBox9_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox5.Image = PMS_POS.Properties.Resources.HomeIMGhover;
-            pnlBotonInicio.BackColor = Color.FromArgb(198, 212, 255);
-        }
-
         private void PnlBotonesProveedores_MouseLeave_1(object sender, EventArgs e)
         {
             pictureBox4.Image = PMS_POS.Properties.Resources.ProveedoresIMGhover;
