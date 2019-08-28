@@ -11,8 +11,12 @@ using PMS_POS.Model;
 using MySql.Data.MySqlClient;
 
 namespace PMS_POS.View
-{//
+
+{
     public partial class Reportes : UserControl//uygvoygo
+{
+    public partial class Reportes : UserControl
+
     {
         private static Reportes _instance;
         public static Reportes Instance
@@ -153,6 +157,35 @@ namespace PMS_POS.View
         {
             string search = cbxFormaPago.SelectedItem.ToString();
             dgvFacturas.DataSource = mostrador.SelectEstadoPedido(search);
+        }
+
+        private void txtBuscarRecepcion_TextChanged(object sender, EventArgs e)
+        {
+            dgvRecepcion.AllowUserToAddRows = false;
+
+            if (txtBuscarRecepcion.Text != "" && txtBuscarRecepcion.Text != "Buscar")
+            {
+                dgvRecepcion.CurrentCell = null;
+                foreach (DataGridViewRow n in dgvRecepcion.Rows)
+                {
+                    n.Visible = false;
+                }
+                foreach (DataGridViewRow n in dgvRecepcion.Rows)
+                {
+                    foreach (DataGridViewCell m in n.Cells)
+                    {
+                        if ((m.Value.ToString().ToUpper().IndexOf(txtBuscarRecepcion.Text.ToUpper()) == 0))
+                        {
+                            n.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                dgvRecepcion.DataSource = producto.SelectHistorialComprasProveedores();
+            }
         }
     }
 }
