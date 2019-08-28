@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlBase = new System.Windows.Forms.Panel();
+            this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pnlHuespedes = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -41,6 +42,7 @@
             this.pnlNombreClientePedido = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.picPnlInsertarNombre = new System.Windows.Forms.PictureBox();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.txtNombreClientePedido = new System.Windows.Forms.TextBox();
@@ -137,6 +139,7 @@
             this.pnlNombreClientePedido.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPnlInsertarNombre)).BeginInit();
             this.pnlEligirCantidadDeProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picManejarMesas)).BeginInit();
             this.panel4.SuspendLayout();
@@ -154,6 +157,7 @@
             // 
             // pnlBase
             // 
+            this.pnlBase.Controls.Add(this.btnGuardarCambios);
             this.pnlBase.Controls.Add(this.panel6);
             this.pnlBase.Controls.Add(this.pnlHuespedes);
             this.pnlBase.Controls.Add(this.pnlNombreClientePedido);
@@ -185,10 +189,24 @@
             this.pnlBase.TabIndex = 1;
             this.pnlBase.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PnlBase_MouseClick);
             // 
+            // btnGuardarCambios
+            // 
+            this.btnGuardarCambios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(39)))), ((int)(((byte)(102)))));
+            this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCambios.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarCambios.Location = new System.Drawing.Point(12, 510);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Size = new System.Drawing.Size(138, 117);
+            this.btnGuardarCambios.TabIndex = 42;
+            this.btnGuardarCambios.Text = "+ Guardar cambios";
+            this.btnGuardarCambios.UseVisualStyleBackColor = false;
+            this.btnGuardarCambios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarCambios_MouseClick);
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel6.Location = new System.Drawing.Point(900, 106);
+            this.panel6.Location = new System.Drawing.Point(900, 107);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(276, 353);
             this.panel6.TabIndex = 41;
@@ -300,6 +318,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Orange;
+            this.panel3.Controls.Add(this.picPnlInsertarNombre);
             this.panel3.Controls.Add(this.btnContinuar);
             this.panel3.Controls.Add(this.label24);
             this.panel3.Controls.Add(this.txtNombreClientePedido);
@@ -307,6 +326,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(559, 333);
             this.panel3.TabIndex = 3;
+            // 
+            // picPnlInsertarNombre
+            // 
+            this.picPnlInsertarNombre.Image = global::PMS_POS.Properties.Resources.icons8_cerrar_ventana_100__1_;
+            this.picPnlInsertarNombre.Location = new System.Drawing.Point(529, 0);
+            this.picPnlInsertarNombre.Name = "picPnlInsertarNombre";
+            this.picPnlInsertarNombre.Size = new System.Drawing.Size(30, 27);
+            this.picPnlInsertarNombre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPnlInsertarNombre.TabIndex = 3;
+            this.picPnlInsertarNombre.TabStop = false;
+            this.picPnlInsertarNombre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PicPnlInsertarNombre_MouseClick);
             // 
             // btnContinuar
             // 
@@ -1203,16 +1233,19 @@
             // dgvPedidos
             // 
             this.dgvPedidos.AllowUserToAddRows = false;
+            this.dgvPedidos.AllowUserToDeleteRows = false;
             this.dgvPedidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedidos.Location = new System.Drawing.Point(900, 106);
             this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.Size = new System.Drawing.Size(276, 353);
             this.dgvPedidos.TabIndex = 1;
             // 
             // dgvFactura
             // 
             this.dgvFactura.AllowUserToAddRows = false;
+            this.dgvFactura.AllowUserToDeleteRows = false;
             this.dgvFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1225,6 +1258,7 @@
             this.Column1});
             this.dgvFactura.Location = new System.Drawing.Point(10, 104);
             this.dgvFactura.Name = "dgvFactura";
+            this.dgvFactura.ReadOnly = true;
             this.dgvFactura.Size = new System.Drawing.Size(278, 400);
             this.dgvFactura.TabIndex = 0;
             // 
@@ -1233,41 +1267,48 @@
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column3.HeaderText = "ID";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Visible = false;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Producto";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column5.HeaderText = "Cantidad";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             this.Column5.Width = 74;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Precio";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Importe";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Visible = false;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "ITBIS";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             this.Column7.Visible = false;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "UMedida";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
             // MostradorPOS
@@ -1292,6 +1333,7 @@
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPnlInsertarNombre)).EndInit();
             this.pnlEligirCantidadDeProducto.ResumeLayout(false);
             this.pnlEligirCantidadDeProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picManejarMesas)).EndInit();
@@ -1419,5 +1461,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox picPnlInsertarNombre;
+        private System.Windows.Forms.Button btnGuardarCambios;
     }
 }

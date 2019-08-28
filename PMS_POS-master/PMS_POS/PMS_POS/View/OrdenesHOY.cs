@@ -53,7 +53,6 @@ namespace PMS_POS.View
 
             int IdFactura = Convert.ToInt32(dgvMesas.CurrentRow.Cells[0].Value.ToString());
             int IdPedido = mostrador.SearchIdPedidoFROMIdFactura(IdFactura, dgvMesas.CurrentRow.Cells[1].Value.ToString());
-            MessageBox.Show("Pedido: " + IdPedido + "factura: " + IdFactura);
             txtCliente.Text =  mostrador.NombreClienteFROMIdPedido(IdPedido);
             txtMesa.Text = mostrador.NombreMesaFROMIdPedido(IdPedido);
             txtOrden.Text = dgvMesas.CurrentRow.Cells[0].Value.ToString();

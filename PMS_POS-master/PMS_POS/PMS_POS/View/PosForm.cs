@@ -89,42 +89,6 @@ namespace PMS_POS.View
             Transacciones.Instance.SendToBack();
         }
 
-        public void showConfigurar()
-        {
-            panelUIseleccionada.BringToFront();
-            panelUIseleccionada.Visible = true;
-            hideUIs();
-
-            if (!panelUIseleccionada.Controls.Contains(ConfigurarPOS.Instance))
-            {
-                panelUIseleccionada.Controls.Add(ConfigurarPOS.Instance);
-                ConfigurarPOS.Instance.Dock = DockStyle.Fill;
-                ConfigurarPOS.Instance.BringToFront();
-            }
-            else
-            {
-                ConfigurarPOS.Instance.BringToFront();
-            }
-        }
-        
-        public void showVentas()
-        {
-            panelUIseleccionada.BringToFront();
-            panelUIseleccionada.Visible = true;
-            hideUIs();
-
-            if (!panelUIseleccionada.Controls.Contains(ReporteVentas.Instance))
-            {
-                panelUIseleccionada.Controls.Add(ReporteVentas.Instance);
-                ReporteVentas.Instance.Dock = DockStyle.Fill;
-                ReporteVentas.Instance.BringToFront();
-            }
-            else
-            {
-                ReporteVentas.Instance.BringToFront();
-            }
-        }
-
         public void showReportes()
         {
             panelUIseleccionada.BringToFront();
@@ -306,8 +270,6 @@ namespace PMS_POS.View
 
         private void PictureBox16_MouseClick(object sender, MouseEventArgs e)
         {
-            /*showVentas();
-            panelSeleccionada("Ventas");*/
             if (cajaSeleccionada == "Seleccionar")
             {
                 MessageBox.Show("Por favor, elige una caja.");
@@ -321,8 +283,6 @@ namespace PMS_POS.View
 
         private void PnlBotonVentas_MouseClick_1(object sender, MouseEventArgs e)
         {
-            /*showVentas();
-            panelSeleccionada("Ventas");*/
             if (cajaSeleccionada == "Seleccionar")
             {
                 MessageBox.Show("Por favor, elige una caja.");
@@ -336,8 +296,6 @@ namespace PMS_POS.View
 
         private void LblVentas_MouseClick(object sender, MouseEventArgs e)
         {
-            /*showVentas();
-            panelSeleccionada("Ventas");*/
             if (cajaSeleccionada == "Seleccionar")
             {
                 MessageBox.Show("Por favor, elige una caja.");
@@ -485,7 +443,6 @@ namespace PMS_POS.View
 
         private void LblMostrador_MouseClick(object sender, MouseEventArgs e)
         {
-            //showMostrador();
             if (cajaSeleccionada == "Seleccionar")
             {
                 MessageBox.Show("Por favor, elige una caja.");
@@ -499,7 +456,6 @@ namespace PMS_POS.View
 
         private void PictureBox13_MouseClick(object sender, MouseEventArgs e)
         {
-            //showMostrador();
             if (cajaSeleccionada == "Seleccionar")
             {
                 MessageBox.Show("Por favor, elige una caja.");
@@ -780,7 +736,6 @@ namespace PMS_POS.View
 
         private void PnlBotonTransacciones_MouseClick(object sender, MouseEventArgs e)
         {
-            //showOrdenes();
             if (cajaSeleccionada == "Seleccionar")
             {
                 MessageBox.Show("Por favor, elige una caja.");
@@ -794,7 +749,6 @@ namespace PMS_POS.View
 
         private void Ordenes_MouseClick(object sender, MouseEventArgs e)
         {
-            //showOrdenes();
             if (cajaSeleccionada == "Seleccionar")
             {
                 MessageBox.Show("Por favor, elige una caja.");
@@ -808,7 +762,6 @@ namespace PMS_POS.View
 
         private void PictureBox14_MouseClick(object sender, MouseEventArgs e)
         {
-            //showOrdenes();
             if (cajaSeleccionada == "Seleccionar")
             {
                 MessageBox.Show("Por favor, elige una caja.");
@@ -872,17 +825,20 @@ namespace PMS_POS.View
 
         private void PnlConfigurar_MouseClick(object sender, MouseEventArgs e)
         {
-            showConfigurar();
+            ConfiguracionPOS configuracion = new ConfiguracionPOS();
+            configuracion.Show();
         }
 
         private void PictureBox17_MouseClick(object sender, MouseEventArgs e)
         {
-            showConfigurar();
+            ConfiguracionPOS configuracion = new ConfiguracionPOS();
+            configuracion.Show();
         }
 
         private void Label10_MouseClick(object sender, MouseEventArgs e)
         {
-            showConfigurar();
+            ConfiguracionPOS configuracion = new ConfiguracionPOS();
+            configuracion.Show();
         }
 
         private void DgvCajasDisponibles_MouseLeave(object sender, EventArgs e)

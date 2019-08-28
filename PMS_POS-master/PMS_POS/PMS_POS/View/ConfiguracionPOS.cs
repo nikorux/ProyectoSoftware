@@ -12,19 +12,8 @@ using MySql.Data.MySqlClient;
 
 namespace PMS_POS.View
 {
-    public partial class ConfigurarPOS : UserControl
+    public partial class ConfiguracionPOS : Form
     {
-        private static ConfigurarPOS _instance;
-        public static ConfigurarPOS Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new ConfigurarPOS();
-                return _instance;
-            }
-        }
-
         public void loadDGVs()
         {
             dgvCajas.Columns[3].Visible = false;
@@ -43,10 +32,10 @@ namespace PMS_POS.View
         Caja caja = new Caja();
         Categoria categoria = new Categoria();
         Mesa mesa = new Mesa();
-        public ConfigurarPOS()
+        public ConfiguracionPOS()
         {
             InitializeComponent();
-            
+
             btnMostrarCajasDisponibles.Visible = false;
             btnMostrarCajasNoDisponibles.Visible = true;
             dgvCajas.DataSource = caja.Select("Disponible");
@@ -59,7 +48,6 @@ namespace PMS_POS.View
             btnGuardarEdicionMesas.Visible = false;
             btnGuardarEdicionCajas.Visible = false;
             dgvCategoria.Columns[2].Visible = false;
-
         }
 
         public void Clear()
@@ -106,7 +94,6 @@ namespace PMS_POS.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void BtnGuardarCajas_MouseClick(object sender, MouseEventArgs e)
         {
@@ -228,7 +215,7 @@ namespace PMS_POS.View
             txtIdCajas.Text = caja.countCajas().ToString();
         }
 
-        private void BtnMostrarCajasNoDisponibles_MouseClick_1(object sender, MouseEventArgs e)
+        private void BtnMostrarCajasNoDisponibles_MouseClick(object sender, MouseEventArgs e)
         {
             btnMostrarCajasDisponibles.Visible = true;
             btnMostrarCajasNoDisponibles.Visible = false;
@@ -244,7 +231,7 @@ namespace PMS_POS.View
             loadDGVs();
         }
 
-        private void BtnMostrarCajasDisponiblesMesas_MouseClick_1(object sender, MouseEventArgs e)
+        private void BtnMostrarCajasDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
         {
             dgvMesas.DataSource = mesa.Select("Disponible");
             btnMostrarCajasDisponiblesMesas.Visible = false;
@@ -252,7 +239,7 @@ namespace PMS_POS.View
             loadDGVs();
         }
 
-        private void BtnMostrarCajasNoDisponiblesMesas_MouseClick_1(object sender, MouseEventArgs e)
+        private void BtnMostrarCajasNoDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
         {
             dgvMesas.DataSource = mesa.Select("NO Disponible");
             btnMostrarCajasDisponiblesMesas.Visible = true;
@@ -456,11 +443,6 @@ namespace PMS_POS.View
             loadDGVs();
         }
 
-        private void DgvMesas_CellMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            MessageBox.Show(e.RowIndex.ToString());
-        }
-
         private void Button6_MouseClick(object sender, MouseEventArgs e)
         {
             textBox2.Text = "";
@@ -470,7 +452,7 @@ namespace PMS_POS.View
             button4.Visible = true;
         }
 
-        private void BtnMostrarCategoriasDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
+        private void BtnMostrarCategoriasEnMostrador_MouseClick(object sender, MouseEventArgs e)
         {
             btnMostrarCategoriasEnMostrador.Visible = false;
             btnMostrarCategoriasEnInventario.Visible = true;
@@ -478,7 +460,7 @@ namespace PMS_POS.View
             dgvCategoria.Columns[2].Visible = false;
         }
 
-        private void BtnMostrarCategoriasNoDisponiblesMesas_MouseClick(object sender, MouseEventArgs e)
+        private void BtnMostrarCategoriasEnInventario_MouseClick(object sender, MouseEventArgs e)
         {
             btnMostrarCategoriasEnMostrador.Visible = true;
             btnMostrarCategoriasEnInventario.Visible = false;
@@ -486,7 +468,6 @@ namespace PMS_POS.View
             dgvCategoria.Columns[2].Visible = false;
         }
 
-        
         private void Button5_MouseClick(object sender, MouseEventArgs e)
         {
             DialogResult result3 = MessageBox.Show("Seguro que desea guardar?", "Nueva mesa",
@@ -529,7 +510,7 @@ namespace PMS_POS.View
             txtIdCategorias.Text = categoria.countCategorias().ToString();
         }
 
-        private void BtnGuardarEdicion_MouseClick(object sender, MouseEventArgs e)
+        private void BtnGuardarEdicionCategoria_MouseClick(object sender, MouseEventArgs e)
         {
             DialogResult result3 = MessageBox.Show("Seguro que desea guardar?", "Nueva categoría",
             MessageBoxButtons.YesNoCancel,
@@ -672,7 +653,7 @@ namespace PMS_POS.View
             txtIdMesas.Text = mesa.countMesas().ToString();
         }
 
-        private void ConfigurarPOS_Load(object sender, EventArgs e)
+        private void ConfiguracionPOS_Load(object sender, EventArgs e)
         {
             txtIdCategorias.Text = categoria.countCategorias().ToString();
             txtIdCajas.Text = caja.countCajas().ToString();

@@ -801,7 +801,7 @@ namespace PMS_POS.Model
             }
         }
 
-        public bool UpdateFactura(int IdFactura, float FormaDePago, int Pagado)
+        public bool UpdateFactura(int IdFactura, string FormaDePago, int Pagado)
         {
             using (MySqlConnection mySqlConn = new MySqlConnection(connString))
             {

@@ -36,8 +36,6 @@
             this.btnAgregarItem = new System.Windows.Forms.Button();
             this.lblMno = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNODisponiblesTodos = new System.Windows.Forms.Button();
-            this.btnDisponiblesTodos = new System.Windows.Forms.Button();
             this.txtMesasDisponibles = new System.Windows.Forms.TextBox();
             this.txtMesasNODisponibles = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
@@ -138,34 +136,6 @@
             this.label1.Text = "Mesas Disponibles";
             this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Label1_MouseClick);
             // 
-            // btnNODisponiblesTodos
-            // 
-            this.btnNODisponiblesTodos.BackColor = System.Drawing.Color.Blue;
-            this.btnNODisponiblesTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNODisponiblesTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNODisponiblesTodos.ForeColor = System.Drawing.Color.White;
-            this.btnNODisponiblesTodos.Location = new System.Drawing.Point(215, 126);
-            this.btnNODisponiblesTodos.Name = "btnNODisponiblesTodos";
-            this.btnNODisponiblesTodos.Size = new System.Drawing.Size(75, 23);
-            this.btnNODisponiblesTodos.TabIndex = 39;
-            this.btnNODisponiblesTodos.Text = ">>>";
-            this.btnNODisponiblesTodos.UseVisualStyleBackColor = false;
-            this.btnNODisponiblesTodos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnNODisponiblesTodos_MouseClick);
-            // 
-            // btnDisponiblesTodos
-            // 
-            this.btnDisponiblesTodos.BackColor = System.Drawing.Color.Blue;
-            this.btnDisponiblesTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisponiblesTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisponiblesTodos.ForeColor = System.Drawing.Color.White;
-            this.btnDisponiblesTodos.Location = new System.Drawing.Point(215, 225);
-            this.btnDisponiblesTodos.Name = "btnDisponiblesTodos";
-            this.btnDisponiblesTodos.Size = new System.Drawing.Size(75, 23);
-            this.btnDisponiblesTodos.TabIndex = 40;
-            this.btnDisponiblesTodos.Text = "<<<";
-            this.btnDisponiblesTodos.UseVisualStyleBackColor = false;
-            this.btnDisponiblesTodos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnDisponiblesTodos_MouseClick);
-            // 
             // txtMesasDisponibles
             // 
             this.txtMesasDisponibles.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -193,8 +163,6 @@
             this.ClientSize = new System.Drawing.Size(506, 365);
             this.Controls.Add(this.txtMesasNODisponibles);
             this.Controls.Add(this.txtMesasDisponibles);
-            this.Controls.Add(this.btnDisponiblesTodos);
-            this.Controls.Add(this.btnNODisponiblesTodos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMno);
             this.Controls.Add(this.panel4);
@@ -224,8 +192,6 @@
         private System.Windows.Forms.Button btnAgregarItem;
         private System.Windows.Forms.Label lblMno;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnNODisponiblesTodos;
-        private System.Windows.Forms.Button btnDisponiblesTodos;
         private System.Windows.Forms.TextBox txtMesasDisponibles;
         private System.Windows.Forms.TextBox txtMesasNODisponibles;
     }

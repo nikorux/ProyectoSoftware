@@ -46,56 +46,6 @@ namespace PMS_POS.Model
             return IdMesa;
         }
 
-        public bool UpdateHacerTODASMesasNODisponibles(string NombreCaja)
-        {
-            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
-            {
-                string sql = "UPDATE mesa SET Disponible=@Disponible WHERE NombreCaja=@NombreCaja";
-                mySqlConn.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Disponible", 0);
-                cmd.Parameters.AddWithValue("@NombreCaja", NombreCaja);
-                int row = cmd.ExecuteNonQuery();
-                mySqlConn.Close();
-                if (row > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            }
-
-        }
-
-        public bool UpdateHacerTODASMesasDisponibles(string NombreCaja)
-        {
-            using (MySqlConnection mySqlConn = new MySqlConnection(connString))
-            {
-                string sql = "UPDATE mesa SET Disponible=@Disponible WHERE NombreCaja=@NombreCaja";
-                mySqlConn.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, mySqlConn);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Disponible", 1);
-                cmd.Parameters.AddWithValue("@NombreCaja", NombreCaja);
-                int row = cmd.ExecuteNonQuery();
-                mySqlConn.Close();
-                if (row > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            }
-
-        }
-
         public bool UpdateHacerMesaDisponible(int IdMesa)
             {
                 using (MySqlConnection mySqlConn = new MySqlConnection(connString))
