@@ -36,6 +36,7 @@
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtCajaSeleccionada = new System.Windows.Forms.TextBox();
+            this.picRefresh = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAMPM = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.cbxFormaDePago = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnMostrarArticulos = new System.Windows.Forms.Button();
-            this.picRefresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRefresh)).BeginInit();
@@ -134,6 +134,17 @@
             this.txtCajaSeleccionada.Text = "Seleccionar";
             this.txtCajaSeleccionada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // picRefresh
+            // 
+            this.picRefresh.Image = global::PMS_POS.Properties.Resources.refresh1;
+            this.picRefresh.Location = new System.Drawing.Point(97, 7);
+            this.picRefresh.Name = "picRefresh";
+            this.picRefresh.Size = new System.Drawing.Size(39, 37);
+            this.picRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRefresh.TabIndex = 16;
+            this.picRefresh.TabStop = false;
+            this.picRefresh.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PicRefresh_MouseClick);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -184,7 +195,7 @@
             this.txtBuscarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarFactura.Location = new System.Drawing.Point(25, 100);
             this.txtBuscarFactura.Name = "txtBuscarFactura";
-            this.txtBuscarFactura.Size = new System.Drawing.Size(360, 24);
+            this.txtBuscarFactura.Size = new System.Drawing.Size(369, 24);
             this.txtBuscarFactura.TabIndex = 19;
             this.txtBuscarFactura.Text = "Buscar";
             this.txtBuscarFactura.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBuscarFactura_MouseClick);
@@ -261,17 +272,6 @@
             this.btnMostrarArticulos.Text = "Mostrar artículo(s)";
             this.btnMostrarArticulos.UseVisualStyleBackColor = false;
             this.btnMostrarArticulos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarArticulos_MouseClick);
-            // 
-            // picRefresh
-            // 
-            this.picRefresh.Image = global::PMS_POS.Properties.Resources.refresh1;
-            this.picRefresh.Location = new System.Drawing.Point(97, 7);
-            this.picRefresh.Name = "picRefresh";
-            this.picRefresh.Size = new System.Drawing.Size(39, 37);
-            this.picRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRefresh.TabIndex = 16;
-            this.picRefresh.TabStop = false;
-            this.picRefresh.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PicRefresh_MouseClick);
             // 
             // VentasHOY
             // 
