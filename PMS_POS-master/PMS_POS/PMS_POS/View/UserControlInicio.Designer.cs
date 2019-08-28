@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvEstadoHabitaciones = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +59,9 @@
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.lblOcupadas = new System.Windows.Forms.Label();
+            this.lblMantenimiento = new System.Windows.Forms.Label();
+            this.lblLibres = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoHabitaciones)).BeginInit();
             this.panelHabMantenimiento.SuspendLayout();
@@ -96,14 +99,14 @@
             this.dgvEstadoHabitaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEstadoHabitaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEstadoHabitaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEstadoHabitaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstadoHabitaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEstadoHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstadoHabitaciones.Location = new System.Drawing.Point(17, 108);
             this.dgvEstadoHabitaciones.Name = "dgvEstadoHabitaciones";
@@ -125,12 +128,13 @@
             // panelHabMantenimiento
             // 
             this.panelHabMantenimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panelHabMantenimiento.Controls.Add(this.lblMantenimiento);
             this.panelHabMantenimiento.Controls.Add(this.pictureBox7);
             this.panelHabMantenimiento.Controls.Add(this.label17);
             this.panelHabMantenimiento.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelHabMantenimiento.Location = new System.Drawing.Point(360, 49);
+            this.panelHabMantenimiento.Location = new System.Drawing.Point(337, 49);
             this.panelHabMantenimiento.Name = "panelHabMantenimiento";
-            this.panelHabMantenimiento.Size = new System.Drawing.Size(176, 39);
+            this.panelHabMantenimiento.Size = new System.Drawing.Size(199, 39);
             this.panelHabMantenimiento.TabIndex = 4;
             // 
             // pictureBox7
@@ -157,12 +161,13 @@
             // panelHabLibres
             // 
             this.panelHabLibres.BackColor = System.Drawing.Color.LightGreen;
+            this.panelHabLibres.Controls.Add(this.lblLibres);
             this.panelHabLibres.Controls.Add(this.pictureBox3);
             this.panelHabLibres.Controls.Add(this.label9);
             this.panelHabLibres.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelHabLibres.Location = new System.Drawing.Point(187, 49);
             this.panelHabLibres.Name = "panelHabLibres";
-            this.panelHabLibres.Size = new System.Drawing.Size(162, 39);
+            this.panelHabLibres.Size = new System.Drawing.Size(144, 39);
             this.panelHabLibres.TabIndex = 22;
             // 
             // pictureBox3
@@ -189,6 +194,7 @@
             // panelHabOcupadas
             // 
             this.panelHabOcupadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(210)))), ((int)(((byte)(109)))));
+            this.panelHabOcupadas.Controls.Add(this.lblOcupadas);
             this.panelHabOcupadas.Controls.Add(this.pictureBox4);
             this.panelHabOcupadas.Controls.Add(this.label12);
             this.panelHabOcupadas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -430,6 +436,39 @@
             this.HoraFecha.Enabled = true;
             this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
             // 
+            // lblOcupadas
+            // 
+            this.lblOcupadas.AutoSize = true;
+            this.lblOcupadas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblOcupadas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblOcupadas.Location = new System.Drawing.Point(129, 10);
+            this.lblOcupadas.Name = "lblOcupadas";
+            this.lblOcupadas.Size = new System.Drawing.Size(18, 20);
+            this.lblOcupadas.TabIndex = 28;
+            this.lblOcupadas.Text = "1";
+            // 
+            // lblMantenimiento
+            // 
+            this.lblMantenimiento.AutoSize = true;
+            this.lblMantenimiento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblMantenimiento.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblMantenimiento.Location = new System.Drawing.Point(171, 9);
+            this.lblMantenimiento.Name = "lblMantenimiento";
+            this.lblMantenimiento.Size = new System.Drawing.Size(18, 20);
+            this.lblMantenimiento.TabIndex = 48;
+            this.lblMantenimiento.Text = "1";
+            // 
+            // lblLibres
+            // 
+            this.lblLibres.AutoSize = true;
+            this.lblLibres.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblLibres.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblLibres.Location = new System.Drawing.Point(109, 9);
+            this.lblLibres.Name = "lblLibres";
+            this.lblLibres.Size = new System.Drawing.Size(18, 20);
+            this.lblLibres.TabIndex = 48;
+            this.lblLibres.Text = "1";
+            // 
             // UserControlInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,5 +536,8 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Timer HoraFecha;
+        private System.Windows.Forms.Label lblMantenimiento;
+        private System.Windows.Forms.Label lblLibres;
+        private System.Windows.Forms.Label lblOcupadas;
     }
 }

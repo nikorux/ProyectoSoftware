@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using PMS_POS.Controller;
 using PMS_POS.Model;
 using MySql.Data.MySqlClient;
+using PMS_POS.Reportes;
+
 
 namespace PMS_POS.View
 {
@@ -201,6 +203,9 @@ namespace PMS_POS.View
 
         private void BtnReporte_Click(object sender, EventArgs e)
         {
+            frmReporteHuesped form2 = new frmReporteHuesped();
+            form2.FormClosed += new FormClosedEventHandler(RegistroNuevoCliente_FormClosed);
+            form2.ShowDialog();
 
         }
     }

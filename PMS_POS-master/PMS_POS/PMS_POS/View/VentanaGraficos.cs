@@ -14,26 +14,59 @@ namespace PMS_POS.View
 {
     public partial class VentanaGraficos : Form
     {
+
         MySqlConnection conectar;
         public VentanaGraficos()
         {
             InitializeComponent();
         }
 
+        /*static string MySqlConnectionSring = "server=localhost; database=hostal; Uid=root; pwd=root;";
+        MySqlConnection connection = new MySqlConnection(MySqlConnectionSring);
+   
+        public void chart()
+        {
+            connection.Open();
+            try
+            {
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "Select Sexo from huesped";
+                MySqlDataReader reader;
+
+                reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    chart1.Series["Femenino"].Points.AddXY(reader.GetInt32("Sexo"), reader.GetInt32("Femenino"));
+                    chart1.Series["Masculino"].Points.AddXY(reader.GetInt32("Sexo"), reader.GetInt32("Masculino"));
+
+                }
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }*/
+
+
         public void Conectar()
         {
             try
             {
-                conectar = new MySqlConnection("server=localhost; database=hostal; Uid=root; pwd=root;");
+                conectar = new MySqlConnection("server = localhost; database = hostal; Uid = root; pwd = root;");
                 conectar.Open();
-                MessageBox.Show("Conecto");
             }
-            catch(Exception ex)
-
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+
             }
         }
+
+
 
         public DataTable EnviarDatos(string consulta)
         {
@@ -42,17 +75,130 @@ namespace PMS_POS.View
             mda.Fill(tabla);
             return tabla;
         }
+
         private void VentanaGraficos_Load(object sender, EventArgs e)
         {
             Conectar();
-            HabitacionesPreferidas.Series["Series1"].LegendText = "Gráfico de Habitaciones Preferidas";
-            HabitacionesPreferidas.Series["Series1"].XValueMember = "IdHabitacion";
-            HabitacionesPreferidas.Series["Series1"].YValueMembers = "IdHuesped";
-            HabitacionesPreferidas.DataSource = EnviarDatos("Select IdHabitacion, IdHuesped from reservacion;");
+            DatosTotalVentas();
+            DatosTotalClientes();
+            DatosTotalEmpleados();
+            DatosTotalHabitaciones();
 
+            /*chart1.Series["Series1"].LegendText = "Cantidad de Clientes por Género";*/
+            chart1.Series["Series1"].XValueMember = "Sexo";
+            chart1.Series["Series1"].YValueMembers = "Cant";
+            chart1.DataSource = EnviarDatos("SELECT sexo, COUNT(Sexo) AS Cant FROM huesped GROUP BY Sexo");
 
+            chart2.Series["Series1"].LegendText = "Cantidad de Clientes por País";
+            chart2.Series["Series1"].XValueMember = "pais";
+            chart2.Series["Series1"].YValueMembers = "Cant";
+            chart2.DataSource = EnviarDatos("SELECT pais, COUNT(pais) AS Cant FROM huesped GROUP BY pais");
+        }
 
+        private void Label1_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void DatosTotalVentas()
+        {
+            string myConnection = "server = localhost; database = hostal; Uid = root; pwd = root";
+            MySqlConnection myConn = new MySqlConnection(myConnection);
+            MySqlCommand command = myConn.CreateCommand();
+            command.CommandText = "SELECT SUM(PrecioTotal) as TotalVentas FROM reservacion WHERE IsDeleted = 0";
+            MySqlDataReader myReader;
+
+            try
+            {
+                myConn.Open();
+                myReader = command.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    lblTotalVentas.Text = myReader[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            myConn.Close();
+        }
+        
+        private void DatosTotalClientes()
+        {
+            string myConnection = "server = localhost; database = hostal; Uid = root; pwd = root";
+            MySqlConnection myConn = new MySqlConnection(myConnection);
+            MySqlCommand command = myConn.CreateCommand();
+            command.CommandText = "SELECT COUNT(IdHuesped) as TotalClientes FROM huesped WHERE IsDeleted = 0";
+            MySqlDataReader myReader;
+
+            try
+            {
+                myConn.Open();
+                myReader = command.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    lblTotalClientes.Text = myReader[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            myConn.Close();
+        }
+
+        private void DatosTotalEmpleados()
+        {
+            string myConnection = "server = localhost; database = hostal; Uid = root; pwd = root";
+            MySqlConnection myConn = new MySqlConnection(myConnection);
+            MySqlCommand command = myConn.CreateCommand();
+            command.CommandText = "SELECT COUNT(IdEmpleado) as TotalEmpleados FROM empleado WHERE IsDeleted = 0";
+            MySqlDataReader myReader;
+
+            try
+            {
+                myConn.Open();
+                myReader = command.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    lblTotalEmpleados.Text = myReader[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            myConn.Close();
+        }
+
+        private void DatosTotalHabitaciones()
+        {
+            string myConnection = "server = localhost; database = hostal; Uid = root; pwd = root";
+            MySqlConnection myConn = new MySqlConnection(myConnection);
+            MySqlCommand command = myConn.CreateCommand();
+            command.CommandText = "SELECT COUNT(IdHabitacion) as TotalHabitaciones FROM habitacion WHERE IsDeleted = 0";
+            MySqlDataReader myReader;
+
+            try
+            {
+                myConn.Open();
+                myReader = command.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    lblTotalHabitaciones.Text = myReader[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            myConn.Close();
+        }
+
     }
 }

@@ -214,7 +214,7 @@
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(246, 27);
             this.btnReporte.TabIndex = 87;
-            this.btnReporte.Text = "Reporte";
+            this.btnReporte.Text = "Imprimir";
             this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReporte.UseCompatibleTextRendering = true;
             this.btnReporte.UseVisualStyleBackColor = false;

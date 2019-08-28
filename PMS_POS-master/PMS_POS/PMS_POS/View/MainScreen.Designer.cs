@@ -76,6 +76,7 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnReservas = new System.Windows.Forms.Button();
+            this.gráficosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
@@ -295,7 +296,8 @@
             this.CheckInToolStripMenuItem1,
             this.CheckOutToolStripMenuItem1,
             this.FacturacionToolStripMenuItem,
-            this.reportesToolStripMenuItem1});
+            this.reportesToolStripMenuItem1,
+            this.gráficosToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
             this.reportesToolStripMenuItem.Text = "Monitoreo";
@@ -545,6 +547,13 @@
             this.btnReservas.UseVisualStyleBackColor = false;
             this.btnReservas.Click += new System.EventHandler(this.BtnReservas_Click);
             // 
+            // gráficosToolStripMenuItem
+            // 
+            this.gráficosToolStripMenuItem.Name = "gráficosToolStripMenuItem";
+            this.gráficosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gráficosToolStripMenuItem.Text = "Gráficos";
+            this.gráficosToolStripMenuItem.Click += new System.EventHandler(this.GráficosToolStripMenuItem_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -626,6 +635,7 @@
         private System.Windows.Forms.Panel PanelContenedor;
         private View.UserControlInicio userControlInicio1;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gráficosToolStripMenuItem;
     }
 }
 

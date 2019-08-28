@@ -31,7 +31,7 @@ namespace PMS_POS.View
             {
                 if (this.txtPrimerNombre.Text == string.Empty || this.txtPrimerApellido.Text == string.Empty)
                 {
-                    MessageBox.Show("Falta ingresar algunos datos");
+                    MessageBox.Show("Falta ingresar algunos datos.");
                 }
                 else
                 {
@@ -241,6 +241,11 @@ namespace PMS_POS.View
         }
 
         private void MaskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void RegistroNuevoCliente_Load(object sender, EventArgs e)
         {
 
         }

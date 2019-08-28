@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PMS_POS.View;
+using PMS_POS.Reportes;
 
 
 namespace PMS_POS
@@ -603,13 +604,15 @@ namespace PMS_POS
 
         private void ReportesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+
             PanelContenedor.Show();
             userControlInicio1.SendToBack();
             PanelContenedor.Controls.Clear();
-            VentanaGraficos thisprobando = new VentanaGraficos();
+            frmReporteHuesped thisprobando = new frmReporteHuesped();
             thisprobando.TopLevel = false;
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
+
         }
 
         private void TipoDeDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -626,6 +629,17 @@ namespace PMS_POS
         private void CheckOutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void GráficosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            VentanaGraficos thisprobando = new VentanaGraficos();
+            thisprobando.TopLevel = false;
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
         }
     }
 

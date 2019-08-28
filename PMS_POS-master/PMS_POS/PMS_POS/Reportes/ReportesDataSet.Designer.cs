@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace PMS_POS {
+namespace PMS_POS.Reportes {
     
     
     /// <summary>
@@ -24,7 +24,7 @@ namespace PMS_POS {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class ReportesDataSet : global::System.Data.DataSet {
         
-        private HuespedDataTable tableHuesped;
+        private huespedDataTable tablehuesped;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace PMS_POS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Huesped"] != null)) {
-                    base.Tables.Add(new HuespedDataTable(ds.Tables["Huesped"]));
+                if ((ds.Tables["huesped"] != null)) {
+                    base.Tables.Add(new huespedDataTable(ds.Tables["huesped"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace PMS_POS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public HuespedDataTable Huesped {
+        public huespedDataTable huesped {
             get {
-                return this.tableHuesped;
+                return this.tablehuesped;
             }
         }
         
@@ -152,8 +152,8 @@ namespace PMS_POS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Huesped"] != null)) {
-                    base.Tables.Add(new HuespedDataTable(ds.Tables["Huesped"]));
+                if ((ds.Tables["huesped"] != null)) {
+                    base.Tables.Add(new huespedDataTable(ds.Tables["huesped"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace PMS_POS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableHuesped = ((HuespedDataTable)(base.Tables["Huesped"]));
+            this.tablehuesped = ((huespedDataTable)(base.Tables["huesped"]));
             if ((initTable == true)) {
-                if ((this.tableHuesped != null)) {
-                    this.tableHuesped.InitVars();
+                if ((this.tablehuesped != null)) {
+                    this.tablehuesped.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace PMS_POS {
             this.Namespace = "http://tempuri.org/ReportesDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableHuesped = new HuespedDataTable();
-            base.Tables.Add(this.tableHuesped);
+            this.tablehuesped = new huespedDataTable();
+            base.Tables.Add(this.tablehuesped);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeHuesped() {
+        private bool ShouldSerializehuesped() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace PMS_POS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void HuespedRowChangeEventHandler(object sender, HuespedRowChangeEvent e);
+        public delegate void huespedRowChangeEventHandler(object sender, huespedRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class HuespedDataTable : global::System.Data.TypedTableBase<HuespedRow> {
+        public partial class huespedDataTable : global::System.Data.TypedTableBase<huespedRow> {
             
             private global::System.Data.DataColumn columnIdHuesped;
             
@@ -287,20 +287,20 @@ namespace PMS_POS {
             
             private global::System.Data.DataColumn columnPrimerApellido;
             
-            private global::System.Data.DataColumn columnNumDocumento;
-            
             private global::System.Data.DataColumn columnTipoDocumento;
             
-            private global::System.Data.DataColumn columnTelefono;
+            private global::System.Data.DataColumn columnNumDocumento;
             
-            private global::System.Data.DataColumn columnCorreo;
+            private global::System.Data.DataColumn columnSexo;
+            
+            private global::System.Data.DataColumn columnTelefono;
             
             private global::System.Data.DataColumn columnPais;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HuespedDataTable() {
-                this.TableName = "Huesped";
+            public huespedDataTable() {
+                this.TableName = "huesped";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -308,7 +308,7 @@ namespace PMS_POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal HuespedDataTable(global::System.Data.DataTable table) {
+            internal huespedDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -325,7 +325,7 @@ namespace PMS_POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected HuespedDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected huespedDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -364,14 +364,6 @@ namespace PMS_POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NumDocumentoColumn {
-                get {
-                    return this.columnNumDocumento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn TipoDocumentoColumn {
                 get {
                     return this.columnTipoDocumento;
@@ -380,17 +372,25 @@ namespace PMS_POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TelefonoColumn {
+            public global::System.Data.DataColumn NumDocumentoColumn {
                 get {
-                    return this.columnTelefono;
+                    return this.columnNumDocumento;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CorreoColumn {
+            public global::System.Data.DataColumn SexoColumn {
                 get {
-                    return this.columnCorreo;
+                    return this.columnSexo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TelefonoColumn {
+                get {
+                    return this.columnTelefono;
                 }
             }
             
@@ -413,53 +413,53 @@ namespace PMS_POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HuespedRow this[int index] {
+            public huespedRow this[int index] {
                 get {
-                    return ((HuespedRow)(this.Rows[index]));
+                    return ((huespedRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event HuespedRowChangeEventHandler HuespedRowChanging;
+            public event huespedRowChangeEventHandler huespedRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event HuespedRowChangeEventHandler HuespedRowChanged;
+            public event huespedRowChangeEventHandler huespedRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event HuespedRowChangeEventHandler HuespedRowDeleting;
+            public event huespedRowChangeEventHandler huespedRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event HuespedRowChangeEventHandler HuespedRowDeleted;
+            public event huespedRowChangeEventHandler huespedRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddHuespedRow(HuespedRow row) {
+            public void AddhuespedRow(huespedRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HuespedRow AddHuespedRow(int IdHuesped, string PrimerNombre, string SegundoNombre, string PrimerApellido, string NumDocumento, string TipoDocumento, char Telefono, string Correo, string Pais) {
-                HuespedRow rowHuespedRow = ((HuespedRow)(this.NewRow()));
+            public huespedRow AddhuespedRow(int IdHuesped, string PrimerNombre, string SegundoNombre, string PrimerApellido, string TipoDocumento, string NumDocumento, string Sexo, char Telefono, string Pais) {
+                huespedRow rowhuespedRow = ((huespedRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdHuesped,
                         PrimerNombre,
                         SegundoNombre,
                         PrimerApellido,
-                        NumDocumento,
                         TipoDocumento,
+                        NumDocumento,
+                        Sexo,
                         Telefono,
-                        Correo,
                         Pais};
-                rowHuespedRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHuespedRow);
-                return rowHuespedRow;
+                rowhuespedRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowhuespedRow);
+                return rowhuespedRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                HuespedDataTable cln = ((HuespedDataTable)(base.Clone()));
+                huespedDataTable cln = ((huespedDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -467,7 +467,7 @@ namespace PMS_POS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new HuespedDataTable();
+                return new huespedDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,10 +477,10 @@ namespace PMS_POS {
                 this.columnPrimerNombre = base.Columns["PrimerNombre"];
                 this.columnSegundoNombre = base.Columns["SegundoNombre"];
                 this.columnPrimerApellido = base.Columns["PrimerApellido"];
-                this.columnNumDocumento = base.Columns["NumDocumento"];
                 this.columnTipoDocumento = base.Columns["TipoDocumento"];
+                this.columnNumDocumento = base.Columns["NumDocumento"];
+                this.columnSexo = base.Columns["Sexo"];
                 this.columnTelefono = base.Columns["Telefono"];
-                this.columnCorreo = base.Columns["Correo"];
                 this.columnPais = base.Columns["Pais"];
             }
             
@@ -495,42 +495,42 @@ namespace PMS_POS {
                 base.Columns.Add(this.columnSegundoNombre);
                 this.columnPrimerApellido = new global::System.Data.DataColumn("PrimerApellido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrimerApellido);
-                this.columnNumDocumento = new global::System.Data.DataColumn("NumDocumento", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumDocumento);
                 this.columnTipoDocumento = new global::System.Data.DataColumn("TipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipoDocumento);
+                this.columnNumDocumento = new global::System.Data.DataColumn("NumDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumDocumento);
+                this.columnSexo = new global::System.Data.DataColumn("Sexo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSexo);
                 this.columnTelefono = new global::System.Data.DataColumn("Telefono", typeof(char), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTelefono);
-                this.columnCorreo = new global::System.Data.DataColumn("Correo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCorreo);
                 this.columnPais = new global::System.Data.DataColumn("Pais", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPais);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HuespedRow NewHuespedRow() {
-                return ((HuespedRow)(this.NewRow()));
+            public huespedRow NewhuespedRow() {
+                return ((huespedRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new HuespedRow(builder);
+                return new huespedRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(HuespedRow);
+                return typeof(huespedRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.HuespedRowChanged != null)) {
-                    this.HuespedRowChanged(this, new HuespedRowChangeEvent(((HuespedRow)(e.Row)), e.Action));
+                if ((this.huespedRowChanged != null)) {
+                    this.huespedRowChanged(this, new huespedRowChangeEvent(((huespedRow)(e.Row)), e.Action));
                 }
             }
             
@@ -538,8 +538,8 @@ namespace PMS_POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.HuespedRowChanging != null)) {
-                    this.HuespedRowChanging(this, new HuespedRowChangeEvent(((HuespedRow)(e.Row)), e.Action));
+                if ((this.huespedRowChanging != null)) {
+                    this.huespedRowChanging(this, new huespedRowChangeEvent(((huespedRow)(e.Row)), e.Action));
                 }
             }
             
@@ -547,8 +547,8 @@ namespace PMS_POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.HuespedRowDeleted != null)) {
-                    this.HuespedRowDeleted(this, new HuespedRowChangeEvent(((HuespedRow)(e.Row)), e.Action));
+                if ((this.huespedRowDeleted != null)) {
+                    this.huespedRowDeleted(this, new huespedRowChangeEvent(((huespedRow)(e.Row)), e.Action));
                 }
             }
             
@@ -556,14 +556,14 @@ namespace PMS_POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.HuespedRowDeleting != null)) {
-                    this.HuespedRowDeleting(this, new HuespedRowChangeEvent(((HuespedRow)(e.Row)), e.Action));
+                if ((this.huespedRowDeleting != null)) {
+                    this.huespedRowDeleting(this, new huespedRowChangeEvent(((huespedRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveHuespedRow(HuespedRow row) {
+            public void RemovehuespedRow(huespedRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -590,7 +590,7 @@ namespace PMS_POS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "HuespedDataTable";
+                attribute2.FixedValue = "huespedDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -634,15 +634,15 @@ namespace PMS_POS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class HuespedRow : global::System.Data.DataRow {
+        public partial class huespedRow : global::System.Data.DataRow {
             
-            private HuespedDataTable tableHuesped;
+            private huespedDataTable tablehuesped;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal HuespedRow(global::System.Data.DataRowBuilder rb) : 
+            internal huespedRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableHuesped = ((HuespedDataTable)(this.Table));
+                this.tablehuesped = ((huespedDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -650,14 +650,14 @@ namespace PMS_POS {
             public int IdHuesped {
                 get {
                     try {
-                        return ((int)(this[this.tableHuesped.IdHuespedColumn]));
+                        return ((int)(this[this.tablehuesped.IdHuespedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IdHuesped\' in table \'Huesped\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdHuesped\' in table \'huesped\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHuesped.IdHuespedColumn] = value;
+                    this[this.tablehuesped.IdHuespedColumn] = value;
                 }
             }
             
@@ -666,14 +666,14 @@ namespace PMS_POS {
             public string PrimerNombre {
                 get {
                     try {
-                        return ((string)(this[this.tableHuesped.PrimerNombreColumn]));
+                        return ((string)(this[this.tablehuesped.PrimerNombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PrimerNombre\' in table \'Huesped\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrimerNombre\' in table \'huesped\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHuesped.PrimerNombreColumn] = value;
+                    this[this.tablehuesped.PrimerNombreColumn] = value;
                 }
             }
             
@@ -682,14 +682,14 @@ namespace PMS_POS {
             public string SegundoNombre {
                 get {
                     try {
-                        return ((string)(this[this.tableHuesped.SegundoNombreColumn]));
+                        return ((string)(this[this.tablehuesped.SegundoNombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SegundoNombre\' in table \'Huesped\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SegundoNombre\' in table \'huesped\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHuesped.SegundoNombreColumn] = value;
+                    this[this.tablehuesped.SegundoNombreColumn] = value;
                 }
             }
             
@@ -698,30 +698,14 @@ namespace PMS_POS {
             public string PrimerApellido {
                 get {
                     try {
-                        return ((string)(this[this.tableHuesped.PrimerApellidoColumn]));
+                        return ((string)(this[this.tablehuesped.PrimerApellidoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PrimerApellido\' in table \'Huesped\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrimerApellido\' in table \'huesped\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHuesped.PrimerApellidoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NumDocumento {
-                get {
-                    try {
-                        return ((string)(this[this.tableHuesped.NumDocumentoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NumDocumento\' in table \'Huesped\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHuesped.NumDocumentoColumn] = value;
+                    this[this.tablehuesped.PrimerApellidoColumn] = value;
                 }
             }
             
@@ -730,14 +714,46 @@ namespace PMS_POS {
             public string TipoDocumento {
                 get {
                     try {
-                        return ((string)(this[this.tableHuesped.TipoDocumentoColumn]));
+                        return ((string)(this[this.tablehuesped.TipoDocumentoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TipoDocumento\' in table \'Huesped\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TipoDocumento\' in table \'huesped\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHuesped.TipoDocumentoColumn] = value;
+                    this[this.tablehuesped.TipoDocumentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NumDocumento {
+                get {
+                    try {
+                        return ((string)(this[this.tablehuesped.NumDocumentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumDocumento\' in table \'huesped\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablehuesped.NumDocumentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Sexo {
+                get {
+                    try {
+                        return ((string)(this[this.tablehuesped.SexoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sexo\' in table \'huesped\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablehuesped.SexoColumn] = value;
                 }
             }
             
@@ -746,30 +762,14 @@ namespace PMS_POS {
             public char Telefono {
                 get {
                     try {
-                        return ((char)(this[this.tableHuesped.TelefonoColumn]));
+                        return ((char)(this[this.tablehuesped.TelefonoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Telefono\' in table \'Huesped\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefono\' in table \'huesped\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHuesped.TelefonoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Correo {
-                get {
-                    try {
-                        return ((string)(this[this.tableHuesped.CorreoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Correo\' in table \'Huesped\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHuesped.CorreoColumn] = value;
+                    this[this.tablehuesped.TelefonoColumn] = value;
                 }
             }
             
@@ -778,123 +778,123 @@ namespace PMS_POS {
             public string Pais {
                 get {
                     try {
-                        return ((string)(this[this.tableHuesped.PaisColumn]));
+                        return ((string)(this[this.tablehuesped.PaisColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Pais\' in table \'Huesped\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Pais\' in table \'huesped\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHuesped.PaisColumn] = value;
+                    this[this.tablehuesped.PaisColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsIdHuespedNull() {
-                return this.IsNull(this.tableHuesped.IdHuespedColumn);
+                return this.IsNull(this.tablehuesped.IdHuespedColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetIdHuespedNull() {
-                this[this.tableHuesped.IdHuespedColumn] = global::System.Convert.DBNull;
+                this[this.tablehuesped.IdHuespedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPrimerNombreNull() {
-                return this.IsNull(this.tableHuesped.PrimerNombreColumn);
+                return this.IsNull(this.tablehuesped.PrimerNombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPrimerNombreNull() {
-                this[this.tableHuesped.PrimerNombreColumn] = global::System.Convert.DBNull;
+                this[this.tablehuesped.PrimerNombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSegundoNombreNull() {
-                return this.IsNull(this.tableHuesped.SegundoNombreColumn);
+                return this.IsNull(this.tablehuesped.SegundoNombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSegundoNombreNull() {
-                this[this.tableHuesped.SegundoNombreColumn] = global::System.Convert.DBNull;
+                this[this.tablehuesped.SegundoNombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPrimerApellidoNull() {
-                return this.IsNull(this.tableHuesped.PrimerApellidoColumn);
+                return this.IsNull(this.tablehuesped.PrimerApellidoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPrimerApellidoNull() {
-                this[this.tableHuesped.PrimerApellidoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNumDocumentoNull() {
-                return this.IsNull(this.tableHuesped.NumDocumentoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNumDocumentoNull() {
-                this[this.tableHuesped.NumDocumentoColumn] = global::System.Convert.DBNull;
+                this[this.tablehuesped.PrimerApellidoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTipoDocumentoNull() {
-                return this.IsNull(this.tableHuesped.TipoDocumentoColumn);
+                return this.IsNull(this.tablehuesped.TipoDocumentoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTipoDocumentoNull() {
-                this[this.tableHuesped.TipoDocumentoColumn] = global::System.Convert.DBNull;
+                this[this.tablehuesped.TipoDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNumDocumentoNull() {
+                return this.IsNull(this.tablehuesped.NumDocumentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNumDocumentoNull() {
+                this[this.tablehuesped.NumDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSexoNull() {
+                return this.IsNull(this.tablehuesped.SexoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSexoNull() {
+                this[this.tablehuesped.SexoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTelefonoNull() {
-                return this.IsNull(this.tableHuesped.TelefonoColumn);
+                return this.IsNull(this.tablehuesped.TelefonoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTelefonoNull() {
-                this[this.tableHuesped.TelefonoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCorreoNull() {
-                return this.IsNull(this.tableHuesped.CorreoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCorreoNull() {
-                this[this.tableHuesped.CorreoColumn] = global::System.Convert.DBNull;
+                this[this.tablehuesped.TelefonoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPaisNull() {
-                return this.IsNull(this.tableHuesped.PaisColumn);
+                return this.IsNull(this.tablehuesped.PaisColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPaisNull() {
-                this[this.tableHuesped.PaisColumn] = global::System.Convert.DBNull;
+                this[this.tablehuesped.PaisColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -902,22 +902,22 @@ namespace PMS_POS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class HuespedRowChangeEvent : global::System.EventArgs {
+        public class huespedRowChangeEvent : global::System.EventArgs {
             
-            private HuespedRow eventRow;
+            private huespedRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HuespedRowChangeEvent(HuespedRow row, global::System.Data.DataRowAction action) {
+            public huespedRowChangeEvent(huespedRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HuespedRow Row {
+            public huespedRow Row {
                 get {
                     return this.eventRow;
                 }
