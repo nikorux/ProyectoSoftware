@@ -14,7 +14,7 @@ namespace PMS_POS.View
 {
     public partial class MenuActual : Form
     {
-        private static MenuActual _instance;
+        private static MenuActual _instance;//yjtvhthtv
         public static MenuActual Instance
         {
             get

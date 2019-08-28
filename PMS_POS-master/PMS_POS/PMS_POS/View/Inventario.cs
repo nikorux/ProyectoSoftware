@@ -11,7 +11,7 @@ using PMS_POS.Model;
 
 namespace PMS_POS.View
 {
-    public partial class Inventario : UserControl
+    public partial class Inventario : UserControl//kugvkyvgkgvfk
     {
         private static Inventario _instance;
         public static Inventario Instance

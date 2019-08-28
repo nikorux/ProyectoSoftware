@@ -42,7 +42,7 @@ namespace PMS_POS.View
         public void showPaginaInicio()
         {
             panelUIseleccionada.BringToFront();
-            panelUIseleccionada.Visible = true;
+            panelUIseleccionada.Visible = true;//kuygkuvguy
 
             if (!panelUIseleccionada.Controls.Contains(PaginaInicio.Instance))
             {

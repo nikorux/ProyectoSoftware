@@ -11,8 +11,12 @@ using PMS_POS.Model;
 using MySql.Data.MySqlClient;
 
 namespace PMS_POS.View
+
+{
+    public partial class Reportes : UserControl//uygvoygo
 {
     public partial class Reportes : UserControl
+
     {
         private static Reportes _instance;
         public static Reportes Instance
