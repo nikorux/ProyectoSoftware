@@ -91,11 +91,11 @@
     <Compile Include="View\AjustarStock.Designer.cs">
       <DependentUpon>AjustarStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ConfigurarPOS.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="View\ConfiguracionPOS.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ConfigurarPOS.Designer.cs">
-      <DependentUpon>ConfigurarPOS.cs</DependentUpon>
+    <Compile Include="View\ConfiguracionPOS.Designer.cs">
+      <DependentUpon>ConfiguracionPOS.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ConfigurarRubroProveedor.cs">
       <SubType>UserControl</SubType>
@@ -334,8 +334,8 @@
     <EmbeddedResource Include="View\AjustarStock.resx">
       <DependentUpon>AjustarStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ConfigurarPOS.resx">
-      <DependentUpon>ConfigurarPOS.cs</DependentUpon>
+    <EmbeddedResource Include="View\ConfiguracionPOS.resx">
+      <DependentUpon>ConfiguracionPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ConfigurarRubroProveedor.resx">
       <DependentUpon>ConfigurarRubroProveedor.cs</DependentUpon>

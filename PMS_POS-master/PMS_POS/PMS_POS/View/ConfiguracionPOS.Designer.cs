@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnGuardarEdicionCajas = new System.Windows.Forms.Button();
@@ -122,10 +122,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(2, 52);
+            this.tabControl1.Location = new System.Drawing.Point(3, 23);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1145, 550);
+            this.tabControl1.Size = new System.Drawing.Size(1050, 504);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -152,12 +152,13 @@
             this.btnGuardarEdicionCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarEdicionCajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEdicionCajas.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarEdicionCajas.Location = new System.Drawing.Point(206, 100);
+            this.btnGuardarEdicionCajas.Location = new System.Drawing.Point(156, 81);
             this.btnGuardarEdicionCajas.Name = "btnGuardarEdicionCajas";
             this.btnGuardarEdicionCajas.Size = new System.Drawing.Size(240, 31);
             this.btnGuardarEdicionCajas.TabIndex = 18;
             this.btnGuardarEdicionCajas.Text = "Guardar edición";
             this.btnGuardarEdicionCajas.UseVisualStyleBackColor = false;
+            this.btnGuardarEdicionCajas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarEdicionCajas_MouseClick);
             // 
             // panel2
             // 
@@ -165,7 +166,7 @@
             this.panel2.Controls.Add(this.btnMostrarCajasDisponibles);
             this.panel2.Controls.Add(this.dgvCajas);
             this.panel2.Controls.Add(this.btnMostrarCajasNoDisponibles);
-            this.panel2.Location = new System.Drawing.Point(583, 100);
+            this.panel2.Location = new System.Drawing.Point(533, 80);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(483, 370);
             this.panel2.TabIndex = 8;
@@ -181,6 +182,7 @@
             this.btnMostrarCajasDisponibles.TabIndex = 10;
             this.btnMostrarCajasDisponibles.Text = "Mostrar cajas disponible(s)";
             this.btnMostrarCajasDisponibles.UseVisualStyleBackColor = true;
+            this.btnMostrarCajasDisponibles.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCajasDisponibles_MouseClick);
             // 
             // dgvCajas
             // 
@@ -203,6 +205,7 @@
             this.btnMostrarCajasNoDisponibles.TabIndex = 9;
             this.btnMostrarCajasNoDisponibles.Text = "Mostrar cajas NO disponible(s)";
             this.btnMostrarCajasNoDisponibles.UseVisualStyleBackColor = true;
+            this.btnMostrarCajasNoDisponibles.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCajasNoDisponibles_MouseClick);
             // 
             // panel1
             // 
@@ -216,7 +219,7 @@
             this.panel1.Controls.Add(this.txtNombreCaja);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(84, 137);
+            this.panel1.Location = new System.Drawing.Point(34, 117);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(483, 333);
             this.panel1.TabIndex = 7;
@@ -318,12 +321,13 @@
             this.btnGuardarCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCajas.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarCajas.Location = new System.Drawing.Point(206, 100);
+            this.btnGuardarCajas.Location = new System.Drawing.Point(156, 80);
             this.btnGuardarCajas.Name = "btnGuardarCajas";
             this.btnGuardarCajas.Size = new System.Drawing.Size(119, 31);
             this.btnGuardarCajas.TabIndex = 6;
             this.btnGuardarCajas.Text = "Guardar";
             this.btnGuardarCajas.UseVisualStyleBackColor = false;
+            this.btnGuardarCajas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarCajas_MouseClick);
             // 
             // btnEditarCajas
             // 
@@ -331,12 +335,13 @@
             this.btnEditarCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarCajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCajas.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCajas.Location = new System.Drawing.Point(327, 100);
+            this.btnEditarCajas.Location = new System.Drawing.Point(277, 80);
             this.btnEditarCajas.Name = "btnEditarCajas";
             this.btnEditarCajas.Size = new System.Drawing.Size(119, 31);
             this.btnEditarCajas.TabIndex = 5;
             this.btnEditarCajas.Text = "Editar";
             this.btnEditarCajas.UseVisualStyleBackColor = false;
+            this.btnEditarCajas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnEditarCajas_MouseClick);
             // 
             // btnBorrarCajas
             // 
@@ -344,12 +349,13 @@
             this.btnBorrarCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarCajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarCajas.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarCajas.Location = new System.Drawing.Point(448, 101);
+            this.btnBorrarCajas.Location = new System.Drawing.Point(398, 81);
             this.btnBorrarCajas.Name = "btnBorrarCajas";
             this.btnBorrarCajas.Size = new System.Drawing.Size(119, 31);
             this.btnBorrarCajas.TabIndex = 4;
             this.btnBorrarCajas.Text = "Eliminar";
             this.btnBorrarCajas.UseVisualStyleBackColor = false;
+            this.btnBorrarCajas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnBorrarCajas_MouseClick);
             // 
             // btnLimpiarCajas
             // 
@@ -357,7 +363,7 @@
             this.btnLimpiarCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarCajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarCajas.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarCajas.Location = new System.Drawing.Point(84, 101);
+            this.btnLimpiarCajas.Location = new System.Drawing.Point(34, 81);
             this.btnLimpiarCajas.Name = "btnLimpiarCajas";
             this.btnLimpiarCajas.Size = new System.Drawing.Size(119, 31);
             this.btnLimpiarCajas.TabIndex = 3;
@@ -369,7 +375,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(90, 37);
+            this.label2.Location = new System.Drawing.Point(38, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 29);
             this.label2.TabIndex = 2;
@@ -389,7 +395,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1151, 509);
+            this.tabPage2.Size = new System.Drawing.Size(1137, 524);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Categorías";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -400,12 +406,13 @@
             this.btnGuardarEdicionCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarEdicionCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEdicionCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarEdicionCategoria.Location = new System.Drawing.Point(206, 100);
+            this.btnGuardarEdicionCategoria.Location = new System.Drawing.Point(156, 80);
             this.btnGuardarEdicionCategoria.Name = "btnGuardarEdicionCategoria";
             this.btnGuardarEdicionCategoria.Size = new System.Drawing.Size(240, 31);
             this.btnGuardarEdicionCategoria.TabIndex = 17;
             this.btnGuardarEdicionCategoria.Text = "Guardar edición";
             this.btnGuardarEdicionCategoria.UseVisualStyleBackColor = false;
+            this.btnGuardarEdicionCategoria.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarEdicionCategoria_MouseClick);
             // 
             // panel3
             // 
@@ -413,7 +420,7 @@
             this.panel3.Controls.Add(this.btnMostrarCategoriasEnInventario);
             this.panel3.Controls.Add(this.btnMostrarCategoriasEnMostrador);
             this.panel3.Controls.Add(this.dgvCategoria);
-            this.panel3.Location = new System.Drawing.Point(583, 100);
+            this.panel3.Location = new System.Drawing.Point(533, 80);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(483, 370);
             this.panel3.TabIndex = 16;
@@ -429,6 +436,7 @@
             this.btnMostrarCategoriasEnInventario.TabIndex = 9;
             this.btnMostrarCategoriasEnInventario.Text = "Mostrar categorías en INVENTARIO";
             this.btnMostrarCategoriasEnInventario.UseVisualStyleBackColor = true;
+            this.btnMostrarCategoriasEnInventario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCategoriasEnInventario_MouseClick);
             // 
             // btnMostrarCategoriasEnMostrador
             // 
@@ -441,6 +449,7 @@
             this.btnMostrarCategoriasEnMostrador.TabIndex = 17;
             this.btnMostrarCategoriasEnMostrador.Text = "Mostrar categorías en MOSTRADOR";
             this.btnMostrarCategoriasEnMostrador.UseVisualStyleBackColor = true;
+            this.btnMostrarCategoriasEnMostrador.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCategoriasEnMostrador_MouseClick);
             // 
             // dgvCategoria
             // 
@@ -467,7 +476,7 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.chxCategoriaEnMostrador);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(84, 137);
+            this.panel4.Location = new System.Drawing.Point(34, 117);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(483, 333);
             this.panel4.TabIndex = 15;
@@ -514,6 +523,7 @@
             this.cbxPuntoVentaCategoria.Name = "cbxPuntoVentaCategoria";
             this.cbxPuntoVentaCategoria.Size = new System.Drawing.Size(311, 24);
             this.cbxPuntoVentaCategoria.TabIndex = 95;
+            this.cbxPuntoVentaCategoria.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbxPuntoVentaCategoria_MouseClick);
             // 
             // label21
             // 
@@ -600,12 +610,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(206, 100);
+            this.button3.Location = new System.Drawing.Point(156, 80);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(119, 31);
             this.button3.TabIndex = 14;
             this.button3.Text = "Guardar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Button3_MouseClick);
             // 
             // button4
             // 
@@ -613,12 +624,13 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(327, 100);
+            this.button4.Location = new System.Drawing.Point(277, 80);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(119, 31);
             this.button4.TabIndex = 13;
             this.button4.Text = "Editar";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Button4_MouseClick);
             // 
             // button5
             // 
@@ -626,12 +638,13 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(448, 100);
+            this.button5.Location = new System.Drawing.Point(398, 81);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(119, 31);
             this.button5.TabIndex = 12;
             this.button5.Text = "Eliminar";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Button5_MouseClick);
             // 
             // button6
             // 
@@ -639,19 +652,20 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(84, 100);
+            this.button6.Location = new System.Drawing.Point(34, 81);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(119, 31);
             this.button6.TabIndex = 11;
             this.button6.Text = "Limpiar";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Button6_MouseClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(90, 37);
+            this.label3.Location = new System.Drawing.Point(38, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(234, 29);
             this.label3.TabIndex = 3;
@@ -670,7 +684,7 @@
             this.tabPage3.ForeColor = System.Drawing.Color.White;
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1151, 509);
+            this.tabPage3.Size = new System.Drawing.Size(1042, 478);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mesas";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -681,12 +695,13 @@
             this.btnGuardarEdicionMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarEdicionMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEdicionMesas.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarEdicionMesas.Location = new System.Drawing.Point(206, 100);
+            this.btnGuardarEdicionMesas.Location = new System.Drawing.Point(156, 80);
             this.btnGuardarEdicionMesas.Name = "btnGuardarEdicionMesas";
             this.btnGuardarEdicionMesas.Size = new System.Drawing.Size(240, 31);
             this.btnGuardarEdicionMesas.TabIndex = 18;
             this.btnGuardarEdicionMesas.Text = "Guardar edición";
             this.btnGuardarEdicionMesas.UseVisualStyleBackColor = false;
+            this.btnGuardarEdicionMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarEdicionMesas_MouseClick);
             // 
             // panel5
             // 
@@ -694,7 +709,7 @@
             this.panel5.Controls.Add(this.btnMostrarCajasDisponiblesMesas);
             this.panel5.Controls.Add(this.dgvMesas);
             this.panel5.Controls.Add(this.btnMostrarCajasNoDisponiblesMesas);
-            this.panel5.Location = new System.Drawing.Point(583, 100);
+            this.panel5.Location = new System.Drawing.Point(533, 80);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(483, 370);
             this.panel5.TabIndex = 16;
@@ -709,22 +724,23 @@
             this.btnMostrarCajasDisponiblesMesas.TabIndex = 17;
             this.btnMostrarCajasDisponiblesMesas.Text = "Mostrar mesas disponible(s)";
             this.btnMostrarCajasDisponiblesMesas.UseVisualStyleBackColor = true;
+            this.btnMostrarCajasDisponiblesMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCajasDisponiblesMesas_MouseClick);
             // 
             // dgvMesas
             // 
             this.dgvMesas.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dgvMesas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle67.ForeColor = System.Drawing.Color.Black;
+            this.dgvMesas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle67;
             this.dgvMesas.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvMesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMesas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMesas.DefaultCellStyle = dataGridViewCellStyle68;
             this.dgvMesas.Location = new System.Drawing.Point(12, 42);
             this.dgvMesas.Name = "dgvMesas";
             this.dgvMesas.Size = new System.Drawing.Size(454, 311);
@@ -740,6 +756,7 @@
             this.btnMostrarCajasNoDisponiblesMesas.TabIndex = 9;
             this.btnMostrarCajasNoDisponiblesMesas.Text = "Mostrar mesas NO disponible(s)";
             this.btnMostrarCajasNoDisponiblesMesas.UseVisualStyleBackColor = true;
+            this.btnMostrarCajasNoDisponiblesMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMostrarCajasNoDisponiblesMesas_MouseClick);
             // 
             // panel6
             // 
@@ -757,7 +774,7 @@
             this.panel6.Controls.Add(this.txtNombreMesa);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(84, 137);
+            this.panel6.Location = new System.Drawing.Point(34, 117);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(483, 333);
             this.panel6.TabIndex = 15;
@@ -804,6 +821,7 @@
             this.cbxPuntoVentaMesas.Name = "cbxPuntoVentaMesas";
             this.cbxPuntoVentaMesas.Size = new System.Drawing.Size(311, 24);
             this.cbxPuntoVentaMesas.TabIndex = 100;
+            this.cbxPuntoVentaMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbxPuntoVentaMesas_MouseClick);
             // 
             // label18
             // 
@@ -903,12 +921,13 @@
             this.btnGuardarMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarMesas.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarMesas.Location = new System.Drawing.Point(206, 100);
+            this.btnGuardarMesas.Location = new System.Drawing.Point(156, 80);
             this.btnGuardarMesas.Name = "btnGuardarMesas";
             this.btnGuardarMesas.Size = new System.Drawing.Size(119, 31);
             this.btnGuardarMesas.TabIndex = 14;
             this.btnGuardarMesas.Text = "Guardar";
             this.btnGuardarMesas.UseVisualStyleBackColor = false;
+            this.btnGuardarMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnGuardarMesas_MouseClick);
             // 
             // btnEditarMesas
             // 
@@ -916,12 +935,13 @@
             this.btnEditarMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarMesas.ForeColor = System.Drawing.Color.White;
-            this.btnEditarMesas.Location = new System.Drawing.Point(327, 100);
+            this.btnEditarMesas.Location = new System.Drawing.Point(277, 80);
             this.btnEditarMesas.Name = "btnEditarMesas";
             this.btnEditarMesas.Size = new System.Drawing.Size(119, 31);
             this.btnEditarMesas.TabIndex = 13;
             this.btnEditarMesas.Text = "Editar";
             this.btnEditarMesas.UseVisualStyleBackColor = false;
+            this.btnEditarMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnEditarMesas_MouseClick);
             // 
             // btnBorrarMesas
             // 
@@ -929,12 +949,13 @@
             this.btnBorrarMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarMesas.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarMesas.Location = new System.Drawing.Point(448, 100);
+            this.btnBorrarMesas.Location = new System.Drawing.Point(398, 81);
             this.btnBorrarMesas.Name = "btnBorrarMesas";
             this.btnBorrarMesas.Size = new System.Drawing.Size(119, 31);
             this.btnBorrarMesas.TabIndex = 12;
             this.btnBorrarMesas.Text = "Eliminar";
             this.btnBorrarMesas.UseVisualStyleBackColor = false;
+            this.btnBorrarMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnBorrarMesas_MouseClick);
             // 
             // btnLimpiarMesas
             // 
@@ -942,19 +963,20 @@
             this.btnLimpiarMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarMesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarMesas.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarMesas.Location = new System.Drawing.Point(84, 100);
+            this.btnLimpiarMesas.Location = new System.Drawing.Point(34, 81);
             this.btnLimpiarMesas.Name = "btnLimpiarMesas";
             this.btnLimpiarMesas.Size = new System.Drawing.Size(119, 31);
             this.btnLimpiarMesas.TabIndex = 11;
             this.btnLimpiarMesas.Text = "Limpiar";
             this.btnLimpiarMesas.UseVisualStyleBackColor = false;
+            this.btnLimpiarMesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnLimpiarMesas_MouseClick);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(90, 37);
+            this.label4.Location = new System.Drawing.Point(38, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 29);
             this.label4.TabIndex = 3;
@@ -963,11 +985,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(518, 12);
+            this.label1.Location = new System.Drawing.Point(458, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 37);
+            this.label1.Size = new System.Drawing.Size(145, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Configuración";
             // 
@@ -976,11 +998,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1146, 599);
+            this.ClientSize = new System.Drawing.Size(1054, 531);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "ConfiguracionPOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfiguracionPOS";
+            this.Load += new System.EventHandler(this.ConfiguracionPOS_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

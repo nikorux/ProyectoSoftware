@@ -133,56 +133,6 @@ namespace PMS_POS.View
             dgvMesasDisponibles.DataSource = mesa.MesasDisponibles(Caja);
             dgvMesasNODisponibles.DataSource = mesa.MesasNODisponibles(Caja);
         }
-
-        private void BtnNODisponiblesTodos_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (dgvMesasDisponibles.SelectedRows.Count > 0)
-            {
-                int IdMesa = Convert.ToInt32(dgvMesasDisponibles.CurrentRow.Cells[0].Value);
-
-                if (mesa.UpdateHacerTODASMesasDisponibles(Caja) == true)
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show("Error al cambiar el estado de mesa" + IdMesa + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            dgvMesasDisponibles.DataSource = mesa.MesasDisponibles(Caja);
-            dgvMesasNODisponibles.DataSource = mesa.MesasNODisponibles(Caja);
-        }
-
-        private void BtnDisponiblesTodos_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (dgvMesasNODisponibles.SelectedRows.Count > 0)
-            {
-                int IdMesa = Convert.ToInt32(dgvMesasNODisponibles.CurrentRow.Cells[0].Value);
-
-                if (mesa.UpdateHacerTODASMesasNODisponibles(Caja) == true)
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show("Error al cambiar el estado de mesa " + IdMesa + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            dgvMesasDisponibles.DataSource = mesa.MesasDisponibles(Caja);
-            dgvMesasNODisponibles.DataSource = mesa.MesasNODisponibles(Caja);
-        }
-
         private void DisponibilidadMesas_MouseClick(object sender, MouseEventArgs e)
         {
             txtMesasDisponibles.Text = "Buscar Mesa";
