@@ -31,7 +31,7 @@ namespace PMS_POS.View
             {
                 if (this.txtPrimerNombre.Text == string.Empty || this.txtPrimerApellido.Text == string.Empty)
                 {
-                    MessageBox.Show("Falta ingresar algunos datos.");
+                    ErrorDatosFaltantes.confirmacionForm("ERROR");
                 }
                 else
                 {

@@ -83,6 +83,7 @@ namespace PMS_POS.View
             DatosTotalClientes();
             DatosTotalEmpleados();
             DatosTotalHabitaciones();
+            DatosTotalReservaciones();
 
             /*chart1.Series["Series1"].LegendText = "Cantidad de Clientes por Género";*/
             chart1.Series["Series1"].XValueMember = "Sexo";
@@ -93,6 +94,11 @@ namespace PMS_POS.View
             chart2.Series["Series1"].XValueMember = "pais";
             chart2.Series["Series1"].YValueMembers = "Cant";
             chart2.DataSource = EnviarDatos("SELECT pais, COUNT(pais) AS Cant FROM huesped GROUP BY pais");
+
+            chart3.Series["Series1"].XValueMember = "MONTHNAME(FechaLlegada)";
+            chart3.Series["Series1"].YValueMembers = "Cant";
+            chart3.DataSource = EnviarDatos("SET lc_time_names = 'es_ES'");
+            chart3.DataSource = EnviarDatos("SELECT MONTHNAME(FechaLlegada), COUNT(FechaLlegada) AS Cant FROM reservacion GROUP BY MONTHNAME(FechaLlegada)");
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -199,6 +205,32 @@ namespace PMS_POS.View
             }
             myConn.Close();
         }
+
+        private void DatosTotalReservaciones()
+        {
+            string myConnection = "server = localhost; database = hostal; Uid = root; pwd = root";
+            MySqlConnection myConn = new MySqlConnection(myConnection);
+            MySqlCommand command = myConn.CreateCommand();
+            command.CommandText = "SELECT COUNT(IdReservacion) as TotalReservaciones FROM reservacion WHERE IsDeleted = 0";
+            MySqlDataReader myReader;
+
+            try
+            {
+                myConn.Open();
+                myReader = command.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    lblTotalReservaciones.Text = myReader[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            myConn.Close();
+        }
+
 
     }
 }
