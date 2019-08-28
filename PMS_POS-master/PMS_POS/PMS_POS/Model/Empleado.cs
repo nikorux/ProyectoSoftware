@@ -30,6 +30,10 @@ namespace PMS_POS.Model
         public string Provincia { get; set; }
         public string Pais { get; set; }
         public string Correo { get; set; }
+
+        public string Usuario { get; set; }
+
+        public string Contraseña { get; set; }
         public string IsDeleted { get; set; }
         public string DeletedDate { get; set; }
 
@@ -37,7 +41,7 @@ namespace PMS_POS.Model
 
         public Empleado(int pIdEmpelado, string pPrimerNombre, string pSegundoNombre, string pPrimerApellido,
             string pSegundoApellido, string pRolEmpleado, string pTipoDocumento, string pNumDocumento,
-            string pSexo, string pTelefono, string pDireccion, string pCiudad, string pProvincia, string pPais, string pCorreo, string pIsDeleted, string pDeletedDate)
+            string pSexo, string pTelefono, string pDireccion, string pCiudad, string pProvincia, string pPais, string pCorreo, string pUsuario, string pContraseña, string pIsDeleted, string pDeletedDate)
 
         {
             this.IdEmpleado = pIdEmpelado;
@@ -55,6 +59,8 @@ namespace PMS_POS.Model
             this.Provincia = pProvincia;
             this.Pais = pPais;
             this.Correo = pCorreo;
+            this.Usuario = pUsuario;
+            this.Contraseña = pContraseña;
             this.IsDeleted = pIsDeleted;
             this.DeletedDate = pDeletedDate;
 

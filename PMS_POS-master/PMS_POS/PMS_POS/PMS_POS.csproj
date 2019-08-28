@@ -186,6 +186,12 @@
     <Compile Include="View\ConfigurarTipoHabitacion.designer.cs">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ErrorDatosFaltantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ErrorDatosFaltantes.Designer.cs">
+      <DependentUpon>ErrorDatosFaltantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FacturacionCheckIn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -203,6 +209,18 @@
     </Compile>
     <Compile Include="View\FrmCorrecto.Designer.cs">
       <DependentUpon>FrmCorrecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLogincs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogincs.Designer.cs">
+      <DependentUpon>FrmLogincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmSeguroCerrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSeguroCerrar.Designer.cs">
+      <DependentUpon>FrmSeguroCerrar.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Impresion.cs" />
     <Compile Include="View\InformacionEstablecimiento.cs">
@@ -309,6 +327,12 @@
     <Compile Include="View\UserControlInicio.Designer.cs">
       <DependentUpon>UserControlInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControlInicioFaltante.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlInicioFaltante.Designer.cs">
+      <DependentUpon>UserControlInicioFaltante.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VentanaGraficos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +373,9 @@
     <EmbeddedResource Include="View\ConfigurarTipoHabitacion.resx">
       <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ErrorDatosFaltantes.resx">
+      <DependentUpon>ErrorDatosFaltantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FacturacionCheckIn.resx">
       <DependentUpon>FacturacionCheckIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +384,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCorrecto.resx">
       <DependentUpon>FrmCorrecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLogincs.resx">
+      <DependentUpon>FrmLogincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmSeguroCerrar.resx">
+      <DependentUpon>FrmSeguroCerrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\InformacionEstablecimiento.resx">
       <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
@@ -405,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControlInicio.resx">
       <DependentUpon>UserControlInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlInicioFaltante.resx">
+      <DependentUpon>UserControlInicioFaltante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VentanaGraficos.resx">
       <DependentUpon>VentanaGraficos.cs</DependentUpon>

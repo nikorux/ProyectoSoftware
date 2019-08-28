@@ -81,7 +81,7 @@ namespace PMS_POS.View
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo guardar el cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        FrmSeguroCerrar.confirmacionForm("ERROR");
                     }
                 }
             }
@@ -128,9 +128,66 @@ namespace PMS_POS.View
         {
         }
 
-        public void ObtenerDatos(string IdHuesped, string PrimerNombre, string SegundoNombre, string PrimerApellido,
+        public void DatosClientes()
+        {
+            string myConnection = "server = localhost; database = hostal; Uid = root; pwd = root";
+            MySqlConnection myConn = new MySqlConnection(myConnection);
+            MySqlCommand command = myConn.CreateCommand();
+            command.CommandText = "Select * from huesped WHERE IdHuesped ='" + txtIdHuesped.Text + "'";
+            //command.CommandText = "Select * from huesped WHERE IdHuesped Like '%" + txtIdHuesped.Text + "%'";
+
+            MySqlDataReader myReader;
+
+            try
+            {
+                myConn.Open();
+                myReader = command.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    txtIdHuesped.Text = Convert.ToString(myReader["IdHuesped"]);
+                    txtPrimerNombre.Text = Convert.ToString(myReader["PrimerNombre"]);
+                    txtSegundoNombre.Text = Convert.ToString(myReader["SegundoNombre"]);
+                    txtPrimerApellido.Text = Convert.ToString(myReader["PrimerApellido"]);
+                    // txtSegundoApellido.Text = myReader[3].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            myConn.Close();
+        }
+
+        public void DatosClientesD()
+        {
+            string connStr = "server = localhost; database = hostal; Uid = root; pwd = root";
+            using (MySqlConnection conexion = new MySqlConnection(connStr))
+            {
+                conexion.Open();
+
+                string query = "SELECT * FROM huesped WHERE IdHuesped = ?id";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("?id", txtIdHuesped.Text);
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    txtIdHuesped.Text = Convert.ToString(reader["IdHuesped"]);
+                    txtPrimerNombre.Text = Convert.ToString(reader["PrimerNombre"]);
+                    txtSegundoNombre.Text = Convert.ToString(reader["SegundoNombre"]);
+                }
+
+                reader.Close();
+            }
+        }
+
+   
+
+    public void ObtenerDatos(string IdHuesped, string PrimerNombre, string SegundoNombre, string PrimerApellido,
             string TipoDocumento, string NumDocumento,
-            string Telefono, string Pais, string Correo)
+            string Telefono, string Correo, string Pais)
         {
             editar = true;
             txtIdHuesped.Text = IdHuesped;
@@ -141,12 +198,12 @@ namespace PMS_POS.View
             //cbxSexo.Text = Sexo;
             //cbxCompania.Text = Compañia;
             //txtNombreCompania.Text = NombreCompañia;
-            txtCorreo.Text = Correo;
-            txtIdentificacion.Text = NumDocumento;
             cbxTipoIdentificacion.Text = TipoDocumento;
+            txtIdentificacion.Text = NumDocumento;
             txtTelefono.Text = Telefono;
             //txtDireccion.Text = Direccion;
             txtPaisNatal.Text = Pais;
+            txtCorreo.Text = Correo;
             //txtProvincia.Text = Provincia;
             //txtCiudad.Text = Ciudad;
         }

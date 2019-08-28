@@ -45,7 +45,7 @@ namespace PMS_POS.View
 
                     if (this.txtBoxNumHab.Text == string.Empty || this.cmbTipoHab.Text == string.Empty || this.cmbEstado.Text == string.Empty || this.txtBoxPrecioPorNoche.Text == string.Empty)
                     {
-                        MessageBox.Show("Falta ingresar algunos datos");
+                        FrmSeguroCerrar.confirmacionForm("ERROR");
                     }
                     else
                     {
@@ -69,7 +69,7 @@ namespace PMS_POS.View
                         }
                         else
                         {
-                            MessageBox.Show("Hubo un error al crear la habitación.");
+                            FrmSeguroCerrar.confirmacionForm("ERROR");
                         }
 
                     }

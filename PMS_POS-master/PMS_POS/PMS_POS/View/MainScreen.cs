@@ -641,6 +641,17 @@ namespace PMS_POS
             PanelContenedor.Controls.Add(thisprobando);
             thisprobando.Show();
         }
+
+        private void LoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PanelContenedor.Show();
+            userControlInicio1.SendToBack();
+            PanelContenedor.Controls.Clear();
+            FrmLogincs thisprobando = new FrmLogincs();
+            thisprobando.TopLevel = false;
+            PanelContenedor.Controls.Add(thisprobando);
+            thisprobando.Show();
+        }
     }
 
     }

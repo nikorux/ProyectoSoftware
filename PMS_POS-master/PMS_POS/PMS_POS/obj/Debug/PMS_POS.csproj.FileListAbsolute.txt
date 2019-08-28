@@ -426,3 +426,7 @@ C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Live
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.WinForms.xml
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.Wpf.pdb
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.Wpf.xml
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmLogincs.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmSeguroCerrar.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ErrorDatosFaltantes.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlInicioFaltante.resources

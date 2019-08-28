@@ -1,6 +1,6 @@
 ﻿namespace PMS_POS.View
 {
-    partial class FrmCorrecto
+    partial class ErrorDatosFaltantes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorDatosFaltantes));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.EsclarecerForm = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMensaje = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblMensajeT = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -51,39 +52,28 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(370, 260);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 2;
             // 
-            // lblMensaje
+            // pictureBox2
             // 
-            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Location = new System.Drawing.Point(0, 263);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(370, 34);
-            this.lblMensaje.TabIndex = 1;
-            this.lblMensaje.Text = "MENSAJE";
-            this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 369);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(370, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "La acción ha sido completada correctamente.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(91, 44);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(175, 153);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAceptar.BackColor = System.Drawing.Color.Red;
             this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAceptar.CausesValidation = false;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
@@ -91,27 +81,38 @@
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(67, 432);
+            this.btnAceptar.Location = new System.Drawing.Point(67, 429);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(228, 47);
-            this.btnAceptar.TabIndex = 89;
+            this.btnAceptar.TabIndex = 92;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseCompatibleTextRendering = true;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
-            // pictureBox1
+            // label1
             // 
-            this.pictureBox1.Image = global::PMS_POS.Properties.Resources.img_63493;
-            this.pictureBox1.Location = new System.Drawing.Point(97, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 349);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(370, 32);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "Falta ingresar algunos datos.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // FrmCorrecto
+            // lblMensajeT
+            // 
+            this.lblMensajeT.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeT.Location = new System.Drawing.Point(0, 260);
+            this.lblMensajeT.Name = "lblMensajeT";
+            this.lblMensajeT.Size = new System.Drawing.Size(370, 34);
+            this.lblMensajeT.TabIndex = 90;
+            this.lblMensajeT.Text = "MENSAJE";
+            this.lblMensajeT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // ErrorDatosFaltantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,15 +120,15 @@
             this.ClientSize = new System.Drawing.Size(370, 500);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblMensaje);
+            this.Controls.Add(this.lblMensajeT);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmCorrecto";
+            this.Name = "ErrorDatosFaltantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCorrecto";
-            this.Load += new System.EventHandler(this.FrmCorrecto_Load);
+            this.Text = "ErrorDatosFaltantes";
+            this.Load += new System.EventHandler(this.ErrorDatosFaltantes_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,10 +137,10 @@
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuFormFadeTransition EsclarecerForm;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblMensaje;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMensajeT;
     }
 }

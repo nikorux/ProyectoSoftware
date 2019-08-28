@@ -14,6 +14,17 @@ namespace PMS_POS.Reportes
 {
     public partial class frmReporteHuesped : Form
     {
+        private static frmReporteHuesped _instance;
+        public static frmReporteHuesped Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new frmReporteHuesped();
+                return _instance;
+            }
+        }
+
         string instruccion;
         MySqlConnection conex;
         string cadenaconex;
@@ -43,6 +54,22 @@ namespace PMS_POS.Reportes
         {
 
             this.rptHuesped.RefreshReport();
+
+            instruccion = "Select IdHuesped, PrimerNombre, SegundoNombre, PrimerApellido, NumDocumento, TipoDocumento, Sexo, Telefono, Pais FROM huesped WHERE IsDeleted = 0";
+            MySqlDataAdapter da = new MySqlDataAdapter(instruccion, conexion());
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            ReportDataSource fuente;
+            fuente = new ReportDataSource("huesped", ds.Tables[0]);
+
+            rptHuesped.LocalReport.DataSources.Clear();
+            rptHuesped.LocalReport.DataSources.Add(fuente);
+            rptHuesped.LocalReport.ReportEmbeddedResource = "PMS_POS.Reportes.reportehuespedes.rdlc";
+
+            rptHuesped.LocalReport.Refresh();
+            rptHuesped.Refresh();
+            rptHuesped.RefreshReport();
         }
 
         private void BtnReporte_Click(object sender, EventArgs e)
@@ -100,6 +127,11 @@ namespace PMS_POS.Reportes
             rptHuesped.LocalReport.Refresh();
             rptHuesped.Refresh();
             rptHuesped.RefreshReport();
+        }
+
+        private void FrmReporteHuesped_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
     

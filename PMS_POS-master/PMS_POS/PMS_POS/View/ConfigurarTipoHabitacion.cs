@@ -135,7 +135,7 @@ namespace PMS_POS.View
                 DataGridViewRow row = this.dgvTipoHabitacion.Rows[e.RowIndex];
 
                 txtTipoHabitacion.Text = row.Cells["NombreTipoHab"].Value.ToString();
-                txtIdTipoHab.Text = row.Cells["IdTipoHab"].Value.ToString();
+                //txtIdTipoHab.Text = row.Cells["IdTipoHab"].Value.ToString();
 
             }
 
@@ -149,7 +149,7 @@ namespace PMS_POS.View
                 DataGridViewRow row = this.dgvTipoHabitacion.Rows[e.RowIndex];
 
                 txtTipoHabitacion.Text = row.Cells["NombreTipoHab"].Value.ToString();
-                txtIdTipoHab.Text = row.Cells["IdTipoHab"].Value.ToString();
+                //txtIdTipoHab.Text = row.Cells["IdTipoHab"].Value.ToString();
 
             }
         }

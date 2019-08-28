@@ -38,7 +38,6 @@
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.rptHuesped = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.btnPrueba = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSetEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.huespedBindingSource)).BeginInit();
@@ -69,7 +68,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.btnPrueba);
             this.panel1.Controls.Add(this.btnEmpleados);
             this.panel1.Controls.Add(this.btnReporte);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -81,10 +79,11 @@
             // btnEmpleados
             // 
             this.btnEmpleados.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEmpleados.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEmpleados.Location = new System.Drawing.Point(13, 195);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(160, 41);
+            this.btnEmpleados.Size = new System.Drawing.Size(160, 82);
             this.btnEmpleados.TabIndex = 1;
             this.btnEmpleados.Text = "Listado de Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = false;
@@ -93,10 +92,11 @@
             // btnReporte
             // 
             this.btnReporte.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReporte.Location = new System.Drawing.Point(13, 138);
+            this.btnReporte.Location = new System.Drawing.Point(13, 94);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(160, 41);
+            this.btnReporte.Size = new System.Drawing.Size(160, 85);
             this.btnReporte.TabIndex = 0;
             this.btnReporte.Text = "Listado de Clientes";
             this.btnReporte.UseVisualStyleBackColor = false;
@@ -112,20 +112,8 @@
             this.rptHuesped.Location = new System.Drawing.Point(0, 0);
             this.rptHuesped.Name = "rptHuesped";
             this.rptHuesped.ServerReport.BearerToken = null;
-            this.rptHuesped.Size = new System.Drawing.Size(1119, 599);
+            this.rptHuesped.Size = new System.Drawing.Size(1119, 570);
             this.rptHuesped.TabIndex = 1;
-            // 
-            // btnPrueba
-            // 
-            this.btnPrueba.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPrueba.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPrueba.Location = new System.Drawing.Point(13, 252);
-            this.btnPrueba.Name = "btnPrueba";
-            this.btnPrueba.Size = new System.Drawing.Size(160, 41);
-            this.btnPrueba.TabIndex = 2;
-            this.btnPrueba.Text = "Prueba";
-            this.btnPrueba.UseVisualStyleBackColor = false;
-            this.btnPrueba.Click += new System.EventHandler(this.BtnPrueba_Click);
             // 
             // frmReporteHuesped
             // 
@@ -137,6 +125,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReporteHuesped";
             this.Text = "frmReporteHuesped";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmReporteHuesped_FormClosed);
             this.Load += new System.EventHandler(this.FrmReporteHuesped_Load);
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSetEmpleado)).EndInit();
@@ -157,6 +146,5 @@
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.BindingSource empleadoBindingSource;
         private ReportesDataSetEmpleado ReportesDataSetEmpleado;
-        private System.Windows.Forms.Button btnPrueba;
     }
 }

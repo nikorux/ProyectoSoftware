@@ -571,6 +571,7 @@
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Size = new System.Drawing.Size(174, 29);
             this.txtTelefono2.TabIndex = 211;
+            this.txtTelefono2.Visible = false;
             this.txtTelefono2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MaskedTextBox1_MaskInputRejected);
             // 
             // pictureBox12

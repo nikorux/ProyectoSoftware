@@ -57,7 +57,7 @@
             this.btnEliminarClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarClientes.ForeColor = System.Drawing.Color.White;
             this.btnEliminarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarClientes.Location = new System.Drawing.Point(1034, 126);
+            this.btnEliminarClientes.Location = new System.Drawing.Point(876, 126);
             this.btnEliminarClientes.Name = "btnEliminarClientes";
             this.btnEliminarClientes.Size = new System.Drawing.Size(123, 27);
             this.btnEliminarClientes.TabIndex = 74;
@@ -78,9 +78,9 @@
             this.btnEditarClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarClientes.ForeColor = System.Drawing.Color.White;
             this.btnEditarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarClientes.Location = new System.Drawing.Point(917, 126);
+            this.btnEditarClientes.Location = new System.Drawing.Point(731, 126);
             this.btnEditarClientes.Name = "btnEditarClientes";
-            this.btnEditarClientes.Size = new System.Drawing.Size(110, 27);
+            this.btnEditarClientes.Size = new System.Drawing.Size(139, 27);
             this.btnEditarClientes.TabIndex = 73;
             this.btnEditarClientes.Text = "Editar";
             this.btnEditarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -98,9 +98,9 @@
             this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
             this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(663, 126);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(510, 126);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(246, 27);
+            this.btnNuevoCliente.Size = new System.Drawing.Size(215, 27);
             this.btnNuevoCliente.TabIndex = 72;
             this.btnNuevoCliente.Text = "+ Registrar nuevo cliente";
             this.btnNuevoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -127,7 +127,7 @@
             this.txtFiltroo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFiltroo.Location = new System.Drawing.Point(158, 130);
             this.txtFiltroo.Name = "txtFiltroo";
-            this.txtFiltroo.Size = new System.Drawing.Size(404, 20);
+            this.txtFiltroo.Size = new System.Drawing.Size(331, 20);
             this.txtFiltroo.TabIndex = 80;
             this.txtFiltroo.TextChanged += new System.EventHandler(this.TxtFiltroo_TextChanged);
             // 
@@ -184,7 +184,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(127, 126);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(446, 27);
+            this.pictureBox1.Size = new System.Drawing.Size(377, 27);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 85;
             this.pictureBox1.TabStop = false;
@@ -210,9 +210,9 @@
             this.btnReporte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.Color.White;
             this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(663, 74);
+            this.btnReporte.Location = new System.Drawing.Point(1005, 126);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(246, 27);
+            this.btnReporte.Size = new System.Drawing.Size(151, 27);
             this.btnReporte.TabIndex = 87;
             this.btnReporte.Text = "Imprimir";
             this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.lblAnio = new System.Windows.Forms.Label();
-            this.cmbxAnio = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -72,73 +72,72 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblAnio
-            // 
-            this.lblAnio.AutoSize = true;
-            this.lblAnio.Location = new System.Drawing.Point(54, 142);
-            this.lblAnio.Name = "lblAnio";
-            this.lblAnio.Size = new System.Drawing.Size(26, 13);
-            this.lblAnio.TabIndex = 1;
-            this.lblAnio.Text = "Año";
-            // 
-            // cmbxAnio
-            // 
-            this.cmbxAnio.FormattingEnabled = true;
-            this.cmbxAnio.Location = new System.Drawing.Point(95, 139);
-            this.cmbxAnio.Name = "cmbxAnio";
-            this.cmbxAnio.Size = new System.Drawing.Size(157, 21);
-            this.cmbxAnio.TabIndex = 2;
-            // 
             // chart1
             // 
-            this.chart1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(757, 166);
+            this.chart1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            chartArea1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(838, 175);
             this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.IsValueShownAsLabel = true;
-            series3.IsXValueIndexed = true;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.YValuesPerPoint = 2;
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(502, 387);
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.IsXValueIndexed = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(356, 262);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Cantidad de Clientes por Género";
+            this.chart1.Titles.Add(title1);
             // 
             // chart2
             // 
-            this.chart2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            legend4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend4.IsTextAutoFit = false;
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
-            this.chart2.Location = new System.Drawing.Point(12, 166);
+            this.chart2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            chartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            legend2.Enabled = false;
+            legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(26, 160);
             this.chart2.Name = "chart2";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
-            series4.IsValueShownAsLabel = true;
-            series4.IsXValueIndexed = true;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart2.Series.Add(series4);
-            this.chart2.Size = new System.Drawing.Size(739, 387);
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
+            series2.IsValueShownAsLabel = true;
+            series2.IsXValueIndexed = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            this.chart2.Series.Add(series2);
+            this.chart2.Size = new System.Drawing.Size(524, 267);
             this.chart2.TabIndex = 4;
             this.chart2.Text = "chart2";
+            title2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            title2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            title2.Name = "Cantidad de Clientes por País";
+            title2.Text = "Cantidad de Clientes por País";
+            this.chart2.Titles.Add(title2);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(187, 86);
             this.pictureBox1.TabIndex = 5;
@@ -150,7 +149,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(84, 37);
+            this.label1.Location = new System.Drawing.Point(112, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 20);
             this.label1.TabIndex = 6;
@@ -163,7 +162,7 @@
             this.lblTotalVentas.BackColor = System.Drawing.SystemColors.HotTrack;
             this.lblTotalVentas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalVentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTotalVentas.Location = new System.Drawing.Point(96, 61);
+            this.lblTotalVentas.Location = new System.Drawing.Point(124, 90);
             this.lblTotalVentas.Name = "lblTotalVentas";
             this.lblTotalVentas.Size = new System.Drawing.Size(57, 20);
             this.lblTotalVentas.TabIndex = 7;
@@ -174,9 +173,9 @@
             this.pictureBox3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = global::PMS_POS.Properties.Resources.Imagen34;
-            this.pictureBox3.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(59, 38);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(54, 61);
+            this.pictureBox3.Size = new System.Drawing.Size(34, 37);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
@@ -185,10 +184,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::PMS_POS.Properties.Resources.Imagen34;
-            this.pictureBox2.Location = new System.Drawing.Point(216, 9);
+            this.pictureBox2.Image = global::PMS_POS.Properties.Resources.Imagen51;
+            this.pictureBox2.Location = new System.Drawing.Point(250, 38);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(54, 61);
+            this.pictureBox2.Size = new System.Drawing.Size(36, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
@@ -199,7 +198,7 @@
             this.lblTotalClientes.BackColor = System.Drawing.SystemColors.HotTrack;
             this.lblTotalClientes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalClientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTotalClientes.Location = new System.Drawing.Point(288, 61);
+            this.lblTotalClientes.Location = new System.Drawing.Point(316, 90);
             this.lblTotalClientes.Name = "lblTotalClientes";
             this.lblTotalClientes.Size = new System.Drawing.Size(57, 20);
             this.lblTotalClientes.TabIndex = 12;
@@ -211,7 +210,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(279, 37);
+            this.label3.Location = new System.Drawing.Point(307, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 11;
@@ -221,7 +220,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(209, 22);
+            this.pictureBox4.Location = new System.Drawing.Point(237, 51);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(187, 86);
             this.pictureBox4.TabIndex = 10;
@@ -232,9 +231,9 @@
             this.pictureBox5.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox5.Image = global::PMS_POS.Properties.Resources.Imagen34;
-            this.pictureBox5.Location = new System.Drawing.Point(418, 9);
+            this.pictureBox5.Location = new System.Drawing.Point(448, 38);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(54, 61);
+            this.pictureBox5.Size = new System.Drawing.Size(37, 37);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
@@ -245,7 +244,7 @@
             this.lblTotalEmpleados.BackColor = System.Drawing.SystemColors.HotTrack;
             this.lblTotalEmpleados.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalEmpleados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTotalEmpleados.Location = new System.Drawing.Point(493, 61);
+            this.lblTotalEmpleados.Location = new System.Drawing.Point(521, 90);
             this.lblTotalEmpleados.Name = "lblTotalEmpleados";
             this.lblTotalEmpleados.Size = new System.Drawing.Size(57, 20);
             this.lblTotalEmpleados.TabIndex = 16;
@@ -257,7 +256,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(473, 37);
+            this.label5.Location = new System.Drawing.Point(501, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 20);
             this.label5.TabIndex = 15;
@@ -267,7 +266,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(407, 22);
+            this.pictureBox6.Location = new System.Drawing.Point(435, 51);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(192, 86);
             this.pictureBox6.TabIndex = 14;
@@ -278,7 +277,7 @@
             this.pictureBox7.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox7.Image = global::PMS_POS.Properties.Resources.Imagen34;
-            this.pictureBox7.Location = new System.Drawing.Point(621, 9);
+            this.pictureBox7.Location = new System.Drawing.Point(649, 38);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(54, 61);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -291,7 +290,7 @@
             this.lblTotalHabitaciones.BackColor = System.Drawing.SystemColors.HotTrack;
             this.lblTotalHabitaciones.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalHabitaciones.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTotalHabitaciones.Location = new System.Drawing.Point(716, 61);
+            this.lblTotalHabitaciones.Location = new System.Drawing.Point(744, 90);
             this.lblTotalHabitaciones.Name = "lblTotalHabitaciones";
             this.lblTotalHabitaciones.Size = new System.Drawing.Size(57, 20);
             this.lblTotalHabitaciones.TabIndex = 20;
@@ -303,7 +302,7 @@
             this.label7.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(681, 37);
+            this.label7.Location = new System.Drawing.Point(709, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 20);
             this.label7.TabIndex = 19;
@@ -313,7 +312,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Location = new System.Drawing.Point(611, 22);
+            this.pictureBox8.Location = new System.Drawing.Point(639, 51);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(212, 86);
             this.pictureBox8.TabIndex = 18;
@@ -324,7 +323,7 @@
             this.pictureBox9.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox9.Image = global::PMS_POS.Properties.Resources.Imagen34;
-            this.pictureBox9.Location = new System.Drawing.Point(849, 9);
+            this.pictureBox9.Location = new System.Drawing.Point(877, 38);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(54, 61);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -337,7 +336,7 @@
             this.label8.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(917, 61);
+            this.label8.Location = new System.Drawing.Point(945, 90);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 20);
             this.label8.TabIndex = 24;
@@ -349,7 +348,7 @@
             this.label9.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(905, 37);
+            this.label9.Location = new System.Drawing.Point(933, 66);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 20);
             this.label9.TabIndex = 23;
@@ -359,7 +358,7 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox10.Location = new System.Drawing.Point(835, 22);
+            this.pictureBox10.Location = new System.Drawing.Point(863, 51);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(187, 86);
             this.pictureBox10.TabIndex = 22;
@@ -393,8 +392,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.cmbxAnio);
-            this.Controls.Add(this.lblAnio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VentanaGraficos";
             this.Text = "VentanaGraficos";
@@ -417,9 +414,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblAnio;
-        private System.Windows.Forms.ComboBox cmbxAnio;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.PictureBox pictureBox1;

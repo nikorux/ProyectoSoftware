@@ -34,7 +34,7 @@ namespace PMS_POS.Model
 
         public DataTable VistaTabla()
         {
-            instruccion = "Select IdTipoHab, NombreTipoHab from tipo_habitacion where IsDeleted = 0";
+            instruccion = "Select NombreTipoHab from tipo_habitacion where IsDeleted = 0";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
