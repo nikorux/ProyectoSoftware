@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvEstadoHabitaciones = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,14 +78,14 @@
             this.dgvEstadoHabitaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEstadoHabitaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEstadoHabitaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEstadoHabitaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstadoHabitaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEstadoHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstadoHabitaciones.Location = new System.Drawing.Point(31, 64);
             this.dgvEstadoHabitaciones.Name = "dgvEstadoHabitaciones";
@@ -111,7 +111,7 @@
             this.panelHabMantenimiento.Controls.Add(this.pictureBox7);
             this.panelHabMantenimiento.Controls.Add(this.label17);
             this.panelHabMantenimiento.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelHabMantenimiento.Location = new System.Drawing.Point(645, 39);
+            this.panelHabMantenimiento.Location = new System.Drawing.Point(645, 100);
             this.panelHabMantenimiento.Name = "panelHabMantenimiento";
             this.panelHabMantenimiento.Size = new System.Drawing.Size(287, 91);
             this.panelHabMantenimiento.TabIndex = 4;
@@ -145,7 +145,7 @@
             this.panelHabLibres.Controls.Add(this.lblLibres);
             this.panelHabLibres.Controls.Add(this.label9);
             this.panelHabLibres.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelHabLibres.Location = new System.Drawing.Point(352, 39);
+            this.panelHabLibres.Location = new System.Drawing.Point(352, 100);
             this.panelHabLibres.Name = "panelHabLibres";
             this.panelHabLibres.Size = new System.Drawing.Size(287, 91);
             this.panelHabLibres.TabIndex = 22;
@@ -179,7 +179,7 @@
             this.panelHabOcupadas.Controls.Add(this.lblOcupadas);
             this.panelHabOcupadas.Controls.Add(this.label12);
             this.panelHabOcupadas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelHabOcupadas.Location = new System.Drawing.Point(59, 39);
+            this.panelHabOcupadas.Location = new System.Drawing.Point(59, 100);
             this.panelHabOcupadas.Name = "panelHabOcupadas";
             this.panelHabOcupadas.Size = new System.Drawing.Size(287, 91);
             this.panelHabOcupadas.TabIndex = 21;
@@ -237,7 +237,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.pictureBox7.Image = global::PMS_POS.Properties.Resources.habitacion;
-            this.pictureBox7.Location = new System.Drawing.Point(8, 12);
+            this.pictureBox7.Location = new System.Drawing.Point(15, 11);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(71, 68);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

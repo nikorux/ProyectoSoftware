@@ -238,87 +238,195 @@ C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistroNuevoEmpleado.resources
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlEmpleados.resources
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.BuscarCheckedIn.resources
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csprojAssemblyReference.cache
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.BuscarCheckedIn.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.dll
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.xml
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmCorrecto.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmCorrecto.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Bunifu_UI_v1.5.3.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.xml
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.CheckedIn.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csprojAssemblyReference.cache
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.Common.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.Reportes.frmReporteHuesped.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ErrorDatosFaltantes.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmLogincs.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmSeguroCerrar.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlInicioFaltante.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.cache
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.compiled
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.WinForms.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.Wpf.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.Design.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.SqlServer.Types.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\EnvDTE.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\stdole.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.MSXML.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.pdb
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.xml
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.WinForms.pdb
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.WinForms.xml
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.Wpf.pdb
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.Wpf.xml
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\FlashControlV71.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\stdole.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.FrmReporteClientescs.resources
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.cache
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.compiled
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\PMS_POS.exe.config
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\PMS_POS.exe
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\PMS_POS.pdb
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.Shared.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\FlashControlV71.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\MySql.Data.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ShockwaveFlashObjects.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Google.Protobuf.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\stdole.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.xml
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\MySql.Data.xml
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.BuscarCheckedIn.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.BuscarCliente.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.Model.BuscarHabitacion.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.Properties.Resources.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarImagen.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarTipoDocumento.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ConfigurarTipoHabitacion.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FacturacionCheckIn.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FacturacionCheckOut.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmCorrecto.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.InformacionEstablecimiento.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.LiquidarServiciosAdquiridos.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ListaClientes.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ListadoReservaciones.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.MainScreen.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.NuevaReservacion.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.NuevoHuesped.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistrarHab.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistroNuevoCliente.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistroNuevoEmpleado.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistroProveedor.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.Reservaciones.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlClientes.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlEmpleados.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlHabitaciones.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlInicio.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.VentanaGraficos.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.GenerateResource.cache
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.cache
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.compiled
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.CoreCompileInputs.cache
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.CopyComplete
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.exe
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.pdb
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\EnvDTE.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\EnvDTE80.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.Build.Tasks.Core.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\VSLangProj.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Shell.Interop.11.0.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Shell.Interop.10.0.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\VSLangProj80.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Debugger.Interop.11.0.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Newtonsoft.Json.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.MSXML.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.Build.Utilities.Core.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.Build.Framework.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\VSLangProj2.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.exe.config
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.Reportes.frmReporteHuesped.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csprojAssemblyReference.cache
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.WinForms.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.Wpf.dll
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.pdb
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.xml
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.WinForms.pdb
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.WinForms.xml
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.Wpf.pdb
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\LiveCharts.Wpf.xml
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmLogincs.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmSeguroCerrar.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.ErrorDatosFaltantes.resources
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlInicioFaltante.resources
