@@ -86,7 +86,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox listMenuActual;
+        private System.Windows.Forms.ListBox listMenuActual;//jytvjytfjt
         private System.Windows.Forms.ComboBox cbxCategoria;
     }
 }

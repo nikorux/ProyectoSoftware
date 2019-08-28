@@ -244,7 +244,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnVerMenuActual;
+        private System.Windows.Forms.Button btnVerMenuActual;//kygvkgvktf
         private System.Windows.Forms.ComboBox cbxCategoria;
         private System.Windows.Forms.TextBox txtBuscarProducto;
         private System.Windows.Forms.Button btnRemoverItem;
