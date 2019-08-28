@@ -84,6 +84,7 @@
             this.btnVisualizarPendiente = new System.Windows.Forms.Button();
             this.dgvFill = new System.Windows.Forms.DataGridView();
             this.dataGridViewRecargos = new System.Windows.Forms.DataGridView();
+            this.txtBoxFactura = new System.Windows.Forms.RichTextBox();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -610,6 +611,7 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(813, 156);
             this.panel11.TabIndex = 106;
+            this.panel11.Visible = false;
             // 
             // panel12
             // 
@@ -623,6 +625,7 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(799, 145);
             this.panel12.TabIndex = 91;
+            this.panel12.Visible = false;
             // 
             // btnAgregarRecargo
             // 
@@ -643,6 +646,7 @@
             this.btnAgregarRecargo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregarRecargo.UseCompatibleTextRendering = true;
             this.btnAgregarRecargo.UseVisualStyleBackColor = false;
+            this.btnAgregarRecargo.Visible = false;
             this.btnAgregarRecargo.Click += new System.EventHandler(this.BtnAgregarRecargo_Click);
             // 
             // pictureBox3
@@ -653,6 +657,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(231, 10);
             this.pictureBox3.TabIndex = 109;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
             // 
             // txtRecargoPendiente
             // 
@@ -663,6 +668,7 @@
             this.txtRecargoPendiente.Name = "txtRecargoPendiente";
             this.txtRecargoPendiente.Size = new System.Drawing.Size(217, 17);
             this.txtRecargoPendiente.TabIndex = 107;
+            this.txtRecargoPendiente.Visible = false;
             this.txtRecargoPendiente.TextChanged += new System.EventHandler(this.TxtRecargoPendiente_TextChanged);
             // 
             // label14
@@ -674,6 +680,7 @@
             this.label14.Size = new System.Drawing.Size(221, 20);
             this.label14.TabIndex = 108;
             this.label14.Text = "Recargo pendiente por cobrar";
+            this.label14.Visible = false;
             // 
             // btnVisualizarPendiente
             // 
@@ -694,6 +701,7 @@
             this.btnVisualizarPendiente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVisualizarPendiente.UseCompatibleTextRendering = true;
             this.btnVisualizarPendiente.UseVisualStyleBackColor = false;
+            this.btnVisualizarPendiente.Visible = false;
             this.btnVisualizarPendiente.Click += new System.EventHandler(this.BtnVisualizarPendiente_Click);
             // 
             // dgvFill
@@ -704,9 +712,9 @@
             this.dgvFill.Location = new System.Drawing.Point(615, 568);
             this.dgvFill.Name = "dgvFill";
             this.dgvFill.ReadOnly = true;
+            this.dgvFill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFill.Size = new System.Drawing.Size(240, 150);
             this.dgvFill.TabIndex = 107;
-            this.dgvFill.Visible = false;
             // 
             // dataGridViewRecargos
             // 
@@ -720,11 +728,21 @@
             this.dataGridViewRecargos.TabIndex = 108;
             this.dataGridViewRecargos.Visible = false;
             // 
+            // txtBoxFactura
+            // 
+            this.txtBoxFactura.Location = new System.Drawing.Point(781, 563);
+            this.txtBoxFactura.Name = "txtBoxFactura";
+            this.txtBoxFactura.Size = new System.Drawing.Size(398, 139);
+            this.txtBoxFactura.TabIndex = 109;
+            this.txtBoxFactura.Text = "";
+            this.txtBoxFactura.Visible = false;
+            // 
             // FacturacionCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.txtBoxFactura);
             this.Controls.Add(this.dataGridViewRecargos);
             this.Controls.Add(this.dgvFill);
             this.Controls.Add(this.panel11);
@@ -823,5 +841,6 @@
         private System.Windows.Forms.DataGridView dgvFill;
         private System.Windows.Forms.Button btnAgregarRecargo;
         private System.Windows.Forms.DataGridView dataGridViewRecargos;
+        private System.Windows.Forms.RichTextBox txtBoxFactura;
     }
 }

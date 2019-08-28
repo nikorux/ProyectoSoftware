@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using PMS_POS.Model;
+using iTextSharp.text;
+using System.IO;
+using iTextSharp.text.pdf;
 
 namespace PMS_POS.View
 {
@@ -34,7 +37,10 @@ namespace PMS_POS.View
         public FacturacionCheckOut()
         {
             InitializeComponent();
+          //  FillCheckout(id.ToString());
+         //   CargarRecargos();
         }
+        Factura_Reservacion f = new Factura_Reservacion();
         Huesped h = new Huesped();
         public MySqlConnection conexion()
         {
@@ -55,7 +61,8 @@ namespace PMS_POS.View
 
         private void FacturacionCheckOut_Load(object sender, EventArgs e)
         {
-          //  FillCheckout();
+          //  FillCheckout(id.ToString());
+          //  CargarRecargos();
         }
 
         private void LiquidarServiciosAdquiridos_FormClosed(object sender, FormClosedEventArgs e)
@@ -103,160 +110,164 @@ namespace PMS_POS.View
             conectar.Close();
             */
         }
-
+        
         private void BtnConfirmarSalida_Click(object sender, EventArgs e)
         {
+
+
             Factura_Reservacion f = new Factura_Reservacion();
-            if (cmbFormaPago.Text == string.Empty && Convert.ToInt32(txtRecargoPendiente.Text) > 0)
+            if (txtTotalAPagar.Text == "0")
             {
-                MessageBox.Show("Seleccione una forma de pago.");
+                //no debe
+                f.IdReservacion = id;
+                f.IdHuesped = Convert.ToInt32(txtIdCliente.Text);
+                f.Empleado = txtAtendidoPor.Text;
+                f.TotalAPagar = Convert.ToSingle(txtTotalAPagar.Text);
+                f.Fecha = dtpFechaActual.Value;
+                // f.FormaDePago = cmbFormaPago.Text;
+                f.SubTotal = Convert.ToSingle(dgvFill.Rows[0].Cells[12].Value);
+                // RESERVACION PASA DE CHECKED IN A CHECKED OUT
+                Reservacion reserva = new Reservacion();
+                reserva.IdReservacion = f.IdReservacion;
+                reserva.CheckOut(reserva);
+                // HABITACION PASA DE OCUPADA A DISPONIBLE Y SU ESTADO DE RESERVADA PASA A NEGATIVO
+                Habitacion hab = new Habitacion();
+                hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[3].Value);
+                hab.CambiarEstados(hab.IdHabitacion, "Disponible");
+                hab.IsReserved(hab.IdHabitacion, 0);
+                MessageBox.Show("Check out correctamente.");
+
             }
             else
             {
-              if(txtAtendidoPor.Text == string.Empty)
+                //debe
+                if (cmbFormaPago.Text == string.Empty)
                 {
-                    MessageBox.Show("Falta ingresar el nombre del empleado.");
-
+                    MessageBox.Show("Seleccione una forma de pago.");
                 }
                 else
                 {
-                    f.IdReservacion = id;
-                    f.IdHuesped = Convert.ToInt32(txtIdCliente.Text);
-                    f.Empleado = txtAtendidoPor.Text;
-                    f.TotalAPagar = Convert.ToSingle(txtTotalAPagar.Text);
-                    f.Fecha = dtpFechaActual.Value;
-                   // f.FormaDePago = cmbFormaPago.Text;
-                    f.SubTotal = Convert.ToSingle(dgvFill.Rows[0].Cells[11].Value);
-                    // RESERVACION PASA DE CHECKED IN A CHECKED OUT
-                    Reservacion reserva = new Reservacion();
-                    reserva.IdReservacion = f.IdReservacion;
-                    reserva.CheckOut(reserva);
-                    // HABITACION PASA DE OCUPADA A DISPONIBLE Y SU ESTADO DE RESERVADA PASA A NEGATIVO
-                    Habitacion hab = new Habitacion();
-                    hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[2].Value);
-                    hab.CambiarEstados(hab.IdHabitacion, "Disponible");
-                    hab.IsReserved(hab.IdHabitacion, 0);
-                    MessageBox.Show("Check out correctamente.");
-                    f.IdFactura = f.SelectIdFactura();
-                    btnImprimir.Enabled = true;
-                }
-              
-
-            }
-            if (cmbFormaPago.Text == "Tarjeta")
-            {
-                if (txtNombre.Text == string.Empty || txtTotalAPagar.Text == string.Empty || txtBoxDigitos.Text == string.Empty || txtBoxCompania.Text == string.Empty || txtAtendidoPor.Text == string.Empty)
-                {
-                    MessageBox.Show("Faltan Ingresar datos.");
-                }
-                else
-                {
-                    f.IdReservacion = id;
-                    f.IdHuesped = Convert.ToInt32(txtIdCliente.Text);
-                    f.Empleado = txtAtendidoPor.Text;
-                    f.TotalAPagar = Convert.ToSingle(txtTotalAPagar.Text);
-                    f.FormaDePago = cmbFormaPago.Text;
-                    f.SubTotal = Convert.ToSingle(dgvFill.Rows[0].Cells[11].Value);
-                    f.Fecha = dtpFechaActual.Value;
-                    f.UltimosDigitos = Convert.ToInt32(txtBoxDigitos.Text);
-                    f.CompaniaTarjeta = txtBoxCompania.Text;
-                    if (txtDescuento.Text == string.Empty)
+                    if (cmbFormaPago.Text == "Tarjeta")
                     {
-                        //do nothing
+                        if (txtNombre.Text == string.Empty || txtTotalAPagar.Text == string.Empty || txtBoxDigitos.Text == string.Empty || txtBoxCompania.Text == string.Empty || txtAtendidoPor.Text == string.Empty)
+                        {
+                            MessageBox.Show("Faltan Ingresar datos.");
+                        }
+                        else
+                        {
+                            f.IdReservacion = id;
+                            f.IdHuesped = Convert.ToInt32(txtIdCliente.Text);
+                            f.Empleado = txtAtendidoPor.Text;
+                            f.TotalAPagar = Convert.ToSingle(txtTotalAPagar.Text);
+                            f.FormaDePago = cmbFormaPago.Text;
+                            f.SubTotal = Convert.ToSingle(dgvFill.Rows[0].Cells[12].Value);
+                            f.Fecha = dtpFechaActual.Value;
+                            f.UltimosDigitos = Convert.ToInt32(txtBoxDigitos.Text);
+                            f.CompaniaTarjeta = txtBoxCompania.Text;
+                            if (txtDescuento.Text == string.Empty)
+                            {
+                                //do nothing
 
-                    }
-                    else
-                    {
-                        f.Descuento = Convert.ToSingle(txtDescuento.Text);
-                    }
+                            }
+                            else
+                            {
+                                f.Descuento = Convert.ToSingle(txtDescuento.Text);
+                            }
 
 
-                    if (f.InsertTarjeta(f) == true)
-                    {
+                            if (f.InsertTarjeta(f) == true)
+                            {
 
-                        // RESERVACION PASA DE CHECKED IN A CHECKED OUT
-                        Reservacion reserva = new Reservacion();
-                        reserva.IdReservacion = f.IdReservacion;
-                        reserva.CheckOut(reserva);
-                        // HABITACION PASA DE OCUPADA A DISPONIBLE
-                        Habitacion hab = new Habitacion();
-                        hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[2].Value);
-                        hab.CambiarEstados(hab.IdHabitacion, "Disponible");
-                        MessageBox.Show("Se ha facturado correctamente.");
-                        f.IdFactura = f.SelectIdFactura();
-                        btnImprimir.Enabled = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ha ocurrido un error al facturar.");
-                    }
+                                // RESERVACION PASA DE SIN CONFIRMAR A CHECK IN
+                                Reservacion reserva = new Reservacion();
+                                reserva.IdReservacion = f.IdReservacion;
+                                reserva.Confirmar(reserva);
+                                // HABITACION PASA DE DISPONIBLE A OCUPADA
+                                Habitacion hab = new Habitacion();
+                                hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[3].Value);
+                                hab.CambiarEstados(hab.IdHabitacion, "Disponible");
+                             //   hab.IsReserved(hab.IdHabitacion, 1);
+                                MessageBox.Show("Check out correctamente.");
+                                f.IdFactura = f.SelectIdFactura();
+                                btnImprimir.Enabled = true;
 
-                }
-            }
-            if (cmbFormaPago.Text == "Efectivo")
-            {
-                if (txtNombre.Text == string.Empty || txtEfectivo.Text == string.Empty || txtTotalAPagar.Text == string.Empty || txtCambio.Text == string.Empty || txtAtendidoPor.Text == string.Empty)
-                {
-                    MessageBox.Show("Faltan Ingresar datos.");
-                }
-                else
-                {
-                    /*
-                     @IdReservacion, @IdHuesped, @SubTotal, @TotalAPagar, @Fecha, @FormaDePago, @EfectivoRecibido, @Devuelta
-                     */
-                    f.IdReservacion = id;
-                    f.IdHuesped = Convert.ToInt32(txtIdCliente.Text);
-                    f.Empleado = txtAtendidoPor.Text;
-                    f.TotalAPagar = Convert.ToSingle(txtTotalAPagar.Text);
-                    f.Fecha = dtpFechaActual.Value;
-                    f.FormaDePago = cmbFormaPago.Text;
-                    f.SubTotal = Convert.ToSingle(dgvFill.Rows[0].Cells[11].Value);
-                    if (txtDescuento.Text == string.Empty)
-                    {
-                        //do nothing
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ha ocurrido un error al facturar.");
+                            }
 
+                        }
                     }
-                    else
+                    if (cmbFormaPago.Text == "Efectivo")
                     {
-                        f.Descuento = Convert.ToSingle(txtDescuento.Text);
-                    }
-                    if (txtEfectivo.Text == string.Empty)
-                    {
-                        //do nothing
+                        if (txtNombre.Text == string.Empty || txtEfectivo.Text == string.Empty || txtTotalAPagar.Text == string.Empty || txtCambio.Text == string.Empty || txtAtendidoPor.Text == string.Empty)
+                        {
+                            MessageBox.Show("Faltan Ingresar datos.");
+                        }
+                        else
+                        {
+                            /*
+                             @IdReservacion, @IdHuesped, @SubTotal, @TotalAPagar, @Fecha, @FormaDePago, @EfectivoRecibido, @Devuelta
+                             */
+                            f.IdReservacion = id;
+                            f.IdHuesped = Convert.ToInt32(txtIdCliente.Text);
+                            f.Empleado = txtAtendidoPor.Text;
+                            f.TotalAPagar = Convert.ToSingle(txtTotalAPagar.Text);
+                            f.Fecha = dtpFechaActual.Value;
+                            f.FormaDePago = cmbFormaPago.Text;
+                            f.SubTotal = Convert.ToSingle(dgvFill.Rows[0].Cells[12].Value);
+                            if (txtDescuento.Text == string.Empty)
+                            {
+                                //do nothing
 
-                    }
-                    else
-                    {
-                        f.EfectivoRecibido = Convert.ToSingle(txtEfectivo.Text);
-                    }
-                    if (txtCambio.Text == string.Empty)
-                    {
-                        //do nothing
-                        MessageBox.Show("Falta Ingresar datos.");
-                    }
-                    else
-                    {
-                        f.Devuelta = Convert.ToSingle(txtCambio.Text);
-                    }
+                            }
+                            else
+                            {
+                                f.Descuento = Convert.ToSingle(txtDescuento.Text);
+                            }
+                            if (txtEfectivo.Text == string.Empty)
+                            {
+                                //do nothing
 
-                    if (f.InsertEfectivo(f) == true && txtCambio.Text != "")
-                    {
-                        // RESERVACION PASA DE CHECKED IN A CHECKED OUT
-                        Reservacion reserva = new Reservacion();
-                        reserva.IdReservacion = f.IdReservacion;
-                        reserva.CheckOut(reserva);
-                        // HABITACION PASA DE OCUPADA A DISPONIBLE
-                        Habitacion hab = new Habitacion();
-                        hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[2].Value);
-                        hab.CambiarEstados(hab.IdHabitacion, "Disponible");
-                        MessageBox.Show("Se ha facturado correctamente.");
-                        f.IdFactura = f.SelectIdFactura();
-                        btnImprimir.Enabled = true;
+                            }
+                            else
+                            {
+                                f.EfectivoRecibido = Convert.ToSingle(txtEfectivo.Text);
+                            }
+                            if (txtCambio.Text == string.Empty)
+                            {
+                                //do nothing
+                                MessageBox.Show("Faltan Ingresar datos.");
+                            }
+                            else
+                            {
+                                f.Devuelta = Convert.ToSingle(txtCambio.Text);
+                            }
+
+                            if (f.InsertEfectivo(f) == true && txtCambio.Text != "")
+                            {
+                                // RESERVACION PASA DE SIN CONFIRMAR A CHECK IN
+                                Reservacion reserva = new Reservacion();
+                                reserva.IdReservacion = f.IdReservacion;
+                                reserva.Confirmar(reserva);
+                                // HABITACION PASA DE OCUPADA A DISPONIBLE
+
+                                Habitacion hab = new Habitacion();
+                                hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[3].Value);
+                                hab.CambiarEstados(hab.IdHabitacion, "Disponible");
+                              //  hab.IsReserved(hab.IdHabitacion, 1);
+                                MessageBox.Show("Check out correctamente.");
+                                f.IdFactura = f.SelectIdFactura();
+                                btnImprimir.Enabled = true;
+                            }
+                            else
+                            {
+                                //  MessageBox.Show("Ha ocurrido un error al facturar.");
+                            }
+                        }
                     }
-                    else
-                    {
-                        //  MessageBox.Show("Ha ocurrido un error al facturar.");
-                    }
+                
                 }
             }
            
@@ -303,10 +314,10 @@ namespace PMS_POS.View
             FillCheckout(idReservacion.ToString());
             
 
-            txtIdCliente.Text = dgvFill.Rows[0].Cells[1].Value.ToString();
-            txtNombre.Text = dgvFill.Rows[0].Cells[16].Value.ToString();
-            txtTelefono.Text = dgvFill.Rows[0].Cells[17].Value.ToString();
-            txtNumDocumento.Text = dgvFill.Rows[0].Cells[18].Value.ToString();
+            txtIdCliente.Text = dgvFill.Rows[0].Cells[2].Value.ToString();
+            txtNombre.Text = dgvFill.Rows[0].Cells[17].Value.ToString();
+            txtTelefono.Text = dgvFill.Rows[0].Cells[18].Value.ToString();
+            txtNumDocumento.Text = dgvFill.Rows[0].Cells[19].Value.ToString();
         }
 
         private void CmbFormaPago_TextChanged(object sender, EventArgs e)
@@ -328,7 +339,7 @@ namespace PMS_POS.View
         {
           
             //LLENAR CHECKOUT
-            instruccion = "Select hostal.reservacion.IdReservacion,hostal.reservacion.IdHuesped,hostal.reservacion.IdHabitacion, hostal.reservacion.FechaLlegada,hostal.reservacion.FechaSalida,hostal.reservacion.CantNoches,hostal.reservacion.CantAdultos,hostal.reservacion.CantInfantes,hostal.reservacion.Canal,hostal.reservacion.Comentario,hostal.reservacion.PrecioNoche,hostal.reservacion.PrecioTotal,hostal.reservacion.FechaLlegada as Llegada, hostal.reservacion.FechaSalida as Salida, hostal.habitacion.NumHab as Habitacion, hostal.reservacion.EstadoReservacion as Estado, CONCAT(huesped.PrimerNombre, ' ', huesped.SegundoNombre, ' ', huesped.PrimerApellido,' ', hostal.huesped.SegundoApellido) as Nombre, hostal.huesped.Telefono as Contacto, hostal.huesped.NumDocumento  FROM hostal.reservacion INNER JOIN hostal.habitacion ON hostal.reservacion.IdHabitacion = hostal.habitacion.IdHabitacion INNER JOIN hostal.huesped ON hostal.reservacion.IdHuesped = hostal.huesped.IdHuesped WHERE ( reservacion.IsDeleted = 0 AND reservacion.EstadoReservacion = 'Checked-In' AND reservacion.IdReservacion ="+idReservacion+" ) GROUP BY hostal.reservacion.FechaLlegada; ";
+            instruccion = "Select hostal.reservacion.IsPaid,hostal.reservacion.IdReservacion,hostal.reservacion.IdHuesped,hostal.reservacion.IdHabitacion,hostal.habitacion.TipoHab, hostal.reservacion.FechaLlegada,hostal.reservacion.FechaSalida,hostal.reservacion.CantNoches,hostal.reservacion.CantAdultos,hostal.reservacion.CantInfantes,hostal.reservacion.Canal,hostal.reservacion.Comentario,hostal.reservacion.PrecioNoche,hostal.reservacion.PrecioTotal,hostal.reservacion.FechaLlegada as Llegada, hostal.reservacion.FechaSalida as Salida, hostal.habitacion.NumHab as Habitacion, hostal.reservacion.EstadoReservacion as Estado, CONCAT(huesped.PrimerNombre, ' ', huesped.SegundoNombre, ' ', huesped.PrimerApellido,' ', hostal.huesped.SegundoApellido) as Nombre, hostal.huesped.Telefono as Contacto, hostal.huesped.NumDocumento  FROM hostal.reservacion INNER JOIN hostal.habitacion ON hostal.reservacion.IdHabitacion = hostal.habitacion.IdHabitacion INNER JOIN hostal.huesped ON hostal.reservacion.IdHuesped = hostal.huesped.IdHuesped WHERE ( reservacion.IsDeleted = 0 AND reservacion.EstadoReservacion = 'Checked-In' AND reservacion.IdReservacion =" + idReservacion+" ) GROUP BY hostal.reservacion.FechaLlegada; ";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
@@ -341,7 +352,7 @@ namespace PMS_POS.View
         {
             validar.soloNumeros4(e, txtBoxDigitos);
         }
-
+        
         private void TxtEfectivo_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.soloNumerosPunto(e, txtEfectivo);
@@ -383,12 +394,24 @@ namespace PMS_POS.View
 
         private void TxtIdCliente_TextChanged(object sender, EventArgs e)
         {
-            CargarRecargos(txtIdCliente.Text);
+            CargarRecargos();
         }
-        private void CargarRecargos(string idCliente)
+        private void CargarRecargos()
         {
             //LLENAR RECARGOS
-            instruccion = "Select hostal.huesped.IdHuesped, hostal.pedido.Fecha, hostal.pedido_bebida.CantidadBebida as Cantidad, hostal.bebida.NombreBebida as Producto, hostal.pedido_bebida.Total as Precio FROM hostal.pedido INNER JOIN hostal.pedido_bebida ON hostal.pedido.IdPedidoBebida = hostal.pedido_bebida.IdPedidoBebida INNER JOIN hostal.huesped ON hostal.pedido.IdCliente = hostal.huesped.IdHuesped INNER JOIN hostal.bebida ON hostal.pedido.IdPedidoBebida = hostal.bebida.IdBebida;";
+           int isDebt = Convert.ToInt32(dgvFill.Rows[0].Cells[0].Value.ToString());
+            if(isDebt == 0)
+            {
+                txtSubtotal.Text = "0";
+                txtTotalAPagar.Text = "0";
+            }
+            else
+            {
+                txtSubtotal.Text = dgvFill.Rows[0].Cells[12].Value.ToString();
+                txtTotalAPagar.Text = dgvFill.Rows[0].Cells[12].Value.ToString();
+
+            }
+            // instruccion = "Select IsPaid from reservacion where IdReservacion = @IdReservacion";
             MySqlDataAdapter adp = new MySqlDataAdapter(instruccion, conexion());
             DataTable COnsulta = new DataTable();
             adp.Fill(COnsulta);
@@ -407,7 +430,7 @@ namespace PMS_POS.View
                 {
                     //se recorren todas los pedidos del cliente
                     //y se suman al total
-                    total += Convert.ToSingle(dataGridViewRecargos.Rows[i].Cells[4].Value);
+                  //  total += Convert.ToSingle(dataGridViewRecargos.Rows[i].Cells[4].Value);
                 }
 
                 txtRecargoPendiente.Text = total.ToString();
@@ -422,12 +445,79 @@ namespace PMS_POS.View
 
         private void TxtRecargoPendiente_TextChanged(object sender, EventArgs e)
         {
-            txtSubtotal.Text = txtRecargoPendiente.Text;
-            txtTotalAPagar.Text = txtRecargoPendiente.Text;
+          
         }
 
         private void BtnImprimir_Click(object sender, EventArgs e)
         {
+
+            FacturaDetails();
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF file |*.pdf", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
+                    try
+                    {
+                        PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+                        doc.Open();
+                        doc.Add(new iTextSharp.text.Paragraph(txtBoxFactura.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        doc.Close();
+                    }
+                }
+            }
+        }
+        private void FacturaDetails()
+        {
+            if (cmbFormaPago.Text == "Efectivo")
+            {
+                txtBoxFactura.Text =
+               "HOTEL XXXXX\n" +
+               "************************************************************************\n" +
+               "No. Factura: " + f.IdFactura.ToString() + "\n" +
+               "Fecha: " + DateTime.Now + "\n" +
+               "Le atendió: " + txtAtendidoPor.Text + "\n" +
+               "--------------------------------------------------------------------------------\n" +
+               "DESCRIPCIÓN          PRECIO POR NOCHE      SUBTOTAL \n" +
+               "Habitación " + dgvFill.Rows[0].Cells[16].Value.ToString() + "                 " + dgvFill.Rows[0].Cells[11].Value.ToString() + " RD$               " + dgvFill.Rows[0].Cells[12].Value.ToString() +
+               "RD$\n-------------------------------------------------------------------------------\n" +
+               "Sub-Total                                                                 " + txtSubtotal.Text + " RD$\n" +
+               "% Descuento                                                                " + txtDescuento.Text + " %\n\n" +
+               "Total                                                                       " + txtTotalAPagar.Text + " RD$\n" +
+               "Efectivo entregado                                                   " + txtEfectivo.Text + " RD$\n" +
+               "Efectivo devuelto                                                    " + txtCambio.Text + " RD$" +
+                "\n--------------------------------------------------------------------------------";
+
+            }
+            else
+            {
+                txtBoxFactura.Text =
+             "HOTEL XXXXX\n" +
+             "************************************************************************\n" +
+             "No. Factura: " + f.IdFactura.ToString() + "\n" +
+             "Fecha: " + DateTime.Now + "\n" +
+             "Le atendió: " + txtAtendidoPor.Text + "\n" +
+             "--------------------------------------------------------------------------------\n" +
+             "DESCRIPCIÓN          PRECIO POR NOCHE      SUBTOTAL \n" +
+             "Habitación " + dgvFill.Rows[0].Cells[16].Value.ToString() + "                 " + dgvFill.Rows[0].Cells[11].Value.ToString() + " RD$               " + dgvFill.Rows[0].Cells[12].Value.ToString() +
+             "RD$\n--------------------------------------------------------------------------------\n" +
+             "Sub-Total                                                                 " + txtSubtotal.Text + " RD$\n" +
+             "% Descuento                                                                " + txtDescuento.Text + " %\n\n" +
+             "Total                                                                       " + txtTotalAPagar.Text + " RD$\n" +
+             "Tarjeta                                                                      " + txtBoxDigitos.Text + " RD$\n" +
+              "Compañía                                                     " + txtBoxCompania.Text + " RD$" +
+              "\n--------------------------------------------------------------------------------";
+            }
+
+
+
 
         }
     }

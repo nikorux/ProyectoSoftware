@@ -83,6 +83,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.errorProviderDigitos = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtBoxFactura = new System.Windows.Forms.RichTextBox();
+            this.chkBoxPago = new System.Windows.Forms.CheckBox();
+            this.pnlPay = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -98,6 +100,7 @@
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHabitacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDigitos)).BeginInit();
+            this.pnlPay.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -284,21 +287,20 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.pnlPay);
+            this.panel1.Controls.Add(this.chkBoxPago);
             this.panel1.Controls.Add(this.txtNumDocumento);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.pnlTarjeta);
             this.panel1.Controls.Add(this.dtpFechaActual);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtCajero);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.txtTelefono);
-            this.panel1.Controls.Add(this.cmbFormaPago);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.txtIdCliente);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label13);
             this.panel1.Location = new System.Drawing.Point(17, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(790, 210);
@@ -331,7 +333,7 @@
             this.pnlTarjeta.Controls.Add(this.lblDigitos);
             this.pnlTarjeta.Controls.Add(this.lblCompania);
             this.pnlTarjeta.Controls.Add(this.txtBoxDigitos);
-            this.pnlTarjeta.Location = new System.Drawing.Point(420, 65);
+            this.pnlTarjeta.Location = new System.Drawing.Point(22, 34);
             this.pnlTarjeta.Name = "pnlTarjeta";
             this.pnlTarjeta.Size = new System.Drawing.Size(347, 96);
             this.pnlTarjeta.TabIndex = 36;
@@ -426,7 +428,7 @@
             this.cmbFormaPago.Items.AddRange(new object[] {
             "Efectivo",
             "Tarjeta"});
-            this.cmbFormaPago.Location = new System.Drawing.Point(549, 13);
+            this.cmbFormaPago.Location = new System.Drawing.Point(151, 1);
             this.cmbFormaPago.Name = "cmbFormaPago";
             this.cmbFormaPago.Size = new System.Drawing.Size(194, 21);
             this.cmbFormaPago.TabIndex = 22;
@@ -483,7 +485,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(416, 15);
+            this.label13.Location = new System.Drawing.Point(18, 3);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(121, 20);
             this.label13.TabIndex = 5;
@@ -573,6 +575,7 @@
             this.txtBusquedaCliente.Name = "txtBusquedaCliente";
             this.txtBusquedaCliente.Size = new System.Drawing.Size(173, 13);
             this.txtBusquedaCliente.TabIndex = 35;
+            this.txtBusquedaCliente.Visible = false;
             // 
             // label23
             // 
@@ -606,6 +609,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 95;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // pictureBox1
             // 
@@ -669,6 +673,28 @@
             this.txtBoxFactura.Text = "";
             this.txtBoxFactura.Visible = false;
             // 
+            // chkBoxPago
+            // 
+            this.chkBoxPago.AutoSize = true;
+            this.chkBoxPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkBoxPago.Location = new System.Drawing.Point(617, 177);
+            this.chkBoxPago.Name = "chkBoxPago";
+            this.chkBoxPago.Size = new System.Drawing.Size(159, 24);
+            this.chkBoxPago.TabIndex = 96;
+            this.chkBoxPago.Text = "Pago en Checkout";
+            this.chkBoxPago.UseVisualStyleBackColor = true;
+            this.chkBoxPago.CheckedChanged += new System.EventHandler(this.ChkBoxPago_CheckedChanged);
+            // 
+            // pnlPay
+            // 
+            this.pnlPay.Controls.Add(this.label13);
+            this.pnlPay.Controls.Add(this.cmbFormaPago);
+            this.pnlPay.Controls.Add(this.pnlTarjeta);
+            this.pnlPay.Location = new System.Drawing.Point(392, 14);
+            this.pnlPay.Name = "pnlPay";
+            this.pnlPay.Size = new System.Drawing.Size(384, 166);
+            this.pnlPay.TabIndex = 111;
+            // 
             // FacturacionCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -710,6 +736,8 @@
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHabitacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDigitos)).EndInit();
+            this.pnlPay.ResumeLayout(false);
+            this.pnlPay.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -770,5 +798,7 @@
         private System.Windows.Forms.TextBox txtNumDocumento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RichTextBox txtBoxFactura;
+        private System.Windows.Forms.CheckBox chkBoxPago;
+        private System.Windows.Forms.Panel pnlPay;
     }
 }

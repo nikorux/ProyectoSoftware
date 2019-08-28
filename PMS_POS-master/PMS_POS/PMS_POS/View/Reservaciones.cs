@@ -30,6 +30,7 @@ namespace PMS_POS.View
         public Reservaciones()
         {
             InitializeComponent();
+            RefreshDgv();
         }
         Reservacion reservacion = new Reservacion();
 
@@ -98,6 +99,7 @@ namespace PMS_POS.View
         }
         public void RefreshDgv()
         {
+
             dgvReservaciones.DataSource = obj.VistaTabla();
             dgvReservaciones.Columns[0].Visible = false;
             dgvReservaciones.Columns[1].Visible = false;
@@ -112,7 +114,25 @@ namespace PMS_POS.View
             dgvReservaciones.Columns[10].Visible = false;
             dgvReservaciones.Columns[11].Visible = false;
 
-        }
+            for (int i = 0; i < dgvReservaciones.Rows.Count; i++)
+            {
+                // mostrar las que sean hoy solamente
+
+               // Solo las reservaciones 
+
+                if (DateTime.Parse(dgvReservaciones.Rows[i].Cells[12].Value.ToString()) != DateTime.Today.Date)
+                    {
+                    CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dgvReservaciones.DataSource];
+                    currencyManager1.SuspendBinding();
+                    dgvReservaciones.Rows[i].Visible = false;
+                    currencyManager1.ResumeBinding();
+                  
+                    }
+
+            }
+            
+
+            }
 
         private void BtnEliminarReservacion_Click(object sender, EventArgs e)
         {
@@ -241,7 +261,7 @@ namespace PMS_POS.View
                 DataGridViewRow dgvRow = dgvReservaciones.Rows[row];
                 if (dgvRow.Cells["Estado"].Value.ToString() == "Sin Confirmar")
                 {
-                    btnRegistrarCheckOut.Enabled = false;
+                   // btnRegistrarCheckOut.Enabled = false;
 
                     btnConfirmar.Enabled = true;
 
@@ -251,7 +271,7 @@ namespace PMS_POS.View
                 {
                     btnConfirmar.Enabled = false;
                     btnEditarReservacion.Enabled = false;
-                    btnRegistrarCheckOut.Enabled = true;
+                    //btnRegistrarCheckOut.Enabled = true;
 
 
 
@@ -271,7 +291,7 @@ namespace PMS_POS.View
                 DataGridViewRow dgvRow = dgvReservaciones.Rows[row];
                 if (dgvRow.Cells["Estado"].Value.ToString() == "Sin Confirmar")
                 {
-                    btnRegistrarCheckOut.Enabled = false;
+                    //btnRegistrarCheckOut.Enabled = false;
 
                     btnConfirmar.Enabled = true;
 
@@ -281,7 +301,7 @@ namespace PMS_POS.View
                 {
                     btnConfirmar.Enabled = false;
                     btnEditarReservacion.Enabled = false;
-                    btnRegistrarCheckOut.Enabled = true;
+                    //btnRegistrarCheckOut.Enabled = true;
 
 
 
@@ -290,6 +310,17 @@ namespace PMS_POS.View
 
 
             }
+        }
+
+        private void DgvReservaciones_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            RefreshDgv();
+        }
+
+        private void DgvReservaciones_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //MOSTRAR INFO
+
         }
     }
 }

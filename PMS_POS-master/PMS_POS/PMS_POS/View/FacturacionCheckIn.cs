@@ -34,6 +34,7 @@ namespace PMS_POS.View
         }
         Reservacion obj = new Reservacion();
         int id = 0;
+        bool payLater = false;
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
@@ -79,7 +80,19 @@ namespace PMS_POS.View
         Factura_Reservacion f = new Factura_Reservacion();
         private void BtnRegistrarCheckIn_Click(object sender, EventArgs e)
         {
-            
+            if (payLater == true)
+            {
+                f.IdReservacion = id;
+                Reservacion reserva = new Reservacion();
+                reserva.IdReservacion = f.IdReservacion;
+                reserva.Confirmar(reserva);
+                // HABITACION PASA DE DISPONIBLE A OCUPADA
+                Habitacion hab = new Habitacion();
+                hab.IdHabitacion = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[13].Value);
+                hab.CambiarEstados(hab.IdHabitacion, "Ocupada");
+                MessageBox.Show("Ha checked in correctamente.");
+            }
+            else {
             if( cmbFormaPago.Text == string.Empty)
             {
                 MessageBox.Show("Seleccione una forma de pago.");
@@ -200,6 +213,7 @@ namespace PMS_POS.View
                       //  MessageBox.Show("Ha ocurrido un error al facturar.");
                     }
                 }
+            }
             }
           
         }
@@ -370,26 +384,70 @@ namespace PMS_POS.View
         }
         private void FacturaDetails()
         {
-            txtBoxFactura.Text =
-                "HOTEL XXXXX\n" +
-                "************************************************************************\n" +
-                "No. Factura: " + f.IdFactura.ToString() + "\n" +
-                "Fecha: " + DateTime.Now + "\n" +
-                "Le atendió: " + txtCajero.Text + "\n" +
-                "--------------------------------------------------------------------------------\n" +
-                "DESCRIPCIÓN          PRECIO POR NOCHE      SUBTOTAL \n" +
-                "Habitación " + dgvHabitacion.Rows[0].Cells[6].Value.ToString() + "                 " + dgvHabitacion.Rows[0].Cells[11].Value.ToString() + " RD$               " + dgvHabitacion.Rows[0].Cells[12].Value.ToString() +
-                "RD$\n--------------------------------------------------------------------------------\n" +
-                "Sub-Total                                                                 " + txtSubtotal.Text + " RD$\n" +
-                "% Descuento                                                                " + txtDescuento.Text + " %\n\n" +
-                "Total                                                                       " + txtTotalAPagar.Text + " RD$\n" +
-                "Efectivo entregado                                                   " + txtEfectivo.Text + " RD$" +
-                "\nEfectivo devuelto                                                 " + txtCambio.Text + " RD$" +
-                 "\n--------------------------------------------------------------------------------";
+            if(cmbFormaPago.Text == "Efectivo")
+            {
+                txtBoxFactura.Text =
+               "HOTEL XXXXX\n" +
+               "************************************************************************\n" +
+               "No. Factura: " + f.IdFactura.ToString() + "\n" +
+               "Fecha: " + DateTime.Now + "\n" +
+               "Le atendió: " + txtCajero.Text + "\n" +
+               "--------------------------------------------------------------------------------\n" +
+               "DESCRIPCIÓN          PRECIO POR NOCHE      SUBTOTAL \n" +
+               "Habitación " + dgvHabitacion.Rows[0].Cells[6].Value.ToString() + "                 " + dgvHabitacion.Rows[0].Cells[11].Value.ToString() + " RD$               " + dgvHabitacion.Rows[0].Cells[12].Value.ToString() +
+               "RD$\n--------------------------------------------------------------------------------\n" +
+               "Sub-Total                                                                 " + txtSubtotal.Text + " RD$\n" +
+               "% Descuento                                                                " + txtDescuento.Text + " %\n\n" +
+               "Total                                                                       " + txtTotalAPagar.Text + " RD$\n" +
+               "Efectivo entregado                                                   " + txtEfectivo.Text + " RD$\n" +
+               "Efectivo devuelto                                                    " + txtCambio.Text + " RD$" +
+                "\n--------------------------------------------------------------------------------";
+
+            }
+            else
+            {
+                txtBoxFactura.Text =
+             "HOTEL XXXXX\n" +
+             "************************************************************************\n" +
+             "No. Factura: " + f.IdFactura.ToString() + "\n" +
+             "Fecha: " + DateTime.Now + "\n" +
+             "Le atendió: " + txtCajero.Text + "\n" +
+             "--------------------------------------------------------------------------------\n" +
+             "DESCRIPCIÓN          PRECIO POR NOCHE      SUBTOTAL \n" +
+             "Habitación " + dgvHabitacion.Rows[0].Cells[6].Value.ToString() + "                 " + dgvHabitacion.Rows[0].Cells[11].Value.ToString() + " RD$               " + dgvHabitacion.Rows[0].Cells[12].Value.ToString() +
+             "RD$\n--------------------------------------------------------------------------------\n" +
+             "Sub-Total                                                                 " + txtSubtotal.Text + " RD$\n" +
+             "% Descuento                                                                " + txtDescuento.Text + " %\n\n" +
+             "Total                                                                       " + txtTotalAPagar.Text + " RD$\n" +
+            "Tarjeta                                                                      " + txtBoxDigitos.Text + " RD$\n" +
+              "Compañía                                                     " + txtBoxCompania.Text + " RD$" +
+              "\n--------------------------------------------------------------------------------";
+            }
 
 
 
 
+        }
+
+        private void ChkBoxPago_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pnlPay.Visible == true)
+            {
+                pnlPay.Visible = false;
+                payLater = true;
+                Reservacion reserva = new Reservacion();
+                reserva.IdReservacion = id;
+                reserva.PayLater(reserva,1);
+            }
+            else
+            {
+                pnlPay.Visible = true;
+                payLater = false;
+                Reservacion reserva = new Reservacion();
+                reserva.IdReservacion = f.IdReservacion;
+                reserva.PayLater(reserva, 0);
+            }
+            
         }
     }
 }

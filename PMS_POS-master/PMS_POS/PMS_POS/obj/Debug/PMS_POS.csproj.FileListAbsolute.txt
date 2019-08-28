@@ -238,8 +238,17 @@ C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.RegistroNuevoEmpleado.resources
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlEmpleados.resources
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.BuscarCheckedIn.resources
-C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csprojAssemblyReference.cache
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.BuscarCheckedIn.resources
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.dll
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.xml
 C:\Users\nicol\Desktop\Nueva carpeta (23)\Bueh 1\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmCorrecto.resources
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.FrmCorrecto.resources
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.dll
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\itextsharp.xml
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.CheckedIn.resources
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csprojAssemblyReference.cache
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.ReportViewer.WinForms.dll

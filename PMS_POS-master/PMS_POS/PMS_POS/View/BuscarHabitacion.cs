@@ -83,27 +83,10 @@ namespace PMS_POS.Model
 
         private void Filtrar()
         {
-            for ( int i = 0; i < dgv.Rows.Count; i++)
+            for (int i = 0; i < dgv.Rows.Count; i++)
             {
                 // SI ESTÁ RESERVADA 
                 if (dgv.Rows[i].Cells[10].Value.ToString() == "1")
-                {
-                    // QUE EL ID DE LA HABITACION LLENE EL DATAGRIDVIEW DE RESERVACIONES CON ESE IDHABITACION
-                    dgvReservedRooms.DataSource = habitacion.ReservationsInRoom(Convert.ToInt32(dgv.Rows[i].Cells[0].Value));
-                    //LUEGO QUE COMPARE LA FECHA DE LLEGADA CON LAS FECHAS DE LLEGADA Y SALIDA DE LAS RESERVACIONES
-                    for ( int j = 0; j < dgvReservedRooms.Rows.Count; j++)
-                    {
-                        //SI LA FECHA DE LLEGADA NUEVA SE ENCUENTRA ENTRE EL RANGO DE LA FECHA DE LLEGADA Y FECHA DE SALIDA DE LA RESERVACION ENTONCES
-                        //QUE NO SE MUESTRE ESA FILA
-                     
-                        if ( (FechaLlegada >= DateTime.Parse(dgvReservedRooms.Rows[j].Cells[2].Value.ToString())) && ( FechaLlegada < DateTime.Parse( dgvReservedRooms.Rows[j].Cells[3].Value.ToString() ) )     )
-                        {
-                            dgv.Rows[i].Visible = false;
-                        }
-                    }
-                   
-                }
-                if (dgv.Rows[i].Cells[10].Value.ToString() == "0")
                 {
                     // QUE EL ID DE LA HABITACION LLENE EL DATAGRIDVIEW DE RESERVACIONES CON ESE IDHABITACION
                     dgvReservedRooms.DataSource = habitacion.ReservationsInRoom(Convert.ToInt32(dgv.Rows[i].Cells[0].Value));
@@ -120,10 +103,33 @@ namespace PMS_POS.Model
                     }
 
                 }
+                if (dgv.Rows[i].Cells[10].Value.ToString() == "0")
+                {
+                    // QUE EL ID DE LA HABITACION LLENE EL DATAGRIDVIEW DE RESERVACIONES CON ESE IDHABITACION
+                    dgvReservedRooms.DataSource = habitacion.ReservationsInRoom(Convert.ToInt32(dgv.Rows[i].Cells[0].Value));
+                    //LUEGO QUE COMPARE LA FECHA DE LLEGADA CON LAS FECHAS DE LLEGADA Y SALIDA DE LAS RESERVACIONES
+                    for (int j = 0; j < dgvReservedRooms.Rows.Count; j++)
+                    {
+                        //SI LA FECHA DE LLEGADA NUEVA SE ENCUENTRA ENTRE EL RANGO DE LA FECHA DE LLEGADA Y FECHA DE SALIDA DE LA RESERVACION ENTONCES
+                        //QUE NO SE MUESTRE ESA FILA
+
+                        if ((FechaLlegada >= DateTime.Parse(dgvReservedRooms.Rows[j].Cells[2].Value.ToString())) && (FechaLlegada < DateTime.Parse(dgvReservedRooms.Rows[j].Cells[3].Value.ToString())))
+                        {
+                        //    dgv.Rows[i].Visible = false;
+                        }
+                    }
+
+                }
 
             }
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                if (dgv.Rows[i].Cells[6].Value.ToString() == "Ocupada")
+                {
+                    dgv.Rows[i].Cells[6].Value = "Disponible";
+                }
+            }
         }
-
         private void TxtBoxBuscar_TextChanged(object sender, EventArgs e)
         {
             if (txtBoxBuscar.Text != "")

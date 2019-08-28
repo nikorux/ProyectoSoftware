@@ -187,6 +187,8 @@ namespace PMS_POS.View
 
                             dateTimePickerLlegada.MinDate = DateTime.Today;
                             dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
+                            calcularNoches();
+
 
                             MessageBox.Show("La reservación ha sido creada.");
 
@@ -333,6 +335,9 @@ namespace PMS_POS.View
             dateTimePickerLlegada.MinDate = DateTime.Today;
             dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
            
+            calcularNoches();
+
+
         }
 
         private void TxtBoxNoches_TextChanged(object sender, EventArgs e)
@@ -362,6 +367,7 @@ namespace PMS_POS.View
 
             dateTimePickerLlegada.MinDate = DateTime.Today;
             dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
+            calcularNoches();
         }
 
         private void NuevaReservacion_LocationChanged(object sender, EventArgs e)
