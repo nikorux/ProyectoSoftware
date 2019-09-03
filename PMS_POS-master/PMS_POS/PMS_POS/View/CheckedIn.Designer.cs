@@ -133,6 +133,7 @@
             this.btnEliminarReservacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminarReservacion.UseCompatibleTextRendering = true;
             this.btnEliminarReservacion.UseVisualStyleBackColor = false;
+            this.btnEliminarReservacion.Visible = false;
             this.btnEliminarReservacion.Click += new System.EventHandler(this.BtnEliminarReservacion_Click);
             // 
             // btnEditarReservacion
@@ -154,6 +155,7 @@
             this.btnEditarReservacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditarReservacion.UseCompatibleTextRendering = true;
             this.btnEditarReservacion.UseVisualStyleBackColor = false;
+            this.btnEditarReservacion.Visible = false;
             // 
             // pictureBox2
             // 

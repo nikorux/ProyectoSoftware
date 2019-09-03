@@ -90,18 +90,18 @@ namespace PMS_POS.View
                 Habitacion hab = new Habitacion();
                 hab.IdHabitacion = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[13].Value);
                 hab.CambiarEstados(hab.IdHabitacion, "Ocupada");
-                MessageBox.Show("Ha checked in correctamente.");
+                ErrorDatosFaltantes.confirmacionForm("AGREGADO");
             }
             else {
             if( cmbFormaPago.Text == string.Empty)
             {
-                MessageBox.Show("Seleccione una forma de pago.");
+                    ErrorDatosFaltantes.confirmacionForm("ERROR");
             }
             if ( cmbFormaPago.Text == "Tarjeta")
             {
                 if (txtNombre.Text == string.Empty || txtTotalAPagar.Text == string.Empty || txtBoxDigitos.Text == string.Empty || txtBoxCompania.Text == string.Empty || txtCajero.Text == string.Empty)
                 {
-                    MessageBox.Show("Faltan Ingresar datos.");
+                        ErrorDatosFaltantes.confirmacionForm("ERROR");
                 }
                 else
                 {
@@ -136,14 +136,14 @@ namespace PMS_POS.View
                         Habitacion hab = new Habitacion();
                         hab.IdHabitacion = Convert.ToInt32(dgvHabitacion.Rows[0].Cells[13].Value);
                         hab.CambiarEstados(hab.IdHabitacion, "Ocupada");
-                        MessageBox.Show("Se ha facturado correctamente.");
+                        FrmCorrecto.confirmacionForm("CORRECTO");
                         f.IdFactura = f.SelectIdFactura();
                         btnImprimir.Enabled = true;
                  
                     }
                     else
                     {
-                        MessageBox.Show("Ha ocurrido un error al facturar.");
+                            FrmCorrecto.confirmacionForm("CORRECTO");
                     }
 
                 }

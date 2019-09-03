@@ -163,7 +163,7 @@ namespace PMS_POS.View
 
                 if (this.txtBoxNombre.Text == string.Empty || this.txtBoxTipoHabitacion.Text == string.Empty || this.txtBoxNoches.Text == string.Empty || this.txtBoxTotal.Text == string.Empty)
                 {
-                    MessageBox.Show("Falta ingresar algunos datos.");
+                    ErrorDatosFaltantes.confirmacionForm("ERROR");
                 }
                 else
                 {
@@ -190,13 +190,13 @@ namespace PMS_POS.View
                             calcularNoches();
 
 
-                            MessageBox.Show("La reservación ha sido creada.");
+                            FrmCorrecto.confirmacionForm("CORRECTO");
 
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Hubo un error al crear la reservación.");
+                        FrmSeguroCerrar.confirmacionForm("ERROR");
                     }
                 }
             }
@@ -204,7 +204,7 @@ namespace PMS_POS.View
             {
                 if (this.txtBoxNombre.Text == string.Empty || this.txtBoxTipoHabitacion.Text == string.Empty || this.txtBoxNoches.Text == string.Empty || this.txtBoxTotal.Text == string.Empty)
                 {
-                    MessageBox.Show("Falta ingresar algunos datos.");
+                    ErrorDatosFaltantes.confirmacionForm("ERROR");
                 }
                 else
                 {  
@@ -221,12 +221,12 @@ namespace PMS_POS.View
 
                         dateTimePickerLlegada.MinDate = DateTime.Today;
                         dateTimePickerSalida.MinDate = DateTime.Today.AddDays(1);
-                        MessageBox.Show("update successful");
+                        FrmCorrecto.confirmacionForm("CORRECTO");
                     }
                 
                     else
                     {
-                        MessageBox.Show("update unsuccessful");
+                        FrmCorrecto.confirmacionForm("CORRECTO");
                     }
                 }
             }

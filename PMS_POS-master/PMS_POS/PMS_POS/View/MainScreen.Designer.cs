@@ -527,7 +527,6 @@
             // btnCheckIn
             // 
             this.btnCheckIn.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCheckIn.Enabled = false;
             this.btnCheckIn.FlatAppearance.BorderSize = 0;
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -537,7 +536,7 @@
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(80, 80);
             this.btnCheckIn.TabIndex = 45;
-            this.btnCheckIn.Text = "Check-In";
+            this.btnCheckIn.Text = "Checked In";
             this.btnCheckIn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheckIn.UseCompatibleTextRendering = true;

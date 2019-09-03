@@ -135,7 +135,7 @@ namespace PMS_POS.View
                 hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[3].Value);
                 hab.CambiarEstados(hab.IdHabitacion, "Disponible");
                 hab.IsReserved(hab.IdHabitacion, 0);
-                MessageBox.Show("Check out correctamente.");
+                FrmCorrecto.confirmacionForm("AGREGADO");
 
             }
             else
@@ -143,7 +143,7 @@ namespace PMS_POS.View
                 //debe
                 if (cmbFormaPago.Text == string.Empty)
                 {
-                    MessageBox.Show("Seleccione una forma de pago.");
+                    ErrorDatosFaltantes.confirmacionForm("ERROR");
                 }
                 else
                 {
@@ -151,7 +151,7 @@ namespace PMS_POS.View
                     {
                         if (txtNombre.Text == string.Empty || txtTotalAPagar.Text == string.Empty || txtBoxDigitos.Text == string.Empty || txtBoxCompania.Text == string.Empty || txtAtendidoPor.Text == string.Empty)
                         {
-                            MessageBox.Show("Faltan Ingresar datos.");
+                            ErrorDatosFaltantes.confirmacionForm("ERROR");
                         }
                         else
                         {
@@ -186,15 +186,15 @@ namespace PMS_POS.View
                                 Habitacion hab = new Habitacion();
                                 hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[3].Value);
                                 hab.CambiarEstados(hab.IdHabitacion, "Disponible");
-                             //   hab.IsReserved(hab.IdHabitacion, 1);
-                                MessageBox.Show("Check out correctamente.");
+                                //   hab.IsReserved(hab.IdHabitacion, 1);
+                                FrmCorrecto.confirmacionForm("CORRECTO");
                                 f.IdFactura = f.SelectIdFactura();
                                 btnImprimir.Enabled = true;
 
                             }
                             else
                             {
-                                MessageBox.Show("Ha ocurrido un error al facturar.");
+                                FrmSeguroCerrar.confirmacionForm("ERROR");
                             }
 
                         }
@@ -203,7 +203,7 @@ namespace PMS_POS.View
                     {
                         if (txtNombre.Text == string.Empty || txtEfectivo.Text == string.Empty || txtTotalAPagar.Text == string.Empty || txtCambio.Text == string.Empty || txtAtendidoPor.Text == string.Empty)
                         {
-                            MessageBox.Show("Faltan Ingresar datos.");
+                            ErrorDatosFaltantes.confirmacionForm("ERROR");
                         }
                         else
                         {
@@ -238,7 +238,7 @@ namespace PMS_POS.View
                             if (txtCambio.Text == string.Empty)
                             {
                                 //do nothing
-                                MessageBox.Show("Faltan Ingresar datos.");
+                                ErrorDatosFaltantes.confirmacionForm("ERROR");
                             }
                             else
                             {
@@ -256,8 +256,8 @@ namespace PMS_POS.View
                                 Habitacion hab = new Habitacion();
                                 hab.IdHabitacion = Convert.ToInt32(dgvFill.Rows[0].Cells[3].Value);
                                 hab.CambiarEstados(hab.IdHabitacion, "Disponible");
-                              //  hab.IsReserved(hab.IdHabitacion, 1);
-                                MessageBox.Show("Check out correctamente.");
+                                //  hab.IsReserved(hab.IdHabitacion, 1);
+                                FrmCorrecto.confirmacionForm("CORRECTO");
                                 f.IdFactura = f.SelectIdFactura();
                                 btnImprimir.Enabled = true;
                             }
@@ -382,7 +382,7 @@ namespace PMS_POS.View
                 }
                 else
                 {
-                    MessageBox.Show("");
+                    //MessageBox.Show("");
                 }
 
             }
@@ -465,7 +465,7 @@ namespace PMS_POS.View
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        FrmSeguroCerrar.confirmacionForm("ERROR");
                     }
                     finally
                     {

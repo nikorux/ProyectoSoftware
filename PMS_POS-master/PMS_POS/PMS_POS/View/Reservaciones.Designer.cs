@@ -36,9 +36,9 @@
             this.txtFiltroo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnNoShow = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnNoShow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservaciones)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -161,6 +161,26 @@
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
+            // btnNoShow
+            // 
+            this.btnNoShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNoShow.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnNoShow.CausesValidation = false;
+            this.btnNoShow.FlatAppearance.BorderSize = 0;
+            this.btnNoShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoShow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNoShow.ForeColor = System.Drawing.Color.White;
+            this.btnNoShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNoShow.Location = new System.Drawing.Point(1023, 90);
+            this.btnNoShow.Name = "btnNoShow";
+            this.btnNoShow.Size = new System.Drawing.Size(144, 27);
+            this.btnNoShow.TabIndex = 92;
+            this.btnNoShow.Text = "No Show";
+            this.btnNoShow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNoShow.UseCompatibleTextRendering = true;
+            this.btnNoShow.UseVisualStyleBackColor = false;
+            this.btnNoShow.Visible = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -181,25 +201,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 90;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnNoShow
-            // 
-            this.btnNoShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNoShow.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnNoShow.CausesValidation = false;
-            this.btnNoShow.FlatAppearance.BorderSize = 0;
-            this.btnNoShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNoShow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNoShow.ForeColor = System.Drawing.Color.White;
-            this.btnNoShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNoShow.Location = new System.Drawing.Point(1023, 90);
-            this.btnNoShow.Name = "btnNoShow";
-            this.btnNoShow.Size = new System.Drawing.Size(144, 27);
-            this.btnNoShow.TabIndex = 92;
-            this.btnNoShow.Text = "No Show";
-            this.btnNoShow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNoShow.UseCompatibleTextRendering = true;
-            this.btnNoShow.UseVisualStyleBackColor = false;
             // 
             // Reservaciones
             // 

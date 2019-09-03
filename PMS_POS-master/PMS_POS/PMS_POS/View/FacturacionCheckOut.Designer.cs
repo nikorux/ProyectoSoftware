@@ -131,6 +131,7 @@
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscar.UseCompatibleTextRendering = true;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Visible = false;
             this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // label23
@@ -142,6 +143,7 @@
             this.label23.Size = new System.Drawing.Size(161, 20);
             this.label23.TabIndex = 34;
             this.label23.Text = "Búsqueda de Cliente:";
+            this.label23.Visible = false;
             // 
             // panel3
             // 
@@ -715,6 +717,7 @@
             this.dgvFill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFill.Size = new System.Drawing.Size(240, 150);
             this.dgvFill.TabIndex = 107;
+            this.dgvFill.Visible = false;
             // 
             // dataGridViewRecargos
             // 
@@ -730,7 +733,7 @@
             // 
             // txtBoxFactura
             // 
-            this.txtBoxFactura.Location = new System.Drawing.Point(781, 563);
+            this.txtBoxFactura.Location = new System.Drawing.Point(781, 568);
             this.txtBoxFactura.Name = "txtBoxFactura";
             this.txtBoxFactura.Size = new System.Drawing.Size(398, 139);
             this.txtBoxFactura.TabIndex = 109;
