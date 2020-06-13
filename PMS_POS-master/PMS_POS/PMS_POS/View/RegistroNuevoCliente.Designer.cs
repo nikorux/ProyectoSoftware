@@ -65,8 +65,11 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.txtTelefono2 = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -80,6 +83,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.errorProviderCorreo = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCedula = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -150,6 +154,7 @@
             this.cbxCompania.Name = "cbxCompania";
             this.cbxCompania.Size = new System.Drawing.Size(220, 29);
             this.cbxCompania.TabIndex = 197;
+            this.cbxCompania.Visible = false;
             // 
             // cbxSexo
             // 
@@ -165,9 +170,12 @@
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(220, 29);
             this.cbxSexo.TabIndex = 196;
+            this.cbxSexo.Visible = false;
             // 
             // cbxTipoIdentificacion
             // 
+            this.cbxTipoIdentificacion.AccessibleDescription = "";
+            this.cbxTipoIdentificacion.AccessibleName = "hhh";
             this.cbxTipoIdentificacion.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbxTipoIdentificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoIdentificacion.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -177,7 +185,7 @@
             this.cbxTipoIdentificacion.Items.AddRange(new object[] {
             "Cédula",
             "Pasaporte"});
-            this.cbxTipoIdentificacion.Location = new System.Drawing.Point(551, 47);
+            this.cbxTipoIdentificacion.Location = new System.Drawing.Point(549, 49);
             this.cbxTipoIdentificacion.Name = "cbxTipoIdentificacion";
             this.cbxTipoIdentificacion.Size = new System.Drawing.Size(231, 29);
             this.cbxTipoIdentificacion.TabIndex = 185;
@@ -202,9 +210,9 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(545, 82);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 21);
+            this.label8.Size = new System.Drawing.Size(133, 21);
             this.label8.TabIndex = 91;
-            this.label8.Text = "Identificación:";
+            this.label8.Text = "No. Identificación:";
             this.label8.Click += new System.EventHandler(this.Label8_Click);
             // 
             // label16
@@ -234,11 +242,11 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(545, 28);
+            this.label9.Location = new System.Drawing.Point(545, 27);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 21);
+            this.label9.Size = new System.Drawing.Size(160, 21);
             this.label9.TabIndex = 141;
-            this.label9.Text = "Tipo Identicación:";
+            this.label9.Text = "Tipo de Identificación:";
             // 
             // label1
             // 
@@ -406,9 +414,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(91, 301);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 21);
+            this.label6.Size = new System.Drawing.Size(143, 21);
             this.label6.TabIndex = 139;
-            this.label6.Text = "Compañía:";
+            this.label6.Text = "Compañía Referida";
             // 
             // label7
             // 
@@ -417,9 +425,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Location = new System.Drawing.Point(91, 362);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 21);
+            this.label7.Size = new System.Drawing.Size(183, 21);
             this.label7.TabIndex = 140;
-            this.label7.Text = "Nombre Compañía:";
+            this.label7.Text = "Nombre de la Compañía:";
             // 
             // txtPrimerNombre
             // 
@@ -505,8 +513,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.radioButton4);
+            this.panel2.Controls.Add(this.radioButton3);
+            this.panel2.Controls.Add(this.radioButton2);
+            this.panel2.Controls.Add(this.radioButton1);
             this.panel2.Controls.Add(this.pictureBox9);
-            this.panel2.Controls.Add(this.txtTelefono2);
             this.panel2.Controls.Add(this.pictureBox12);
             this.panel2.Controls.Add(this.pictureBox11);
             this.panel2.Controls.Add(this.pictureBox10);
@@ -554,6 +566,54 @@
             this.panel2.Size = new System.Drawing.Size(900, 499);
             this.panel2.TabIndex = 0;
             // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.Location = new System.Drawing.Point(161, 326);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(49, 25);
+            this.radioButton4.TabIndex = 214;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "No";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(96, 326);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(41, 25);
+            this.radioButton3.TabIndex = 213;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Sí";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(209, 262);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(99, 25);
+            this.radioButton2.TabIndex = 212;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Masculino";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(94, 263);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(97, 25);
+            this.radioButton1.TabIndex = 211;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Femenino";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
@@ -562,17 +622,6 @@
             this.pictureBox9.Size = new System.Drawing.Size(177, 10);
             this.pictureBox9.TabIndex = 207;
             this.pictureBox9.TabStop = false;
-            // 
-            // txtTelefono2
-            // 
-            this.txtTelefono2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtTelefono2.Location = new System.Drawing.Point(345, 216);
-            this.txtTelefono2.Mask = "(000) 000-0000";
-            this.txtTelefono2.Name = "txtTelefono2";
-            this.txtTelefono2.Size = new System.Drawing.Size(174, 29);
-            this.txtTelefono2.TabIndex = 211;
-            this.txtTelefono2.Visible = false;
-            this.txtTelefono2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MaskedTextBox1_MaskInputRejected);
             // 
             // pictureBox12
             // 
@@ -682,6 +731,18 @@
             // 
             this.errorProviderCedula.ContainerControl = this;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Gainsboro;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label11.Location = new System.Drawing.Point(550, 52);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(164, 21);
+            this.label11.TabIndex = 216;
+            this.label11.Text = "Seleccione una opción";
+            // 
             // RegistroNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,6 +831,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProviderCorreo;
         private System.Windows.Forms.ErrorProvider errorProviderCedula;
-        private System.Windows.Forms.MaskedTextBox txtTelefono2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label11;
     }
 }

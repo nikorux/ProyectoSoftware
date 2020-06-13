@@ -327,7 +327,6 @@ C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.GenerateResource.cache
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.cache
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.compiled
-C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.CoreCompileInputs.cache
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.csproj.CopyComplete
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.exe
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.pdb
@@ -364,7 +363,6 @@ C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\VSLa
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.Debugger.Interop.11.0.dll
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Newtonsoft.Json.dll
-C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\System.Threading.Tasks.Dataflow.dll
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.MSXML.dll
 C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\bin\Debug\Microsoft.Build.Utilities.Core.dll

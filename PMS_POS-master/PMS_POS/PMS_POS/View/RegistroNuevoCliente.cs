@@ -27,7 +27,7 @@ namespace PMS_POS.View
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            if (editar == false)
+             if (editar == false)
             {
                 if (this.txtPrimerNombre.Text == string.Empty || this.txtPrimerApellido.Text == string.Empty)
                 {
