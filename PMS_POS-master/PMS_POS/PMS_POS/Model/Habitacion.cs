@@ -38,7 +38,7 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT IdHabitacion, NumHab, TipoHab, CantCamas, MaxPersonas, Piso, Estado, Plan, Detalles, PrecioPorNoche FROM habitacion WHERE IsDeleted=0 AND Estado != 'Ocupada'";
+                string sql = "SELECT IdHabitacion, NumHab, TipoHab, CantCamas, MaxPersonas, Piso, Estado, Plan, Detalles, PrecioPorNoche FROM habitacion WHERE IsDeleted=0";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //Creating data adapter
@@ -65,7 +65,7 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "SELECT IdHabitacion, NumHab, TipoHab, CantCamas, MaxPersonas, Piso, Estado, Plan, Detalles, PrecioPorNoche,IsReserved FROM habitacion WHERE IsDeleted=0 AND Estado != 'Ocupada'";
+                string sql = "SELECT IdHabitacion, NumHab, TipoHab, CantCamas, MaxPersonas, Piso, Estado, Plan, Detalles, PrecioPorNoche,IsReserved FROM habitacion WHERE IsDeleted=0 ";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //Creating data adapter
@@ -309,7 +309,7 @@ namespace PMS_POS.Model
             try
             {
                 //Select query
-                string sql = "Select IdReservacion, IdHabitacion, FechaLlegada, FechaSalida from reservacion where IsDeleted=0 AND EstadoReservacion = 'Sin Confirmar'AND IdHabitacion = @IdHabitacion;";
+                string sql = "Select IdReservacion, IdHabitacion, FechaLlegada, FechaSalida from reservacion where IsDeleted=0 AND IdHabitacion = @IdHabitacion;";
                 // creating cmd using sql and conn
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;

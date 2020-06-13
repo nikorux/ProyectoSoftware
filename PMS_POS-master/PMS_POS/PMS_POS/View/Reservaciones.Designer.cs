@@ -36,9 +36,9 @@
             this.txtFiltroo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnNoShow = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRegistrarCheckOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservaciones)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -59,9 +59,12 @@
             this.dgvReservaciones.MultiSelect = false;
             this.dgvReservaciones.Name = "dgvReservaciones";
             this.dgvReservaciones.ReadOnly = true;
+            this.dgvReservaciones.RowHeadersVisible = false;
             this.dgvReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReservaciones.Size = new System.Drawing.Size(1013, 405);
             this.dgvReservaciones.TabIndex = 0;
+            this.dgvReservaciones.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReservaciones_CellContentDoubleClick);
+            this.dgvReservaciones.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvReservaciones_ColumnHeaderMouseClick);
             this.dgvReservaciones.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReservaciones_RowEnter);
             this.dgvReservaciones.Enter += new System.EventHandler(this.DgvReservaciones_Enter);
             // 
@@ -75,7 +78,7 @@
             this.btnEliminarReservacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarReservacion.ForeColor = System.Drawing.Color.White;
             this.btnEliminarReservacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarReservacion.Location = new System.Drawing.Point(1018, 93);
+            this.btnEliminarReservacion.Location = new System.Drawing.Point(838, 90);
             this.btnEliminarReservacion.Name = "btnEliminarReservacion";
             this.btnEliminarReservacion.Size = new System.Drawing.Size(144, 27);
             this.btnEliminarReservacion.TabIndex = 77;
@@ -96,7 +99,7 @@
             this.btnEditarReservacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarReservacion.ForeColor = System.Drawing.Color.White;
             this.btnEditarReservacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarReservacion.Location = new System.Drawing.Point(867, 93);
+            this.btnEditarReservacion.Location = new System.Drawing.Point(656, 91);
             this.btnEditarReservacion.Name = "btnEditarReservacion";
             this.btnEditarReservacion.Size = new System.Drawing.Size(141, 27);
             this.btnEditarReservacion.TabIndex = 76;
@@ -143,13 +146,12 @@
             this.btnConfirmar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnConfirmar.CausesValidation = false;
-            this.btnConfirmar.Enabled = false;
             this.btnConfirmar.FlatAppearance.BorderSize = 0;
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(399, 93);
+            this.btnConfirmar.Location = new System.Drawing.Point(391, 91);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(224, 27);
             this.btnConfirmar.TabIndex = 87;
@@ -158,6 +160,26 @@
             this.btnConfirmar.UseCompatibleTextRendering = true;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
+            // 
+            // btnNoShow
+            // 
+            this.btnNoShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNoShow.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnNoShow.CausesValidation = false;
+            this.btnNoShow.FlatAppearance.BorderSize = 0;
+            this.btnNoShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoShow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNoShow.ForeColor = System.Drawing.Color.White;
+            this.btnNoShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNoShow.Location = new System.Drawing.Point(1023, 90);
+            this.btnNoShow.Name = "btnNoShow";
+            this.btnNoShow.Size = new System.Drawing.Size(144, 27);
+            this.btnNoShow.TabIndex = 92;
+            this.btnNoShow.Text = "No Show";
+            this.btnNoShow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNoShow.UseCompatibleTextRendering = true;
+            this.btnNoShow.UseVisualStyleBackColor = false;
+            this.btnNoShow.Visible = false;
             // 
             // pictureBox2
             // 
@@ -180,34 +202,12 @@
             this.pictureBox1.TabIndex = 90;
             this.pictureBox1.TabStop = false;
             // 
-            // btnRegistrarCheckOut
-            // 
-            this.btnRegistrarCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistrarCheckOut.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnRegistrarCheckOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRegistrarCheckOut.CausesValidation = false;
-            this.btnRegistrarCheckOut.Enabled = false;
-            this.btnRegistrarCheckOut.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarCheckOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarCheckOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarCheckOut.Location = new System.Drawing.Point(634, 93);
-            this.btnRegistrarCheckOut.Name = "btnRegistrarCheckOut";
-            this.btnRegistrarCheckOut.Size = new System.Drawing.Size(223, 27);
-            this.btnRegistrarCheckOut.TabIndex = 92;
-            this.btnRegistrarCheckOut.Text = "Registrar Check-Out";
-            this.btnRegistrarCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegistrarCheckOut.UseCompatibleTextRendering = true;
-            this.btnRegistrarCheckOut.UseVisualStyleBackColor = false;
-            this.btnRegistrarCheckOut.Click += new System.EventHandler(this.btnRegistrarCheckOut_Click);
-            // 
             // Reservaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.btnRegistrarCheckOut);
+            this.Controls.Add(this.btnNoShow);
             this.Controls.Add(this.txtFiltroo);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -240,6 +240,6 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnRegistrarCheckOut;
+        private System.Windows.Forms.Button btnNoShow;
     }
 }
