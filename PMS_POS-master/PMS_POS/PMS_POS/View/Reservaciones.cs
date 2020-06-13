@@ -116,7 +116,7 @@ namespace PMS_POS.View
 
             for (int i = 0; i < dgvReservaciones.Rows.Count; i++)
             {
-                // mostrar las que sean hoy solamente
+                // Mostrar las que sean hoy solamente
 
                // Solo las reservaciones 
 

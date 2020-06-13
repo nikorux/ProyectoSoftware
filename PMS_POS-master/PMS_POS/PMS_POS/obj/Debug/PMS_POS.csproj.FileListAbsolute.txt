@@ -507,3 +507,4 @@ C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\ob
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.UserControlInicioFaltante.resources
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.cache
 C:\Users\Aquiles\source\repos\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\RdlCompile.compiled
+C:\PMS_POS-master\ProyectoSoftware\PMS_POS-master\PMS_POS\PMS_POS\obj\Debug\PMS_POS.View.CheckedIn.resources
